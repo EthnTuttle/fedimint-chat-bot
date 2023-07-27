@@ -1,0 +1,20 @@
+{
+  "name": "fedimint-chat-bot",
+  "version": "1.0.0",
+  "description": "A chat bot using langchain to do Q&A for Fedimint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:EthnTuttle/fedimint-chat-bot.git"
+  },
+  "keywords": [
+    "fedimint",
+    "chatbot",
+    "bitcoin"
+  ],
+  "author": "Ethan Tuttle",
+  "license": "MIT"
+}
