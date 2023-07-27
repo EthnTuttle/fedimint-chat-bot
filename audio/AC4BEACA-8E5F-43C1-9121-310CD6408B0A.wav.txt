@@ -1,0 +1,1194 @@
+ You're listening to TIP.
+ Preston Pysh (00:00:30):
+ Hey, everyone.
+ Welcome to this week's episode of the Bitcoin Fundamentals Podcast.
+ On today's show, I have a titan in the Bitcoin space with Obi Nwosu.
+ Obi is one of the leading experts and builders on the custody protocol called Fediment.
+ During our discussion, we cover what the protocol is, why it's so exciting and important for
+ future growth and building, how Obi became a nonprofit board member on BTrust with Jay-Z
+ and Jack Dorsey, the lessons he learned from founding, owning, operating, and selling a
+ large exchange among many other fascinating topics.
+ This isn't one you'll want to miss, so get ready for my chat with Obi Nwosu.
+ You're listening to Bitcoin Fundamentals by The Investors Podcast Network.
+ Now for your host, Preston Pysh.
+ Preston Pysh (00:01:15):
+ Hey everyone.
+ Welcome to the show.
+ Like I said in the introduction, I'm here with Obi, and I'm really excited to do this
+ conversation.
+ It took a little bit of preparation on my part to get myself smart enough to have this
+ conversation with you.
+ So I'm really excited to have you on the show.
+ Obi Nwosu (00:01:34):
+ Okay.
+ I think I needed to probably do the same level of preparation, and I haven't for my sins.
+ So you're probably going to outsmart me on 30 minutes.
+ Preston Pysh (00:01:42):
+ No, no, sir.
+ Hey, so tell us your Bitcoin story, because you've been in this space for a very long
+ time, a very, very long time.
+ How did you find this?
+ How did you find Bitcoin originally?
+ Obi Nwosu (00:01:56):
+ Originally, well, by background, a geek.
+ I studied computer science and cognitive science in University College London.
+ And so I was trying to make our new robot overlords, and it seems like they've been
+ doing fine without me.
+ And then I went into the tech industry in the European space.
+ I was involved with massively multiplayer role-playing games, 30 million users, all
+ this sort of stuff.
+ Preston Pysh (00:02:22):
+ Wow.
+ Obi Nwosu (00:02:22):
+ Yeah.
+ And as a background, I was always interested in just the disparities in the world.
+ My family was from Nigeria.
+ I could see the difference between the global South and the global and the Western world.
+ And I was really into technology.
+ So when some friends of mine heard about Bitcoin in 2011, they just thought this is going to
+ be right up Obi's street.
+ And they informed me about it.
+ And lo and behold, I found it very interesting.
+ I looked at it intensely for about three months, but I was running my own business at the time.
+ So other than buying a very small amount, I found the technology very interesting, but
+ I didn't just sort of dive in because I was focused on life.
+ And then two years later, well, the price crashed actually, from my perspective.
+ I think it went from $100 down to like $20.
+ And I thought, "Okay, the technology is great, but I have concerns in the long-term viability."
+ So I focused on my business.
+ Three years later, a company I had angel invested in, the founder approached me again.
+ The company didn't succeed, but I thought the founders were really clever guys.
+ And they said, "Look, while running this other business, we came across," because it was
+ a sort of voucher token reward system, "they came across this thing called Bitcoin."
+ And I thought, "Well, that's still around."
+ I checked it again, 2013.
+ And lo and behold, it was now a few hundred.
+ And so I thought, "Okay, this is great technology.
+ The mission is great."
+ Making meritocratic money, is the way I would put it.
+ And it had staying power.
+ And there was a clear problem that the exchanges around at the time were...
+ Mt. Gox was in the middle of failing, and they weren't trusted.
+ So the simple idea of making a trusted exchange in the UK where we're focused came about.
+ And so I decided to, with my co-founders, co-found Coinflop, which was the UK's, at
+ that time, a young exchange.
+ But eight years later, we sold it.
+ It was the longest running Bitcoin-only exchange in the UK.
+ And yeah, that was the story.
+ I started off as a CTO.
+ Within nine months, I was the CTO and CEO of Coinflop.
+ And we had multiple ups and downs, but ultimately more ups than downs.
+ And I sold it at the end of last year.
+ So that was my-
+ Preston Pysh (00:15:40): That's unreal.
+ This is unreal.
+ And I can't believe you're regulatory, trying to do this back when it had never been done.
+ I mean, like you said, it was Mt. Gox over in Japan, and that was basically it.
+ And it was very boutique.
+ And you're probably looking at trying to do this in the UK.
+ I just couldn't imagine the regulatory burden that you were dealing with.
+ Roy Bhandari (00:16:12): I've been in the Bitcoin space for eight
+ years, and that's about 80 years of regulatory experience.
+ When we started, we applied.
+ In fact, before we started, we applied to the FSA at the time.
+ Now it's the FCA.
+ And I believe FSA was the Financial Standards Authority.
+ I can't remember.
+ It changed.
+ Now it's the Financial Conduct Authority.
+ And we said, "Look, we're staying in this company.
+ We want to be regulated, and here's what we're doing."
+ And they came back very politely saying, "Thank you very much, but what we believe you're
+ doing is not a regulated activity.
+ So go ahead and do it, but we're not going to regulate you."
+ And so with that letter, we started.
+ But that was where we began.
+ But we still wanted to be incredibly transparent.
+ There was a Bitcoin core engineer who suggested this idea called provable solvency or proof
+ of proof of reserves.
+ And we decided to implement that.
+ I think a number of exchanges, Kraken, Coinbase, blockchain.info at the time, now it's blockchain.com,
+ BTC China, now it's defunct.
+ And I think this stamp as well, they all also made public statements that they would also
+ implement proof of reserves.
+ Unfortunately, we're the only ones who actually did it.
+ I think Kraken did one and stopped.
+ All of them removed the public statements off their websites after six months.
+ But you can go back in the way back when machine and find the original promise to do this.
+ You can leave it for the readers or the listeners to determine why they decided not to do proof
+ of reserves.
+ But we did it every month for eight years.
+ And this is something I think Nick Carter talked about continuously.
+ And yeah, many other things.
+ We in the Bitcoin cash wars, we were one of the few exchanges to be not a fan of this
+ sort of SegWit2x sort of compromise.
+ We said, look, whatever they use to be Bitcoin, is Bitcoin.
+ We educated everyone ranging from the intelligence services to the police to politicians.
+ I gave evidence in front of the UK Parliament's Treasury Select Committee, which is a bit
+ like the Senate Committee hearings.
+ We did everything to try and educate people and educate the regulators.
+ We started on a position when it took us talking to nearly 200 banks across Europe to get a
+ bank account at that time.
+ Now for this new project we're working on, I've talked to four banks and four banks listen
+ to me and are interested in opening bank accounts.
+ It's still tough.
+ You still have to fill in 70 page forms.
+ But it's much better than when I had to travel to Estonia to become an Estonian e-citizen
+ just to get a bank account or travel to Poland or travel around Europe.
+ So I've seen a lot when it comes to regulation.
+ So your impetus for starting the exchange and doing this was custody related, correct?
+ Yes.
+ Well, the impetus was to solve the problem of helping people go from fiat to Bitcoin.
+ We saw ourselves as this Robin Hood like, I saw myself as Robin Hood like character,
+ sort of rescuing people from this world of this regulated inflationary money.
+ And allowing them to move over to this regulation free, inflation free money.
+ And as part of that, you had to provide them a custody solution that was safe and reliable,
+ etc.
+ And so we decided that we wanted to be as transparent as possible because we're holding
+ people's money on their behalf.
+ And also to bring back trust, especially in the wake of Mt. Gox, we felt that we would
+ go down this road to regulation.
+ And that was the way to do it.
+ Because at the end of the day, we're a third party.
+ We are effectively a stranger to our customer.
+ And we're incentivized to earn money.
+ And you're asking us to look after your money.
+ So there is a perverse incentive there, where in most cases, it's incentivized to make money
+ that leads to competition, innovation, and so on.
+ Because to earn money, you have to provide an incredibly, the most efficient way to earn
+ money is providing incredibly good service to your customers.
+ But in the case where you're custodying money, then the most efficient way to earn money
+ can be just to take the money.
+ And especially some entrepreneurs who walk the line might start, as we've seen recently,
+ start doing things like gambling with your money, or they might abscond with your money,
+ or it might just disappear, et cetera.
+ And so we felt that the way to bring that trust back is to go for regulation.
+ Little did I know that actually that was led you from one problem into another.
+ But I discovered that over the next 10 years.
+ Preston Pysh (00:15:40): So I'm assuming you had no experience with
+ exchanges before going into this.
+ And you hear these people who build something really large and substantial, like what you
+ did with Coinfloor.
+ And they'll jokingly say, "If I only knew what I know now, I would have never taken
+ the first step because it was like climbing Mount Everest or some type of massive, massive
+ undertaking that you just don't know."
+ So your lack of knowledge or understanding of how hard the problem is would have prevented
+ you from starting.
+ Do you have a little bit of that sense when you look back at those eight years of running
+ such a huge-
+ Roy Bhandari (00:16:17): I mean, I've had ups and downs.
+ So anybody who hasn't started for eight years, and there were many, many, many times that
+ I wished I'd had to start the business.
+ It was eight years, but I probably lost 20 years of my life expectancy.
+ I've had some of the worst health days in my life, some of the most stressful periods.
+ Now that I've gone through it, and because of what I've learned from it, I'm grateful
+ for it because it's prepared me for what I'm doing now, which I cannot describe how happy
+ and excited and passionate I am about what I'm doing now.
+ And if I didn't have those skills applied to this, then it wouldn't have been the same
+ thing.
+ But yeah, I didn't have any experience of running an exchange at the time.
+ We were very naive.
+ Eight years is a long time now.
+ So I've got not only experience running an exchange, but running a Bitcoin exchange and
+ a regulated Bitcoin exchange.
+ We were the first exchange to be regulated in Gibraltar, one of the first jurisdictions
+ to provide regulation in Europe.
+ We were one of the earliest in Europe and many different things.
+ And in fact, actually not coming from the traditional markets was a boon for us because
+ a lot of people who run exchanges come from the market where they were traders themselves.
+ And it's always, we found with certain customers, there's always a slight concern when the person
+ running the exchange has the same mindset as the traders.
+ There's always a worry, are they trading against you?
+ Are they doing all these different things?
+ Whereas with us, my background was that of a technologist.
+ So I just wanted to make the system work as well as possible.
+ I'm not a good trader.
+ So we have no interest in doing anything other than making sure the systems work incredibly
+ reliably.
+ We were never hacked.
+ We never had these issues which seemed to plague exchanges orders of magnitude larger
+ than us.
+ We were a medium-sized exchange.
+ We were a good-sized exchange, but exchanges that were much larger than us, when there
+ were these massive moves in the markets and people really needed to trade, they all seemed
+ to just go down.
+ I know exactly which exchange you're talking about.
+ I won't name names, but they would always seem to go down.
+ But we would keep on ticking and people liked that.
+ Even they knew that.
+ We just made sure we kept people happy.
+ We made sure we were reliable.
+ We're very conservative.
+ So philosophically, we were always aligned to the ideals of Bitcoin.
+ So it was TikTok next block.
+ And it was also the same for our exchange.
+ And that's, I think, because we were first and foremost engineers and second commercially
+ minded traders.
+ In fact, we were zero in that regard.
+ Preston Pysh (00:40:40): Yeah.
+ I love that.
+ I love that background, which led to the success of the performance, which is really what you're
+ trying to get at with the customer, providing the customer a service.
+ Now when you're looking back at that experience, if you were going to explain to your kids,
+ "All right, these are the two big things I learned from those eight years that felt like
+ 80 years," how would you summarize your two big takeaways of what that was all about?
+ Roy Bhandari (00:41:13): I have immediate thoughts to buy in, but let
+ me stay out of it.
+ No, let me just not.
+ No, I think there's two things.
+ One, you have to realize that you need to avoid regulation if you can.
+ Even though we got it, I think that the innovation for Bitcoin is to be able to be regulation
+ proof.
+ So I'm using all that learnings to build systems, which I just don't need to be in.
+ If you really want to do something of global impact for what we're doing, you want to build
+ systems that are cognizant of how the world works, but don't wait for the world to catch
+ up for you because that just doesn't.
+ So that's the first learning.
+ And the second is to be very, very, very careful of who you partner with and whether it's partnering
+ organizations or people within your organization or so on and so forth.
+ So that would be the second thing, I think, or who invests in you, all of this sort of
+ stuff.
+ If I look back, although everybody had their own perspective, and I don't wish anybody
+ any ill will, I do think that there was a lot of differences of perspective in all those
+ regards in terms of the direction of the organization, and that caused us a lot of challenges.
+ I was very focused on going a Bitcoin-only road.
+ Some people came around to that, but it took several years.
+ Some people never came around to that.
+ And then it led us to just like a fork in Bitcoin, that led to a fork in CoinFlow, where
+ we eventually split ways and recreated the world's first physically-divided futures exchange,
+ Bitcoin futures exchange.
+ But that was eventually...
+ There was a schism and that was sold off.
+ We retained a small equity stake, which we eventually sold last year, but that became
+ CoinFlex, which you now see in the news.
+ And they went their own way, which was very much a Bitcoin Cash, multi-crypto, 200X leverage
+ approach.
+ And we went to the Bitcoin-only spot, focus for retail, dollar-cost averaging approach,
+ which was closer to my philosophical view.
+ But these things by themselves, and you focus on them, are different business models.
+ And it doesn't really matter what you think of each one.
+ There is a way where they can flourish.
+ But when you have two philosophies on where to go with the business, and they're so different,
+ you end up in this sort of no man's land.
+ So in the end, it was actually a really good decision for us to split in two, and everybody
+ could then go the direction that they wanted to go in, and they could have the future that
+ they were destined to have.
+ Let's take a quick break and hear from today's sponsors.
+ So in the last few months, we've seen the importance of choosing a Bitcoin partner you
+ can actually rely on.
+ That's why people are looking towards River as their Bitcoin exchange of choice.
+ In addition to letting you securely buy Bitcoin with zero fees on recurring orders, River
+ has built their own infrastructure from the ground up.
+ This means they don't rely on third parties.
+ And because River is a company created by Bitcoiners, they actually encourage cold storage,
+ which they make seamless through their auto withdrawal feature.
+ However, you have peace of mind knowing Bitcoin on River is held one to one in multi-sig cold
+ storage in addition to being fully licensed and regulated in the US.
+ River also offers a hosted mining service to mine Bitcoin hassle free at one of their
+ facilities.
+ And they also have a lightning API for developers looking to run lightning network payments
+ without managing the entire infrastructure stack themselves.
+ Plus, River has a relationship management and client service team that's US based and
+ available by phone for you and your business.
+ There's a new standard in Bitcoin and River is setting it.
+ See why at River.com.
+ TechVestor makes investing in short term rentals, also known as Airbnbs, simple, passive, and
+ profitable.
+ They've raised over $60 million and already own hundreds of successful properties that
+ are delivering cash flow to investors each and every quarter.
+ If you've ever considered owning an Airbnb or own one now, you know that it's a lot of
+ work.
+ From finding the property, designing it, renovating it, running it, dealing with guests, and everything
+ in between.
+ TechVestor handles all of this for you with a single investment earning you a targeted
+ 8-12% cash on cash return and a total annual return of 17%.
+ Not to mention all the incredible tax benefits.
+ With as low as a $25,000 investment, you're instantly an owner of 100+ Airbnbs in a diversified
+ portfolio across the country.
+ For listeners of We Study Billionaires, we've partnered with TechVestor to offer you even
+ better terms.
+ Sign up and book your call with their investor relations team at TechVestor.com.
+ That's T-E-C-H-V-E-S-T-O-R.com and be sure to mention We Study Billionaires.
+ Investing involves risk of loss, performance is not guaranteed, and all details are projected.
+ This offer is for accredited investors only.
+ If you're a business owner and you don't know your numbers week by week, then you're
+ totally dropping the ball and falling behind your competition by the minute.
+ And that is why I want to tell you about NetSuite by Oracle, which is the number one cloud financial
+ system to give you the visibility and control you need to make better decisions faster.
+ NetSuite is number one because they give your business everything you need in real time
+ all in one place.
+ This will help you reduce manual processes, boost efficiency, build better forecasts,
+ and increase productivity across every department.
+ They have a very special deal for our listeners of We Study Billionaires.
+ For the first time in NetSuite's 25 years as the number one cloud financial system,
+ you can defer payments of a full NetSuite implementation for six months.
+ That's right.
+ There's no payment, no interest for six months.
+ 33,000 companies have already upgraded to NetSuite, gaining visibility and control over
+ their financials, inventory, HR, e-commerce, and more.
+ If you've been sizing NetSuite up to make the switch, then you know this deal is unprecedented.
+ No interest, no payments.
+ Take advantage of this special financing offer at netsuite.com/study.
+ That's netsuite.com/study to get the visibility and control you need to weather any storm.
+ That's netsuite.com/study.
+ All right, back to the show.
+ Preston Pysh (00:05:40): Fascinating.
+ I love those two points.
+ Avoid regulation if you can, and be careful with who you partner with.
+ I think with the three arrows capital situation, boy, that last point really hits home for
+ a lot of people these days of who they're partnering with or who they're working with,
+ and such a salient point across all time.
+ When people are…
+ This is, I think, a question that I get a lot when I'm just talking to anybody about
+ Bitcoin in particular.
+ People are always asking which exchange to use.
+ Do you have any tips for people as they're looking at selecting an exchange?
+ What are some rule of thumbs or something that's really simple for them to do a little
+ bit of an analysis on who to select as they're trusting?
+ Because what we're about to talk about gets into the future of trust and custody and all
+ that kind of stuff.
+ But for people today, right now, as they're looking at exchanges that they can trust,
+ what are some things without naming names that you would look at or things that should
+ make your eyebrows go up when you see it as a person who has built an exchange?
+ I think, I guess, you start off deciding what is your reason for wanting to use an exchange.
+ Are you someone who wants to speculate, is comfortable with the risk of speculating?
+ I think, effectively, somewhere between the spectrum of trader to gambler.
+ That's the spectrum.
+ Some people consider them all the same thing.
+ Some people consider them different.
+ But if that's where your mindset is, you should be open and true to yourself, in which case
+ everything is about risk.
+ You should be focused on who has the most features, who has the most liquidity, and
+ just accept that there's a risk that they could blow up as a business.
+ But that's just one more risk you're taking along with the trading risk.
+ If you are someone who is interested in using this as a custodian for holding your value
+ in the long run, you see this as a savings technology as opposed to a speculation technology,
+ then you should have a very different set of criteria.
+ It isn't about who's the biggest name.
+ It's about who has a consistent commitment to focus on social capital over financial
+ capital.
+ It's more important for them to maintain honor and dignity and a good reputation.
+ And their actions have shown that over the short term money.
+ They want to make money, of course, because they have to be profitable.
+ But they want to make sure that they maintain their own social credibility, and that's a
+ high value for them.
+ So the first thing you do now, how do you do that?
+ Well, you look for signs and symbols.
+ So one, how they speak, what they talk about, what they prioritize.
+ Do they have a clear set of criteria for what they list?
+ And is that criteria based on the safety of their users?
+ Or is the criteria based on how much money they can make from their users?
+ If it's the prime first, then this is probably the biggest indicator.
+ If it's the first, then that's a good sign.
+ If it's the second, that is a sign that probably the place to go if you want to speculate.
+ Now if they don't clearly communicate their criteria, or they communicate it but don't
+ follow it, those are both, you should assume in that scenario that they're in the latter
+ camp.
+ Unfortunately, the vast majority of exchanges are in that latter camp.
+ What we found is we came up with criteria, which are just very sensible.
+ We thought one, we would only list items which were technically mature, because if you're
+ asking people to have money with something which is not technically mature, there's a
+ high risk it could explode, and that's not good for your customer.
+ It can make a lot of money for you, but it's not good for the customer.
+ Two, you would list something which had very good community support, because if it didn't,
+ it could fluctuate a lot, it could disappear, money has network effects, you need such strong
+ community support.
+ So again, these are very sensible criteria.
+ Small cap tokens and so on didn't make sense there.
+ Three, there needed to be regulatory clarity, because we're a regulated exchange, you need
+ to have regulatory clarity around the token.
+ And four, ultimately you want these things to store a value, money, so it needs to have
+ a core use case which was around storing value and money.
+ Because if it wasn't, then it wasn't a thing to store your value in, and if you're thinking
+ of customers you want to save, that didn't make sense.
+ Now when you take those four criteria, and we thought they were four very sensible criteria
+ for if you're focusing on customers trying to save, and dollar cost average, or sensibly
+ invest and hold for the long run, we only found one currency that actually fit those
+ four criteria, which was Bitcoin.
+ So when I say that I'm a Bitcoin maximist, I just think it's actually from a very rational
+ position.
+ If I found something else that met those four criteria, I would have listed it, but I've
+ never found anything that came close to those four, which is why...
+ And Bitcoin only just meets those four, by the way.
+ Even Bitcoin only just meets those four.
+ Otherwise if it didn't, then we would just shut up shop and say, "Well, there's nothing
+ to offer people."
+ But Bitcoin does meet that criteria, and we were reviewing it every month, and it was
+ only Bitcoin.
+ And in fact, with further decisions by other cryptocurrencies, they've further and further
+ gone away from being able to fit those criteria.
+ So for example, Ethereum, you might think it fits three of those criteria, but in terms
+ of technical readiness, the Ethereum developers decided and announced publicly that Ethereum
+ 2 was coming out because Ethereum was never going to meet the original objectives of the
+ Ethereum community, of the Ethereum developers.
+ So if the developers of Ethereum say it's not good enough, objectively it's not good
+ enough at that stage.
+ So at that point, it was very obvious that we list Ethereum after only listing it for
+ six months.
+ That was only a short period.
+ And so we delisted it at that point because the developers of Ethereum themselves were
+ telling you it's not good enough.
+ Preston Pysh (00:34:40): Yeah, you don't want to argue with them.
+ So Obi, you are a board member on B-Trust.
+ This is a nonprofit.
+ Talk to us about what this is about.
+ Obi Wan (00:34:58): B-Trust, and it's B is the Bitcoin B, and
+ B-Trust.
+ It's always difficult to type, to find that symbol.
+ We need to make it as a permanent character on the keyboard.
+ So it was originally a year, over a year ago, Jack Dorsey and Jay-Z tweeted this idea that
+ they're putting 500 Bitcoin towards a trust to promote the development of Bitcoin protocol
+ engineers in the global South, starting in Africa and India, but ultimately all across
+ the global South.
+ And so they were on the lookout for board members, three to four board members to take
+ this 500 Bitcoin, form this trust, and locate, educate, and renumerate talented Bitcoin engineers
+ so that they could hopefully become the next generation of Bitcoin protocol engineers.
+ Because there are only a few people who actively work on some of these.
+ vital, globally vital technology. So lightning, Bitcoin core and other core protocols. So the
+ idea was great. The impact is also great, because if you take Bitcoin core, it's talking to the
+ two main core Bitcoin core maintainers in Oslo a month and a half ago. And they're saying actually
+ right now, although there's a few hundred people who contribute, the people who actively contribute
+ to Bitcoin core, for example, is about 10 right now. And you can see Peter Willer just announced
+ stepping down so it could be even less. So even if you add one or two or three people to that,
+ you're making a significant increase in and this is a point where the global south is not only
+ you're helping increase the education of the global south, but they're going to then contribute
+ to something that is of global importance. So the global south is supporting the world as opposed
+ to the West supporting the global south. So love the idea. I applied with 7000 plus other people
+ because it was an open invitation. I didn't want to have these things where I was back rooms,
+ you know, old boys club type application. And I know many people from from the Bitcoin space
+ applied, but many people from outside it applied as well. And so began 10 month process. This also
+ began in the same year that I was already looking to move on from Cornfall. And there's a reason why
+ I'm and I was all because I started to realize that we needed to get a lot of people off exchanges,
+ but that's something we'll talk about in a bit. So over that 10 months, while I was still working
+ on coin floor, but looking at starting to look at offers before I just didn't ignore them, but
+ starting to look seriously at offers to acquire the company, we went from 7000 people applied.
+ And then a few months later, I went to the next round, the next round, and at some point,
+ around just before adopting Bitcoin in San Salvador, which I was planning to go to,
+ because at that point was getting close to us finding buyers, we're in the last negotiation
+ phase. And I had finally opportunity to do things like to go to hackers Congress for the first time
+ in Prague, as a CEO of a regulated exchange, it's not a good look to go to Congress. But now I know
+ I'm selling it, finally do that. And to go to San Salvador, I got down to the last like,
+ few hundred, I believe. And then I thought, okay, then maybe there's a chance here.
+ And yeah, we kept on going through and then it was final interviews. And just a few days before
+ I was about to sell the business was pure coincidence. We it was finally announced that
+ I was going to be one of the four board members, we had our board meeting with
+ Jack and Jay on the call and all these other incredible people who'd helped given donated
+ their time from spiral from chain code from brink from just everywhere. And yeah, we the four board
+ members met each other for the first time on that call as well. We introduced ourselves to everybody.
+ And so it began. I mean, it was formally announced on the same day as I stepped down as a director of
+ CoinFlow just by pure coincidence the same day. I only think my other board members know that
+ happened. So one life ended and then new life began. Insane. Everybody listening to this right
+ now is doing a fist pump in the air like that is awesome. That is so cool. I'm really blessed
+ the people I'm working with are incredible and amazing. Wow. So you had mentioned Lightning and
+ Core, obviously. So do you see Fediment in that mix of protocols potentially moving forward?
+ How does the board view Fediment? Is it something that's been brought up?
+ Yeah. I mean, we have a number of principles that we put on our site. And one is I'm very careful
+ not to bring up Fediment in B-Trust meetings. Other people have and sometimes candidates that
+ we talk to have brought it up, which is really good because there's so much just natural excitement for
+ it. So that's actually... But what I don't want to do is be seen to be promoting something that
+ I'm working on. And that's one of our policies as board members to not try to promote our own bags,
+ as it were, even though this is an open source project. But I do fundamentally see this as
+ the third key pillar of the Bitcoin open source ecosystem.
+ What are the first two? What are the first two, Bobby?
+ The first one, the central pillar is Bitcoin Core itself, Bitcoin. So this is decentralized
+ censorship resistance, store of value of money. That's the base that everything else is built
+ across. Fixed supply, immutable, decentralized, and also very, very secure. In terms of extra
+ function, the sacrifice it makes is it's not got very much functionality and so on. And that's where
+ other technologies can add to it over time. But it needs to be as a base, very, very, very secure,
+ and very, very decentralized. And what you don't want to have is compromise those two for bells
+ and whistles in the core protocol. Because if you're compromising on centralization,
+ then what's the point of using a blockchain? It's a massive overhead. You might as well use
+ a database. If you're compromising on security, then you end up with something like terror,
+ and so on. Why would you store money on something that's insecure? It's eventually going to be lost.
+ It makes no sense either. So you cannot compromise on those two.
+ The next pillar is decentralized censorship-resistant payments. And that has been
+ provided through Lightning. And that allows you to, if you're set up correctly, and the network
+ is architected correctly, from a scaling and congestion point of view, allows you to settle
+ between parties at the speed of Lightning and at incredibly low cost. So that allows you to scale
+ the payments aspect, but it's built on top of the first layer. And then the third pillar,
+ which is missing, is decentralized censorship-resistant custody. And at the moment,
+ if you think about it, we've really got two choices. You come along, and you're someone
+ who's passionate about Bitcoin, knowledge about Bitcoin. It's invariably friends and family.
+ When they're in the, when it's the right phase in the bear period, no one wants to talk to you,
+ and you're the social pariah. But in the bull period, everybody comes back and goes,
+ "You're the one who always goes on about Bitcoin. Can I actually, can you tell me?"
+ Well, they first will ask you for financial advice. They say, "Where can I buy it from?"
+ And whatever you say, because they trust you, they're going to do. But you really have two
+ choices. You can either tell, you take a view. Are these people technically proficient enough?
+ Then maybe you suggest to go with a hardware wallet approach. But for nine times out of 10,
+ you don't think they are, especially early on. So then your only choice is to tell them to go
+ to a regulated exchange, even though you know that's not a good thing to do. That's literally
+ the only way to do it. And that's not centralized. And you're basically telling them to store their
+ money with a stranger, effectively. It's stranger custody, by definition, third-party custody.
+ What we need is a solution which is much simpler to use, and also can be rolled out anywhere. It's
+ decentralized. It's censorship resistant, which is not the case for a regulated exchange. And
+ it allows you to custody safely and securely. And ideally, just like lightning, baked in privacy
+ into the standard, because everybody needs it, but they don't actively do stuff for it.
+ Your custody solution should also do that. You shouldn't have to go off and do extra things
+ to get privacy. It should be just baked in and you shouldn't even think about it.
+ So that is missing. And FediMint provides that. I can go into how I discovered it and discovered
+ the person who invented it. Yeah. I have that as a question here. I wanted to hear how,
+ because you don't know this person, correct? Oh, well, now I do know him.
+ Okay. But at the time I didn't. As I mentioned last year, in the final few months of negotiating
+ sale of CoinFlow, I decided to visit Hackers Congress. And I was going there for two reasons.
+ One, I've always wanted to go, but I just felt as the CEO of a regulated exchange,
+ it wasn't appropriate for me to go to certain events at the time. But this time I thought,
+ "Well, now I can go. It doesn't matter." And I've always wanted to go. But there was another reason.
+ In 2019, it seems that there's a segment that's related. The Financial Action Taskforce, FATER,
+ approved something called the Travel Rule. At that time, people who were in the industry,
+ especially who were very afraid of what was happening in regulation,
+ realized how significant this was going to be. The FADF is this unelected body who advises
+ regulators around the world on appropriate regulation. But that's just advice. But
+ throughout the history of FATER, there's no piece of advice they've ever given that hasn't been
+ unanimously implemented by the different countries who have signed up to the FADF
+ policies. But almost every country in the world has signed up to the FADF policies.
+ Even if they're warring with each other or so on, they've all signed up.
+ Now, the only question is how long it takes to implement. The quickest,
+ smallest, agile countries do it in about three years. The less agile ones take five, six years.
+ But they all do it eventually. So, 2019 was when the clock started.
+ And as you can see, we're in 2022. We're now at the period where you're starting to see the
+ countries implement it. And many people think, "Well, this is not going to be implemented." But
+ there is not a situation of a policy implemented by FADF that hasn't been implemented. So,
+ knowing this, I realized that as we were getting close to this timeline, that we needed to get
+ more people off exchanges. We as an exchange, and again, as an exchange, you're generally not
+ incentivized to do this. But again, an exchange who's concerned about their customers would be
+ one that's constantly trying to get them to self-custody. If they're not trying to do that,
+ or they're trying to explain why it's better to custody with them, again, you need to be careful
+ if your objective is to save. If it's a trade and gamble, it's a different thing.
+ So, we were constantly trying to get people to self-custody. And after a number of years,
+ I realized that this was just not going to happen. We might get 5% self-custody,
+ but we're never going to get anywhere near 100%. One day, one of our customers,
+ amazing woman, really funny, and now a very good friend of mine, very smart switched on,
+ but not super technical. So, like, "Obi, I get it. I understand what you're saying. And I
+ understand I should self-custody. But the problem is I trust you more than I trust myself."
+ I think you have a lot of this, Obi. I think you have a ton of this.
+ You do. You do. And I realized that this was what was stopping most people moving across.
+ So, I asked her and I thought about it. "Well, who do you trust more than me as an exchange?"
+ And she thought about it and she went, "Well, I guess my friends and family, because
+ they're the ones I asked for where to custody." And they suggested you. And they could have
+ suggested Wibble Wobble Exchange. I would have just gone with what they've said. So,
+ implicitly, I trust them more than you. I only use you because they told me to use you.
+ And so, that was something I, to use a Sherlock Holmesism, I stored in my mind palace. It was
+ up there. But then I just left it. But then a number of years later, I was at Hacker's Congress
+ thinking about ways in which we could help get people off exchanges. I also had a very strong
+ interest in the global South, especially even more so, it's always been running through my
+ experience at CoinFlow, but it's just never going to happen. A UK regulated exchange with UK
+ and European based traditional finance based investors, they were never going to have Nigeria
+ as the second market. It was just not going to happen. But I'd always wanted to do this.
+ And I also realized that self-custody and the hardware wallet solutions don't work in places
+ where if you send 100,000 or 10,000 hardware wallets to Nigeria, you're lucky if 1% get
+ through and don't get stolen on the way in libraries. Or in certain regimes, are they
+ going to be sabotaged or all this sort of stuff? It just doesn't, it works in a Western context,
+ but it doesn't work there. So, I was thinking about ideas like using existing things that
+ were already there, like Nokia phones, they're everywhere. They're used as doorstops in most
+ places now, but they have the functionality and power to be hardware wallets, for example,
+ and they pre-existed the invention of Bitcoin. So, it's hard to think that chips could have
+ been added to something before the threat was actually in existence. So, I was looking to talk,
+ I was talking to some of the hackers and cypherpunks there about how we could redeploy
+ them. And then at one lunch break, we were outside the front of Paranili police, if I pronounced it
+ correctly, where hackers congress takes place. And I bumped into L. Sirian, Eric Sirian. And
+ he was wearing his cap and sunglasses and face mask and so on and so forth, because he's very
+ privacy focused. And I told him about my ideas, and he gave me very, very honest feedback. I
+ thought these ideas were terrible. And I really appreciate it, because I like to get good feedback
+ on these things. And then I wanted to hear about his ideas. And he then told me about Fedimint,
+ which is a portmanteau of federated Xiaomi and Mint. And I listened to the idea, and I thought,
+ this is a really interesting idea, but isn't it going to be stopped by regulators and so on and
+ so forth? Because I've had eight years of background dealing with regulators, dealing with
+ some of the largest law firms in the world, regulatory advisors, and so on. And so, I had
+ a very strong knowledge of all the different regulations that are happening in places.
+ And he said, well, I don't really think about that. I'm just making this incredible privacy
+ system, which it was. But then I thought about it for a bit, and I realized, well,
+ if these people who are, and I can explain how it works in a bit, but if the people who are
+ running these nodes, effectively, these Fedimint nodes, we now call them guardians.
+ If these people are friends and family, or they have some sort of pre-existing
+ non-commercial relationship, and if they are not looking to do this by way of business,
+ they're basically not earning money. I mean, they can earn money if they want,
+ and certain jurisdictions are fine with that. And if the way federations work, it means that they
+ don't have a majority of keys, they have a minority of keys, they can't act single-handedly,
+ then through various exemptions, they will be exempt from, depending on the jurisdiction,
+ they'll be exempt from regulation in most reasonable jurisdictions. By that, I mean
+ Europe, UK, and US, for example. They'll be exempt from regulation.
+ Preston Pysh (00:34:40): As long as they're not doing it for profit,
+ you're saying?
+ Addy Osman (00:34:44): There's multiple things that the system does,
+ and the design is designed to make it so that the people operating it have a strong case to be
+ exempt from regulation. So one is, and this is very clear, you can see it on the very helpful
+ websites for the FCA, for example, is this guide, do you need to be regulated or not? And one clear
+ exemption is, are you doing this by way of business? And then it goes, well, how do you
+ know it's doing by way of business? Well, there's no hard and fast rules, and they never give hard
+ and fast rules, they're examples. Are you looking to make a profit from it, to make revenue? Well,
+ so if you say I'm not, and also if you add on things like, well, if you add on that you're
+ doing it for people you have pre-existing relationships with, and they're not, and it's
+ friends and family, that also just adds to the argument that you're not doing it by way of
+ business. If you can think of the idea, if I'm going to store money in a piggy bank for my kid,
+ I don't need to regulate it, it's a licensed custodian. If I go to the shop and buy stuff
+ for a friend, I don't need to regulate it as a payment institute, they give me money to buy
+ stuff for them. Or if I buy something in a restaurant and I said, I'll pay you, you can
+ pay me back next week, I don't need to be a credit institute to do that, because I'm doing it not by
+ way of business. And it's the same, if you are holding your private keys for, if someone has
+ got a hardware wallet, and then they ask you to hold a backup of their private keys, that backup
+ is also the wallet. But we realize that that's not regulated, because you're not doing it by
+ way of business. But you are literally custodying their money as well by holding that backup of
+ their private keys. And most people will be storing the back of their private keys with friends,
+ or hopefully, or they might be storing it in a bank vault, but in which case, you're still storing
+ your money in a regulated third party bank, in that case, in which case, why use the hardware
+ wallet if you're going to store your backup in a third party regulated institution. So,
+ you know, all of these things, you don't expect those to be regulated. And it's the same thing
+ here. It's effectively, FeddyMint is the same as you storing the keys for as a backup for your
+ friends, but just on steroids. And we're taking the best practice way of doing that, i.e., you
+ should be storing them as cryptographically secure shares, and then splitting it up amongst a number
+ of trusted friends. That's what you get automatically when you join a FeddyMint
+ Federation. Let's take a quick break and hear from today's sponsors.
+ Ad: Estas disfrutando de mi podcast. Thanks to Babbel, I know what that means, do you? Recently,
+ I've been learning to speak Spanish with Babbel, and you can too. Because with Babbel, you can
+ start speaking a new language in as little as three weeks. Why did I choose Babbel, you might
+ ask? Because it works. Instead of paying hundreds of dollars for a private tutor or fooling yourself
+ with language apps that are practically games, Babbel's quick 10-minute lessons are designed by
+ over 150 language experts. Babbel is designed by real people, and it's the best way to learn a new
+ language for real conversations. That could be to chat with locals using that language, ordering
+ food, asking for directions, or countless other situations. You seriously won't believe how good
+ Babbel is at teaching languages, and it's no surprise as they have sold over 10 million
+ subscriptions. Even studies from Yale, Michigan State University, and others continue to prove
+ that Babbel is better. For instance, one study found that using Babbel for 15 hours is equivalent
+ to a full semester at college. Here's a special, limited-time deal for our listeners to get you
+ started right now. Get 55% off your Babbel subscription, but only for our listeners at
+ babbel.com/wsb. Get 55% off at babbel.com/wsb, spelled B-A-B-B-E-L.com/wsb.
+ Rules and restrictions may apply. When it comes to your next vehicle,
+ choosing wisely means choosing Toyota. Toyotas are known for their reliability and longevity,
+ which is why they have excellent resale value year after year, making them a really smart investment.
+ And now Toyotas have more advanced technology than ever before, maximizing that investment
+ with a comfortable and connected drive. Like the adventurous RAV4 with available wireless
+ charging and panoramic view monitor for a 360-degree view around your vehicle. Or a spacious
+ Highlander, available in hybrid models for a smooth and efficient drive with plenty of space.
+ Or check out a Venza, combining luxury and practicality with a comfortable interior and
+ ultra-smooth handling. So when you're considering an SUV, think Toyota and make the smart choice.
+ Visit buyatoyota.com to find out more. That's buyatoyota.com. Toyota, let's go places.
+ We Study Markets is your companion in navigating the complex world of financial markets.
+ Every day, our expert newsletter team outlines the three biggest market stories for you to know,
+ keeping you informed about the bigger picture, financially speaking.
+ And it takes just five minutes to read each day. Visit theinvestorspodcast.com to sign up for the
+ free and easy to read email on all things markets. That's theinvestorspodcast.com to sign up today.
+ Stig Brodersen (00:15:15): All right. Back to the show.
+ Talk to us through, explain an example. Let's say that you, me, and four other friends,
+ so there's six of us. Is that kind of a federation size that you see this
+ playing out in application? And then walk us through what that application would look like.
+ Roy Bhandari (00:15:37): So that's all a matter of experimentation.
+ And it's also very flexible. It's a technology, it's a protocol, and we're going to see a lot of
+ experimentation. If I talk to 30 people, I get 30 different topologies of how it could be set up,
+ which is great because that tells you that this is a really flexible tool. But let's just take
+ one example. Before I do that, go back to the last point. When I realized that was the case,
+ that it was possible to be exempt from regulation, but the experience, then I realized that this was
+ far more than just a privacy technology. This was a decentralized custody offering.
+ You could have the user experience of an exchange, but better. You can have privacy levels,
+ which are better than both an exchange and a hardware wallet. You could have access to the
+ Lightning Network as in natively, and you could also have a level of custody security, which was
+ very strong, approaching that of a hardware wallet, but it was still a software solution,
+ which can be delivered anywhere in the world for free. This was decentralized,
+ censorship-resistant custody. And so that's why I became really excited and I wanted to do
+ everything to support it off that point. But let's go back to your question about a given
+ example. Let's say you and some other friends of yours are Bitcoiners through and through,
+ and you run your own four nodes. And you're always going to get friends and family who want you to
+ become like their Uncle Jim to support them. I think that's the phrase. To support them and help
+ them provide them advice, maybe help buy Bitcoin on behalf, maybe hold some for them, et cetera.
+ But you're then taking a lot of risk on it. And if something were to happen to you, you lose your
+ own Bitcoin, but now it's something that's yours and their Bitcoin, which is extra stress.
+ You could then say, and also your Bitcoin, you want to work out, how am I going to
+ hold my 24-word backup seed securely? And again, if you go to sites like 10x Bitcoin Security,
+ Glacier Protocol, all these things, the recommendation will be multi-signature custody.
+ And then where do you store those different multi-signature keys? With trusted friends
+ and family. So what you'll do is you take your Bitcoin nodes, you install the FedEmint
+ software as well. It needs a full Bitcoin node running, but the FedEmint services only adds a
+ very little additional overhead to that. And then with a little bit of configuration,
+ just like you have to configure your Lightning node or Bitcoin node, a little bit of configuration,
+ mainly just putting the IP addresses of the other Federation members, the system will
+ form a Federation. They will connect to each other. They will form a multi-sig wallet.
+ And that's it. And then just like Bitcoin, and to a lesser extent Lightning, but just very much
+ like Bitcoin, once you do that, you can just... The idea is you just keep it running. Other than
+ the odd bit of maintenance, running out of hard drive space or something like that,
+ you just have to keep it fed and watered with electricity and internet. And that's it.
+ Preston Pysh (00:40:40):
+ So let's say the six participants in this network, let's just say we have six and each one of us has
+ Bitcoin on an exchange, all six of us. And now we're going to deposit it into our own local
+ addresses inside of that Federated network that we just established. So we all have our own private
+ keys or walk us through what something like that would look like.
+ Adwoa Boateng (00:41:00): So it's a multi-signature address. So each
+ person has their own private key, but then they use their private keys to form a multi-signature
+ address, which requires a subset of the keys to sign a transaction.
+ Preston Pysh (00:41:13): So three of six, if we decided that, or four of six?
+ Adwoa Boateng (00:41:19): Let's say five people and it's three of five,
+ or if it was six, you'd probably want to go again. You could do whatever you want, but I'd
+ probably suggest you to go for four of six. So you need an absolute majority of the transaction.
+ But let's just say you wanted to go with six and you choose to have a four of six multi-signature.
+ So each person will take their own private key that they manage themselves, but then they would
+ put in the IP addresses of the other Federation members. It will create a multi-signature address,
+ which requires four of those six keys to sign. And if you lose any two of those six keys,
+ you can still keep ticking along and still keep signing. So it provides a bus factor of three.
+ So it needs at least three people before it stops being signed. And you have a, and you need at
+ least a majority of four people to sign as well. So no one person, and in that case, no two people
+ can cause the system to stop. And also it will keep going and also vice versa.
+ So that forms this multi-signature address. Now, at that point, to send money to anyone of you,
+ you would send it to the same multi-signature address. But when a deposit comes in, there'll
+ be additional information that we passed along that will allow you to know which address that's
+ related to. So for example, if it was on chain, you'd create an address and the Federation,
+ the FeddyMint Federation will know that this address, just like when you use an exchange,
+ an address is created and it's associated with a user, that address will temporarily be associated
+ with a user as well. And so when the deposit comes in, Federation knows that that's allocated
+ to a given user. Now, here's the thing. Unlike an exchange where you have this concept of accounts
+ and user count one, two, three, four, there are no accounts, there's no permanent accounts in a
+ FeddyMint Federation. A temporary account is set up just to receive the money, but it's not actually
+ attached to a person. Instead, what's implemented internally, as well as this multi-signature
+ wallet, is a Chowmian Mint. So a Chowmian Mint is a privacy, or Chowmian eCash is a privacy protocol
+ that was invented by David Chowm in actually 1983. And it was used in his company DigiCash,
+ which was one of the first sort of e-money systems. Now, this protocol is actually very elegant,
+ relatively simple. It's obviously using very mature maths because it's
+ It was invented in 1983, so we're talking about 40 years old now, four decades old.
+ And in theory, it provides for cryptographically perfect privacy.
+ Not near perfect, not Monero near perfect or Zcash, trusted startup perfect, cryptographically
+ perfect privacy.
+ And it's been around for a long time as well, using very mature cryptography.
+ The only problem was that it required a centralized bank to receive your cash, whatever that cash
+ would be.
+ This is unreal.
+ And then on the back of that, when they received money in, you'd receive in its place these
+ digital tokens, which would effectively be e-cash, what they call e-cash.
+ So you can think of it conceptually like you're going to a fairground with lots of different
+ rights, lots of different things you can do, and you go there with your family and your
+ children, etc.
+ You go to the front and there's no money for the rights.
+ You have to buy tokens for everything.
+ So you get to the entrance and there will be a cashier or a teller.
+ You give them some cash and then they would give you tokens.
+ Once you receive those tokens, let's say the mother buys these tokens, she can give some
+ to her husband, some to her children, and they can go off.
+ They can go around, see a friend, pass them to a friend within the confines of this fairground.
+ These are bearer instruments, tokens.
+ And it's the same with e-cash.
+ Each day you have literally a different token for every single individual coin.
+ So in the same way, if you want to give someone five pounds fifty, you have to give them five
+ pound notes.
+ I'm just saying pounds because of my British background.
+ But five dollars, fifty cents, for example, or fifty two cents.
+ You give them a five dollar note and then you will or let's say six dollars.
+ You give them a five dollar note, a one dollar note, and then you give them a fifty cents
+ coin and two cents coin.
+ In the same way, it will be the same with e-cash.
+ You have to do the same.
+ You have to create, you'll add them to tokens together to add to the number.
+ So it acts exactly like conceptually how you think cash works.
+ When people talk about Bitcoin, how they naively think it works, that's exactly what they find
+ out later it doesn't work that way.
+ Cash works the way you naively and intuitively think digital cash should work within the
+ confines of the domain of the Federation.
+ So one Federation member can send the e-cash tokens directly to another as well.
+ But where the cryptography comes in is it provides this ability for these tokens to
+ be signed but in a blinded manner.
+ So basically a user can receive the tokens, blind them locally, send them to the mint.
+ The mint will then stamp them to say this is valid and then return it back.
+ And then the user can unblind them and now they can spend them.
+ But the mint never knew who requested it for it to be blinded.
+ So to stretch the metaphor of the fairgrounds, you can imagine it's the same fairground but
+ it's still this big glass window.
+ You replace it, you brick it up and all of the people in the front can see is this hole
+ where money comes in and they give back tokens or tokens come in and give back money.
+ If you add that addition, that's the blinding, then you effectively do not know how many
+ people are in the fairgrounds, who's got what and also most of the transactions don't even
+ need to interact with you for long periods of time, only if they want to blind them and
+ to prevent double spending.
+ But again, you won't know who it is.
+ So with this deposit coming in for one of your users, you would have some sort of shared
+ secret which the person who's receiving the money would have known and they will therefore
+ add that shared secret to this address.
+ And then when the money comes in, once it arrives, they can then provide you some information
+ to prove that they're the ones who are the right recipients for that money that came
+ in and therefore you release it to them and you issue tokens to them.
+ But that way you can issue tokens to someone based off a deposit coming in without knowing
+ who you're issuing tokens for.
+ So the Charlie Mint system allows you to hold money on behalf of someone without knowing
+ who you're holding it for, allows you to receive deposits for someone and pass it on to them
+ without knowing who it is that you're passing it on for.
+ And also the opposite can happen.
+ Someone can send back tokens to you, which you then destroy because you mint the tokens
+ and you destroy them.
+ And you can then send off Bitcoin on-chain or over the Lightning Network without knowing
+ who made that request.
+ So it provides very simple request cryptography and perfect privacy.
+ What was the additional innovation?
+ And someone actually theorized this in 2002, actually, someone recently showed a paper
+ that someone thought, Charlie Mint, lots of people have looked at them again and again.
+ Someone thought that Charlie Mint would be great, but maybe as a way for us to decentralize
+ the bank.
+ But they didn't think about how to do it, but it was proposed.
+ And then a year and a half, two years ago, Eric Sirian looked at the idea of that was
+ popularized by Blockstream of federations with Liquid, where you're taking this one
+ address and you're federating amongst multiple people and thought, well, instead of having
+ this sort of global scale federation, why don't we apply this technology to Charlie
+ and Mint and we federate the bank so that it's not just one person, but a number of
+ people work together to provide the service of this Charlie and Mint.
+ And that was where the idea of removing one of its main weaknesses, which was the fact
+ that it was one centralized actor, and it's been solved that by federating a centralized
+ actor and federated Charlie and Mint were born.
+ And then where I came in, I realized how you could have a use case where it could be exempt
+ from regulation, which would...
+ And if you look at a modern exchange, 80 to 85% of people working there one way or another
+ are only there because of regulation.
+ So if you are exempt from regulation, it just simplifies everything and it makes it global
+ scale.
+ Do other people know the size of the transactions?
+ So if there was a substantial transaction inside the federation, would the other participants
+ know the size of that?
+ No, the other participants wouldn't know the size.
+ And the federation guardians, the people who are running the federation servers, will be
+ very limited in what information they would have about the size.
+ They will be aware of the type of coins used.
+ So they might know that you use a combination of $5 coins, or let's just put it in sats,
+ you use some 0.1 Bitcoin coins, some number of 0.01 coins, and some number of 0.001 coins.
+ But you won't know.
+ That's to the extent that they would have awareness, but they wouldn't know how much
+ of each.
+ You could have used a million of one or one of one.
+ They won't.
+ If we wanted to and you only had one denomination of coins, then you wouldn't even know that.
+ But that's where there's the theoretical perfect privacy.
+ You would only get perfect if you had one denomination only, because then they would
+ just know some number of coins was used.
+ But you lose some information because you do know the denominations, but that's still
+ incredible levels of privacy.
+ So let's say that somebody, a member of the federation, wants to send some of their coins
+ onto an exchange, call it CoinFloor, and they're doing it.
+ Let's play two different scenarios, because my understanding, or at least my perception
+ of how this works is you can do this with Lightning Bitcoin, layer two, or you can do
+ it with layer one Bitcoin setting up these federations.
+ So let's say that they take funds, they deposit it over at an exchange through both of those
+ scenarios.
+ Let's say they do it on layer one and then they do it on layer two.
+ Is the exchange receiving those coins the same way that they are before any of this
+ protocol would potentially ever be set up?
+ Yeah, from the layer point of view, it appears like a normal Lightning transaction, a normal
+ Bitcoin transaction.
+ But in a Bitcoin transaction, ultimately, the e-cash is only within the domain of the
+ federation.
+ But outside the federation, the federation will destroy the tokens that are being spent
+ and then release to the address that it's been instructed to send to an on-chain transaction,
+ for example.
+ If you're sending a Lightning transaction, what will happen is a Lightning service provider
+ would also have a connection, be connected to the mint.
+ And you as the user can connect up to your own Lightning service provider.
+ You don't have to actually interact with the guardians to do this.
+ But what would happen is you would send your e-cash tokens to the Lightning service provider
+ and they then, in a trustless way, would effectively, because it effectively emulates the logic
+ of a hashed time lock contract, but where one part is e-cash as opposed to one part
+ being on-chain or on-network.
+ And then they would, with their own Bitcoin within their own channels, send off Bitcoin
+ over the Lightning network to the address sent.
+ But from the recipient's point of view, they receive a Lightning transaction.
+ And so what would happen is their channel balance would go down, but their e-cash balance
+ of the LSP would go up.
+ The beauty of that approach is that means the LSP needs to have some trust for the guardians.
+ So they will probably know the guardians as well or be comfortable with them, be part
+ of the community as well.
+ But the Federation members don't have to have any trust for the Lightning service provider.
+ So in one way.
+ And they don't have to also lock up any balance.
+ The Federation doesn't need to lock up any balance on-chain or on-network as well.
+ And because it's not locking up balance, there's nothing to stop a Federation having connections
+ to multiple different LSPs.
+ So if one's balance channels were exhausted, for example, you could load balance over to
+ another LSP, for example, immediately and provide a much more reliable payment experience
+ for your users because you're not locking up funds.
+ But it's also great for the LSPs because having after a four and a half hour conversation
+ with René Picard about this, FediMint represents an ideal counterparty for an LSP.
+ If you imagine you have two choices, connecting to 500 intermittent Lightning nodes with small
+ amounts of balance and locking up balance amongst all of them to cover potential scenarios
+ for all of them.
+ So you have to over collateralize for these 500s.
+ And they're also up and down irregularly so that you're constantly, your network graph
+ of how to route traffic is constantly changing and having to be recalculated, which is very
+ expensive for you and leads to a much lower reliability of your transactions.
+ Or you connect to one party who represents the volume of 500 people.
+ And it also is run by a Federation of members who are running it reliably.
+ And as long as a majority of them are running, it stays up.
+ So its reliability and uptime is much higher.
+ And it also represents much more volume.
+ It's only one connection.
+ So you now need to just put a lock up an amount of balance, which is based on the average
+ for all of them, as opposed to trying to figure out for every individual user who may never
+ use it for a month and then use it once, you have to lock up.
+ You get much more consistent revenue for much lower costs, allowing you to become much more
+ profitable from it.
+ So it's actually, and if it's much more profitable, you incentivize more people setting up like
+ this.
+ And without realizing this, FeddyMint, widespread use of FeddyMint actually makes the Lightning
+ Network more reliable, more profitable, which again, grows the Lightning Network as well.
+ So when I realized that, that was the final straw.
+ All the incentives were aligned.
+ Yeah.
+ All the incentives were aligned.
+ Yeah, it had to happen.
+ Exactly.
+ Unreal.
+ Unreal.
+ The more you hear about it, the more you realize that this is the missing piece of
+ the Bitcoin open source ecosystem.
+ It provides at rest, very good privacy, incredible privacy.
+ It actually, in a community context, we haven't even gone into the beauty of how you do social
+ recovery so that you don't have to worry about the challenge of what you do with a 24-hour
+ seed, or how do you recover it?
+ And ultimately, even how do you deal with it in the event of your death and inheritance
+ planning and so on, all covered.
+ And it solves that problem, which is an important problem to solve, especially as time goes
+ by.
+ Because right now, if you're doing it in a first party custody context, it's very complex.
+ If you think about it, again, if you can do the first party custody approach, you should
+ have at it, you should do it.
+ But if you want to do it properly, it's complex.
+ You need to get a good hardware wallet, you need to be able to get it to be delivered
+ to you, that costs money as well.
+ So you've got that.
+ You then need to work out what you do, which is the hard bit, what you do with your 24-hour
+ seed.
+ Because there's no point having this Fort Knox level security with AI, artificial intelligence,
+ robo-controlled shots in a moat in front of it.
+ Then you go around the back where your 24-hour seed is and there's an open door because it's
+ stored with a magnet on your fridge, your 24-hour seed.
+ It sort of defeats the purpose.
+ I met someone the other day who's a hardcore Bitcoiner, and this is not recommended, but
+ he memorized his 24-hour seed because he just couldn't think of somewhere else he could
+ be comfortable storing it.
+ And I go, "What happens in the case of your debt and your family?"
+ He said, "Well, my loved ones have a copy of the key."
+ And I go, "Where do they store it?"
+ "I don't know where they store it."
+ "Well, but that's your security level."
+ Yeah, that's right.
+ And it's the thing, you have to remember that is a security level.
+ And the more you think about it, then what you do is you go online, you check out 10X
+ Bitcoin security, Bitcoin security guide, and so on.
+ And they will tell you, the ideal thing you want to do when all is said and done is for
+ most people, unless you're willing to go to the grave with your keys and contribute your
+ Bitcoin to the world for inflation, which is something we're willing to do, and I respect
+ that.
+ But if you do want to pass it on to anybody, then you're going to want to make sure it's
+ reliably custody.
+ Or if you do want to recover it in the event that you lose your credit card, and so on.
+ And the best practice way is to use multi-signature M of N type custody.
+ And then where do you store each one of those?
+ You store them with third party, with second party's friends, family, trusted friends,
+ family, reliable people that you've known and they hold it for you.
+ And that's not by way of business, they're not making profits, they are friends and family,
+ but they are still custody in a decentralized manner, your Bitcoin.
+ And then you want them to be people that you think can be reliably custodying your Bitcoin.
+ That should be the best practice.
+ That's exactly what you get out of the box when you use FedErent.
+ You get the best practice by doing nothing but just downloading a mobile app and a federation
+ will have an address.
+ You enter the address or scan the QR code and you're done.
+ No passports, no driving license, no selfies, but also no figuring out what you do with
+ a 24-hour seat.
+ It gets immediately cryptographically split into shards using Shamir's secret sharing
+ scheme, which is cryptographically split up.
+ And then it gets split and then it gets shared amongst third guardians, who are by definition
+ your trusted third parties.
+ They're trusted in your community to be the knights of the community, the sort of reliable
+ people who ideally value social capital more than they value financial capital.
+ And anybody can custody it, but I have to decide the choice of who's going to hold my
+ money, somebody who's motivated by money, somebody who's motivated by social capital.
+ I know which one I would choose out of those two to hold my money.
+ So that's the idea.
+ Preston Pysh (00:36:40): So Obi, my understanding is you're currently
+ working on an application that simplifies setting up a federation.
+ And I'm curious how far along you are in that process.
+ And more importantly, who is the audience or who is this intended for and what solution
+ are you providing through what you're building?
+ Obi Winfrey (00:37:02): FediMint and the product that we're making
+ is called FedEye based on FediMint, but it's just a nice simple name and it reminds me
+ of or reminds us of Jedi.
+ So these guardians are like Jedi knights almost.
+ Preston Pysh (00:37:16): And you got the perfect name for that.
+ Obi Winfrey (00:37:18): I got the perfect name for it, but I look
+ more like Mace Windu, who is Samuel L. Jackson's character, to be honest.
+ I'm probably more of a Mace Windu than Obi-Wan Kenobi.
+ Justin Moon, who's one of my co-founders with his mullet, is very much like the younger
+ Obi-Wan actually.
+ We were discussing this the other day.
+ So he's probably Obi-Wan Kenobi.
+ And so I don't know who El-Syrian would be.
+ Maybe he would be Yoda because he's the one who came up with the idea.
+ We haven't decided who El-Syrian is.
+ But yeah, so it's called FedEye and it's a very simple app.
+ But ultimately, this is global scale Bitcoin custody.
+ It's for everybody and anyone who wants to not custody on an exchange, but wants an incredibly
+ simple experience, very secure, lightning first, and also with privacy by default, which
+ is basically everybody I think would want something like that.
+ But what has made me really passionate in the last few months is to see how it can help
+ as part of everybody, the billions of users who are excluded from the currency options.
+ So if you are able to meet the cuts to be on a regulated exchange and you're comfortable
+ with the risks and trade-offs, which we've seen quite recently with some of the recent
+ things that even regulated exchanges still can make you lose your money.
+ Or if you have the technical chops and you are adding the money to properly self-custody,
+ that's great.
+ But if you haven't got those two, really you're still talking about billions of users who
+ don't meet those two criteria, either for reasons of complexity or for reasons of regulation,
+ they're excluded from custodying Bitcoin.
+ And these include some of the most oppressed people in the world.
+ A couple of months ago, I was invited by Alex Gladstein to the Oslo Freedom Forum, and I
+ got to hear some of the most heart-wrenching but also encouraging stories of bravery against
+ oppression around the world, generally in the global south, but also in Eastern Europe
+ with Ukraine and Russia, what's happening there.
+ And all of these people are coming to the realization that a big part of the challenge
+ is money.
+ These regimes are powered by money.
+ They often use inflation, aggressive levels of inflation as a tool to extract money from
+ their people, even if the people don't want to give them money.
+ Inflation is a very powerful tax.
+ And if you take examples like Venezuela with 20,000% inflation right now, come down from
+ 50,000% inflation.
+ Even if you're donating or sending money back to your friends and family in that country,
+ what you're effectively doing is donating to the regime, which you may not support,
+ but without realizing you're supporting.
+ So they need a solution, but they need a solution that can be deployed anywhere, and it doesn't
+ cost a lot of money, it's not going to be stopped in customs, it's hardware wallets,
+ and they can't wait years to be onboarded through a regulatory process, through regulated
+ exchanges, each one going through KYC, and ultimately many of them not even being approved.
+ FeddyMint solves that problem, but it needs a very simple user interface for that.
+ So having realized that, and having formed really strong relationships with some of these
+ incredible brave individuals, it's become a passion of ours to not only offer this to
+ the world, but with a specific focus on working with some of these people to roll this out
+ at scale in some of the places that need it the most.
+ And the good thing is, if it works there, it can work anywhere.
+ So it's for everybody, but that's actually a key part of why we decided to focus now
+ and build this interface and make it incredibly simple.
+ And we will be looking to roll out in these markets in Africa, in the Middle East, in
+ Eastern Europe, in Latin America over the coming months.
+ Preston Pysh (00:15:40): So Obi, are people able to go onto like an
+ Umbral?
+ If you're running a full node and you're using the Umbral software, are they able to download
+ Feddy on that?
+ Or is this specifically for a smartphone, like an iPhone or an Android device?
+ Walk us through the software.
+ Obi Winnie (00:16:05): Great question.
+ So remember, there's two things.
+ There's the people who are running the Federation of Guardians, or the Fedite Knights almost.
+ And there's the people who are using this app that we're creating, which we're calling
+ Fedite.
+ And that's a mobile app.
+ You download it from Google Store or Apple Store, and you have the app.
+ So if you take a Fedimint Federation and the users, let's say it's a village and there's
+ 500 users, and there's six people in the Federation, the six people in the Federation are the only
+ ones who need to download a Bitcoin full node and a Fedimint software.
+ We're looking to implement it on things like Noddle, on Raspi Blitz, on Umbral.
+ So it's easy to install if you can get the whole shebang and you get the set top or the
+ actual device, you can do that.
+ If you can't get one of those devices delivered to you because of import restrictions or whatever,
+ but you have the beauty of Bitcoin is it's highly decentralized.
+ It doesn't need a lot of hardware like others, other blockchains.
+ So you've got an old computer, 15-year-old computer, so on.
+ These exist everywhere in the world.
+ You just need to add a hard drive, which is a terabyte in size.
+ You get those for $40, $50 now, and that's enough to run a full node.
+ You can then download the Noddle software or the Umbral software and use that instead.
+ You also don't need...
+ The people running the Federation don't need to be in the same place as the people in...
+ They need to be the same place from a relationship point of view.
+ They need to have close contact.
+ They don't need to be physically in the same place.
+ So for example, members of the diaspora who are sending regularly large parts of their
+ paychecks back to their friends and family in the global South are ideal candidates for
+ running guardians because they are in the West.
+ They're already giving money to these people.
+ So if they're giving money to them, they're not likely going to want to steal the money
+ that they've just given to the people they're protecting.
+ They could, for example, buy a Noddle or buy an Umbral or set up a Raspberry Blitz and
+ create a Federation amongst themselves for all of their family back home.
+ And the family back home just needs to download a piece of software, scan a QR code, and they're
+ signed up.
+ Knowing that these people...
+ Unreal.
+ Knowing that these people...
+ Yeah.
+ Unreal.
+ Obi, I know you're active on Twitter.
+ So we'll have a link in the show notes to your Twitter profile.
+ If people have questions coming out of this interview, I'm sure you're going to get a
+ lot of questions.
+ Give us a handoff to websites.
+ I know there's the Fediment.org website.
+ Is there any other websites that you want to highlight or timelines for various things
+ that you guys are going to be rolling out?
+ Thank you very much for that.
+ So first of all, if you want to find out about the base protocol that this is this sort of
+ third pillar of the Bitcoin open source ecosystem, go to Fediment.org and that's F-E-D-I-M-I-N-T.org,
+ Fediment.org.
+ If you want to find out about the new mobile app that we're producing, we've got a site
+ and that's Fedi.XYZ.
+ So F-E-D-I-.XYZ.
+ It's as simple as that.
+ And then if you want to find out about my...
+ We have Fediment on Twitter.
+ If you want to follow Fediment on Twitter, there's a Telegram group called Fediment as
+ well, which is very active and that's really interesting conversations.
+ And then finally, if you want to hear my musings on Twitter, my occasional musings, you can
+ find me @Obi on Twitter.
+ So just Obi.
+ I was a very early Twitter user.
+ So that's my Twitter handle.
+ That's hard to get Obi.
+ That's really hard to get.
+ Yeah, it's a very...
+ It's a three letter Twitter handle.
+ Yeah, it's very hard to get.
+ And I bet you Disney would love to own that handle, by the way.
+ I get lots of offers, but I'm comfortable keeping Obi, the Obi one.
+ So in other words, anyone who's interested, buzz off.
+ Yeah, I think they've given up many years ago.
+ I'll tell you, what a pleasure.
+ What a pleasure talking with you, sir.
+ Thank you for your time.
+ I learned a ton.
+ I am so excited about what this means moving forward.
+ And I have no doubt that what you're building is going to be a game changer and something
+ revolutionary to add to this revolutionary technology and can't thank you enough for
+ coming on the show today, Obi.
+ Thank you very much.
+ It's been a pleasure talking to you.
+ I really enjoyed it.
+ I think you have...
+ Well, I personally think you have this incredible energy.
+ It's really enjoyable talking to you.
+ You would be the ideal person as a guardian.
+ I appreciate that.
+ I would be very comfortable being part of a guardian group that I would be using for
+ many reasons.
+ Likewise, sir.
+ Likewise.
+ All right.
+ Thank you very much.
+ Well, thank you for your time, Obi.
+ See you later.
+ If you guys enjoyed this conversation, be sure to follow the show on whatever podcast
+ application you use.
+ Just search for We Study Billionaires.
+ The Bitcoin-specific shows come out every Wednesday, and I'd love to have you as a regular
+ listener.
+ If you enjoyed the show or you learned something new or you found it valuable, if you can leave
+ a review, we would really appreciate that.
+ And it's something that helps others find the interview in the search algorithm.
+ So anything you can do to help out with a review, we would just greatly appreciate.
+ And with that, thanks for listening, and I'll catch you again next week.
+ Before we end this podcast, I want to tell you about a new position at The Investor's
+ Podcast Network.
+ We are looking for a new host for our show, Millennial Investing.
+ With over 10 million downloads and counting, Millennial Investing is one of the world's
+ top 1% podcast shows.
+ You will host a stock investing-focused podcast and manage our social media assets.
+ More importantly, you will join the rest of the TIP team on a journey to provide authentic
+ and actionable investing content for the TIP community.
+ Go to theinvestorspodcast.com/careers for more information about compensation, job description,
+ and how to apply.
+ That is theinvestorspodcast.com/careers.
+ Thank you for listening to TIP.
+ To access our show notes, courses, or forums, go to theinvestorspodcast.com.
+ This show is for entertainment purposes only.
+ Before making any decisions, consult a professional.
+ This show is copyrighted by The Investor's Podcast Network.
+ Production permissions must be granted before syndication or rebroadcasting.
+ [BLANK_AUDIO]

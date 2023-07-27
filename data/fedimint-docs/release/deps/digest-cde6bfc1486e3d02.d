@@ -1,0 +1,11 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/digest-cde6bfc1486e3d02.rmeta: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/digest.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/dyn_digest.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/errors.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/fixed.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/variable.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/xof.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/digest-cde6bfc1486e3d02.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/digest.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/dyn_digest.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/errors.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/fixed.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/variable.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/xof.rs
+
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/digest.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/dyn_digest.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/errors.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/fixed.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/variable.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/digest-0.9.0/src/xof.rs:

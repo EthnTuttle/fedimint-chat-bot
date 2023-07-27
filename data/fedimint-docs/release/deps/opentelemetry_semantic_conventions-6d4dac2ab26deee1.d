@@ -1,0 +1,7 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/opentelemetry_semantic_conventions-6d4dac2ab26deee1.rmeta: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/resource.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/trace.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/opentelemetry_semantic_conventions-6d4dac2ab26deee1.d: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/resource.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/trace.rs
+
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/resource.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/opentelemetry-semantic-conventions-0.10.0/src/trace.rs:

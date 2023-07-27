@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["Dummy","Dummy module"],["DummyGen","Generates the module"],["DummyVerificationCache","An in-memory cache we could use for faster validation"]]};

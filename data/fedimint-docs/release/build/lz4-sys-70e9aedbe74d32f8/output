@@ -1,0 +1,53 @@
+TARGET = Some("aarch64-apple-darwin")
+HOST = Some("aarch64-apple-darwin")
+cargo:rerun-if-env-changed=CC_aarch64-apple-darwin
+CC_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=CC_aarch64_apple_darwin
+CC_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_CC
+HOST_CC = None
+cargo:rerun-if-env-changed=CC
+CC = Some("clang")
+cargo:rerun-if-env-changed=CFLAGS_aarch64-apple-darwin
+CFLAGS_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=CFLAGS_aarch64_apple_darwin
+CFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_CFLAGS
+HOST_CFLAGS = None
+cargo:rerun-if-env-changed=CFLAGS
+CFLAGS = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("false")
+running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=arm64-apple-darwin" "-Wall" "-Wextra" "-o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4.o" "-c" "liblz4/lib/lz4.c"
+exit status: 0
+running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=arm64-apple-darwin" "-Wall" "-Wextra" "-o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4frame.o" "-c" "liblz4/lib/lz4frame.c"
+exit status: 0
+running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=arm64-apple-darwin" "-Wall" "-Wextra" "-o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4hc.o" "-c" "liblz4/lib/lz4hc.c"
+exit status: 0
+running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=arm64-apple-darwin" "-Wall" "-Wextra" "-o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/xxhash.o" "-c" "liblz4/lib/xxhash.c"
+exit status: 0
+cargo:rerun-if-env-changed=AR_aarch64-apple-darwin
+AR_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=AR_aarch64_apple_darwin
+AR_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_AR
+HOST_AR = None
+cargo:rerun-if-env-changed=AR
+AR = Some("ar")
+cargo:rerun-if-env-changed=ARFLAGS_aarch64-apple-darwin
+ARFLAGS_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=ARFLAGS_aarch64_apple_darwin
+ARFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_ARFLAGS
+HOST_ARFLAGS = None
+cargo:rerun-if-env-changed=ARFLAGS
+ARFLAGS = None
+running: "ar" "cq" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4.a" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4.o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4frame.o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/lz4hc.o" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4/lib/xxhash.o"
+exit status: 0
+running: "ar" "s" "/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/liblz4.a"
+exit status: 0
+cargo:rustc-link-lib=static=lz4
+cargo:rustc-link-search=native=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out
+cargo:root=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out
+cargo:include=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/lz4-sys-70e9aedbe74d32f8/out/include

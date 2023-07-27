@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["RealBitcoinTest","Fixture implementing bitcoin node under test by talking to a `bitcoind` - unlocked version (lock each call separately)"],["RealBitcoinTestLocked","Fixture implementing bitcoin node under test by talking to a `bitcoind` - locked version - locks the global lock during construction"]]};

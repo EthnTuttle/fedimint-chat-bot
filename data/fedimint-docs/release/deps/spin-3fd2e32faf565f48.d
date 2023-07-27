@@ -1,0 +1,12 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/spin-3fd2e32faf565f48.rmeta: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/barrier.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lazy.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex/spin.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/once.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/relax.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/rwlock.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/spin-3fd2e32faf565f48.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/barrier.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lazy.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex/spin.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/once.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/relax.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/rwlock.rs
+
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/barrier.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/lazy.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/mutex/spin.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/once.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/relax.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.9.8/src/rwlock.rs:

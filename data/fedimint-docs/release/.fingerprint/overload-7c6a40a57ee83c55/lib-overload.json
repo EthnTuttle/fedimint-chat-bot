@@ -1,0 +1,1 @@
+{"rustc":14761717600677434182,"features":"[]","target":14261349684178061067,"profile":9558588430697993077,"path":3931787617731079410,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/overload-7c6a40a57ee83c55/dep-lib-overload"}}],"rustflags":["--cfg","tokio_unstable"],"metadata":8578662877450395966,"config":2202906307356721367,"compile_kind":0}

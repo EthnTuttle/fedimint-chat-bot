@@ -1,0 +1,2 @@
+cargo:rerun-if-env-changed=LND_REPO_DIR
+cargo:rerun-if-changed=vendor/lightning.proto

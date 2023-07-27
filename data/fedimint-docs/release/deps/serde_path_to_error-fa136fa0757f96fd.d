@@ -1,0 +1,9 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/serde_path_to_error-fa136fa0757f96fd.rmeta: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/de.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/path.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/ser.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/wrap.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/serde_path_to_error-fa136fa0757f96fd.d: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/de.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/path.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/ser.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/wrap.rs
+
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/de.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/path.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/ser.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.11/src/wrap.rs:

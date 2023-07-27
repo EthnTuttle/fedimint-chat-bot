@@ -1,0 +1,13 @@
+prefix=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/libz-sys-cb2c7217cabe5a9f/out
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+sharedlibdir=@sharedlibdir@
+includedir=@includedir@
+
+Name: zlib
+Description: zlib compression library
+Version: @VERSION@
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

@@ -1,0 +1,4 @@
+cargo:rustc-env=PROTOC=/nix/store/vhjkyg87i9kgbjszm7pylpmsvsyql553-protobuf-3.21.8/bin/protoc
+cargo:rustc-env=PROTOC_INCLUDE=/nix/store/vhjkyg87i9kgbjszm7pylpmsvsyql553-protobuf-3.21.8/include
+cargo:rerun-if-env-changed=PROTOC
+cargo:rerun-if-env-changed=PROTOC_INCLUDE

@@ -1,0 +1,9 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/wasm_bindgen_test-9114d78c57616e17.rmeta: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/mod.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/browser.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/detect.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/node.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/wasm_bindgen_test-9114d78c57616e17.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/mod.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/browser.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/detect.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/node.rs
+
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/mod.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/browser.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/detect.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-test-0.3.34/src/rt/node.rs:

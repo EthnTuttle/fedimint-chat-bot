@@ -1,0 +1,569 @@
+ "FedE and FedAment will help put monetary power back into the hands of everyone, everywhere,"
+ said FedE Inc. co-founder and CEO Obi Nwosu in a statement.
+ This creates brighter futures for billions and especially for those struggling under
+ oppressive regimes, which ultimately makes the world a better place.
+ The best in Bitcoin made audible.
+ I am Guy Swan and this is Bitcoin Audible.
+ What is up guys?
+ Welcome back to the show.
+ This is Bitcoin Audible and I am Guy Swan, the guy who has read more about Bitcoin than
+ anybody else you know.
+ We've got a great read today.
+ This is, I've been reading a bunch about this.
+ I've watched like four or five videos.
+ I listened to a Marty Bent episode with Obi, Justin Moon, and someone else who was joining
+ them from off screen.
+ But this is all about FedE, FedE and FedAment.
+ FedAment is the protocol.
+ FedE is the company.
+ So they've just raised a good chunk of change and they actually have a pretty aggressive
+ timeline for having a wallet for this.
+ This is a really interesting model.
+ This is bringing Chomian e-cash, the idea of blind signatures and David Chom's e-cash
+ model to Bitcoin, building it on top of Bitcoin.
+ And ultimately what is really fascinating about this idea is that it is attempting to
+ fix the custody model rather than going from the direction of how do we get everybody to
+ you know absolutely hold their own keys and run their own node and you know all this stuff
+ which I'll talk about in the guys take.
+ Which you know ultimately if we hold that to everyone's standard we end up in a situation
+ where 90% of people are just on custodians.
+ And that is the problem we have today.
+ The question is how do we fix the custodian?
+ How do we make it so the custodian isn't centralized?
+ How do we make it so that we have privacy from the custodian?
+ How can we allow, create a setup that allows us to be a bank, to run our own infrastructure
+ and to have our own payment network and to integrate with Lightning and Bitcoin.
+ And that is why I think this has really interesting promise because that's the framing by which
+ this truly is an innovation.
+ And I'm very very interested.
+ I want to see what this does.
+ So with that let's go ahead and thank our sponsors and we will jump into today's article
+ from Bitcoin Magazine.
+ So a quick thank you to our amazing sponsors.
+ We have SwanBitcoin, the onboarding experience to Bitcoin.
+ All the knowledge that you could possibly get the best team.
+ The simplest way to set up a Bitcoin savings plan.
+ SwanBitcoin.com/guy.
+ And then if you're stuck having to use fiat I still have to use fiat.
+ I do it with Fold.
+ I do it with a debit card that gets me sats back on everything.
+ I get sats every single time I spend Bitcoin and I'll tell you, I mean excuse me, every
+ single time I spend dollars and I'll tell you it makes me feel really good.
+ And then lastly CoinKite and the Cold Card Hardware Wallet.
+ These guys are the Bitcoin only hardware company.
+ They have been around for a long time and they have an awesome device and actually tons
+ of great stuff on the store.
+ Get yourself a BlockClock mini.
+ I haven't done it yet but I got the discount code soon.
+ So stay tuned.
+ Links to all these in the show notes.
+ Check them out.
+ With that let's get into today's read.
+ And it's titled "Scaling Bitcoin Custody with Fetiment"
+ Written by Namcios.
+ Fetty raised $4 million to accelerate the development of the Fetiment protocol and its
+ companion app Fetty, tools that can improve and scale Bitcoin custody.
+ Fetty Inc. on Tuesday announced that it had raised $4.2 million in a seed round as the
+ company seeks to onboard more users into Bitcoin with the Fetty app, per a statement sent to
+ Bitcoin Magazine.
+ The application, which the company expects to begin rolling out in Q1 2023, will provide
+ a user interface for Fetiment, an open-source protocol that leverages federated Chalmion
+ eCash mints to decentralize Bitcoin custody and enhance the scaling capabilities of the
+ currency.
+ "Fetty and Fetiment will help put monetary power back into the hands of everyone, everywhere,"
+ said Fetty Inc. co-founder and CEO Obi Nwosu in a statement.
+ This creates brighter futures for billions and especially for those struggling under
+ oppressive regimes, which ultimately makes the world a better place.
+ How Fetiment Works Fetiment is based on the concept of second-party
+ custody, which improves upon third-party custody solutions and even some self-custody, first-party
+ custody setups.
+ Second-party custody involves trusting family members or friends with the custody of one's
+ Bitcoin in a way that improves the trust and security models inherent in the classic centralized
+ third-party custody solutions, which are often composed of strangers whose incentives don't
+ necessarily align with those of the user.
+ It isn't uncommon for third-party custodians to fall short in properly securing the Bitcoin
+ of a given set of users.
+ Not only is this a risk because that third-party represents a single point of failure, but
+ the success of this setup is greatly dependent on the incentives that the custodian has in
+ securing the user's funds.
+ For a stranger, the incentives more closely align with the necessity to either make profits
+ from the custody service, blatantly steal, or re-hypothecate the funds than to methodically
+ ensure best practices for the safety of those Bitcoin.
+ Second-party custody seeks to improve upon this model by having users rely on parties
+ they already trust in real life, for example close friends or family members, to secure
+ their funds instead of completely outsourcing this task to an institutional stranger.
+ With Fediment, users can create a community whose technical leaders will be those tech-savvy
+ and trusted enough to ensure a proper functioning of the system.
+ Though the concept of trust is alien to most Bitcoin proponents, the reality is some might
+ incorporate an aspect of trust in their self-custody setup today without realizing it.
+ When users self-custody Bitcoin, they have to make decisions relating to the backup of
+ those funds.
+ Whereas they can remain in possession of their hardware wallets or signing devices at all
+ times, the 12 or 24 words arguably need to be stored away so as to mitigate the risk
+ of loss or theft.
+ In doing so, users need to opt between storing them in a safe at home, in a friend's safe,
+ or in a bank.
+ The latter is susceptible to seizure by the government as banks need to abide by eventual
+ subpoenas, whereas the former is susceptible to $5 rent attacks.
+ Leaving the backup words with a friend can be smart if the friend is highly trustworthy,
+ fights against seizure, and not as publicly known to mitigate against indirect $5 rent
+ attacks.
+ However, it is still a single point of failure.
+ Ideally, therefore, the backup codes for a self-custody setup would be split using a
+ cryptographically secure model such as Shamir's secret sharing and each part given a trusted
+ second party.
+ The issue with this, besides the technical complexity of devising such a scheme, is again,
+ trust.
+ The user needs to trust not only each second party, but collectively that they don't
+ collude against the user and steal their Bitcoin.
+ Therefore, even the most sophisticated of the self-custody setups might include some
+ level of trust.
+ FedAment brings that trust assumption, second party trust, into a model that is less technically
+ complex than self-custody and more scalable and private.
+ Here's how it works.
+ Chameon E-cash As mentioned above, FedAment is based on
+ federated Chameon E-cash.
+ Chameon E-cash is the digital cash invented by Dr. David Chalm, an early cryptographer
+ who in the 1980s sought to mitigate against the privacy issues inherent in the digitization
+ of money.
+ A trend the researcher foresaw as digital means of communication began to emerge in
+ his time.
+ Chalm was concerned with the impending privacy risks of a digitized money, where banks would
+ be able to trace people's spending, and physical cash's peer-to-peer nature would
+ be lost.
+ The issuance and redemption of Chalm's digital cash was still centralized, though its transacting
+ was peer-to-peer.
+ The researcher didn't attempt to break free from government money per se, rather he sought
+ a means to conduct in-person cash trades online.
+ Chalm's money leveraged cryptography to allow a user to deposit money into a bank
+ and receive an IOU banknote that could be traded further among other people.
+ That banknote promised its holder X amount of money to be redeemed by the bank at any
+ given time, a concept popularized by the banknotes of the time of the gold standard.
+ Given the not-so-great divisibility and transportability of gold, gold IOU banknotes allowed for an
+ easier transfer and carrying of "gold."
+ Likewise, a holder of Chalmian e-cash would be able to redeem it for money at the bank
+ that issued it.
+ Chalm's model, of course, relied on the reputation of the bank.
+ Customers transacting with that bank's IOU note would need to trust the bank's ability
+ to honor the contract stipulated by that note.
+ Otherwise, customers would see no value in them and hence would forego transacting in
+ those notes completely.
+ On the privacy side of things, Chalm's e-cash leveraged blind signatures, a cryptographic
+ trick that prevents the bank from knowing who owned the banknote.
+ Without it, it would be trivial to link a user's identity with a given note.
+ The example given by Chalm himself to illustrate this concept relied on carbon copy paper envelopes.
+ The user can obtain a blind signature, a signature on something which the signer doesn't know
+ the content of, by putting the data they want signed inside the envelope made of carbon
+ copy paper and sealing it.
+ The signer could sign the envelope itself and due to the carbon copy paper, the signature
+ would "leak" to the data and sign it as well.
+ With Chalm's blind signature protocol, the depositor would send a blinded piece of data
+ to the bank.
+ After receiving the data blindly signed, the depositor would be able to unblind it, which
+ would allow them to transfer it by giving it to another person.
+ After a given amount of trades, that note could at any time be redeemed back at the
+ bank for its corresponding amount of money.
+ At the time of redemption, the bank would be able to check whether it had previously
+ signed that piece of data and whether it had been already redeemed or not, checking for
+ validity and shielding against a double spend.
+ A federation improves upon the centralization of Chalmian eCash.
+ It is what allows the decentralization of custody and hence also improves upon the more
+ popular third-party custody solutions in the Bitcoin ecosystem.
+ A federation is a technical setup formed among multiple parties with a multi-signature Bitcoin
+ address.
+ A multi-signature, multi-sig for short, enables funds to be locked up in a Bitcoin address
+ that requires a minimum amount of those parties to agree before moving any funds.
+ In practice, this works by requiring multiple signatures, hence the name, so the funds can
+ be unlocked and moved.
+ Common multi-sig setups include 2 of 3 and 3 of 5.
+ In the former, 3 signatures comprise the setup in total and 2 are needed to move the Bitcoin,
+ whereas in the latter, 3 signatures out of the total of 5 are needed before the BTC can
+ be spent.
+ The multi-signature ensures that one custodian doesn't go rogue and spends the Bitcoin
+ it is custodying on behalf of the user.
+ The user still needs to trust the custodians collectively, but the resilience of the system
+ is increased as multiple people the user supposedly trusts in real life would need to collude
+ against the user to steal their funds.
+ This is why the usage of known and trusted parties to make up the federation is a must.
+ Moreover, the multi-sig also ensures that the IOUs issued by the federation are also
+ a multi-sig, requiring the same quorum for the movement of funds and meaning that one
+ guardian can't create IOUs by themselves.
+ The answer to scaling private Bitcoin custody
+ Putting it all together, Fedament leverages a decentralized trust system to enable Bitcoin
+ users to form communities with friends and family, within which money transactions are
+ cheap, quick, and anonymous, and custody is simplified and strengthened.
+ Users can join a Fedament community by depositing Bitcoin to the federation and receiving the
+ corresponding amount of IOU tokens, which can be transferred anonymously to members
+ of that community.
+ The receiving party then exchanges the received tokens for new ones, a process that is similar
+ to Chon's blind signature scheme enables the federation to check that the sender did
+ not double spend those tokens.
+ After a successful exchange for new tokens, the receiver marks the transaction as complete.
+ The Lightning Network, Bitcoin's second-layer protocol for fast and cheap payments, can
+ enter the Fedament mix to further strengthen the setup.
+ More specifically, Lightning allows users in a federation to be interoperable with the
+ entire Bitcoin ecosystem.
+ In a nutshell, Fedament wallets have the potential to bring strong privacy to Bitcoin users with
+ better security than third-party custody setups and more ease of use than fully-fledged self-custody
+ solutions.
+ It might be the tool that answers the challenge of scaling self-custody while encouraging
+ more people to forego outsourcing the custody of their Bitcoin to a centralized custodian
+ who is effectively a single point of failure.
+ One of the many possible solutions for a feasible hyper-Bitcoinized world.
+ Alright, that wraps up our piece on Fedament.
+ Let's take a break really quick and hit our sponsor and then we will jump back in.
+ Fold card sats back on freakin' everything.
+ Guys, I know you've heard this probably a hundred times.
+ times but if you are doing fiat with a normal boring ass bank account and
+ getting credit card points whatever the hell that is or airline miles or
+ actually you don't nobody gets rewards on debit cards so with your with your
+ debit card on hey buddy hey buddy debit card on your bank you're not getting
+ you're not getting anything back for that it's a debit card but you can
+ with fold I do all of my normal person I went out went out today to get some
+ coffee I got 2% back I got 2% back on coffee in sats and with with the price
+ the way it is I have been stacking like mad so just literally feels like just
+ like a week or two ago I was at 9 million I'm on my way to 10 million
+ sats already and if you have the fold card you can even get your own personal
+ node from like start 9 or crypto cloaks you get your you know deck your node out
+ with a 3d printed case and they have like 7% back in sats you can get 5% back
+ on Amazon if you have the premium card guys for everything that you still have
+ to do in your fiat life with shitty fiat get sats back with it and you get 20%
+ off with code Bitcoin audible 20% off the price of the premium card you get
+ it you get daily sat spins you get the little metaverse game thing which is
+ just a fun way to give you free sats and free spins and you'll go through your
+ day with that warm fuzzy feeling knowing that even having to spend fiat and not
+ being able to buy Bitcoin with it when you have to spend fiat on your life and
+ you have to like consume stuff for no good reason just because you have to eat
+ and stay alive yeah I know it sucks but you're getting sats you're getting sats
+ for every bit of it go to guyswan.com/fold and use code Bitcoin audible
+ all one word for 20% off let's get back into the show
+ all right so a fed a mint this this is a really really interesting technology
+ there's something you know e cash and blind signatures were kind of the they
+ were they were such a major part of the entire cypherpunk ethos of the entire
+ cypherpunk movement because they were kind of the key before it was realized
+ that the centralized nature of the protocol or of the money itself was
+ going to be critical to actually achieving any degree of privacy to
+ achieving any of the secondary goals well excuse me really the cypherpunk
+ primary goal was privacy and autonomy but that you can't do that being a
+ derivative of a centralized system if somebody else controls the money
+ somebody else ultimately controls the server that you have to redeem from or
+ the gold the actual gold ounces that you have to redeem your paper for then it
+ doesn't matter what properties your paper has and I think that's that was
+ kind of the fundamental realization because charms model David charms blind
+ signatures and the e cash model was actually brilliant the problem was is
+ that you had to have banks implement it but it was a way to exchange bank
+ deposits between people without using the bank as the payment processor so
+ that is the interesting takeaway is that your the bank is able to sign off on a
+ transaction without knowing anything about the transaction so that rather
+ than requiring them to vet everything the the quote-unquote the e cash itself
+ is its own vetting and they simply sign to to recognize its transfer without
+ knowing who or from who or to who the transfer is occurring so that you can so
+ that the redemption is private the movement of the funds are private I mean
+ it's it is literally e cash that is the best way to think of it it's the same
+ thing that cash is cash you eventually go back to a bank like think about in
+ the context of like gold back to dollars you can transfer the cash you can do it
+ privately it is it is yours it's a quote-unquote bearer instrument and then
+ you go to the bank you go to the institution to redeem that cash for the
+ the underlying monetary good and that was the e cash idea and it was brilliant
+ it was great but it required adoption it required the centralized systems the
+ the actual infrastructure of the banking system to be okay with it and that's
+ what ended up not happening granted there's a lot of if you actually dig
+ into the history chum was not a businessman and you know there were a
+ lot of just bad decisions made and so like I think it was it was destined to
+ fail one way or the other as the way the way the model was like I think like I
+ said just a minute ago is that the ultimate problem was that you had to
+ remove the centralized nature of what you were redeeming but uh nonetheless I
+ think just as a business model it probably just wasn't gonna work even if
+ even if it hadn't been that digi cash the company I think digi cash was the
+ name of the company was uh it seems like it was poorly run if you dig into the
+ history of it but nonetheless back to Fetament so this is and this whole this
+ whole thing is very much aligned with an idea I've talked about a lot is
+ hyperlocalization and this is this is very common in Bitcoin you know Marty
+ Bent had a great episode with crap they did this on TFTC I can't remember the
+ guy who wrote the book about like the hyper localization of America and kind
+ of like laid out this potential future path to look more localized communities
+ but this is like such a great example and that's also why okay let's go back
+ to the original complaints about Fetament because I think the framing of
+ what we are comparing this to is the important thing is the important way to
+ think about this is you know a a lot of the complaints and 100% valid the fact
+ that it is an IOU it is 100% an IOU so the Federation I mean it's trust
+ minimized not really the word it's it's trust lowered it's a trust lowered
+ relationship but really it is a find someone you can trust relationship it's
+ putting you in the driver's seat as far as who you trust and your relationship
+ with them and allowing it to localize it's so hard with the models that we
+ have today in the in the business world and in the payment processors and
+ finance you can't do that I can't like go to my brother or my best friend and
+ get together and make a bank and then you know the hilarity of that is just
+ absurd but the idea that we could actually do this with Bitcoin having an
+ open source protocol that we can build on top of and all we have to do is run a
+ computer all we have to do is run a setup that actually just stays online
+ it's basically just running a home server and I can still do my job my
+ brother my friend like our community and our family can still continue to do what
+ it is that we do and run this system the system has been automated for us that
+ truly changes the relationship between you and the quote-unquote payment
+ processor the Fedament the the Federation but understand we should not
+ be comparing this to an OB Nuosu he talks about this in his in the Bitcoin
+ 2022 talk that he gave on the open source stage and this was really good is
+ that this is a this is a form of custody this is an alternative to the current
+ forms of custody so when people are talking about this like oh it's an IOU
+ oh it's you know you know not your keys not your coins situation like that is
+ perfectly understandable but what you're comparing it to is everybody holding
+ their own keys does everybody have a cold card and a bit box and a you know
+ multi their own little private multi sig does everybody run their own lightning
+ node and have their own position in and run their own full Bitcoin node so that
+ they're verifying and confirming all these transactions themselves it's not a
+ comparison to that those people are running that in fact those people are
+ the ones that will likely be running the Fedament because they're the ones that
+ are that everybody else in their community is having to lean on I'm a
+ perfect example of this I love the idea of the Uncle Jim model because what's
+ brilliant about Bitcoin is that we can localize in a small trusted group we can
+ build strong trusted relationships and provide a monetary and financial
+ services to each other we're going back to the days of like the late 1800s with
+ fraternities and local trusts and these sorts of things I think this is the
+ future and the reason I think it's the future and OB talks about this too
+ because when he goes to reaching people like everybody talks about like the
+ global South we're talking about like Africa and basically the developing
+ world is really kind of the focus here they already have these strong trusted
+ local communities they have to they have to because they don't have the
+ infrastructure this will not be a great well it probably could be a great tool
+ but I don't think this will this trust model will make the most sense for
+ people in the US we are far more and most of the modern world honestly we're
+ far more accustomed to just handing off our trust to some giant corporation
+ giving them all of our information and we don't know shit about our neighbors
+ we don't know anything about the people in our neighborhood in our local
+ community that sense of community has really fallen apart but I think it's
+ coming back I think it's going to be a really critical part of the future for a
+ number of different reasons and one just a very simple one that I think I
+ want to touch on and let you think about is the fact that go to the Dali to go to
+ mid journey these artificial intelligences that you can just make an
+ image from a description these things are able to recreate your likeness in a
+ completely unique situation that you can just dream up they they modify they take
+ and learn from all of the images the images of the internet all the images of
+ you and they are able to create a fake situation on take a likeness of you and
+ recreate a completely made up completely invented people on completely invented
+ situations completely invented details and even quote-unquote imagine things
+ now when a artificial intelligence just a just artificially intelligent
+ algorithm that just you know contextualizes an image when you can
+ tell it to draw a picture of a plane you know flying through the air with frogs
+ stuck to it and it can do that that is also an algorithm that will easily turn
+ around and identify a plane when signing up for when running a capture to sign up
+ for a website it will get to a point and I think this will happen very very
+ quickly where our our fail-safes to make sure that we're dealing with humans
+ online won't work anymore that there will just be too many things that a
+ specialized computer can do to fake being human and that the and our
+ personal information will be unsafe as well it will not be oh give me your home
+ address no that stuff is already screwed I think I think on a long enough
+ timeline even that stuff falls apart and you're also looking at a time where an
+ artificially intelligent an algorithm is when we can already put makeup on our
+ face and like an Instagram filter that you can have stars or birds flying
+ around above our head or we can take a picture and see what we look like when
+ we're you know 50 years older it's not gonna be it's not gonna be long before
+ a another person can have a conversation as you over zoom to someone else with
+ your voice and your face the solution to that is localization is in the real
+ world now there will still be times where we actually interact with
+ computers we interact with big corporations but I think we will we will
+ treat them it will be in situations where we do not need to trust and a
+ trustless money will be exactly how we interact with those things where it
+ doesn't even matter if it's a bot it doesn't even matter if it's just a
+ protocol fulfilling our order on you know the Amazon network that isn't even
+ run by people anymore but when when we're kind of in that surreal
+ relationship with institutions that produce or protocols that produce or
+ connect producers and consumers the areas that do need trust will be will be
+ hyper localized the ability to actually verify will have to happen verify who we
+ are as a person when our money simply isn't good enough when there is some
+ sort of trusted relationship we'll have to go back to local we'll have to go
+ back to a place where you can go meet your friend in person because that is
+ the one thing that can't be faked and that's also why I think Africa why I
+ think a lot of the global South why a lot of the developing world might
+ actually end up ahead of the modern world because they don't have to rebuild
+ those relationships they are already having to depend on them because their
+ institutions fail them constantly their governments are unbelievably corrupt
+ they don't they don't have this oh I'm just going to blindly accept that this
+ institution is telling me the truth they have to rely on their local communities
+ they're already doing it with cell phones and their local networks this
+ sort of model a federated custody model for these these groups for these
+ communities this is where it is going to serve the greatest good. Fediment is
+ something that you compare to custody solutions not something that you compare
+ to cold storage multi-sig run your own node it doesn't compare to that what it
+ does is it creates a way to have small community led custody solutions where
+ all of the members in that community can maintain privacy from the people
+ offering the service and you can you can have the service fault tolerant that is
+ a big deal and it's also it's also I think a huge way in which this will be a
+ brilliant way to get around regulations
+ because none of the actual participants are custodians per se.
+ Not any single one of them is.
+ They are as a group, but they're not an entity.
+ They're just sharing an address together.
+ I think that's going to massively benefit how we can actually set these things up.
+ And this is what this could get us closer to that future where,
+ you know, just like a router in your home,
+ you know, we don't have enough IP addresses for all the devices in the world.
+ Not even close.
+ In fact, we crossed that, you know, it's like,
+ I don't even know how many years ago, like 15 years ago, 20 years ago or whatever.
+ We just blasted past that and now the number of devices versus the number of IP addresses
+ are absolutely retarded.
+ It doesn't even compare. It's almost comical.
+ But how do we do it?
+ Local networks.
+ Local networks on top of local networks on top of the wide area network.
+ Every IP address has 15 devices behind it.
+ 30 devices behind it.
+ And this is how I see Bitcoin scaling from in a context of UTXOs,
+ in a context of addresses.
+ Shared custody.
+ This allows us to build up trusted relationships again
+ by having a foundation to lean on that is trust less, that is trust minimized.
+ I've said this before on the show,
+ but it's probably a long time since I've really talked about it specifically.
+ I think the truly revolutionary models and the truly transformative economic relationships,
+ the business relationships and the systems and the companies,
+ quote unquote, which it might even be finicky to call them companies,
+ but the things that are truly going to be transformative
+ and how the economy works and how we relate to each other in the Bitcoin space,
+ in a Bitcoin world are going to be based around models of trust.
+ This is why I think synonym is one of the most important things here.
+ You know, synonym is not to get on a completely different thing,
+ but the idea of a web of trust of the slash tags of having an identity
+ and degrees of trust with the people around you
+ and being able to access or filter information based on the trust that you have with the people around you.
+ I think that's going to be as critical and as breakthrough in the idea,
+ like that is where I think true innovation is going to happen in this space
+ because it's much like, you know, just being able to write reviews on a website.
+ Like, you know, Amazon people don't think about this,
+ but when the when Amazon was coming up when the internet was being born
+ and we were figuring out these tools some of the most absolutely remarkable groundbreaking
+ changed everything about how we interacted with the internet
+ and changed everything about every single website
+ and a model of doing something on the internet was like leaving reviews.
+ It was like having a rating from everybody who's purchased the item.
+ Retweeting the like button the like button and the share button were they were the things that allowed
+ they created the idea of virality.
+ They created the viral movement something as simple as that had to be invented.
+ It wasn't immediately obvious and when what these tools were were they tool they were tools of communication.
+ They were tools of how to essentially gamify social signaling, right?
+ They were how do we lean on the crowd for information
+ and things that are interesting and for the spread and the creation of content.
+ Like one of the one of the other great breakthroughs of the internet was letting your users create your content.
+ Facebook doesn't make any content.
+ Twitter doesn't make any content.
+ We make the content for them.
+ Wikipedia is is a freaking encyclopedia.
+ It's the greatest encyclopedia that has ever been created.
+ It is more accurate than the centralized company encyclopedias
+ and has been for a long time.
+ It is better sourced and it is entirely created by just the crowd.
+ In that context Bitcoin just just like the internet was a system of communication.
+ Bitcoin is a system of trust.
+ It allows it allows creating trusted relationships around a monetary base that a totem that can be trusted
+ because you can fully verify it.
+ It is the foundation upon which we can build trusted relationships and business relationships again
+ because our institutions in this day and age our modern institutions have utterly failed us.
+ They have collapsed.
+ They have abused our trust.
+ They have corrupted it and we are going to have to localize to find our solutions again
+ and that is in building our own versions of these systems
+ and the ability to have an on-the-fly like spin it up in a few minutes sort of side chain
+ that is that is a custody model that allows us to create a community wallet.
+ Like this is the Bitcoin Beach.
+ This feels like to me what this could be.
+ I'll make sure we caveat it that way.
+ What this could be is a better more aligned Bitcoin Beach setup is the relationship between
+ it's multi-sig made better because it's multi-sig with privacy added
+ and a simple way to do off-chain payments off-chain transfers of Bitcoin
+ and relying on a quote-unquote fault tolerant group of guardians
+ and the simple fact of the matter the simple and great benefit is that it is private
+ and it is a far far better relationship than what everybody has with Coinbase
+ and inevitably if we do not and this is why I really appreciate Obie's.
+ He refers to this as the third pillar that this is like second-party custody.
+ I like that idea the second-party custody.
+ That's a really good framing.
+ I guess you can say but really what I think this is is trying to solve the the centralized ease
+ of onboarding of using and of just having everything work of a centralized custodial model
+ of using of simply using Coinbase.
+ How do you get that but step that one step two steps three steps closer to the hold your own keys
+ the the I am in my multi-sig I am running my lightning node Etc.
+ Etc. How do we move the custodial relationship further in that direction?
+ How do we obsolete the stupid entirely dependent the entirely not fault-tolerant centralized
+ one hacker can come in and take everybody's funds on Coinbase model.
+ How do we obsolete that because if I if I think that if we don't do that
+ if we don't find a way to improve that which is why I think Fetament is actually a huge huge net positive
+ is that we just still end up with 80% of people entirely custodial
+ who never hold their own keys and never even get a touch of it.
+ And this is this is an interesting middle of the road.
+ This is an interesting trade-off to walk us in the direction of walk us into into the direction of self-custody
+ of people using Bitcoin with more autonomy and more individual control and always always more privacy.
+ And for all of its trade-offs for all of its negatives because it is a custody solution.
+ I think any and every mechanism we can develop for better privacy on Bitcoin is a huge win.
+ And this is also one of those things that allows the tech savvy the the quarter the ones that are most likely
+ to run a Federation to basically run this system for a community is that when you can plug this thing into lightning
+ so that this wallet can literally just fulfill any Bitcoin, Fetament or lightning invoice
+ that it just works seamlessly between all of these.
+ But it's also the kind of thing that would justify that would make you know,
+ $50 on-chain fees to make changes to the Federation justifiable not a problem.
+ And the the need or the desire to get privacy and to compress those transactions by coin joining them
+ or aggregating signatures with other Federations that you work with which actually doesn't really matter
+ because you don't have to trust another Federation if you're not accepting their IOUs.
+ All you're doing is using them to offload your signature data by combining signatures.
+ Well, then they become a great means of privacy and you break on-chain analytics almost entirely.
+ Now, obviously that's in a perfect world where everybody is, you know, using this in combination with lightning
+ and it's also one of the beautiful things about lightning, you know, people read a bunch of comments
+ and like a bunch of crypto people talking about how lightning adoption isn't as big as everybody thought it was going to be.
+ Well, it's one of those things that lightning is so powerful explicitly because it's a branch between,
+ it's chain agnostic, it's like you can run it, you can connect it to Fediment, you can connect it to Liquid,
+ you can connect it to these alternative systems to the shadow chains and the state chains of the setup.
+ So as soon as if any of these things catch on, lightning becomes the bridge back to Bitcoin.
+ Lightning becomes the communicator, becomes the translator from one to the other.
+ And then when, with the fact that with Fediment, with a system like this, you can actually, it's pretty much
+ agnostic to the code that you run on it.
+ So I think there was another one that was mentioned here, or was this in another piece that, this was in another piece that I read.
+ But the idea that you can run simplicity on this, they actually did a hackathon and put simplicity on a Fediment chain,
+ which is a completely different scripting system that's not on Bitcoin and would require a massive amount of work
+ and would be a huge thing to actually have this available on Bitcoin, but you can just run it on something like Fediment.
+ So you have the optionality to have both this ability to privately transact off-chain in the Fediment
+ that you can interact by having a lightning connection and you can interact with any lightning invoice
+ and send Bitcoin or lightning to anybody, anywhere.
+ So the Fediment isn't locked, it's not isolated.
+ But at the exact same time within the Fediment, within this little "sidechain", you can have smart contracts,
+ you can have simplicity, you can have a completely different scripting language.
+ It's basically agnostic. You can essentially do whatever the hell you want in it.
+ And ultimately at the end of the day, you're leaning on the fact that you have a federated fault tolerance to keep the thing from failing,
+ keep it very unlikely to be co-opted, very unlikely to ultimately fail or to lose a critical number of keys.
+ And it remains robust and even the peg in and the peg out to enter and leave the federation,
+ all users have privacy within the entire process.
+ So, I don't know, I'm not even sure if I hit all the points that I wanted to get into, but this is interesting.
+ This is interesting. That is probably the simplest way to put this, is I see this as a very, very exciting development
+ that I think a lot of communities that are not thought about as customers,
+ like in the context of the Western world and the modern world and the United States,
+ this doesn't seem like, "Oh, this is like, oh, not a very interesting model."
+ But from the context of a small village, a community in the developing world that has no institutions that it can trust,
+ has no good banking infrastructure and has an unbelievably corrupt government,
+ but everybody has a freaking smartphone, this is a really big deal.
+ This is a really big deal and I think that is the more interesting model and the more sustainable path
+ to long-term robust adoption and the fact that this could help scaling in a massive way.
+ It's just, it's a really, really, really interesting.
+ So, with that, we'll be talking about this again, no doubt.
+ This was just a really cool introduction and it's really exciting to see Justin Moon and Obi and,
+ oh God, I can't remember who else is working on this.
+ It's really good to see that crew building something like this.
+ This is cool and it's also, man, to see Xiaomi and eCash actually happen
+ because we can build it on top of Bitcoin after all this time.
+ That's just exciting. I don't know. I don't know. There's something about bringing back a little bit of Cypherpunk history.
+ It's amazing how many tools and ideas were, you know, attempted to be put into place that were so promising
+ all throughout the 90s that the Cypherpunks designed on and built,
+ but did not have an independent trustless base to build it off of and because of that failed.
+ There might kind of be, there might be some really interesting,
+ there might still be a lot of things that the Cypherpunks created that are left to unpack.
+ Things finally to be realized 20, 30 years later because we have Bitcoin.
+ So, I'll leave it there. Thank you guys for listening.
+ I am Guy Swan. A huge thank you to the Audio Knots for supporting this show,
+ to Swan Bitcoin, to Fold and to CoinKite who make this show possible
+ and keep the lights on around here and keep rad, fed, and warm.
+ Hey, buddy. Are you getting fussy? Daddy's ranting too long.
+ All right, guys. I am out. Thank you so much for listening.
+ I'll catch you on the next one. And until then, take it easy!
+ [Music]
+ You have been listening to Bitcoin Audible, a 1.11 production.
+ [Music]
+ This podcast is a part of the C-Suite Radio Network.
+ For more top business podcasts, visit c-suiteradio.com.

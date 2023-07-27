@@ -1,0 +1,12 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/argon2-803169bed22118e7.rmeta: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/algorithm.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/blake2b_long.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/block.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/error.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/params.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/version.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/../README.md
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/argon2-803169bed22118e7.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/algorithm.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/blake2b_long.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/block.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/error.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/params.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/version.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/../README.md
+
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/algorithm.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/blake2b_long.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/block.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/error.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/params.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/version.rs:
+/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/argon2-0.5.0/src/../README.md:

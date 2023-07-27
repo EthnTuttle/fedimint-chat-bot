@@ -1,0 +1,9 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/tokio_rustls-aaefff7b67015fd9.rmeta: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/client.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/mod.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/handshake.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/server.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/tokio_rustls-aaefff7b67015fd9.d: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/client.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/mod.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/handshake.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/server.rs
+
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/client.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/mod.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/common/handshake.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-rustls-0.24.0/src/server.rs:

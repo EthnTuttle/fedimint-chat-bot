@@ -1,0 +1,2707 @@
+ This was brought to you by good friends at River.
+ Want to do mining, talking about mining, River makes it very easy to mine in a professional
+ way.
+ You go to river.com/tftc, set up an account, you go to river.com/mining after that and
+ you can pick an ASIC.
+ They have many ASICs for sale.
+ Some are already plugged in with hosting contracts so you can buy an ASIC and lock in a hosting
+ contract immediately.
+ You purchase it, you're already up and hashing and satch or streaming to your River account
+ whether you're an individual or a larger institution that wants to mine a lot, River is here to
+ help you.
+ They have a white glove professional service that will walk you through the process, that
+ will get you set up.
+ If you don't want them to walk you through the process, you can just go through the website,
+ go through the app and do it without having to talk to anybody.
+ I shouldn't say I'm not certain but maybe you do have to talk to somebody.
+ But the point is, it's a great way to mine, they're doing it the right way.
+ So go check it out.
+ Go to river.com/tftc, set up an account today.
+ ASICs are cheap, still cheap, still in the bear market.
+ It's a good time, about 11 months out from the halving.
+ Get all those sats with 6.25 block subsidy rewards while you can.
+ River.com/tftc, this trip was also brought to you by good friends down the hall, Unchained.
+ They're here to help you eliminate single points of failure in your custody model.
+ They're building a Bitcoin financial institution the right way by leveraging Bitcoin's native
+ multi-sig properties.
+ Their vault product is a two or three multi-sig wallet.
+ It allows you to hold two keys in Unchained to hold one.
+ You eliminate single points of failure in this model.
+ Once you hold two keys, you control the Bitcoin in the vault at any given point in time.
+ But if you're ever in a pinch, Unchained is there to be the second in the two or three
+ multi-sig quorum.
+ Beyond that, they have their trading desk.
+ If you want to buy Bitcoin and send it straight to your vault after you have it set up, Unchained's
+ the best place to do it.
+ You can do it all in one place.
+ It's the best place to buy Bitcoin in bulk.
+ You buy, it goes straight to cold storage.
+ On top of that, they have their lending desk, their IRA, their inheritance protocol.
+ Again, all revolving around native multi-sig properties that Bitcoin has that reduces single
+ points of failure.
+ It is the future.
+ Go to unchained.com, tell them the TFTC sent you, talk to their concierge team.
+ They'll walk you through everything I just described.
+ This group is also brought to you by good friends at CrowdHealth.
+ CrowdHealth is here to help you bring sovereignty back to your healthcare and how you pay for
+ it.
+ Incumbent health insurance is notoriously opaque, expensive, impersonal.
+ CrowdHealth is the complete opposite.
+ It's cheaper, it's transparent, and it's very personal.
+ You get a personal health advocate.
+ Once you get onboarded to CrowdHealth, CrowdHealth is not health insurance, it's crowdfunded
+ healthcare.
+ So the way it works is you become a member, and then when you have to go to the doctor,
+ you let CrowdHealth know, "Hey, I'm going to go to the doctor."
+ They'll either help you find one or connect to your doctor that you're going to.
+ Once you go to the doctor, you get the bill, you bring it back to CrowdHealth, they negotiate
+ the bill lower with the doctor, and then you pay the first $500 of that bill, and the rest
+ gets crowdfunded by the CrowdHealth community.
+ Me and my family are on this.
+ We've used this.
+ It works flawlessly.
+ And again, it's cheaper because you have metrics they have to meet to get into the CrowdHealth
+ community.
+ It's a relatively healthier community of individuals, and so overall healthcare costs for the CrowdHealth
+ community are lower.
+ So you're paying less than you would with insurance.
+ So if you're on COBRA, any of that stuff, consider CrowdHealth.
+ Go to joincrowdhealth.com/tftc, sign up today.
+ You can get a deal on your membership fees for the first six months.
+ This report was also brought to you by our good friends at Bitcoin Talent Co.
+ It's a recruiting firm built by Bitcoiners for Bitcoiners.
+ If you're a company in the space looking to hire the best talent in the world, go set
+ up, go get set up with Bitcoin Talent Co.
+ They'll understand your needs, what you are looking for, what your company does.
+ Again, it's a recruiting firm by Bitcoiners, so they understand the difference between
+ multi-sig, mining, lightning.
+ They actually understand Bitcoin, so you're not just spraying and praying with a random
+ recruiter to hope that they can actually understand what you need.
+ Bitcoin Talent Co. will understand, already does understand.
+ Likewise, if you are talent stranded in big tech, big banking, big finance, you're a Bitcoiner
+ looking to get in the space, set up a profile with Bitcoin Talent Co.
+ Go to bitcointalent.co to do all this.
+ Tell them that TFTC sent you and enjoy this rip.
+ You've had a dynamic where money's become freer than free.
+ When you talk about a Fed just gone nuts.
+ All the central banks going nuts.
+ So it's all acting like safe haven.
+ I believe that in a world where central bankers are tripping over themselves to devalue their
+ currency, Bitcoin wins.
+ In the world of fiat currencies, Bitcoin is the victor.
+ I mean, that's part of the bold case for Bitcoin.
+ If you're not paying attention, you probably should be.
+ Cody.
+ Marty.
+ It's a pleasure.
+ I met you last weekend.
+ It's a pleasure hanging.
+ Yeah.
+ You know, it's like always fun to meet your heroes, especially when they live up to it.
+ You know, so.
+ I know.
+ I was, I mean, I've heard a lot about you and all the work that you're doing at Fedi
+ and incorporating Bitcoin and the AI.
+ Yeah, you did live up to the hype.
+ Oh, well, you did too, Barney.
+ If anyone is listening to this instead of watching this, Marty's been packing on a lot
+ of muscle recently.
+ And it's one of the most surprising things to me to him.
+ You're like, whoa, like Marty, you're a lot like stockier, like, like much bigger build
+ than you are on.
+ I come from a family of mongoloids.
+ It's all it's all natural.
+ I did try to supplement it with some with some weight lifting.
+ It was leg day today.
+ Excellent.
+ Did some box deadlifts.
+ Felt good.
+ Yeah, sorry for you can hear the rain in the background.
+ Torrential downpour here on the back studio, back porch studio here in South Jersey.
+ But I'm extremely excited for this conversation because the convergence of Bitcoin and AI,
+ particularly Bitcoin over the lightning network and AI is something I think could be massive
+ for Bitcoin adoption and just the usability of the Internet overall.
+ I think AI is just one particular use case.
+ Yeah, yeah.
+ The gods agree.
+ The gods agree.
+ They're sending us a message right now that we're on to something here.
+ But before we dive into all that, we were chatting a little bit before we hit record
+ about your background in the military and how you came to understand Bitcoin a bit intuitively.
+ Like, how'd you go from being a Marine to working at Fetty on the cutting edge of Bitcoin,
+ the lightning network and AI?
+ Yeah, sure.
+ Thanks, Marty.
+ So like a two minute two minute summary.
+ So I was an infantry officer in the Marine Corps when I was finishing up active time.
+ It was when coronavirus happened.
+ And so one of the because we're like very this was like very, very early when it first
+ started was we were on deployment and we were getting stuck in these like, hey, you got
+ like two weeks stuck in your room or we were having these like while you're on watch, you
+ have to be like, hey, 12 hours on watch or 24 hours on watch while you're in the tactical
+ operations center.
+ And normally you're like waiting for the phone to ring and we're going to jump on a bunch
+ of birds.
+ We're going to fly to Syria or wherever it is.
+ And but because coronavirus is happening, like not a lot of stuff is going on.
+ Not a lot of phones are ringing.
+ And so what I ended up doing was like start reading a lot more and found Bitcoin was one
+ of the things that wasn't blocked on government computers like Bitcoin.org.
+ And so my first kind of like intro into Bitcoin was like, this is one of the few things I
+ can read while I'm on watch, sort of waiting for stuff to happen.
+ And so started going down the Bitcoin rabbit hole.
+ One of the things that was kind of immediately intuitive to me and why I kind of went down
+ Bitcoin versus like altcoins, because after you read Bitcoin, you start talking to people
+ about it.
+ You start talking about altcoins and you sort of look at it was the proof of work aspect
+ of it.
+ And I know that you've had some conversations with Jason Lowry.
+ And while I don't agree with him on everything, I think that there's some really valuable
+ stuff that he's been doing in terms of framing Bitcoin's proof of work in language that can
+ really appeal to people with sort of military backgrounds.
+ And so that was one of the things for me, like I wasn't able to exactly identify it.
+ But once you kind of came on the scene, being able to see that, yes, the same maneuver warfare
+ language that we use in the Marine Corps, like sort of applies within Bitcoin as the
+ importance of proof of work.
+ Right.
+ Like the way that Bitcoin establishes like, hey, you actually have to work in order to
+ combat it, those sorts of things.
+ And then coming out of the Marine Corps, I started working on Bitcoin development because
+ one of the cultural aspects of the Marine Corps I really enjoyed was and that made it
+ really like such a great organization was because every Marine is a rifleman.
+ Is that if you look at the ranks for Marines, like one of the differences between us and
+ the other services is that you've got cross rifles on it because first and foremost, every
+ Marine is a rifleman.
+ And the reason why is because insofar as you're in this organization, insofar as you're a
+ warfighter, it's because you exist to serve the rifleman.
+ Is that there's going to be an 18 year old jumping in a hole.
+ And if you're a cook, if you're a pilot, if you're a JAG, if you're like anything in this
+ organization, the reason why you're here is to support that guy.
+ And so coming into Bitcoin, I knew that it was important.
+ I knew I want to work on it.
+ And so I knew I needed to become technical and become a coder because insofar as we're
+ here is because we're building open source software and creating environments.
+ I think you've done a lot of work with that with 1031 and just generally the podcast of
+ like kind of putting open source developers front and center.
+ And so working on open source and working on Bitcoin, like I just kind of did that for
+ like a year where I was sort of teaching Bitcoin through like first through POMS Crypto course.
+ I was like the Bitcoin guy for it and the technical Bitcoin stuff.
+ And then through and then kind of I was one of the first guys with Lisa Nygut.
+ We did Base 58 and then I was helping her teach that for a bit.
+ And then just kind of working in open source.
+ Eventually I come across FettyMint and I meet Justin actually at Bitcoin Commons in Austin
+ and after meeting him and sort of seeing that, hey, FettyMint is actually something that's
+ I think is a really interesting sled of tradeoffs for scaling Bitcoin in a privacy focused way.
+ Started working on that for about a year and then afterwards, like I joined Fetty and so
+ now FettyMint, the protocol, right, worked on that for about a year and now working for
+ Fetty, the company which is building off of FettyMint.
+ I mean, that's pretty impressive to go from COVID lockdowns, bored, scouring Bitcoin.org
+ to understand Bitcoin better to contributing to open source projects, contributing to Base
+ 58 and now working at Fetty.
+ How were you able to sort of scale your knowledge and your ability to participate so quickly?
+ Yeah, I'd say a couple of things.
+ I talked to newer developers and also, I'm very junior, I've been here for two and a
+ half years about in the Bitcoin space and that's how long I've been doing development
+ stuff for, is that the things I normally talk about are like, start building, right?
+ And so just pick an open source project and start contributing to it.
+ Everyone within Bitcoin is extremely welcoming and looking for new contributors.
+ One of the things that FettyMint that we do really well is onboarding new contributors.
+ And so I did this for a while.
+ It's become more intermittent, but when I first started joining with FettyMint, I knew
+ that there was a bunch of stuff that I have to learn.
+ And so there's like a stack of white papers on my desk that apply to FettyMint because
+ FettyMint sort of, you get like the most difficult of everything, right?
+ Like you do Bitcoin at the base layer, you do Lightning, you do distributed consensus,
+ you do all sorts of fancy cryptography with blinded signatures and music and all that
+ sort of stuff.
+ So I had this sort of stack of white papers that I knew I needed to get through.
+ And so what we started doing was like White Paper Wednesday, right?
+ Where me and a bunch of other FettyMint contributors, like we would go through these things and
+ we would be teaching each other and kind of making it more approachable so that new contributors
+ coming onto the protocol could sort of get upscaled faster.
+ And so I think that was actually, if you're going to look at the development of FettyMint,
+ right, was there was basically Eric for a little while and then he worked on it for
+ about a year and then Justin comes in and a couple other contributors.
+ And then there's sort of like this explosion after Bitcoin++ in Austin.
+ And that was when it was like me, Justin, a couple other guys who were there, like we
+ did the first implementation of SimpyMint, which was using Simplicity, Blockstream scripting
+ language that they've been developing for Bitcoin as a FettyMint module.
+ And then after that, there's this big explosion out.
+ And I think part of the reason why for that is because FettyMint became much more approachable
+ for people to come work on.
+ And so as you're like a new contributor coming to the project or anything like that, like
+ there's a bunch of developers now who've like, they're very, we're very good at onboarding
+ you guys.
+ And it's the same thing with like Core Lightning, which like, you know, working with Lisa, of
+ course, like you end up working on Core Lightning stuff a bunch.
+ But I think Bitcoin generally has just gotten very, very good at taking people who are new
+ and if they're willing to put in work and they're willing to kind of like take on new
+ projects, then onboarding them into the ecosystem so they can start contributing more.
+ Yeah.
+ And I think what you just described is a great example of the breadth of the space.
+ And Lisa will teach you like transaction construction at base 58, you'll learn a little bit about
+ C Lightning.
+ And now we have this other second layer, third layer protocol.
+ It's actually something I'd be interested to learn how do you refer to Fetty as a second
+ layer or third layer that people can then learn about and contribute to.
+ So there's many different areas.
+ Not everybody has to be a core developer these days.
+ It's getting easier and easier to apply your skills at different parts of the ecosystem
+ and build apps on top of that.
+ Yeah.
+ And this is something kind of going back to that philosophy I was talking about before,
+ right, of like every marine or rifleman is that one of the things I really think is coming
+ out within Bitcoin is this sort of concept that I've been calling like every Bitcoin
+ or a developer, right, is that within Bitcoin, like it was very surprising to me looking
+ at this, like, you know, when I was working at OKX for a while, is that when you look
+ at some of these other ecosystems, there's a lot of people working on them who don't
+ really understand the core protocol.
+ And a lot of people who work on them who don't really understand like the fundamental computer
+ science behind it.
+ Right.
+ So like they can't explain, for example, or just it's not everyone.
+ Right.
+ But it's like if you talk to a Bitcoiner, generally, he can give you a rather good explanation
+ of some of the underlying technology, even though he might not be technical himself.
+ Right.
+ And so I think this is coming out more and more is that within Bitcoin, everyone's kind
+ of building up some development shops and building up this technical background for
+ it.
+ So, for example, I think you just brought up for like Fetimint, right.
+ So maybe we can start talking about like the technicalities behind that is that for Fetimint,
+ like in terms of talking about layers one and two, it kind of gets a little confusing
+ when you talk about Fetimint that way.
+ And the reason why is because the Fetimint e-cash claims are against base layer Bitcoin.
+ Right.
+ So I peg in or I peg out at the Federation.
+ And when I do that, I get e-cash.
+ And so but that's against underlying on-chain Bitcoin.
+ And then we use lightning gateways as an interface of trading those e-cash notes between people
+ within the Federation in order to be interoperable with the wider Bitcoin network.
+ Right.
+ And so talking about Fetimint as layers gets a little confusing, right, because the e-cash
+ that you're holding is a claim against the layer one.
+ But the interface that you're using for it is like using the lightning gateways of layer
+ two.
+ Right.
+ And so it gets a little confusing when you do that one.
+ Right.
+ Yeah, I guess you I mean, I guess you could call another layer two that's complementary
+ to lightning's layer two.
+ Right.
+ Yeah.
+ Maybe we could take a sec for just sort of like the layers analogy comes from like sort
+ of Bitcoin and the Internet.
+ Right.
+ Is that the Internet when we think about it, we think about it in terms of layers.
+ And part of the reason why we do that and this is like, sorry, if you go to school for
+ computer science, normally you end up learning about this like the OSI model.
+ And it's this very I'm sure like, you know, if you just kind of look around on the Internet,
+ you see the stack of like, hey, there's different seven different layers and things start up
+ here at the application layer.
+ They go down to the transport control protocol layer, which is TCP and like intermediate
+ is IP.
+ And then it passes over to this way.
+ And then once it's over here, it goes back up the application layer.
+ Right.
+ And so that's sort of like the analogy that we're trying to go for within Bitcoin when
+ we talk about layers.
+ But this is something that like I only learned because I like kind of did a deep dive down
+ the like original ARPANET protocols, protocols and like the sort of design philosophy that
+ they had was that if you look at them, they're kind of like it's kind of like Bitcoin and
+ ETH, right, where you had these original DARPA guys and then the OSI were like some corporate
+ guys who broke off from them and tried to reinvent the Internet protocol.
+ And that's they're the guys who came up with this stack thing that people learn about.
+ That's not actually how the Internet's run.
+ That's how they kind of portray it to people.
+ The way that it's actually run using the original DARPA layers is that there's basically four
+ layers where IP is the only thing that's important for doing that connection layer between them.
+ Right.
+ And so the whole point of Internet is that it's inter-networking.
+ And so you can have these networks were at rest.
+ They kind of work differently between each other.
+ But as long as they speak IP, then they can communicate across each other.
+ Right.
+ So it's not this clean start from the top, go all the way down.
+ Everything has to be sort of mirrored and then it goes across.
+ It's that you can kind of think about it as more of an hourglass.
+ And what's cool about Lightning is that Lightning is kind of becoming this IP layer for Bitcoin.
+ Right.
+ So you see Lightning being the bridge between a bunch of different things.
+ So there's all this new stuff about like drive chains, space chains, like different ideas
+ for different ways.
+ We're at rest at the base layer.
+ You can hold your Bitcoin in different ways.
+ Then also at the application layer having all sorts of different interactions.
+ But the rail between all of those, the kind of inter-networking part of it is Lightning.
+ Right.
+ And that's one of the really cool things about Fetiment, where Fetiment, like the thing that
+ you're holding at rest are these e-cash notes, but we don't expose a lot of that to the user.
+ Right.
+ And so that's a little different than Cashi, right, where you see the e-cash notes up front.
+ The experience that you have using Fetiment is you're just paying Lightning invoices.
+ And on the back, you're like, basically, like the thing that's happening is that you're
+ using the e-cash and you can get into a little bit more of like the e-cash and the privacy
+ benefits, the scaling benefits, that sort of thing.
+ But the thing that's going on in the background that you're not exposed to, like this is sort
+ of like the man behind the curtain, is the e-cash notes.
+ But the experience that you have is just using Lightning.
+ And so that's like, if you look at the way the internet actually works, that's kind of
+ the same experience of that.
+ The thing that gets exposed and the thing that kind of connects everything is the single
+ IP layer.
+ Right.
+ And then like at rest, you can have different networks that kind of operate differently.
+ Does that make sense?
+ Yeah, it makes a lot of sense to me.
+ And that's, I think, because I went to your demo in Nashville last Friday, and you explained
+ a lot of this, and I think it'd be a good time.
+ I mean, we've talked about Fetimints and Fetty particularly on the show a few times in the
+ past, but I think the way you articulated it during your demo was very concise and made
+ it very easy to understand.
+ So just, I guess, a refresher on Fetimints, generally what Fetty does on top of Fetimint,
+ the Fetimint protocol, and then diving into the Lightning gateways and how they work with
+ the invoice creation and what's going on with the e-cash tokens when those invoices are
+ getting paid.
+ Yeah, totally.
+ So let's kind of build up from base principles.
+ So you've got Bitcoin at the base layer.
+ There's a block every 10 minutes.
+ The blocks have transactions.
+ The transactions have inputs and outputs.
+ On layer two, which is Lightning, on those base layer transactions, you have an output.
+ And instead of just me sending it to somebody, it's me opening a channel, which is going
+ to be a two of two multi-sig, so I can sling payments back and forth.
+ So at the base layer, we're optimizing for security and robustness.
+ At the Lightning layer, we're trying to optimize more toward, there's some trade-offs associated
+ with it, but the thing we're trying to do is instant final settlement of payments.
+ And so that's what you can do on Lightning that you can't do on Bitcoin.
+ And some of the things that kind of emerge out of this is that there isn't an extremely
+ good solution for privacy.
+ So I know you've had Tony on the show in Austin, Tony talks about this stuff all the time,
+ is that on the base layer and on Lightning, there's still significant tribe privacy concerns,
+ but there's also concerns for at the Lightning layer is that that's not something that scales
+ to billions of people.
+ And so while we have a really good base layer of the optimizing for the 21 million in a
+ block every 10 minutes, while we have Lightning, which lets us do the instant final settlement
+ for payments, we still don't have a really good, robust, scalable custody solution that
+ doesn't involve a third party eventually running Lightning nodes, for example.
+ And we also have some privacy concerns as we go up that.
+ And so Fetimint, when Eric Syrian originally came up with it, was that he didn't have the
+ Lightning component.
+ It was just a privacy and scaling solution for Bitcoin, which was you run a Chami and
+ e-cash mint.
+ And so this is back in the 1980s when David Chom comes up with his blinded signature scheme
+ so that you can basically run a bank where there's no concept of a user, there's no concept
+ of an account, there's just notes, there's just dollars basically.
+ And the dollars, it's impossible to correlate the inputs and the outputs.
+ And so anybody who uses the bank is, the bank is completely binded to the use of the users.
+ And so off of that, the problem becomes, hey, well the mint is centralized.
+ The mint's like one guy.
+ And so Fetimint is what if we took this accounting system, this sort of bank system with blinded
+ signatures and stuff, and we federate that mint and we put it on Bitcoin.
+ And so the way that that works is that you deposit Bitcoin, you get e-cash notes that
+ are signed by the bank, you unblind the e-cash notes so that when you use the e-cash notes
+ back at the bank, they have no way of correlating the inputs and the outputs.
+ So you achieve great privacy.
+ Your anonymity set is every single note of that denomination that's ever been used by
+ the bank or the mint.
+ Sorry, we'll use mints just to kind of clear things up.
+ But for Fetimint, we're going to take that centralized mint who's doing the signatures
+ and we're going to federate him.
+ And so now you get the privacy solution for this, but you're trying to lower the trust
+ assumptions by federating it.
+ So we can do like a three of four or a five of seven or a seven of 10 or like whatever
+ we want to do it for such that somebody, for example, be malicious and they could try to
+ steal the funds, but there's nothing they can do because they need to coordinate across
+ the larger federation in order to do it.
+ And so when Eric first came up with this, this was just a privacy and scaling solution
+ for on-chain Bitcoin.
+ But so he solved one problem of that, hey, what if we federate the mint?
+ But then this is sort of like where Fetimint becomes this larger scaling solution and being
+ able to kind of address a bunch of the concerns that now you had at Lightning, right?
+ Is that you can, the problem with the mint is that you're only going back and forth with
+ the e-cash to that single mint.
+ And so it's not very useful unless everybody's in the same mint and that becomes a problem,
+ right?
+ Because we don't want to have this centralized solution for it.
+ And so what's cool about Fetimint is that we came up with this concept of gateways and
+ the gateway is just somebody using the mint who also runs a Lightning node.
+ And so you pay that node in e-cash, which is the claims against the Bitcoin and the
+ mint, and then they complete the Lightning payment or vice versa.
+ And so now this becomes like a really good scaling solution for a community where we
+ can show up at a community, we get seven to 10 to however many people within that community
+ are like technical enough that they could run a node and have a Fetimint run alongside
+ it.
+ And then anybody in that community who's running a Lightning node can provide Lightning services
+ for the community.
+ And so now within the community, you've got e-cash nodes going in, e-cash nodes coming
+ out, so you achieve very good privacy.
+ You've got the e-cash nodes, they're highly scalable, right?
+ Because you have like multiple people within you when you deposit into the mint, then you're
+ not having like a single UTXO or multiple UTXOs for individual people, right?
+ Like you can consolidate the reserves within the mint.
+ And so now it becomes a scaling solution for like on-chain Bitcoin.
+ But so you have privacy, you have scaling on the on-chain Bitcoin, and you have interoperability
+ with the wider Lightning network by swapping e-cash to Lightning.
+ So the experience that people have of using Fetimint is that they're just paying Lightning
+ invoices.
+ But what's on the background is that they're settling using the e-cash nodes, right?
+ And so that's kind of like the Fetimint protocol, how that works for that one.
+ If you got any questions or I didn't cover something specifically, like that's sort of
+ the big overview there.
+ And then we can talk about Feti after.
+ I mean, you touched on it.
+ I think we should elaborate on it because I think after having listened to the last
+ session of the Lightning Summit in Nashville with Tony, Lisa, and Alex from River, is that
+ Lightning in and of itself probably isn't like the end-all be-all scalable solution
+ unless you want to centralize amongst large third parties who can become targets to government
+ regulation and scrutiny.
+ And I think you said like if we want to avoid that, adding Fetimint to the mix is vital
+ to ensure that we have sufficient distribution of Lightning nodes at that layer.
+ Why does Fetimint help this?
+ Yeah, so here's a couple elements for it, right?
+ So one is that when you're servicing a federation as a Lightning node or you're providing Lightning
+ services to them, is that you're basically balancing the liquidity across everybody within
+ the federation, right?
+ And so this is something if you've ever run a Lightning node, is that you want to basically
+ have your Lightning transactions represent a ton of economic activity and not just be
+ linked to, hey, one person, like 100 channels, right?
+ And so we kind of get there a little bit with splicing, right, which is pretty cool.
+ So now, I don't know if you saw it recently, is that Phoenix, they announced their version
+ of splicing where now as a mobile user, I have a single channel that I'm resizing with
+ the async node, which connects me out to the broader Lightning network.
+ So that's one way of getting much more efficiency from Lightning.
+ But what's cool about using Fetimint is that now you can have these communities that are
+ all using the Fetimint, right, in order to do the custody of the Bitcoin.
+ And so you can balance the interaction of course, maybe they have like five or six or
+ seven different people across a community servicing maybe like 100 or 400 people within
+ it.
+ And they're going through those different Lightning nodes.
+ And because they're using the e-cash for the transactions, they're achieving privacy from
+ the Lightning nodes, privacy from the Mint.
+ And the Lightning service providers or the Lightning nodes, they really like this model
+ because now I can have a single Lightning channel that I'm using to service maybe like
+ 200 or 300 different people.
+ And so that's why it becomes like a scaling solution for Lightning.
+ This is something else that we've kind of like figured out of people running Lightning
+ nodes for this stuff.
+ The tendency is for Lightning nodes to kind of become service providers.
+ And the reason why is because you need the economic incentive to run the node and to
+ become a good router and stuff.
+ And the thing that you want, the ideal person on the other side of your channel is somebody
+ who represents a ton of economic activity.
+ And so that's one of the ways that through FedEmit, you can kind of scale out that part
+ of Lightning.
+ But the simple solution for scaling it out is you just have everything be custodial.
+ This is an option where there's sort of a natural limit to the size of these federations
+ because of the trust assumption required for like, "Hey, there's five of seven people or
+ six or seven of 10 people who are running this federation."
+ If they're not close enough to you that you can socially sanction them and like NDK likes
+ to call this proof of punch, right?
+ Like they're close enough to me that in the event they tried to rug me, then it's like,
+ "Hey, this is Bob from down the street.
+ He's part of my community."
+ Or this is like, you know, like John from the VA, right?
+ Is that they're close enough to me that I can hold them socially accountable for these
+ things.
+ But the guys running the FedEmit, like they're not being paid for what they're doing.
+ The Lightning service providers who are providing services to the FedEmit, right?
+ Those are the ones who are making routing fees.
+ Right.
+ Yeah.
+ So this provides a clear economic incentive for people to spin up and maintain Lightning
+ nodes.
+ Exactly.
+ Right.
+ And so you have an ideal partner on the other side of it, right?
+ Because this is the issue for anybody running an LSP, right?
+ Is like, and I know Async, for example, they're like the poster child for this, is that you
+ spin up all these nodes, they lock up liquidity, right?
+ And so somebody, they do a transaction into Phoenix or whatever, in order to have to like
+ have them receive or have like a good UX on that, you have to lock in some inbound liquidity
+ for them as well.
+ Right.
+ And so this is one of those ways where, well, now you just have like an individual who maybe
+ uses Lightning wallet, like one, two, three times a day or something like that.
+ Right.
+ Like he's locking up a ton of liquidity as it goes to that.
+ The ideal party that you'd want on the other side is someone who represents a ton of economic
+ energy.
+ So it's slinging payments back and forth, or is just using the channel much more.
+ Right.
+ And so when you're a Lightning node providing Lightning gateway services for a federation,
+ that's like an ideal partner.
+ It's something that's very good for scaling out and having Lightning be like a good rail
+ between everything.
+ So that analogy we were talking about before of that Lightning becomes like the IP layer
+ connecting these separated networks.
+ That's sort of like the image you can have in your head of how Fetimint sort of scales
+ this out.
+ You've got all these different Fetimints, you've got hundreds, thousands, millions of
+ them potentially, right.
+ And then all connected via each other via Lightning.
+ And to be clear, it's not the federation members that have to run the Lightning nodes.
+ It could be a user within the Mint that's providing a service.
+ So maybe we can talk like specifically about what the Fetimint is doing.
+ Right.
+ So basically, and this is why Fetimint, it starts off as just a way to custody Bitcoin,
+ but it becomes this wider building solution for federating any application.
+ And why Feti, which we can move on to eventually, is that Feti is talking, the way that we like
+ to talk about it is that it's a way to create a federated operating system for managing
+ your money, your data, and your digital life across all of these different federations.
+ Right.
+ So we can kind of like take a step back of like, why do we need the federation at all?
+ And so one of the issues, like I'm sure that you've run into this and I'm sure everybody
+ in Bitcoin has run into this, of that when you go from third party to first party, is
+ that when I take self custody, right, if I'm like technically capable of like, absolutely,
+ we should do that.
+ Right.
+ And this is an issue that a lot of Bitcoiners run into, is that you start thinking through
+ the consequences of self custody, which is that, okay, well now it just exists on my
+ phone or my hardware wallet or whatever it is.
+ I need to make a backup.
+ Right.
+ I need to make a backup such that in the event that I'm in an accident or something specifically
+ happens to me that I can have a recovery mechanism for it.
+ And so kind of like the gold standard for this right now is that you want to have something
+ like unchained or Casa, right, where you have a threshold multi-sig backup.
+ So in the event that something happens to you or you lose your keys or your specific
+ hardware wallet, you can go get a quorum of people like my wife, my mom, my lawyer, and
+ you know, like my friend who's also very technical or something, and they can come together and
+ they can help me recover my funds for example.
+ Right.
+ And so like just kind of the little nugget that I keep in my head for this one is that
+ any self custody solution resilient to you being in an accident implies some sort of
+ threshold custody, a threshold recovery mechanism.
+ And so that threshold recovery mechanism could just be a one of one, which is that I have
+ a copy of my seed words on like a steel plate and my wife knows where that is and I like
+ hitting it somewhere or something.
+ And the problem becomes, well now what if I like get a divorce from my wife or something,
+ right?
+ Or my wife just like does something where to own Bitcoin is to know how to spend it.
+ Right.
+ And so the moment that she holds onto those seed words, she owns it just as much as I
+ do.
+ Right.
+ And so kind of the next step for that is, okay, well what if we split that up?
+ We can either like shard it using Shimmer Secret Sharing or we can do a multi-sig or
+ something like that.
+ Well, now this is something that people run into when you try to do like a multi-sig solution.
+ If you only say, Hey, I'll move this stuff into a multi-sig.
+ Well now in order to do any spending, I need to get signatures from everybody.
+ Right.
+ And so people are like, okay, we'll move the cold storage funds into the multi-sig and
+ then we'd never touch the cold storage funds.
+ Right.
+ And so what's really cool about e-cash for this one, and this is like, well, first, like
+ the Federation is that you can think about the Federation as we're going to formally
+ set up this threshold backup mechanism, which is that, you know, I go through this process
+ of setting up the initial guardians for this.
+ And so this is like a threshold backup in the event that I lose my phone or in the event
+ that it was anything or whatever I can recover by using this threshold backup mechanism of
+ the Federation.
+ So that's like called social recovery, which like we put into FedEx as well.
+ And so you have this threshold backup mechanism, but on a day to day basis, I'm using the e-cash
+ notes and the e-cash notes are single sig.
+ And so you get the experience of using something like Wallet of Satoshi of just like, Hey,
+ I just scan it.
+ It doesn't have to go talk to anybody else.
+ It just does the e-cash payment over by the lightning gateway and it just gets completed.
+ The lightning gateway, because it's a larger node servicing a bunch of people, the routing
+ is more reliable.
+ Right.
+ So you get the experience of using a third party, a third party custodial app, but you
+ also get the additional privacy and you get this threshold backup mechanism out of the
+ box.
+ Right.
+ And so that's sort of like why we arrive back at a Federation once we start thinking about
+ like, Oh, self custody.
+ Right.
+ But in the event, like you can't self custody, absolutely do it.
+ Right.
+ But this is like, if we want a scaling solution, for example, that we can bring to the global
+ South, there's not even the infrastructure for getting them harbor wallets.
+ For example, this is one of the things that from working at FedE I've kind of learned
+ for this, that like for me, right.
+ I can get five gold cards, I can split them up, I can like get steel backups and all those
+ kinds of things.
+ Like if you don't even have the supply chains in place in order to reliably get someone
+ a hardware wallet without it having being tampered with.
+ Right.
+ You need some sort of like different solution and FedEments kind of an interesting trade
+ off for those solutions.
+ Right.
+ And so that's kind of that covers the Federation side of things.
+ And so we can kind of move on to the other stuff later.
+ But like if you've got any questions there, like I think I covered a lot.
+ So I like how you guys classify it as second party custody.
+ It's in the middle of that spectrum between first party full Bitcoin and cold storage
+ and third party full.
+ You just completely rely on an exchange or a custodial wallet like Wall to Satoshi.
+ And it is a bit controversial.
+ Like that is definitely the hardcore hold UTXOs on chain in a wallet that you control
+ or run your own lightning node or you actually don't own Bitcoin.
+ But if we're being honest with ourselves, like it's not going to be possible to scale
+ Bitcoin at the base layer to billions of people.
+ There simply will not be enough UTXOs.
+ You cannot create an individual UTXO for every human, even a billion humans if you want it
+ to not even the whole world, just a small percentage of it, which then leads people
+ to the question of, well, maybe Bitcoin's not for everybody.
+ Maybe it's for the hardcore people who just want to do stuff out of the purview of the
+ state.
+ But I'm not under the impression that that's where we're going with this.
+ I do think everybody should have access to Bitcoin and the value it provides.
+ And we do have to weigh those tradeoffs and sort of find out where that happy medium is.
+ And I think the Fetiment and Fetty solution is a very creative way to solve the scaling
+ problem because, again, we want to get as many people as possible access to the best
+ money on earth.
+ There are going to be some tradeoffs made along the way.
+ And it's just evaluating those tradeoffs and making sure you don't go too far in one direction.
+ Yeah, and that's something that's a real motivating factor behind a lot of the work that we do
+ at Fetty, which is that initial reaction that you get where people say, "Oh, hey, well,
+ maybe Bitcoin can only be for a couple people or something."
+ Well, it's kind of hard to do that.
+ It's kind of hard to have the conversation with somebody.
+ For example, one of the things that I did after I finished up my active duty time, I
+ got reactivated as a reservist to go help resettle Afghan refugees after the Afghanistan
+ withdrawal.
+ And one of the things over there, that's something that really taught me that, hey, Bitcoin is
+ something that people need, not just something that certain privileged people want, for example.
+ And so when I was there, one of the really valuable things I was able to do was help
+ teach them how to use stuff like, because OKCoin was still operating in both Afghanistan
+ and the US.
+ So after they closed off TransferWise, they closed off Western Union, they closed off
+ everything.
+ They didn't shut down all fiat flows from the United States into Afghanistan, its entirety.
+ The only way to get money in there was using some sort of permissionless protocol.
+ So Bitcoin, which they would go over there, and then normally they would end up swapping
+ it to a stable coin or something and just figuring out a solution in Afghanistan for
+ just getting money to people.
+ Because they need to pay in order to get people to airports.
+ They need to pay in order to pass checkpoints and those kinds of things.
+ It was a huge wake up experience for me where the answer can't be, hey, we're really sorry,
+ but we've got this amazing money, but we just can't fix it in such a way that you can use
+ it.
+ When we're talking to somebody who's living under 30 percent inflation or 70 percent inflation
+ or who's governments are stopping them from just living their life generally, we need
+ to build out tooling so that we can scale this out to everybody else.
+ I think FedEvent is a really interesting trade-off space, just like you said, between first
+ party and third party custody, where we can create a scaling solution or privacy solution
+ that allows us to bring Bitcoin to a bunch more people than if we were just using like
+ a base layer Bitcoin or lightnings on its own.
+ Yeah.
+ And that, again, the trade-off is you're getting access to Bitcoin, but you're trusting a federation
+ of individuals or companies, maybe institutions, whatever it may be.
+ We're not exactly sure how this will progress.
+ I could see it going down a number of different paths.
+ And I guess that's just being aware of how the federation could rug you.
+ And I think that leads us to FedE, right?
+ And so for FedE, FedE, we're calling it a federated operating system.
+ But the idea behind FedE is that you have a front-end application that on the back-end
+ is coordinating all of your data, your money, digital life across these different federations.
+ So the world that we see is that you're going to have many, many different ones of these
+ federations, because like you said, there is this trade-off of, yes, you are trusting
+ the federation, right?
+ But we already have existing communities that are high trust or that, you know, it depends
+ on how you define your community.
+ You can define it as your local community.
+ You can define it as your larger diaspora.
+ You can define it as like social groups.
+ Like I know you have Balaji on the podcast recently.
+ You can kind of think about it in terms of the network state and the different scales
+ that you grow out to there, right?
+ And with FedEmit, basically you give them this out-of-the-box solution where you can
+ take the existing community and you can equip them with really, really, really good Bitcoin,
+ Lightning, privacy technology, right?
+ And this is like where we kind of get beyond, because what FedEmit started as was just a
+ scaling solution for Bitcoin and eventually Lightning, right?
+ A privacy solution.
+ But when you think about it conceptually is what does it mean to own Bitcoin?
+ Is it means to own and manage the data associated with, say, able to spend that Bitcoin, right?
+ And so basically managing secrets.
+ And so what you can do is because originally when we built FedEmit, FedEmit's all written
+ in Rust.
+ It's like a very complex code base just in order to organize it kind of for ourselves
+ and like Eric and DPC, both FedEmit contributors, like major FedEmit contributors, they kind
+ of like took the lead on this of that splitting it up into this module system.
+ And so the initial modules that you get out of the box with FedEmit, we call them the
+ default modules, are Bitcoin, Lightning, eCash.
+ And so the Federation is just running this distributed consensus and you're plugging
+ in these modular capabilities to it.
+ And so the same way in Bitcoin we have inputs and outputs, in FedEmit you have a distributed
+ consensus just like Bitcoin where they have different, we're moving away from this, but
+ for using a different distributed consensus mechanism.
+ But the way to think about it is that we call them epics, right?
+ And epics contain transactions.
+ The transactions have inputs and outputs and you as a developer can define those inputs
+ and outputs.
+ And so for example, like the normal transaction when you peg in is the input is Bitcoin, the
+ output is eCash.
+ When you're doing a payment, then the input is eCash, the output is some like an advertisement
+ to anyone in the Federation who if I'm running a Lightning node, I can complete this payment
+ in exchange for this Lightning payment in exchange for eCash.
+ And we built that SimpEmit module, which was Simplicity, which again is the scripting
+ language that Blockstream has been developing, which is going to hopefully be ported into
+ Bitcoin so that we can use much more advanced base layer scripting, is that the input for
+ that was eCash and the output was execution of a smart contract as defined in Simplicity.
+ And so you start building with this FedEmit module system.
+ Well, you can build out a module for basically any application that you'd like to run in
+ a federated manner.
+ And so one of those might be something like a password manager.
+ And so you get an out of the box federated backup of all of your locally run passwords.
+ And so now you don't run into like a last pass situation, right?
+ Because like all of your data is run within like people that you trust, which is like
+ your local community never goes outside of that third party.
+ Or something else like you could do a stability pool, which is another module that's been
+ developed for FedEmit, where because you have this larger pool of liquidity, you can do
+ stuff like synthetic dollar trading strategies.
+ And so you can lock in the price of Bitcoin to a dollar.
+ It becomes this sort of really modular platform for building out federated applications.
+ And FedE is the front end application for interacting between all of these different
+ federations.
+ So maybe you've got one at like the VA level, like I don't know, I just think about them
+ for the federations that I'll be setting up probably, right?
+ With other people is like at the VA level, at like a state level or a city level, like
+ my local federation, that's just like people within like my local area, or then maybe like
+ a larger Bitcoin or federation or something is that FedE is sort of the front end for
+ interacting across all of those.
+ How do I manage all of my.
+ life and my data and my money across these things.
+ So for example, if I have too much in a larger federation where they're kind of further away
+ from me, well maybe I can immediately sweep that into my local federation and then from
+ there immediately sweep that to cold storage if I wanted to or something like that.
+ But it becomes this really, really cool way where we're thinking about, "Hey, I only have
+ to expose as part of my identity those parts of my identity that I want to be exposed as
+ part of this community that I'm within."
+ And so I can use money, which is Bitcoin, and I can use my data, which is managed across
+ these different federations, to make sure that I'm only exposing those parts of my identity
+ that I want to be exposed in those ones.
+ I don't have to tell them everything about myself in order to just be part of a community.
+ Yeah, the modularity of what you guys are building at FedE is extremely exciting.
+ And I don't think anybody listening to this can really grok it until you see it.
+ Just Friday during your demo, we went from the FedE Alpha FedE Mint to the AI for All
+ FedE Mint.
+ And it's really crazy when you join a new FedE Mint, they have a suite of apps that
+ are specific to that mint.
+ FedE Alpha is pretty vanilla.
+ You can find out where people are accepting Bitcoin as payment, do a couple other things.
+ And then you get into the AI for All FedE Mint and they have stack work, which makes
+ sense for them because they're doing AI hackathon and they want to leverage stack work to help
+ out there.
+ You have LNChat, which I'm sure we'll talk about in a bit here.
+ But that was the first time I joined another mint outside of the FedE Alpha.
+ This is really personalized.
+ Yeah, exactly.
+ And that's one of the things for basically what we've been talking about is the FedE
+ Mint protocol layer of that at the protocol when you initially set up the federation,
+ you can configure it with certain modules.
+ So for example, if you want people who use the mint to be able to lock in a dollar price
+ of their Bitcoin, they could be running the stability pools module.
+ If you want them to be able to have a threshold backup mechanism, this hasn't been built out
+ yet, but if you're a Rust developer out there and you'd like to give this a shot, we're
+ doing a hackathon this month and so this would be a cool submission for it, would be like
+ a password manager where the threshold backup of all the passwords is managed across the
+ different federations.
+ And so for each federation, you can configure at the protocol layer what you're running,
+ so what the FedE Mint transactions are going to look like.
+ But on the FedE side, what we also allow you to do is we've got three phases that we're
+ going to be rolling this out in, is that the first phase is just like WebLN interactions.
+ And so you can take a website and you can run it inside of FedE.
+ And so when you're running it inside FedE, then it gets direct access to the Lightning
+ Wallet, but it's not the Lightning Wallet, but it's like the e-cash paid over Lightning.
+ And so you can do something like run stack work or you can run stacker news or you can
+ run like a Nostra client or something like Primal.
+ And you can have the experience of that's very clean because it's able to directly talk
+ to FedE.
+ So it kind of starts off that way and that's what just like in the initial alpha release
+ that we've developed out for, of that you can make like really clean WebLN applications
+ that play with FedE very well.
+ And then phase two of that is going to be, okay, well now I have this federation aspect
+ of it.
+ Anything that you want to pull community resource wise, like for example, if you in a community
+ have like a couple of people who have access to graphics cards or something and you want
+ to pull access to that and make like a tiny little graphics card farm and like gate access
+ to it, that's something that works really well in a federated context, building on top
+ of FedE Mint as a module.
+ And so phase two is going to be, okay, well now the federations and the different FedE
+ Mints, they're going to be able to host different applications and stuff on behalf of their
+ communities.
+ Right.
+ So maybe they host like a Nostra relay that's like extremely well run and they can manage
+ access to it based on lightning payments or like membership in the federation or something
+ like that.
+ They can manage like encrypted chat applications and stuff.
+ They can do anything like that.
+ You can host it at the federation level.
+ And then phase three for FedE Mods is going to be, okay, well now I've got the WebLN
+ application running inside FedE.
+ I've got these resources on the backend and I've got the FedE Mint protocol underneath
+ it that's got running these different modules.
+ Well how do we pipe through and allow somebody using FedE to be able to access the resources
+ of the federation and the different FedE Mint protocol configurations through modules that
+ they've done and expose those to the application.
+ And so if I'm running on a WebLN site, for example, I go on a website, I could have like
+ a chat bot.
+ This is just like an example for this.
+ If you want to build this out, like, you know, please like submit to the hackathon or just
+ contact me.
+ Like happy to work on this with you.
+ Right.
+ So what they can do is maybe they have like an AI chat bot that is running against graphics
+ cards locally in their federation.
+ And so every time they want to interact with a website on the AI side of things, so with
+ the open up a chat bot that can expose it, but they don't want to really have their data
+ get passed over to third party like open AI.
+ Then they can have that pass back, run at the federation level, but maybe they're running
+ the new Lava 2 that just came out today.
+ Right.
+ Like a 70 billion parameter.
+ You need like big beefy graphics cards to run that.
+ Right.
+ So you can have anybody in the fed in the anybody using FedE as part of that federation.
+ They can like pipe that back in, run it at the federation level and pipe it back out.
+ And so it's kind of like very ambitious.
+ Like we're moving toward that right now.
+ It's more just the WebL inside of things.
+ But like very soon after like after the mainnet releases and stuff, we're going to be trying
+ to build out the allow the federants to also be hosting resources for the FedE mods and
+ then also having the FedE mods be able to directly access those resources via FedE.
+ I think I'm on mute.
+ Was on mute there.
+ I mean, you said it's early days and you got big ambitious goals, but I mean, it's just
+ the stacker news example.
+ Like in the FedE for all, FedE Mint, I jumped in there and use WebLN to sign in and then
+ boosted a post or upvoted a post.
+ And that was a beautiful thing.
+ The first time on iOS for me doing a lightning payment on a site like stacker news, I didn't
+ have to leave the app.
+ It literally just popped up.
+ It was like, now done.
+ And just that UX improvement alone is massive for making the barriers to entry much lower
+ for people.
+ Totally.
+ Yeah.
+ And before we jump into AI, because that's actually why I hit you up.
+ I was like, I need to talk about Bitcoin and AI.
+ You're on the cutting edge, I would say.
+ But just to wrap up the trade offs with the federated model and diving into the individual
+ guardians, the federation members.
+ I mean, I did ask this question on the panel after your demo last week, which is what are
+ the hardware requirements for an individual guardian?
+ And if they're running an umbrella, start nine, whatever it may be, just have Bitcoin
+ core downloaded and you download FedE Mint right alongside it.
+ And boom, you can be a guardian within a federation.
+ The follow up question I wasn't able to ask, but wanted to ask you now is what are the
+ liveliness requirements for each individual guardian?
+ Like say one of their servers goes down temporarily.
+ What's the process for that to get back in the swing of signing these token transactions?
+ So this is a Bitcoiner podcast, so I can talk a little bit technically about this, right?
+ Which is the ideal configuration that you want to have when you're setting up these
+ FedE Mints is you want it to be Byzantine fault tolerant, right?
+ And so that's like fancy computer science.
+ Byzantine fault tolerance is when you're talking about a distributed system, it's very hard
+ to distinguish between somebody who's lying to you and somebody who's actively being malicious
+ or somebody who just hasn't been connected.
+ And so in terms of there's like certain distributed consensus protocols that require you to be
+ online continuously.
+ So if anybody drops out, then everything stops and you have to do this whole restart mechanism.
+ And sometimes you can't even restart depending on the different protocol that you're using.
+ So the thing that we're using is we're using an asynchronous Byzantine fault tolerant consensus
+ mechanism.
+ So what does that mean?
+ It means that different Federation guardians can go offline.
+ And if they go offline, as long as they're above the numbers, 3M plus one, where M is
+ the number of malicious peers.
+ So if you have a three of four, then that's M of one.
+ And so one person can go offline or be actively malicious trying to steal the funds.
+ And there's nothing that they can do is that the protocol will just continue because you
+ have the three signers who are able to continue going, right?
+ If you have a Federation of like five of seven, then two people could be actively malicious
+ and trying to steal the funds or just go offline completely.
+ And there's nothing that they'd be able to do.
+ And so now it's like, okay, well, what if two people, if you have like a three or four
+ and what if two people become actively malicious or something is that the specific one that
+ we're using right now is called HBBFT, which is honey badger Byzantine fault tolerance,
+ which is like, you know, like little Bitcoin joke about it.
+ Right.
+ And the one that we're moving to, there's a different one that we're moving to called
+ all of.
+ Right.
+ But one of the properties of both of these is that in the event that you've got less
+ than two thirds of the guardians who go offline or actively malicious, the protocol just stops.
+ And so because you can't get the three of four or the five of seven, because you've
+ got additional people who are malicious, you can't sign additional transactions in order
+ to continue with the protocol, but they can't steal the funds is that you're just stuck
+ there is that.
+ So for example, if we're doing a three or four Federation and one person goes offline,
+ then nothing like the user experiences, nobody notices that.
+ Right.
+ But like, you know, on the Fed side, we'll probably do like a notification that it's
+ like, hey, you've got a guardian who's been off for a while or something like that.
+ Maybe you want to sweep your funds to a different Fed rate to a different Fed or something.
+ And then but if two people go offline, so you've got two of the four who are offline
+ or actively trying to like, you know, be malicious and rug or whatever, like they can't do anything.
+ And the reason why is because it requires three or four in order to do anything with
+ the protocol.
+ So if you don't get three or four, it just basically stops where it is.
+ And once you get three or four, it continues.
+ Right.
+ And so that's like a little bit technical on those things.
+ But I think we covered each of those right is that if you've got less, if you got one
+ third up to one third of people can be malicious, and they can be like actively malicious guardians
+ or something like, you know, one of the guardians is or just go or just goes offline because
+ in a distributed consensus system, it's very difficult to determine distinguish between
+ people who are actively trying to be malicious, people who are just offline.
+ And so the way that you solve for that is you build a protocol that doesn't distinguish
+ between us, right?
+ It's that we treat you if you're offline as being malicious, and we solve for it anyway.
+ Right?
+ Yeah, that's what I was gonna ask is my assumption is that a lot of guardians are just gonna
+ have problems every now and then with their servers.
+ Like I've seen this with our lightning node at TFTC goes down every once in a while for
+ this requirements are enough to snuff we have to upload, upload the amount of data we're
+ buying from our cloud provider.
+ And
+ was the process of running a guardian node, right?
+ Is that if you're running the FedMed Damon, you just run it alongside a Bitcoin node,
+ like a Bitcoin, you don't have to have a lightning node for it.
+ Remember, the guardians are just running Bitcoin.
+ And so you have a Bitcoin node, you just run the FedMed Damon alongside it, and you just
+ keep it watered with electricity and hard drive space, and you don't have to touch it.
+ And that it just sits there and it's just running this distributed consensus with everybody
+ else.
+ Right?
+ And the other side of it, right, is that because we have this distinction between the
+ guardian nodes and the lightning nodes, because lightning nodes are extremely sort of like
+ intensive to like go back and forth with this, I think Callie just a couple days.
+ So like, you know, something that people don't really talk about is the PTSD associated with
+ running a large lightning.
+ It's very hard to do and very hard to do effectively.
+ And so like, yeah, there's like some of these solutions that are coming out, which are like
+ Breeze and like Phoenix or whatever that like make it a little easier, but it kind of like
+ abstract that away a little bit.
+ Right.
+ But just generally speaking, it's very hard because lightning, you have to be live all
+ the time.
+ Right.
+ And so what's nice about Bitcoin core nodes, right, normally, and this is why people can
+ just kind of like have them run and sit in the background, right, is that it doesn't
+ really require you to interact with it.
+ FedMed would just be something you run alongside your Bitcoin node, and you can just like have
+ it sit there.
+ You don't have to touch it.
+ You don't have to be doing anything crazy about it.
+ Just keep it, make sure that the electricity is still running, that you have enough hard
+ drive space and it's not too much additional hard drive space versus just running a Bitcoin
+ core node.
+ Yeah, I'm really excited for what Breeze is doing.
+ Things like block streams, green light, VLS, like those solutions that separate the private
+ keys from the node and allow you to run the private key in one piece of hardware that
+ can always be on and just allocate everything else to the cloud on the node side of things.
+ I think that's going to be massive for usability.
+ I could be wrong, but that's just my assumption.
+ Yeah, I mean, I've even seen it, right, and just in terms of like kind of being doing
+ lightning stuff for the last two or so years, right, is that the ease of use of doing this
+ stuff.
+ I mean, like the Breeze SDK is really beautiful in terms of making like a good developer experience
+ for like running a lightning node for this stuff.
+ But like this is also just another issue that we have in this, why we talk about this like
+ kind of spectrum of first to third party custody, where there's this big spectrum in the middle
+ of second party custody, right, is that there's an interesting set of trade-offs within there
+ that we're exploring, right, which is that, and like even within like running lightning
+ nodes, right, like you can be like very close to the metal.
+ You can also be, okay, well, Phoenix is running a node on my phone, right, and like I don't
+ really have to interact with it or touch it in any way, right.
+ There's kind of spectrum between those, is that you can use that same spectrum when you're
+ developing different lightning applications, right.
+ So for example, one of the easiest ways to get started building lightning applications
+ if you're just a front-end developer is using lightning addresses, where you don't have
+ to manage any of the node stuff, you don't have to touch any of the node stuff, you just
+ do normal HTTP requests and like on the back end, like there's a lightning address server
+ which is serving this stuff up, right.
+ So I found that a super effective way for getting new devs to start building on Bitcoin
+ is just using lightning addresses.
+ And then once they realize, oh, hey, I'm actually making a bunch of money in terms of doing
+ the lightning address stuff, sorry, I just let my dog in.
+ Once I sort of realize I'm getting a bunch of money, well, okay, well, now I'm trusting
+ the lightning service provider who's running the lightning address server, so maybe I want
+ to move to doing my own node and I can kind of move that way.
+ And it's the same sort of thing with Fetiment, right, where maybe you start with a very close
+ to you federation, maybe you just like join some like further away federations, the money
+ and data that you have associated with that larger federation is like, okay, this is getting
+ a little bit too far away from me, maybe I'm like not as close with those guardians anymore,
+ so you can roll it back to something closer to yourself or you can, so you move it back
+ to something closer to yourself or you can sweep into cold storage or like first party
+ custody for example.
+ Yeah, I mean, I think having that optionality is very important and at the speed of lightning
+ as well because like equating it to something like a Binance where you have that full custodial
+ relationship and at some point they thrust KYC on you and if you don't fill it out, you're
+ not going to get your Bitcoin.
+ Yeah.
+ The federation at the speed of lightning, if you begin to worry that that's going to
+ happen with your guardians, you just get it off right away and then since they don't know
+ who you are individually, it's much harder to do all that.
+ Yeah, and for that privacy aspect for it, right, like let's talk about that for a second
+ of that when I'm talking about like some third party over there who doesn't know me, who
+ doesn't know my family, who doesn't like not very close to me.
+ In terms of the private, there's different privacy trade-offs associated with it where
+ like I'm not very concerned that they like see some of my like personal interactions
+ and those kinds of things.
+ Like I'm not like the most, like generally speaking when people are using money and using
+ credit cards and stuff is that they're not as concerned that like, hey, some random person
+ may or may not be able to, sorry, my dog is digging.
+ Is that a good boy in the background?
+ But once you're talking about like, hey, very, very close to me, like this is Bob down the
+ street.
+ This is like a community leader.
+ This is somebody who's like very, very close to me, like my wife even, right, is that you
+ need to have that baseline of privacy, right, of that like or maybe I'm like living in a
+ government where a lender under a government that doesn't like approve of what I'm doing.
+ If you're running these local federations with second party custody, you need to kind
+ of start from the building off of like, hey, you have really good privacy and then after
+ that, like maybe you can make an opt-in module like this is something that's a couple of
+ people have been working on is like making an accounts module, for example.
+ So you want to do something like if you want to run like the EVM as part of the contracting
+ system for Fetiment, then like you need some like account model for it.
+ And so in accounts of persistent identity, you don't have as good privacy associated
+ with it.
+ But the default out of the box options for Fetiment are that you achieve very, very good
+ privacy, right?
+ And that's because you're like running in these local communities.
+ So you want to be able to opt into it.
+ It's kind of like the cypherpunk ethos, right, of that like privacy is not secrecy, privacy
+ is the ability to selectively reveal yourself as part of a transaction.
+ That's sort of like the design decisions associated with Fetiment of that like out of the box.
+ It's that, hey, we're using the e-cash system, we're using Lightning, we're using Bitcoin,
+ right?
+ But then you can add additional modules and configurations for, say you want to have like
+ a persistent identity, like you want to do something like Lightning addresses.
+ So we're actually coming up with some pretty cool solutions for doing Lightning addresses
+ that maintain your privacy.
+ But like if you wanted to do a Lightning address normally, you'd have to do, you'd have to
+ have a persistent identity for something like that, right?
+ Because it's, you know, I'm marty@getalby.com or something, right?
+ That is my Lightning address if you guys want to send me some stats.
+ That's one of my Lightning addresses.
+ What do you think the first killer, modular killer app or use case of Fetiments or within
+ Fetty particularly is going to be?
+ I've been extremely bullish on synthetic dollar trading strategies.
+ And so this was actually back when I was at OKX.
+ So I was like originally just kind of like my first software engineering job.
+ And so but like while I was there, I was running these weekly sessions on like this is how
+ Bitcoin works.
+ This is why it's important.
+ This is why like Bitcoin, not some of these other coins, right?
+ And so one of the things that while I was there was they had the collapse of all the
+ banks like the crypto banks.
+ Remember that?
+ We had like Silicon Valley Bank, Silvergate Bank and Signature Bank.
+ Like they all collapsed within like a week of each other or so.
+ And like in the days before that, in the weeks before that, I had been like, hey, this is
+ not a question of going from, you know, like one bank to another.
+ This becomes a question of what if there are no banks?
+ What if we can't get a banking license at all?
+ Right.
+ And I think that a lot of people are running into these issues.
+ And so one of the really interesting solutions for that is using synthetic dollars.
+ And so the way that that works is basically I go, I hold some, I take my Bitcoin and I
+ deposit and I like hold my Bitcoin here.
+ I take some percentage of it and open up a short position against that Bitcoin.
+ And so now the price of the if the price of Bitcoin goes up, then some of the Bitcoin
+ that I'm holding goes up.
+ But the short price, the position that I'm holding is the short goes down.
+ And the net between those is a stable U.S. dollar price.
+ Right.
+ And so this is a way that you can do without having to touch a bank because all you need
+ is Bitcoin in a place to trade it.
+ You can lock in the price of Bitcoin to dollars.
+ So for example, this is what Galloway is doing in order to give U.S. dollar bank U.S. dollar
+ accounts to everybody who uses Galloway on the Blink Wallet is that they because it's
+ a custodial solution on that one, then they have a sufficient liquidity associated with
+ it.
+ They can do these hedging strategies in order to create synthetic dollars so that they don't
+ actually touch banks at any level of the stack.
+ They're just shorting Bitcoin on an exchange using perpetual inverse swap contracts.
+ And they're holding and they're going long.
+ So maybe I have like a million sats or something.
+ I take like six hundred thousand of those and then I keep them like segregated off and
+ then four hundred thousand go to the exchange or the DeFi pool or whatever it is that I'm
+ using to short the instrument.
+ And so I open the short position and say like the price of Bitcoin goes up.
+ Well then the price of my sats goes up.
+ That's over here.
+ But when I close the position on the exchange and I get it back instead of the four hundred
+ thousand sats, now I have like two hundred thousand sats or whatever.
+ Right.
+ So if I haven't been exposed to the price volatility of Bitcoin, the net between those
+ two is always a stable US dollar price.
+ But in order to do that, you need sufficient liquidity because like in order to get like
+ good order book depth, you need sort of like larger than like in order to not get like
+ killed while you're doing these trades in order to like hedge out the position properly.
+ And so what's cool about Fetiment is that we've got this stability pools module that
+ like Federations, it's not that one of the default modules, but it's something that Federations
+ might be able to run is that now because you have additional liquidity and you have additional
+ depth, you can basically create an API for locking this in, locking in the price of it
+ because you can have liquidity providers for the Federation or like, hey, I want a short
+ Bitcoin or I want to go long Bitcoin or whatever it is.
+ And like they can be the other side of that trade in order to for people in the Federation
+ lock in their price of Bitcoin.
+ So the experience they have is just using dollars like the thing that shows up in their
+ app while they're going back and forth is like a dollar price.
+ But they can still scan lightning invoices.
+ They still get the advantages of the e-cash claims and those sorts of things.
+ Right.
+ So I think that's like a huge unlock for that, because something that I've seen personally
+ is that like the price volatility of Bitcoin is a huge deterrent for a lot of people who
+ otherwise would join in.
+ Right.
+ Like they want the rails of using Bitcoin.
+ They want the instant finally settled micropayment over lightning.
+ They want to be able to like, you know, I know that you were talking about this actually
+ started this.
+ I haven't finished it up yet because I was a little bit busy this morning, but making
+ like basically do a lightning payment and then get like a stable diffusion 2.0 generation
+ or something that costs zero point one cents.
+ But you can pass that all costs along in sats.
+ They want that experience, but they don't want to be exposed to the price volatility
+ of Bitcoin.
+ Right.
+ And it's not something if you're like in the global south and like your net take home
+ it into the week is like 50 bucks or something.
+ You can't be exposed to a 25 percent price swing, for example.
+ And so I think that adding in those stability pool module where even if you're in a place
+ that doesn't have a banking relationship, you can set up one of these federations and
+ then on like the people within the federation, they can lock in the price of Bitcoin to
+ dollars.
+ So that gives them a really cool strategy for now I get the permissionlessness and advantages
+ of Bitcoin, but I don't have to be exposed to the price volatility associated with it.
+ I think that's like a huge unlock.
+ I completely agree.
+ I could see that being the first killer use case.
+ Not to answer my own question, but Peter McCormick was tweeting about it the other day.
+ Like I had to pay somebody in Argentina and they asked me for stable coins over Bitcoin.
+ Like there's obviously a use case over here for this.
+ It was running over Ethereum.
+ Like are we doing enough in Bitcoin?
+ And again, I think there's in order of operations to all this, we will get to that point where
+ you can exchange stable value using the Bitcoin rails.
+ It just took some time to get things set up, the protocol layer to enable lightning and
+ get lightning mature and then have Eric and a bunch of others come up with this idea or
+ really Eric come up with this idea of Fetiments, leveraging lightning and then bam, we can
+ do it.
+ StabilityPool has won that hackathon in the fall, correct?
+ Yeah, that was before I came out of Feti.
+ That was a hackathon.
+ I think it was January-ish, right?
+ But they were the ones that built that one.
+ And StabilityPool, you can kind of think about it as like a DeFi pool, right?
+ But like without all of the problems associated with doing that, where you try to support
+ like all of these crazy multiple currencies and have like all of these weird issues associated
+ with the liquidity providers, right?
+ Is that it's just a very clean interface of the reason why this thing exists, the exclusive
+ thing for this module is that you have people on one side of the trade trying to lock in
+ their price of Bitcoin and people on the other who need liquidity provisions in order to
+ like put on a longer or short position or whatever, right?
+ It's like a very limited set for that.
+ But because you're just limiting that set out of it and because you have the additional
+ liquidity of the federation versus like an individual where normally like the batch sizes
+ for these hedging positions is normally updates of like $100-ish, right?
+ Is that in order to like make this thing work, you need the additional liquidity and depth
+ of an order book of a larger group, right?
+ And so the federation becomes like a good intermediate layer between, hey, you don't
+ have like this third party who's like, you know, like Kraken or something like that,
+ right?
+ Where, but it's not like an individual.
+ And so in that intermediate layer, you can get still get the good execution costs in
+ order to make it so that you're not like losing your shirt, all of the trade costs associated
+ with doing the hedging.
+ Yeah.
+ And then liquidity providers are incentivized to provide that liquidity because they're
+ going to make some money on the fees for putting that liquidity in there.
+ And another thing too, like you can abstract all that like perp swap, taking a short position
+ away where it's like, hey, how much Bitcoin do you want to lock up?
+ How much USD do you want?
+ Super simple, right?
+ And this is one of the really cool things.
+ I actually did some initial work on this.
+ I haven't gotten time to finish it up, but of taking stable sets as it exists in Galway.
+ And it's just an open source rust implementation of that, taking that and turning that into
+ a FedEvent module, right?
+ So that you could literally, if you wanted to, then the strategy for it, for doing the
+ liquidity provision for it is that you could use a third party exchange if you wanted to.
+ And this is something like, you know, it'd be better to use stability pools where you're
+ just doing it locally within the federation.
+ But like the whole point of FedEvent is that it's an opt in system, right?
+ So like out of the box, you get really good privacy, you get Bitcoin, you get on chain,
+ you get e-cash, right?
+ But you can opt in using these modules to additional stuff.
+ Like maybe I want to have an account system.
+ Maybe I want to use an EVM, a smart contracting system.
+ Maybe I want to like run simplicity, right?
+ Or maybe I want to have like space chains or something like this.
+ Like what's really great about this is you can just take any application that you could
+ run in this federated context through, because you already have the FedEvent system set up
+ there where they're running a distributed consensus.
+ You've got access to Bitcoin, you've got interoperability with Lightning, you've got the e-cash abstraction
+ in order to do sort of like the bearer instruments of moving between different modules and between
+ different inputs and outputs on the transactions.
+ And so it becomes this really, really cool layer for you can just opt into these different
+ layers of like, you know, for this one, maybe I want to like start moving into AI with this
+ stuff is that one of the cool applications I really think is going to be another really
+ cool one for FedEvent is going to be hosted access to GPUs, right?
+ And so for a lot of these communities that we're thinking of launching in, you don't
+ have a bunch of individuals who have graphics cards themselves or the ability to access
+ graphics cards at a cloud level, right?
+ So like one of the issues that like this is what kind of prompted me to start going further
+ down the AI side is that they really have serious monetization problems.
+ And the reason why is because like I show up at your website, I hit a GPT-4 call that
+ costs two to seven cents, right?
+ And so the cost is going to go down, but the quality of the models is going to go up.
+ And so whenever you want to get access to the most recent stuff, most like cutting edge
+ stuff, it's going to be like, you know, a couple cents or a couple fractions of a cent
+ or something.
+ It's not something that you can just amortize out your cost because it's basically free,
+ right?
+ Which is what kind of like the previous computing paradigm that we were in with like, I don't
+ like the web two, web three thing, right?
+ But like web two is that, you know, it doesn't cost Facebook much to just have me show up
+ at the Facebook website a bunch.
+ But if I showed up at Facebook and the first thing that happens is I do an interaction
+ with their new Llama 2 model, right?
+ Like Replicate, which is one of the companies that's like exposing APIs to a lot of these
+ things, they don't even let you hit the 70 billion parameter one, which is like the biggest,
+ like most performant version of the model.
+ And the reason why I think is because it's too expensive and they can't just like let
+ people hit against that.
+ And even if you wanted to pay for it, the mechanism they currently use for paying for
+ it is credit cards.
+ And so that limits the number of people that you can have access to.
+ And it requires them to dox themselves, to give their information, to give all their
+ credit card stuff.
+ You have to work through Stripe.
+ It's like this whole thing, right?
+ And so what I really think is going to be cool is Fetimint running basically hosted
+ access to graphics cards for people within their community so that you can run something
+ locally that you can't just run on your phone, right?
+ But you don't have to reach out to a third party in order to do the execution for.
+ Yeah, I mean, you provided the jumping off point for the AI discussion.
+ But before, I do have some questions around that particular use case, specifically.
+ Questions like, will you be getting access to the best AI products in that model?
+ And before you answer that, maybe we just start, pretend like I'm the idiot I am, don't
+ know anything about AI.
+ What is the AI landscape?
+ I mean, I'm sure everybody's heard about LLMs, generative AI, the compute necessary to make
+ it all work, AI agents.
+ What's the base of artificial intelligence and the industry going around it and the iterative
+ process getting built on top of it?
+ Yeah, sure.
+ So let's kind of do a brief overview of why this stuff has exploded recently, right?
+ Is that the specific things that we've been kind of working on and that have sort of been
+ developing are these large language models.
+ And so basically, a language model uses, well, let's make it even more simple, right?
+ Is that basically with large language models, what you're doing is you're basically training
+ it over a giant dataset, which is think about like the entire compendium of human knowledge.
+ And we're just taking all of that and we're just saying, okay, based off of everything
+ that has ever been written, which is like the datasets associated with doing this are
+ scrapes of the entire internet, giant code bases.
+ I think for like Microsoft's models and OpenAI's models that use the entirety of GitHub, for
+ example, right?
+ There's a lot of open source stuff available there for not only the language models, but
+ for the diffusion models, they're training them on like billions and billions and billions
+ of different like pictures, right?
+ And images and videos.
+ And so you're just taking all of this stuff and then you're saying, okay, based off of
+ everything that I have there, I can predict what the next letters are going to be in the
+ input that you're giving me.
+ And so this is something where like if you've been playing with chat GPT or any of these
+ chat interfaces for this stuff, the big thing for this was now you have these new chat models
+ which are trained over instruct datasets.
+ And so what does that mean is that normally what the language model is doing is it's just
+ predicting what the next token is.
+ Based off of the entire corpus of history, the next token is probably just a continuation
+ of the sentence or a continuation of the paragraph, right?
+ Is that the interface of chat has been super useful because the way that they model the
+ datasets for it and they specifically fine tune it over it, which is basically you like
+ take the larger corpus of information and you say, "Hey, specifically I want you to
+ have a higher probability associated with answering in these ways," right?
+ Which is like the smaller dataset, it's more refined dataset that I'm training you over
+ of like an instruct dataset, where there's more questions than answers.
+ Is that instead of like, I post a question and based off the entire compendium of human
+ history, it's just ask more questions.
+ It's I pose a question and it can give me an answer, right?
+ And so that interface has been extremely useful and extremely intuitive.
+ And this is kind of the first time that users has been able to see just for themselves that
+ this stuff is really useful and powerful and I can do a lot of stuff, right?
+ So everybody's had probably a couple weird experiences with chat GPT, but also some great
+ experiences of these are things that I didn't think it would be able to do.
+ And so that's sort of on the large language model side.
+ And so one of the really cool things about this is that you get access to intelligence,
+ access to like, I can, instead of having to do like search and I've got like the 10 blue
+ links or whatever, I can just ask a question and get an answer.
+ And like you have this problem of hallucination.
+ And the reason why you have these hallucination problems is because the model itself is just
+ saying based off the entire compendium of human knowledge and the fine tuning parameters
+ that you put into here, I predict the next couple of letters to be this.
+ And then I predict it to be this.
+ And then I predict it to be this.
+ So when it's hallucinating, it doesn't like have complete context of everything that's
+ going on inside of that sentence.
+ It's just predicting what the next token is.
+ And so this is kind of like a bunch of different stuff, but in order to run these models and
+ have access to them, these are very expensive.
+ And you think about every single time that you hit against Chad GPT or every single time
+ that you hit against stable diffusion or anything like this, stable diffusion is like an image
+ model, a text to image model, or like any of these other stuff.
+ Right.
+ Like I like the whisper models where you can take audio and turn it into text.
+ All of these things is basically every single time you're doing that, you're setting a graphics
+ card on fire.
+ And so that is expensive and that's costly.
+ And so like there was a period when Chad GPT first came out where everybody was using it,
+ where OpenAI was burning millions and millions of dollars a day.
+ And the reason why was because, hey, we want to give people an access to this stuff and
+ we want to see it and get the initial response for it.
+ But you run into these issues.
+ And so one of the big issues in this last couple of weeks has been that the quality
+ of Chad GPT for the GPT-4 models has gone down enormously.
+ And you see like, hey, it's faster, but all of the things that I really like it for, of
+ that it was able to do all these amazing things, like now the quality of the answers is going
+ down significantly.
+ Well, why is that?
+ Well, it's because they're basically cutting back on their burn.
+ It's what I think is going on.
+ And so this is extremely expensive.
+ The whole model of, oh, hey, I've got 10% of my users who are going to pay for the 90%
+ who don't pay at all, doesn't work where every single time somebody shows up my website,
+ they cost between like five and 20 cents.
+ Right.
+ And this is why I was so excited about Lightning because a lot of the stuff we've been building
+ in Lightning is this instant finally settled micro payments, specifically some of the stuff
+ that I was working on.
+ And like, this is sort of the space that I've been spending a lot of time in is over the
+ web.
+ And so basically you hit an API, the API returns a 402 payment required code, and you complete
+ the invoice and then complete the call.
+ Right.
+ Is that this is the first place where, okay, well, API calls beforehand, basically were
+ free.
+ And so when we said like, oh, hey, you can monetize an API call, you can have someone
+ cost like one cent to show up at your website.
+ That wasn't a very appealing thing to tell people because they were like, hey, my API
+ costs called basically cost nothing.
+ Right.
+ Like this is not like a big expense for me, but now it's becoming this huge expense and
+ there is no better solution than the Lightning network and specifically just doing this.
+ Hey, I hit against the payment.
+ I hit against the endpoint.
+ It gives me back a payment required code.
+ I pay the invoice and now I can continue interactions with the website as my authorization code.
+ There is no better solution than Lightning in terms of the speed and in terms of the
+ final settlement of the bearer instrument.
+ That's like another kind of side thing for this of why AI is like such a good opportunity
+ for monetization on the Bitcoin side is because the issue with a lot of these guys are running
+ into is that they're using credit cards.
+ And so if somebody shows up my website, it cost me four cents.
+ Right.
+ And then they swipe their credit card and then, okay, well, the minimum transaction
+ I can do is $2.
+ And so now I can't just like open up this.
+ I have to have them get credits.
+ I have to like do this whole thing.
+ I have to get their information.
+ I have to get so that in the event that they do a chargeback, I can like contact them and
+ all those sorts of things.
+ It's this whole mess.
+ Right.
+ But with Lightning, when you do a Lightning payment, you as the sender achieve very good
+ privacy.
+ So I, as a developer can make a Lightning gated website and then users can show up and
+ I don't have to know anything about them except for the fact that they paid me and I can pass
+ along the costs to the user as they're using my website.
+ And so this is like a really cool use case for Lightning, where for a lot of the other
+ stuff that we've been doing, it's like, yeah, sure, I could do this with Lightning, but
+ I can also do it with dollars.
+ And there's a whole infrastructure for dollars and all that sort of thing.
+ Right.
+ Is that I think we first started seeing with Nostr where it's Zaps, where like you really
+ can't do that with like a Fiat system.
+ This is another example of this, where there is no mechanism to do this with Fiat.
+ You're not going to be able to pass the cost along to the users in that way.
+ The only way that everyone's doing it right now is basically with credit cards.
+ And that becomes huge, like huge issues.
+ Like one of the things I made was like a basically wrapper around chat GPT that you can pay with
+ Lightning for.
+ And like the initial context that I got about it were like, oh, hey, I'm in Nigeria or I'm
+ in Brazil.
+ Like I can't get a credit card and I haven't been able to use any of this stuff.
+ This is the first thing I've been able to do because I can like use Bitnob or I can
+ use like whatever in order to swap my money into Bitcoin and just pay for you as you're
+ using it.
+ Like I had no idea that that's where they're coming from because I don't know anything
+ about them except for they paid me.
+ Right.
+ So that's kind of like a big overview of like AI and Lightning, sort of the intersection
+ between those two.
+ So hopefully it's a good starter.
+ That was a great starter.
+ And I think that last anecdote they just shared really shows the power of this, like opening
+ up these tools to markets that don't have access to them because of the incumbent payments
+ infrastructure, which when you think about the impact that could have not only those
+ individual communities, but the world overall, if you get smart people who are just limited
+ by their access to technology and services, you finally get them access to that stuff.
+ It's crazy to think what could come of that.
+ But as you were prefacing that, I think to dive more deeply into what's going on the
+ Lightning side of things specifically, you mentioned L402.
+ And so let's jump into that obviously.
+ I mean, LSATs, they had to rebrand to L402.
+ Brian Gentry was telling me the law, the legal apparatus here in the United States,
+ really the tests that lawyers take to become lawyers, the LSAT had to say, "Hey, you
+ can't call your protocol LSAT, unfortunately."
+ So they renamed it to L402.
+ It's been around for a while.
+ Lightning Labs has been utilizing it in a few of their products, but it seems like they
+ had a major release last week, which implemented it into a popular AI development kit, LANG
+ chain.
+ And so what's going on with L402?
+ What is Aperture and why is it really big that it's now in LANG chain?
+ Yeah, sure.
+ So LANG chain is basically...
+ So now we can kind of go into the specifics of how people are using these models, is that
+ one of the things that we figured out is that you can take the models and you can feed them
+ back into each other and you can feed their outputs to each other.
+ And so what agents are, and this is what people have been working a lot with, there hasn't
+ been a lot of production deployments of them yet, but it's something that people are experimenting
+ with and I think is a really good use case for Lightning, is that you basically have
+ one model that's operating as a planner, and then he takes your task and splits it out
+ into subtasks.
+ And then that agent, that model output can be fed into a bunch of different agents beneath
+ it.
+ So you have an agent that can access the internet.
+ And so maybe it does a web browse, it interacts with the web and so it gets some information
+ from there and it goes back.
+ And then you have an agent that...
+ Basically the way these agents work is that they're just large language models that you're
+ passing in specific personas and like, "Hey, you are this, these are your capabilities
+ and this is how you access the APIs that you have available to you."
+ And it can output code, which you can then execute, for example.
+ And so what these agents is that you can create an agent and then have it go do stuff for
+ you.
+ And so what's really cool about the L4O2 integration with LangChain, which is like
+ Blanching Bitcoin tools, if anyone looks it up, I think it's like github.com/lightninglabs/langchainbitcointools,
+ is that LangChain is this kind of framework that people are using in AI for building out
+ these applications where it's like, "Hey, I want to take an input and feed it into this
+ large language model and then clean the output and feed that into another model and then
+ have it browse the web and then give the output."
+ And so what people call that is chain.
+ So LangChain is a way to chain these different large language models together with just the
+ rest of your code and your application that you're doing.
+ And LangChain Bitcoin tools is a way to have that agent and have that model.
+ One of the tools that you're giving it is tying it into a lightning node and saying,
+ "This is the capabilities that you have of being able to access it."
+ So it can output code and execute that code in order to send and receive Bitcoin payments,
+ for example, on your behalf.
+ And so currently the way everyone's kind of playing around with agents is maybe they exist
+ for like seven, 10 seconds or whatever it is.
+ But if you want to have longer running agents, like something that's just sitting in the
+ background doing stuff for you, one of the things that people have found with building
+ out these agent models is the agents using these models is that the more specialized
+ you make the agent, the better the performance is.
+ So like, back to military terminology, I think about it as like weapon to target match, which
+ is that you make a very specialized agent with specialized skills.
+ And when you ask it to do something, it's very good at doing that thing.
+ But the problem that people are running into is, "Okay, well, if I make all these specialized
+ different agents, how do I have an orchestrator agent across them?
+ And how do I host access to all of those things?"
+ And this is just kind of like going back to economics is that the way that you coordinate
+ value transfer and the way that you get things done in an economy with very specialized agents,
+ with very specialized actors, is that you have money as the intermediate value transfer
+ layer between them.
+ And so this is like the thing you can do with Langchain Bitcoin tools, is you can give the
+ initial planner agent a wallet and say, "Hey, these are the things you have access to.
+ This is how much money you have.
+ You can go hit against services.
+ You can pay for them.
+ You can give these things to those."
+ And so this is what we think is, and that I'm very excited for, I've seen a lot of
+ cool projects getting started, built out for the hackathon for this, is that Langchain
+ Bitcoin tools and just giving agents access to Bitcoin wallets is going to be sort of
+ the best interaction layer for using agents.
+ Because you can have all these specialized agents that get paid in Bitcoin, or this is
+ something that's really exciting, and Stackworks has been doing some work on this.
+ I've seen a couple of projects working on this for the hackathon, is that the agent
+ can identify, "Oh, I don't have the tools to complete this.
+ I'm going to post a bounty using that Bitcoin that you gave me to get a human to complete
+ this part of it and then feed that back into myself so I can continue with what I was doing."
+ And so agents specifically are one of these places where Bitcoin is a very, very useful
+ tool that you can give them in order to make them do the things that you want.
+ Yeah.
+ It's mind-blowing.
+ And I mentioned this to Balaji before I recorded with him last month, is it seems like via
+ the emergence of the Lightning Network and now L402 and these Langchain Bitcoin tools
+ that Lightning's produced, the machine payable web is finally viable.
+ It makes sense to go after that particular, I don't want to say use case, I guess you
+ can say, but that particular market of machines paying each other.
+ Yeah.
+ Well, this is something I woke up and realized was that because I'd exposed my OpenAI key
+ via these Bitcoin payments, right?
+ And so I woke up and I had a $2,000 bill from OpenAI, right?
+ Because I was like, "Oh, hey, a bunch of people are using this thing now," because I just
+ left it on GPD 4, right?
+ And so each one of those calls is between three and six cents, right?
+ And depending on how many dozens of tokens that you're doing.
+ And a bunch of people have been using it.
+ I had it running for the entirety of Prague when we did the pop-up federation as one of
+ the Fetty mods.
+ And so people were able to click into that and just ask some questions and stuff.
+ And when they were doing that, the entire time it was like, "Hey, they're just passing
+ along Bitcoin payments to me," right?
+ And so I see my OpenAI key is like, "Oh, hey, my expenses are like..."
+ I've got $2,000 in expenses or whatever.
+ And then I look at my Bitcoin wallet, and it's like $2,020.
+ I'm like, OK, well, this is something
+ that becomes really cool with this,
+ is that once you have payments for all of these APIs--
+ and this is something that people are running into,
+ because everybody is scraping everybody else's data
+ for training sets and stuff.
+ Twitter, if you remember last week,
+ they were like, hey, we're going to gate access to this stuff
+ now, and you can only hit it a certain number of times.
+ The reason why is because everybody's
+ trying to scrape against Twitter in order
+ to generate training data and those sorts of things.
+ Is that when you gate something behind a payment for the API,
+ then the concept of spam kind of goes away.
+ And the reason why is because every single time someone's
+ hitting me, I'm passing the cost along to them,
+ and I can add a small profit to that or whatever.
+ I can do like, if it costs me $0.10,
+ then I can have $0.10 convert that to SATs
+ and then add half a SAT or add two SATs or something.
+ Is that I can pass that cost along to the user,
+ and so I just don't care about how many people are hitting
+ my service because I'm always profitable.
+ Is that just hit me more.
+ Is like, hey, show up at my website,
+ interact with the chatbot.
+ You're passing along the cost as you do it.
+ And so it becomes this really cool change of pace for it,
+ because this is something talking with some of the more
+ AI-focused guys who they run into this issue,
+ where the moment that they deploy something with GPT-4 in it
+ and it becomes popular, well, they wake up the next day
+ and they've got, hey, I've got $2,000 or $20,000
+ worth of open AI expenses.
+ But then the problem is they don't have a monetization
+ mechanism for it.
+ Or if they do have a monetization mechanism,
+ maybe it's Stripe, and maybe, hey, 20% of those things
+ become chargebacks or something.
+ And so it just becomes a super, super cool abstraction layer
+ of whenever you want to do any of these AI calls
+ is that you can pass along the cost along to the user.
+ And so people start taking in and they
+ start using Bitcoin for all of this AI stuff.
+ And then as you're passing those payments along and stuff,
+ the reason why they're doing it is because of the speed
+ associated with it and because it's a bearer instrument
+ with final settlement.
+ But you sort of backdoor in is that, hey,
+ a sender on Lightning achieves perfect privacy.
+ Well, not perfect privacy, but very, very good privacy,
+ especially relative to the current solution, which
+ is this is my name, this is my credit card information,
+ this is my address.
+ So that's what initially was really exciting about it.
+ And it's been really cool seeing people building out
+ projects for the hackathon that kind of show this works.
+ And so, yeah.
+ Yeah.
+ No, I mean, it's going to be massive, I think.
+ And I kept positing this at the summit last week,
+ like how long is going to take before a large percentage of,
+ or if not a majority of, transactions
+ of the Lightning network are machine-to-machine payments
+ of agents going around and completing tasks
+ on behalf of humans, or maybe even other agents
+ if things get really heady.
+ But it really does open up this digital economy
+ that was not possible, like you said, before.
+ And the use case you brought up in terms
+ of giving access to people, giving people
+ access to your GPT-4 key, you made $20 on that.
+ And that's another thing.
+ If you're providing the service of access
+ to the key, which is giving others privacy,
+ you could charge a little premium on that
+ and probably make a bit more money on top of that, which
+ is a great economic incentive.
+ And then on top of that, I guess the big question
+ is, will open AI ever get to a point where, hey,
+ we don't like this.
+ This is weird that you're paying on behalf of thousands
+ of people.
+ Or is that sort of how it works anyway,
+ if you're building apps on open AI?
+ Yes.
+ [INAUDIBLE]
+ --only build out applications.
+ And so I have an API key, and I hit it against a service,
+ and I pass along for my users or whatever,
+ and I'm a client of that person.
+ And so then if it's over smaller than micro transactions
+ or something, then maybe I would have to do--
+ I'd have to know some more about them,
+ depending on the service that I'm offering them
+ and those kinds of things.
+ But the thing that--
+ I think that the--
+ I mean, this is still--
+ nothing's really in production in terms of the agents.
+ There's some stuff that's starting to roll out.
+ But the big thing for it-- and you'll
+ notice this when you start playing around
+ with these applications-- is that they're all like, hey,
+ bring your own API key.
+ Or they're, this is how you run this yourself.
+ Or it's, sign up with a credit card
+ in order to get access to any of this stuff.
+ And the reason why everyone's doing that
+ is just because of the cost associated with doing this.
+ And so it's been super exciting for seeing this.
+ And I think we can talk about Aperture for this,
+ is that Aperture is something that Lalu built and Lightning
+ Labs put out.
+ And they just did a new release for it
+ where it's called a reverse proxy,
+ is that you hit against Aperture the exact same way you would
+ normally hit against the API.
+ But the only difference is that you just don't put
+ the authorization key, basically.
+ Is that you don't have an OpenAI API key,
+ but you hit against the Aperture reverse proxy exactly the way
+ that you would hit against OpenAI's API.
+ And what happens on the Aperture side is, what that's doing
+ is gating it with a micropayment on the Lightning side,
+ and then attaching whoever the developer who's
+ running the Aperture proxy, attaching his API key,
+ and then completing your call for you
+ and passing it back along.
+ And so that's just been that concept of that,
+ like, I can take my API key, and then I can just
+ wrap it with Bitcoin so that anybody can hit against it,
+ and then hit against using that API key.
+ They can hit against whatever service they want,
+ using the other one.
+ That becomes a really cool attraction layer
+ for developers who want to start using this technology,
+ but they can't get access to credit cards.
+ They can't get access to OpenAI keys.
+ Or maybe they live in a country where they're not
+ allowed to have those services.
+ And so that's been super, super cool to see.
+ Yeah, I've played around with godmode.space,
+ which is an AI agent tool to try to get an agent to do something
+ simple like, hey, I've got this website, feed them tftc.io.
+ Look around and see how I can improve the SEO strategy.
+ Like, what tags can I be adding to improve the SEO?
+ And get it in front of an audience of Bitcoiners,
+ or people looking to learn about Bitcoin.
+ And it's been about a month or two since I last tested it.
+ I really wasn't able to complete the task.
+ It was probably because I'm not that good of a promptee quite
+ yet.
+ But you can see it's there.
+ Like, I was watching this agent go into Google,
+ scrape certain websites for keywords, scrape my website.
+ Like, it was insane to watch it go and do things on command.
+ But like, yeah, like you said, I'd get an open AI,
+ get my API token, put it in there.
+ It was a very clunky process.
+ It wasn't really straightforward.
+ Yeah.
+ And this is-- I mean, like, just yesterday,
+ I was at a meeting with someone.
+ And they were proposing that, hey,
+ I think the thing that's going to happen
+ is people are going to have single sign-ons with their API
+ keys, right?
+ Of like, hey, you log into the website,
+ and then it passes along to this.
+ And I was like, no.
+ Like, the solution for this is that you just
+ pay for stuff as you use it, right?
+ And so because like--
+ just think about it from the developer perspective even,
+ of that it's like, oh, hey, I have
+ to go hit against somebody else's API key,
+ and I have to go along there.
+ Or they're passing their API key to me
+ so that I can complete a call for them or whatever.
+ And it's just like, this is one of those issues where--
+ I mean, it's crazy.
+ This is what people basically do with credit cards too, right?
+ Where when you swipe a credit card,
+ you're basically giving that dude
+ root access to wherever you swipe it
+ to be able to charge whatever they want, right?
+ And it's a bigger problem with debit cards, right?
+ But that's not the way that we should be doing this.
+ The way that we should be doing this is that you provide me
+ an invoice, and I pay the invoice for the service
+ that you're providing for me.
+ And so I can do that.
+ Like, I can do that, and I can do it with Lightning.
+ So it's an instant, finally settled micropayment.
+ And because of that, I don't have any risk of a chargeback.
+ I can charge down to a couple of mil satoshis.
+ Like, I could probably do over a mil satoshis
+ because those aren't real, right?
+ That's the joke, right?
+ But you can do it that way, or you can do that--
+ this is what the L402 specification normally
+ recommends.
+ And I've seen a lot of success with people implementing this,
+ is that you just have them initially do a call.
+ They do a payment for like $0.01 or something.
+ And that might be up--
+ that gives them credit for doing like 10 or 15 different calls
+ to stable diffusion or something.
+ But because you have this really cool infrastructure built out
+ with Lightning, where this is like--
+ I don't think we've talked about this yet,
+ but this isn't 2018 anymore, right?
+ Is that Lightning is reliable.
+ Lightning has infrastructure around it.
+ Like, you can spin up a voltage node in a couple minutes,
+ right, and start connecting out to channels
+ if you're a developer, if you wanted to self--
+ if you wanted to host by voltage.
+ If you wanted to host like a core lightning node,
+ I've got templates set up for that you can just
+ like run a core lightning node out of a REPL, right?
+ Is that this is not 2018 anymore, where like, hey,
+ 90% of the payments were failing and like all that sort of thing.
+ Is that like it's a really clean user experience
+ of like having the payment just be done in the background,
+ or just like you do the initial payment for like $0.01,
+ and then you just do the payments in the background
+ as the user is navigating around your site with like Albi
+ or Fetty or whatever.
+ Like the things that we've kind of been building out
+ for the last two years, I think I
+ have a really cool intersection with this new computing
+ paradigm of AI, where we can take all the stuff that we've
+ already built, and because we were focusing on payments,
+ we weren't focusing on like web 3 stuff
+ of putting real estate on a blockchain or whatever, right?
+ Now we have this really robust payments infrastructure
+ that we can take and we can apply to this,
+ where this problem where everyone is running into,
+ how do I monetize this stuff effectively, right?
+ I mean, I had this epiphany last week at the summit as well.
+ It's because like a lot of people in Bitcoin
+ are like, oh, the shit coins are going to come back.
+ Next wave is going to be crypto and AIs and tokens
+ specific for AI functions.
+ And I was pushing back on the people saying this,
+ because I don't think the dev tool ecosystem will be--
+ obviously, it won't be as robust if you're spinning up a token
+ and trying to smash it into AI.
+ Like the tooling around Lightning specifically
+ that's been built out over the last five years,
+ I think, has a significant head start in terms of actually
+ providing utility and value to these AI companies
+ at the end of the day.
+ Yeah, and this is the kind of like why Bitcoin.
+ And this is something, a universal reaction
+ that I would get as a Bitcoiner working at OKCoin and OKX,
+ was that the reaction I would get is like, hey,
+ why are you focusing on payments?
+ Why are you so focused on money?
+ There's all this other stuff you can tokenize, right?
+ The reason why is because money is
+ the single most valuable thing out there.
+ It's like half of every problem, right?
+ Like, hey, there's the problem and there's
+ the relative value of that problem
+ compared to everything else.
+ And money is what we're using to make
+ that relative valuation in a larger economy
+ and this economic model, right?
+ And so the fact that we've been focusing
+ on making really, really good payments
+ and using a money that can't be corrupted
+ is really starting to pay off.
+ Because now when people say, hey,
+ how do I monetize this thing?
+ I want to use the best payment technology which
+ has the best user experience.
+ Like Lightning currently, there's
+ all sorts of hard edges on user experience.
+ But specifically around the dev experience of, hey,
+ I have a Lightning address.
+ I can hit against it to get an invoice,
+ make sure that invoice is paid, and then complete the service.
+ That specifically, I've seen tons and tons
+ of people who know nothing about Bitcoin, not very interested
+ in Bitcoin.
+ And they can be like, oh, wait, I can do this.
+ And then I can immediately start getting payments.
+ And I don't have to, as a web developer,
+ sign up for and take all the information from all my users
+ and pass along a stripe, right?
+ I can just have a transaction with them.
+ It's a really great experience for them.
+ And I think that's something that there's
+ a lot of hard edges around Lightning still
+ and stuff that's getting ironed out.
+ But that's something that works.
+ That's something that can be done at scale.
+ That's something that we can show up
+ to different dev communities for and say, hey,
+ this is immediately how you can start getting paid
+ and monetize your existing applications.
+ Yeah.
+ Stripe better keep their head on a swivel
+ because it seems like this could disrupt them rather quickly
+ if Bitcoin catches on.
+ And if it does catch on--
+ or you might want to get some just in case it does catch on.
+ Blundered that one.
+ But no, thinking heady here, just
+ like as you're describing this, like having ideas,
+ maybe you're a company that doesn't
+ want to take on the volatility risk of Bitcoin.
+ Could you auto forward the paid Lightning invoices
+ to something like a FedEase stability pool and automatically--
+ For right now, that doesn't exist.
+ But that's clearly-- I think me personally,
+ working on this is something that I want to build
+ and something that I think would be very useful
+ and something that--
+ yeah, I think that that's-- because we were just
+ talking about that earlier of that the price
+ risk associated with Bitcoin is like an additional factor that
+ kind of gets in the way of some people who would otherwise
+ be more open to adopting Bitcoin.
+ And that's one of the things that I
+ think that was the big unlock that Galloyd proved
+ was that for the Galloyd Bitcoin beach wallet,
+ and now Blink wallet, is that once you added in the stable
+ dollar price, that was a big adoption mechanism
+ for merchants.
+ Because merchants, they have a hard enough time
+ just the operational side of their business.
+ They also don't want to have to be investors.
+ And this is one of the great evils of fiat,
+ is it kind of turns everybody into an investor,
+ is that they have to constantly be thinking about, OK, well,
+ I can't just hold money.
+ So I have to go speculate on whether a stock is
+ going to go up or buy some real estate.
+ And hopefully that goes up and that sort of thing.
+ Is that if you can get rid of the price volatility of Bitcoin
+ as part of the adoption process for it,
+ that's a huge unlock for a lot of people where, hey,
+ I don't have to also do the price volatility.
+ I can't emphasize that enough in terms of--
+ I saw this a lot with trying to get Afghan refugees initially
+ when I started with them.
+ Because I'm a hardcore Bitcoiner,
+ and I didn't have a lot of empathy and experience
+ when I first met them.
+ But seeing the problem they were running into,
+ which was that, hey, I just need to get money from here
+ to here, right?
+ And I need it to be worth the same,
+ just because I know I need to get this amount
+ and I need to get that to that person,
+ and then he has that amount.
+ But in the intermediate process of two days between, hey,
+ when they receive the payment and when they have to do--
+ get the service on the other side or whatever,
+ if the price moves by 5% or 10% or whatever,
+ that's not something-- that's something
+ that just gets in the way.
+ It's not something that people need.
+ And it's something that complicates
+ the interactions and the process of being an operating business.
+ And so if you can lock in the US dollar prices of Bitcoin
+ and use Bitcoin just as the rails
+ for all of these payments, then operating businesses,
+ they don't have to also add the Bitcoin price volatility
+ as part of the complexity of running a business anyway.
+ Yeah.
+ Yeah, I completely agree.
+ If you can create a user experience where
+ they're able to use Bitcoin--
+ I mean, obviously, Strike is working on this and others.
+ But that's what's really cool about this space
+ is there are different experiences
+ at different parts.
+ Obviously, Strike's connection between Lightning
+ and the incumbent banking system,
+ what you guys are building at Fede
+ with these stability pools and using Lightning
+ Network as a gateway, I think it really
+ does show how dynamic Bitcoin can be
+ and how it can be utilized in many different ways.
+ And the fact that many people think Bitcoin isn't innovating
+ is mind-blowing to me.
+ You describe everything you just did,
+ whether it be at the FedeMint level
+ or the interaction between Lightning and AI.
+ It's increasingly becoming very obvious
+ that this is going to be one of the most disruptive payment
+ and savings technologies that's ever existed on the planet.
+ Yeah, well, this is something specifically within Bitcoin.
+ There's a lot of stuff--
+ I think when people say, hey, there's
+ nothing happening in Bitcoin or whatever,
+ is that normally what we're working on
+ is we're just making better payments mechanisms.
+ And so when people are like, oh, hey,
+ you made it so payments are faster,
+ that's not a huge thing for a lot of people
+ or something like that.
+ And so I think that's where they're coming from.
+ Like, hey, why are you spending all this time on payments?
+ There's all this other stuff you could be doing
+ and that sort of thing.
+ But now it's really coming to show
+ of that all of the work that we did
+ on making this really robust payment structure,
+ that was the thing that is missing on everything else.
+ And so because we have that and we can--
+ I mean, it's a crazy experience.
+ It's like you show up with somebody and you say, hey,
+ you know that whole monetization problem that you have?
+ This is an out-of-the-box, incredibly good solution
+ where you can instantly get paid for the cost that you incur
+ and pass those along to your user.
+ And you don't have to store their information.
+ They don't have to dope.
+ You don't know anything about them
+ except for the fact they paid you.
+ And so that's something that we can do
+ that none of these other crypto projects and stuff can.
+ And the reason why was because they went off
+ and were doing all sorts of other things.
+ And now it's really coming to show that, hey,
+ just having the better money is a very important aspect
+ of this.
+ It's like, yeah, sure, you can do--
+ and maybe we can-- maybe, I don't know if--
+ yeah, we can talk about this too, right?
+ Of that the differences between Bitcoin and crypto
+ and some of all this other stuff that they're doing,
+ where Bitcoin at the base layer is Turing incomplete.
+ It's something that you can analyze
+ and that you can know the security behind.
+ You can actually analyze this at rest, right?
+ This is actually something within AI,
+ which is getting pretty interesting,
+ is that George Hotz is working at TinyCorp.
+ He's like, hey, we're trying to get Turing completeness out
+ of the stack, just like sort of how
+ Bitcoin at the base layer doesn't have Turing completeness.
+ Because then we can sort of analyze it.
+ And we can actually make it--
+ use it as a building block for building other abstractions
+ on top of without being worried about, oh,
+ there's this crazy stuff going on underneath.
+ And if you go back to sort of the history of Bitcoin,
+ one of my favorite things is going back
+ through all of your Ethereum move to proof of stake sort
+ of tweet history.
+ If you go back to there, the big thing
+ that they wanted at the base layer for Ethereum
+ and a lot of these other coins is
+ they wanted Turing completeness.
+ And the reason why is because they said, hey,
+ we're not going to build in layers.
+ The way we're going to build is plugging everything
+ in the base layer of that you get Turing completeness,
+ you get smart contracts, you get all that sort of stuff, right?
+ And now that's really starting to show.
+ And the reason why is because now that you have this really
+ robust payment infrastructure, which
+ we were able to build on top of in a secure way,
+ because Bitcoin at the base layer
+ optimizes for security at the lightning layer,
+ it's optimizing for--
+ like I said, there's trade-offs associated with it, right?
+ But it's trying to do very fast payment mechanism,
+ more instant final settlement of a bearer instrument, right?
+ Is that a lot of these other chains are like, OK, well,
+ now we want to add in the payment stuff or whatever.
+ Well, now we're getting to the point
+ where we can't do that at the base layer,
+ so we're going to do a layer 2.
+ And the problem with a lot of these layer 2s
+ is that they're not mutually compatible, right?
+ So it's not like we have a rail between them like lightning.
+ If you've got one roll-up section on using optimism
+ or whatever, right, and you've got a separate type of roll-up,
+ those things are incompatible.
+ And they have to resolve back to the base chain
+ across, right?
+ Not like an instant finally settled payment like lightning,
+ where you can just zap in between the two.
+ And so this is something that people are running into.
+ And so what's the other element for it
+ is that because we've got inscriptions now, right?
+ And I know that there's different opinions
+ about inscriptions, is that you can now
+ use Bitcoin as a data availability layer.
+ And so even though some of these other chains,
+ they're like, oh, hey, now we're building our own layer 2s.
+ Well, the thing that the layer 2 needs the base chain for
+ is for data availability and as like an arbitration mechanism,
+ right?
+ And so you can take some of these layer 2 stuff.
+ This is already starting to happen.
+ Eric Wall has been working a little bit about this, right,
+ and is like taking sovereign roll-ups and eventually ZK
+ roll-ups, right, and taking those and just using Bitcoin
+ as the data availability layer for it.
+ And so now all of the other stuff,
+ like all the other cryptos, where they realize that, hey,
+ you should be building in a layered model,
+ well, now they have all these problems at the base layer
+ because they have Turing completeness inside of there.
+ And other complexities and difficulties.
+ And so they try to build a second layer.
+ But now because Bitcoin can operate as the data
+ availability layer, well, you could just
+ take that same second layer, move it onto Bitcoin,
+ and then put it there, right?
+ And then if you want to move from that second layer
+ to a different layer 2 or whatever,
+ like zap into liquid or zap into a Fetimid or whatever,
+ that as long as you make it compatible with Lightning,
+ you can instantly move between these different top levels,
+ right?
+ And so it's got a big can of worms I just opened there.
+ But that's-- I mean, this is like--
+ I've heard a couple of people say this, right?
+ It's like there's never been a better time
+ to be a Bitcoin dev, right?
+ Because there was a long time where we were thinking, oh, hey,
+ are we wrong?
+ A lot of these crypto companies are getting a bunch of money,
+ and they seem to be getting a lot more developers there
+ and stuff.
+ There's never been a better time to be a Bitcoin dev.
+ Because we've got the infrastructure.
+ We've got the roadmap of this is what we can build now.
+ This is where it's going in the future.
+ And we can start building in that direction for it.
+ And Lightning's the connective tissue
+ between all this stuff, which is fascinating.
+ Yeah.
+ Like, I don't know if you've used it yet,
+ but the Bolts Exchange is like--
+ this is kind of like the first time where people have been
+ able to use Liquid in a productive way, right?
+ I mean, there was other stuff they were doing.
+ But just on a day-to-day basis, it was kind of annoying,
+ because I'd have to swap in order to get back into Liquid
+ or off of there or something.
+ But now, because I can use Lightning
+ as the rail between those two, I can instantly
+ go in and out of Bitcoin to Liquid.
+ And so now, like Tierra's companies and Barak
+ and those guys, they've been doing a bunch of Liquid stuff
+ for a while.
+ But in order to get over there, if you
+ wanted to actually do the movement of Bitcoin
+ over onto Liquid, it was kind of annoying to do.
+ But now, because I can use Lightning to instantly
+ move between the two networks, all of a sudden,
+ it becomes super interesting.
+ I'm like, oh, maybe I do want to do something
+ with on the Liquid side using their more advanced smart
+ contracting.
+ I want to try something out with ChexSuite from Stack
+ or anything, some of the more advanced scripting,
+ stuff like that.
+ Because I've got the Lightning layer to move in between those,
+ I can do it instantly.
+ It works really well.
+ But so if I'm on one of these separate chains,
+ well, I can't instantly and finally move between the two
+ different layer 2s over there, because they don't have
+ this kind of connective tissue between them
+ like Lightning that we do.
+ Woo, doggie.
+ Seems like it's happening.
+ It's always been happening, Marty.
+ We're in this slow process of hyper-Bitcoinization.
+ And it moves in fits and spurts.
+ But the important thing that's going on
+ is that we kind of have an answer now for how
+ do we make great money and how do we
+ bring that to a lot of people?
+ And what are the next steps that we
+ need in terms of ushering in more adoption of Bitcoin?
+ I think those were very unclear for a lot of devs
+ for a long time.
+ But I think we're getting to the point where we see it,
+ in the mirror, right?
+ We see it in the distance of like,
+ this is something if we continue along this path
+ and we continue operating in this way,
+ then we can continue making incremental progress there.
+ And eventually, we'll get there, right?
+ Yeah, that's why I've been so obsessed with AI.
+ I mean, I was playing like an idiot earlier.
+ But I have been paying attention to AI, its growth,
+ and the convergence with Bitcoin over the last few months,
+ over the last six months now.
+ But it solves such a massive problem for them
+ with the amount of CapEx they have on the back end
+ and needing to know that they're going
+ to be able to pay that while offering
+ a service to their end users.
+ I could see the AI industry being
+ like the first massive adopters of lightning
+ outside of Bitcoiners, just who have been playing around
+ with it for the last five years.
+ It solves such a massive problem for them.
+ That's a no-brainer, which gets into the last question.
+ What do you think is needed to tip that industry over
+ the edge?
+ Because obviously, a lot of people
+ in artificial intelligence have been very hyper-focused
+ narrowly on what they've been doing,
+ understandably so, because it's such a cutting-edge technology
+ and it's going to change the world in ways that probably
+ can't imagine right now.
+ So they've been hyper-focused on that
+ and probably view Bitcoin as lumped in
+ with the broader crypto industry and something of a scam.
+ But again, after everything you've described,
+ everything we've been paying attention to,
+ everything we've been seeing being
+ built at this intersection, it's a no-brainer.
+ What do you think we need to push some of these AI
+ companies over the edge?
+ Yeah, the big one-- and this is the reaction that I've had
+ and why we did this hackathon, which is--
+ I know you always want to make podcasts evergreen, right?
+ But specifically-- and this is 2023--
+ running through the end of July from when this comes out,
+ we were running this hackathon called AI for All.
+ And the idea behind it is to use Bitcoin with AI
+ to build out a bunch of projects that show Bitcoin doing this.
+ Because this is one of the things
+ that I think a lot of people run into is when we say Bitcoin
+ fixes this, is that maybe we're talking about this
+ in the future or talking about it abstractly,
+ when people talk about, oh, hey, Bitcoin fixes war or something.
+ It's like, yeah, we're talking about it in the abstract.
+ And eventually, once we're on a hyper-Bitcoinized standard
+ and people become--
+ they lower their time preferences,
+ then people will be less inclined
+ to go to war in order to just keep the Fiat machine moving
+ and stuff.
+ But when you say Bitcoin fixes this, as it applies to AI,
+ there's very clear applications of this
+ that we just need to build it out.
+ And so we're running this hackathon called AI for All.
+ And what we're really hoping comes out of this is a bunch
+ of Bitcoin and AI projects that also just--
+ it can be related to either if you want to do a submission.
+ But I really hope that you see both of them,
+ of tying Bitcoin payments in and tying some of the privacy
+ benefits of using Bitcoin to AI.
+ Because that's another big issue.
+ We didn't talk too much about it.
+ But that's why we're running this hackathon.
+ And so any devs out there who want to contribute a project,
+ we've been doing a bunch of workshops and stuff
+ on how the AI tools work, how to tie Bitcoin payments in,
+ how to use the L4O2 specification and stuff.
+ And so anybody who's building anything--
+ I know there's a bunch of Nostra devs who've been playing around
+ with AI--
+ definitely submit a project for that.
+ And at the end of that, for the judging for it,
+ that's going to be our--
+ because again, this is the reaction
+ I've been getting when I go to these AI events
+ and I talk about how Bitcoin fixes this.
+ They say, OK, show me.
+ And so I can show them in the abstract,
+ or I can show them little demos and stuff.
+ I can show them, hey, well, this is Aperture.
+ This is just a reverse proxy.
+ You can run it against here.
+ You can do that.
+ But the biggest way to do that is
+ to just build out a bunch of cool projects that
+ are doing this and are solving this problem and show them.
+ And so we can show up at the--
+ the guys running the BARD team at Google and say, hey,
+ this is a way that we wrapped BARD into Lightning Payments.
+ And we are entirely in the black when we deploy these models
+ because we're always getting paid for them,
+ stuff like that.
+ And so I really hope that people can help contribute to that one
+ just because this is one of those--
+ Bitcoin fixes this, but it's Bitcoin fixes this
+ if we build out a bunch of projects that actually show
+ that it does.
+ And then that can get people excited about it and say,
+ OK, yeah, sure, Bitcoin does fix this problem.
+ And here's an example of it.
+ And this is something that we're going to scale out
+ and do within our own company as well.
+ When this podcast release, which will be tomorrow, July 19,
+ 2023, just 11 days left to contribute to the hackathon.
+ Totally.
+ And we're going to sponsor mentors, right?
+ So on the AI side and the Bitcoin side.
+ And so just hop in the Discord.
+ And we're also running a Polt.Fund.
+ And so just anybody who wants to--
+ even if you just want to learn and become--
+ this is something before doing it,
+ being the head of developer support at Fetty,
+ one of the big things that I've been doing
+ is that I've been very active in teaching Bitcoin
+ and teaching programming and teaching people
+ who want to be devs how they can start contributing.
+ This is a really great first opportunity for it
+ because with all this AI tooling, especially
+ chat GPT and similar instruct models for it
+ that can do code generation, it's
+ never been easier to become a developer.
+ And so a lot of people have been talking about this
+ where we need more devs in Bitcoin.
+ One way to do that is to take existing devs
+ and move them to Bitcoin.
+ The other way is to take Bitcoiners
+ and turn them into developers.
+ And I think that that's the better model for it
+ because I think that we're getting to the point
+ where we have the tooling that we can build out
+ that doesn't take a lot of effort,
+ especially if you're using something like Repl.it.
+ The time between idea and deployed product
+ is like nothing, right?
+ You can make a cool Fetty mod or you
+ can make a cool WebLN-enabled website
+ and you can wrap in LangChain with it or something.
+ And you can do that in like half an hour,
+ even if you don't know anything about coding.
+ And so if you do want to learn to code
+ or you do want to learn how do I start using this stuff,
+ this is, I think, a really good opportunity for it.
+ And so I really hope people come out and join.
+ Answer the call, freaks.
+ Answer the goddamn call, please.
+ Yeah.
+ And this is--
+ You mentioned it.
+ --about the website a little bit, apparently.
+ It's like AI and Bitcoin, right?
+ So even if you're just working on cool Bitcoin projects
+ or Nostra projects and stuff, right,
+ is that we want to see those too.
+ Just because when we talk about Bitcoin fixes this
+ and Nostra fixes this and AI fixes this and stuff,
+ this is sort of like the opportunity to show that.
+ Right?
+ And yeah.
+ Yeah.
+ I know you mentioned we didn't touch on it,
+ but maybe we should touch on it before we wrap up here,
+ which is the privacy benefits that ping over lightning.
+ I mean, you mentioned it a couple of times,
+ but I don't think people realize some of the privacy pitfalls
+ that are out there, particularly for companies,
+ leveraging other companies' LLMs.
+ Yeah.
+ So here's a couple of things for it, right?
+ So one of them is that--
+ so let's talk about the privacy that you get on lightning.
+ So there's basically two ways that lightning
+ gives you good privacy that you can apply to these large
+ language models and stuff.
+ One of them is that you can do a login with lightning.
+ And so that actually doesn't touch lightning,
+ but it's just that when I do a login with lightning,
+ I can also show that I can make payments.
+ So it's a very useful way to do that,
+ of having a persistent user identity as a developer,
+ making websites where I want the user to have--
+ they can leave, and then they come back,
+ and all their chat history is there, for example.
+ Login with lightning is a way that they can log in,
+ they're just a public key.
+ So I don't have to know anything about them,
+ except for the fact that they have a private key associated
+ with that public key.
+ They can sign messages.
+ I can encrypt things based off of those public keys,
+ so I can have encrypted copies of all of their chats.
+ Or I don't have to store anything on encrypted.
+ I don't have to store any information about my user
+ if I don't want to.
+ That's one element of it.
+ The other element of it is sender-side privacy.
+ It's that when you're sending on the lightning network,
+ you achieve very good privacy because of the onion route
+ associated with it.
+ So if people don't know what onion routing is,
+ if you've ever heard of Tor--
+ Tor as like a-- oh, it's a private way
+ of using the internet.
+ Tor stands for the onion router.
+ And onion routing is that when you're using the internet,
+ you have multiple hops.
+ So it's me, and then I hit off a router at this place,
+ which hits another router, which hits another router, which
+ finally lands at Marty.
+ And so normally, that's a clear net route,
+ and so you can just see the packet moving along.
+ But with onion routing, every single hop along there,
+ you can think about it like an onion, where
+ every layer of the onion can only
+ see the layer underneath and the layer on top of it.
+ And so when I'm sending a payment on lightning,
+ and I'm onion routing that payment,
+ and so I'm hitting one hop, and then another hop,
+ and then another hop, and each one of those hops
+ doesn't know where it ends up.
+ They just know where it came from
+ and where the next hop is.
+ And when I'm receiving on lightning,
+ I can't see where it came from.
+ I can just see the final hop that it came along with.
+ So as a sender on lightning, I achieve very good privacy.
+ As a receiver on lightning, I have worse privacy.
+ And the reason why is because I have to tell you
+ what node to send it to.
+ And so now you can go look at that node's channels.
+ You can see what their balances are.
+ You can probe against that node in order
+ to figure out what its side balances are
+ and those kinds of things.
+ All the work that Tony's been doing--
+ he's at Muni now, but before that,
+ when he was doing all of his lightning privacy research,
+ all of those things.
+ On a sender-- as a sender on lightning,
+ I achieve very good privacy.
+ As a receiver on lightning, I don't have very good privacy.
+ This is like a joke within lightning,
+ is that the slowest part of the lightning network
+ is all of the chain analysis API calls from all of the nodes
+ you're hitting along the way.
+ So separate from the protocol is that the guys running
+ the nodes, if they're industrial level operators or whatever,
+ they're hitting against chain analysis
+ in order to do the know your transaction for it and stuff.
+ But as a sender on lightning, I have very good privacy.
+ And so even though they're doing those calls or whatever,
+ and even though I'm hitting along that route,
+ is that I have really good privacy.
+ And I can do a login with lightning.
+ So I can log into a website, and I can send you payments.
+ And you don't have to know anything about me
+ except a public key associated with me.
+ And so that's why lightning is good on the privacy
+ solution for these.
+ So now we talk about it on the AI side of what
+ are the privacy implications of doing this stuff,
+ is that everybody is scraping everybody else all the time
+ for training data.
+ And the other element for it is that every time
+ that you hit against a third party,
+ they have some agreements that say,
+ hey, we're not going to use you for this training data
+ and stuff.
+ And you're just trusting them that they're not
+ saving a copy of this or they're doing that.
+ But people are already running into these issues
+ where you're hitting against a third party model like OpenAI
+ or Cloud or anything like that.
+ And when you're just copying stuff over,
+ you're also copying customer information, or you're
+ copying API keys, or you're copying code,
+ which is not open source.
+ This is held behind your company and stuff,
+ is that you really want to be able to run
+ these models locally.
+ And so then, because they're running locally,
+ nothing leaves your computer.
+ But the problem becomes, OK, if I'm running it locally,
+ then I need access to a graphics card.
+ And most people-- well, some people
+ have access to graphics cards, and they just
+ find this very easy.
+ But there's no very good way to do that.
+ And so this is where FedEvent comes back in,
+ of that at the Federation, you can host some of these GPUs
+ and stuff that you can run local models for.
+ And it doesn't go all the way to OpenAI or a third party
+ or some host in a country that's entirely separate from you,
+ is that you're hitting it against a locally run model
+ at your Federation level.
+ And so in the event that something happens,
+ or your data leaks, or anything like that,
+ it's like they're still within the Federation.
+ They're still within your community.
+ They're close enough that you can socially sanction them.
+ Yeah, which is fascinating.
+ And in that FedE model, where you're crowdsourcing GPUs,
+ these GPUs are getting access to the best LLMs.
+ Yeah, so that's the idea behind it,
+ is that at the Federation level, when you're
+ pooling community resources, is that you
+ can do things that you as an individual might not be able to.
+ And so if you want to get access to a bunch of A100s
+ or whatever, those are like $3,000 to $5,000 graphics
+ cards.
+ And so there's a lot of people who can afford that.
+ There's more people who can't.
+ And so you want to be able to have maybe one person buys it
+ or the community buys it, and they host it in some place.
+ And then they just get access to it at the FedEvent level.
+ And so within the Federation, they
+ sign up, and maybe the Federation's
+ getting the API key or something.
+ There's different implementations
+ you can do for this.
+ But then you can get access to the hosted community resource.
+ And then maybe the person who's providing it or whatever,
+ they get a cut, or you get a discount if you're doing it.
+ There's a bunch of different ways you can do it.
+ The whole point of FedEvent is that it's just
+ like create your own optimized federated application
+ of that you're running this FedEvent,
+ and you're choosing the modules that run with it.
+ And when people join in, you can choose
+ what they have access to, those sorts of things.
+ Yeah.
+ I guess what I'm trying to get at is running a GPU
+ similar to running an ASIC where, yes, you
+ may have three ASICs or 30,000, but you're still
+ contributing to the open Bitcoin protocol
+ on the GPU side of things.
+ Can you point your GPUs at open AI?
+ You can't do that specifically.
+ But what you can do--
+ [INAUDIBLE]
+ Well, so basically, the large language model
+ consists of two things.
+ There's basically the configuration
+ of this is the parameters that we're using for this thing.
+ Of the neural network that we're using.
+ This is the description of the general outline of this thing.
+ And you have the weights, which is the specifics of, OK, well,
+ now you combine the general outline,
+ and you apply the weights to it.
+ And then you can run this model locally
+ of this is what the graphics card is doing.
+ And so today, Llama 2 came out, which
+ is the newest version of Facebook's model.
+ And that's entirely open source available for commercial use.
+ So that's going to be very exciting.
+ Because Llama 2 is the closest thing
+ that people have on the open source side
+ to something like Chats UPT.
+ And so that's something where you would run that locally
+ on the graphics card.
+ And so the graphics card--
+ it's not hitting out against a separate service.
+ It's just everything is happening on that graphics
+ card.
+ And it makes sense, because a Fetty community
+ would be smaller than the overarching universe of people
+ calling open APIs.
+ They don't need as many GPUs.
+ OK.
+ Now I got it.
+ Right?
+ And yeah.
+ And also, the benefit you get there
+ is that the data that you're pushing over them is only what--
+ so this is why we say Fetty is allocating
+ your money, your data, your digital life
+ across these different federations, right?
+ Is that I can say, OK, these are the passwords
+ you have access to.
+ These are the identities you have access to associated
+ with me when I'm in this federation, right?
+ And then I can go hit against a separate federation.
+ I could strip out all that identity stuff
+ in order to use a more powerful model that they're using,
+ and then get the output, feed it back into what I'm
+ doing over there, for example.
+ Oh, yeah.
+ So this is actually a good way to bootstrap open source AI
+ versus closed source.
+ Yeah.
+ And everyone's running into this issue of,
+ how do I run this stuff locally?
+ Right?
+ And there's some people who are like, oh, hey, well,
+ how do I run this stuff locally consists of,
+ how do I get it running on my $5,000 MacBook, right?
+ But then, how do I run this stuff locally
+ when you're talking to somebody in Nigeria, for example,
+ or to Togo, or talking to somebody in Mexico?
+ Or even talking to somebody who's
+ not a developer in Silicon Valley right now, right?
+ Is that, how do I run this locally?
+ It becomes, OK, how do I even afford the infrastructure
+ or do the setup in order to get the GPU set up such
+ that I can do this?
+ Because I can't afford the $3,000 or $5,000 graphics
+ card.
+ I want to amortize that across a bunch of uses.
+ Have one person running a graphics card
+ for a bunch of people, that sort of thing.
+ Yeah.
+ Wow.
+ That's going to be massive.
+ Got to keep building, though.
+ Yeah.
+ Well, this is actually something I've really enjoyed of that.
+ I love this perspective.
+ I think you were the one who first started
+ doing this within Bitcoin, of that when people critique
+ Bitcoin from the environmental perspective,
+ it's like you chuckle to yourself
+ and you plug in more ASICs.
+ Is that the exact same thing has kind of been going on
+ within AI.
+ There's all the safetyism stuff within AI.
+ And then there's the guys who kind of chuckle to themselves
+ and plug in more graphics cards.
+ And it's been really cool to see that sort of parallel
+ and sort of like the same attitude.
+ There's like this whole crew of AI guys
+ who are sort of take the same approach as the Bitcoin of like,
+ hey, we're just going to keep building this stuff.
+ And so you can critique it and you can try to stop us.
+ But anybody with a graphics card is
+ going to be able to do this stuff.
+ Some people say, oh, we're going to gate access
+ to AI and all these things.
+ It's like, yeah, well, everyone has access to it.
+ And you've got federal regulations
+ so that even people who don't have access
+ to graphics themselves can also access these things
+ at a community level, that sort of thing.
+ It's very fun.
+ It's very cool seeing the culture kind of mirror
+ across the two.
+ Yeah.
+ It's almost like there should be like a convergence, you know?
+ Yeah.
+ AI for all.
+ Hackathon through the end of July.
+ Go check it out, Felix.
+ I've been keeping you for two and a half hours now.
+ We were a half hour late in hitting record here.
+ But time flies when you're having fun.
+ This has been an incredible conversation.
+ Well, it's been really cool to talk to you, Marty.
+ I mean, you've been someone who's
+ been very instrumental in my Bitcoin journey.
+ And so this is big for me as well.
+ Well, I'm flattered that you consider
+ me instrumental in your journey, as you may be able to tell
+ from this conversation.
+ I'm just curious, dunce, trying to learn more about what
+ the hell is going on here.
+ Yeah, I mean, this is like another--
+ I don't know.
+ I know we have to wrap up and I keep adding these things,
+ right?
+ But it's like getting the ego out of the way
+ of the conversations that you have with new people
+ and being able to onboard new guys.
+ You got people on the podcast who
+ don't know anything about Bitcoin
+ and you're able to effectively onboard them.
+ That's a good scaling experience for everybody else who
+ comes into these Bitcoin conversations.
+ Maybe they're coming from a different perspective.
+ You had a guest on who's not related to Bitcoin.
+ But the perspective that you're getting is not like, oh, hey--
+ sometimes you do this, right?
+ Everybody does this on the Bitcoin side.
+ It's like, well, yeah, you guys are wrong.
+ I'm going to explain why you're wrong.
+ But something I think is really cool within TFTC
+ and a couple of these other Bitcoin podcasts
+ is kind of like a onboarding mechanism for people.
+ So there's a lot of ego that kind of gets
+ in the way of a lot of people.
+ And one of the big things that-- this
+ was kind of the big takeaway from my time in the Marine Corps
+ is that it's not about you.
+ Is that the moment you start thinking about stuff in terms
+ of me being right or me having to be like,
+ this person needs to walk away from this conversation
+ understanding that I am correct about Bitcoin or whatever,
+ is the moment you start thinking in that way
+ is just absolute poison.
+ It's not about you.
+ It's about the Marines.
+ It's not about you.
+ It's about the future that we're leaving for our kids,
+ of that do we want to have them grow up
+ on a sound money standard or do we want
+ them to grow up under fiat?
+ And so when you think about it from that perspective
+ and it comes out a lot in these conversations that you have
+ is that people will do things and you'll be like, OK, well,
+ ego aside, let's do the answer.
+ Yeah.
+ I think I've developed that skill slowly but surely over six
+ years.
+ I was one of those, I'm right, you're wrong.
+ Have fun staying poor guys for a bit there in the beginning.
+ And then Matt got you to stay humble.
+ It just makes sense.
+ Yes, yes.
+ I mean, if you say it incessantly for five years
+ straight to somebody, it'll begin to internalize.
+ Cody, thank you for doing what you do, sir.
+ I mean, it's honestly very impressive going back
+ to you finding Bitcoin in 2020, getting to the point
+ you are now with Feddy and being able to explain this stuff
+ with breadth and depth pretty clearly and succinctly.
+ That was the one thing I was really impressed
+ about your demo in Nashville last week is, number one,
+ you can tell you're a Marine.
+ You can control a room and really force people to hone in
+ and listen.
+ And then you did a very good job of just explaining everything
+ and making sure everybody was keeping up.
+ And I think you're a massive value add to the space.
+ I'm extremely pumped for the Feddy team
+ that they have you working for them.
+ Again, not about me, right?
+ This is about Bitcoin.
+ Exactly.
+ Exactly.
+ It's true.
+ Stay humble, SACS, Sats.
+ It's not about you.
+ All right.
+ All right, get back to work.
+ Piece of love, freaks.
+ Take care.
+ Thanks for watching.
+ you

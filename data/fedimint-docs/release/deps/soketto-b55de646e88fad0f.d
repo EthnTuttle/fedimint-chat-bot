@@ -1,0 +1,15 @@
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/soketto-b55de646e88fad0f.rmeta: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/base.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/connection.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/data.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/extension.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/client.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/http.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/server.rs
+
+/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/soketto-b55de646e88fad0f.d: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/base.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/connection.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/data.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/extension.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/client.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/http.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/server.rs
+
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/lib.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/base.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/connection.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/data.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/extension.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/client.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/http.rs:
+/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soketto-0.7.1/src/handshake/server.rs:
+
+# env-dep:CARGO_PKG_VERSION=0.7.1

@@ -1,0 +1,1 @@
+{"rustc":4844661969156876459,"features":"[]","target":14756348161687581782,"profile":9558588430697993077,"path":1853686555444080740,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/tower-layer-e9f44b91323535cd/dep-lib-tower-layer"}}],"rustflags":["--cfg","tokio_unstable"],"metadata":10388778284804980706,"config":2202906307356721367,"compile_kind":0}

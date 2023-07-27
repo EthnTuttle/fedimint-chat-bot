@@ -1,0 +1,1 @@
+{"rustc":4844661969156876459,"features":"[]","target":10444203147181933371,"profile":9558588430697993077,"path":11650638145029094867,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/humantime-3f628432ac234ca2/dep-lib-humantime"}}],"rustflags":["--cfg","tokio_unstable"],"metadata":16972751450777833143,"config":2202906307356721367,"compile_kind":0}
