@@ -1020,7 +1020,7 @@
  and also no 24-word backup. You've just done it. That's the whole process. Scan the QR code,
  and you're there. So now anybody who joins is part of that federation. Those five guardians
  are together managing any Bitcoin sent to or from that federation. You need a majority of
- them to work together. So if one of them, or even two of them, for some reason, went from a lifetime
+ them to work together. So if one of them, or even two of them, for some reason, went from a lifedime
  of being honest and helpful to the community to switch, it wouldn't be enough because you need
  a majority of them to all of a sudden turn to Mr. Hyde from Dr. Jackal overnight.
  Well, so forgive me for some of the... I'm much less technical. So how can you,
@@ -1110,16 +1110,16 @@
  "I want to help create Web3"? So, I mean, unfortunately, Web3 has sort of been hijacked
  as a term. But I think the desire to take power away from highly centralized internet companies
  and bring it back into the hands of users is laudable, and we should try to do that.
- And we're trying to do it with Feddy giving communities back the power to be their own bank,
+ And we're trying to do it with Fedi giving communities back the power to be their own bank,
  as it were. But the funny thing is, we're going to see, and which is why I'm very convinced that
  Bitcoin wins in 2023, we're going to see a number of companies in the Bitcoin space
- come out with incredible technologies, not just Feddy, which will actually allow people to do this
+ come out with incredible technologies, not just Fedi, which will actually allow people to do this
  but to do it properly, not in this rushed first to market, but ill thought out, ill considered
  non scalable way, but in highly scalable, easy to use, incredibly powerful, privacy preserving ways.
  It's just a matter of crazy happenstance that they're all coming out in around the same time.
  But I'm incredibly excited about it. And Bitcoin is the base layer, with Lightning as the second
  layer, you're going to see this plethora of really interesting third layer solutions,
- and Feddy and FeddyMint are just one of them. Do you still go back to Nigeria? And can you
+ and Fedi and FediMint are just one of them. Do you still go back to Nigeria? And can you
  offer any perspective in terms of adoption of Bitcoin there? Because I understand that it's
  one of the countries where a Bitcoin is most needed, but also adoption is growing faster
  than in other places. Yeah, so I go back to I travel around the global south a lot.

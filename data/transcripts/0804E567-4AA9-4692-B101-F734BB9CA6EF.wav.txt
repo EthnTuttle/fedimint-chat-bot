@@ -5,21 +5,21 @@
  for that than Lightning, especially because Lightning has this invoicing system, which
  allows you to do a proof of payment. You're not getting in the way of the user experience for
  this stuff. And at the time that they're incurring the electricity cost, they're passing that cost
- along to the user. The way we sometimes talk about it at Fetty, right, is that we're like bringing
+ along to the user. The way we sometimes talk about it at Fedi, right, is that we're like bringing
  like some of the oldest technology, which is like community, right, with like some of this newer
  freedom-focused technology, right? And so there's this interesting design space between first-party
- custody and third-party custody of what we call second-party custody. Fetty Mint, the protocol,
+ custody and third-party custody of what we call second-party custody. Fedi Mint, the protocol,
  becomes a way of, starts with custodying Bitcoin in a way to scale Bitcoin, where it's very privacy
  focused and it's interoperable with Lightning, right? And then you recognize through the module
  system that you can have it do other things, right? You can make the federation a password
  manager. You can like make a module that like gets hosted access to GPUs and all those kinds
  of things, right? I see a way that we can build this technology if we're backing it with Lightning
  payments, if we're using sort of privacy-focused things as a device for these, where this can just
- like level up humanity. Cody Lowe is the head of developer and product support at Fetty and is
+ like level up humanity. Cody Lowe is the head of developer and product support at Fedi and is
  organizing the new AI for All hackathon happening throughout the month of July. In our conversation,
  we explored the impact that AI will have on content, identity, and payments. We covered L402s
  and why Lightning payments are the best tool for AI companies. And then we got into the work Cody
- and his team are doing at Fetty. If you enjoyed this conversation and if you learned something new,
+ and his team are doing at Fedi. If you enjoyed this conversation and if you learned something new,
  the best way that you can show your support is by sending in sats over the Lightning network.
  You can use any podcasting 2.0 app to do that. There are dozens of them out there,
  but my favorite one to use is Fountain. Before we get into today's show, just a quick message
@@ -28,7 +28,7 @@
  Stackwork is a Lightning-powered transcription tool that takes the best of AIs and humans to
  create better, faster, and less expensive transcripts. We'll have more from Voltage
  and Stackwork later in the show. Cody, welcome to the show. Thank you for taking the time to
- chat about all things AI, Lightning, Fetty, Bitcoin. We have a lot to cover today, but before
+ chat about all things AI, Lightning, Fedi, Bitcoin. We have a lot to cover today, but before
  we do it, why don't we step back and just chat about your background first. Tell me about your
  life prior to Bitcoin and how you got into Bitcoin. Cool. Thanks, Kevin. Yeah. And like long
  time listener of the podcast. So like real honor to be on. I've been here from the very beginning
@@ -91,7 +91,7 @@
  Right. And I see a lot of that happening now in Bitcoin. Like when there's like this kind of meme
  that's like nothing happens at Bitcoin or whatever. But we've gotten to the point now where
  there's so many people trying different, different things, exploring different design spaces within
- Bitcoin in terms of like Bitcoin script, in terms of what we'll talk about later, FeddyMints in
+ Bitcoin in terms of like Bitcoin script, in terms of what we'll talk about later, FediMints in
  terms of like the design space between first party and third party custody of being second party
  custody at different levels along there. Right. In terms of like, OK, well, lightning is going to be
  the kind of waste layer of the hourglass where we're connecting everything between them. Right.
@@ -105,7 +105,7 @@
  going to write code to solve our problems. Right. Like if you're not sure what to do,
  just start writing code. Right. Yeah, that's very helpful. I appreciate that.
  OK, I want to start this conversation. We have a few different things to talk about today. We're
- going to go through AI stuff, lightning stuff and Fetty stuff. Let's start with AI, because I think
+ going to go through AI stuff, lightning stuff and Fedi stuff. Let's start with AI, because I think
  this is like the hot topic on the Internet recently. Last, you know, I guess the last six
  months or so. But Bitcoiners, along with everyone else outside of Bitcoin, seem to have very mixed
  views on it, on AI. There are some that say it's, you know, the next great thing. We all need to be
@@ -406,7 +406,7 @@
  for these things, right.
  And there's like a bunch of different ways you could do it, you could do it with reputation,
  you could do it with making like a smaller social circle and stuff like that's kind of
- a lead into like where Feddy comes in and that sort of thing, right.
+ a lead into like where Fedi comes in and that sort of thing, right.
  But you're going to need a way to get your attention.
  One of the best ways to do that is just purely monetarily, right, is that like, for someone
  to get me to look at something, they pay me a micro payment, right.
@@ -538,7 +538,7 @@
  Then it gets to the point that you can run it on a CPU.
  But by now there have been new models that have come out, right?
  And in order to run those, you do need the GPUs, right?
- And so I think it's kind of a lead into like the Feddy, like federated aspect of this,
+ And so I think it's kind of a lead into like the Fedi, like federated aspect of this,
  right?
  Of that you can think about like locally on your phone, you're going to have certain capabilities,
  right?
@@ -580,9 +580,9 @@
  And then you cascade it back down.
  It's a way to think about it in my head, right?
  And so, yeah, and so this is like where we're kind of going to, and I'm really excited to
- see what stuff people build as they do this, especially when it comes to like Fetimint
- modules and Fetimods, right?
- Because Fetimint as a second party custody solution and a way that you can take custody
+ see what stuff people build as they do this, especially when it comes to like Fedimint
+ modules and Fedimods, right?
+ Because Fedimint as a second party custody solution and a way that you can take custody
  of like your Bitcoin, your, like your wealth, your data and your digital life, right?
  Is the way to think about it is that like, and these federation levels where it's trusted
  communities that you're, that are kind of pooling resources and are pooling, they're
@@ -593,9 +593,9 @@
  And so you're not just trusting all of your data and trusting everything to a third party
  custodian, but it's more powerful than just what's running on your phone.
  Right.
- So Fetty can be that second.
+ So Fedi can be that second.
  So if your first party is your phone or your hardware wall, whatever second party can be
- Fetimint, some kind of shared community and third party is the custodian or open AI or
+ Fedimint, some kind of shared community and third party is the custodian or open AI or
  some other, you know, large service that takes all your information.
  Yep, exactly.
  Right.
@@ -638,7 +638,7 @@
  You can get complete control with insanely fast onboarding, advanced client side encryption
  and zero management infrastructure, making backups, networking and upgrades simple.
  Get a free seven day trial today at Voltage.cloud.
- Is there precedent for this second party system that you're designing with Feddy in the internet
+ Is there precedent for this second party system that you're designing with Fedi in the internet
  already?
  Like what are some examples you can point to of like other instances where someone has
  used this second party approach with success?
@@ -691,7 +691,7 @@
  Maybe not the case in a large city, but you go to a town with 300 people and everyone
  knows everyone.
  And there there's some kind of like social cohesion there.
- Similar to what we sometimes talk about it at Fetty, right.
+ Similar to what we sometimes talk about it at Fedi, right.
  Is that we're like bringing like some of the oldest technology, which is like community,
  right.
  With like some of these newer freedom focused technology.
@@ -702,7 +702,7 @@
  So and that's like kind of where we play in.
  Right.
  And so it applies to like custody in Bitcoin.
- That's what Fetiman originally grew out of.
+ That's what Fediman originally grew out of.
  Right.
  As like second party custody as a scaling technology for Bitcoin.
  Right.
@@ -929,8 +929,8 @@
  Right?
  And so what's cool,
  this is like something conceptual
- to think about with Fetimint, right?
- Is that Fetimint,
+ to think about with Fedimint, right?
+ Is that Fedimint,
  you have this threshold backup mechanism, right?
  Through the Federation,
  but the thing on a day-to-day basis that you're using
@@ -940,7 +940,7 @@
  of using something like Wallet of Satoshi, right?
  But with this out of the box
  embedded threshold backup mechanism.
- So like this, like you can already do this on Feti, right?
+ So like this, like you can already do this on Fedi, right?
  Is that like a day-to-day experience that you use
  while you're using the app,
  like when we were in BTC Prague
@@ -952,7 +952,7 @@
  they can go back to the Federation,
  recover their coins using their recovery material
  or like the, we have like a social backup mechanism
- that we have in Feti, right?
+ that we have in Fedi, right?
  Where like the Federation can collude
  in order to like help you recover your coins specifically.
  Right?
@@ -984,7 +984,7 @@
  Well, it's like, well, now anybody who recovers that key,
  they own your Bitcoin just as much as you do, right?
  But having like a formalized backup mechanism
- through Fetiment of the on-chain deposits
+ through Fediment of the on-chain deposits
  when you deposit into the federation,
  those are like the on-chain claims right there
  that require the multi-sig, right?
@@ -1180,7 +1180,7 @@
  especially if they're like more technically minded, right?
  Is like a very, very big investment of time and effort
  on their part and your part, right?
- It's like now through FettyMint and through Fetty,
+ It's like now through FediMint and through Fedi,
  is that you can have a federation set up.
  And then when you onboard the person at that federation,
  they out of the box have very good privacy,
@@ -1191,7 +1191,7 @@
  the moment that they're comfortable with self-custody,
  they can just like move out, right?
  And so that's kind of the big idea.
- - Now, I think you launched the Fetty Alpha
+ - Now, I think you launched the Fedi Alpha
  about a month ago.
  Are there any big lessons you've learned so far
  from the launch to date?
@@ -1204,18 +1204,18 @@
  and just like see it, like see it in public.
  I was like the first time we had like a large mainnet,
  or at least like we'd done a large mainnet federation
- that we were running on Fetty.
+ that we were running on Fedi.
  So that was like super, super cool
  to see all that work, right?
  One of the concepts behind it is that we've started working
- on is called Fetty Mods.
- So there's FettyMint modules,
- which are extensions of the FettyMint protocol.
+ on is called Fedi Mods.
+ So there's FediMint modules,
+ which are extensions of the FediMint protocol.
  So like normal Bitcoin transactions
  have inputs and outputs, right?
  And off of that structure,
  we can build all sorts of fancy cool things, right?
- The structure for within FettyMint
+ The structure for within FediMint
  is that you've got inputs, outputs,
  and a single signature,
  which is a cross input signature aggregation
@@ -1226,9 +1226,9 @@
  to have like a single cross input signature aggregation
  for the transaction instead of individual signatures
  for every single one of the inputs, right?
- But based off of this structure within FettyMint,
- you can create FettyMint modules.
- And the FettyMint modules are,
+ But based off of this structure within FediMint,
+ you can create FediMint modules.
+ And the FediMint modules are,
  okay, well, like the out of the box,
  you get e-cash, lightning, Bitcoin, right?
  And so you can have the inputs be Bitcoin,
@@ -1279,20 +1279,20 @@
  And we're hoping that people are going to start building on it during the hackathon
  that we're hosting this next month.
  But that's something that I'm very, very excited about because we just got to the point where
- on the developer side of things, you can start building your own FettyMods and you can start
- kind of tying it, not just from WebLN, but also tying it into the Fetimid system that
+ on the developer side of things, you can start building your own FediMods and you can start
+ kind of tying it, not just from WebLN, but also tying it into the Fedimid system that
  you're running on.
  Right.
  Okay.
- One more point on Fetty.
+ One more point on Fedi.
  You on your website use the term federated operating system.
  And I, when I think of operating system, I think when a lot of people do, they think
  they're iOS or their Mac OS or Windows or something.
- What is the crossover point between Fetty and those other operating systems, if any?
+ What is the crossover point between Fedi and those other operating systems, if any?
  Yeah.
  So you think about it by what it does.
  Right.
- So basically, like we started with, right, is that FettyMint, the protocol, becomes a
+ So basically, like we started with, right, is that FediMint, the protocol, becomes a
  way of, starts with custodying Bitcoin and a way to scale Bitcoin where it's very privacy
  focused and it's interoperable with Lightning.
  Right.
@@ -1305,13 +1305,13 @@
  to orchestrate your money, your data, your digital life, generally speaking, between
  these different applications.
  Right.
- Fetty is going to be a federated operating system of that.
+ Fedi is going to be a federated operating system of that.
  You can think about it as orchestrating your data and your money across all of these different
  federated resources.
  Right.
- And so Fetty is the orchestration layer behind this.
+ And so Fedi is the orchestration layer behind this.
  Right.
- And so like I'm going to have Fetty, which is my unified app that I have for my phone,
+ And so like I'm going to have Fedi, which is my unified app that I have for my phone,
  and I'll be able to access my multiple different federations and coordinate my resources and
  my money across those ones.
  Right.
@@ -1320,8 +1320,8 @@
  a federation where yes, this is like just what I'm doing for work.
  I don't need to do it for my personal life or whatever.
  Right.
- Is that Fetty is going to be making sure that like, as you're operating within that federation,
- you're using the Fetty mods over there or whatever.
+ Is that Fedi is going to be making sure that like, as you're operating within that federation,
+ you're using the Fedi mods over there or whatever.
  Right.
  It's like not giving anything that's like private that you wouldn't want to put over
  there.
@@ -1332,7 +1332,7 @@
  Maybe that's where it's putting the backups for the things as it relates to that stuff
  specifically.
  Right.
- But Fetty is kind of like the orchestration layer, the operating system layer between
+ But Fedi is kind of like the orchestration layer, the operating system layer between
  organizing these different federations.
  Does that make sense?
  Yeah.
@@ -1345,9 +1345,9 @@
  these things without Apple and Google, you know, stepping in anytime they do something
  you don't, we don't like.
  Yeah.
- I'm like, glad you asked because that is exactly what Fetty and FettyMint is solving for.
+ I'm like, glad you asked because that is exactly what Fedi and FediMint is solving for.
  Right.
- And so the way you think about it, right, is that for FettyMint, for FettyMint to work,
+ And so the way you think about it, right, is that for FediMint, for FediMint to work,
  it requires a trust assumption.
  You're requiring that the federation is you trust them enough or that they're socially
  close to you enough that you can socially sanction them to not rug you.
@@ -1362,14 +1362,14 @@
  Right.
  And so what a lot of people say is like, oh, hey, you can't have like a federated solution
  that scales to the whole world.
- And so what Fetty, what we say is that, yes, that's a benefit.
+ And so what Fedi, what we say is that, yes, that's a benefit.
  Right.
  Because you don't want this federation to scale for the whole world.
  You don't want it to become a third party custodian.
  Right.
  You want to keep it close enough to you that you can trust it.
  Right.
- And so what Fetty is doing is saying, OK, there's going to be different degrees of trust
+ And so what Fedi is doing is saying, OK, there's going to be different degrees of trust
  across these different federations.
  And now let's manage your data and your resources and your Bitcoin across these different ones.
  Right.
@@ -1389,14 +1389,14 @@
  Right.
  Hmm.
  Interesting.
- Now, I want to also touch on you mentioned Fetty Mint, the protocol and Fetty, the company.
- And you mentioned there's a couple of other developers building on Fetty Mint.
+ Now, I want to also touch on you mentioned Fedi Mint, the protocol and Fedi, the company.
+ And you mentioned there's a couple of other developers building on Fedi Mint.
  Can you highlight some of the experiences and ideas that people are building outside
- of Fetty, but on Fetty Mint?
+ of Fedi, but on Fedi Mint?
  Yeah, sure.
- So like within like the Fetty Mint development system.
+ So like within like the Fedi Mint development system.
  Right.
- And so within Fetty Mint, like we've been kind of moving toward like kind of formalizing
+ And so within Fedi Mint, like we've been kind of moving toward like kind of formalizing
  like the development process for it.
  And so it used to be kind of hard to set up these federations and all these kinds of things.
  Right.
@@ -1406,12 +1406,12 @@
  start.
  So it's all written in Rust.
  Right.
- And so you can basically start Fetty Mint daemon with default modules and then you just
+ And so you can basically start Fedi Mint daemon with default modules and then you just
  add your own module below it.
  Right.
  And so there were a couple of cool hackathon projects.
  Right.
- And so this was like Fetty Mint had a hackathon a little while ago.
+ And so this was like Fedi Mint had a hackathon a little while ago.
  One of the things that they worked on was stability pools.
  Right.
  And so stability pools is basically a way you think about it as like, because you're
@@ -1984,11 +1984,11 @@
  And so we want to see that happen.
  We want to like help you out with that.
  So go there.
- And then Feddy is Feddy.xyz.
+ And then Fedi is Fedi.xyz.
  Right.
  That's just the website for it.
  And then we're also going to be very active as part of when you're in the hackathon, we'll
- be doing some Feddy stuff in terms of like Feddy mods, how to build a Feddy module, like
+ be doing some Fedi stuff in terms of like Fedi mods, how to build a Fedi module, like
  some of the intersections between those ones and stuff.
  Right.
  And then I'm at Cody Lowe on Twitter, but I mostly am going to be for the next month

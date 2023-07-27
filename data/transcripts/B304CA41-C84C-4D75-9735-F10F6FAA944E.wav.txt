@@ -82,7 +82,7 @@
  It's unusual in the Bitcoin space.
  I have a distinct impression that people start to, over the next 18 months in other spaces,
  pay a lot more attention to it as well.
- Yeah, I mean, it is a coincidence, but it isn't that Feddy is an anagram of DeFi.
+ Yeah, I mean, it is a coincidence, but it isn't that Fedi is an anagram of DeFi.
  I'll leave it at that.
  That's interesting.
  I was gonna ask you about that.
@@ -323,7 +323,7 @@
  to you is the experience, how responsive they are, how polite they are, how consistent they
  are. You don't want to build up that trust each time.
  So I've asked you one question that I wanted to ask you, which is kind of funny. I have
- like 20 written down. We didn't get to Fetimint yet. So tell me a little bit about the history
+ like 20 written down. We didn't get to Fedimint yet. So tell me a little bit about the history
  of Chowmein Mints. I guess it's right there in the name with David Chowm. But for our
  listeners, just give us a brief introduction.
  I'll do my best. So the idea behind Chowmein Mints was originally put forward in 1983.
@@ -378,13 +378,13 @@
  various reasons. I think partly the increasing regulatory overhead became more of a challenge,
  especially considering that he originally conceived of eCash as a way to deal with a
  concern he had around increasing, increasing loss of privacy that he was predicting with
- an ever more digital world. And so that that was what was later dubbed Chowmian eCash,
- and sometimes referred to as Chowmian Mint, if you're referring to the minting pod. It
+ an ever more digital world. And so that that was what was later dubbed Chaumian eCash,
+ and sometimes referred to as Chaumian Mint, if you're referring to the minting pod. It
  had two big concerns and flaws. One was that the bank was one single bank, the person behind
  the kiosk, holding the cash and also processing the mint. And even if you could, in theory,
  have multiple banks, ultimately the cash also, you can only have one person holding the cash,
  there was no way to get a $10 note and have five or six people holding a $10 note. So
- even in 2002, and people keep coming back to this idea of Chowmian Mint again and again
+ even in 2002, and people keep coming back to this idea of Chaumian Mint again and again
  throughout the following four decades. For example, in 2002, there was a proposal put
  forward where they thought that you could have multiple banks working in concert such
  that a majority of them could sign so you could decentralise the bank, but then the
@@ -530,14 +530,14 @@
  network for payments, the Bitcoin network is a settlement
  layer. But the people who are doing this set the way this is
  architected, quite interestingly, is that the
- people who are doing the settlement aren't the Feddy
+ people who are doing the settlement aren't the Fedi
  Mintz themselves or users, but they are a number of Lightning
- service providers, because because a Feddy Mintz can
+ service providers, because because a Fedi Mintz can
  connect to a Lightning service provider, without having to
  trust the Lightning service provider, therefore, and
  without having to lock up balance with the Lightning
  service provider, therefore, we can connect to multiple and
- whoever offers the best price, we can we can use a Feddy Mint
+ whoever offers the best price, we can we can use a Fedi Mint
  Federation can use. It also means you're more reliable in
  terms of your your experience, because if one Lightning service
  providers channels are, are exhausted, you can instantly
@@ -551,7 +551,7 @@
  for a Federation.
  So in terms of the practical reality of using a system like
  this, comparing it to first or third party custody, you know,
- how would you say Feddy Mints outperforms, I guess,
+ how would you say Fedi Mints outperforms, I guess,
  especially relative to just first party DIY custody?
  Well, first of all, from a pure security point of view, if you
  perform first party custody, and you do it correctly, then that
@@ -630,7 +630,7 @@
  store the backup on.
  You mentioned earlier that you'd spent a lot of your time
  talking to regulators. From a regulatory perspective, how do
- you what do you expect the reaction to be to Fetiment? Is
+ you what do you expect the reaction to be to Fediment? Is
  this something that they should be embracing? What do you I
  mean, maybe it'll be case by case, but what do you expect
  there? Hi, it comes to mind, but, but I won't go into but my,
@@ -714,7 +714,7 @@
  decentralizing a payment, we're decentralizing custody. So what
  do what do financial institutions do? So that and
  beyond that, it is also this educational piece, which we have
- three key parts of our strategy. Fedi is, is FediMin is this
+ three key parts of our strategy. Fedi is, is fedimintis this
  incredible technology, Fedi is free things. I call it code,
  coaching, and collaboration. And so and it's a one third, one
  third, one third. And I think that strategy is probably I

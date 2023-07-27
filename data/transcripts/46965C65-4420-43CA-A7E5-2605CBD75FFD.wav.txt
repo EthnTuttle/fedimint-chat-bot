@@ -100,10 +100,10 @@
  - Yeah, for sure.
  I wanted to have you on
  'cause you've been one of the main people
- kind of ringing the bell for Fetiment
+ kind of ringing the bell for Fediment
  and making sure people are aware.
  So I figured it'd be a good fit to have Eric on
- as the technical expert for Fetiment
+ as the technical expert for Fediment
  and you on as somebody who obviously sees it
  as a useful tool for people.
  And obviously you have a big focus on privacy on Bitcoin.
@@ -501,13 +501,13 @@
  and have unique features that sell people on it.
  And then they get that default privacy.
  And I think that's oftentimes the best approach with privacy tools.
- And that's one of the things that does get me excited about Fetaments
+ And that's one of the things that does get me excited about fedimints
  because people don't have to care about privacy.
  If they use it, they gain strong privacy.
  Yeah.
  It's funny that you bring that up because, sorry, Eric.
  It's funny that you bring that up because oftentimes
- when I describe why I'm excited about Fetaments,
+ when I describe why I'm excited about fedimints,
  I explain it as Signal for Bitcoin.
  And why do I say that?
  I say that because if you ask privacy purists,
@@ -531,7 +531,7 @@
  because otherwise, what crowd do you have to hide in?
  Like privacy needs company.
  That's a nice slogan, I think, from the Tor Project.
- So that's what we are building with Fetimans.
+ So that's what we are building with Fedimans.
  We give normal users a really great UX.
  They want to use it.
  And they even provide our privacy maximalists
@@ -545,21 +545,21 @@
  have more advanced threat models, et cetera.
  So it is a very important point there.
  Anything you want to add on what you hope users get
- from using Fetimans, Matt?
+ from using Fedimans, Matt?
  I mean, like the way I look at it is,
  I think for most users,
  it will be used as like a main spending wallet.
  When you look at like the two groups of users,
- potential users of Fetimans,
+ potential users of Fedimans,
  I like to group them into like the Western world,
  the developed world, and like the global South.
  And so in the Western world,
  people are probably not going to move away
  from regulated services.
- So I imagine Fetiman will be used
+ So I imagine Fediman will be used
  as a day-to-day spending wallet.
  You buy at a regulated service,
- they send into Fetiman,
+ they send into Fediman,
  they get some strong privacy guarantees.
  It'll work every time you make a payment.
  And you don't have to deal with channel management.
@@ -574,7 +574,7 @@
  in regions where people,
  it's harder for them to get expensive electronics.
  They might be living on a lower paycheck.
- They might end up relying on Fetiman
+ They might end up relying on Fediman
  as a savings wallet as well.
  And in that particular situation,
  what I would expect is to see
@@ -603,7 +603,7 @@
  so a government can easily go after them.
  So that middle ground of a local community
  where you don't need to advertise
- that all of you are running a Fetiman,
+ that all of you are running a Fediman,
  but you can run that as a community,
  the technical people in the community
  can be the custodians,
@@ -627,7 +627,7 @@
  and that's a smaller subset.
  And that was a distinct trade-off model they made.
  Users of that do not have privacy from the custodians.
- Fetiman to me is strictly a step up,
+ Fediman to me is strictly a step up,
  but it provided such a convenience
  to the people of El Zante
  that it got a lot of traction.
@@ -641,7 +641,7 @@
  holding their own keys
  and being fully sovereign on the other side.
  That Bitcoin beach wallet sits right in the middle.
- I think Fetimans can make a massive improvement
+ I think Fedimans can make a massive improvement
  on that middle ground.
  Yeah, I think it's just a natural evolution.
  Like Galoy with Bitcoin beach wallet
@@ -809,8 +809,8 @@
  Like it's a really hard coordination problem, actually,
  which makes it relatively secure in my opinion.
  Yeah, and lastly, there's software complexity.
- When you compare FeddyMint to, for example, Galois,
- like FeddyMint is much more complex,
+ When you compare FediMint to, for example, Galois,
+ like FediMint is much more complex,
  like the cryptographic protocols used,
  like the distributed system technology.
  It's like a whole bunch of crazy, complicated technology
@@ -899,7 +899,7 @@
  And I hope you'll take a moment after the episode
  to learn more in the show notes or at optoutpod.com/sponsors.
  And one thing we haven't touched on yet
- that I want to get into for how Fetament actually works
+ that I want to get into for how fedimint actually works
  is you've briefly mentioned, Eric, that it provides strong privacy to people
  even though it's custodial.
  Do you mind giving us just a quick overview of how that works?
@@ -966,13 +966,13 @@
  which are not the easiest concepts.
  Thank you, Eric.
  The main other thing that I wanted to touch on
- and one of my main concerns with Fetiment
+ and one of my main concerns with Fediment
  is really the legal and regulatory attack surface
  that it could open up for Bitcoiners and for Bitcoin.
  So I wanna dive in a little bit to hear
  both of your thoughts on really what we can expect
  or maybe your views on the legal
- and regulatory attack surface that Fetiment may bring
+ and regulatory attack surface that Fediment may bring
  for both custodians, the people actually running the mints
  and handling funds and for users themselves.
  'Cause I think, well, obviously the point is

@@ -1,12 +1,12 @@
  Welcome back to Bitcoin Builders.
  This is the show about Bitcoin's entrepreneurial renaissance, and today we have an exemplary
  model of exactly that.
- Obi Nwasu is the CEO of FETI.
- FETI is a new protocol for federated community custody and usage of Bitcoin.
+ Obi Nwasu is the CEO of fedi.
+ fedi is a new protocol for federated community custody and usage of Bitcoin.
  It is a scaling solution, but it's more than that as well.
  It's a new way to think about how Bitcoin is used among communities of trust that could
  scale Bitcoin to its next billion users.
- This is an amazing conversation about where FETI came from and what it's trying to do,
+ This is an amazing conversation about where fedi came from and what it's trying to do,
  and I know you're going to enjoy it.
  Bitcoin Builders is brought to you by InWolf's Clothing.
  Wolf is the first startup accelerator dedicated entirely to Bitcoin and lightning startups.
@@ -23,11 +23,11 @@
  But for those who aren't familiar with you, tell me a little bit about yourself and maybe
  how you came to Bitcoin.
  So my name is Obi Nwasu.
- I am the CEO and co-founder of FETI, which exists to accelerate adoption of Bitcoin, of
- lightning, of Fetimint, and all of the Bitcoin and lightning and Fetimint ecosystem that's
- going to be built on top of Fetimint and on top of lightning, to the point where we aim
+ I am the CEO and co-founder of fedi, which exists to accelerate adoption of Bitcoin, of
+ lightning, of Fedimint, and all of the Bitcoin and lightning and Fedimint ecosystem that's
+ going to be built on top of Fedimint and on top of lightning, to the point where we aim
  to have hundreds of millions and billions of users getting into Bitcoin and lightning
- and Fetimint over the coming years.
+ and Fedimint over the coming years.
  But prior to that, I was born in the UK, conceived in Nigeria.
  I call myself an Anglo-Jurian.
  And I grew up in inner city, central London.
@@ -128,11 +128,11 @@
  Within communities, they can transact with each other, with both money and data, they
  can share information with each other.
  So for example, there can be multiple viewers or ways to interface with a community.
- We have as a company, Feddy Alpha, which is an app which allows you to view this in the
+ We have as a company, Fedi Alpha, which is an app which allows you to view this in the
  same way as the internet can have multiple web browsers that can view it.
  And there's Chrome and Safari and so on.
  We are the first viewer of an organizer of the federations that a user is connected to
- with Feddy Alpha.
+ with Fedi Alpha.
  But within that, we have obviously a wallet which allows you to see your balances, i.e.
  gold or Bitcoin and transfer it from one person to another.
  If they're outside of the network, it will seamlessly make that a Lightning transaction.
@@ -152,7 +152,7 @@
  over the Lightning Network, and there'll still be a second or so
  and cost you a fraction of a penny.
  But it's not just money, it's also data.
- So within, for example, the federations that Feddy suggests people install
+ So within, for example, the federations that Fedi suggests people install
  include a chat service within them,
  so that people can communicate within the federation,
  not with being sure that they're not being viewed
@@ -428,7 +428,7 @@
  when they go into an office, et cetera.
  And in combination,
  that gives them that access and redundancy.
- And it's the same when you use something like Feddy,
+ And it's the same when you use something like Fedi,
  you can connect to multiple federations
  and you can choose, pick and choose what money
  and what data and what parts of your digital life
@@ -458,7 +458,7 @@
  about this sort of art project he was working on
  where he wants to enumerate every Satoshi on the internet.
  We're like, it's interesting,
- but we're focused on Feddy Mint.
+ but we're focused on Fedi Mint.
  A year later, he's provided us a sort of a sneak peek
  into a future of high fees.
  - Yeah, right.
@@ -513,7 +513,7 @@
  I prefer if I'm a member of their community,
  they've been devoting themselves
  and also ASP a quorum of them have all of a sudden
- change the behavior of a lifestyle, lifetime.
+ change the behavior of a lifestyle, lifedime.
  I would much prefer as a member of the community
  they were supporting to be having them as my guardians
  as opposed to a stranger.
@@ -985,12 +985,12 @@
  that you'd be with non-self custody anyways,
  or, you know, custodial options.
  So, okay, you guys just raised a bunch of money.
- What is next for Fetty?
+ What is next for Fedi?
  - A lot.
  We looked back on the last year,
  and we have done quite a lot in that period of time.
  We've got an incredible team.
- We have launched the first version of Fetty.
+ We have launched the first version of Fedi.
  We've done trials in multiple countries
  in two different continents behind the scenes
  for federations and so on,
@@ -1002,11 +1002,11 @@
  we made massive change to the product
  based on the initial feedback.
  And we've already received a torrent of feedback
- from the launch of Fetty,
- and that will improve Fetty,
+ from the launch of Fedi,
+ and that will improve Fedi,
  and we'll relay some of that
- to the FettyMint protocol developers as well,
- so they can improve FettyMint.
+ to the FediMint protocol developers as well,
+ so they can improve FediMint.
  So the next thing we have is over the next few months,
  we, I'm gonna turn into Steve Ballmer
  and be like developers, developers, developers,
@@ -1025,32 +1025,32 @@
  both inside the Bitcoin ecosystem and outside.
  And when I say outside, I don't necessarily mean crypto,
  I mean web2,
- because you can build FettyMint modules,
+ because you can build FediMint modules,
  which are built with Rust,
- and they can extend the functionality of FettyMint,
+ and they can extend the functionality of FediMint,
  and they can be completely powerful.
  That whole social backup functionality I mentioned
- was a FettyMint module, for example.
+ was a FediMint module, for example.
  It's just, so it just shows you
  how expressive these functionalities can be.
- But you can also do FettyMods, which are effectively,
- there's three stages of FettyMods.
+ But you can also do FediMods, which are effectively,
+ there's three stages of FediMods.
  Stage one are WebLN sites.
  So WebLN-enabled websites can be integrated seamlessly
- with, to experientially within Fetty.
+ with, to experientially within Fedi.
  Later on, stage two is you can take those WebLN sites,
  and if you wish, and you don't want to handle the hosting,
  you can package them up
  and they could be run within a federation.
  So a federation can do the hosting
  and run it for the federation.
- And then stage three is you can take those FettyMods
- and other lower level FettyMint modules
+ And then stage three is you can take those FediMods
+ and other lower level FediMint modules
  can surface up a user interface, an API,
  which these can access again.
  So you get to a world where anyone
  with the ability to build JavaScript web apps
- can build FettyMods.
+ can build FediMods.
  And if you look at it right now,
  there are less than a thousand people,
  just 950-odd, who are building open source on Bitcoin
@@ -1074,16 +1074,16 @@
  So we want to see hundreds of projects,
  thousands of people developing,
  but directly Weberland-enabled websites to begin with
- and FettyMods later on.
+ and FediMods later on.
  And then the subset of who can go deeper
- can build FettyMint modules that can do more advanced stuff.
+ can build FediMint modules that can do more advanced stuff.
  So that's what we're going to do for the next few months.
  And that's in advance of a full launch,
  public launch to users later on near the end of the year,
  where we will then have something
  that had several months of feedback
  from around the ecosystem, from builders everywhere.
- Also, we'll have a really strong suite of FettyMint modules
+ Also, we'll have a really strong suite of FediMint modules
  and mods that can meet the myriad requirements,
  whether it's interfacing with your accounting system
  or whether it's adding community savings

@@ -23,7 +23,7 @@
  It's never been more pertinent today than to talk about self-custody and the importance
  with all the news going on with the current exchanges and SEC lawsuits.
  We're going to get into different custody solutions with an entrepreneur and founder.
- We got Obi Nwansu on with us from Fetty.
+ We got Obi Nwansu on with us from Fedi.
  When we talk about real-world property rights, those are traditionally enforced by laws in
  the state.
  But with Bitcoin, it's so groundbreaking because it removes the state from the preservation
@@ -31,7 +31,7 @@
  And I think when we think about this revolution of Bitcoin, really, it comes down to private
  key ownership and self-custody.
  And so it's never been more important to provide better custody solutions.
- And I think what Obi and his team is building at Fetty is at the forefront of providing
+ And I think what Obi and his team is building at Fedi is at the forefront of providing
  better custody solutions for individuals around the world.
  So, Obi, welcome to Swan Signal.
  It's great to have you here this morning with me.
@@ -45,7 +45,7 @@
  I love that.
  Sorry.
  Yeah, so like I said, I'm really excited to have you here today because I've been reading
- a lot about what you're building at Fetty.
+ a lot about what you're building at Fedi.
  But before we get into that, I'd love to hear just your backstory because you've been an
  entrepreneur in Bitcoin for a long time and you ran an exchange yourself, Coinflora, for
  a long time.
@@ -408,7 +408,7 @@
  And when I asked her who she trusts more than me, she said, well, given that she thought about it, given that I eventually decided to use you because my son recommended it, by definition, I trust him more than you.
  Because, well, if he'd said to use Wibble Wobble exchange, I would have used that.
  That was where the first spark went in my mind.
- But it was but then when I met Eric and later Justin, and we started looking at FeddyMint and its potential, over the following, no, actually approaching two years now,
+ But it was but then when I met Eric and later Justin, and we started looking at FediMint and its potential, over the following, no, actually approaching two years now,
  we've had the chance to think about the nature of custody, the nature of community a lot.
  So a lot of our thoughts have just matured over time and we've become more and more convincing.
  There's been this missing piece in actually almost all of the Bitcoin ecosystem.
@@ -504,7 +504,7 @@
  However, this is where Fediminter, the federation, comes in.
  Because just like the default apps are Bitcoin, e-cash, and Lightning, you can add functionality.
  And there really is no limit to the functionality you can add.
- So one functionality that we added pretty soon, Feddy added, is an idea of social backup
+ So one functionality that we added pretty soon, Fedi added, is an idea of social backup
  where, okay, you've got these, but you can create a 12-word key to help regenerate all
  of the e-cash that you created yourself.
  How do you back that up?
@@ -533,9 +533,9 @@
  Well, it sounds like you can just do these very interesting things in terms of building
  some safety nets that aren't possible with other custody solutions when you use the power
  of community.
- And that's really what Fetiment I'm learning is.
+ And that's really what Fediment I'm learning is.
  It's really, like you said, it's like community embedded in a technology.
- And that's what you guys are taking advantage of at Fetty.
+ And that's what you guys are taking advantage of at Fedi.
  And it's really more than like some wallet.
  I think initially you're like, "Okay, this is like a wallet."
  That's why we don't want to call it a wallet.
@@ -586,7 +586,7 @@
  It gives you this level of, of, of sensitive reduction, and this level of privacy, and
  this level of resilience while still having a user experience, which is as good as the
  experience of the centralized services.
- And that's, I mean, that's what I was learning when I was researching Fetty.
+ And that's, I mean, that's what I was learning when I was researching Fedi.
  I mean, it's much more than a wallet.
  You guys have like chat functionality built into it.
  Any, you have a functional browser where any kind of website can plug in and, you know,

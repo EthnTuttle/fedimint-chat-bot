@@ -522,7 +522,7 @@
  it's impossible to be on top of everything, which is very exciting.
  So if people want to work with you or learn more about your work,
  where can they go to find out more about what you're doing and how to contribute?
- I think the best starting point is FettyMint.org. That's where I get, like,
+ I think the best starting point is FediMint.org. That's where I get, like,
  high-level overview about Fedora Ecash. And there are also a lot of links, for example,
  to the GitHub repository where I developed Minimint, this implementation of Fedora Ecash.
  There's a link to my Twitter account, Eric Sirion. You can probably link this too. And

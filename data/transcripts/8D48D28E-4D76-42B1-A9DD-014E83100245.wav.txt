@@ -54,17 +54,17 @@
  - Glad to have you here.
  As we were just saying offline,
  I think we left off last time
- just getting into the conversation about Fetty Mint.
+ just getting into the conversation about Fedi Mint.
  And as I have here in my notes,
- Fetty Mint is a privacy-preserving custody system,
+ Fedi Mint is a privacy-preserving custody system,
  which is a federated system of guardians.
  And I have MultiSig plus ShowMeInE-Cash
  plus Lightning Network.
- Can you help us understand exactly what Fetty Mint is
+ Can you help us understand exactly what Fedi Mint is
  and what it is comprised of?
  - Okay, well, I'll answer that in different layers.
  So first of all, at the sort of most philosophical layer,
- Fetty Mint is the missing piece
+ Fedi Mint is the missing piece
  of the Bitcoin open-source ecosystem.
  It's the thing that completes it.
  It's Jerry Maguire's René Zellweger, effectively.
@@ -76,32 +76,32 @@
  and allows you to send it around
  from person to person at lightning speed
  at low cost with enhanced privacy.
- But the missing piece and what Fetty Mint provides you
+ But the missing piece and what Fedi Mint provides you
  is a way of custodying that Bitcoin
  with enhanced security, incredible privacy,
  and also extensibility,
  something that we haven't talked about much,
- but is actually a core part of Fetty Mint as well.
+ but is actually a core part of Fedi Mint as well.
  So it can be extended with extra federated finance features.
- Think of it as Fetty Fi as well.
+ Think of it as Fedi Fi as well.
  So when you add those together,
  and it works very well with Lightning,
  and in fact, it improves with Lightning,
- and Lightning works very well with Fetty Mint.
- In fact, Fetty Mint can help scale Lightning.
+ and Lightning works very well with Fedi Mint.
+ In fact, Fedi Mint can help scale Lightning.
  So they work very, very well with each other.
  So when you add it all together,
  you have a way of holding your money at rest with privacy,
  spending it with enhanced privacy through Lightning,
- extending features and functionality through Fetty Mint,
+ extending features and functionality through Fedi Mint,
  sending the money around at low costs
  through Lightning as well,
  and all backed by and working closely
  with Bitcoin at the base.
  So that's it in terms of where it fits
  within the Bitcoin ecosystem.
- And if we look into Fetty Mint itself, how does it do this?
- Fetty Mint is a form of federated application server.
+ And if we look into Fedi Mint itself, how does it do this?
+ Fedi Mint is a form of federated application server.
  So it can take any application
  that would normally only run by a single person
  or a single process, but then split it up
@@ -289,7 +289,7 @@
  your family and your brothers and sisters is, it's really, really important. So in a
  community context, you have to, by default, have perfect privacy if you can. So it's essential
  to have it from the get go.
- Interesting. So I like a lot of things here. So Fetty, I think this is how you said it
+ Interesting. So I like a lot of things here. So Fedi, I think this is how you said it
  is the completion of the Bitcoin open source tech stack.
  Yes, it's
  Sorry, go ahead.
@@ -495,7 +495,7 @@
  But the trade-off to that obviously is privacy.
  So I guess it's layers two and above
  where we seek to add real privacy to Bitcoin.
- I mean, it sounds like Fetiman's a big step
+ I mean, it sounds like Fediman's a big step
  in that direction.
  And then these Chomian e-cash tokens,
  I think is what you called them.
@@ -514,12 +514,12 @@
  - That there's a circulation, I guess?
  - Yes.
  So what happens is,
- remember the Fetimans run multiple applications
+ remember the Fedimans run multiple applications
  and it comes to standard with free,
  a multi-sig Bitcoin wallet application
  that's run collectively amongst the guardians,
  what we call the guardians,
- the people running the Fetiman software,
+ the people running the Fediman software,
  a Chomian e-cash system that can mint Chomian e-cash
  based on certain rules and destroy it
  based on certain rules.
@@ -527,12 +527,12 @@
  that effectively can emulate aspects
  of the Lightning network,
  so that Lightning nodes connecting to anyone,
- any one of the users of the Fetiman
+ any one of the users of the Fediman
  can feel like they're operating with the Lightning network,
  even though they're not.
  So it sort of stimulates the Lightning network
  for Lightning nodes to connect to
- and interact with the users of the Fetiman.
+ and interact with the users of the Fediman.
  In the case of money coming in,
  let's say someone wants to deposit on the main chain
  a certain amount of Bitcoin and be credited e-cash.
@@ -683,7 +683,7 @@
  to locate the people who best fit that profile,
  the belief is that the inferences,
  that the likelihood that they will then
- change their character over lifetime,
+ change their character over lifedime,
  the majority of them, within a few minutes of each other,
  for me personally, there is obviously a risk,
  but if I had to choose between that and the alternative,
@@ -865,27 +865,27 @@
  or goes down to red, you automatically create a lightning transaction which sends all your
  money to another federation.
  Because just like the user experience of using the app is very similar to the user experience
- of something like, at least with the Feddy app, each Feddy Min Aware wallet will implement
+ of something like, at least with the Fedi app, each Fedi Min Aware wallet will implement
  their user experience differently.
- They're not the only, Feddy doesn't make the only Feddy Mint wallet.
+ They're not the only, Fedi doesn't make the only Fedi Mint wallet.
  There are at least two others I'm aware of.
- And we expect, just like there are multiple Lightning wallets, there'll be multiple Feddy
+ And we expect, just like there are multiple Lightning wallets, there'll be multiple Fedi
  Mint wallets because it's an open source protocol.
  But with our ones, the experience is very much like Slack.
- So you can be part of, or Discord, multiple Slacks, you can be part of multiple Feddy
+ So you can be part of, or Discord, multiple Slacks, you can be part of multiple Fedi
  Mints.
- And you can imagine a family Feddy Mint where you might store more money and a close friend's
- Feddy Mint, but also your work Feddy Mint.
+ And you can imagine a family Fedi Mint where you might store more money and a close friend's
+ Fedi Mint, but also your work Fedi Mint.
  Instead of paying your employees and everybody has to figure out their own federation, you
  could do that.
- Some Bitcoin exchanges in Africa are considering creating Feddy Mints in conjunction where
+ Some Bitcoin exchanges in Africa are considering creating Fedi Mints in conjunction where
  they have one of the guardians, but then a consortium of other respected institutions
  within the community are the other guardians.
  And so this becomes an inexpensive way of allowing their customers to self custody without
  telling them to buy hardware wallets, et cetera, which could be relatively expensive for their
  target customers.
  And then if you go to a larger level, we're seeing potentially the idea of cities or small
- towns setting up Feddy Mints or even groups, for example, charities and human rights, defender
+ towns setting up Fedi Mints or even groups, for example, charities and human rights, defender
  groups and NGOs and activist groups who are supporting whole movements.
  Again, these people have had a history of not taking money from their customers, from
  their users, but actually working hard and risking their lives to generate money and
@@ -992,8 +992,8 @@
  So again, in Hackers Congress in Prague, 2022, we were sponsors of that event, because as
  an homage to where we first met the year before in 2021, in Hackers Congress, the founders
  of the company.
- And we created the first Feddy Mint, temporary Feddy Mint network there.
- And people who came to the event could sign up, download, not the Feddy app, it was a
+ And we created the first Fedi Mint, temporary Fedi Mint network there.
+ And people who came to the event could sign up, download, not the Fedi app, it was a
  competing app.
  But we actually helped support the competing app, because we want as much competition of
  apps as possible in this space.

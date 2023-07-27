@@ -12,7 +12,7 @@
  [MUSIC PLAYING]
  Timber.
  Hello there and welcome to the Bitcoin Takeover podcast.
- I am Vlad and my guests here today are two people involved in the FETI project.
+ I am Vlad and my guests here today are two people involved in the fedi project.
  To my right is Obi Nwosu, who is-- are you the CEO?
  Yeah, I'm the CEO, the one who doesn't do anything, just basically smiles a lot.
  He is way underselling himself.
@@ -24,21 +24,21 @@
  He looks a bit like Bing from the Batman Christopher Nolan film, except for the sunglasses.
  But it's good to have you, Eric.
  Yeah, thanks. Thanks for having me on.
- So what is your role in the FETI project?
- Right. Like, first of all, the open source project is FETI Mint.
+ So what is your role in the fedi project?
+ Right. Like, first of all, the open source project is fedi Mint.
  And I started it about one and a half years ago as a pure open source project, researching federated Charmian E-cash.
  And then about one year ago, I met Obi, and he became my biggest supporter.
- He couldn't stop speaking about FETI Mint to all kinds of people.
+ He couldn't stop speaking about fedi Mint to all kinds of people.
  He expanded my reach by a factor of 100, I guess, or even more.
  I don't know.
  Yeah, so over time, we came up with the idea, I think, after the Freedom Forum, it was, for you,
- to found a company to accelerate our progress with FETI Mint.
- And we founded a company, FETI, to which I'm both a co-founder and an advisor day to day.
- I'm still mostly working on the open source FETI Mint project as the maintainer and advising FETI
+ to found a company to accelerate our progress with fedi Mint.
+ And we founded a company, fedi, to which I'm both a co-founder and an advisor day to day.
+ I'm still mostly working on the open source fedi Mint project as the maintainer and advising fedi
  so we can build the best app that we could possibly build.
  Right. You've answered the follow-up question, which I was about to ask you, which is really great.
  You foreshadowed everything.
- So to people listening who don't know what a FETI Mint is, what is this about?
+ So to people listening who don't know what a fedi Mint is, what is this about?
  What is a Charmian Mint, and why does it make sense for scaling Bitcoin?
  Right. Like federated Charmian e-cash mints solve a lot of problems.
  They can solve a lot of different problems for different people.
@@ -430,7 +430,7 @@
  >> So, yeah, and this is, you have the same problem
  if you use an exchange, or a bank,
  you'll have the same problem.
- The difference is, and this is where Feddy app comes in,
+ The difference is, and this is where Fedi app comes in,
  we think it's important to not just assume
  people can figure these things out,
  or point them towards a number of books
@@ -610,7 +610,7 @@
  But actually, when you get into the details of it,
  it's actually not so simple.
  What you can do in a Fedimint scenario is, as a user,
- you can-- and if your app and the Feddy app will support
+ you can-- and if your app and the Fedi app will support
  this, then it can be done in an automated way.
  Your app and you as a user can choose
  to take your private key, break it up into parts,
@@ -675,17 +675,17 @@
  And that's also why I really like this conference here,
  because it brought us together.
  And otherwise, it would never have been that big.
- So this is the first conference that Feddy has sponsored.
+ So this is the first conference that Fedi has sponsored.
  We've just been busy talking about it
- and getting the word about FeddyMent out.
+ and getting the word about FediMent out.
  But when Eric suggested that we sponsor Hackers Congress,
  I was like, absolutely.
  Because this is where we can-- if it wasn't for Hackers
- Congress, FeddyMent-- well, FeddyMent would still exist.
+ Congress, FediMent-- well, FediMent would still exist.
  But I wouldn't have found this solution
  to a problem I've been looking for, which I think could help.
  And it can help billions around the world.
- We wouldn't have set up Feddy.
+ We wouldn't have set up Fedi.
  It just wouldn't be here.
  And I think when we look at this back over the coming years,
  we're going to see that this is going
@@ -693,7 +693,7 @@
  And it would have all started because of events.
  So we had to come back and show our gratitude for everybody
  here.
- If somebody wants to use a FeddyMent wallet today
+ If somebody wants to use a FediMent wallet today
  to make their first payment, what is a good option?
  What's the best one that they can find right now?
  Right now, we only have really one mobile wallet
@@ -711,7 +711,7 @@
  Future Paul, Paul Miller, and Justin Moon built it.
  And I'm super grateful.
  Because otherwise, people would have no way, no easy way
- to interact with FeddyMint.
+ to interact with FediMint.
  And we could demonstrate it here.
  People bought a lot of coffees, a lot of Martes
  with FlutterMint already.
@@ -727,7 +727,7 @@
  with education and help and also having
  a backing of on-the-ground technical support
  to support it and so on.
- But it's still-- it is a FeddyMint-capable app.
+ But it's still-- it is a FediMint-capable app.
  And it shows you the power.
  If you use it, you can sign up literally in a second
  by scanning a QR code of the Federation.
@@ -737,7 +737,7 @@
  But you can receive it from any Lightning wallet,
  whether they're within the Federation or outside.
  It just looks like a Lightning experience.
- Behind the scenes, the FeddyMint protocol
+ Behind the scenes, the FediMint protocol
  handles all the magic.
  But it provides a nice interface to that,
  a nice, clean, simple interface.
@@ -748,7 +748,7 @@
  because you need to set up services to run permanently.
  You have to run software 24/7, essentially.
  But we want to integrate with a lot of these node packages.
- And that will allow people to trivially deploy FeddyMints.
+ And that will allow people to trivially deploy FediMints.
  And we are currently working on some steps
  towards that goal.
  And probably end of year, beginning next year,
@@ -763,9 +763,9 @@
  And my last question for you is, how can people
  follow you and the project?
  You as in you the person, and then also the project.
- Yeah, like the project has @FeddyMint, a Twitter account.
+ Yeah, like the project has @FediMint, a Twitter account.
  And I have the @EricSerion account.
- And I think when you look at the FeddyMint Twitter account,
+ And I think when you look at the FediMint Twitter account,
  you will see a bunch of stuff from me retweeted.
  So I don't have to spell it out.
  And Obi has the OG Twitter handle.
@@ -775,30 +775,30 @@
  and I'm even shorter than Jack, because he's four letters.
  But NVK has another three letter Twitter handle.
  Both of us are old guys now.
- And also Feddy, because I'm CEO of Feddy,
- has the @FeddyBTC on Twitter.
- And our website is Feddy.xyz.
+ And also Fedi, because I'm CEO of Fedi,
+ has the @FediBTC on Twitter.
+ And our website is Fedi.xyz.
  There's also the GitHub.
- Yeah, like FeddyMint GitHub is github.com/feddymint.
+ Yeah, like FediMint GitHub is github.com/Fedimint.
  And then you will find a bunch of repositories,
- the main one being FeddyMint.
- And the feddymint.org is a website
- dedicated to the FeddyMint protocol project.
+ the main one being FediMint.
+ And the Fedimint.org is a website
+ dedicated to the FediMint protocol project.
  Right.
- If you want to learn more about FeddyMint, the protocol,
- then go to feddymint.org.
+ If you want to learn more about FediMint, the protocol,
+ then go to Fedimint.org.
  We have beautiful videos, beautiful graphics.
  A huge shout out to Pete Winn, who built all of that.
  And I'm super grateful.
  Now we can actually explain it to people in simple terms,
  and not just my tech gibberish.
  It's a beautiful website that really explains it.
- And if you want to know more about Feddy, the organization,
+ And if you want to know more about Fedi, the organization,
  and our objective to hyperbitcoinize the world,
- then you go to feddy.xyz.
- So feddymint.org and feddy.xyz?
+ then you go to Fedi.xyz.
+ So Fedimint.org and Fedi.xyz?
  Yes, exactly.
- FeddyMint.org, yes.
+ FediMint.org, yes.
  Yes.
  OK, so thank you guys.
  And I hope I'll see you with greater success and more

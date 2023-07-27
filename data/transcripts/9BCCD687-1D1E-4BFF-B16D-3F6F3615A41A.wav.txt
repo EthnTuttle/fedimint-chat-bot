@@ -128,7 +128,7 @@
  They're sending us a message right now that we're on to something here.
  But before we dive into all that, we were chatting a little bit before we hit record
  about your background in the military and how you came to understand Bitcoin a bit intuitively.
- Like, how'd you go from being a Marine to working at Fetty on the cutting edge of Bitcoin,
+ Like, how'd you go from being a Marine to working at Fedi on the cutting edge of Bitcoin,
  the lightning network and AI?
  Yeah, sure.
  Thanks, Marty.
@@ -189,15 +189,15 @@
  And then through and then kind of I was one of the first guys with Lisa Nygut.
  We did Base 58 and then I was helping her teach that for a bit.
  And then just kind of working in open source.
- Eventually I come across FettyMint and I meet Justin actually at Bitcoin Commons in Austin
- and after meeting him and sort of seeing that, hey, FettyMint is actually something that's
+ Eventually I come across FediMint and I meet Justin actually at Bitcoin Commons in Austin
+ and after meeting him and sort of seeing that, hey, FediMint is actually something that's
  I think is a really interesting sled of tradeoffs for scaling Bitcoin in a privacy focused way.
- Started working on that for about a year and then afterwards, like I joined Fetty and so
- now FettyMint, the protocol, right, worked on that for about a year and now working for
- Fetty, the company which is building off of FettyMint.
+ Started working on that for about a year and then afterwards, like I joined Fedi and so
+ now FediMint, the protocol, right, worked on that for about a year and now working for
+ Fedi, the company which is building off of FediMint.
  I mean, that's pretty impressive to go from COVID lockdowns, bored, scouring Bitcoin.org
  to understand Bitcoin better to contributing to open source projects, contributing to Base
- 58 and now working at Fetty.
+ 58 and now working at Fedi.
  How were you able to sort of scale your knowledge and your ability to participate so quickly?
  Yeah, I'd say a couple of things.
  I talked to newer developers and also, I'm very junior, I've been here for two and a
@@ -205,29 +205,29 @@
  stuff for, is that the things I normally talk about are like, start building, right?
  And so just pick an open source project and start contributing to it.
  Everyone within Bitcoin is extremely welcoming and looking for new contributors.
- One of the things that FettyMint that we do really well is onboarding new contributors.
+ One of the things that FediMint that we do really well is onboarding new contributors.
  And so I did this for a while.
- It's become more intermittent, but when I first started joining with FettyMint, I knew
+ It's become more intermittent, but when I first started joining with FediMint, I knew
  that there was a bunch of stuff that I have to learn.
- And so there's like a stack of white papers on my desk that apply to FettyMint because
- FettyMint sort of, you get like the most difficult of everything, right?
+ And so there's like a stack of white papers on my desk that apply to FediMint because
+ FediMint sort of, you get like the most difficult of everything, right?
  Like you do Bitcoin at the base layer, you do Lightning, you do distributed consensus,
  you do all sorts of fancy cryptography with blinded signatures and music and all that
  sort of stuff.
  So I had this sort of stack of white papers that I knew I needed to get through.
  And so what we started doing was like White Paper Wednesday, right?
- Where me and a bunch of other FettyMint contributors, like we would go through these things and
+ Where me and a bunch of other FediMint contributors, like we would go through these things and
  we would be teaching each other and kind of making it more approachable so that new contributors
  coming onto the protocol could sort of get upscaled faster.
- And so I think that was actually, if you're going to look at the development of FettyMint,
+ And so I think that was actually, if you're going to look at the development of FediMint,
  right, was there was basically Eric for a little while and then he worked on it for
  about a year and then Justin comes in and a couple other contributors.
  And then there's sort of like this explosion after Bitcoin++ in Austin.
  And that was when it was like me, Justin, a couple other guys who were there, like we
  did the first implementation of SimpyMint, which was using Simplicity, Blockstream scripting
- language that they've been developing for Bitcoin as a FettyMint module.
+ language that they've been developing for Bitcoin as a FediMint module.
  And then after that, there's this big explosion out.
- And I think part of the reason why for that is because FettyMint became much more approachable
+ And I think part of the reason why for that is because FediMint became much more approachable
  for people to come work on.
  And so as you're like a new contributor coming to the project or anything like that, like
  there's a bunch of developers now who've like, they're very, we're very good at onboarding
@@ -242,7 +242,7 @@
  And Lisa will teach you like transaction construction at base 58, you'll learn a little bit about
  C Lightning.
  And now we have this other second layer, third layer protocol.
- It's actually something I'd be interested to learn how do you refer to Fetty as a second
+ It's actually something I'd be interested to learn how do you refer to Fedi as a second
  layer or third layer that people can then learn about and contribute to.
  So there's many different areas.
  Not everybody has to be a core developer these days.
@@ -267,11 +267,11 @@
  And so I think this is coming out more and more is that within Bitcoin, everyone's kind
  of building up some development shops and building up this technical background for
  it.
- So, for example, I think you just brought up for like Fetimint, right.
- So maybe we can start talking about like the technicalities behind that is that for Fetimint,
+ So, for example, I think you just brought up for like Fedimint, right.
+ So maybe we can start talking about like the technicalities behind that is that for Fedimint,
  like in terms of talking about layers one and two, it kind of gets a little confusing
- when you talk about Fetimint that way.
- And the reason why is because the Fetimint e-cash claims are against base layer Bitcoin.
+ when you talk about Fedimint that way.
+ And the reason why is because the Fedimint e-cash claims are against base layer Bitcoin.
  Right.
  So I peg in or I peg out at the Federation.
  And when I do that, I get e-cash.
@@ -279,7 +279,7 @@
  And then we use lightning gateways as an interface of trading those e-cash notes between people
  within the Federation in order to be interoperable with the wider Bitcoin network.
  Right.
- And so talking about Fetimint as layers gets a little confusing, right, because the e-cash
+ And so talking about Fedimint as layers gets a little confusing, right, because the e-cash
  that you're holding is a claim against the layer one.
  But the interface that you're using for it is like using the lightning gateways of layer
  two.
@@ -335,11 +335,11 @@
  Then also at the application layer having all sorts of different interactions.
  But the rail between all of those, the kind of inter-networking part of it is Lightning.
  Right.
- And that's one of the really cool things about Fetiment, where Fetiment, like the thing that
+ And that's one of the really cool things about Fediment, where Fediment, like the thing that
  you're holding at rest are these e-cash notes, but we don't expose a lot of that to the user.
  Right.
  And so that's a little different than Cashi, right, where you see the e-cash notes up front.
- The experience that you have using Fetiment is you're just paying Lightning invoices.
+ The experience that you have using Fediment is you're just paying Lightning invoices.
  And on the back, you're like, basically, like the thing that's happening is that you're
  using the e-cash and you can get into a little bit more of like the e-cash and the privacy
  benefits, the scaling benefits, that sort of thing.
@@ -356,11 +356,11 @@
  Yeah, it makes a lot of sense to me.
  And that's, I think, because I went to your demo in Nashville last Friday, and you explained
  a lot of this, and I think it'd be a good time.
- I mean, we've talked about Fetimints and Fetty particularly on the show a few times in the
+ I mean, we've talked about Fedimints and Fedi particularly on the show a few times in the
  past, but I think the way you articulated it during your demo was very concise and made
  it very easy to understand.
- So just, I guess, a refresher on Fetimints, generally what Fetty does on top of Fetimint,
- the Fetimint protocol, and then diving into the Lightning gateways and how they work with
+ So just, I guess, a refresher on Fedimints, generally what Fedi does on top of Fedimint,
+ the Fedimint protocol, and then diving into the Lightning gateways and how they work with
  the invoice creation and what's going on with the e-cash tokens when those invoices are
  getting paid.
  Yeah, totally.
@@ -387,7 +387,7 @@
  for payments, we still don't have a really good, robust, scalable custody solution that
  doesn't involve a third party eventually running Lightning nodes, for example.
  And we also have some privacy concerns as we go up that.
- And so Fetimint, when Eric Syrian originally came up with it, was that he didn't have the
+ And so Fedimint, when Eric Syrian originally came up with it, was that he didn't have the
  Lightning component.
  It was just a privacy and scaling solution for Bitcoin, which was you run a Chami and
  e-cash mint.
@@ -398,7 +398,7 @@
  And so anybody who uses the bank is, the bank is completely binded to the use of the users.
  And so off of that, the problem becomes, hey, well the mint is centralized.
  The mint's like one guy.
- And so Fetimint is what if we took this accounting system, this sort of bank system with blinded
+ And so Fedimint is what if we took this accounting system, this sort of bank system with blinded
  signatures and stuff, and we federate that mint and we put it on Bitcoin.
  And so the way that that works is that you deposit Bitcoin, you get e-cash notes that
  are signed by the bank, you unblind the e-cash notes so that when you use the e-cash notes
@@ -407,7 +407,7 @@
  Your anonymity set is every single note of that denomination that's ever been used by
  the bank or the mint.
  Sorry, we'll use mints just to kind of clear things up.
- But for Fetimint, we're going to take that centralized mint who's doing the signatures
+ But for Fedimint, we're going to take that centralized mint who's doing the signatures
  and we're going to federate him.
  And so now you get the privacy solution for this, but you're trying to lower the trust
  assumptions by federating it.
@@ -418,20 +418,20 @@
  And so when Eric first came up with this, this was just a privacy and scaling solution
  for on-chain Bitcoin.
  But so he solved one problem of that, hey, what if we federate the mint?
- But then this is sort of like where Fetimint becomes this larger scaling solution and being
+ But then this is sort of like where Fedimint becomes this larger scaling solution and being
  able to kind of address a bunch of the concerns that now you had at Lightning, right?
  Is that you can, the problem with the mint is that you're only going back and forth with
  the e-cash to that single mint.
  And so it's not very useful unless everybody's in the same mint and that becomes a problem,
  right?
  Because we don't want to have this centralized solution for it.
- And so what's cool about Fetimint is that we came up with this concept of gateways and
+ And so what's cool about Fedimint is that we came up with this concept of gateways and
  the gateway is just somebody using the mint who also runs a Lightning node.
  And so you pay that node in e-cash, which is the claims against the Bitcoin and the
  mint, and then they complete the Lightning payment or vice versa.
  And so now this becomes like a really good scaling solution for a community where we
  can show up at a community, we get seven to 10 to however many people within that community
- are like technical enough that they could run a node and have a Fetimint run alongside
+ are like technical enough that they could run a node and have a Fedimint run alongside
  it.
  And then anybody in that community who's running a Lightning node can provide Lightning services
  for the community.
@@ -444,22 +444,22 @@
  And so now it becomes a scaling solution for like on-chain Bitcoin.
  But so you have privacy, you have scaling on the on-chain Bitcoin, and you have interoperability
  with the wider Lightning network by swapping e-cash to Lightning.
- So the experience that people have of using Fetimint is that they're just paying Lightning
+ So the experience that people have of using Fedimint is that they're just paying Lightning
  invoices.
  But what's on the background is that they're settling using the e-cash nodes, right?
- And so that's kind of like the Fetimint protocol, how that works for that one.
+ And so that's kind of like the Fedimint protocol, how that works for that one.
  If you got any questions or I didn't cover something specifically, like that's sort of
  the big overview there.
- And then we can talk about Feti after.
+ And then we can talk about Fedi after.
  I mean, you touched on it.
  I think we should elaborate on it because I think after having listened to the last
  session of the Lightning Summit in Nashville with Tony, Lisa, and Alex from River, is that
  Lightning in and of itself probably isn't like the end-all be-all scalable solution
  unless you want to centralize amongst large third parties who can become targets to government
  regulation and scrutiny.
- And I think you said like if we want to avoid that, adding Fetimint to the mix is vital
+ And I think you said like if we want to avoid that, adding Fedimint to the mix is vital
  to ensure that we have sufficient distribution of Lightning nodes at that layer.
- Why does Fetimint help this?
+ Why does Fedimint help this?
  Yeah, so here's a couple elements for it, right?
  So one is that when you're servicing a federation as a Lightning node or you're providing Lightning
  services to them, is that you're basically balancing the liquidity across everybody within
@@ -472,8 +472,8 @@
  of splicing where now as a mobile user, I have a single channel that I'm resizing with
  the async node, which connects me out to the broader Lightning network.
  So that's one way of getting much more efficiency from Lightning.
- But what's cool about using Fetimint is that now you can have these communities that are
- all using the Fetimint, right, in order to do the custody of the Bitcoin.
+ But what's cool about using Fedimint is that now you can have these communities that are
+ all using the Fedimint, right, in order to do the custody of the Bitcoin.
  And so you can balance the interaction of course, maybe they have like five or six or
  seven different people across a community servicing maybe like 100 or 400 people within
  it.
@@ -536,18 +536,18 @@
  between everything.
  So that analogy we were talking about before of that Lightning becomes like the IP layer
  connecting these separated networks.
- That's sort of like the image you can have in your head of how Fetimint sort of scales
+ That's sort of like the image you can have in your head of how Fedimint sort of scales
  this out.
- You've got all these different Fetimints, you've got hundreds, thousands, millions of
+ You've got all these different Fedimints, you've got hundreds, thousands, millions of
  them potentially, right.
  And then all connected via each other via Lightning.
  And to be clear, it's not the federation members that have to run the Lightning nodes.
  It could be a user within the Mint that's providing a service.
- So maybe we can talk like specifically about what the Fetimint is doing.
+ So maybe we can talk like specifically about what the Fedimint is doing.
  Right.
- So basically, and this is why Fetimint, it starts off as just a way to custody Bitcoin,
+ So basically, and this is why Fedimint, it starts off as just a way to custody Bitcoin,
  but it becomes this wider building solution for federating any application.
- And why Feti, which we can move on to eventually, is that Feti is talking, the way that we like
+ And why Fedi, which we can move on to eventually, is that Fedi is talking, the way that we like
  to talk about it is that it's a way to create a federated operating system for managing
  your money, your data, and your digital life across all of these different federations.
  Right.
@@ -653,13 +653,13 @@
  But I'm not under the impression that that's where we're going with this.
  I do think everybody should have access to Bitcoin and the value it provides.
  And we do have to weigh those tradeoffs and sort of find out where that happy medium is.
- And I think the Fetiment and Fetty solution is a very creative way to solve the scaling
+ And I think the Fediment and Fedi solution is a very creative way to solve the scaling
  problem because, again, we want to get as many people as possible access to the best
  money on earth.
  There are going to be some tradeoffs made along the way.
  And it's just evaluating those tradeoffs and making sure you don't go too far in one direction.
  Yeah, and that's something that's a real motivating factor behind a lot of the work that we do
- at Fetty, which is that initial reaction that you get where people say, "Oh, hey, well,
+ at Fedi, which is that initial reaction that you get where people say, "Oh, hey, well,
  maybe Bitcoin can only be for a couple people or something."
  Well, it's kind of hard to do that.
  It's kind of hard to have the conversation with somebody.
@@ -1027,7 +1027,7 @@
  Once I sort of realize I'm getting a bunch of money, well, okay, well, now I'm trusting
  the lightning service provider who's running the lightning address server, so maybe I want
  to move to doing my own node and I can kind of move that way.
- And it's the same sort of thing with Fetiment, right, where maybe you start with a very close
+ And it's the same sort of thing with Fediment, right, where maybe you start with a very close
  to you federation, maybe you just like join some like further away federations, the money
  and data that you have associated with that larger federation is like, okay, this is getting
  a little bit too far away from me, maybe I'm like not as close with those guardians anymore,
@@ -1063,16 +1063,16 @@
  that, like maybe you can make an opt-in module like this is something that's a couple of
  people have been working on is like making an accounts module, for example.
  So you want to do something like if you want to run like the EVM as part of the contracting
- system for Fetiment, then like you need some like account model for it.
+ system for Fediment, then like you need some like account model for it.
  And so in accounts of persistent identity, you don't have as good privacy associated
  with it.
- But the default out of the box options for Fetiment are that you achieve very, very good
+ But the default out of the box options for Fediment are that you achieve very, very good
  privacy, right?
  And that's because you're like running in these local communities.
  So you want to be able to opt into it.
  It's kind of like the cypherpunk ethos, right, of that like privacy is not secrecy, privacy
  is the ability to selectively reveal yourself as part of a transaction.
- That's sort of like the design decisions associated with Fetiment of that like out of the box.
+ That's sort of like the design decisions associated with Fediment of that like out of the box.
  It's that, hey, we're using the e-cash system, we're using Lightning, we're using Bitcoin,
  right?
  But then you can add additional modules and configurations for, say you want to have like
@@ -1084,8 +1084,8 @@
  Because it's, you know, I'm marty@getalby.com or something, right?
  That is my Lightning address if you guys want to send me some stats.
  That's one of my Lightning addresses.
- What do you think the first killer, modular killer app or use case of Fetiments or within
- Fetty particularly is going to be?
+ What do you think the first killer, modular killer app or use case of Fediments or within
+ Fedi particularly is going to be?
  I've been extremely bullish on synthetic dollar trading strategies.
  And so this was actually back when I was at OKX.
  So I was like originally just kind of like my first software engineering job.
@@ -1139,7 +1139,7 @@
  But in order to do that, you need sufficient liquidity because like in order to get like
  good order book depth, you need sort of like larger than like in order to not get like
  killed while you're doing these trades in order to like hedge out the position properly.
- And so what's cool about Fetiment is that we've got this stability pools module that
+ And so what's cool about Fediment is that we've got this stability pools module that
  like Federations, it's not that one of the default modules, but it's something that Federations
  might be able to run is that now because you have additional liquidity and you have additional
  depth, you can basically create an API for locking this in, locking in the price of it
@@ -1188,10 +1188,10 @@
  you can exchange stable value using the Bitcoin rails.
  It just took some time to get things set up, the protocol layer to enable lightning and
  get lightning mature and then have Eric and a bunch of others come up with this idea or
- really Eric come up with this idea of Fetiments, leveraging lightning and then bam, we can
+ really Eric come up with this idea of Fediments, leveraging lightning and then bam, we can
  do it.
  StabilityPool has won that hackathon in the fall, correct?
- Yeah, that was before I came out of Feti.
+ Yeah, that was before I came out of Fedi.
  That was a hackathon.
  I think it was January-ish, right?
  But they were the ones that built that one.
@@ -1281,7 +1281,7 @@
  credit card stuff.
  You have to work through Stripe.
  It's like this whole thing, right?
- And so what I really think is going to be cool is Fetimint running basically hosted
+ And so what I really think is going to be cool is Fedimint running basically hosted
  access to graphics cards for people within their community so that you can run something
  locally that you can't just run on your phone, right?
  But you don't have to reach out to a third party in order to do the execution for.
@@ -1552,7 +1552,7 @@
  And depending on how many dozens of tokens that you're doing.
  And a bunch of people have been using it.
  I had it running for the entirety of Prague when we did the pop-up federation as one of
- the Fetty mods.
+ the Fedi mods.
  And so people were able to click into that and just ask some questions and stuff.
  And when they were doing that, the entire time it was like, "Hey, they're just passing
  along Bitcoin payments to me," right?
@@ -1788,7 +1788,7 @@
  or just like you do the initial payment for like $0.01,
  and then you just do the payments in the background
  as the user is navigating around your site with like Albi
- or Fetty or whatever.
+ or Fedi or whatever.
  Like the things that we've kind of been building out
  for the last two years, I think I
  have a really cool intersection with this new computing
@@ -2080,7 +2080,7 @@
  and then put it there, right?
  And then if you want to move from that second layer
  to a different layer 2 or whatever,
- like zap into liquid or zap into a Fetimid or whatever,
+ like zap into liquid or zap into a Fedimid or whatever,
  that as long as you make it compatible with Lightning,
  you can instantly move between these different top levels,
  right?
@@ -2271,7 +2271,7 @@
  And so just anybody who wants to--
  even if you just want to learn and become--
  this is something before doing it,
- being the head of developer support at Fetty,
+ being the head of developer support at Fedi,
  one of the big things that I've been doing
  is that I've been very active in teaching Bitcoin
  and teaching programming and teaching people
@@ -2294,7 +2294,7 @@
  especially if you're using something like Repl.it.
  The time between idea and deployed product
  is like nothing, right?
- You can make a cool Fetty mod or you
+ You can make a cool Fedi mod or you
  can make a cool WebLN-enabled website
  and you can wrap in LangChain with it or something.
  And you can do that in like half an hour,
@@ -2523,7 +2523,7 @@
  it's not hitting out against a separate service.
  It's just everything is happening on that graphics
  card.
- And it makes sense, because a Fetty community
+ And it makes sense, because a Fedi community
  would be smaller than the overarching universe of people
  calling open APIs.
  They don't need as many GPUs.
@@ -2533,7 +2533,7 @@
  And yeah.
  And also, the benefit you get there
  is that the data that you're pushing over them is only what--
- so this is why we say Fetty is allocating
+ so this is why we say Fedi is allocating
  your money, your data, your digital life
  across these different federations, right?
  Is that I can say, OK, these are the passwords
@@ -2680,7 +2680,7 @@
  Cody, thank you for doing what you do, sir.
  I mean, it's honestly very impressive going back
  to you finding Bitcoin in 2020, getting to the point
- you are now with Feddy and being able to explain this stuff
+ you are now with Fedi and being able to explain this stuff
  with breadth and depth pretty clearly and succinctly.
  That was the one thing I was really impressed
  about your demo in Nashville last week is, number one,
@@ -2690,7 +2690,7 @@
  And then you did a very good job of just explaining everything
  and making sure everybody was keeping up.
  And I think you're a massive value add to the space.
- I'm extremely pumped for the Feddy team
+ I'm extremely pumped for the Fedi team
  that they have you working for them.
  Again, not about me, right?
  This is about Bitcoin.

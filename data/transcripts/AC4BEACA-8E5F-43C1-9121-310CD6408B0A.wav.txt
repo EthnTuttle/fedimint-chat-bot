@@ -634,10 +634,10 @@
  your money in a regulated third party bank, in that case, in which case, why use the hardware
  wallet if you're going to store your backup in a third party regulated institution. So,
  you know, all of these things, you don't expect those to be regulated. And it's the same thing
- here. It's effectively, FeddyMint is the same as you storing the keys for as a backup for your
+ here. It's effectively, FediMint is the same as you storing the keys for as a backup for your
  friends, but just on steroids. And we're taking the best practice way of doing that, i.e., you
  should be storing them as cryptographically secure shares, and then splitting it up amongst a number
- of trusted friends. That's what you get automatically when you join a FeddyMint
+ of trusted friends. That's what you get automatically when you join a FediMint
  Federation. Let's take a quick break and hear from today's sponsors.
  Ad: Estas disfrutando de mi podcast. Thanks to Babbel, I know what that means, do you? Recently,
  I've been learning to speak Spanish with Babbel, and you can too. Because with Babbel, you can
@@ -730,14 +730,14 @@
  you would send it to the same multi-signature address. But when a deposit comes in, there'll
  be additional information that we passed along that will allow you to know which address that's
  related to. So for example, if it was on chain, you'd create an address and the Federation,
- the FeddyMint Federation will know that this address, just like when you use an exchange,
+ the FediMint Federation will know that this address, just like when you use an exchange,
  an address is created and it's associated with a user, that address will temporarily be associated
  with a user as well. And so when the deposit comes in, Federation knows that that's allocated
  to a given user. Now, here's the thing. Unlike an exchange where you have this concept of accounts
  and user count one, two, three, four, there are no accounts, there's no permanent accounts in a
- FeddyMint Federation. A temporary account is set up just to receive the money, but it's not actually
+ FediMint Federation. A temporary account is set up just to receive the money, but it's not actually
  attached to a person. Instead, what's implemented internally, as well as this multi-signature
- wallet, is a Chowmian Mint. So a Chowmian Mint is a privacy, or Chowmian eCash is a privacy protocol
+ wallet, is a Chaumian Mint. So a Chaumian Mint is a privacy, or Chaumian eCash is a privacy protocol
  that was invented by David Chowm in actually 1983. And it was used in his company DigiCash,
  which was one of the first sort of e-money systems. Now, this protocol is actually very elegant,
  relatively simple. It's obviously using very mature maths because it's
@@ -917,7 +917,7 @@
  profitable from it.
  So it's actually, and if it's much more profitable, you incentivize more people setting up like
  this.
- And without realizing this, FeddyMint, widespread use of FeddyMint actually makes the Lightning
+ And without realizing this, FediMint, widespread use of FediMint actually makes the Lightning
  Network more reliable, more profitable, which again, grows the Lightning Network as well.
  So when I realized that, that was the final straw.
  All the incentives were aligned.
@@ -1049,7 +1049,7 @@
  cost a lot of money, it's not going to be stopped in customs, it's hardware wallets,
  and they can't wait years to be onboarded through a regulatory process, through regulated
  exchanges, each one going through KYC, and ultimately many of them not even being approved.
- FeddyMint solves that problem, but it needs a very simple user interface for that.
+ FediMint solves that problem, but it needs a very simple user interface for that.
  So having realized that, and having formed really strong relationships with some of these
  incredible brave individuals, it's become a passion of ours to not only offer this to
  the world, but with a specific focus on working with some of these people to roll this out
@@ -1062,7 +1062,7 @@
  Preston Pysh (00:15:40): So Obi, are people able to go onto like an
  Umbral?
  If you're running a full node and you're using the Umbral software, are they able to download
- Feddy on that?
+ Fedi on that?
  Or is this specifically for a smartphone, like an iPhone or an Android device?
  Walk us through the software.
  Obi Winnie (00:16:05): Great question.

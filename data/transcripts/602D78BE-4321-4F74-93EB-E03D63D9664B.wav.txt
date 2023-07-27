@@ -3,10 +3,10 @@
  have from Eastern US we have Alec Harris from Halo Privacy. What's going on? What's up,
  guys? Good to see you. Good to see you. We also have from France, our friend, Michelle
  from Nautil. What's going on, buddy? Hey, guys, what's up? And very happy to introduce
- our special guest today, Obi Nosu. He is from Fetty and working very hard to bring the good
- Fetty Mint protocol to the people. I had the good fortune of meeting him in Bedford last
- month and we figured it definitely would be good to get him on the show and talk Fetty
- and Fetty Mint. So, Obi, thanks a lot for joining and welcome. Thank you very much from
+ our special guest today, Obi Nosu. He is from Fedi and working very hard to bring the good
+ Fedi Mint protocol to the people. I had the good fortune of meeting him in Bedford last
+ month and we figured it definitely would be good to get him on the show and talk Fedi
+ and Fedi Mint. So, Obi, thanks a lot for joining and welcome. Thank you very much from
  Benfica winning Lisbon. Yes, should have said that. So it's great. Got a good European American
  contingency here. Representation from the global south as well. Yeah, just quickly with
  you, Obi, your story. You started CoinFloor long ago, if I recall. How did you first get
@@ -63,7 +63,7 @@
  taught it was like, okay, buy Bitcoin, but you got to pull off the exchange immediately.
  I did it. Many people did that. But a lot of people didn't do that. What did you see
  with your customers? And was this a battle for you? I know that you are a fan of self
- custody. We can talk about how that relates to Fetiment, but just strictly with the exchange
+ custody. We can talk about how that relates to Fediment, but just strictly with the exchange
  story. What was your experience?
  Yeah, with the exchange. It was very interesting. So I always say there was different phases
  of Bitcoin. It's the Gandhi, ignore, laugh that, then fought and then it wins. And for
@@ -349,7 +349,7 @@
  I mean, Kalle is a really good, cool guy, and he's working on Cashew. But I think FedEmint is
  something very different. I mean, it's, eCash is one app. It's like saying that Microsoft Windows
  is Word or Excel, or saying that, you know, the iPhone is the phone app. It's much more than that.
- That's how we started. It was FedEmint was built as a solution to federate a Chowmian Mint. But we
+ That's how we started. It was FedEmint was built as a solution to federate a Chaumian Mint. But we
  realized that the ability to federate any application and have this first class access to
  Bitcoin Lightning, and eCash, as these primitives that are available to you, is very powerful. It's
  a bit like you have an operating system, and you know, without having to worry that your operating
@@ -672,7 +672,7 @@
  to have any second best when it comes to.
  There is no second best on that, but you can,
  but if you're worried about scalability and so on,
- Bitcoin, FeddyMint and Lightning
+ Bitcoin, FediMint and Lightning
  give you all the scalability you need.
  So Bitcoin, and then Lightning Network,
  which is highly reliable.
@@ -880,17 +880,17 @@
  - Speaking of monetization,
  first congrats for your recent raise.
  I'm curious to understand,
- how do you monetize the Feddy company itself?
- - Feddy company, it's quite simple.
- Feddy, the actual app, or the actual service, the software,
- Feddy Alpha is a pay as you use service.
- So if we facilitate a transaction using the Feddy Alpha,
+ how do you monetize the Fedi company itself?
+ - Fedi company, it's quite simple.
+ Fedi, the actual app, or the actual service, the software,
+ Fedi Alpha is a pay as you use service.
+ So if we facilitate a transaction using the Fedi Alpha,
  it charges a very, very small few basis points fee.
  Not in Alpha, but when we go to full production, we will.
  And that covers the overheads of the company
  and allows us to reinvest,
  reinvest in the open source ecosystem,
- reinvest in building, not just on Feddy Mint,
+ reinvest in building, not just on Fedi Mint,
  but also on Lightning and on Bitcoin,
  'cause we're in aligned and it's an aligned revenue model
  because it doesn't really matter to us
@@ -1006,15 +1006,15 @@
  those groups will take us a few years to work through,
  but we're starting already with them
  and we will work with them through the background.
- Near the end of this year, we've just released Feddy Alpha,
- which is the first version of Feddy
+ Near the end of this year, we've just released Fedi Alpha,
+ which is the first version of Fedi
  that people can see and play with,
  but it's Signet, well, there's a federation
  that we've also set up, which is Signet Bitcoin,
  not real Bitcoin, but it still operates like Bitcoin.
  And you can see the power of it.
  And we're focused at developers and builders
- to build Feddy modules, Feddy apps from around the world,
+ to build Fedi modules, Fedi apps from around the world,
  ideally close to where the problems they are.
  So if it's in the West and they see problems in the West,
  whatever that may be, then they can build apps for that.
@@ -1030,7 +1030,7 @@
  By the end of this year or before the end of this year,
  we want to roll out a full production version,
  ideally with a marketplace of, or not a marketplace,
- but a universe of Feddy Mint modules and so on
+ but a universe of Fedi Mint modules and so on
  that support various things.
  If it's integrating with SAP,
  'cause if the companies or Sage on one side
@@ -1040,7 +1040,7 @@
  and then we will roll out once we have
  that requisite feedback and experience
  and this sort of list of apps.
- So we then we roll out to the full version of Feddy then.
+ So we then we roll out to the full version of Fedi then.
  In parallel, we're hiring our,
  I'm giving you a lot of information here,
  but we're hiring our FedEye order.
