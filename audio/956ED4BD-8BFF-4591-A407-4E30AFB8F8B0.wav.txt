@@ -1,0 +1,872 @@
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ [MUSIC PLAYING]
+ Timber.
+ Hello there and welcome to the Bitcoin Takeover podcast.
+ I am Vlad and my guests here today are two people involved in the FETI project.
+ To my right is Obi Nwosu, who is-- are you the CEO?
+ Yeah, I'm the CEO, the one who doesn't do anything, just basically smiles a lot.
+ He is way underselling himself.
+ And you used to be the CEO of Coinfloor, which was the longest standing exchange in the United Kingdom.
+ Yes, yeah. I'm sure that crown will be taken over by someone else eventually, considering it stopped.
+ But yes, Coinfloor, started in 2013.
+ And now you're working on federated Charmian Mints.
+ And also we have Eric, who is also known as Sirion, and he likes his anonymity today.
+ He looks a bit like Bing from the Batman Christopher Nolan film, except for the sunglasses.
+ But it's good to have you, Eric.
+ Yeah, thanks. Thanks for having me on.
+ So what is your role in the FETI project?
+ Right. Like, first of all, the open source project is FETI Mint.
+ And I started it about one and a half years ago as a pure open source project, researching federated Charmian E-cash.
+ And then about one year ago, I met Obi, and he became my biggest supporter.
+ He couldn't stop speaking about FETI Mint to all kinds of people.
+ He expanded my reach by a factor of 100, I guess, or even more.
+ I don't know.
+ Yeah, so over time, we came up with the idea, I think, after the Freedom Forum, it was, for you,
+ to found a company to accelerate our progress with FETI Mint.
+ And we founded a company, FETI, to which I'm both a co-founder and an advisor day to day.
+ I'm still mostly working on the open source FETI Mint project as the maintainer and advising FETI
+ so we can build the best app that we could possibly build.
+ Right. You've answered the follow-up question, which I was about to ask you, which is really great.
+ You foreshadowed everything.
+ So to people listening who don't know what a FETI Mint is, what is this about?
+ What is a Charmian Mint, and why does it make sense for scaling Bitcoin?
+ Right. Like federated Charmian e-cash mints solve a lot of problems.
+ They can solve a lot of different problems for different people.
+ And when I began working on it, it was mostly about privacy for me.
+ I invented this technology as a way to scale Bitcoin and make it more private.
+ But by doing so, you essentially give your Bitcoin custody to a set of people you trust.
+ It could be friends or family.
+ And they then operate this federated Charmian e-cash mint for you,
+ which allows you to spend your Bitcoins without them really knowing what you're spending on, how much you own.
+ And when I met Obi, he introduced me to the concept that custody is actually a hard problem for most people.
+ I didn't think about it that way, but it makes a lot of sense.
+ And since you already have the set of people that you have to trust with your money to use a federated e-cash mint,
+ we extended the concept to also include custody.
+ And you can use these pre-existing trust relationships to solve the inheritance problem, for example,
+ or to solve the backup problem.
+ Many people aren't really able to securely backup their Bitcoin seeds.
+ And so in short, it solves scalability, privacy and custody.
+ And what's really interesting is for me, a year ago when I came to Hacker's Congress,
+ I was in the final stages of selling my previous company.
+ And I was looking for ways to, one, provide an on-ramp into the Bitcoin ecosystem
+ for the majority of the world who still isn't into the Bitcoin ecosystem yet,
+ which was an alternative to exchanges.
+ And also the people who've already gone the path of custody on exchange,
+ giving them a viable solution to take them off exchanges.
+ So we already have the option of self-custody.
+ But after years of trying and having hundreds of thousands of users and educating them,
+ and in some cases begging them to, unlike most exchanges, begging them to self-custody,
+ I came to the realization that the only way we're going to get them off exchanges
+ is if we can give them a user experience which was faster, better, simpler than using an exchange.
+ Now, they needed privacy as well.
+ But the normal user doesn't realize they need it until it's too late.
+ And so you have to just give them privacy in a way which is invisible to them as well.
+ And so when I saw FediMint, I realized that this was a way with a nice front end on it,
+ a nice app like you have Lightning Wallet apps or Bitcoin Wallet,
+ normal Bitcoin main chain wallets, could give an experience which was that sort of win-win.
+ You have privacy by default. You don't have to take any additional extra steps or actions.
+ You have incredibly inexpensive intuitive payments because it all says Lightning
+ baked into the FediMint protocol.
+ And you have an onboarding experience which, in fact, there was one user in the UK
+ who I showed them the FlutterMint app, and it was so fast they didn't realize they'd signed up.
+ It was how fast it was. Their feedback was, "You've got to make the sign-up process slower,"
+ which is an increasing Achilles heel for exchanges.
+ The sign-up process can be long and drawn out, and it's only going to get longer as regulation increases.
+ Whereas no matter what happens to regulation, the FediMint sign-up process is scanning a QR code.
+ I'm very happy to see you excited about FediMint because I saw you a couple of days ago,
+ and I was talking to a guy, and you just walked into the conversation and started being so excited
+ and talking about federations and how this can help some people.
+ But my question to you is right now, there may be critics who say maybe it's easier to get a Swiss bank account or something.
+ And how is this different? Maybe not easier.
+ Okay, it's more convenient for some people to use a Swiss bank account.
+ How do you think that Fedi is better than a Swiss bank account?
+ I think if you have, I don't know, the opening costs of a Swiss bank account are,
+ and the running costs are, the last time I checked, are several thousand a year.
+ And they will, so I would say, at the minimum.
+ So I think that's fine if several thousand a year to have a place to store your money is,
+ and also you have to trust the Swiss bank accounts that they are going to do what they say they're going to do.
+ Because they are someone that you have no pre-existing relationship with.
+ I mean, if it's great, if it's your brother or your uncle who owns a Swiss bank account, that would be even better.
+ But you've just excluded 99.999% of the world.
+ For the other 7.7 billion people, that's not an affordable option.
+ So most people, the gold standard, or I like to say the Bitcoin standard of custody,
+ is to use first party self-custody.
+ But for three reasons, the majority of people, at least today, feel uncomfortable doing that.
+ One is they can't afford it, and that's why they wouldn't take the Swiss,
+ they will also not be able to afford the Swiss bank account option.
+ Or they feel it's too technical, it's like servicing your own car.
+ Do you do that, or do you give it to someone else?
+ Most people, although it's much less complex to do self-custody in Bitcoin,
+ still, there is a technical level which people feel uncomfortable with.
+ Or because of years of being educated in how to have a relationship with money,
+ people are afraid as well, and we can't underestimate that.
+ Now that's something, hopefully, over time, through education,
+ which is a big part of the FEDI, the FEDI organization's remit,
+ we can make people become more comfortable with the idea of self-custody.
+ And also, over time, if we give them access to a currency, a money like Bitcoin,
+ that doesn't have inflation baked in, people can build wealth,
+ so they can, again, start to afford it as well.
+ And then from the technical point of view,
+ hundreds of companies around the world are working at making self-custody easier.
+ So I'm hopeful that that percentage of people,
+ through education, technological and UX advancements,
+ and gaining wealth through storing value in Bitcoin,
+ more and more people will be comfortable with first-party custody.
+ But today, right now, for human rights defenders and members of civil society,
+ or people who are living in the global South,
+ the vast majority of people are just not there.
+ [Music]
+ Are you concerned that your friends, neighbors, or KYC exchange
+ might know how much Bitcoin you own?
+ It is time to take your financial privacy seriously with Wasabi Wallet,
+ a free and open-source wallet solution which makes use of mega coinjoins
+ to mix your coins with those of hundreds of other strangers.
+ Thanks to the groundbreaking Wabi-Sabi engine,
+ your coins get divided in smaller, untraceable units,
+ which grants you great anonymity for both huddling and spending.
+ Download Wasabi Wallet 2.0 today at wasabiwallet.io
+ and take advantage of the mega coinjoins.
+ It's free and it's open-source, so don't trust Verify.
+ [Music]
+ CryptoSteel are innovators in Bitcoin cold storage.
+ Back in 2013, they launched the CryptoSteel cassette,
+ which made it easy to backup your seed phrase, passphrase,
+ or any other form of private key on the sturdy metal
+ which resists water, fire, and earthquakes.
+ Today, CryptoSteel offers the Motherlode,
+ an all-in-one box which endows you with everything you need
+ to become financially sovereign.
+ Inside of the Motherlode, you get a CryptoSteel capsule
+ and a hardware wallet of your choice.
+ All CryptoSteel products are engineered and manufactured in Poland.
+ Order your CryptoSteel metal backup system today on cryptosteel.com
+ and use promo code BTCTKVR at checkout
+ for a 10% discount on your first order.
+ CryptoSteel, secure your wallet seed phrase.
+ [Music]
+ Are you a writer, photographer, musician, or video creator
+ who is trying to generate some revenue?
+ Bumby is the Bitcoin way to monetize your content.
+ It's more censorship resistant than any other platform of its kind
+ with a low and flat one-time fee of 10%.
+ Bumby is as easy to use as any social media mobile application.
+ Sign up today at Bumby.com and subscribe for free
+ to the Bitcoin Takeover account
+ to get access to some time-exclusive content.
+ If you are monetizing your creativity,
+ why not get paid in Bitcoin for it?
+ Bumby.com, the Bitcoin way to monetize your content.
+ [Music]
+ Shopping with your Bitcoin on the internet is easy.
+ Shopinbit is Europe's biggest Bitcoin store
+ with over 800,000 products
+ ranging from Bitcoin books, toothpaste,
+ mobile phones, computers, and watches.
+ This month I bought a Nintendo Game & Watch console
+ with the classic Legend of Zelda
+ and it arrived in only five working days.
+ And if you can't find what you're looking for,
+ Shopinbit has got you covered.
+ Their concierge service will get you anything
+ and ship it worldwide.
+ Additionally, they also have a travel hacking service
+ that can get you the best deals on all things travel.
+ Flights, hotels, and more.
+ For business and for vacations.
+ Bitcoin Takeover listeners get a nice discount, of course.
+ Use code BTCTKVR on your first order
+ for a one-time 5 euro discount.
+ For more details, go to shopinbit.com.
+ Shopinbit, Europe's biggest Bitcoin store.
+ [Music]
+ Three days ago here at the Parallel Nepalese,
+ there was the first ever transaction with a purchase
+ using FediMent and it was Eric who made it.
+ I saw that on Twitter and I felt super proud
+ that I would come here and meet him in person.
+ So how did that go?
+ How does it work technically?
+ Because you made that payment on the Lightning Network.
+ Yeah, exactly.
+ First of all, this coffee tasted like 10 times better
+ than every other coffee I ever had.
+ It was the success of one and a half years of work.
+ And not only my work, but together with a lot of great
+ other developers that joined the project recently.
+ So yeah, how it works is you have these e-cash tokens,
+ we call them, or like you can imagine them
+ like bearer certificates.
+ That's what Smuggler likes to call them.
+ And these are little pieces of data you can hand around.
+ Like you can just give a piece of data to someone else
+ and they can redeem it for real Bitcoin.
+ So what we do is we give--
+ these pieces of data to a so-called Lightning Gateway.
+ The Lightning Gateway is incentivized then to make a payment on behalf of you.
+ That's how I bought the coffee there.
+ I told the Lightning Gateway,
+ "Please pay this invoice for me and I will give you these e-cash tokens."
+ Then there's some smart contracting magic going on inside
+ the federation that only pays
+ the Lightning Gateway if it actually does the payment for me,
+ otherwise I get a refund.
+ >> At this point, I think it's useful to ask about
+ the distinction between FEDI and FEDIMINT and all the other federations,
+ because you guys only develop the code,
+ but there are others who run the federations.
+ Sure.
+ >> So I think Eric mentioned it before.
+ So there's FEDIMINT, which is the open-source protocol.
+ Eric is the lead maintainer of FEDIMINT,
+ and there's this incredible group of
+ open-source engineers and developers working on that.
+ FEDI is a commercial organization that's being set up to do two things.
+ One is to work really,
+ really hard to make sure that
+ the FEDIMINT protocol is successful and rolled out to as many people as possible.
+ We do that through the creation of the FEDI app,
+ and then just promoting FEDIMINT and FEDI.
+ But the other thing is,
+ what we realize is custody is the foundation of financial ecosystem.
+ So there are many other,
+ and you've seen it here in Hacker's Congress,
+ many other Bitcoin companies and technologies that are really good.
+ As a whole, provide a suite of solutions to many of people's day-to-day requirements,
+ for wherever they are in the world.
+ Some optimized for a certain use case or a certain country, some more general.
+ So FEDI effectively can be,
+ but these organizations tend to be highly technical.
+ So they build great technology,
+ but they're not necessarily good at getting it out there and getting people to use it,
+ especially in the global South and LATAM, etc.
+ But by the nature of what we're doing in the community-based structure,
+ we're in a great position to take FEDI as a base,
+ but also educate people about the entire ecosystem of options,
+ and effectively be the outsource marketing and sales in
+ the global South and worldwide for many aspects of the Bitcoin ecosystem.
+ So that's what FEDI focuses on.
+ We have three parts for FEDI.
+ One is code, which is the app.
+ All of the heavy lifting is done by FEDIMINT,
+ but the app itself provides a beautiful interface on that.
+ Then it's collaborations.
+ We work with other companies in the Bitcoin ecosystem.
+ Instead of trying to do everything ourselves,
+ we find the best people in the space,
+ and we try to find ways in which we can work together with them.
+ Then finally is coaching.
+ We have people on the ground and within our app,
+ where we're constantly educating people to become better Bitcoiners,
+ have better sound financial management,
+ protect themselves from scams, and so on.
+ Also educate them about ways in which they can solve
+ their everyday problems using the tools that already exist as well.
+ That's FEDI, the organization.
+ >> I appreciate the answer.
+ I also want to ask you technically,
+ how does it work when you move Bitcoins from the main chain to FEDI,
+ or from Lightning to FEDI?
+ Is there a time lock that happens?
+ >> First of all, you move your Bitcoin to a specific FEDIMINT instance,
+ like a specific federation.
+ You determine which federation it should be,
+ like by who you trust essentially.
+ If Paul was running a federation themselves here,
+ then I would probably trust them and move
+ my Bitcoin or some of my Bitcoin to their federation.
+ How that works is they essentially have a multi-sig wallet.
+ If they have four people running the federation,
+ four guardians we call them,
+ then I would deposit some Bitcoin to their multi-sig wallet.
+ Once it's confirmed, then they will issue
+ e-cash tokens in return and I will get them,
+ and then can use them for example to incentivize
+ the so-called Lightning Gateway to pay Lightning invoices for me,
+ or just send it around inside the federation.
+ There are no time locks involved really.
+ You have to trust this set of guardians to not steal your money.
+ You don't have any recourse if they do.
+ It's not like a smart contract really on chain that would protect you in that case.
+ So you really have to have these second party relationships already.
+ I think that's a powerful technology because of that,
+ because most people already have these trust relationships.
+ I mean, I often used to call it my Bitcoin family when I come here.
+ I meet so many great people again.
+ If there was a federation of four or seven people from Paladin policy,
+ I would totally trust them.
+ >> Yeah. I'm going to get to that, to the trust issue.
+ It's important to understand the trade-offs because FedE has scalability.
+ Actually, let's talk about scalability before we talk about the trade-offs.
+ There's this metric in the industry which tends
+ to overestimate the importance of transactions per second.
+ In terms of scalability,
+ how many transactions can a FedE Mint handle?
+ >> That mostly depends on the hardware it's running on actually.
+ So we did some testing and we could totally
+ support about the same throughput as Bitcoin already has per federation.
+ Each time you create a new federation,
+ you add one time the Bitcoin throughput to the whole network again.
+ You can do this over and over and over
+ because Bitcoin has a relatively large capacity.
+ If you only have to make one or two deposits to a federation to set it up,
+ and then everything else happens via lightning,
+ then you could set up thousands of federations that way,
+ and you scale Bitcoin by orders of magnitude.
+ So the system is quite scalable,
+ and even if you needed more throughput,
+ you could do this with better hardware.
+ I'm talking about Raspberry Pis right now.
+ But ideally, if you wanted more throughput,
+ you could invest in some better hardware.
+ But on the other hand, you don't want federations to become too big
+ because then you don't have these trust relationships anymore.
+ So it's actually good if there are some scaling limitations that forces
+ people to choose more local options, more trusted options.
+ The great thing is, since we have
+ the lightning integration you mentioned previously,
+ we can just interact between these federations.
+ If there's a federation in Parallelopolis,
+ I think that's in Slovakia,
+ and then one federation in Parallelopolis,
+ and I go over there to visit them,
+ then I can totally just transact with them
+ using my Parallelopolis federation here.
+ So that's also a great superpower,
+ like lightning is the settlement network for us.
+ >> Yeah, that's a good answer.
+ Another question that I have,
+ does it use any kind of blockchain,
+ and what is the confirmation time for a transaction?
+ >> There is no blockchain.
+ Like we have a similar--
+ >> So it's like lightning from this point of view.
+ You also lock your coins, you have a different token minted,
+ and you transact it on that second layer.
+ >> Yes, kind of, yeah.
+ Like the technology internally is wildly different from lightning.
+ Like the special plant signatures we use in the Chowmin e-cash,
+ like that's a whole different technology.
+ But yeah, there isn't a blockchain,
+ you don't have to sync any data as a user,
+ and that makes it way more scalable for light clients.
+ Like if I have a phone,
+ I only really care about my own e-cash tokens,
+ like my own bearer certificates that I get that way.
+ And like I don't have to validate
+ all the transactions of all the other people,
+ so it's localized in a way.
+ And yeah, that makes it quite scalable actually.
+ >> So what you offer as advantages is great scalability,
+ depending on your hardware.
+ You have very good privacy,
+ as you don't know who's transacting and which amounts.
+ >> Yes, like you don't know whenever the transaction happens,
+ like who initiated it or who received it.
+ Like with amounts, it's a little bit more difficult,
+ like you can split up the amounts,
+ so we don't see that the single transaction
+ had a certain amount.
+ But when you, for example, want to pay lightning invoice,
+ then typically you will leak the amount, unfortunately,
+ unless, like until there's a fix for that on lightning.
+ We cannot work around that,
+ because we use lightning as our settlement layer.
+ But internally in the federation, you have great privacy.
+ And yeah, if you don't know who is sending the transaction,
+ like does the amount really matter?
+ That's the question.
+ >> But the only trade off is that you need to trust
+ the people who run the federation,
+ or you can become a member of the federation.
+ >> Yeah, like you definitely have to trust the people
+ that run the federation, but not every single one of them.
+ You need to trust them as a whole,
+ like that they will not conspire against you.
+ Like actually, if there was a federation
+ where the guardians don't really trust each other,
+ that might actually be a good option,
+ because then they have a harder time conspiring against you,
+ because they will not know if,
+ like if they have the coordination problem,
+ like the Byzantine generals problem, essentially,
+ between each other when they want to conspire against you,
+ because one of them might want to take your money,
+ but they don't know if they will propose this action
+ to the others, if they will comply,
+ or if they will let them out.
+ So, yeah, if a majority of them was malicious,
+ they could take your money, but you assume,
+ like you know them, you trust them,
+ they're your friends, your family,
+ like they will not do this, right?
+ >> Yeah, but the good news is that
+ they don't know how much money you have.
+ >> Yeah, exactly.
+ >> Because it would be easier to conspire
+ if they saw how much money you have in your wallet.
+ >> Yeah, like they cannot see what the single user
+ has in their wallet, but they see
+ what the federation total owns, like that's--
+ >> Yeah, so if it's a small federation,
+ I guess they can talk to each other
+ and figure out how much each one of them owns,
+ and by exclusion determine who's the whale
+ in that federation?
+ >> Yeah, so one rule is, rule of thumb is,
+ if you are like orders of magnitude more wealthy
+ in a federation, then you should maybe
+ take some money off the federation.
+ Like generally, it's not a wise idea to be like the whale.
+ >> So, yeah, and this is, you have the same problem
+ if you use an exchange, or a bank,
+ you'll have the same problem.
+ The difference is, and this is where Feddy app comes in,
+ we think it's important to not just assume
+ people can figure these things out,
+ or point them towards a number of books
+ about good financial management and literacy or courses,
+ but within the app itself, we will over time
+ add more and more things like this
+ to remind people about these things,
+ and potentially the app could be monitoring,
+ 'cause the total amount in the federation
+ is visible on the blockchain, it's multi-sig,
+ and the app will know your balance,
+ so if the amount you're holding
+ becomes quite a large percentage of the total,
+ it can say, hmm, you've got quite a large percentage
+ of the total, maybe you should split it
+ between more than one federation,
+ 'cause you could be a member of more than one federation,
+ or maybe you've got quite a large amount full stop,
+ so you should consider self-custodying now,
+ because it now makes financial sense for you to do it,
+ and by the way, we have a network of people,
+ this is in the future, we have a network of people
+ around the world who we've contracted
+ to help their local communities,
+ effectively provide local customer support,
+ and so we can put you in contact with someone
+ who can help you set up a federation for yourself,
+ or help you give you advice on how to get
+ into first party custody when you're ready.
+ So our objective is to, as I said,
+ not just to make an incredible, simple-to-use app,
+ but win by helping the entire Bitcoin community win,
+ 'cause in combination, Bitcoin today
+ is either at the point, or almost at the point,
+ where as a suite of solutions,
+ we can help most people in most circumstances,
+ it's just that the information is not readily apparent
+ and available and surfaced,
+ and that's what we're hoping to do,
+ make that more clear,
+ and help and educate people through that.
+ - Yeah, if Bitcoin wins, everyone wins,
+ and we want to make this happen, so.
+ - No, I understand this is mostly for people
+ who would otherwise end up on exchanges,
+ and it's a way better option?
+ - Exactly, yeah.
+ - Or there's people who,
+ or there's people who are,
+ even if you're self-custodying,
+ it can be useful in that case,
+ and you have a large amount of Bitcoin
+ to make that make sense,
+ it can still be useful to put some of your Bitcoin in this,
+ that you use as spending money,
+ because this spending experience will be simpler,
+ and you get automatic privacy
+ without having to take a number of additional steps.
+ - And many people are doing this already,
+ like when you look at how most people use Lightning,
+ they typically use custodial services,
+ like either Wallet of Satoshi,
+ Blue Wallet is often used in a custodial way,
+ or Ellen Bits, that's also a self-hosted option,
+ which is quite nice,
+ so you can already have this community banking
+ kind of thing going on,
+ but what they all lack is privacy,
+ 'cause when you have a custodial solution,
+ maybe you don't want them to know
+ how much you actually own,
+ how much you're spending,
+ and that's one thing that FedElement can fix.
+ - And you also have,
+ also, if the custodial,
+ there's potential risk of challenges withdrawing now,
+ that risk can happen in a FedElement,
+ but it would have to happen collectively
+ for the entire Mint,
+ you cannot forensically choose you as a user,
+ we're going to prevent,
+ you have to prevent everybody,
+ which makes it a much bigger ask.
+ - There is essentially this triangle,
+ which is inspired by Zucco's triangle,
+ which he made in the 90s,
+ and it's adapted,
+ now we call it a trilemma of decentralization,
+ security, and what's the other one, scalability,
+ and FedE is scalable,
+ is secure,
+ but the decentralization is subjective to the federation,
+ it depends on how it's set up,
+ and how they establish these relations
+ between themselves,
+ but I want to ask you about censorship resistance,
+ let's say that for some odd reason,
+ FedEments get outlawed in some countries,
+ and they come and confiscate the hardware,
+ I mean, the police raid your house,
+ they take the hardware in which the federation is run,
+ what happens in that situation?
+ Are the funds lost,
+ or can the members of the federation
+ who have their money there do something?
+ - It depends,
+ the federation is a multi-sig wallet,
+ and for example,
+ if you have a five out of seven federation,
+ then as long as less than,
+ less or equal to two of the guardians get confiscated,
+ then everything can continue as before,
+ like you can withdraw your money,
+ and you should probably do so,
+ if there was already action taken against the federation,
+ and you could also maybe try to migrate
+ to a better jurisdiction,
+ if they manage to confiscate more of the guardians,
+ then first of all,
+ they cannot move the money at first,
+ like if they only managed to confiscate
+ like four out of seven,
+ then they cannot move any money,
+ like police cannot take the money.
+ but neither can the users.
+ So that's kind of a problem.
+ No party can take the Bitcoin, and in the worst case,
+ they get burned.
+ If they manage to complicate all of them,
+ then police could take the money.
+ But we could look into some interesting schemes
+ where if no movement of funds happens
+ in a certain amount of time, then
+ step by step the requirement for how many signatures to spend
+ you need goes down.
+ I think that's also what Doxium's Liquid is doing.
+ There is a backup path.
+ If funds don't move in a certain amount of time,
+ then you have a 2 out of 3 multisig
+ instead of the 11 out of 15.
+ And you could have such backup paths
+ and just enforce that the funds are regularly moved.
+ That might be a precaution you want to take
+ in really risky situations.
+ But we haven't looked into this yet.
+ It's still an open research problem.
+ And there are many of these.
+ For any developer that's listening,
+ it's a very interesting project.
+ We have many open questions still.
+ And please just check out Fediment on GitHub,
+ github.com/fediment/fediment.
+ And we will be welcoming you with open arms
+ and always need more help there.
+ Obi, I've heard you describe this backup scenario where
+ you take a picture of yourself or a video with voice.
+ And that's going to be basically your seed phrase.
+ How does that work?
+ Yeah, so I'll describe the idea at a high level.
+ Video and so on is an implementation detail.
+ It can be implemented in many ways.
+ But because you already have a number of high integrity,
+ community focused, and reliable people
+ who are selected to be guardians,
+ you have an opportunity to do backup, to back up effectively
+ your private key, which you normally
+ would on any other wallet create a 12 word or 24 word
+ phrase, seed phrase, which you can use too,
+ which is basically an alternative representation
+ of that private key.
+ And then you have to figure out yourself how you back that up
+ securely.
+ And that is, for many people, one
+ of the technical complexities that
+ prevent them from wanting to use first party custody.
+ And it's not a-- it seems like a simple problem.
+ But actually, when you get into the details of it,
+ it's actually not so simple.
+ What you can do in a Fedimint scenario is, as a user,
+ you can-- and if your app and the Feddy app will support
+ this, then it can be done in an automated way.
+ Your app and you as a user can choose
+ to take your private key, break it up into parts,
+ cryptographically sharding, and then take those parts,
+ the number of parts equaling the number of guardians,
+ and give it to the number of guardians.
+ Now again, with a mobile app or wallet,
+ this could be done with pretty much a click of a button.
+ You then need to have some mechanism
+ to add almost like a name tag, like in a code check,
+ so that you can come back at a later stage
+ and the guardians can find your codes, find your shard.
+ And there are different ways in which we're
+ looking at doing that.
+ But we want them to all be quite intuitive.
+ And that's what I was referring to with one example.
+ It's like a selfie, for example.
+ But if you lose your phone or you lose your device
+ and you join the Federation again,
+ you can go back to the guardians,
+ give them your name tag, your identifier.
+ They can find the shard.
+ And after verifying that you are who they say you are,
+ and they can do that using what I like to call KYF.
+ We normally have KYC, Know Your Customer.
+ But this is Know Your Friend, Know Your Family,
+ which is even stronger.
+ And so they will identify you the way
+ they normally identify you, just by knowing you.
+ And once they realize it is you, they send back their shard.
+ Once a majority of users send back their shard to you,
+ you can reconstruct your private key, and away you go.
+ Now, there are certain implementation details
+ and improvements to that simplified form.
+ For example, before you give them the shard,
+ we would look to encrypt the shard so
+ that they can't collude to reconstruct it
+ without that encryption.
+ And there will be a user experience
+ to make sure that that whole process is as simple
+ and as slick and as easy to use as possible,
+ given the focus of it being something that
+ is non-darting to a global, multi-billion person audience.
+ And that's an example of something beautiful,
+ what happened here.
+ I would have never come up with this technology.
+ We were just discussing, and Obi had this background
+ as an exchange operator.
+ He knew what users want.
+ And I just had this idea of this private federation thingy,
+ and was all nerding out about it, explaining it to him.
+ And he noticed, OK, wait, we can actually
+ use this for custody, for restoring users' funds.
+ And then he asked me a lot of questions,
+ like, how could we do this?
+ And it was really intense.
+ We had a great conversation.
+ I think multiple months we figured this out.
+ And that's how beautiful things happen.
+ You need multiple people with different skills
+ and different backgrounds.
+ And that's also why I really like this conference here,
+ because it brought us together.
+ And otherwise, it would never have been that big.
+ So this is the first conference that Feddy has sponsored.
+ We've just been busy talking about it
+ and getting the word about FeddyMent out.
+ But when Eric suggested that we sponsor Hackers Congress,
+ I was like, absolutely.
+ Because this is where we can-- if it wasn't for Hackers
+ Congress, FeddyMent-- well, FeddyMent would still exist.
+ But I wouldn't have found this solution
+ to a problem I've been looking for, which I think could help.
+ And it can help billions around the world.
+ We wouldn't have set up Feddy.
+ It just wouldn't be here.
+ And I think when we look at this back over the coming years,
+ we're going to see that this is going
+ to help billions of people over the coming years.
+ And it would have all started because of events.
+ So we had to come back and show our gratitude for everybody
+ here.
+ If somebody wants to use a FeddyMent wallet today
+ to make their first payment, what is a good option?
+ What's the best one that they can find right now?
+ Right now, we only have really one mobile wallet
+ that's already kind of pre-released.
+ And it's called FlutterMint.
+ And that's what we presented here at the Hackers Congress.
+ How do you spell that?
+ FlutterMint?
+ Flutter.
+ F-L-U-T-T-E-R.
+ Oh, Flutter.
+ Yeah, like the mobile framework, essentially.
+ Maybe you can hold it into the camera.
+ It's a really cool app.
+ Future Paul, Paul Miller, and Justin Moon built it.
+ And I'm super grateful.
+ Because otherwise, people would have no way, no easy way
+ to interact with FeddyMint.
+ And we could demonstrate it here.
+ People bought a lot of coffees, a lot of Martes
+ with FlutterMint already.
+ If people came to our workshop room, we set them up,
+ gave them some free sets.
+ Even if something goes wrong, I don't
+ want to feel bad about it.
+ But yeah, it worked phenomenally well.
+ It exceeded all my expectations.
+ It was just beautiful to see.
+ Now, to be clear, it's not what you
+ would consider this consumer-grade app
+ with education and help and also having
+ a backing of on-the-ground technical support
+ to support it and so on.
+ But it's still-- it is a FeddyMint-capable app.
+ And it shows you the power.
+ If you use it, you can sign up literally in a second
+ by scanning a QR code of the Federation.
+ And you're there.
+ And you can receive some Bitcoin.
+ In the conference, we give you the money to buy coffee.
+ But you can receive it from any Lightning wallet,
+ whether they're within the Federation or outside.
+ It just looks like a Lightning experience.
+ Behind the scenes, the FeddyMint protocol
+ handles all the magic.
+ But it provides a nice interface to that,
+ a nice, clean, simple interface.
+ What if you have a Raspberry Pi or a laptop
+ that you're not using?
+ And you want to set up a Federation, what does it take?
+ Right now, it takes some technical expertise,
+ because you need to set up services to run permanently.
+ You have to run software 24/7, essentially.
+ But we want to integrate with a lot of these node packages.
+ And that will allow people to trivially deploy FeddyMints.
+ And we are currently working on some steps
+ towards that goal.
+ And probably end of year, beginning next year,
+ we'll try to get some first federations going
+ and be more public.
+ This was just a demonstration, just a test internally here.
+ We're not that ready yet.
+ But it felt great already.
+ So I'm really looking forward to seeing this technology
+ deployed to the real world.
+ Now, I wish you best of luck with the project.
+ And my last question for you is, how can people
+ follow you and the project?
+ You as in you the person, and then also the project.
+ Yeah, like the project has @FeddyMint, a Twitter account.
+ And I have the @EricSerion account.
+ And I think when you look at the FeddyMint Twitter account,
+ you will see a bunch of stuff from me retweeted.
+ So I don't have to spell it out.
+ And Obi has the OG Twitter handle.
+ So yeah, because I am showing my age.
+ But I have @Obi, which is my name, Obi.
+ I think it's just--
+ and I'm even shorter than Jack, because he's four letters.
+ But NVK has another three letter Twitter handle.
+ Both of us are old guys now.
+ And also Feddy, because I'm CEO of Feddy,
+ has the @FeddyBTC on Twitter.
+ And our website is Feddy.xyz.
+ There's also the GitHub.
+ Yeah, like FeddyMint GitHub is github.com/feddymint.
+ And then you will find a bunch of repositories,
+ the main one being FeddyMint.
+ And the feddymint.org is a website
+ dedicated to the FeddyMint protocol project.
+ Right.
+ If you want to learn more about FeddyMint, the protocol,
+ then go to feddymint.org.
+ We have beautiful videos, beautiful graphics.
+ A huge shout out to Pete Winn, who built all of that.
+ And I'm super grateful.
+ Now we can actually explain it to people in simple terms,
+ and not just my tech gibberish.
+ It's a beautiful website that really explains it.
+ And if you want to know more about Feddy, the organization,
+ and our objective to hyperbitcoinize the world,
+ then you go to feddy.xyz.
+ So feddymint.org and feddy.xyz?
+ Yes, exactly.
+ FeddyMint.org, yes.
+ Yes.
+ OK, so thank you guys.
+ And I hope I'll see you with greater success and more
+ wallets and federations and stuff.
+ Absolutely.
+ It was a pleasure.
+ Thank you.
+ [MUSIC PLAYING]
+ Are you concerned that your friends, neighbors, or KYC
+ exchange might know how much Bitcoin you own?
+ It is time to take your financial privacy seriously
+ with Wasabi Wallet, a free and open source wallet solution
+ which makes use of mega coin joins
+ to mix your coins with those of hundreds of other strangers.
+ Thanks to the groundbreaking Wabi Sabi engine,
+ your coins get divided in smaller, untraceable units,
+ which grants you great anonymity for both huddling and spending.
+ Download Wasabi Wallet 2.0 today at wasabiwallet.io
+ and take advantage of the mega coin joins.
+ It's free and it's open source, so don't trust verify.
+ [MUSIC PLAYING]
+ CryptoSteel are innovators in Bitcoin cold storage.
+ Back in 2013, they launched the CryptoSteel cassette,
+ which made it easy to back up your seed phrase, pass phrase,
+ or any other form of private key on the sturdy metal which
+ resists water, fire, and earthquakes.
+ Today, CryptoSteel offers the Motherload,
+ an all-in-one box which endows you with everything you need
+ to become financially sovereign.
+ Inside of the Motherload, you get a CryptoSteel capsule
+ and a hardware wallet of your choice.
+ All CryptoSteel products are engineered and manufactured
+ in Poland.
+ Order your CryptoSteel metal backup system today
+ on cryptosteel.com and use promo code BTCTKVR
+ at checkout for a 10% discount on your first order.
+ CryptoSteel, secure your wallet seed phrase.
+ Are you a writer, photographer, musician, or video creator
+ who is trying to generate some revenue?
+ Bumby is the Bitcoin way to monetize your content.
+ It's more censorship resistant than any other platform
+ of its kind with a low and flat one-time fee of 10%.
+ Bumby is as easy to use as any social media mobile
+ application.
+ Sign up today at Bumby.com and subscribe for free
+ to the Bitcoin Takeover account to get access
+ to some time-exclusive content.
+ If you are monetizing your creativity,
+ why not get paid in Bitcoin for it?
+ Bumby.com, the Bitcoin way to monetize your content.
+ Shopping with your Bitcoin on the internet is easy.
+ Shop and Bid is Europe's biggest Bitcoin store
+ with over 800,000 products, ranging from Bitcoin books,
+ toothpaste, mobile phones, computers, and watches.
+ This month, I bought a Nintendo Game & Watch console
+ with the classic Legend of Zelda,
+ and it arrived in only five working days.
+ And if you can't find what you're looking for,
+ Shop and Bid has got you covered.
+ Their concierge service will get you anything
+ and ship it worldwide.
+ Additionally, they also have a travel hacking service
+ that can get you the best deals on all things travel--
+ flights, hotels, and more--
+ for business and for vacations.
+ Bitcoin Takeover listeners get a nice discount, of course.
+ Use code BTCTKVR on your first order
+ for a one-time 5-euro discount.
+ For more details, go to shopinbid.com.
+ Shop and Bid, Europe's biggest Bitcoin store.
+ (upbeat music)
