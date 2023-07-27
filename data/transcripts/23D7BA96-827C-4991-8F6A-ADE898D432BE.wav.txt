@@ -1,0 +1,774 @@
+ (upbeat music)
+ - Everybody, welcome to the "What Is Money?" show.
+ I am thrilled to have you here joining me on my mission
+ to help shine light on the corruption of money.
+ Now, a little bit about this show and how it makes money.
+ We are 100% sponsor-based,
+ which means that all the revenues we derive
+ come from sponsorships.
+ But I try to be very selective about the sponsors
+ that I work with,
+ specifically trying to choose those who have values
+ well-aligned to the values expressed on this show,
+ like freedom, education, self-sovereignty, et cetera.
+ So what I'm gonna do is a few ad reads
+ right here at the top of the show,
+ and then a few ad reads in the middle.
+ And I hope you won't skip them.
+ I hope you'll take the time,
+ listen and see what they have to offer,
+ 'cause again, these are hand-selected sponsors.
+ Now I'd like to tell you about our sponsor,
+ Pacific Bitcoin Conference,
+ brought to you by Swan.
+ Now this is gonna be a two-day event in Los Angeles,
+ November 10th and 11th, 2022.
+ And if you haven't been to a Bitcoin conference yet,
+ I highly recommend it,
+ as there really is no better way
+ to get integrated into the Bitcoin community.
+ Speakers announced so far include Michael Saylor,
+ Lynn Alden, many others.
+ I'll be speaking as well.
+ Michael Saylor's even quoted as saying,
+ "This is going to be the event of the year."
+ So you definitely don't wanna miss it.
+ So go to pacificbitcoin.com
+ and use discount code BREEDLOVE
+ to get your tickets today.
+ Now I'd like to tell you about our sponsor, Leden.
+ Leden lets you do more with your digital assets.
+ For instance, Leden offers a B2X loan product
+ that lets you leverage your existing Bitcoin
+ to buy even more Bitcoin.
+ Or you can also get traditional Bitcoin collateralized
+ US dollar loans through Leden as well.
+ Leden also offers both Bitcoin
+ and USDC denominated savings accounts,
+ letting you generate yield on your digital assets.
+ Recently, Leden has launched a Bitcoin mortgage product
+ as well that lets you use Bitcoin to buy a home
+ or finance one that you already own.
+ So go to leden.io,
+ that's L-E-D-N.io today to sign up.
+ - Obi Nwasu, welcome to the "What Is Money?" show.
+ Robert Breedlove.
+ What's the history of Breedlove actually?
+ - I've never had a guest open me up
+ with a question like that right out of the gate.
+ It's from a Scottish clan
+ and it translated from wolf hunter
+ down to Breedlove.
+ Yeah, so it doesn't at all,
+ not at all what you would expect,
+ but that's where it comes from.
+ - Well, I was just in Edinburgh two days ago
+ for UK Bitcoin conference
+ and I used to live in Glasgow for four years
+ and I was made an honorary Scotsman at the time.
+ So it just reminded me how much I really like the passion
+ of Scottish people and Scottish culture.
+ So great heritage.
+ - Yes, great heritage.
+ I just learned recently that it was a lot of the theologians,
+ thinkers and philosophers from Scotland
+ that created the spirit of what would become
+ the Declaration of Independence in the US Constitution.
+ I don't know a lot about that,
+ but looking forward to learning more.
+ Just by way of quick introduction for my audience,
+ you are the CEO and co-founder of Fetty,
+ which is a new but very important Bitcoin company.
+ You're also a board member at some other Bitcoin companies,
+ which I'll leave it to you
+ whether you want to describe those or not.
+ And technically you are a Nigerian prince.
+ I just thought I had to throw that one in
+ for my audience as well.
+ - Yeah, I don't really, technically,
+ but my father was a king of yams,
+ so there's a type of title and as such,
+ being his son, I'm technically a prince,
+ but it's not a significant title.
+ I'm not hobnobbing with the British royalty
+ or anything like that.
+ - Well, I think it still sounds pretty important.
+ So you can use it with a lot of gravitas over here.
+ This conversation has been a long time coming
+ and I appreciate you coming on to do this.
+ I guess you and I talked originally about this,
+ maybe what, two or three years ago, I suppose.
+ We just had kind of a long informal discussion
+ about what we would talk about if we did the show.
+ And then we more recently had another one of those.
+ And I think you have some very fascinating perspectives,
+ both in that you work very closely to Bitcoin.
+ You see how it's evolving on the ground, so to speak,
+ working at the front lines of this network
+ and its proliferation in the world.
+ But then you also seem to have a lot of deep,
+ more visionary type thoughts about where all this is going.
+ And so, like I said, I'm really excited to have you on
+ and talk about this.
+ And I guess a place to start,
+ not really sure exactly where we could start,
+ but this idea you have about the dichotomy
+ between regulated and real Bitcoin.
+ And now, I guess this is more of a future oriented vision
+ where you see things going, but if you would be so kind,
+ could you please just unpack for us what these terms mean?
+ And is this something that exists today in the world
+ or is this something that we're headed towards?
+ How do you describe this regulated versus real Bitcoin?
+ - Yeah, so,
+ 2013, I and my co-founder at the time launched CoinFlow
+ and it went on to become the UK's longest running
+ Bitcoin exchange.
+ But at that point, and I could talk about that more,
+ I think we were, in the years preceding that and early 2013,
+ we were in the Bitcoin was being effectively ignored
+ by mainstream.
+ It was still something only for geeks
+ and a few libertarians.
+ And as such, the people around then had much more time
+ to think about why they were devoting their time
+ to this thing, what it meant.
+ There were less distractions with alternative coins,
+ less distractions by mainstream.
+ And you saw that you had the Nakamoto Institute
+ would come out with these well thought out,
+ long form articles.
+ And it was just a great time for people
+ who want to think deeply about what were the potential
+ impacts of Bitcoin.
+ And CoinFlow was no exception.
+ We were working on building this product.
+ And at that time was just getting people to notice
+ this Bitcoin thing, beyond the distractions.
+ We would have lots of very deep conversations.
+ My co-founders and a lot of the senior engineers,
+ if you're an engineer working in this,
+ you'll still be tend to be quite philosophical.
+ One of the engineers and I would have conversations
+ about where it would all end up.
+ And at one point he put an article on Reddit,
+ which as running this startup,
+ so I didn't really want to put my name to it,
+ but definitely we were on exactly the same page
+ with the vision.
+ And it became very clear that we were going to see
+ a fork is the wrong word,
+ but definitely a split in Bitcoin.
+ The reason why a fork is a wrong word
+ is because a fork of a blockchain
+ has a certain technical description.
+ And the end result is two completely separate
+ parallel blockchains effectively.
+ At some point they are incompatible with each other.
+ We saw that happen with Bitcoin and Bitcoin Cash
+ a couple of years later, you had the wars
+ and other altcoins have experienced a similar thing.
+ But what became clear here, and this was by the way,
+ prior to the proliferation of blockchain monitoring companies
+ and so on, but it became clear
+ that there is going to be a tension.
+ As people, as countries, as regulators
+ eventually started to understand the potential of Bitcoin,
+ it became clear in 2013, 2014,
+ that there will be increasing demands to regulate Bitcoin.
+ But the true nature and power of Bitcoin
+ is to be something that is freedom finance.
+ It's meritocratic money that anyone can use.
+ And ultimate utility comes from its network effect.
+ And ultimate network effect comes from
+ having the least restrictions on who you can interact with.
+ Any restriction will reduce this network effect.
+ And so this desire for ultimate utility
+ and this desire for increased control over this new asset
+ will lead to two types of Bitcoin
+ coexisting on the same blockchain,
+ not a fork where they no longer coexist,
+ but on the same blockchain.
+ And so there needs to be a classification
+ of those two types.
+ One would be, for want of a better word,
+ sometimes in that original Reddit post
+ they were called black Bitcoin,
+ but another way of describing them would be real Bitcoin.
+ And those would be the ones that are out
+ with the regulated system.
+ They are free, that you can send them from anyone to anyone,
+ but they'll be increasingly have difficulties
+ being able to interact with the regulated system.
+ And then there will be these other approved
+ or in the original article, they're called white Bitcoin.
+ And another way I like to think about them
+ sort of visually is regulated Bitcoin.
+ And these ones would be approved
+ and therefore allowed within the regulated system.
+ And they would circulate around the regulated system.
+ And over time, the ability to go from real Bitcoin
+ to regulated Bitcoin and back again
+ become more and more difficult
+ until we get to a point where
+ we will ultimately see real Bitcoin
+ not able to interact with the regulated Bitcoin ecosystem
+ through regulated channels.
+ The regulated drawbridge will be raised.
+ And so the only ways in which you'll be able to interact
+ will be other mechanisms.
+ However, because of the desire and value of being able
+ desire and value of being able.
+ to interact, even if there are no regulated paths, for good or for ill, there will be other ways of
+ interacting. So there will be some way of being able to provide price discovery. However,
+ that's where the debate continued, which one over time would be more valuable.
+ No matter how we looked at it, even though it may initially be that the regulated ones
+ would, from a common sense point of view, have more value than the ones outside the system.
+ From our point of view, it seemed clearer that over time, the real bitcoins would gain more value
+ over the regulated ones, so much so that it became very important for people to understand that
+ ultimately, they should maintain a balance of real bitcoins because they will work far more than
+ regulated bitcoins over time. And there are many reasons why that's the case.
+ That's really interesting stuff there, this tension you've identified between Bitcoin that would be
+ surveyed and controlled to some extent, existing in walled gardens, I guess, might be
+ a useful analogy here, versus the Bitcoin that is just wild and free, right?
+ That does seem to be somewhat of an obvious direction it's going, but it's more interesting
+ that you've actually decomposed this into the consequences. And the restrictions are interesting
+ too, because I'm thinking, money is valued based on its liquidity and network effects, which are
+ almost kind of one of the same when it comes to money. And then any restriction you place on those
+ network effects, it inhibits the value imputed to the money, right? So, in the modern fiat world,
+ it makes you wonder how much money is just really being compromised in that respect.
+ It's not even really private property at this point, because you can't, you go to send a wire
+ and they ask you questions. Obviously, the currency is always being inflated, it's subject
+ to capital controls and other regulations that just make it significantly restricted, let's say.
+ And...
+ Well, so the challenge you have as well is, if you have a system which is completely walled,
+ and then there is no way to externally and personally verify
+ whether it's being debased, and there's no way to move balances off that platform.
+ And at that stage, especially with the incentives of governments and so on, you will expect that
+ they will start to employ the same processes around its control and management as they would
+ do for fiat, i.e. they would tend to start to debase. You'll start seeing fractional reserve
+ bitcoining naturally occur. Whereas the bitcoin that's outside and outwith the system,
+ that is not possible to occur. So, one will be inflated over time and the other one won't.
+ So, although there is a drive towards increasing regulation in the bitcoin ecosystem as a
+ mechanism to gain legitimacy, the question you have to ask yourself is, who are you aiming to
+ gain legitimacy from? And are there people that you should care about their thoughts around your
+ bitcoin? And if not, and I think the answer is not, then we should just focus on providing an
+ alternative system that can provide you the user experience of this regulated world without having
+ to kowtow to the regulated world. Yeah, I think, because if you just engage in first order thinking
+ on this topic, you would tend to believe that the regulated bitcoin would obviously trade at a
+ premium and be more valuable. It's approved, it's white market, it's compliant, and all these things
+ that we take to be a sign of credibility in the modern world, bitcoin sort of makes you question
+ what those things even mean in this bitcoinized future. And I do agree that in the distant long
+ run, the opposite would be true, that you'd actually have the bitcoin with less restrictions,
+ the real bitcoin would enjoy more network effects and then therefore be more valuable overall.
+ And that it just gives you more options, right? If there's a bitcoin that trades between,
+ among all these jurisdictions and outside of them, it seems to be clear to me that that would be more
+ valuable than the bitcoin that only trades within one of those walled gardens. It's just the size
+ and liquidity of the network. And I guess this is something I visit a lot here, because people say,
+ "Oh, well, obviously if you're not a criminal, you'll just live within the white market and be
+ happy, right? Own nothing and be happy, whatever." But that's a problem because you might not even be
+ able to own the real physical bitcoin inside that walled garden. You might be just owning
+ some derivative from a bank or tax or currency authority, something like that. And if that is
+ the case or anything like that is the case, you know, they're going to be applying more and more
+ restrictions to that over time, right? More and more control over that regulated bitcoin.
+ And so I think that is what creates demand for unrestricted and unrestrictable money over time.
+ It's like people, life is sort of oriented towards being more free, right? It always,
+ given the option, it'll choose the thing that gives itself more options. And so that's kind
+ of what we're talking about here is the money that really affords its users the most options
+ will tend to be the most successful over time. - Yeah. And I think there's a
+ sort of a development in thinking around optionality and trust and verification. So
+ if we look at the existing financial system, it's very much that don't verify completely trust.
+ And the challenge of that is it's rife with people being able to take advantage of that trust
+ because no one wishes to verify. Now with Bitcoin, we have this base layer, which is
+ obviously communicates and is a dump of the philosophy of don't trust verify. And as a base
+ layer, that's incredibly powerful. Now that we have gone well over a decade now, I think we have
+ a level of maturity of an industry to understand that there is value to be able to form trust
+ groups. If you can form trust groups, you can, any human endeavor that's above a certain level
+ of complexity needs organizations and there needs to be some level of trust. So trust is very,
+ very powerful to be able to achieve big tasks. However, when you combine it with the discipline
+ of also always verifying as well, to the extent that you can, that's when something special happens.
+ So trust allows you to achieve big tasks. Verification allows you to protect yourself
+ from people who will take advantage of that trust. It makes you bulletproof from bad actors.
+ And that combination is, I think, the final state that you want to enter, of course. And you can
+ have that verification as part of the basic tenets of anybody within the system by having
+ the money have that as its basic tenets. And then the philosophy around that money,
+ continually advise people and educate people to find any means possible to verify on an ongoing
+ basis, all the different parties that they are trusting. So that comes from a philosophy and
+ the philosophy around Bitcoin has that. Everything else we've seen, the existing fiat system,
+ by decree, by trust, is clearly not in that realm. And this other wave of altcoins that
+ tend to all be, or any significant one, is proof of stake, which is again,
+ eventually becomes a trust-based system. We'll have flawed and weak philosophical foundations.
+ And as a result, you end up with flawed and weak end state.
+ Yeah, that's an excellent point there. We trust is like a necessary ingredient for social
+ coordination. We can't verify everything everyone does all the time. That would just be too
+ expensive and sort of defeat the purpose of social coordination in the first place,
+ which is the economic division of labor. But at the same time, that trust opens up the system to
+ being gamed. If you just trust someone blindly without any option of verification or... Yeah,
+ option, I guess we'll do. You run the risk of making the system unstable. People just violate
+ the trust effectively. So you need verification as a necessary counter force to that trust,
+ to expose violations of that trust. And it's that balance that makes a system coherent and stable.
+ And yeah, that's why fiat doesn't work, right? Just trust, never verify. And then what does
+ that typically end up in is a hyperinflation where all the trust has been abused to the point of
+ decimating the currency system. And that's the challenge is trust is natural from the point that
+ you're born, babies have to trust their parents implicitly. We have a natural inclination to trust.
+ Verification to verify is not as natural because of the fact that say, most people are taught to
+ just trust, trust their parents, trust their teachers and so on and so forth. So if you want
+ to build a very strong, resilient society, you need to have some mechanism to remind people to
+ verify all the time and constantly think about how they can verify because the trust bit naturally
+ happens. You don't need to do much to make sure that happens. Now, having again, during many of
+ these sort of early days when we were trying to get people to understand the importance of Bitcoin,
+ we spent a lot of time thinking about how you could build up this.
+ sort of culture around verification that was as strong as the natural culture around trust
+ to compensate for the risks of a society that's reliant purely on blind trust.
+ And the end result is simple. The base primitives that you build your culture on and that everybody
+ interacts with, one of them being the storage and transfer of value, should have that built into it.
+ Because then the philosophy of the society that's built on a foundation of don't just verify
+ will build up a healthy attitude towards verification, not just when it comes to their
+ money, but when it comes to the schooling, when it comes to medicine, when it comes to everything
+ else. It's like this sort of Fort virus, a meme, I think now we call it, but it's
+ this incredible powerful tool that you can apply to everything else you do.
+ The importance is to understand that we should use that tool, it's a superpower,
+ the desire and the reminder to constantly verify what we do, but we shouldn't throw the baby out
+ with the bathwater. The ability to form trusted groups is incredibly powerful as well. We just
+ need a healthy dose of verification to make it reach its final form.
+ Absolutely. I think here of convertibility to gold with a bank, it's fine to put your savings
+ in a bank and trust the bank to not run a fractional reserve or abscond with your money,
+ but you have to maintain that option to convert into real money and exit to another bank.
+ The existence of that option is what keeps the bank honest. They know they can lose
+ your business at any time. The word trust here, it's a little bit muddied perhaps,
+ because what we're really talking about is a reduction of interpersonal trust
+ and an increase in, I don't know what you call the other one, maybe a phenomenological trust.
+ We're basically saying a money based less on trusting people, more on trusting math,
+ something like that. That would be much more useful than this don't verify trust model,
+ which gets us into lots of trouble. You have this pin tweet. That's really interesting.
+ You basically, and I'll let you tell the story, but you made a rough prediction of where you think
+ Bitcoin is going in the years ahead. You're quoting Gandhi here. If you'd be so kind,
+ could you just unpack that story a little bit for us? What inspired the tweet? Last time we talked,
+ you broke it down into how you saw these phases unfolding. Could you just explain that a little
+ bit to us? Yeah, no problem. The tweet actually I found out, I'm not sure who the original
+ reference is for the tweets, but my understanding is actually Gandhi wasn't the person who
+ originally created this tweet, but most people attributed to Gandhi. That's just an interesting
+ aside. But he originally had this statement about how change occurs when you have right on your side
+ and you have a movement for change. The statement is first they ignore you,
+ then they laugh at you, then they fight you, and then you win. As you see these stages happen,
+ you should use these to give you confidence that you're going the right way. If they just ignore
+ you and they never pay attention to you after several years, then you're probably not doing
+ something significant. If they laugh at you, it could be then there's a risk that you're just
+ doing something ridiculous or it's just the first sign that you are onto something. You know that
+ you're onto something when they start to fight you because if they've gone through those intervening
+ steps, you are doing something very powerful. They now recognize it. It's more than just a joke
+ and they begin to fight. As long as you maintain the courage of your convictions
+ and the fundamental idea retains its quality and its ability to change the world,
+ then you will eventually win. That was the basic idea. Now, having run CoinFloor over the years,
+ when we started, everybody was ignoring us. We tried very hard to get people to care about Bitcoin.
+ I remember going to events, talking about Bitcoin, no one wanted to know.
+ Then something happened. We went through the first, well, it wasn't the first,
+ but a significant bear market after Mt. Gox. Mt. Gox is an exchange that was at the time one of
+ the largest exchanges in the world and it famously imploded in 2012, 2013 range.
+ At that point, we transitioned. People then took notice because they started to talk about large
+ amounts of money, but they just thought that this was a technology that was bound to fail.
+ People working in the industry were often laughed at by members of the traditional
+ industry, the traditional financial sector. That proceeded for a number of years
+ until we went through another rally in price. Bitcoin went up to around nearly $20,000,
+ similar price to where it is today, actually. Then we hit another bear market, the price
+ of Bitcoin dropped. At that point, people still initially laughed at it. Then it held,
+ it stuck at the low thousands, three, four, five thousand, and it stayed flat.
+ What was also happening was that in the Bitcoin industry, excitement for Bitcoin resolve
+ was stronger than ever. People were working on incredibly interesting projects.
+ We could see grassroots take up of Bitcoin was still proceeding. Then we saw another switch in
+ people's behavior. When I say people, it's the traditional financial sector and the regulatory
+ space. At that point, they started the process of wanting to understand Bitcoin to set up
+ cryptographic task force and the like. Now, this was the beginning of a very significant phase.
+ This was around 2018. About a year later, one of the first
+ results of that, products of that, was on an international basis, was the determination by
+ the Financial Action Task Force, also known as FATF, to approve a recommendation for
+ cryptocurrencies, obviously including Bitcoin. It had a number of different bits in it,
+ but the most controversial and the most famous is the travel rule. What the travel rule
+ determined was that just like traditional fiat, traditional fiat banking, and the traditional
+ financial space, Bitcoin transactions and other cryptocurrencies would need to provide
+ identifying information if it's going from between one regulated service provider,
+ financial service provider, to another. Now, ostensibly, this seems to only be something
+ that relates to regulated institutions, but in order to determine whether you're receiving money
+ from a regulated entity or not, or you're sending money to a regulated entity or not,
+ you would have to still provide this information, IKYC, know your customer,
+ or receive that from anyone depositing to you or anyone you're sending to, because there's no way
+ you will know that they weren't regulated until you know who they are. Even though the wording
+ focuses on the regulated space, the only way of implementing it would require you to provide
+ this requirement to effectively dox, deposit some withdrawals for anyone interacting with the
+ regulated space, whether they're an individual or not, at least for the first time, to understand
+ who they are. Now, it was at that point, we were at 2019, and for the following year, you could see
+ more of this happening around the world, where it dawned on me that we were seeing a process similar
+ to what Gandhi had talked about many years, many decades earlier. When I mapped it from 2008, when
+ Bitcoin was first written about in the white paper, until 2013, for about five years, it was really
+ clear during that period, up until around the time we launched CoinFloor, Bitcoin was ignored.
+ No one really cared about it in mainstream. Then from 2013, for the next five years to 2018,
+ up until the second crash, Bitcoin was laughed at, it was ridiculed.
+ And this was the period where I would go to events held in the City of London,
+ by members of the traditional space, these Chatham House Rules events, describe what we're
+ doing in Bitcoin, and literally around these tables, we were laughed at. So this is not a
+ metaphor, this is the reality. It was considered a joke. Friends of mine who worked in the City of
+ London would again, constantly laugh at what we were doing. We would explain how this was an
+ incredibly powerful and transformative technology, but it didn't really hold water with most people.
+ And then again, Bitcoin went from 19,000 and it dropped to by 70% or more. And the laugh,
+ the crescendo of laughing continued. And then as we got towards 2018, and it wasn't
+ continuing to go to zero,
+ the laughing died down. And it's around 2018, you started seeing these cryptographic task force.
+ And what I realized, when, again, having run a regulated exchange and, and being one of the
+ people who worked very hard to help get Bitcoin exchanges be to help them become regulated,
+ because I had the naive view, the first order thinking view that this would be ultimately
+ beneficial for Bitcoin. And maybe, maybe it was beneficial during that phase.
+ I started to realize that Bitcoin was being attacked.
+ The challenge here is that Bitcoin is a philosophy, Bitcoin is a technology,
+ Bitcoin is code, it's speech. It's, it's non physical. And as such,
+ you cannot attack a non physical idea with guns or nuclear bombs just doesn't work. So how do you
+ wage war against an idea? And what should you look for? What signs you look for that is happening?
+ And when I thought about it, there's only two ways you can wage war against an idea,
+ through misinformation and regulation. And now regulation is on a spectrum, you can have very
+ light touch regulation, all the way through to extreme regulation, also known as banning.
+ But it's just exists on its spectrum. But any restrictions is some form of regulation.
+ And those are the only two things you could do. And when I when I realized that in 2020,
+ I looked back over the last two years, and realized that we were seeing an ever increasing
+ rise in misinformation about Bitcoin. And we were seeing the first fruits of increasing regulation.
+ So my realization was that we were in the period where we were being attacked.
+ And given the time it had taken for the other two periods of loss, I was pretty confident that we
+ would hit a crescendo within the following three years, there'll be another five year period.
+ The other reason why I had that view was that the fathers advice because they're an unelected body,
+ and they only provide advice, it just so happens that the implications of not taking advice
+ are profound for a country, because they would, they would could be put on the
+ fat of sanctions lists, which means that almost every other country's financial institutions
+ would would not interact with you, effectively, separating you from the rest of the financial
+ ecosystem, which would be devastating. So it's advice, but it's advice that almost every country
+ always takes. But because it's delivered on a country level, when you look back at previous
+ advice, it's normally takes three to six years to roll out that advice across countries. So in 2019,
+ the clock started ticking. With a view that by 2022, most of the world would have implemented
+ them, you get the stragglers over the following three years, but the biggest, most powerful
+ countries implement it within three or four years. So that also correlated to the peak of the attack,
+ being 2022 2023. However, at that point, we have we have two possible futures happening.
+ Either that regulation succeeds, and in which case Bitcoin no longer is real Bitcoin will will
+ cease to exist, and we'll only have regulated Bitcoin. And if we only have regulated Bitcoin,
+ we do not have Bitcoin. Or Bitcoin succeeds. Now, when I looked at the ecosystem of Bitcoin,
+ I looked at the technologies that were gaining adoption. Obviously, Bitcoin itself, and lightning
+ were foremost amongst them. I had very strong confidence that when Bitcoin when we get to this
+ point, this final battle, Bitcoin will succeed and it succeeds by surviving. As long as long as there
+ is one node somewhere. So running, then Bitcoin succeeds. And when you realize that you realize
+ that it's an it's almost impossible task for regulators to completely ban Bitcoin. So Bitcoin
+ will therefore win. And just like we saw in 2018, after Bitcoin fell, once Bitcoin continues to
+ survive, the realization amongst the general population is that this is there for good.
+ So this so the prediction was that 2023 will be the final battle and Bitcoin will succeed. Now,
+ I'm actually looking to revisit that prediction near the end of this year. And
+ to cut a long story short, my conclusion is that I'm more confident than ever,
+ that 2023 will be the year that Bitcoin succeeds. A big part of that is because if there was one
+ area that concerned me, that area would have been custody and privacy serving custody.
+ Having run an exchange and they sold it at the end of last year,
+ we had tried very hard and this was actually uncommon amongst exchanges to get people to
+ self custody. In some cases, we literally begged people to self custody, because although we
+ trusted and reliable, we understood that it's important for people to own real Bitcoin.
+ And it became very clear over the years that the vast majority of people, at least in the next 10
+ to 15 years, would not be comfortable with self custody, even though it's the gold standard or
+ the Bitcoin standard. And there are three reasons why. Reason number one was that for many people
+ globally, it's just too expensive. At this point in time, they need to earn more money, gain more
+ wealth for them to be able to afford it. Reason number two was at this point in time was too
+ technically complex. Again, there are a lot of very great minds working on making it simpler,
+ but we're still far away from it to being technically comfortable for most people.
+ And the third reason is that through years of learned behavior, most people aren't comfortable
+ self custody and take responsibility to custody on their behalf. Now, I had a, I had a
+ user of coin floor, who's a really streetwise woman of a few years older than myself a bit more
+ advanced years, but really streetwise and completely understood what Bitcoin was about.
+ And one day, I'm talking to her, asking and suggesting and offering help for her to self
+ custody. She told me something. She said, Look, Obi, I completely get Bitcoin, I completely
+ understand it. But the thing is this, I trust you more than I trust myself.
+ And that was really profound for me, because it made me realize that
+ we have to overcome decades worth of neuro linguistic programming around people's ability to
+ to take responsibility for their money. And that's going to take decades to resolve and a lot of
+ education. And I realized that we didn't have decades, we needed a way of getting people off
+ exchanges, because because of that, with the best will in the world, we're going to get to 5%,
+ maybe 10% of the people on the planet being able to self custody, but that would leave 90%
+ trapped in this regulated coin world, which means after rules like the like the travel rule coming
+ into fruition around the world, which would mean that they would be lost for Bitcoin.
+ So it was with that understanding that I seek and I looked for ways of getting people off exchanges.
+ And it was in 2021 at hackers Congress, that I met my co founder, Eric Syrian, one of my now one
+ of my two co founders. And he told me about a project he was working on called FediMint.
+ Now, in his mind, it was this incredible privacy preserving technology, which it was.
+ But it was much more than that this. When I looked at it, having my background as running
+ exchange and looking for a way to get people off exchanges, I realized it represented just that
+ it wasn't the Bitcoin standard of self custody. But it was a way of getting people off regulated
+ exchanges, which was an important, huge first step. And when you combine that with a, a remit,
+ and an objective of constant lifelong learning, where we write we weave into the application,
+ ongoing financial education, and also providing the mechanisms to retain wealth, so people over
+ time, gain disposable income and wealth, you can see a path to getting more and more people
+ self custodying as well. But the first thing you have to do is when the drawbridge gets drawn up,
+ there needs to be an option for people to go to en masse at scale. And I believe that drawbridge
+ is happening in 2023. And now with the existence of FediMint, in combination with Lightning, and,
+ and Bitcoin, obviously, as a base, trust minimized layer,
+ we have even more of a guarantee that we will win in 2023.
+ Trey Lockerbie (00:33:40):
+ Really interesting. Now I'd like to tell you about our sponsor, CrowdHealth. CrowdHealth is a
+ Bitcoin enabled alternative to legacy health insurance. Now let's face it, legacy health
+ insurance is an absolute scam. Nobody can explain this better than the legendary comedian, Chris
+ Rock. So with CrowdHealth, instead of just paying premiums that you'll never see again,
+ you can hold part of this pool of savings in dollars and in Bitcoin through CrowdHealth.
+ And when you have a health event, you can draw against this pool of communal savings.
+ So go to joincrowdhealth.com/breedlove to learn more or sign up.
+ Now I'd like to tell you about our sponsor, Wasabi Wallet. Wasabi lets you use Bitcoin
+ privately while still maintaining full control over your money. Specifically, Wasabi Wallet is
+ an open source, non-custodial wallet with privacy built in by default. By using Wasabi, you're
+ effectively putting the private back in private property. Wasabi Wallet is an easy to use privacy
+ wallet that can support any amount of Bitcoin transactions. So go to wasabiwallet.io today
+ to download this state of the art wallet software. Now I'd like to tell you about our sponsor,
+ Swan Private.
+ Swan Private is a concierge financial services firm based in Los Angeles.
+ Now I've known the Swan team for years, and these guys are laser focused on the Bitcoin
+ mission.
+ They even have a zero tolerance policy for all shitcoin.
+ Recently their CEO Corey Clipston was instrumental in calling out many of these crypto scams
+ right before they collapsed, saving a lot of people a lot of money in the process.
+ Swan Private focuses on guiding high net worth individuals and businesses on all aspects
+ of Bitcoin strategy, including buying, custodying, and market research.
+ This concierge service provides you direct access to a private advisor by text, phone,
+ or email.
+ So go to swanprivate.com/breedlove today to sign up.
+ Now I'd like to tell you about our sponsor, Masterworks.
+ Masterworks gives you access to the fine art market at more affordable price points.
+ They do this by offering you fractional shares in their $500 million portfolio of fine art.
+ Now fine art is an alternative asset class, and historically it's been a great performer
+ and a really good hedge against inflation.
+ Most investors typically hold anywhere from 2 to 10% of their assets in an asset like
+ fine art.
+ To sign up or learn more, go to masterworks.com and use promo code BREEDLOVE.
+ Now I'd like to tell you about our sponsor, Kasa.
+ Kasa makes it simple to buy and secure your Bitcoin without wondering whether you're doing
+ it right.
+ Specifically, Kasa provides a multi-key custody solution, which is by far the most secure
+ way to custody your Bitcoin.
+ Now when I talk about Bitcoin being theft-proof money or inviolable private property, a multi-key
+ custody model is exactly what I am talking about.
+ Using multiple keys lets you maintain full control of your Bitcoin while also giving
+ you redundancy in case you lose one of the keys.
+ It's also the best way to secure your Bitcoin for inheritance planning purposes.
+ So go to keys.kasa, that's C-A-S-A, today to sign up and use discount code BREEDLOVE.
+ Just to read the tweet, which I don't know if we did or not, but you wrote that 2008
+ to 2013, Bitcoin is ignored.
+ 2013 to 2018, Bitcoin is ridiculed.
+ 2018 to 2023, Bitcoin is attacked.
+ And from 2023 onward, Bitcoin wins.
+ And you posted that December 2020.
+ So I think it's really interesting.
+ And I'm curious, you said Bitcoin succeeds by surviving, which is, there's a lot packed
+ into that, right?
+ Bitcoin is, that is all really Bitcoin does is it's optimized to survive no matter what
+ comes at it, no matter what attacks thrown at it, subversion strategies, anything.
+ It's just really designed to survive and hold supply cap.
+ Those are the kind of the two things it really does.
+ And you said, so Bitcoin being attacked between 2018 and 2023, these attacks have not become
+ overt yet though.
+ I mean, I guess there's some subversive discussion about how Bitcoin is not environmentally friendly,
+ does not comply with ESG standards and whatnot.
+ Do you anticipate a more overt attack on Bitcoin between now and the end of 2023?
+ I do.
+ And I think we're starting to see that.
+ If what I monitor various different things, and especially the edicts of global unelected
+ advisory bodies.
+ So you have FATF, you have the World Economic Forum, you have IMF, you have the World Bank,
+ you have the Bank of International Settlements, and you have the Financial Stability Board.
+ Now all of these focus on different aspects of finance, global finance and financial stability
+ and maintaining orderly markets, maintaining the effectiveness of central banks, countering
+ terrorist financing and money laundering and other financial crimes, and dealing with the
+ payment of loans and repayment of loans from various countries, some of the more disadvantaged
+ countries in the world.
+ But taking it together, these are different systems to provide a way of maintaining order,
+ however you define order within global financial markets and in global economies.
+ And they have all in the last 12 months come out with advice, their views, opinions on
+ cryptocurrencies and Bitcoin.
+ And if you look at those, and sometimes they've come up with updated views, they've only got
+ stronger and stronger and stronger, and they've only got more and more explicit.
+ One of their hot, most of their biggest hot buttons is stablecoins.
+ That's by far the thing that they are most concerned about.
+ And in a way, that's one thing I like about stablecoins, because they provide covering
+ fire for the real important financial innovation, which is Bitcoin.
+ Then they also have interest in the latest and greatest altcoin saviour as well, whether
+ it be ICOs, or then they move on to NFTs or DeFi or whatever.
+ Again, I would argue controversial that I see a utility to these.
+ But the biggest utility is that they provide covering fire for Bitcoin to continue to operate.
+ But that is actually a useful thing that they do.
+ And that is useful until we have the elements in place to make sure, or I believe we're
+ already past that point, the elements in place to make sure that we have all the tools to
+ en masse get people at rapid, rapid scale, get people out of the regulated system, the
+ regulated coin system into the real coin world, where they have the most value, the most ability
+ to interact.
+ They have the most, they are based on this anti-fragile money.
+ And therefore we have the ability to create, from an engineer's perspective, is the ideal
+ world, which is one that's built on meritocracy.
+ So i.e. the quality of your argumentation and how hard you work should be the determinant
+ of success as much as possible.
+ Now there's always going to be some inefficiencies where familial relationships and so on and
+ nepotism can lead to short term benefits.
+ But we don't want it to be entrenched.
+ We want ultimately good quality argument, good quality thinking and hard work to be
+ the determinant, the measuring stick of success in the world, wherever you are.
+ And while we don't have that, right now there's probably 50 Einsteins out there and 100 Elon
+ Musk's, but they just haven't been discovered because the way the world works right now
+ makes it hard for them to be discovered.
+ And not only do they lose out because of that, but everybody in the world loses out.
+ Imagine we had 50 more Einsteins and 100 more Elon Musk's working today, because they are
+ there somewhere.
+ We would all be living on Mars, using our anti-gravity pods to, you know, and we would
+ have solved so many problems.
+ So we all lose out from that.
+ And that is the potential for a world which is built on a meritocratic money.
+ So yeah, it's now with the fundamental building blocks being in place, Bitcoin has been going
+ on for more than a decade and it's shown itself to be incredibly stable.
+ Without this huge ICO fueled marketing machine, it continues to maintain and increase its
+ dominance.
+ It continues to become more and more censorship resistance.
+ Even if you take China, one of the most authoritarian regimes, clearly an authoritarian regime,
+ where they issued an edict completely banning Bitcoin mining.
+ A year or so later, we're back at 20% of the entire global Bitcoin mining is happening
+ from China.
+ And that's where it's kind of, so if they, one of the most authoritarian regimes in the
+ world is not able to control Bitcoin mining, then democracies are not going to be able
+ to control Bitcoin mining, even if they chose to ban it.
+ So we know that's to be the case.
+ We know Bitcoin is, again, continue to operate in a really incredibly strong manner.
+ And we have a healthy ecosystem of people working on the open source technology.
+ We have organizations like I'm a board member for B-Trust, and we are locating, educating
+ and enumerating Bitcoin open source protocol engineers, but not just from the West, but
+ from the rest.
+ So starting in Africa, but expanding across the rest of the global South to add to the
+ diversity and add to the resilience of the people who can work full time on Bitcoin.
+ So again, Bitcoin is really strong.
+ Lightning continues to advance, continues to show this hockey stick like growth and
+ adoption.
+ And again, there are more resources that are coming to play in supporting people working
+ on that.
+ And the final challenge around custody, I believe there are a number of people working
+ on this.
+ So we're not the only one.
+ There are other people working on making Bitcoin custody, privacy preserving, and something
+ that's viable, easy enough and viable for people to come off of exchanges and use.
+ But I focus on Feddy and I know that Feddy and Feddy Mint by itself is good enough.
+ So now that I know it's already good enough to get billions of people off, then the custody
+ problem has been solved.
+ We may be one of many people who solve it, but we only need one to solve it.
+ We already have that one.
+ So the ecosystem is ready for 2023.
+ And so I'm really excited because we'll come to the battle with weapons that the opposition
+ cannot imagine.
+ And our objective is just to survive.
+ Their objective is to destroy every single last one.
+ And that is an impossibility.
+ Right.
+ And Bitcoin certainly has the ultimate or offers users, I guess, the ultimate defender's
+ advantage that you can just occupy this nearly unassailable place if you're in the proper
+ custody schema.
+ And if you've taken measures in regard to privacy, then you're hard to identify.
+ even at that point as a target. I like this. You've been dropping some good bombs today.
+ Bitcoin is meritocratic money. That's a really good one too. Nice and simple. And I guess
+ it would imply then that fiat currency is almost, it's the opposite of that. I don't
+ know what that is. Maybe autocratic money or corrupt money, something like that. It's
+ not succeeding based on its own merits. It's succeeding in the marketplace at the point
+ of a gun, right? You basically have to use this or else pay your taxes in this or else,
+ et cetera. And that I'm reminded of another Gandhi quote from that. And he said that civil
+ disobedience becomes a sacred duty when the state has become lawless or corrupt. So I
+ guess we're engaging in some kind of Gandhi and civil disobedience just by working with
+ Bitcoin or holding Bitcoin, saving in Bitcoin. My question to you is if Bitcoin is being
+ attacked today, the fight is underway, let's say roughly 2018 through present, you think
+ through the end of 2023, maybe longer if you revise your prediction, as you said. Does
+ that mean we are moving toward this regulated versus real Bitcoin split? Does that come
+ as a result of these attacks? How does the attack on Bitcoin, I guess, translate into
+ this split that we explored at the top of the show between regulated and real Bitcoin?
+ I think while you've hit the nail on the head, it's one of these, if you can't beat them,
+ join them. But instead, they want to subsume Bitcoin. So the idea would be to regulate
+ it, make it appear like it's something that they've now worked with, but ultimately transform
+ it into being the same as the existing system. But just maybe it becomes a rebrand. But it's
+ the same dog new tricks, as it were. So the way you will see it is this adoption of regulation,
+ the existing financial institution, the major banks who have historically been incredibly
+ anti Bitcoin, laughed at it, said it was going to not succeed, have off-boarded more Bitcoin
+ exchanges and companies than you could keep track of, potentially both openly and behind
+ the scenes, and made it very difficult for Bitcoin companies to succeed. And having run
+ a Bitcoin exchange in the past, I knew I've been through that pain. And if you're running
+ a Bitcoin exchange right now, or a cryptocurrency exchange right now, you will be going through
+ that pain as well. And it will be 10 times more difficult than it was two years ago.
+ But you will be precluded from stating that because if you say anything like that, the
+ way regulation works is similar in most reasonable jurisdictions. But in the UK, you have this
+ concept of being fit and proper. And that's for anyone who's running a financial institution,
+ or anyone who's working in the compliance department. So the entire compliance department,
+ and the breadth of the organization at the senior levels, they have to be fit and proper.
+ Fitness requires them to completely understand the technicalities of the law, of regulation.
+ And that seems reasonable, you should understand what you should be skilled in your craft.
+ But proprietary is a very interesting one, because it's subjective, you need to behave
+ in this proper manner. But proper is at the definition of the regulator. And they never
+ make it fully clear what that definition is, they give you these broad things that you
+ should behave in a proper manner and so on. But they leave it for you to decide what that
+ is. So for example, you have to take a risk based approach when onboarding users. But
+ again, you have to decide what the risk is. And you have to decide how you define a risk
+ based approach. They can give you these high level terms, like you don't want to take unnecessary
+ risks. And if you are taking a high risk, then you have to have appropriate level of
+ process to take that risk into account. But both of these seemingly innocuous rules lead
+ to this culture of fear. Because the punishment of getting it wrong is your business that
+ you may have worked many, you know, sweated blood, blood, sweat and tears on, and employs
+ many people may be shut down with one major one mistake as deemed by the regulators. And
+ you never fully know whether you're going too far. So this is a very powerful tool to
+ control regulated regulated industry. And that tool only works if you're in the regulated
+ space. So without having to do much work, I get this as synchronous level of, of control.
+ And this is why you're going to see this switch. And this is why there's a desire to move people
+ into the regulated world with these sort of enticements of ease of banking, all this pain
+ you've been going through for the last 10 years, don't you want it to go away, just
+ agree to be as part of this regulated system, and it'll be easy, you'll be good at banking,
+ and if you want, you'll be able to use all the services and features that you want to,
+ but you are now trapped within the system. And the punishment of ever making a mistake
+ going forward and letting the wrong person have an account, however, you define wrong,
+ we can't be very clear as to what is wrong, you have to define that. But if you get it
+ wrong, you will never the actual the punishment can be as strong as never being able to take
+ on any regulated person role in the industry for the rest of your career. So you could,
+ it's not just one year, two years, you could be out for the rest of your career. It's incredibly
+ harsh punishment. And so I've been on many panels with people who are within the industry,
+ and they are using this diplomatic language saying that they agree with the principles
+ of Bitcoin, but it's important to put in reasonable regulation. You go off the stage, and I'll
+ tell you, I completely 100% agree with you. But if I said that publicly, I risk huge repercussions
+ for myself, the rest of my career, my company, and so on and so forth. So it's this horrible,
+ insidious environment. And the moment I was able to sell CoinFlow and focus on my new
+ mission, which I'm going to focus on the rest of my life, which I always stated is all Bitcoin,
+ all empowering the global self, all with global impact all the time, was one of the most uplifting
+ days of my life. Well, I spent probably a week just sleeping because recovering from
+ eight years of running a regulated platform. And every day since then has just been better
+ than the last, because you're free. And you cannot put a price on this. And the freedom
+ is a mental, philosophical freedom. The only people I am now jealous of, I've met like
+ in Hacker's Congress, in other parts of Latin America and Africa, where peer to peer trading
+ is far more common. I've met people who've been in the Bitcoin space for one or two years,
+ some of them six, seven, eight years or longer. And there's a surprising number of people
+ in these parts of the world I focus on, who have bought Bitcoin, have held Bitcoin, have
+ used Bitcoin for spending, maybe even traded, whatever they wish to do is they're free to
+ do what they want. And they have never interacted with a regulated party from the beginning.
+ Every Bitcoin they bought was bought free. All custody has been free from beginning.
+ And now that they see all this regulation coming in for people who have bought on exchange
+ and then withdrawn and so on, and there's still questions years later, etc. Their level
+ of freedom and their sense of freedom is something that because I ran a regulated exchange, so
+ I bought on a regulated exchange, I will never be able to have that, at least for the portion
+ of my wealth that's touched the regulated world. But when you look in the eyes of people
+ who've never had to touch the regulated world, and they've now, maybe it was difficult to
+ begin with, but they've now built in the systems and structures needed to custody and acquire
+ and dispose of their Bitcoin for some practical purpose, whether it's to pay for rent, whether
+ it's to do whatever. It's an incredibly, it's an incredibly powerful and stark difference.
+ And seeing that makes it obvious to me that these people living in real Bitcoin land,
+ you're going to see it's going to be obvious to people who are in regulated Bitcoin land
+ that these people are happier. They're more willing to say what they want to say. They
+ have no fear. And there's just pure hope. I can never have that 100%. But I do want
+ to provide systems that allow or support and educate people around how to have that future
+ because it's a much more powerful, much more uplifting future for all of us.
+ It's beautiful. That connection, you know, between those individuals that have lived
+ entirely outside the system with Bitcoin, having no fear, like that almost is the definition
+ of freedom in a way. Like you can have everything in the world. But if you're scared about anything
+ inside, then you're not free, right? You're not, you're subject to whatever that fear
+ is, I guess. So this idea of the connection between regulation and fear inducement in
+ the society running on the regulated money is very interesting to me. So, okay, we've
+ come up on time today, but I do want to continue this conversation soon.
+ Obi, as always, man, really great conversation. And I look forward to doing this again soon.
+ Say do I. Thank you very much, matey.
+ Oh, real quick. Could you let my audience know where they could find out more about
+ you or your work?
+ Absolutely. So me on Twitter, I am @Obi, @Obi. I've been on Twitter for a long time,
+ so I have a three letter Twitter. And Feddy is Feddy.XYZ. And Feddy Mint, which is the
+ protocol that Feddy is based upon, is FeddyMint.org.
+ Wonderful. Thank you again, Obi.
+ [MUSIC]
+ [BLANK_AUDIO]

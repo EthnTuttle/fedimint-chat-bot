@@ -1,0 +1,87 @@
+ Good morning, everyone.
+ A little bit under the weather today with a cold,
+ so I'm gonna try and just get through this one.
+ I've been meaning to chat about Fetimint for a while,
+ and after receiving an email
+ from Ego Death Capital this morning
+ about their investment toward Fetimint,
+ it has prompted me to finally do so.
+ Despite nonstop attempts by the Bitcoin community
+ to help educate the wider community
+ on the importance of self-custody,
+ quote, "Not your keys, not your coins,"
+ the unfortunate reality is that a dominant percentage
+ of users relinquish custody of their keys
+ to third-party exchanges,
+ and this weakens not only the security
+ of the holdings of the individual,
+ but the entire network significantly.
+ The primary reasons for this are,
+ one, people lack the technical competence to do so,
+ two, cost, many people around the world
+ simply cannot afford the price of a hardware.
+ wallet. And three, many people prefer to outsource that trust, as they do not trust themselves to
+ take responsibility and secure their Bitcoin. This basically turns any exchange into a massive
+ honeypot for government and nefarious actors wishing to control, surveil, restrict, and censor
+ the use of these Bitcoin, and could even lead to mass seizure of Bitcoin, similar to what happened
+ in 1933 with gold following executive order 6102. Fundamentally, this dynamic removes the censorship
+ nature intended due to the outsourcing of trust to custody one's Bitcoin keys.
+ Federmint, short for Federated Charmium Mint, is a protocol that has the potential to profoundly
+ improve Bitcoin self-custody solutions, and offers to potentially solve one of the most significant
+ attack vectors facing Bitcoin today. That being large percentages of Bitcoin keys being
+ custodied by centralized third party exchanges.
+ Federmint leverages two primary technologies
+ being one, federations or community shared wallets.
+ This can be simply thought of as multi-signature wallets
+ and two, the use of Charmian Mints.
+ Attached is a great blog post explaining more
+ around the use of federated mints,
+ including how and why they could improve scaling
+ and privacy on Bitcoin.
+ Charmian Mints are explained in the post as follows,
+ quote, "Charmian Mints, also known as Charmian Banks
+ or Blind Mints, offer a compelling solution
+ to these problems, particularly when operation is federated.
+ Charmian Mints, through the use of blind signatures,
+ have extremely appealing privacy properties.
+ The mint operators do not know the number of users,
+ their identities, account balances, or transactions."
+ transactions histories. Additionally, Mint transactions are cheap and can be performed
+ at unlimited scale."
+ Federmint could offer a superior custody model while maintaining Bitcoin's core properties,
+ and without sacrificing decentralization. The three primary benefits to leveraging this
+ technology are 1. A superior Bitcoin custody solution, better than trusting an unknown
+ third party like an exchange, and perhaps even better than individual self-custody due
+ to the fail-safes it would provide. Federmint has the potential to be a superior way to
+ self-custody Bitcoin, which would be widely available to all users.
+ 2. Privacy. Federmint can dramatically improve privacy on Bitcoin as the use of federated
+ Chummy and Mints makes it impossible for chain surveillance companies to tell the difference
+ between a normal transaction and that of a Federmint.
+ Federation. While they would be able to see the total balance, they cannot know who is
+ sending or receiving what, and the balances of individual Federation members is completely
+ hidden.
+ 3. Help more people take ownership of their Bitcoin and enable them to leverage the core
+ properties offered by the protocol, like censorship resistance, that are lost when trusting centralized
+ third-party exchanges. The forming of Federations outsources the most technical parts of self-custody
+ from the individual user who may not have the technical competence to do so, to trusted
+ members of the Federation. Thus making it far more possible than before for these users
+ to custody their Bitcoin keys.
+ Below is a timestamped link to Obi Nwosu's presentation on Federmint at Bitcoin 2022
+ where he goes through the ins and outs of the protocol which I highly recommend watching
+ to understand more.
+ In my opinion, the improvement of privacy on Bitcoin is the single most important advancement
+ as fundamentally everything else is downstream of privacy.
+ The priority to ensure user privacy cannot be overstated.
+ The need for it to be standard procedure is critical.
+ This requires an alternative to solve for the vast number of Bitcoin users giving custody
+ of their private keys to centralized third-party exchanges.
+ It must be simple for any user, regardless of technical capability, to utilize and implemented
+ in a way that makes it robust and commonplace when interacting with the network.
+ And in my opinion, the promise of Bitcoin fulfilling the mission to separate money and
+ state relies on such a solution.
+ Hopefully Fetimin is that solution.
+ Time will tell.
+ Just another example of why open networks win.
+ Open source everything.
+ Hope you have a great day.
+ I'll talk to everyone tomorrow.

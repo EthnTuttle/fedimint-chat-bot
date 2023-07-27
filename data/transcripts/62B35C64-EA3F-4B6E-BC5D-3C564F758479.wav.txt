@@ -1,0 +1,535 @@
+ Eric, welcome to Blockstream Talk.
+ Hey, nice to be on.
+ Thanks for having me.
+ Yeah, no problem.
+ My pleasure.
+ The elephant in the room.
+ So the mask and glasses, is this a privacy thing?
+ I'm guessing that's what it is, given your background, or is this a COVID personal protective
+ equipment kind of set up?
+ Good question.
+ Yeah, I'm alone in this room here, so it's definitely a privacy thing.
+ Given that I work on privacy technology, it's just fitting.
+ I actually got inspired by some German cyberpunks, Frank Krohn and Smuggler, who established
+ wearing masks at conferences for the same reason.
+ I also like the style, to be honest.
+ Yeah, that's good.
+ Yeah, no, I've taken the opposite route.
+ I've gone public for absolutely no benefit.
+ So congrats.
+ So maybe we can start with who are you and what you're working on?
+ Yeah, I'm Eric, and I have a background in computer science with a focus on cryptography
+ and distributed systems.
+ And when I came to Bitcoin, it was because of libertarianism, and I was fully into the
+ idea of stateless money.
+ And over the years, I got more into the technical aspects of Bitcoin and noticed that there
+ is this big missing feature, privacy.
+ And while we have made a lot of progress over the years, things like CoinTorrent, Lightning,
+ there's still a gap.
+ And at some point, I got the idea, let's build E-cash on Bitcoin.
+ And from there, I started getting into federated E-cash and all the good stuff.
+ That's what we are talking about today.
+ Yeah.
+ So in your view, why is privacy important?
+ And if we're talking about payments, why isn't the Lightning Network private enough in its
+ current state?
+ First of all, to be truly free, I think you need to be able to do a commerce in private,
+ because otherwise there will always be a state that tries to tell you what you can do or
+ what you can't do.
+ And so it's a deep need, I think, for people that want to be truly free to have privacy
+ in their money.
+ And I think Lightning goes a long way already, because the sender becomes pretty private
+ if they run their own Lightning node.
+ The recipient, not so much right now, but there are also projects that work on this
+ part.
+ But the main point of Lightning is that not everyone is actually able to run a node, and
+ I don't think there ever will be.
+ So we will probably get into this later, but that's also a big benefit of federated E-cash.
+ It's interesting, especially the context of current events, where the trend seems to be
+ towards central bank digital currencies and these kind of things that remove what little
+ privacy people have left to a greater degree.
+ So I think that's really interesting, and I agree, probably something that's very, very
+ needed.
+ Interestingly, also, that's something that's completely not priced into Bitcoin at all.
+ We've talked about this before.
+ I think a lot of the people who are investing in Bitcoin are looking at it as a high beta
+ inflation hedge.
+ And the stuff that's going on in El Salvador, and I think the potential need for people
+ to have more privacy in their money and the network effects that that creates, I think
+ are probably something that a lot of analysts and a lot of Wall Street type people are definitely
+ not even pricing into their models yet.
+ So that'll be interesting to see, I think, from a price perspective also, how that develops.
+ But given your focus on privacy, why do you prefer to work on Bitcoin and not something
+ maybe like Monero?
+ That's actually a very good question.
+ I have this discussion with Monero people a lot, and it comes down to that Bitcoin is
+ the only store of value, in my opinion, that will prevail long term.
+ And as such, it only makes sense for me to work on this primary project, because everything
+ else doesn't matter long term.
+ So why waste time on it?
+ Sure, if you want privacy now, using Monero might be the right choice.
+ But in the long term, I believe that only Bitcoin matters, and as such, it has to be
+ private.
+ That's what I'm working on.
+ I think that's really interesting.
+ I mean, that kind of reminds me of stablecoins as well, because I think stablecoins are kind
+ of like a transitionary asset.
+ I think once Bitcoin price kind of, you know, stabilizes and the volatility comes out of
+ Bitcoin, I think all the stablecoins probably disappear.
+ And that's interesting what you're saying about privacy, as that as Bitcoin becomes
+ more private, then probably all the privacy coins and projects that are focused on that
+ probably disappear as well, right?
+ Yeah, I'd imagine so, because Bitcoin has the best monetary properties.
+ And why would I hold some money that has worse monetary properties when it's biggest in the
+ advantage privacy is suddenly gone because Bitcoin's also part.
+ So digging into federated e-cash, I think maybe the best place to start is to kind of
+ break it up into three questions.
+ So number one, who is David Chom?
+ Number two, what is e-cash?
+ And then number three, what are Chomian Mint?
+ Yeah, let's start with David Chom.
+ He is the inventor of e-cash and he first described it in a paper about blind signatures.
+ And in this paper, he discovered a new signature scheme or new type of signature scheme and
+ applied it to real e-cash.
+ It's an amazing paper.
+ Everyone should have a look at it.
+ You can probably link it in the show notes.
+ And he also invented some other stuff like a precursor to Chamier Cicochain.
+ He's a really well-known cryptographer.
+ The second point was what is e-cash?
+ So imagine you have a central entity, let's call it a bank or a mint.
+ Mint sounds better.
+ Bitcoin sounds like banks.
+ So this mint, I can give a certain amount of cash, let's say.
+ Just give it $100.
+ And in return, this mint will give me 100 anonymous IOU tokens that the mint now owes
+ me $100 in return.
+ And with these IOU tokens, I can give to other people's bank and they can then interactively
+ make sure that I'm actually sending them real tokens with the mint.
+ It's a relatively complex protocol.
+ Maybe we get into it later.
+ But the basic idea is that I have these anonymous tokens that I can use for commerce and they
+ are backed by some central entity called the mint.
+ Choms' work is kind of from the '80s or '90s.
+ So this is a concept that's been around for quite a while.
+ Why didn't Choms and Mint ever really catch on?
+ Yeah, I believe it's because of the centralization of the system.
+ As I mentioned, you need the central entity that is able to issue these tokens, that you
+ have to send the money and that has to hold the money for the backing to work.
+ And that naturally means that there's the single point of failure that regulators can
+ attack.
+ And while he founded a company that tried to commercialize this technology and it worked
+ for a while, they had some ideas about working together with Deutsche Bank or with Microsoft,
+ but it never really worked out.
+ And then 9/11 happened and privacy was a big no-go.
+ Nobody wanted to touch anything private, really.
+ And I think at that point it became pretty much impossible with all the financial regulations
+ that came to build anything like it.
+ It's a concept that just kind of really needed something like something that says "decentralized
+ Bitcoin" to really be fleshed out and developed.
+ Yeah, I think so.
+ Because the big benefit of Bitcoin is you don't have to ask for permission to build
+ on it.
+ Like, I can just go there and build a Chomian bank or Chomian Mint, put it on Bitcoin, and
+ I'm pretty private by doing so.
+ If I'm using Tor, for example, to run it, then who's going to tell who is actually running
+ it?
+ And in that sense, no government really can take down, assume, Tor's SEQ, which it isn't.
+ So the mints are really kind of like multi-sig wallets, right?
+ The controls, the Bitcoin that depositors put into it.
+ And I noticed on one of the blog posts that Blockstream put up there that we went out
+ of our way in bold font and italics to say, "This is not a bank."
+ But to me, it does sound a little bit like a credit union, right?
+ Like a credit union is member-owned, it's nonprofit, it's kind of a financial cooperative.
+ So is that the way to characterize it?
+ Does that kind of sound right to you, that it's something a little bit like a credit
+ union?
+ Yeah.
+ But let's take a step back first.
+ So far, I only described the concept of e-cash and e-cash on Bitcoin.
+ But what I'm building now is called federated e-cash.
+ And that's probably what you're getting at.
+ In this system, the Bitcoins aren't held by one single entity, but rather by a set of
+ members that all run this federation jointly and run this e-cash mint jointly.
+ And such, they ensure that even if some of them are evil or taken down by government
+ or whatever, the system still keeps running and still keeps functioning properly.
+ And that's where multi-sig comes in.
+ It's a great point.
+ So does this sound a little bit like Liquid?
+ I mean, it sounds to me a little bit like Liquid with a federation and with pegging
+ in and pegging out.
+ Is it kind of a similar concept?
+ Yeah, exactly.
+ Like Liquid was actually the inspiration for it.
+ I saw what you can do with Liquid, but it's kind of held down by still requiring a blockchain
+ and blockchains are inherently non-private.
+ That's just a trade-off you make.
+ They are auditable, but non-private.
+ What do you see as the ultimate use case for this?
+ Is it payments?
+ Is it people who want to kind of have more privacy and anonymize their payments or are
+ there other use cases for it?
+ Is it a way to save money?
+ Would you put all your Bitcoin in this as a way to kind of like deposit it and save
+ it?
+ I think we have to distinguish different use cases here.
+ The first big one is payments and for that I think you would not put all your Bitcoins
+ in there, but just like you're spending money, which today you might have on your lightning
+ note, but if you want more privacy, you would put it on a federated e-cash mint and then
+ use it day to day.
+ But there are also other use cases like tumbling or you could use it as such a federation to
+ pack in larger amounts of Bitcoin and then over time take them out again in equally sized
+ chunks that would be pretty private.
+ So it's a different form of a tumbler kind of.
+ And lastly, it's also a scalability solution because now that you don't have this blockchain
+ anymore, nobody really needs to verify all the data that's being sent to the federation
+ or is being processed by it, but only the federation members and they can scale up the
+ hard drive quite well.
+ So in a sense, these federated e-cash systems can scale much better than Bitcoin.
+ What do you see the scale of these federated systems?
+ Like what do they look like?
+ Is there just one giant one or are there ones with members of maybe four or five members
+ or is it like a credit union with hundreds or thousands of members?
+ What do you see this kind of evolving into?
+ Yeah, so currently I imagine it to be a rather small federations because especially in the
+ beginning, the software will not be 100% secure.
+ That's the thing with software.
+ It's not perfect.
+ It's never perfect.
+ It just gets more perfect over time.
+ So starting out with this one big federation to rule them all would be a really bad idea
+ I think and would slow down improvements because now you have to be really, really sure that
+ your improvements are actually good.
+ With many small federations, you have the big benefit that, for example, when I run
+ the federation with some other people that are really into experimenting, then I can
+ do all kinds of crazy things with it.
+ While someone who is more conservative just wants to serve their users, they might run
+ the older version that's still kept secure and up to date but doesn't use all these new
+ fancy features.
+ And so what I imagine is a network of many small federations that different groups of
+ people run because there's also some trust involved.
+ It's still custodial in a sense.
+ It's just not one person but, for example, five.
+ So you rather want to have trust relationship already to these people.
+ Between federations, do you think there would be fungibility or would you be able to move
+ your coins between these different federations or do you think it would be kind of locked
+ within these smaller ecosystems?
+ That was actually a big problem for a while when I was thinking about it.
+ But then it appeared to me that if you can integrate Lightning into these federations,
+ then they suddenly all become interoperable.
+ As soon as you can send and receive money via Lightning in these federations, then the
+ possibilities are endless.
+ And it's in line with what Jack Mellor said in Miami.
+ Lightning makes everything interoperable.
+ That's its superpower.
+ It's not even about just being a payment system, but it's an interoperability layer for all
+ kinds of other systems built on Bitcoin.
+ In such a way, it makes all these federations interoperable and even with the wider Lightning
+ network.
+ So how exactly does the Defederated Mint interact with Lightning?
+ That's a relatively complicated question.
+ I will try not to go into the technical details too much here.
+ Please, yeah.
+ Top level is fine.
+ Yes, in principle, what you do is the federation in and of itself cannot currently run Lightning
+ node because that would require upgrades to Lightning.
+ For example, Schnorr signatures, which isn't implemented yet.
+ But what you can do is have a gateway in between the federation and the wider Lightning network.
+ And the gateway bridges the trust model between Lightning, which is completely trustless,
+ and the federation where you have to trust these federation members.
+ And inside the federation, you can have smart contracts that incentivize this gateway to
+ make payments for you, for example.
+ You say only if you actually can prove that you made this payment, then you get these
+ Bitcoins inside the federation and at a later point.
+ you can take them out and rebalance the channels.
+ That's how it works on a high level.
+ - So, and then is there a path here
+ for having like a decentralized stable coin?
+ Because as we mentioned, I mean,
+ the power of stable coins is a low volatility,
+ low friction asset, and Bitcoin is very low friction,
+ but it's high volatility.
+ So there's a massive amount of appetite
+ for that kind of asset.
+ And I think that's why, you know,
+ there's just tens of billions of dollar
+ with Tether and with USDC.
+ So is there a path forward for that in this kind of setup?
+ - I'm not entirely sure, to be honest.
+ I'm not an expert in decentralized stable coins
+ from what I hear.
+ They all have the problem that whatever's backing them,
+ if it goes down and value too much,
+ then you have a problem.
+ And you can't really solve this fundamental problem
+ with federations or anything like that.
+ But what I can say is such stable coins
+ would be super interesting for federations to use
+ if they exist.
+ Because if you want, for example,
+ to become a competitor to Shibo,
+ which is the government's wallet in El Salvador right now,
+ then you'd need to offer these people a way
+ to hedge against Bitcoin's volatility.
+ Because we as Bitcoins might not understand it,
+ but most people are not prepared to take
+ like 50% drawdowns from time to time.
+ - Yeah, and it just doesn't work for commerce.
+ Like you can't be selling coffee and have something that...
+ - Yeah, exactly.
+ So the idea would be that such a federation,
+ while it interacts via Bitcoin and Lightning,
+ it can also hold a stable coin inside
+ and users can choose to instantly switch to a stable coin
+ whenever they receive money and switch back to Bitcoin
+ whenever they send money.
+ And in that sense, you could emulate the functionality
+ that Shibo has today in a more decentralized fashion.
+ When I speak about tokens, IOU tokens,
+ these are like actual little pieces of data,
+ like a little text message you can send to someone
+ and that's worth money.
+ So it's not a token in and of itself,
+ like you create a new asset class.
+ I mean, it is the true kind of,
+ because now we trust the federation
+ to actually make it redeemable for Bitcoin.
+ But in general, when I say token,
+ it's just another representation of Bitcoin
+ that is now applying signature more or less.
+ - That you can redeem for your Bitcoin.
+ - Yes, exactly.
+ But it's not on liquid or anything.
+ - I mean, I guess kind of summing it up,
+ then I guess the way that it would interact
+ with the Lightning Network
+ and the benefit for average users
+ would be that it's kind of an upgrade
+ to the privacy function that you basically layer
+ on top of the Lightning Network.
+ Is that right?
+ - Yeah, there are multiple benefits.
+ First of all, of course, privacy,
+ but to be honest, most users won't use it because of privacy.
+ That's not what people do.
+ But it is a better way to have convenient Lightning.
+ Today, we already see that many people are using Lightning
+ in a custodial fashion.
+ - Yeah, probably most people, right?
+ - Yeah, yeah, exactly.
+ And that's my target user group
+ because these people can gain more sovereignty
+ from using a federated e-cash mint
+ that's run by their peers that they know and trust
+ because who really trusts Wallet of Satoshi, for example?
+ I don't know these guys.
+ They might be super awesome and all,
+ but I don't know them personally.
+ So what basis for trust is there?
+ And so that's one thing you solve
+ with making the custodial model
+ into a more community custodial model.
+ Secondly, what's that derives from the custodial model
+ is the transactions get cheaper
+ and running your note becomes less complicated.
+ You don't have to manage channels and all that.
+ - And what's Minimint
+ and what's the current status of Minimint?
+ - Minimint is the first full implementation
+ of this federated e-cash system on top of Bitcoin.
+ There were previous implementations,
+ especially from German cyberpunks,
+ Smuggler and Frank Brown called Scrid,
+ but they didn't have the Bitcoin backing.
+ And so Minimint was the first implementation
+ that has both Bitcoin backing
+ and federated e-cash in one system.
+ And it's currently more or less a prototype.
+ Please don't go out there and run it.
+ That's not what's intended for right now.
+ But I think by end of this year,
+ I really hope by October,
+ I will be able to run the first test federation
+ like for myself mostly just to play around with it,
+ which is sufficiently secure that I'm confident enough
+ to put some actual Bitcoin in there.
+ Because currently testing is only done
+ with red test Bitcoin, which are free.
+ So there's no problem if some are lost.
+ But there's a lot to do to make it secure enough
+ and stable enough for the users.
+ - So first test it with your own Bitcoin
+ and then invite other people to test it with yours.
+ >> [LAUGH] Okay.
+ So that's, I guess, the big milestone.
+ I was going to ask you, what are the big milestones this year,
+ given that it's January and we're looking out
+ into a brand new year, 2022?
+ What are the big milestones in regards to e-cash mints?
+ I guess that's the major one that you're looking to hit
+ this year.
+ Yeah, exactly.
+ As I said, getting into a state where
+ I'm confident enough to put my own Bitcoin in there,
+ that would be awesome.
+ And I really hope to achieve this by October,
+ because then there's HCPP, the Hacker's Congress
+ Colony policy again.
+ And last year, I already presented
+ a prototype of Minimint there, which was already
+ able to pay for copy.
+ But I kind of cheated.
+ Like, I paid for a Rectus Bitcoin
+ and then send it to a Lightning Node on mainnet.
+ And the Lightning Node accepted the Rectus Bitcoin
+ and still sent out the actual Bitcoin to pay the copy.
+ But that's cheating.
+ And this time, I want to do it for real.
+ And that's my big goal for this year.
+ Apart from that, another big goal
+ is finding more developers that are
+ interested in this concept, that want to work on it.
+ Because I'm currently more or less working on it alone.
+ And of course, if we can scale up developer involvement,
+ then we can make so much quicker progress.
+ And I believe this is a super important technology.
+ That's why I'm working on it.
+ And I hope other people will think so too.
+ Yeah, I think that's great.
+ And hopefully, we can help drive a little bit more attention
+ and get some more people to help you out on the project.
+ I was also going to say, you were recently in El Salvador.
+ What's kind of your opinion on what's
+ going on in El Salvador?
+ How did you find that?
+ What was the Lightning Network experience like?
+ How do you think Bitcoin and Bitcoin usage
+ is developing within El Salvador, maybe
+ from a payment perspective?
+ That was really great.
+ Being able to pay for many everyday goods
+ just casually with Bitcoin, that's an awesome experience.
+ Like everyone who wants to check it out, do so.
+ It's just fantastic.
+ But we want-- not everything works perfectly.
+ For example, everyone who used Shibo Wallet
+ and they wanted to receive Bitcoin,
+ we first had to figure out how to actually do it.
+ Because you have to go through a lot of menus and select,
+ oh, I actually want to pay with Lightning
+ instead of Shibo.
+ And it's not perfect.
+ What did you expect?
+ They had a few months to roll this out.
+ Yeah, that's amazing how fast it came to market.
+ Just so amazing.
+ In the rest, we probably wouldn't
+ have finished all the application processes
+ for the contractors by now.
+ So it would have taken too much time.
+ And they already rolled out a system that kind of works.
+ It's not perfect, but it works.
+ What else would you say that's not perfect?
+ It's just kind of the UI is clunky?
+ Or what else did you find not perfect?
+ I think the UI and also that people get confused
+ if they're using Bitcoin or not.
+ Generally, onboarding all the people on the government
+ wallets and cyberpunk, I don't like that, to be honest.
+ And I wish more people would choose alternative solutions
+ like the Bitcoin Beach Wallet, which has a quite similar
+ basic idea as the federated e-cash
+ that I'm building, just without the privacy.
+ They are the community custodial wallet
+ that enables people to use Lightning pretty cheaply.
+ That's definitely the way to go, in my opinion.
+ Yeah, I think that sounds partly like a user issue that
+ will probably get better over time
+ as people get more familiar with the technology.
+ And I think probably it feels globally
+ like trends are in our favor.
+ And I think that privacy will be more of an issue probably
+ going forward.
+ And I think that will push more people
+ to understand the importance of that kind of concept
+ and then also the work that you're doing as well.
+ First of all, the user needs to decide
+ which federated e-cash mint they want to trust.
+ So after they decided that, they need to pack in some Bitcoin.
+ Like, it just happens with Liquid,
+ you send some Bitcoin to the federation.
+ And after that, prove to the federation that you did so.
+ And in turn, the federation gives you these IOU tokens
+ that you can then just keep for now.
+ Like, these IOU tokens are worth a certain amount of Bitcoin
+ that was previously sent.
+ Now the user might want to pay someone else.
+ And for that, there are multiple ways this can happen.
+ Like, for example, if they want to pay a Lightning invoice,
+ they just use these e-cash tokens,
+ give them back to the federation,
+ fund a smart contract that incentivizes the Lightning
+ gateway to pay the Lightning invoice for them, essentially.
+ Or if you are dealing inside the federation with another user,
+ you could also just directly give these e-cash tokens back
+ because they're just little pieces of--
+ essentially, like you can send them a text message. Just give these to another
+ user and the user in turn can then go to the Federation, ask the Federation "hey,
+ where are these already spent?" because you still have the double spend problem that
+ did turn quite elegantly solved. If the Federation says "no, they weren't spent"
+ then they can be burned and the recipient receives new tokens in return
+ and then they can do whatever they want with these, like the first user who
+ already holds some tokens. And in the end, if someone wants to get out of the Federation,
+ for example, Lightning Gateway, which also receives these tokens, now needs to
+ rebalance some channel, they can take out the eCash tokens and just send them to
+ the Federation and the Federation in turn sends them some Bitcoin on-chain.
+ Great, so again it sounds a lot like the Liquid Network, right? You pay in and out
+ your Bitcoin, you get a Liquid Bitcoin token, you can move that around, do what
+ you want with it, or you can convert it back to make Bitcoin, you know, as you feel.
+ Yeah, exactly. It's very inspired by Liquid. The main difference is
+ instead of putting a blockchain on the Federation, which is inherently
+ non-private, or not as private as it could be, like Liquid is already pretty
+ good with confidential transactions, but instead building an eCash system on top
+ of Federation. That's really powerful because there you have perfect privacy.
+ And then the whole setup is faster as well. I mean, this is much more suitable
+ for, you know, transactions and commercial kind of payments.
+ I think in principle, Liquid could also be quite fast. Like, it's just technical details there.
+ So, Federations have some general limitations because, like, all the people
+ have to come to consensus. They need some time to send around messages and
+ discuss what is actually happening. And with different consensus algorithms,
+ with different trade-offs, you get different latencies.
+ 2021 was a massive year for Bitcoin. I think, like, it surprised in a lot of ways.
+ I think El Salvador was a massive surprise. The institutional adoption was a massive surprise.
+ And then it feels like 2022 is, there's a lot of things. I mean, the price performance
+ has been a little bit disappointing, but the headlines have been, continue to be
+ really, really positive in terms of adoption at the sovereign level and the
+ institutional level and really, like, at every level, at the retail level,
+ the average user level as well. So, looking forward in 2022, what are things
+ that really get you excited about Bitcoin? What are you most excited about looking forward?
+ Definitely, the price action, what you mentioned, is actually great.
+ You can finally concentrate on, like, building again. Like, it's not this crazy
+ number go up. It's really distracting, like, even to us developers and researchers.
+ Like, you can't imagine the day when Bitcoin goes up, like, 20k or something like that.
+ Productivity is ruined. It's just euphoria. But what I'm excited about is, like,
+ all these different initiatives building on top of Lightning or on Bitcoin directly,
+ that just explore so many different use cases. Like, for example, Wasabi 2.0
+ just came out some time ago, and that's also a big privacy improvement.
+ Then there's a lot of privacy development happening on Lightning, like,
+ rendezvous payments, or they got another name now, I think. But essentially,
+ that also the recipient of a payment can stay private. And there's just so much
+ research and development going on. I can't even keep track of it all. That's amazing.
+ Yeah, it is. It is crazy. I mean, Bitcoin is, it's, there's so much going on,
+ it's impossible to be on top of everything, which is very exciting.
+ So if people want to work with you or learn more about your work,
+ where can they go to find out more about what you're doing and how to contribute?
+ I think the best starting point is FettyMint.org. That's where I get, like,
+ high-level overview about Fedora Ecash. And there are also a lot of links, for example,
+ to the GitHub repository where I developed Minimint, this implementation of Fedora Ecash.
+ There's a link to my Twitter account, Eric Sirion. You can probably link this too. And
+ they can follow more day-to-day development and some other Bitcoin musings of mine.
+ Yeah, and you can also just reach out on Telegram. I had someone reach out to me recently, and I'm
+ slowly starting to get them going on Minimint and getting them set up for development. And I hope
+ I can get many more people interested like that.
+ I think you definitely will. It sounds really interesting. Thanks for
+ taking the time for talking to us today.
+ Awesome. Thank you for having me on. And see you around.

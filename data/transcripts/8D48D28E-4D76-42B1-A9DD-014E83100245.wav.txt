@@ -1,0 +1,1169 @@
+ (upbeat music)
+ - Everybody, welcome to the "What Is Money?" show.
+ I am thrilled to have you here joining me on my mission
+ to help shine light on the corruption of money.
+ Now, a little bit about this show and how it makes money.
+ We are 100% sponsor-based,
+ which means that all the revenues we derive
+ come from sponsorships.
+ But I try to be very selective about the sponsors
+ that I work with,
+ specifically trying to choose those who have values
+ well-aligned to the values expressed on this show,
+ like freedom, education, self-sovereignty, et cetera.
+ So what I'm gonna do is a few ad reads
+ right here at the top of the show,
+ and then a few ad reads in the middle.
+ And I hope you won't skip them.
+ I hope you'll take the time,
+ listen and see what they have to offer,
+ 'cause again, these are hand-selected sponsors.
+ Now I'd like to tell you about our sponsor, Swan Private.
+ Swan Private is a concierge financial services firm
+ based in Los Angeles.
+ Now, I've known the Swan team for years,
+ and these guys are laser-focused on the Bitcoin mission.
+ They even have a zero-tolerance policy for all shitcoin.
+ Recently, their CEO, Corey Clipston, was instrumental
+ in calling out many of these crypto scams
+ right before they collapsed,
+ saving a lot of people a lot of money in the process.
+ Swan Private focuses on guiding high-net-worth individuals
+ and businesses on all aspects of Bitcoin strategy,
+ including buying, custodying, and market research.
+ This concierge service provides you direct access
+ to a private advisor by text, phone, or email.
+ So go to swanprivate.com/breedlove today to sign up.
+ Now I'd like to tell you about our sponsor, Ledin.
+ Ledin lets you do more with your digital assets.
+ For instance, Ledin offers a B2X loan product
+ that lets you leverage your existing Bitcoin
+ to buy even more Bitcoin.
+ Or you can also get traditional Bitcoin collateralized
+ US dollar loans through Ledin as well.
+ Ledin also offers both Bitcoin
+ and USDC-denominated savings accounts,
+ letting you generate yield on your digital assets.
+ Recently, Ledin has launched
+ a Bitcoin mortgage product as well
+ that lets you use Bitcoin to buy a home
+ or finance one that you already own.
+ So go to ledin.io, that's L-E-D-N.I-O, today to sign up.
+ - Obinuosu, welcome back to the "What Is Money?" show.
+ - Robert Breedlove, lovely to be back.
+ - Glad to have you here.
+ As we were just saying offline,
+ I think we left off last time
+ just getting into the conversation about Fetty Mint.
+ And as I have here in my notes,
+ Fetty Mint is a privacy-preserving custody system,
+ which is a federated system of guardians.
+ And I have MultiSig plus ShowMeInE-Cash
+ plus Lightning Network.
+ Can you help us understand exactly what Fetty Mint is
+ and what it is comprised of?
+ - Okay, well, I'll answer that in different layers.
+ So first of all, at the sort of most philosophical layer,
+ Fetty Mint is the missing piece
+ of the Bitcoin open-source ecosystem.
+ It's the thing that completes it.
+ It's Jerry Maguire's René Zellweger, effectively.
+ So you have at the base, you've got Bitcoin,
+ the Bitcoin protocol, which is your hard money.
+ It's your store of value, your meritocratic money.
+ And on top of that, we have the Lightning Network,
+ Lightning protocol, which takes that Bitcoin
+ and allows you to send it around
+ from person to person at lightning speed
+ at low cost with enhanced privacy.
+ But the missing piece and what Fetty Mint provides you
+ is a way of custodying that Bitcoin
+ with enhanced security, incredible privacy,
+ and also extensibility,
+ something that we haven't talked about much,
+ but is actually a core part of Fetty Mint as well.
+ So it can be extended with extra federated finance features.
+ Think of it as Fetty Fi as well.
+ So when you add those together,
+ and it works very well with Lightning,
+ and in fact, it improves with Lightning,
+ and Lightning works very well with Fetty Mint.
+ In fact, Fetty Mint can help scale Lightning.
+ So they work very, very well with each other.
+ So when you add it all together,
+ you have a way of holding your money at rest with privacy,
+ spending it with enhanced privacy through Lightning,
+ extending features and functionality through Fetty Mint,
+ sending the money around at low costs
+ through Lightning as well,
+ and all backed by and working closely
+ with Bitcoin at the base.
+ So that's it in terms of where it fits
+ within the Bitcoin ecosystem.
+ And if we look into Fetty Mint itself, how does it do this?
+ Fetty Mint is a form of federated application server.
+ So it can take any application
+ that would normally only run by a single person
+ or a single process, but then split it up
+ so that it can be run by a number of people.
+ It's federation, such that as long as the majority of them
+ are honest and running, it will keep on operating correctly.
+ And in fact, even if a minority,
+ a significant minority of them are honest,
+ it will prevent a small majority of them
+ subverting the process and forcing it
+ to do something you don't want.
+ So it gives you a much greater level
+ of bad actor protection, but it's able to run any process,
+ pretty much any process in theory
+ that could run normally on one machine,
+ but you can federate it to reduce your reliance
+ on a bad actor.
+ So it gives you enhanced censorship resistance,
+ not as much as a fully decentralized network like Bitcoin,
+ but far more than a centralized service
+ such as running it on an exchange.
+ So that's what a federation applies.
+ Now, why would you, there is an overhead to do that.
+ It's, you can imagine just like the Bitcoin network
+ at the extreme is, it has a massive overheads
+ to provide that level of decentralization.
+ Federations are somewhere in the middle.
+ There is significant overheads compared
+ to just running on one machine, running in the federation.
+ So why would you wanna do that?
+ There are very few processes you wanna purposely increase
+ the overhead of running it
+ for increased bad actor protection.
+ And they come down to financial services.
+ So holding your money, multisig, Bitcoin multisig
+ is one of the first functionality that we,
+ that comes as standard with a FedEmit federation.
+ Maintaining cryptographically near perfect privacy.
+ We use the protocol called Charmin Ecash,
+ which was invented by David Charmin in 1983.
+ In fact, next year will be its 40th anniversary.
+ It's considered catnip to cryptographers.
+ It provides near cryptographically perfect privacy,
+ but until the use of Bitcoin and federations,
+ it had one weakness, which it relied on one bank,
+ a single actor, but the federation again,
+ allows you to federate that single actor.
+ So now we rely on a community of trusted guardians.
+ And also federations and FedEmits are not dealing normally
+ with payments between people anywhere in the world.
+ So it provides a module for a federated access
+ to the Lightning Network.
+ And so it works very well with Lightning nodes
+ and the rest of the Lightning Network.
+ So those three things come as standard with FedEmit.
+ Custodying your Bitcoin,
+ maintaining cryptographically perfect privacy,
+ and interacting with the Lightning Network.
+ You can extend it with other features,
+ and many people are looking to work on that in the future,
+ but by default, that gives you the minimum you need
+ to custody in a community context.
+ And then the last bit that's really important is,
+ just like Bitcoin is a combination of technology
+ and also game theory, a human aspect,
+ the same is true with Bitcoin and with FedEmit.
+ The technology we've explained,
+ but just as important is the context
+ is we recommend that's used it.
+ So it's recommended that you use this
+ for community custody.
+ This is what we call communal second party custody.
+ So community comes together.
+ They have a requirement to, like everybody in the world,
+ the community and the members of the community
+ have a requirement to hold money, to transfer money,
+ to interact, to perform commerce.
+ This is an essential step to improving and enriching
+ and bettering the lives of the people in that community.
+ So they come together.
+ Instead of relying on a third party,
+ a stranger who is incentivized by money,
+ and we all know with recent events that can end badly,
+ giving money to someone who's incentivized by money,
+ the community comes together,
+ determines the most trustworthy, the most high integrity,
+ the most community service oriented members of the community
+ to act as guardians on behalf of the community
+ with some small level of technical skill,
+ but not very much.
+ They have the same level of skill needed to run
+ to operate a set-top box for a cable television program.
+ So non-zero level of technical skill.
+ So these guardians are then chosen
+ to run the FedeMint software.
+ They form a federation,
+ which will then run in a federated manner,
+ the multi-sig for the community,
+ the Charmin eCash protocol
+ to provide provided to the community,
+ and the Lightning interface protocol
+ to provide connectivity to the Lightning network
+ on behalf of the community.
+ So effectively, the community comes together
+ to custody Bitcoin on behalf of the community
+ to empower the community
+ without relying on anyone outside of that community.
+ It's like be your community's bank
+ as opposed to be your own bank.
+ - So that, I mean, would that be then
+ like the historical corollary to this
+ is like a communal banking model,
+ but then somehow facilitated by better software, right?
+ You get more privacy, single bank custody, et cetera.
+ - That's very much the case.
+ And this is not even historical.
+ In the West, it's more historical,
+ though we still have community banking,
+ but in the global South,
+ it is still an everyday, very, very common occurrence.
+ And actually in post-Soviet regions,
+ people living under the yoke of authoritarian regimes
+ and dictatorships.
+ So if you take either of those two groups,
+ the global South is more than half the world.
+ People living, if you split the world in a separate way,
+ people who are not living in democracies,
+ people who are living under the yoke
+ of authoritarian regimes and dictatorships,
+ again, that's more than half the world.
+ And combined, they're two thirds of the world.
+ People living in more affluent parts of the world,
+ which are democracies, are the minority.
+ We are the edge case.
+ So for the normal case of the world,
+ you either have no banking,
+ that we would consider reasonable levels of banking,
+ or you have banking, but you cannot trust your banking.
+ So for example, if you're in a authoritarian regime,
+ we have stories of people receiving money
+ from their normal bank accounts, KYC.
+ goes along with that. The recipient is in a country under the yoke of an authoritarian
+ regime or dictator and they get arrested because the source is not, it is the source of a person
+ who's identified as having sympathies with the opposition to the dictator. So they get
+ arrested, they get imprisoned, sometimes killed. So they have banking, but they cannot trust
+ it, although they may be relatively affluent as a country. And then other parts of the
+ world where they just don't have banking. In these scenarios, they have to rely upon
+ their community. And so communal forms of banking are alive and strong. There are names
+ such as in Kenya, I've seen these things called SAKOs, and that's where communities, villages
+ come together. They cannot get loans from normal banks, so they have to store, they
+ give one person the task of taking, collecting a small amount of money from different people
+ in a village or a town or even a small city. And then that's collected and then they do
+ different things with it, depending on the country, depending on the situation. Sometimes
+ they store it and give it to one person at the end of each month and a different person
+ at the end of each month. Sometimes they just create a pool and then they lend out effectively
+ to other people within the community. And for an interest that goes back into the pool.
+ Sometimes it acts as an insurance fund, sometimes it acts as a fund to underwrite people's loans.
+ So then the person goes back to a bank where they normally can't get a loan, but then they
+ can show that this community fund has got a certain amount of capital in it. And the
+ community as a whole underwrites the loan on behalf of the individual. And because it's
+ underwritten by this pool of money, the individual is able to get a much more affordable set
+ of terms for their loan from an external party. And there's everything in between. You also
+ have systems like Hoala, which are systems for money transmission, but rely on communities
+ as well. So if you look in the Middle East, in Southeast Asia, in Latin America, in Africa,
+ these are prevalent in pretty much every country. And it's the norm. But the problem is because
+ they're manual processes, they rely on a single person that you trust. And also you don't
+ have privacy because the people know who's being paid and what, etc. And privacy is important,
+ especially when we reach global scale. Right now, we have three or four as of the implosion
+ of one of the largest exchanges, three or four exchanges with well over 90%, 90, 95%
+ of all volume trade on them and a large percentage of all users custodian of them. And if this
+ we allow this to scale, we're going to get to a world of 8 billion people with accounts
+ where 90 to 95% will have accounts on half a dozen exchanges. We worry about CBDCs with
+ countries with populations of 100 million. Or there will be these private enterprises
+ which are effectively oligarchies, structurally, companies are oligarchies run by one person
+ with absolute control, or at best, a few people like a board will have full visibility on
+ people's holding people's balances, full visibility on their payments, full visibility on their
+ trades, if they add cards and so on and so forth, they have full visibility. That's an
+ Orwellian nightmare. And so at scale, we need privacy. But even today, in a community context,
+ in a local community context, privacy is even more important. Even within the smaller and
+ more close to the community, the more important it is for you to have financial privacy, you
+ might have, for example, lost your job or have have some sensitive news, something that
+ you don't want to share with relatives or family, you know, you might you might have
+ things that you you're trying to work out, you want to buy things or to test to make
+ some tests or whatever it may be. And having privacy from your next door neighbors and
+ your family and your brothers and sisters is, it's really, really important. So in a
+ community context, you have to, by default, have perfect privacy if you can. So it's essential
+ to have it from the get go.
+ Interesting. So I like a lot of things here. So Fetty, I think this is how you said it
+ is the completion of the Bitcoin open source tech stack.
+ Yes, it's
+ Sorry, go ahead.
+ No, no, that's correct.
+ That's correct. Okay. So that's really interesting. And then I like the perspective you gave on
+ increasing the cost of overhead to disincentivize dishonesty. Because that's I mean, that's
+ kind of what that's another framing for Bitcoin. It's all this redundancy, but it's really
+ just there to disincentivize dishonesty such that we get everyone adhering to the 21 million
+ hard cap, for instance. So that's an interesting perspective on the game theory of Bitcoin.
+ Now you mentioned obtaining near perfect privacy, I guess you might say in this new model. And
+ in my notes here, I have the Las Vegas example. I don't know if those two things are related.
+ They're related. So many of your business may be aware that transaction on the Bitcoin
+ main chain are not perfectly private. There is the very fact that you want to maintain
+ all the stability to know that the one of its most important features of the 21 million
+ cap has not been busted has not been broken, requires you to maintain certain information
+ on balances being held in different UTXOs and being able to add those up to make sure
+ they are what they're supposed to be when transactions happen to send value from one
+ person to another. You want to be able to ensure that no money has been printed by some
+ nefarious bad actor. But this requires a level of traceability. People are looking at ways
+ of reducing this. There is zero knowledge proofs, confidential transactions, but there's
+ still a level of traceability because you still see where the movements of money, you
+ just don't see the amounts, for example. And perfect privacy and perfect auditability are
+ sort of in conflict with each other. So that base layer out of the two, the way it's structured,
+ the code has prioritized auditability over perfect privacy. But at higher layers, when
+ you have a trusted community where you know that you can make the assumption that we can
+ optimize our system for perfect privacy, but by definition, if you have perfect privacy,
+ then you lose auditability because if it's perfect privacy, you don't know the balances
+ of people. You also don't know who has paid as the operator of this or someone viewing
+ the network, as it were. You don't know who has paid what, so you don't know what transactions
+ that occurred. And also you don't know how many users you have. These are all pieces
+ of information that are perfect privacy, then it shouldn't be possible to know that I'm
+ a member of the Federation or not. Therefore, the Federation shouldn't know whether they
+ have three users or three billion users. They cannot know. And then they shouldn't know
+ who has paid who, because I want to have privacy of my transactions. And they shouldn't know
+ what balances are held by who. They know overall that this, just by looking at the amount of
+ Bitcoin held of them, the total amount of Bitcoin, but they cannot know how it's distributed
+ amongst which users and when those distributions happened. If you have all those three elements,
+ and you have near perfect privacy, there's always ways in which users can box themselves
+ or reduce their privacy. They can go in front of all the guardians and say, "Hey guys, I'm
+ doing a transaction now, and look at me doing a transaction." That's actually not the network
+ itself boxing you, but it is possible for you to intentionally box yourself. But if
+ you're in the street and you make a payment from within the FedEments app to someone else,
+ within the FedEments ecosystem, just to give you a background, when you deposit Bitcoin
+ into the system, it goes into this federated multi-sig wallet run by the Federation. But
+ then they issue, as a Federation, in a federated manner, i.e. not trusting any single guardian,
+ but as a whole, they issue an equal number of e-cash tokens, Charmin e-cash tokens. And
+ these are tokens which are indistinguishable. They're issued in a way which means they're
+ indistinguishable from one another. You could have issued a token a second ago, and then
+ someone asked to redeem a token a second later, and you have no idea if it was one you issued
+ a year ago or the one you just issued. There's no way to determine the difference. Because
+ when you sign it to say it's valid, it's a blinded signature. You don't know what you're
+ signing. So when it comes back to you after it's been unblinded, you don't know if it
+ was the one you signed a second ago or a year ago. So there's no way for you to know that.
+ So these e-cash tokens are bearer instruments in the naive, sort of common sense understanding
+ of the word. You have a token per coin. So for example, let's say you had 10.51 units.
+ So if it was in dollars, $10.51. Or for example, just for simplicity, 10.51 units of these
+ tokens, and that could be 10.51 Bitcoin, for example. If I wanted to pay someone $1 and
+ $1.11, I don't send them a transaction for $1.11. I will send them, I'll have a number
+ of e-cash tokens of different denominations. So I would have 10 $1 e-cash tokens, 5 $1
+ e-cash tokens, and 5 $0.10 e-cash tokens, and 1 $0.01 e-cash token. So if I want to
+ send you $1.11, I would literally send you a $1 token. I would send you a $0.10 token,
+ an e-cash token, and I'll send you a $0.01 e-cash token. The same way you would do with
+ cash if you had $10.51 in your purse or wallet. It was 10 $1 notes, 5 $0.10 notes, and 1 $0.01
+ note. And if you wanted to give someone $1.11, you would give them a $1 note, a $0.10 note,
+ and a $0.01 note. It's exactly the same, but instead of it being coins you're sending,
+ you're sending different files, each one representing a physical piece of cash. And as such, it's
+ this bearer instrument that can be sent around from one person to another directly without
+ going through the guardians. Once they're created, you can pass them around like e-cash.
+ In fact, this allows us in a community context to do
+ some very interesting things.
+ So one of the things that we are going to be adding
+ or showing in the future is the ability
+ for limited periods of time to make transactions
+ without an internet connection.
+ Because you can send it directly through these E-cash tokens
+ within a community, even if you lose internet,
+ you can still send the tokens, for example,
+ through QR codes from one person to another
+ because they are bearer instruments.
+ So that's very useful.
+ If the internet's gone down or if you're underground
+ and you need to send money from one person to another,
+ as long as you're part of the same community,
+ if you want to make a lightning payment
+ to someone near the other side of the world,
+ you won't be able to because you have no internet.
+ But guess what?
+ You have no internet, so you won't be able to anyway.
+ But if you're locally, if you're local in El Zonte
+ and the internet's just gone down
+ but you want to buy something by the side of the road,
+ you could still send, show an animated QR code
+ with the displaying all the different E-cash tokens
+ and the other person can scan and receive that.
+ Now, there is a risk when the internet goes back up
+ of double spend risk, but the likelihood
+ that the merchant or the seller on the side of the road
+ who's all part of the same community,
+ so you'll know, you'll still know
+ when you received the tokens as the receiver
+ and who you received it from,
+ the likelihood that the sender in that context
+ is going to take the code, decompile it,
+ patch the code, recompile the APK,
+ and then make the payment so that they can double spend
+ a few cents or a few dollars.
+ And in the full knowledge that they have proof
+ of punishability because they are part of the community,
+ the community can ostracize them or they can do,
+ they can walk up to them and punch them in the nose,
+ proof of being able to be walked up to being punched
+ on the nose ability, which is possible within a community,
+ which is not possible if you're buying something
+ from the other side of the world from a stranger.
+ It is very possible compared to the cost.
+ It means that actually for limited periods of time,
+ no internet doesn't stop you transacting.
+ And these are all possible because of this bearer instrument
+ and many, many other really exciting features
+ that are possible when you recognize
+ that you're working in a community context
+ and that gives you superpowers
+ that you don't have in other contexts.
+ - That's super interesting.
+ Basically they have skin in the game still
+ as part of these communities.
+ So that prevents them
+ or hopefully disincentivizes bad behavior.
+ That's a good point there.
+ So-
+ - It disincentivizes, it disincentivizes, yeah.
+ - Now I'd like to tell you about our sponsor CrowdHealth.
+ CrowdHealth is a Bitcoin enabled alternative
+ to Legacy Health Insurance.
+ Now let's face it,
+ Legacy Health Insurance is an absolute scam.
+ Nobody can explain this better
+ than the legendary comedian, Chris Rock.
+ - Insurance, you got to have some insurance.
+ You got to, that's an insurance.
+ They shouldn't even call it insurance.
+ They should just call it in case shit.
+ (audience laughing)
+ I give a company some money in case shit happens.
+ Now if shit don't happen, shouldn't I get my money back?
+ - So with CrowdHealth,
+ instead of just paying premiums
+ that you'll never see again,
+ you can hold part of this pool of savings
+ in dollars and in Bitcoin through CrowdHealth.
+ And when you have a health event,
+ you can draw against this pool of communal savings.
+ So go to joincrowdhealth.com/breedlove
+ to learn more or sign up.
+ Now I'd like to tell you about our sponsor Wasabi Wallet.
+ Wasabi lets you use Bitcoin privately
+ while still maintaining full control over your money.
+ Specifically, Wasabi Wallet is an open source,
+ non-custodial wallet with privacy built in by default.
+ By using Wasabi, you're effectively putting the private
+ back in private property.
+ Wasabi Wallet is an easy to use privacy wallet
+ that can support any amount of Bitcoin transactions.
+ So go to wasabiwallet.io today
+ to download this state of the art wallet software.
+ Now I'd like to tell you about our sponsor, Masterworks.
+ Masterworks gives you access to the fine art market
+ at more affordable price points.
+ They do this by offering you fractional shares
+ in their $500 million portfolio of fine art.
+ Now fine art is an alternative asset class
+ and historically it's been a great performer
+ and a really good hedge against inflation.
+ Most investors typically hold anywhere from two to 10%
+ of their assets in an asset like fine art.
+ To sign up or learn more, go to masterworks.com
+ and use promo code BREEDLOVE.
+ Now I'd like to tell you about our sponsor, Kasa.
+ Kasa makes it simple to buy and secure your Bitcoin
+ without wondering whether you're doing it right.
+ Specifically, Kasa provides a multi-key custody solution,
+ which is by far the most secure way to custody your Bitcoin.
+ Now, when I talk about Bitcoin being theft-proof money
+ or inviolable private property,
+ a multi-key custody model is exactly what I am talking about.
+ Using multiple keys lets you maintain full control
+ of your Bitcoin while also giving you redundancy
+ in case you lose one of the keys.
+ It's also the best way to secure your Bitcoin
+ for inheritance planning purposes.
+ So go to keys.kasa, that's C-A-S-A, today
+ to sign up and use discount code BREEDLOVE.
+ This trade-off relationship that exists
+ between auditability and privacy,
+ this is something I think a lot of people struggle
+ to get their head around in Bitcoin
+ because they don't understand
+ why Bitcoin isn't private at layer one, right?
+ Something like Monero or any of these other privacy coins.
+ But you do have this trade-off, right?
+ You have to optimize for supply integrity or auditability,
+ which requires a certain degree of information being shared.
+ But the trade-off to that obviously is privacy.
+ So I guess it's layers two and above
+ where we seek to add real privacy to Bitcoin.
+ I mean, it sounds like Fetiman's a big step
+ in that direction.
+ And then these Chomian e-cash tokens,
+ I think is what you called them.
+ They're basically fully fungible bearer assets.
+ So are these like-
+ - Fully fungible bearer assets
+ within the context of the Federation community.
+ But they cannot be used outside of the community.
+ - Got it.
+ So the Bitcoin that's being used to fund,
+ I guess to mint those Chomian e-cash tokens,
+ that Bitcoin is then just staked inside the software
+ or held inside the software?
+ How does that, how do you know-
+ - Yes.
+ - That there's a circulation, I guess?
+ - Yes.
+ So what happens is,
+ remember the Fetimans run multiple applications
+ and it comes to standard with free,
+ a multi-sig Bitcoin wallet application
+ that's run collectively amongst the guardians,
+ what we call the guardians,
+ the people running the Fetiman software,
+ a Chomian e-cash system that can mint Chomian e-cash
+ based on certain rules and destroy it
+ based on certain rules.
+ And then the Lightning interface
+ that effectively can emulate aspects
+ of the Lightning network,
+ so that Lightning nodes connecting to anyone,
+ any one of the users of the Fetiman
+ can feel like they're operating with the Lightning network,
+ even though they're not.
+ So it sort of stimulates the Lightning network
+ for Lightning nodes to connect to
+ and interact with the users of the Fetiman.
+ In the case of money coming in,
+ let's say someone wants to deposit on the main chain
+ a certain amount of Bitcoin and be credited e-cash.
+ Well, they deposit,
+ the Federation of guardians
+ are running the multi-sig wallet,
+ an API call is made effectively to receive an address
+ to send money to,
+ to send Bitcoin, being the money, to.
+ Bitcoin is sent into that address.
+ Once it's had a number of confirmations,
+ so they're comfortable, a rollback is unlikely.
+ This triggers another, the Chomian e-cash operation
+ to mint a certain, an equivalent number of e-cash tokens.
+ So if the value of them was,
+ let's say there was 1,200 sets,
+ it might print one 1,000 set e-cash token
+ and two 100 set e-cash tokens.
+ And then it will place them temporarily in an account.
+ This effectively waiting for someone to connect
+ to that account with a secret.
+ That secret would have been determined
+ at the point of depositing the Bitcoin address.
+ So only the person depositing the Bitcoin address
+ would be aware of that secret.
+ That same person will then come back with a secret saying,
+ look, I have a secret,
+ please give me the amount in this account.
+ And then they would send to that user
+ the amount in that account.
+ So they wouldn't know who the user was.
+ They just know that it must be the same person
+ because they know the secret that was given
+ as at the point of depositing the Bitcoin
+ and the same person is now,
+ or someone is coming up with a secret.
+ It doesn't actually have to be the same person,
+ but just like with other cryptographic and hashes and so on,
+ the chance that someone could guess that secret
+ is infeasibly small.
+ And so it's likely to be the same person
+ or someone else who that person knowingly gave the secret to
+ that someone would be able to collect that.
+ So that's what would happen when you deposit.
+ And when you withdraw,
+ someone with an e-cash token will send it to the federation
+ with information saying where I'd like
+ the related Bitcoin to be sent to.
+ And the federation again,
+ would use, would process the,
+ would check the tokens coming in
+ using the federated Chami and Mint
+ to make sure they were signed by the multi-sig,
+ that the multi-sig details
+ that the federation was responsible for.
+ So they can say, okay, all these e-cash tokens are valid,
+ destroy those e-cash tokens,
+ and then take the equivalent amount of Bitcoin
+ and send it onto the address
+ that the instructions provided.
+ So that's how Bitcoin main chain would come in and out.
+ Now, I think behind your question was what's to prevent them
+ just because they're perfectly private,
+ what's to prevent someone just sending in
+ a different set of e-cash tokens,
+ creating a different set of e-cash tokens
+ and withdrawing out Bitcoin,
+ or just simply withdrawing out Bitcoin
+ and not redeeming any e-cash tokens,
+ leaving the extra,
+ leaving the Fediment with a fraction reserve,
+ i.e. less Bitcoin than the amount.
+ And the only thing stopping that
+ is the decision on the two things.
+ One is the fact that it works in a federated manner.
+ So you need to have,
+ I'll give you an example.
+ Let's say there are seven guardians.
+ and you have a five of seven multi-sig,
+ or five of seven federation setup.
+ That means it needs five of them to work together
+ to sign a transaction,
+ or five of them to work together to mint a transaction.
+ So this gives you two levels of protection.
+ As long as five or more of them are running,
+ the system will run.
+ So it has protection from being stopped
+ or being stopped, censored effectively.
+ It has censorship protection of two.
+ So if one goes down, the machine has failed,
+ it needs to be restarted, or just completely stops,
+ you will still be able to keep ticking and going on.
+ If two goes down, you'll still be able to keep ticking.
+ So it can support in that scenario,
+ two people stopping, and it can still continue to operate,
+ continue to process transactions.
+ If three or more go down,
+ it can no longer process transactions.
+ The transactions will be stuck there
+ until some of them go back online.
+ But even if three go offline, or even if four,
+ which is now a majority of the seven people go offline,
+ if they become bad actors, four people become bad actors,
+ they still cannot, they can censor,
+ they can cause the, not the blockchain,
+ but the FedEment to stop processing withdrawals, deposits,
+ but they cannot send the money to addresses
+ that they do not want to,
+ they cannot print tokens out of thin air,
+ 'cause you need at least five.
+ So you would have to get to a point where at least five
+ of these seven members of the community
+ became bad actors at the same time,
+ within minutes of each other,
+ before you could prevent, before they can actively print,
+ actively perform any application,
+ run any application within the FedEment.
+ In this case, the relevant ones would be the e-cash token,
+ minting and destruction code,
+ or the Bitcoin multisig code,
+ before they could actually effectively
+ lead to something that was a fraction reserve bank.
+ And now this is, so that's the first thing,
+ just technically that gives you a level of protection
+ against censorship and protection against bad actors.
+ That's an even greater level of protection
+ against bad actors, subverting the network.
+ However, there's the other parts,
+ and this is the social aspect that's really important.
+ We recommend that FedEments are used in a community context.
+ So it's a community where people have shared interests,
+ goals, knowledge of each other,
+ and they come together and choose the people who've acted,
+ who have three things in common.
+ One, proof of integrity.
+ They've acted with integrity through the lived in experience
+ to the most level of integrity,
+ the lived in experience of people within that community.
+ They've proof of community service.
+ They've been community service oriented.
+ They've always thought about what's best for the community,
+ and they've acted in that.
+ And then proof of passion for the community.
+ They're passionate about the community.
+ They care about the community.
+ So if you solve for those three,
+ and you use the wisdom of the community
+ to locate the people who best fit that profile,
+ the belief is that the inferences,
+ that the likelihood that they will then
+ change their character over lifetime,
+ the majority of them, within a few minutes of each other,
+ for me personally, there is obviously a risk,
+ but if I had to choose between that and the alternative,
+ which is a third party custodial exchange
+ run by a stranger somewhere,
+ probably on the other side of the world,
+ who has no interest in me other than as a profit center,
+ and I am just a statistic on a computer,
+ and their sole interest is to try and extract
+ as much money from me as possible,
+ and I'm entrusting them with my money
+ because of flashy advertising and so on.
+ Out of the two, the one I have proof of punishability with,
+ and the one I do not,
+ the one who cares about me and has acted
+ through my lived experience,
+ and the experience of my community with integrity,
+ and I need, and a quorum of them will have to change that,
+ versus a single person who I have no idea
+ what their level of integrity is,
+ and maybe just the regulation is just keeping them
+ from their own animalistic, selfish instinct.
+ I know which one I will choose,
+ but everybody's obviously up to make their own choice.
+ Now, the other option is first party custody,
+ and that is the gold standard,
+ that's the Bitcoin standard,
+ but the challenge with first party custody is threefold.
+ One, there is a cost overhead.
+ When you have 30 minute community custody,
+ the cost of running this is amortized across the community.
+ So if it's a thousand people,
+ and you have five, four, five guardians,
+ then you're amortizing that cost
+ across a thousand, two thousand people.
+ So it becomes a lot less expensive per person on average,
+ whereas if it's first party custody,
+ you have to bear that cost yourself.
+ So the risk is you therefore underspend on it,
+ so you don't do it properly,
+ or it's just a cost which then limits
+ how much, how affordable it is.
+ If you've only got a hundred Bitcoin,
+ a hundred, sorry, $100 worth of Bitcoin,
+ not a hundred Bitcoin,
+ you should have self custody
+ if you have a hundred Bitcoin probably.
+ But if you've got a hundred dollars worth of Bitcoin,
+ it probably doesn't make sense to buy free hardware wallets
+ and steel cards and so on, which cost you,
+ you know, three, $400 to do.
+ It doesn't make sense.
+ Probably makes sense to you
+ to pay $400 to buy more Bitcoin.
+ But if you've got 10,000, 20,000,
+ you might want to stop thinking about it.
+ That's the second challenge is technical complexity.
+ It's getting easier and easier all the time,
+ but not everybody's technically minded.
+ And even things that are relatively simple,
+ that's why I say in my world,
+ when we're talking about 8 billion users,
+ even operating a set-top box
+ for many hundreds of millions of people
+ could be considered technically daunting.
+ So for many people,
+ the task of operating a hardware wallet
+ or their own software wallets
+ may be technically uncomfortable.
+ So that's the second set of criteria.
+ You have to be above a certain level of technical acumen.
+ In the Bitcoin space,
+ many people are highly technically comfortable,
+ so they don't recognize that there's many people
+ who find it very difficult to do things
+ that we take for granted.
+ And then the final thing is fear.
+ You know, this is something that, again,
+ we have to work on as a community,
+ but a very large percentage,
+ and this is something that shocked me,
+ but I came to understand as running an exchange,
+ have been taught,
+ and our whole society has made us afraid
+ of being able to manage our own money.
+ And sometimes it's rightful.
+ Some people are very clumsy and so on,
+ and it's just their nature.
+ And they feel that they will lose the money
+ if they were asked to look after it themselves.
+ So to force them to do that,
+ it reconciles them to being penniless, potentially.
+ But others, it's just, I think, for a larger set,
+ it's culturally, we've been taught
+ to be afraid to self-custody.
+ And we need to teach people to have the bravery to do that.
+ But that's going to take,
+ this is something that you would have been taught
+ throughout your entire life.
+ And it's going to take time to unlearn that,
+ to crack through that veil.
+ And some people at a certain advanced age
+ may not want to anymore.
+ But the people who do want to,
+ it still takes time to get to the point
+ where you're comfortable with moving large amounts of money
+ and taking full responsibility for your money.
+ But in that interim period,
+ we see this sort of influx of regulation coming in
+ and ever increasing.
+ We're seeing the return to the bad old days
+ of exchanges and trusted third parties,
+ trusted in quotes, third parties,
+ taking advantage of that trust.
+ And we at Ferdy and the people working
+ on the FerdyMent protocol,
+ don't believe we can wait for that period
+ for everybody to not feel the fear of self-custody.
+ And we have to make the process of getting off exchanges
+ our highest priority.
+ - Yeah, it makes a lot of sense to me.
+ And with the, so the multi-guardians and a multi-sig,
+ you're basically saying that collusion is necessary
+ to gamify or to game that system.
+ - Yeah.
+ - That gives you a lot more resistance
+ to these internal debacles versus the single guy
+ running an exchange in a far off lands you described.
+ That makes a lot of sense.
+ And I guess the game theory too,
+ there is then preserving FerdyMent as a full reserve bank.
+ Is that correct?
+ So it's much, there has to be some form
+ of I guess, defection in this game theoretic,
+ I don't know if you call it a shelling point or what,
+ but basically wherever all the guardians
+ are operating their own self-interest,
+ someone needs to defect from that to make this thing
+ become a fractional reserve bank.
+ Is that correct?
+ - Well, yeah.
+ I mean, as I said, in the example of five of seven,
+ one person decides that it's a bad actor.
+ It's, they would, one risk proof of punishment,
+ they're within the community context,
+ an obvious form of non-violent punishment
+ is just ostracized from the community, for example.
+ Their machine, their FerdyMent server,
+ they would then have to take the FerdyMent server software,
+ patch it, modify it, reinstall.
+ It would then start to operate in a manner
+ which is not compatible with the rest of the system.
+ I mean, not signing transactions
+ that others wish to sign, et cetera.
+ That would then be picked up by the other guardians servers
+ and it would be kicked off.
+ It would be ignored for the purposes of transactions
+ until it went back in line.
+ So the users of the system wouldn't notice it
+ other than potentially their mobile wallets,
+ just like you have Lightning wallets and Bitcoin wallets,
+ their FerdyMent wallets that connect up
+ to the FerdyMent network,
+ would be aware that one of the seven guardians
+ is no longer responding.
+ It's no longer forming part of the federation.
+ So they could alert the user saying,
+ you can imagine a green, amber, red sort of scenario.
+ So it's green when all seven are working lockstep.
+ It goes to amber when it goes down to six, for example.
+ And then if one more did the same.
+ thing, it could go down to red saying, "You've got five of seven guardians on," and that
+ could be, it won't know whether it's not operating in line with the others as a bad actor or
+ if it's just offline because it's being restarted.
+ But it might sort of temporarily, you might see someone restart the machine and for a
+ few minutes it goes from green to amber and then back.
+ But you could also imagine code in future versions that people have discussed where
+ if the number, if it goes down to amber and it stays there for a certain period of time
+ or goes down to red, you automatically create a lightning transaction which sends all your
+ money to another federation.
+ Because just like the user experience of using the app is very similar to the user experience
+ of something like, at least with the Feddy app, each Feddy Min Aware wallet will implement
+ their user experience differently.
+ They're not the only, Feddy doesn't make the only Feddy Mint wallet.
+ There are at least two others I'm aware of.
+ And we expect, just like there are multiple Lightning wallets, there'll be multiple Feddy
+ Mint wallets because it's an open source protocol.
+ But with our ones, the experience is very much like Slack.
+ So you can be part of, or Discord, multiple Slacks, you can be part of multiple Feddy
+ Mints.
+ And you can imagine a family Feddy Mint where you might store more money and a close friend's
+ Feddy Mint, but also your work Feddy Mint.
+ Instead of paying your employees and everybody has to figure out their own federation, you
+ could do that.
+ Some Bitcoin exchanges in Africa are considering creating Feddy Mints in conjunction where
+ they have one of the guardians, but then a consortium of other respected institutions
+ within the community are the other guardians.
+ And so this becomes an inexpensive way of allowing their customers to self custody without
+ telling them to buy hardware wallets, et cetera, which could be relatively expensive for their
+ target customers.
+ And then if you go to a larger level, we're seeing potentially the idea of cities or small
+ towns setting up Feddy Mints or even groups, for example, charities and human rights, defender
+ groups and NGOs and activist groups who are supporting whole movements.
+ Again, these people have had a history of not taking money from their customers, from
+ their users, but actually working hard and risking their lives to generate money and
+ give money to large members of the society they're trying to help.
+ So if they're actively giving their money and donating and raising and spending, they're
+ unlikely to want to steal the money that they themselves donated, for example.
+ So you can see groups that are as much as hundreds of thousands of people at the large
+ scale or maybe even greater, because again, there's no way to actually know how many people
+ as members of the federation, all the way down to groups of a group of friends who are
+ highly technical Bitcoiners who all want to maintain, they trust each other to hold their
+ backups of their keys.
+ And they might just determine why don't we just create a federation of the five of us
+ where each of us effectively is having each other's back.
+ We don't invite anyone external other than me, but you'll probably find it will start
+ to expand slowly because when they become the Uncle Jim's of their family, and say,
+ well, you might as well just join our federation, you might as well just join.
+ And there will be no way for any of the other guardians to know anyway.
+ But the Sabir Kure is smallest four people, effectively own guardians and being the users
+ for each other.
+ And effectively, the other three are the backups for them, each other, they're having each
+ other's back all the way up to hundreds of thousands of people run by activist groups
+ or NGOs and so on, and everything in between.
+ It's really fascinating, the idea of these little communities just organically growing
+ and becoming Bitcoin unions of some kind.
+ I don't know, it's interesting to think about it that way.
+ And then so I guess the punchline there is there are significant barriers to gaming the
+ system.
+ You know, technical barriers, game theoretic, communal.
+ So you're just creating a model of Bitcoin custody, privacy and payments that's more
+ human friendly, ultimately.
+ Very interesting.
+ Can we talk a little bit about the vision?
+ So ultimately, this federated and community based approach to custody has a number of
+ really powerful elements.
+ It is built on this foundation of privacy.
+ And because of the way it's structured in most reasonable jurisdictions, no, it's exempt
+ from regulation, federation, once the federation is set up, setting up a federation can take
+ as little as five to ten minutes.
+ But once it's set up for a normal user, the onboarding experience is the same as the experience
+ of sharing your contact details with a QR code on something like WhatsApp or Telegram.
+ It literally takes seconds.
+ In fact, when our first live transactions, the buying the cup of coffee, we did in Hacker's
+ Congress this year because we sponsored it because a year before was where myself and
+ my co-founders first met.
+ And it was like in honor of the location, we decided to sponsor it.
+ When we were first testing, the signup process was so quick.
+ People thought that there was a bug in the code because they would scan the QR code and
+ see a zero.
+ And they thought there was a problem.
+ The zero was the zero balance because you just logged in.
+ And they didn't realize they'd logged in because it was so fast.
+ So the feedback was we have to slow down the signing process because it's just too fast.
+ But the point here is that you instantly have a community, you instantly can sign in, well,
+ you can sign in in seconds.
+ Transactions within the Federation are because guardians are running it for the community.
+ They're not earning money from it.
+ Transactions within the Federation are free.
+ You have the ability to roll out to thousands of people, a community at a time, not a person
+ at a time, but a community at a time.
+ And let's just say a community is a thousand, 10,000 people.
+ We have numbers for this based on a call that we made to community leaders on September
+ the 1st of 2022, which was, and we asked community leaders to fill in actually quite a lengthy
+ form explaining why we should work with them to beta test the software, to beta test, not
+ to roll out the software, to beta test it.
+ And we were looking for one to three people, communities and community leaders.
+ After six weeks, we had several dozen, I think it was about 60, 65 communities representing
+ nearly a million people.
+ It was about 800 instances on the summit.
+ And so that shows you the power of talking to people and rolling out to the community
+ at a time.
+ But then you have to understand that the other experience was that hackers.
+ Sorry, there was a little bit of latency and it cut off right when you were saying about
+ a million people, maybe 10 seconds ago.
+ So it's about a million people.
+ So in fact, the number was 860, 60 something thousands.
+ These were people who weren't just clicking a box to say they're interested.
+ They were filling in a multi page form and advocating for why they should be included
+ in the beta testing program.
+ So one of the most powerful things about FedEase and FedEment is its ability or ability to
+ sign up people at rapid scale.
+ So we can have global scale rapidly.
+ And the reason for that, again, is the community context.
+ So to give you two examples of why, first of all, we on our site, September the 1st,
+ we put out a call to community leaders to hyper bitcoinize their communities.
+ Now this wasn't just a ticking the box exercise, say I'm interested.
+ People had to fill in a multi part form to advocate for why they should be included.
+ And we wanted one to three communities to apply to roll out our beta test of the product,
+ which will come out in early 2023.
+ And after six weeks, by the middle of October, we had several dozen communities.
+ I think it was about 60 to 65.
+ And they were the communities when we totaled them up, totaled nearly a million people,
+ like 800 north of 860,000 people.
+ And that's in six weeks and people continue to apply still.
+ And so that shows you the power and the speed at which you can bring on on board people,
+ if you are looking to roll out a community at a time as opposed to imagine trying to
+ go off and individually on board each one of those 80 60,000 people.
+ So that's the first aspect, the community focus of rollout.
+ And the second aspect is because the app is so simple to sign up and use.
+ In fact, it's so simple that, as I said before, some users initially didn't even realize they
+ signed up, it was that quick.
+ And you don't have to go through all the overhead and friction that's related to running a regulated
+ service.
+ We're able to onboard people incredibly quickly.
+ So again, in Hackers Congress in Prague, 2022, we were sponsors of that event, because as
+ an homage to where we first met the year before in 2021, in Hackers Congress, the founders
+ of the company.
+ And we created the first Feddy Mint, temporary Feddy Mint network there.
+ And people who came to the event could sign up, download, not the Feddy app, it was a
+ competing app.
+ But we actually helped support the competing app, because we want as much competition of
+ apps as possible in this space.
+ It drives us harder, and we have to prove our work even more.
+ And that's how you should compete, not by creating various entries, just by being the
+ best.
+ But it was an alternative app.
+ In fact, it was called Flutter Mint.
+ And people would download the Flutter Mint app, and we would credit them, the Lightning
+ Network, with a certain amount of stats, so they can buy the proverbial cup of coffee
+ or beer, if they were so inclined.
+ Now, in that vent we had...
+ A good few hundred people come along to Haka's Congress and people online, because there
+ was a website related to the fedi movement as well.
+ So anybody who was online and saw the website, which we advertised on Twitter, could scan
+ the QR code on the website and join the federation.
+ Now here's the thing, we have no idea how many people join the federation because it's
+ perfectly private.
+ There's no way for us to know.
+ But we do know at least how many people in the events that came into the room that we
+ had for the fedi-mint and fedi service.
+ And so we could see that we could have very easily signed up, even manually, just getting
+ people to scan the QR code.
+ You could have got hundreds of people to sign up in a matter of hours.
+ You could imagine getting, because it's again decentralized, because each person who downloads
+ the app can then, just like you share your contact details on Telegram or WhatsApp, can
+ share with someone else.
+ You share it with 10 people, they can then go off and share it each with 10 people, and
+ they can go and share each with 10 people, and they can share each with 10 people.
+ Three or four of those shares with 10 people along the line and you've got a hundred thousand
+ a million users.
+ And the overhead to do that for the guardians would be negligible to zero.
+ And in fact, there's ways of doing that where you can join, potentially, that's not how
+ it's currently designed, but the overhead is minimal.
+ But you can make it so that you can join without even initially having to make any contact
+ with the guardian.
+ So there would be no bottleneck in your speed of being able to sign up.
+ It's just as quickly as someone can get their friends to scan a QR code.
+ And if you look at social, look at apps that have the fastest rates of growth, they tend
+ to be social apps that work in a community context with a very, very short sign up time.
+ And that's what we have done with money, with Fedi and FediMint.
+ It's naturally community oriented.
+ So you have a network of people to share it with.
+ And the sign up process is incredibly quick.
+ You do not need to enter your KYC details.
+ You do not even need to enter your email address or phone number.
+ You just need to download the app, scan a QR code, and you're done.
+ And because of those two things, the speed at which you can roll out within a community
+ and the focus on rolling out a community at a time, because it naturally gets its superpowers
+ from being within a community, mean that we are able to roll out incredible scale.
+ So because we can do this, coming back to your question, and it's a long segue, but
+ it's really important.
+ It leads us to a vision.
+ We and we state this on our site, we aim at global Bitcoin adoption.
+ And we want to do that at rapid speed.
+ In fact, our stated objective is to have a billion users using Bitcoin in the next couple
+ of years.
+ And that's very achievable, because of the fact the sign up process takes seconds.
+ And it's by its very nature, communal and viral.
+ That is amazing.
+ Very cool.
+ Very cool.
+ What I mean, the actual functionality, right, you're actually kind of, again, as you said
+ earlier on, we're complementing the Bitcoin open source stack, right?
+ We're addressing the weak spots of Bitcoin basically through this, the Federment federated
+ model, and then also aiming at very rapid, large scale rollout.
+ That's something to be excited about, for sure.
+ Yeah, Obi, there is a lot of these conversations.
+ I want to say something on that, because there was a question you asked tonight.
+ And it relates to this, which was around privacy.
+ And you talked about one country, one city and another.
+ And this was actually something that every time I get involved in talking to people about
+ this, I discover new things.
+ And some of the discoveries came from conversations with, for example, Rene Picard, where he talked
+ about the scaling of the Lightning Network.
+ And later on with people, other members of the community working directly on the Lightning
+ Network.
+ And what we realized is that Lightning obviously provides a massive level of scaling over Bitcoin
+ and a significant improvement in privacy.
+ But there are still shortcomings in privacy, which are being worked on.
+ And there are still limitations on scaling.
+ It turns out that this vision of the world that we are working on for this mass rollout
+ of federations, so each federation is federated, but we expect in the fullness of time, hundreds
+ of thousands, or if not millions of federations.
+ So that's actually a decentralized network of federated Xiaomi and Mints connected to
+ each other.
+ Obviously by the Bitcoin mainnet, but also by the Lightning Network.
+ That actually leads to a scenario which allows usage of the Lightning Network to scale.
+ It also has the potential to make using the Lightning Network, being a Lightning node
+ on the Lightning Network far more lucrative.
+ And finally, it provides much, much higher levels of privacy for users of the Lightning
+ Network and the main chain.
+ So in the example of privacy specifically, within a federation, let's say that federation
+ is Las Vegas.
+ Within that federation, you have perfect privacy.
+ If there is another federation, say Reno, within that federation, you have perfect privacy.
+ Now let's say between Reno and Las Vegas, there's a road that connects them, a massive
+ Lightning Network, a main channel.
+ And then there's another road that comes off that road to a private mansion, the Breedlove
+ mansion.
+ And that's effectively self-custody with your own Lightning, self-sovereign Bitcoin node
+ and Lightning node, and you're handling all your channel rebalancing.
+ And just like your own private road and your own private mansion, you're going to be overhead
+ to manage that compared to the overhead to manage an apartment block in a city.
+ It's going to be much higher.
+ But if you're capable of doing that, and you're capable of guarding yourself and managing
+ yourself, you should do it.
+ It's definitely the best.
+ But even though Lightning has far higher privacy guarantees than using the main network, there
+ is still some leakage of information.
+ So imagine you had an eavesdropper monitoring traffic on these roads, the Lightning network.
+ If you were to send a payment from the Breedlove mansion to Las Vegas, that would be the equivalent
+ of a car or a messenger going from the Breedlove mansion to Las Vegas.
+ Let's say there's another mansion called Obi mansion, and that again was fully self-sovereign
+ with its own Lightning node.
+ If you were going to send a car from Breedlove mansion to Obi mansion, someone snooping the
+ network will realize that a car has gone from Breedlove mansion to Obi mansion.
+ Now, if on the other hand, you were sending that to Las Vegas to someone, I have a Pierre
+ Deterre in an apartment in Las Vegas, someone eavesdropping the network will know that someone
+ from Breedlove mansion, i.e. Breedlove, has sent a car to someone in Las Vegas.
+ They just won't know who that someone is.
+ And then if you have a Pierre Deterre in an apartment in Reno, and I have an apartment
+ in Las Vegas, as well as my own mansions, then if I were to send a car from my apartment
+ to yours, someone eavesdropping the Lightning network will know that someone, they don't
+ know who, but someone in Las Vegas has sent a car to someone in Reno, and that's all they
+ will know.
+ And so even if you're self-sovereign, it will make sense that if you're going to do your
+ daily spending, you don't do it from Breedlove mansion, you send the money you need for the
+ day and you go to town in Las Vegas.
+ And then as the saying goes, what happens in Vegas stays in Vegas.
+ And it's the same for this.
+ Even the governor or whatever it is, I'm not sure about the structures in the US and governmental
+ systems, but the governor of Las Vegas, pardon me if I'm wrong, the senator of Las Vegas,
+ whatever it is, or the board, the committee who manage Las Vegas, have also, because of
+ Chowmey and Mint, E-cash protocol, have no idea who is doing what in Las Vegas as well.
+ It still makes sense to do your daily driving from there, i.e. the interactions you want
+ to happen in Las Vegas, if they stay in Las Vegas, then it's completely private.
+ And even if they go out of Las Vegas, someone monitoring the network will only know that
+ someone within Las Vegas performed that transaction.
+ So it provides much, much better privacy for an increased simpler user experience compared
+ to you making all your payments directly from your Lightning wallet.
+ So you'll store 95 or 99.9% of your value there.
+ But when you want to spend, send it to your FediMint wallet and spend from there.
+ In the worst case, if you were to lose that, it's the same as losing your purse out on
+ an evening.
+ So it gives you much better privacy guarantees.
+ That's super cool.
+ Yeah.
+ The higher guarantee you get on privacy just by interfacing with these other, I guess,
+ other anonymity sets, right?
+ Just participating in the federated model.
+ That's super cool.
+ Yeah.
+ We like to call them privacy sets, but yeah.
+ Privacy sets.
+ Got it.
+ Obi, man, awesome conversation.
+ There's a few more points here I think we could go through, which I guess we'll have
+ to save for next time.
+ In the meantime, could you please, I think we did this last time, but just in case my
+ audience didn't hear, could you please let my audience know where they can find out more
+ about you or your work?
+ So thanks.
+ To find out more about me, you can, as usual, find me on Twitter.
+ So I'm simply @obii, @obi on Twitter.
+ But also to find out more about Fedi, the company, it's F-E-D-I dot X-Y-Z.
+ And then the protocol, the FediMint protocol that powers Fedi, FediMint, F-E-D-I-M-I-N-T
+ dot org.
+ Those are the best places to find out about me and about us.
+ Fantastic.
+ We'll include that in the show notes and I will see you again here next time.
+ Thanks very much.
+ you

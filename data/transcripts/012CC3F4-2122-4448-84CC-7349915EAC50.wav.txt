@@ -1,0 +1,1301 @@
+ Then you have this middle ground, which is community custody.
+ Think of it as the idea where first party custody is not your keys, not your coins.
+ This is not our keys, not our coins.
+ Hi, I'm Natalie Brunel.
+ Thanks so much for checking out the Coin Stories podcast, where we get to hear from experts
+ on Bitcoin, investing, financial markets, and the current state of the economy.
+ This podcast does not provide financial advice.
+ It is for educational and entertainment purposes only.
+ This episode wouldn't be possible without my partners.
+ First up, OKCoin.
+ OKCoin is one of the fastest growing and most secure global cryptocurrency exchanges where
+ you can buy and learn about Bitcoin.
+ OKCoin is committed to investing in educational content, funding Bitcoin and Lightning developers,
+ and providing grants to entrepreneurs in the space.
+ OKCoin has contributed more than a million dollars to core devs and counting, has one
+ of the most active Lightning nodes, and I also love that you can toggle between Sats
+ mode and BTC in your portfolio.
+ I first heard about OKCoin a few years ago from one of my favorite voices in the Bitcoin
+ space, Seif Adena Moos, and I signed up to start dollar cost averaging.
+ If you want to join me, head to go.okcoin.com/natalie for $50 in Bitcoin when you sign up.
+ This episode is also brought to you by I Trust Capital, where you can invest in Bitcoin right
+ in your retirement account.
+ I Trust Capital allows you to invest in Bitcoin and other digital assets with the tax benefits
+ of an IRA.
+ And unlike the stock market, you can buy and sell 24 hours a day.
+ Instead of paying taxes on Bitcoin gains every year, you can defer taxes using an I Trust
+ Crypto IRA or with an I Trust Capital Roth IRA.
+ You can withdraw tax free at retirement.
+ The I Trust Capital platform is easy to use and only takes a few minutes to set up.
+ So if you want to start investing today and get a $100 referral bonus, head to itrust.capital/nataliebrunel.
+ Well, Obi, first of all, thank you so much.
+ I am honored to get to talk to you because I've heard nothing but amazing things from
+ the likes of Jeff Booth and Greg Foss, Preston.
+ I mean, everyone seems to love you in the Bitcoin space.
+ Well, thank you.
+ The honor is mine, by the way.
+ Jeff and the guys talk very highly about you as well.
+ So it's the first time we've talked ever and I hope it's going to be a really enjoyable
+ experience.
+ I'm so excited to learn more about you.
+ So let's take it all the way back.
+ I understand that your family, you are from Nigeria.
+ So tell me a little bit about your young life and growing up there.
+ So actually, my heritage is from Nigeria.
+ I was conceived in Nigeria, but I was born in the UK.
+ So I always like to say my mother made it to Heathrow Airport and I combat rolled down
+ the stairs into London.
+ But as I grew up, I would go back very frequently from a very young age, as long as I can remember.
+ And it's a tale of two worlds, because on one hand, you're growing up in the first world
+ and all the accoutrements of the first world.
+ And then you go back to Nigeria and you have daily power cuts, sometimes lasting several
+ days.
+ You have to help out.
+ Cooking involves taking actual live chickens and cutting their necks.
+ In the garden at the back of the house, you have to do chores, which involved walking
+ for very long distances.
+ And generally, by the time you got back, you were as a young kid, you were begging for
+ the luxury of the first world.
+ Oh, wow.
+ Well, so what did your parents do?
+ Why the back and forth?
+ How did they end up in the UK?
+ It's quite common.
+ My father had a number of businesses that he'd set up in Nigeria.
+ In fact, when he was young, the Nigerian education system at the time was such where you didn't
+ necessarily have a right to go to secondary school.
+ You had to either pay for it or you had to attain a certain level.
+ And my father being the son of, again, this was way back, but there was a period of time
+ where polygamy was legal in Nigeria.
+ So my grandfather had multiple wives.
+ You could also inherit wives as well.
+ So the oldest son would inherit his.
+ It was a different time.
+ So my father was the son of one of the least favored inherited wives.
+ So when it came out to doling out money for different things, he was normally last in
+ the line.
+ It was very much.
+ Wow.
+ That's fascinating.
+ Yeah.
+ So one of those things was, even though he was incredibly gifted and an exceptional student,
+ my grandfather for many years, this is a story I've never actually said to anyone before,
+ but my grandfather for many years, who, by the way, I inherited his middle name because
+ I was the first son, I was the first grandson born after his death and under Igbo tradition,
+ I would inherit his name.
+ But he refused to let my, to pay for my father to go to secondary school.
+ So for many years, he was held back, even though he was incredibly gifted until some
+ teachers saw his capability and literally begged my grandfather to let him go to secondary
+ school.
+ And he, he achieved that, but only on the condition that every year when they had to
+ take exams for the next year, he had to be the best.
+ And so he had to be the best in that entire region of Nigeria every single year to make
+ it through to the following year, which he did.
+ And he went on to set up a very successful set of businesses in property and real estate
+ in Nigeria.
+ But you're still, you're, if you think about the, the Cantilong effect and being far away
+ from the money spigot, well, if you're in the developing world, you're the furthest
+ possible away.
+ And he knew with his sort of finance training, because he studied in finance, that you needed
+ to get to an economy which was closer to the spigot.
+ And so he sold everything or almost everything to, to move to the UK.
+ My mother, they came back to Nigeria when I was conceived, but still, he sold everything
+ and had to start from scratch.
+ So he was here to start in some of the most menial jobs, he had to be a janitor, he had
+ to be a caretaker, take three or four jobs at the same time, even though he was more
+ qualified than everybody in the companies that he was providing the work for, which
+ is a common story when you're a first generation.
+ So yeah, that's, that's my mother again, was one of the, well, I, not one of, she's the
+ hardest working person I've ever met.
+ Elon Musk has nothing on her.
+ And I got a tiny portion of her work ethic, and hopefully some of the intellect of my
+ father as well to combine together.
+ Wow, that is incredible.
+ You know, I relate in the sense that I also saw my parents working really, really hard
+ first generation immigrants here.
+ How did that impact you?
+ Did you grow up thinking, I have to, you know, succeed, I have to gain financial security,
+ because I don't know, for me, it was like, I want to make them proud.
+ I also don't want to, I don't want to have a family and have them suffer some of the
+ financial issues that I had growing up.
+ So what, what was it like?
+ What was the impact on you growing up?
+ Yeah, I think, I mean, they, I always say they are, they were hard working, working
+ class Nigerian parents.
+ So that had multiple aspects.
+ When I was growing up in the West in the UK, but I still had this sort of Nigerian focus
+ on academic excellence, you know, and the expectation that you had to, I was effectively
+ a low performer by not getting a doctorate, almost every other Nigerian is a doctor of
+ this or doctor of that.
+ So I went to obviously went to university, but that's a very much entrenched into the
+ culture, you respect age and you respect academic achievement.
+ So that was one thing, the work ethic, as I said, of both, especially my mother, she
+ was incredibly hard working, affected me and, and, and has lived with me ever since.
+ So I like to think I'm a very, very hard worker as a result.
+ And just generally seeing the sacrifices they made for us, for the family, at least in my
+ case made me feel that I, I wanted to, at the very least, try to live up to what they,
+ what they achieved.
+ And my view was also, again, going backwards and forwards between Nigeria and the UK, I
+ realized that I was incredibly lucky.
+ I was lucky to be born, especially when I went back to Nigeria to be born a man, I was
+ lucky that my father made it through this sort of very, very low probability set of
+ circumstances to make it to the UK.
+ Because when I saw his brothers who, and the children of his brothers, they were all direct
+ cousins, but everyone is about at least half a foot shorter than me, for example, even
+ though you can see the difference between the cousins who are in America, who maybe,
+ I would say a couple of inches taller on average, the people in in the UK are around six foot,
+ and everybody in Nigeria is like five, five.
+ And that's purely to do with, you know, food and nourishment and environment and pollution
+ and so on.
+ Struggling to survive.
+ And whereas I'm in the UK, because of all of this circumstance, healthy, not having
+ to deal with the challenges of, you know, there's a number of challenges to life and
+ liberty you have living in somewhere like Nigeria.
+ So I realized I was incredibly lucky just to be born here.
+ And so the least I could do is work really, really hard to try and achieve as much as
+ I can from that opportunity.
+ Yeah, that's amazing.
+ Was there a sense of, I need to help, or your family needs to help your family in Nigeria?
+ And how did you think about money back then?
+ So I think that there was a sense that we needed to help.
+ But it was also a double edged thing.
+ On one hand, as many families did, a large percentage of our capital would go back to
+ the diaspora.
+ But on the other hand, time and again, you would see people just waste the money and
+ just it would stay, it would say, it wouldn't last in their hands very, very long.
+ And it became very clear that there were these deep rooted, just deep rooted aspects of the
+ environment and the education around money or the lack or the mis-education around money
+ that were apparent in the West, but even more apparent in the global South.
+ That meant that it was very hard for people to build wealth.
+ So this wasn't just a problem of lack of money, but it's also lack of monetary education.
+ Sure.
+ Well, so what got you interested in computers?
+ Because I know that you ended up studying computer and cognitive science.
+ So were you kind of tinkering around that type of technology when you were young and
+ thinking this is what I want to do?
+ So I mean, I'm 47.
+ So when I was a kid, we were working class.
+ We couldn't afford computers,
+ which were very, very expensive at the time.
+ But I went to, I remember very clearly,
+ the first day of secondary school.
+ I don't know what you call that in the US.
+ - High school?
+ - Is that, high school, high school.
+ - How old were you?
+ - The first year, I was 12, I think it's 12.
+ - Okay, so that's like middle school, yeah.
+ - Yeah, middle school, middle school.
+ So you go from 12 all the way to 18 is high school.
+ - We have middle school
+ and then high school a lot of places, so.
+ - Okay, so middle school,
+ the first day you'd go into the assembly
+ and the headmaster would come in and say,
+ "Hey, hello to the new class."
+ And at the end, they encouraged us
+ to try some afterschool activities,
+ to broaden our horizons.
+ So I was like, "Fine, you did your first day of school,
+ got to know people."
+ And I looked at some of the arts and crafts activities
+ and I saw there was this chess club.
+ And I thought, "Well, my parents would like that,
+ education, academic achievement.
+ Let me join the chess club."
+ So I joined the, I went into the chess club
+ and it was 3.30 and at four o'clock,
+ I was in the middle of a move on the chess board
+ and everybody ran out of the room
+ and including the person I was playing against.
+ And we were mid game and I went,
+ "Where's everybody going?"
+ And they went, "Computer club."
+ So it was this computer club thing.
+ I followed them in and I saw these computers
+ and everybody's playing this game.
+ It's a bit like Donkey Kong.
+ And at that point I was smitten.
+ I just wanted to know how this thing worked.
+ I was the last person to leave.
+ I was joined by the computer science teachers
+ who were amazing,
+ recognized that I was really interested in this
+ and helped me learn about programming.
+ I started programming games.
+ And before I finished secondary school, high school,
+ I was building neural networks.
+ And I programmed the neural network
+ to sort of add numbers together
+ and learn the concept of addition.
+ I then entered university
+ and it was around the same time
+ I joined an organization called Mensa.
+ I think I was one of the younger people at the time.
+ I entered university about a year early
+ and they didn't really have computers,
+ AI as a subject,
+ but you could construct it
+ with a combination of computer science
+ and cognitive science, which they did.
+ And I continued my love for computers.
+ And at that point it was still an AI.
+ I built a neural network that would read your brainwaves
+ and control a mouse cursor and stuff like this.
+ But then halfway through my university,
+ the internet and the World Wide Web
+ really became a big thing.
+ And NCSA Mosaic, which was the precursor to Mozilla,
+ came out and the world of the internet became open to you.
+ And at that time, a number of us realized
+ that this thing was going to be very, very big.
+ You'd opened up the internet.
+ Before it was this sort of closed room.
+ And I just became infatuated with the internet.
+ I worked on the first...
+ So we saw a website by the BBC,
+ which was a terrible tech site.
+ And one of us mailed them saying,
+ that site's really bad
+ and you can maybe make some changes.
+ And then someone replied to us,
+ this is in the early to mid nineties,
+ and saying, well, I'm the only person in the BBC
+ working on this internet thing.
+ Could you help me?
+ And so we met them in a pub
+ and we built this site for BBC radio.
+ And from there, I just entered this career
+ of being in the UK and European dot-com space, dot-com one.
+ I was the first or the second employee
+ for a very successful,
+ that went on to be a very successful dot-com startup
+ that was sold for 2 billion pounds.
+ So several years later,
+ and then I was around the dot-com too.
+ So I was the CTO for a massively multi-player virtual world.
+ I joined, we had about four or five million users.
+ When I left, we had about 30 million users.
+ It was very popular in the US.
+ It was called WeWorld, Weemees, these little characters.
+ - Oh wow.
+ - These virtual characters,
+ they were like Habbo Hotel and Club Penguin.
+ And then I decided to work for myself
+ 'cause I realized I'd been helping many other people
+ become very successful.
+ I did okay for myself,
+ but I became an entrepreneur and I started my entrepreneurship.
+ - Yeah, I mean, it sounds like being a part
+ of the revolution that was the internet so early.
+ I mean, from what you're saying,
+ it sounds like you could have just retired
+ if you were some of the earliest employees,
+ but you wanted to keep working or?
+ - I don't think I could have.
+ I did well, but I don't think I could have retired,
+ I guess, but even so,
+ I definitely am someone who cannot,
+ I've tried before, I'm now in a position for quite a while
+ where I could retire, but I've tried it
+ and it doesn't last, it doesn't take very well.
+ It doesn't last, like this year, early this year,
+ I promised off the selling coin floor to take,
+ a couple of years off and that didn't last very long.
+ I think that lasted about two months.
+ I went to Mexico for a month
+ and I went to Indonesia for six weeks
+ and I learned to scuba dive and that was it,
+ that was enough, I needed to go
+ and start actually doing something that for me was valuable
+ and helped the lives of others.
+ - Well, that makes you a real Bitcoiner
+ because I think that when you are just in repose
+ or you're just giving into pleasure,
+ your life doesn't have as much purpose,
+ whereas if you're working, it gives you some meaning.
+ So, well, just out of curiosity,
+ before we go into coin floor and a little bit of Bitcoin,
+ were you essentially helping build these sites
+ and platforms or what were you actually doing?
+ What was your role for all these companies?
+ - So for all of these companies, it was always technical.
+ So the first company, I was the second employee
+ and I came on to help build this online auction company.
+ It was like a European version of eBay at the time.
+ And it was initially me, the founder and one other,
+ it was literally one of these startups
+ was in a room above a garage where if a phone call came in
+ and cars were coming in, you had to put it on mute
+ because it would shake the entire room.
+ That's how we started.
+ And I built the first version of this site.
+ We had a lot of success, it grew,
+ but the site first version needed to be re-architected.
+ So I re-architected and built the second version of the site
+ for this time with a team of five
+ and it re-architected and re-grew again, 10, 100X.
+ And then the third version of the site,
+ I had a team of 150 and that all happened in 18 months.
+ I went from myself to 150 employees
+ just in technology alone.
+ And I said, in my early twenties,
+ I learned a lot about managing teams, managing rapid growth.
+ We were dealing with huge amounts of auction transactions
+ and very large amounts of value being traded.
+ And so, yeah, and then we rolled out across Europe.
+ And then another company I was in, which was another.com,
+ but it was an online travel company for four years.
+ And again, I was head of technology,
+ chief application architect,
+ and we built out a number of firsts there as well,
+ rolled out all across Europe
+ until we were eventually bought by Sendon
+ who owned Orbitz and Avis and this very large group.
+ - So is this what they refer to as like web 1.0 or web 2.0?
+ Is that essentially what it is?
+ - Web 1.0 is, I would say is e-commerce,
+ which is sites that are either informational
+ or they allow you to buy and transact.
+ Web 2.0 is where you have the social elements.
+ So Facebook or massive multiplayer virtual worlds
+ where people actually are communicating with other people
+ as opposed to web 1 is you're communicating with the service
+ and you're getting some service
+ and there could be a million people using the service
+ or two, you don't really know, you just know the service.
+ With web 2.0, it only gets its power
+ if there are a lot of other people using it.
+ So Facebook, if it was just Johnny Nobates,
+ then it's not a very fun site.
+ And web, well, web 3.0, that's now being hijacked.
+ So we don't need to talk about that too much.
+ - Okay, well, maybe we'll circle back just
+ 'cause I think a lot of people,
+ they catch onto that buzzword and they're like,
+ oh, web 3.0, it'll solve all of our problems.
+ But okay, so how did you come to create, build CoinFloor?
+ 'Cause I heard you with Preston
+ talking about how you heard about Bitcoin
+ when it was like a hundred dollars or so
+ and then you crashed back down.
+ You didn't really take it seriously.
+ Then all of a sudden you come back to it
+ and it had gone up to a couple hundred dollars.
+ You were like, hey, this technology might actually work.
+ So tell me a little bit more
+ about that journey and CoinFloor.
+ - Yeah, so as I said, I was obviously a card carrying geek.
+ I worked in the computing space.
+ I studied computer science.
+ I always continue to spend hours reading up on,
+ other than Bitcoin, I'm reading up on AI and so on.
+ I separate to that because of this experience
+ of where I came from and seeing these two worlds.
+ I was aware of, and I would wax lyrical about the iniquity,
+ the unfairness in the world.
+ And the reason, but this is interesting.
+ The reason I had a problem with it
+ was a very much an engineering,
+ engineers efficiency mindset
+ in that the world is losing out.
+ Right now on this planet,
+ there's probably 50 Einsteins somewhere.
+ And because they're not providing value to the world,
+ we, everybody is losing out.
+ So we need ways to surface that talent up
+ so that that talent,
+ those talented individuals, wherever they are,
+ and they're likely not all going to be
+ in Western Europe and North America,
+ wherever they are, they can add value to the world.
+ We will need, there's probably a dozen Elon Musk's,
+ a dozen Einstein's out there.
+ We need to find them and have them helping us.
+ So therefore I just thought,
+ I just found it really depressing
+ that the world didn't have a way
+ of surfacing that efficiency.
+ So when I, when Bitcoin came along,
+ at least two different friends sent me links
+ very close to each other about this thing.
+ You should read it because it's,
+ it's the world's first meritocratic money.
+ And it's this incredible technology.
+ And so Obi will definitely find this interesting.
+ And so, and I did, I read the white paper.
+ This was in 2011, actually two years before CoinFlow.
+ And I read the white paper and actually
+ I found the technology really, really interesting,
+ but maybe I was cynical at the time.
+ I thought, well, governments are going to kill this thing.
+ It's not going to last very long.
+ I'd buy a bit and I bought a little bit.
+ And I, and it was, it was a set like under a hundred dollars
+ it was in the nineties or so on.
+ And then it crashed down to two, three, $4.
+ And I'm like, okay, yes, see what I mean?
+ It's not going to last.
+ Anyway, I was running my previous business at the time.
+ Two years later, that business was being wound up
+ and my soon to be co-founder who had,
+ I'd angel invested in a previous business,
+ came to me and said, look, there's this Bitcoin thing.
+ We should try and look at doing something with this.
+ I went, Bitcoin is still around, let me check.
+ And the price was in the several hundred.
+ And I thought, okay, so it's really,
+ really interesting technology.
+ It's a credit money as well.
+ It doesn't matter who you are.
+ If you can acquire it, you have the same protections
+ afforded to you no matter where you are and so on.
+ And that's all you need, a level playing field.
+ And then we can service the right people.
+ And it has staying power.
+ We need to do something here.
+ And that's when we launched CoinFlow.
+ And the rest was history from there.
+ - I mean, that's amazing.
+ So tell us a little bit more about that company
+ 'cause it was the biggest Bitcoin only exchange in the UK.
+ Right, is it still?
+ - No, I mean, it's been sold and it was an asset sale.
+ So all of the customer base is sold
+ and have been subsumed into other companies.
+ In fact, there are two parts.
+ One faithful part was spun off a few years ago.
+ It was called CoinFlower X.
+ We made the world's first physically delivered
+ Bitcoin futures exchange.
+ And that was sold to a consortium of Chicago trading firms
+ and Hong Kong based proprietary trading firms as well.
+ And it was renamed after being sold to CoinFlex,
+ which you may have heard in the news now more recently.
+ So that, but we sold that.
+ And more recently we had a remaining stake
+ and we sold that just before selling.
+ And the other part was a Bitcoin only spot,
+ Bitcoin only exchange.
+ And that's the customer base and users, et cetera,
+ was sold to Coin Corner 'cause that was a,
+ I know the guys there, they're great people.
+ And they were, although we had multiple suitors,
+ I really wanted to sell it to someone
+ who was philosophically aligned to us.
+ But as a background, we launched in 2013.
+ Again, it was in, it was actually just off Hatton Garden,
+ which is famous for the gold area of London,
+ which is quite good 'cause we were making this digital gold.
+ And around the corner from Charles Street Lane,
+ which mentioned the law, which is like,
+ Bitcoin is law as well.
+ So we just loved the feng shui of the area.
+ And we always stayed around that place.
+ You've got this sort of law and where code is law
+ and gold all together.
+ And we started with one desk shared by three people
+ and we slowly grew and grew as a company
+ until we, at our peak,
+ we're doing 70% of the trade volume in the UK.
+ And in that time, it was this roller coaster.
+ I always say that first you ignore you,
+ then they love you, then they fight you, then you win.
+ When we launched, we were at the tail end
+ of what I could call the Bitcoin was ignored period.
+ I actually have this pin tweet on my Twitter,
+ which I tweeted in 2020,
+ which I still believe more so than ever is correct,
+ which was 2008 to 2013, Bitcoin was ignored.
+ 2013 to 2018, Bitcoin was really called and laughed at.
+ And 2018 to 2023, where we are right now,
+ Bitcoin is attacked.
+ And in 2023, next year to infinity,
+ Bitcoin wins.
+ And I'm actually more convinced than ever
+ that next year will be the year Bitcoin clearly wins.
+ But when we launched, Bitcoin was still being ignored.
+ And then we had another run up in price
+ and Bitcoin started to be ridiculed at that point.
+ And we were, the first five years, people always,
+ especially in the city of London, just laughing.
+ And I was saying, this is just a joke.
+ Maybe the blockchain thing is useful,
+ but the rest is a waste of time.
+ And, but we kept on pushing through
+ and we kept on growing until 2018.
+ Again, we went through the Bitcoin, Bitcoin cash wars,
+ many other exchanges decided,
+ wanted to back this SegWit2x protocol.
+ We were one of the few exchanges that said, no,
+ we are going to go where the majority of users will go.
+ And that is what Bitcoin is,
+ not what we as an exchange decided what Bitcoin is.
+ And we had many firsts like that.
+ We were the first exchange to provide
+ an uninterrupted set of provable solvency audits.
+ We did it for eight years straight
+ and we always lobbied other exchanges
+ to do the same thing as well.
+ And we were also one of the first exchanges
+ to maintain going Bitcoin only.
+ We listed Ethereum for nine months.
+ And after nine months, I thought that was enough.
+ And we went back and we made a very big stand
+ that we're going to go Bitcoin only
+ and nothing else is in the best interest of our customers.
+ And we focused on that.
+ It was one of the best decisions we ever made
+ and we continued to progress until we sold the company.
+ - We are going to take a quick break from the show
+ to hear these messages from my partners.
+ First up, are you ready
+ for an international Bitcoin conference?
+ Here's a look at Miami 2022,
+ but Bitcoin Magazine and the team
+ that brought you the world's largest Bitcoin conference
+ is bringing the mission of hyper-Bitcoinization global
+ with the inaugural European gathering this fall.
+ Bitcoin Amsterdam will take place
+ on October 12th through the 14th
+ at a beautiful venue in the heart of the city.
+ Join thousands of Bitcoiners for three days
+ of curated Bitcoin content that is relevant
+ to the emerging Bitcoin scene in Europe
+ and the global movement.
+ Confirmed speakers include Dr. Adam Back,
+ Alex Gladstein, Greg Foss, Ray Yousef, and many, many more.
+ The European installment of Sound Money Fest
+ will also take place on day three of the event,
+ October 14th, and admission is included
+ with GA and will passes.
+ I will be there, I'm super excited.
+ So head to b.tc/conference
+ and use the code HODL for 10% off your pass.
+ You can also buy tickets to Bitcoin 2023,
+ which will be held in Miami next May.
+ And this episode is also brought to you by Fold.
+ Fold is the best Bitcoin rewards debit card
+ and shopping app in the world.
+ How would you like to earn Bitcoin on every single purchase
+ and spin a fun wheel so that you can earn sats
+ every single day?
+ Whether you're shopping at Amazon or grocery store
+ or anywhere that you go,
+ you can earn Bitcoin on every single thing you buy
+ with Fold's Bitcoin Cashback debit card.
+ And you can spin the daily wheel,
+ which is super fun to earn more free Bitcoin.
+ And people have actually walked away
+ with one whole coin on this thing.
+ Head to foldapp.com/natalie.
+ And when you sign up, you get 5,000 sats.
+ Now back to the show.
+ We continue to progress until we sold the company
+ at the end of last year. Amazing.
+ Okay, well, two questions about that
+ that I think are really important
+ for the viewers and listeners.
+ Number one, why Bitcoin only?
+ As someone who really understands the technology
+ and has this background in computer science.
+ And number two, can you offer maybe like a 30,000 foot view
+ of running an exchange today?
+ We hear about so many that have had liquidity issues
+ and maybe they were doing something
+ with the coins that were held.
+ I mean, can you just kind of explain what happened?
+ 'Cause clearly you didn't run into those issues.
+ No, we didn't.
+ And that was one of the very big reason
+ why I decided ultimately,
+ most people are not aware of the risk they take
+ in most cases.
+ There's always exceptions,
+ but in most cases holding money on exchanges.
+ And we need to get most people off exchanges stats
+ to use an Americanism.
+ So, but in terms of why we decided to go Bitcoin only,
+ I mean, philosophically behind there's two sides.
+ One, behind the scenes, we had two co-founders
+ and I think one was more aligned
+ with there was a growing schism
+ because one was more aligned with Bitcoin cash
+ and multiple coins, just philosophically.
+ And the other, and offering very, very complex
+ financial products, which were suited more
+ to institutions than retail.
+ And the other, which is if you want to do that,
+ that's fine.
+ But the other was more focused on Bitcoin,
+ only providing a good safe product
+ for consumers every day, people,
+ you can say plebs or however you want to put it,
+ and trying to support them,
+ helping educate them to self custody.
+ And that was me.
+ And so at some point we split the company in two
+ and we sold off the complex derivatives product
+ and that became CoinFlex down the line.
+ And that left CoinFloor.
+ But by that point, we already had Ethereum
+ and it was still running.
+ But then we decided, look, we're going to go through
+ and review every coin we hold
+ and objectively come up with criteria
+ for which ones should we hold
+ and which ones shouldn't we hold.
+ We're not gonna do this in a subjective finger in the air,
+ decide we're gonna test everything, including Bitcoin.
+ So what are objective ways to determine
+ whether you should list a coin?
+ Well, one, technical maturity.
+ It should be technically mature.
+ It's not safe to give a customer something
+ which is gonna blow up.
+ Maybe you could, but I cannot see an objective reason
+ why that's valid.
+ Another objective reason is,
+ does it have enough traction and community support?
+ Because if it doesn't, then there's a risk
+ it could just fizzle away overnight.
+ And again, it doesn't seem reasonable
+ to offer something which could disappear tomorrow,
+ could be fly by night.
+ And then we're regulated exchange.
+ There should be regulatory clarity as well.
+ And so when you take those three,
+ and also the last thing is moneyness
+ 'cause these things are supposed to be stores of value.
+ You're asking people to store value against them.
+ So it shouldn't be something that by definition
+ is at least attempting to be a money.
+ So we went through these
+ and we thought these were the only objective criteria.
+ If you could add more, let me know,
+ but these seem objective.
+ And when you went through every single coin,
+ the only one that made it,
+ that just made it by the way, was Bitcoin.
+ And nothing else came anywhere close
+ 'cause either we tried to be very, really tight.
+ And Bitcoin only just makes it.
+ Most things only just make it if they're in that camp
+ and everything else didn't make it.
+ Ethereum, for example, we finally delisted
+ when they announced Ethereum 2.
+ And some of the leading devs on Ethereum,
+ and this was after about seven or six or seven months
+ of listing on our site.
+ Some of the leading devs said that
+ Ethereum is not really going to make it,
+ going to cut it for global growth.
+ So we have to come up with Ethereum 2.
+ So effectively, the creators of Ethereum
+ are telling the EU that Ethereum is not good enough.
+ Well, objectively, if it's not technically good enough
+ from the view of the creators, it's not good enough.
+ And so that was the final reason
+ that I had for justifying the removal of Ethereum.
+ And I never looked back.
+ And they continue to do things to reduce their moneyness.
+ And for example, moving to proof of stake
+ is another shooting in the head, foot, knees,
+ and heart at the same time move.
+ And so for that reason, everything else was delisted.
+ We went Bitcoin only.
+ And looking at what the plans were
+ for every other cryptocurrency,
+ it became clear that nothing else other than Bitcoin
+ will ever have a chance of meeting these requirements.
+ But we had to work hard as a community
+ to make sure Bitcoin doesn't fall into the trap
+ of ever losing these four things,
+ especially its focus on being a money,
+ its focus on technical maturity and strength.
+ And 'cause if you keep those two
+ and maintaining the community through education and so on,
+ so we tried our part as well
+ on building up a strong community.
+ Because if you lose that community,
+ everything starts with the community.
+ And if it has the wrong mindset,
+ everything else follows or everything else falls.
+ In terms of running an exchange and the ups and downs,
+ one of the best things that we did,
+ and it was a hard thing, but we managed to,
+ and companies several times larger didn't,
+ was to put in place provable solvency audits.
+ 'Cause it's a really good discipline
+ basis, you attest to the fact that you're solvent.
+ And that reminds-- one, that gives people
+ some comfort of mind.
+ But two, it reminds you of who's serving whom.
+ And it leads to this culture that pervades
+ everything else we do.
+ And as a result, it meant that we
+ made sure we knew what was happening
+ with our funds regularly.
+ So it was not possible for us to be insolvent.
+ It made us prioritize providing simple, clean features
+ for users.
+ It just permeated-- just like the way being an owner
+ of Bitcoin permeates your soul and affects
+ your culture and mindset, having that sort of discipline
+ on a monthly basis did the same thing for us.
+ So by the end, by four or five years in, you start having a--
+ I wouldn't say a distaste, but you
+ are uncomfortable with offering users highly complex things
+ that put them at risk in other ways.
+ And those highly complex things are also
+ the sort of things that tend to blow up during fast market
+ moves and so on.
+ So we would avoid that.
+ We never had-- we would take great pains
+ because our offering was simpler and we were only Bitcoin-only
+ as well.
+ We were able to focus on making sort of security
+ was really good.
+ So we never were hacked in our entire period.
+ We never had issues with downtime
+ when other exchanges would fail.
+ We kept ticking.
+ But more to the point, it became clear
+ that many other exchanges had a misalignment of incentives.
+ Their incentive was to keep people on the exchange
+ as long as possible, to get them to spend money
+ on speculative things as much as possible, which didn't
+ feel to me that they were providing a service that
+ met the needs of their customers.
+ So that was one of the big reasons
+ why I wanted to leave the exchange space
+ and find a way of getting people off exchanges as quickly
+ as possible.
+ All right, well, that leads us into Fediment, right?
+ So can you talk a little bit about--
+ you've been stressing for a long time
+ the importance of self-custody.
+ But I think-- and we sort of talked
+ about this in our pre-interview call--
+ that for mass adoption, some people
+ don't want to have the responsibility
+ or can't have the responsibility of just becoming their own bank.
+ And they do want to introduce a little bit of trust.
+ So can you talk a little bit about the origins of Fediment,
+ what it is, and help people understand
+ the idea of these federations?
+ Yeah, so most people--
+ first of all, just to be clear, I
+ think we're both on the same page
+ that if you have the financial means--
+ and hopefully that's getting lower each day,
+ but the financial means--
+ the technical acumen, again, hopefully
+ that's getting lower each day.
+ And just the guts, because we've been taught
+ to not to be afraid of taking responsibility for our money.
+ But if you have all those three, then you
+ should definitely self-custody.
+ It's the-- I would say it's the gold standard,
+ the Bitcoin standard is the best you can do.
+ Although it is important to be aware that most people do not
+ self-custody safely, because your 24-word seed is also
+ your wallet.
+ And if you're storing it in a bank,
+ then you're not got first-party custody,
+ because you've just given it to a regulated third party,
+ for example.
+ Or if you're giving it to friends, again,
+ then that's second-party custody.
+ But if you can do first-party custody correctly,
+ then it's great.
+ However, for most people, they have two choices,
+ because that's really 5%, maybe 10% of the world
+ can get to that.
+ And when you're thinking globally, 90% to 95% can't.
+ And they're in two buckets.
+ You've got some of the poorest people
+ in the world who literally can't even get an account on an
+ exchange.
+ One, because they're regulated exchanges,
+ they may not be able to give them accounts.
+ And two, even if they're able to give them accounts,
+ they're commercial institutions.
+ And therefore, there needs to be a certain amount of revenue
+ they can make to justify that person being a customer.
+ And for billions of people on the planet,
+ they just won't make enough--
+ they won't represent enough revenue
+ to be worthwhile as a customer.
+ So they're excluded, because they're just not
+ profitable enough.
+ So there's billions who literally cannot get into
+ Bitcoin for cost reasons, effectively, worldwide.
+ And then there are a whole set of people
+ who have money on a regulated exchange.
+ And as I said, there are a few well-run regulated exchanges.
+ But there are many, many, as we've seen, unfortunately,
+ recently, where I would not feel comfortable recommending
+ any one hold.
+ And having a viable option to not be on an exchange
+ is something that we need to have.
+ So along comes FEDI and FEDIMINT.
+ FEDIMINT is a different paradigm for custody,
+ whereas you have first-party custody, where you're--
+ I would call it do-it-yourself custody.
+ You do it all yourself.
+ You figure it all out with education and so on,
+ versus third-party regulated custody,
+ which is another way of putting it-- stranger custody,
+ where you're giving your money to a stranger who's
+ incentivized to earn money, and you're giving them your money.
+ And the risk is, like in some recent cases,
+ people might do something like steal your money
+ or gamble with your money and take--
+ and so on and so forth in their quest to earn money,
+ as opposed to doing what they're supposed to do,
+ which is just look after your money.
+ So then you have this middle ground, just community custody,
+ where it's-- think of it as the idea where
+ first-party custody is not your keys, not your coins.
+ This is not our keys, not our coins.
+ So the community is coming together
+ to elect some of the most trusted elements
+ of their community to custody the Bitcoin
+ on behalf of the community.
+ And that is the high-level idea behind FEDIMINT.
+ So talk to me a little bit about the process of starting
+ something like this and really gaining the customer
+ base and the awareness, because I think for so many people,
+ even if they were introduced to Bitcoin,
+ especially in the last two years since the pandemic,
+ I think that was kind of an explosion of education
+ because of the value proposition with all the money printing
+ and the number go up.
+ But really, in terms of educating people on custody
+ and on the risks and fallbacks of some of these exchanges,
+ how do you build a company like this?
+ Yeah, that's a very interesting question.
+ I think that's probably--
+ we have quite a--
+ I like to think we have a quite unique approach.
+ There are some other companies in the space that
+ are doing similar things, and we're learning from them.
+ But we're really focusing on this.
+ And I think it's the reason why we raised our round so quickly
+ in, I think, six days or something over a bank holiday
+ weekend.
+ So I would split it into three chunks, where
+ we focus one third, one third, one third.
+ So coding, coaching, collaboration.
+ So on the coding side, it's FedE Mint.
+ It's this open source protocol that we're supporting.
+ And many others are supporting as well, not just us.
+ Blockstream and Spiral, so Blockfree Spiral,
+ and many others.
+ We're talking to Bitcoin miners and so on,
+ who also want to support that.
+ And then FedE, which is going to be this incredibly simple
+ lightning wallet, which works directly and interfaces
+ directly with FedE Mint and Federation,
+ so you can just use it seamlessly.
+ So that's the coding side.
+ But that's just one third of the business.
+ One third is on coaching.
+ So we plan to create almost this network of guardians,
+ or the guardians are the people who
+ are responsible for looking after a given Federation's
+ Bitcoin around the world.
+ And we'll provide this support network of FedE Knights,
+ as it were, who effectively are there
+ on the ground in local countries to educate, run workshops,
+ answer questions locally.
+ And obviously, there'll be a hierarchy above them.
+ Some of the best might become considered FedE masters,
+ as it were, who can support these regions of the world.
+ So think about certain large organizations,
+ like Avon or Amway or so on, who have
+ these very large structures of educational structures, which
+ can support people around globally
+ in multiple languages.
+ But that's the organization that can be relatively small.
+ We want to be able to do that, because that's
+ really important.
+ We believe that it's not just about the artificial
+ intelligence of the software, but we also
+ need to upgrade the human intelligence of the users.
+ Because no matter what the software is,
+ sometimes we try to come up with these overly technical solutions
+ to dealing with concerns or issues,
+ when the best solution is just to educate people
+ to protect themselves from scams,
+ to make sure they manage their money correctly.
+ Maybe they should monitor the Federation
+ if the balances are too much on a given Federation.
+ Split your funds across multiple federations is good.
+ Maybe you shouldn't have all your money in one place.
+ All these are sound money management things,
+ which anybody should learn.
+ But we're going to educate people
+ about that and about Bitcoin.
+ Also, if your personal balances on a FedEmin Federation
+ are above a certain size, then hey,
+ maybe you're now at a level where
+ you should self-custody, because you
+ have enough to make sense.
+ And that's-- our objective is to turn people
+ into better Bitcoiners all the way through.
+ And the final thing is collaboration.
+ It's not about all FedE, but we're going to partner.
+ There are some incredible companies out there.
+ You've got BitRefill doing incredible things,
+ Paxful, Zebedee, FountainFM, Stackwork,
+ where people can earn $2, $3 an hour
+ and immediately generate money and increase the--
+ and in the global South, that's a ton of money.
+ And the list goes on.
+ And instead of trying to compete with these,
+ we will partner and collaborate with them
+ and educate our users about them so they
+ know that they can custody and immediately say, well,
+ now we're going to show you how you can start earning money now
+ that you've custodied immediately.
+ And we're also going to show you how
+ you can convert it into the local currency
+ using this other service so that you
+ can have it in your pocket.
+ So we give them an all-around education
+ to solve actual problems they have,
+ as opposed to give them Bitcoin or give them a wallet.
+ We're going to give them a way to remit at a lower cost,
+ cutting out Western Union, or to earn money
+ and to better their life with their family and friends.
+ Wow.
+ That's incredible.
+ So just from a practical standpoint,
+ I have a certain amount of Satoshis.
+ I give them to you or to this federation.
+ How does that work?
+ Who has-- it's multi-sig, right, still?
+ It's multiple keys?
+ Yeah, so first of all, you don't give it to us.
+ We're building software.
+ And we're making that software available as open source.
+ But a group can take that software.
+ Let's say that I was contacted by a group of people
+ who represent a village in South Africa the other day,
+ for example.
+ And they've already tried--
+ they're trying to set up something
+ like a Bitcoin beach-like idea, but in South Africa.
+ And their challenge is that the current systems,
+ alternatives are just too technical for them.
+ And FedEmints are designed to be really, really simple
+ to set up.
+ So as long as you are someone who
+ cares about your community, that's
+ your only qualification to be able to be a FedEmint guardian.
+ And being able to turn on a computer and click run,
+ that's pretty much it.
+ That's where we're aiming for.
+ So they've seen this, and they want to set it up.
+ And they're perfect.
+ Group of people to be guardians, they've
+ got a track record of prioritizing social capital
+ over financial capital.
+ So they download the FedEmint software.
+ It will be available eventually on Umbrell, on Noddle,
+ on Start9, on RaspiBless as well.
+ So really easy just to click.
+ It's really easy just to click.
+ and get going. Let's say five of them form a federation or other guardians of a federation.
+ They all download the software, they put in the addresses of all the other five,
+ and then the FedEmint software locates the other five and forms a federation automatically.
+ They just sit back, have a cup of coffee, a cup of chai, whatever it is, or tea in my case,
+ and when they come back, Bitcoin knows of synced and a federation set up, and they will all see
+ a QR code, which is effectively the address of the federation. They now can download a FedEmint
+ aware wallet. To begin with, it will only be FedE, but we really hope other people create
+ FedEmint aware wallets. You download FedE, for example, and you scan the QR code, and that's it,
+ you have joined the federation. There's no passports, there's no date of birth, that's it,
+ and also no 24-word backup. You've just done it. That's the whole process. Scan the QR code,
+ and you're there. So now anybody who joins is part of that federation. Those five guardians
+ are together managing any Bitcoin sent to or from that federation. You need a majority of
+ them to work together. So if one of them, or even two of them, for some reason, went from a lifetime
+ of being honest and helpful to the community to switch, it wouldn't be enough because you need
+ a majority of them to all of a sudden turn to Mr. Hyde from Dr. Jackal overnight.
+ Well, so forgive me for some of the... I'm much less technical. So how can you,
+ within the federation, how do you know what coins belong to who?
+ I mean, how does the custody aspect actually work?
+ Well, for someone non-technical, that was a very, very super interesting question,
+ and that's one of the things. There are no accounts in... Because normally with other exchanges,
+ and this is exciting to cryptographers, actually, and this is where,
+ you might have heard it, it uses this concept called "Chowmium Mints,"
+ and it's this privacy-preserving protocol. And that's the way you can identify who owns what
+ without actually having accounts for Natalie, Obi, and Eric, et cetera. So the analogy is,
+ instead of saying, "Here's your account, and this is the balance in your account,"
+ you would say, "I'm the bank," just taking this privacy protocol, ignoring the federation-type
+ stuff to begin with. "I'm a bank, and I've got a kiosk window, a cashier's desk. Behind me is the
+ safe, and I can also write you IOUs. I've got a notepad, and I can just write IOU $10, $5, $1."
+ So you give me, I don't know, $20 notes, and I give you a note saying $5, $5, and then I give
+ you $10, $1 notes that say $1, and I give them to you. You can now take those. As long as you
+ and other parties trust those notes, you can use them to replace that $20. It's like an IOU for
+ the money. And at a later stage, you can come back, give me some of the remaining IOUs that
+ you haven't spent or the ones you've acquired, and I can check, and it's got my handwriting and my
+ signature at the bottom. I can accept them from you, and I can destroy them. I shred them, and I
+ give you the equivalent amount in cash because I knew that I was the one who wrote it.
+ Isn't that the way banks, in theory, should work, but instead we have fractional reserve banking
+ where they're giving out the IOUs without having the reserves?
+ Exactly. That's how it should work. And by the way, it is possible, by the way, for the person
+ giving out the IOUs to actually give out IOUs for money it doesn't have. That's possible. That's a
+ risk if there's one person, by the way, and we'll come on to that. So what in 1983, David Chalm,
+ and he's one of the people that Satoshi referenced in the white paper, came up with this form of
+ cryptography, and it's very simple cryptography called blinded signatures, and it's nearly 40
+ years old. Next year it's going to be 40 years old. So it's very, very mature, battle-tested,
+ and relatively simple. It's not trying to do this fancy zero-knowledge proof stuff. It's very
+ simple. And what it allows you to do is effectively sign something without knowing what it is that
+ you sign. So you can sign but blindly, you know, effectively, hence the name. And what that can do
+ in the context of this minting scenario, this cashier scenario, is it's effectively the same as
+ you painting over the screen with black paint so that you don't know who you're dealing with.
+ So then someone can give in some cash, you don't know who it is because it's blind,
+ and then you return and sign back a token for that person and they can go off and spend it.
+ Now, they can spend it, they can give it to someone else, they can do whatever they want,
+ and then they can return it back to you, or someone else can return it back to you.
+ Now, just the simple addition of the blinding of the cashier window means that you now have
+ perfect privacy because you have no idea who's giving you the money, you have no idea who's
+ returning it to you. And you don't have any accounts for people, it's just money in and
+ money out. But people know how much they have, and they have the notes. So they don't need you
+ to know how much each person has, they just need to give you the IOUs act like a bearer instrument,
+ as long as you trust them. Now, the downside is you go up into it was invented in 1983.
+ But it had two problems. One, it the money that you put in in the first place was cash. And cash
+ is, you know, cash can only be owned by one person at a time. You cannot have multiple people
+ owning the same pound note or dollar note until 2009, when Bitcoin is invented, because with
+ multi-sig, multiple people can now own the same amount of money. And the other the other problem
+ was, there's one bank and that one bank, you could become dishonest until Liquid and Bitcoin and
+ Blockstream invented this or invented but popularized this idea called federations. And
+ that allows you to take one process that normally one person performs and split it up amongst
+ multiple people. And it can only progress if a majority of them perform a task. And that was the
+ missing piece. After that, a number of cryptographers came together in hackers Congress
+ in Prague, a few years ago and thought, well, we can take this amazing idea for cryptography
+ called Xiaomi and Mint that's been around for 40 years. Combine it with Bitcoin for the money
+ instead of say the US dollar for the money, because the first money that multiple people can own,
+ and then use federations. So instead of one cashier, you had multiple cashiers working in
+ concerts. So even if one becomes dishonest, the others can keep them honest. And we could
+ effectively create this federated Xiaomi and Mint, i.e. FediMint. FediMint is the mashup of that.
+ And so we decentralized this incredible privacy tech. And that's where it started. And that's
+ that was the base. That's the base technology for the first time that we've created.
+ Wow, that is fascinating. I can really understand why you had such an easy time getting investors,
+ including Jeff Booth's company, right? EgoDeath Capital and some of these other great investors.
+ So just to start to wrap up here, in terms of what you mentioned about getting Bitcoin into
+ the hands of billions who still don't have access to it, can you kind of crystallize how Fedi helps
+ with that? So FediMint is this base protocol that provides incredible privacy for the community of
+ users that are using it. And it's a very, very simple system to set up and run, etc. But it is
+ like Bitcoin, the core protocol, the Lightning core protocol is supposed to be running on a machine in
+ the background, just sitting there like a set-top box, you forget about it. But that's not the user
+ interface that people use. And so the Fedi app is designed to be like a Lightning wallet is for
+ Lightning network or a Bitcoin wallet for the Bitcoin network. It provides this user-friendly,
+ really, really simple interface for using that. But it's so much more than that, because it also
+ provides us a say with through collaboration, it provides a window into the Bitcoin ecosystem,
+ showing people in a very easy, highly integrated format, a number of the services that are
+ available, and they're already there, but people don't necessarily know about. So if we integrate
+ it into the app, people can with a click of a button be using any one of these other services
+ and gaining benefit from that. And then finally, Fedi is the organization, isn't just the app,
+ but it's this whole approach to education. So we can make the app really easy to use, which we will,
+ we can bake in education into the app. And we can bake in these collaborations. But we believe that
+ for systems like this to really gain mass adoption and get to the point of hyper-baconization,
+ we have to educate people on the ground, in person, on how to use this at massive scale.
+ And that's the other part of what we do. Well, to go back to something we mentioned earlier,
+ Web3 being that buzzword, and people really do, they get behind it thinking that this is going to
+ create that decentralized future of, say, social media and take back some of the power. What do
+ you want people to know? What is your take on this movement and all these people saying,
+ "I want to help create Web3"? So, I mean, unfortunately, Web3 has sort of been hijacked
+ as a term. But I think the desire to take power away from highly centralized internet companies
+ and bring it back into the hands of users is laudable, and we should try to do that.
+ And we're trying to do it with Feddy giving communities back the power to be their own bank,
+ as it were. But the funny thing is, we're going to see, and which is why I'm very convinced that
+ Bitcoin wins in 2023, we're going to see a number of companies in the Bitcoin space
+ come out with incredible technologies, not just Feddy, which will actually allow people to do this
+ but to do it properly, not in this rushed first to market, but ill thought out, ill considered
+ non scalable way, but in highly scalable, easy to use, incredibly powerful, privacy preserving ways.
+ It's just a matter of crazy happenstance that they're all coming out in around the same time.
+ But I'm incredibly excited about it. And Bitcoin is the base layer, with Lightning as the second
+ layer, you're going to see this plethora of really interesting third layer solutions,
+ and Feddy and FeddyMint are just one of them. Do you still go back to Nigeria? And can you
+ offer any perspective in terms of adoption of Bitcoin there? Because I understand that it's
+ one of the countries where a Bitcoin is most needed, but also adoption is growing faster
+ than in other places. Yeah, so I go back to I travel around the global south a lot.
+ In Africa, I go to Nigeria now and again, the last time was a year ago. But this year,
+ I'll be going to Ghana for Afro Bitcoin 2022. And I'll also be going to Kenya for a set of
+ workshops and maybe others to be decided. But in terms of adoption, but I also have a lot of
+ friends and family in Nigeria. And yes, the adoption levels are crazy. Outside of the sort of
+ the bubble of the West, the really exciting things are happening in the global south.
+ And it's also bottom up, there isn't necessarily this
+ structured process to try and force it happening. I was talking
+ to the guys from Paxful and they're one of the organizations that does quite a lot to
+ try and educate people on the ground in these different areas.
+ And whereas in Latin America they put in a lot of effort to grow, they then came to West
+ Africa and they said it was all organic.
+ They just came there and it just exploded itself.
+ You have to understand almost every Nigerian from about three years old is a businessman
+ or woman.
+ They're hustling.
+ So when they see an opportunity to earn money or to improve their life or so on, they'll
+ naturally think about how they can turn it into a business.
+ They're the ultimate sort of capitalists.
+ And so it's no wonder that the level of adoption is growing exponentially.
+ You've talked about on both this show and other interviews that I saw just this idea
+ of you want to be part of a change in terms of righting some of the injustice that exists.
+ Can you talk a little bit about how Bitcoin actually addresses that?
+ Well, as I said, Bitcoin is the world's first meritocratic money.
+ And I want to be clear, I don't think it logically can get to a point where everybody has exactly
+ the same equal outcome.
+ And I don't even think that's necessarily desirable.
+ But I do think that you want to...
+ Structural roadblocks that prevent people from just being able to achieve their best
+ are just not good for the person and they're not good for the world.
+ And one of the biggest structural roadblocks is money, especially the challenge of being
+ far away from the money spigot is a big injustice.
+ And that's globally.
+ And for many years, Western Europe was sort of protected to some degree from that.
+ But now, even in that case, it's like we're seeing the euro falling underneath the value
+ of the US dollar.
+ And if things continue like this, the British pound will soon follow because the US is becoming
+ more insular and focused on making sure it's protecting itself, not just itself, not itself
+ and allies anymore.
+ So they're starting to see the effect that the rest of the world who weren't so close
+ to the money spigot have experienced for the last 50 plus years.
+ Just after I was born, not just after a few years, because I could remember it, I can't
+ remember when I was like one year old, but three or four years old, I remember that one,
+ I still remember to say one naira was worth more than one US dollar.
+ Now one US dollar is worth five, 600 naira.
+ That's in a period of a few decades.
+ And this is when you're far away from the money spigot, because you're in a developing
+ country.
+ And on a global level is incredibly unfair.
+ And this way you solve that is to have the world reserve currency separated from any
+ country that you don't want to have this tripping dilemma where for one country where it owns
+ the world reserve currency, and it has to deal with its own local, its own national
+ economic and financial considerations.
+ You separate the two and you go back to having a money, which has been the norm on the gold
+ standard for many, many, many decades and centuries that is not owned by anyone.
+ But fit the purpose of modern times.
+ And that's what Bitcoin is.
+ The repercussions of that will take many decades to play out.
+ But I think if I can help towards that making happen, I will absolutely do everything I
+ can.
+ Well, you mentioned 2023 starts the time when Bitcoin wins.
+ So how confident are you that Bitcoin will succeed and will be able to overcome the obstacles
+ of say countries coming out against it or trying to ban it or trying to ban mining?
+ I mean, are you like all in on Bitcoin or are you still, you know, it's a portion of
+ your portfolio and yet you recognize some major risks in the long term?
+ I am, I don't call myself a Bitcoin maximalist, I call myself a Bitcoin rationalist.
+ So I am rationally all in on Bitcoin because if it just logically when I go through, I
+ cannot see any other, including fiat that I'd want to hold in any significant quantity.
+ So I am fiat poor, definitely.
+ I maintain the minimum amount I need to maintain to just cover my costs.
+ I do have a salary, so that allows me to support that.
+ But anything that's spare is dollar cost averaged into Bitcoin.
+ Now that I think speaks, speaks loudly towards my conviction that Bitcoin can deal with just
+ from a rational point of view, all of the concerns or risks that people may have.
+ There are two areas that concern me for a while.
+ One and these are two questions that keep being thrown at Bitcoin.
+ One is that Bitcoin mining wastes energy.
+ And the other one is that Bitcoin is not useful for anything other than gambling and selling
+ drugs or so on.
+ Both of them, I believe, and many people in the space and industry believe are incorrect.
+ And we've believed that for a while.
+ But I did believe that many laymen and laywomen didn't understand this.
+ But a number of initiatives that are happening right now are set to debunk those and prove
+ those to be wrong.
+ And I'm fortunate enough to be part of two.
+ So on one hand, on the Bitcoin doesn't have value.
+ Well, this is the biggest question.
+ Because if you and when you show that Bitcoin does have value beyond these two things, categorically,
+ then you actually resolve many other issues or questions.
+ FedE does that.
+ By the end of next year, we aim to have one, two or three places that are hyper Bitcoinized.
+ And the way we define hyper Bitcoinization is just to have a measuring stick is 51% of
+ the people in a given city or country or region using Bitcoin every day.
+ And that's not holding it or trading it, but using it to buy, sell and so on.
+ That's our stretch goal.
+ Our main milestone is super Bitcoinization, which we define 21% using it every week within
+ a given region, which will still be pretty good.
+ But our stretch goal is 51%.
+ The way I like to think about it is we 51% attacked that city or that country effectively.
+ So we will make that happen.
+ And we will make it happen in the next 18 months.
+ At that point, and because we're focusing on the global south, where you're taking people
+ from zero to one, or maybe from one to two, that's in the global, although everybody can
+ use it anywhere in the global north, you're going from 100 to 101.
+ It has far more of an impact.
+ And therefore, when we combine that with our visits across the EU parliaments and Washington,
+ DC, which we also plan to do throughout next year, we will just point instead of trying
+ to explain it, we'll say here's a ticket.
+ There's a country go there.
+ Bitcoin is beautiful.
+ El Salvador is beautiful.
+ Wherever it is, we do this.
+ And just see it for yourself.
+ Don't discuss it for yourself.
+ We won't, you can talk to anybody you want, and then come back and understand that Bitcoin
+ is value.
+ And on the other side, Bitcoin waste energy.
+ I have recently completed the investment in a Bitcoin mining company in East Africa, which
+ is specifically I wanted to invest in a company using 100% renewables using hydro.
+ But as well as that, it's using the renewables in rural East Africa to help electrify rural
+ East Africa by helping dozens of aspiring energy entrepreneurs who are making these
+ energy production plants that the national grid is no interest in servicing because in
+ the middle of, you know, the middle of rural Africa.
+ But they're allowing to electrify villages and townships and so on.
+ They can normally not get loans for this because it's a very risky investment.
+ Banks want to invest, but they have no way to know whether these organizations will actually
+ the villagers will actually pay back the money because of the quantity, leaving them to continue
+ to light their houses and heat their homes using paraffin and kerosene, which are incredibly
+ noxious and by the way, bad for the environment.
+ It's clean hydro based electricity.
+ So along comes a Bitcoin mining organization that we're investing in called Gridless.
+ And what they do is they act like an anchor tenant for these mining companies in the same
+ way if you go into small town America or small town Europe and a shopping mall wants to set
+ up to bring new, to revitalize a town.
+ They have an anchor tenant like a UCI cinemas or a Walmart or so on.
+ And that effectively guarantees that they can fund 30, 40% of their costs and that allows
+ a bank to lend them and to take the risk on the other 30, 50, 60%.
+ Because we have some of the best Bitcoin miners in the world, friends of mine from Texas who
+ have been mining since 2010, who are going to work with these guys to make sure they
+ operate to the best possible standard.
+ They're coming in from Texas, yee-haw, we're going to build some mining rigs over here.
+ They're coming over and they're going to make sure that these operations are operated to
+ the highest level because Bitcoin is trying to make sure we're not trying to just make
+ money, we're trying to make Bitcoin into money here.
+ And so they're going to work with us, make sure we operate to the highest levels of governance
+ with the highest social impact using 100% renewable energy.
+ So I'd really like to see the ESG arguments against that.
+ And then we will show that Bitcoin is useful and it doesn't waste energy and it actually
+ spends, it pays for energy wherever that energy is, even if it's in the middle of the jungle
+ where no one else is willing to pay for it.
+ Wow, that is amazing.
+ It's just, it's so awesome to talk to you.
+ I'm getting more and more bullish.
+ Sometimes it gets a little bit hard in this bear market to keep up the spirits, but thank
+ you so, so much, Obi.
+ Anything you want to leave the viewers, the listeners with, especially during this time
+ where on a macroeconomic level, things are so volatile, so choppy, we're basically waiting
+ on bated breath for what a couple people, central bankers are going to say and do.
+ What do you want to leave people with?
+ I think that focus on building, focus on building and focus on building.
+ That's what you should do.
+ I am incredibly bullish for Bitcoin.
+ It's times like this that Bitcoin really shows what it is.
+ It's the lowest thing, but it's the most powerful thing.
+ It's this cockroach currency, mold money.
+ It can deal with the most difficult situation, but it keeps on ticking and keeps on growing
+ and it can survive everything and it will change the world.
+ Wow, I don't think I've ever heard that, cockroach money.
+ I love that.
+ Obi, thank you so much.
+ No worries.
+ Thank you.
+ Thanks so much for listening to this episode of Coin Stories.
+ I'd love to connect with you if you have questions or guest requests, so feel free
+ to get in touch on Twitter @NatBrunel or Instagram @NatalieBrunel.
+ Take care until next time.
+ (upbeat music)

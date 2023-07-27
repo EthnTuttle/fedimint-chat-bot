@@ -1,0 +1,1226 @@
+ Welcome back to Bitcoin Builders.
+ This is the show about Bitcoin's entrepreneurial renaissance, and today we have an exemplary
+ model of exactly that.
+ Obi Nwasu is the CEO of FETI.
+ FETI is a new protocol for federated community custody and usage of Bitcoin.
+ It is a scaling solution, but it's more than that as well.
+ It's a new way to think about how Bitcoin is used among communities of trust that could
+ scale Bitcoin to its next billion users.
+ This is an amazing conversation about where FETI came from and what it's trying to do,
+ and I know you're going to enjoy it.
+ Bitcoin Builders is brought to you by InWolf's Clothing.
+ Wolf is the first startup accelerator dedicated entirely to Bitcoin and lightning startups.
+ Check them out at wolfnyc.com.
+ It's Saturday, May 27th.
+ This is Bitcoin Builders.
+ Let's go.
+ All right, Obi, welcome to Bitcoin Builders.
+ How are you doing, sir?
+ I'm very good.
+ Thank you for having me.
+ Yeah, no, I'm super excited to have this conversation.
+ I think there's a lot of great stuff to talk about.
+ But for those who aren't familiar with you, tell me a little bit about yourself and maybe
+ how you came to Bitcoin.
+ So my name is Obi Nwasu.
+ I am the CEO and co-founder of FETI, which exists to accelerate adoption of Bitcoin, of
+ lightning, of Fetimint, and all of the Bitcoin and lightning and Fetimint ecosystem that's
+ going to be built on top of Fetimint and on top of lightning, to the point where we aim
+ to have hundreds of millions and billions of users getting into Bitcoin and lightning
+ and Fetimint over the coming years.
+ But prior to that, I was born in the UK, conceived in Nigeria.
+ I call myself an Anglo-Jurian.
+ And I grew up in inner city, central London.
+ I had an instant interest in computers and AI.
+ So I was building neural networks in secondary school, studied computer science and cognitive
+ science in University College London, and then went on to the first part of my adult
+ career was in various dotcoms and in the UK and European sector.
+ But some of them went on to be incredibly successful.
+ Dotcom one, dotcom two, I was involved in building 30 million user, massive multiplayer
+ virtual worlds and all this other stuff.
+ And then I came to Bitcoin and I first got into Bitcoin in 2011.
+ A number of people sent me the white paper saying that this was right up your street.
+ You're a geek, Obi, so you'll love the tech, but also you're into the fact that the world
+ was not meritocratic.
+ It didn't surface to best people.
+ And you always go on about that.
+ And you've got this world's first meritocratic money, which so you would find this very interesting.
+ And I did.
+ Two years later, I set up the UK's longest, went on to become the UK's longest running
+ Bitcoin exchange with my co-founders.
+ Started in 2013, sold in 2021.
+ And a big part of the sale was my concern that we were heading into this world where
+ people were either a select few, either going to self custody because they had the financial,
+ technical and philosophical strength to be able to do it.
+ And then the remaining 90, 95% were going to have their money held in one or two highly
+ centralized third party custodians like exchanges.
+ And I didn't think that was a good end state to be in where, you know, three or four companies
+ were holding billions of users accounts and having full oversight and control of them,
+ which is far worse than any country that exists today and a few sovereign individuals.
+ So we needed a way of getting people off exchanges.
+ And I started looking for that.
+ That led me to finding my co-founders who are incredible people and we formed the FediMint
+ Protocol.
+ And a few months after that, we formed Fedi.
+ Amazing.
+ Tons to dig into.
+ You know, I particularly want to put a pin in and come back to this massive space between
+ full sort of self-sovereign, self-custody ideals on the one end of the spectrum and
+ leaving it with Coinbase on the other.
+ But first, let's talk a little bit about, I guess, the FediMint Protocol and then the
+ specific implementation or Fedi, which you're building on top of it.
+ So what is FediMint?
+ So FediMint, we have our new range of t-shirt here, which shows the, this is it, this is
+ the initial sort of the main loop that effectively that FediMint goes through.
+ And actually, I think it shows in code quite clearly.
+ It's this federated application server or another way to think about it at high level
+ is this community custody protocol.
+ It allows you to set up what we call federations, which are systems set to support a group of
+ people, whether there's a family, a company, a community, or any organization.
+ So it allows us to set these federations up.
+ They are run by a subset of the community, a trusted subset, we call them guardians.
+ And then these, and what they do is they are effectively running this software the same
+ way they run a Bitcoin node, once it's set up and run, their main job is to not touch
+ it and keep it fed and watered with electricity and internet.
+ So they are just guarding the box and not touching the box.
+ Now beyond custody, it can also provide a number of, three other main pieces of functionality.
+ One it provides privacy and scalability using this incredible protocol called Chameleon
+ eCash and the benefits of that.
+ It provides layer free scaling beyond lightning and beyond Bitcoin, but also increased privacy.
+ And two, the platform can be extended with any other functionality you may want as well.
+ So it has extensibility.
+ You might consider this smart contracting and so on, but it's far more powerful than
+ what you would normally consider from a smart contract.
+ And this is all run on behalf of a community.
+ And when I say community, that can be a village, it can be a town, it can be a church group,
+ or it could be a large family, or it could be a company or any other organization of
+ grouping of people.
+ So you're effectively allowing people and to set up a federation can take minutes to
+ make their own scaling layer for the purposes of their own community for Bitcoin and lightning.
+ And they can scale it functionally, scale it in terms of privacy and scale it in terms
+ of transaction throughput.
+ So the end result is that we see a future where there's hundreds of thousands of these
+ federations, think of them as cities.
+ And within those cities, you'll be able to do complex functionality and store both money
+ and data.
+ So you can do transactions with your money and with your data, you can scale without
+ taking up bandwidth on a Bitcoin and lightning network.
+ And then all of these cities will be seamlessly connected with the lightning network.
+ So you think the lightning network is your motorway network connecting these cities together.
+ And people obviously will have, there'll be spur roads connecting to people's own private
+ roads and their own private mansion.
+ These will be the self custodian, people are self custodian, you have the resources to
+ be able to self custody, even in a future where, again, at scale, when you think of
+ billions of users, it will be a future where on chain transaction fees.
+ And even if those are on chain transactions are for channel rebalancing on the lightning
+ network could be quite high.
+ It may be 10s if not hundreds of dollars per transaction.
+ And at that future, it makes sense to have these ways of effectively grouping up many,
+ many hundreds of thousands of transactions and users together.
+ So those on chain costs can be amortized across them.
+ And that allows you to scale to billions of users.
+ So within these communities, within these federations, these aren't necessarily just
+ communities of hodlers, right, where it's a custody solution.
+ These are also people who are transacting with each other.
+ And that's sort of where that scalability comes from, is that within that federation,
+ they can transact before it sort of resolves, you know, back to the to the main chain.
+ Exactly.
+ Within communities, they can transact with each other, with both money and data, they
+ can share information with each other.
+ So for example, there can be multiple viewers or ways to interface with a community.
+ We have as a company, Feddy Alpha, which is an app which allows you to view this in the
+ same way as the internet can have multiple web browsers that can view it.
+ And there's Chrome and Safari and so on.
+ We are the first viewer of an organizer of the federations that a user is connected to
+ with Feddy Alpha.
+ But within that, we have obviously a wallet which allows you to see your balances, i.e.
+ gold or Bitcoin and transfer it from one person to another.
+ If they're outside of the network, it will seamlessly make that a Lightning transaction.
+ But if it's internal, it will still look like a Lightning transaction.
+ But behind the scenes, it will be an E-cash transaction, which won't take up any bandwidth
+ on the Lightning network.
+ And in theory, you could do as you would find most transactions people do are within their
+ own community.
+ If you think about it, accommodation, transport, food, consumables, these are local payments
+ for most people.
+ They don't ship in their consumables every month from the other side of the world.
+ They get them locally.
+ So this 80% plus, I would guess, of payments could happen within a federation without any
+ load on the Lightning network or the Bitcoin network.
+ And when you need to buy something, for example, buying something from Amazon or online or
+ Netflix or whatever it may be, that is a remote payment that would seamlessly go out.
+ over the Lightning Network, and there'll still be a second or so
+ and cost you a fraction of a penny.
+ But it's not just money, it's also data.
+ So within, for example, the federations that Feddy suggests people install
+ include a chat service within them,
+ so that people can communicate within the federation,
+ not with being sure that they're not being viewed
+ by some central organization in the offices of Signal or WhatsApp
+ or Telegram or WeChat.
+ In the federation, communications with other people within that same federation
+ are hosted by the federation as well.
+ You could run your own NOSTA node, for example,
+ or even a federated NOSTA node within your own federation,
+ so that any costs for storage and caching of data
+ for the purposes of using, for example, social media communication
+ would be amortized across the federation and be much lower cost
+ because you're not running your own NOSTA node, it's shared between you.
+ That could also be a revenue source for the community
+ because then you could provide it to third parties.
+ And if you're charging a fee, that would accrue to the federation,
+ which could be released as a benefit to consumers.
+ So it's money and data.
+ If we're going to this decentralized world,
+ that is a world of decentralized servers running different processes,
+ whether it's data with IPFS,
+ whether it's store and forwarding discovery with NOSTA,
+ whether it's chat with Matrix or XMPP,
+ or whether it's money with Bitcoin Lightning and FedEmit.
+ All of that can be run in a federated manner
+ without a single point of trust within a federation.
+ It almost seems like where the genesis of this was,
+ or at least the genesis of wanting to leave the exchange
+ and think about this set of problems,
+ was this question of custody
+ and how to get more people into a custody mode.
+ But it seems like the end result of the explorations that that started
+ was much more of a zooming out to a future
+ that was actually enabled for decentralization
+ rather than just theoretically interested in decentralization.
+ That is an incredibly good and accurate insight.
+ So what happened is you have two or three different forces
+ or different ones.
+ So you had Justin, who's really interested in community
+ and a return to community values and so on,
+ and this is something he'd been looking for.
+ And then you had Eric,
+ who was very interested in this incredible protocol,
+ Charmy and Ekesh.
+ And it's been around, this year will be his 40th anniversary,
+ but it had a weakness which required a single point of trust.
+ And then you had me, who was looking at ways
+ of how can I get people off exchanges,
+ having tried for many, many, many years
+ so that they weren't custodying with,
+ I call it stranger custody versus do-it-yourself custody.
+ We needed getting away from stranger custody
+ because I always like to say,
+ if you give your money to a curly-haired guy in the Bahamas,
+ it may not end well.
+ And so we had these different interests
+ and through this fortuitous connecting,
+ we realized that this Fediment protocol,
+ which Eric invented,
+ and it used this idea of federations,
+ which was popularized by Blockstream.
+ And Blockstream were one of the first
+ to see the potential of Fediment, in fact,
+ and they were the first to sort of sponsor
+ the open-source protocol,
+ I think well over a year before I became aware of it
+ and support Eric's work on this.
+ He created this as a solution to the problem
+ of how do I federate the Xiaomi and Mint
+ so that there's no single point of trust.
+ But when I saw it, that solution implicitly
+ also had a custom,
+ allowed you to federate custody as well,
+ but still provide a user experience,
+ which could potentially,
+ the product didn't exist in terms of UX,
+ but I could envision it potentially
+ could be incredibly simple.
+ And then it became clear that who would you,
+ who would be the best sort of sets
+ to be able to actually act as guardians and for whom?
+ And it made sense that within communities,
+ whether those be companies or organizations or villages,
+ that that made most sense.
+ And then they had their existing mechanisms
+ to identify the most trusted elements.
+ Within a company, it's likely, hopefully,
+ the C-level suite, for example,
+ or the finance department.
+ If you can't trust them in money,
+ then you've got bigger problems, for example.
+ With a community, for example,
+ then it might be the diaspora,
+ people who regularly send money home to their family,
+ large parts of their paycheck,
+ are probably good people to custody the money
+ 'cause they're the ones sending the money
+ in the first place, for example.
+ But they all will have existing mechanisms
+ to identify those,
+ as opposed to giving it a stranger
+ who's incentivized by money to custody your money.
+ There's a different second-party federated trust model.
+ But once you realize that what he built
+ was this general engine to take any service
+ and function that would be better
+ if there was no single point of trust
+ and run it in this federated manner,
+ you realize this is like a federated operating system.
+ As you say, an operating system handles custody of data,
+ some sort of file manager,
+ and then an execution environment
+ to execute apps that use that data.
+ This is what FedEmin can do,
+ but in a federated manner
+ where there is no single point of trust.
+ Whereas if I run it on my phone or my desktop
+ or on the internet,
+ there is always a single point of trust and control,
+ but it can do the same thing,
+ but for the subset,
+ and that's a large subset of things
+ that you want to run without a single point of trust.
+ If you're running Grand Theft Auto or Pac-Man,
+ you probably don't care about it
+ running in a federated manner.
+ If it fails, you just restart the game.
+ But for money, for passwords,
+ what should I store it with LastPass,
+ or should I store it amongst my community, for example,
+ and have my community help me recover?
+ Or for certain sensitive data,
+ you know, certain information that you,
+ some things, you know,
+ general pictures that you screenshotted off the internet
+ and so on, it could be stored anywhere.
+ But pictures of loved ones,
+ maybe I want that stored in a federated manner
+ because I want to, if one machine failed,
+ I still want to be able to recover it, et cetera, et cetera.
+ - You know, it's interesting.
+ When you kind of take a step back
+ and abstract it away from Bitcoin
+ or any specific one specific use case,
+ you almost are left with this just filling in
+ what becomes or sort of appears to be
+ a pretty obvious gap, right?
+ So if you look at human kind of models
+ that exist in the world across different domains,
+ you have a market mechanism, right?
+ You trust a third party to do something for you
+ because you're giving them money
+ and it's in their incentive to not screw up
+ whatever it is they're promising
+ because they want you to keep giving them money
+ and other people like you to keep giving them money.
+ So that's one model.
+ Another model is you just trust yourself,
+ but there's this sort of whole massive space in between
+ that sort of falls along the actual kind of majority
+ of how humans organize themselves,
+ which is into groups based on kinship, affiliation,
+ affinity, interest, activity.
+ And so I think mapping some of these activities
+ onto that existing modality of human organization
+ on an intuitive level just makes sense,
+ almost in a way that you kind of can't believe
+ that it doesn't exist yet until you start digging into it.
+ - Again, it's an incredibly succinct,
+ you have a propensity, I say,
+ why, I have some sort of propensity,
+ why use one word when a hundred will do
+ and you're the other way around.
+ (laughing)
+ And he goes, I could simplify,
+ but I just don't have the time to do that.
+ But I think that's it.
+ There is this market mechanism
+ and that makes sense for a large set
+ of very important use cases.
+ Then there is this idea, self-sufficiency,
+ and that makes sense for certain use cases.
+ But one of humanity's superpowers
+ is to be able to form complex groups and societies.
+ And if you look in the animal kingdom,
+ really humans, termites and bees
+ are the only, literally the only things that can do this.
+ But we have the other added benefit
+ of some reasonable level of intelligence
+ over ants and termites, I believe.
+ And also we have the ability
+ to have fine grain control over the world
+ with opposable thumbs and so on.
+ So we can manipulate the world to a fine degree.
+ I mean, ants basically can have to manipulate
+ the entire world with their mouth.
+ And we can also think at quite level,
+ quite high degrees of intelligence about the world.
+ Plus we have this ability to form very complex society.
+ And so what we like to say is that
+ FEDI as an organization wants to combine
+ the most fundamental human technology.
+ And that's the technology of community.
+ We see it as a technology.
+ And then combine that with empowering
+ and freedom technologies like Bitcoin,
+ like Lightning, like Fediman,
+ and all of the other Bitcoin and Lightning ecosystems
+ that's out there and beyond,
+ the decentralized ecosystem,
+ whether that be, as I say, Nostar and so on,
+ and brings them together to level up humanity.
+ And if you see every system that's grown,
+ it always has this structure where
+ there is another scenario where if you have shared interests,
+ it makes sense to organize because it's win-win.
+ It's like, you know, Nash equilibrium.
+ It's the win-win scenario where
+ there is sometimes beneficial to be part of a group
+ because it benefits you while benefiting others.
+ We see it in, we don't have everybody,
+ if you put it into a physical context,
+ everybody in the world doesn't have their own private road.
+ the world would be all road.
+ So you form into cities and connected by major roads.
+ And that's how we scale to billions.
+ If you look at the internet, we have IP version four.
+ We've discussed other standards which could extend,
+ but it's works, it's reliable, it's consistent.
+ It's been around for a long time.
+ And we then use these,
+ we then take a few of these IP addresses
+ because there's not enough IP addresses
+ for every computer or system in the world by far.
+ We're way, all of them actually below.
+ But what we can do is we can take a few of those addresses
+ and we can give them to an organization
+ or an individual or a company or a community.
+ And then they can create a number of virtual addresses
+ for their community.
+ And then they have this network address translation,
+ a NAT to convert between the public address on the internet
+ and the addresses allocated to their community,
+ whether it's a hosting provider, a company or so on.
+ So in that context, you can think of Fed,
+ again, that's the equivalent within a community,
+ that's your city.
+ And then IP is, IPv4 is the way you send information
+ from city to city or company to company
+ or hosting provider to hosting provider.
+ So again, we've scaled this system
+ that's reliable, consistent,
+ but it has its limitations
+ to support billions of IP addresses.
+ And it's a very similar equivalent in both cases
+ to federations being the equivalent
+ of the hosting providers
+ and network address translation,
+ allowing you to access this.
+ And IPv4 is the lightning network
+ connecting these communities together.
+ You can have your own,
+ if you want the infrastructure and setup and the cost,
+ you can have your own direct static IPs
+ directly on IPv4 addresses.
+ But most people don't need that
+ and are comfortable having a provider.
+ And if they're worried about the risk,
+ they connect to multiple providers.
+ They connect to the internet through their home
+ and their mobile phone
+ and potentially from a wifi network as well
+ when they go into an office, et cetera.
+ And in combination,
+ that gives them that access and redundancy.
+ And it's the same when you use something like Feddy,
+ you can connect to multiple federations
+ and you can choose, pick and choose what money
+ and what data and what parts of your digital life
+ you use on each.
+ You get this one combined view in one place.
+ - So there are tons of different types of communities
+ as you've articulated.
+ When you guys think about where you think early use case
+ or sort of the most important use case for this is,
+ what types of communities are you imagining
+ or maybe even what types of communities
+ were you designing for with in mind?
+ - So when we started,
+ the idea was we should just build this technology
+ for communities.
+ I was looking at getting people off exchanges
+ into their own existing communities
+ and different people had different ideas of that.
+ Then last year I was invited after,
+ and I talk a bit with Miami
+ and Eric also did the talk, it's quite funny.
+ It was with Eric and Casey.
+ And we were explaining in this future
+ when on-chain fees are really high,
+ you're gonna need this.
+ And then Casey, and he was telling us
+ about this sort of art project he was working on
+ where he wants to enumerate every Satoshi on the internet.
+ We're like, it's interesting,
+ but we're focused on Feddy Mint.
+ A year later, he's provided us a sort of a sneak peek
+ into a future of high fees.
+ - Yeah, right.
+ - Which is quite interesting.
+ But I was then invited by Alex Gleistin
+ to speak at Oslo Freedom Forum.
+ And we're going again to speak again in a few weeks time.
+ And there was the first time I went
+ and I met some of the most inspiring people I've ever met.
+ And it's changed my life.
+ They were human rights defenders, activists,
+ people who were running NGOs
+ or responsible for giving aid into many parts of the world.
+ More often than not in the global South,
+ but all of them, a part of the world
+ which are under the yoke of authority regimes
+ and dictatorships.
+ If you take the part of the world
+ that doesn't have some form of democracy,
+ that's the majority of the world that doesn't have that.
+ If you also take the part of the world
+ that's in the global South,
+ that's also the majority of humans in the world.
+ And if you combine those two groups together,
+ you're talking about 70, 75% of the world.
+ We in the West,
+ with some sort of whatever you call it,
+ functioning democracy,
+ who are not on the bottom half in terms of wealth,
+ we are the edge case of the edge case here.
+ And these people, they're not Bitcoiners,
+ they're definitely not crypto,
+ they're just people who are effectively
+ the ultimate guardians of their communities.
+ That's what I realized.
+ They, some of them have gone to prison for years
+ for supporting their communities
+ or being tortured or had family and friends murdered.
+ And very often at the show,
+ and it's quite a common thing apparently,
+ they will talk about people
+ who the last year were speaking
+ and this year are now dead
+ because they continued through bravery to support.
+ So these people raise millions,
+ some cases billions for these communities
+ and they sacrifice and they focus their life for them.
+ So yes, in theory,
+ when I have philosophical discussions
+ about they could run off with the money,
+ yes, maybe, but on a list of spectrum,
+ I prefer if I'm a member of their community,
+ they've been devoting themselves
+ and also ASP a quorum of them have all of a sudden
+ change the behavior of a lifestyle, lifetime.
+ I would much prefer as a member of the community
+ they were supporting to be having them as my guardians
+ as opposed to a stranger.
+ And that was something that hit me
+ and also realized that the challenges
+ that they were facing could not be serviced,
+ especially the scale they wanted to deal with,
+ with any other solution other than FediMint.
+ You could not in many of these regions
+ give people individual hardware wallets.
+ You might send a thousand hardware wallets
+ and 10 might make it to the actual destination.
+ And also then you'll have to secure it.
+ You'll have to find ways where people
+ who may not even be able to read or so on
+ can easily recover their keys
+ in the event that they lost their information.
+ And there are many other problems
+ which if you are sophisticated enough
+ and you have the financial means to do it,
+ you should definitely do it.
+ But realistically, these guys or girls
+ were not going to be able to do it.
+ So having realized that and having realized
+ that FediMint was a missing piece,
+ Lightning was key, Bitcoin was key,
+ other systems of organization, for example,
+ decentralized conversation and chat and discovery
+ were key to this.
+ And having realized that FediMint was a missing piece,
+ I came back from Oslo, a changed person.
+ I talked to Justin and Eric
+ who went on to become my co-founders.
+ We were already working together,
+ saw this as a great technology,
+ but for me, I'd run an exchange in the UK,
+ a successful exchange,
+ and I'd been in Bitcoin since 2011.
+ I didn't need to work
+ and I was going to take a three-year break,
+ you know, just chill for a bit.
+ And I realized, okay, for three or four months,
+ that's enough, I've got to go back in
+ because this has to be done.
+ It was very clear.
+ I talked to the guys and I'm thankful to this day
+ that they weren't there.
+ They didn't go through this cathartic point.
+ They did sometime later,
+ having met up with these brave men and women,
+ but they trusted, they could see the fervor,
+ they could see, and they knew that the technology
+ was a great technology, so we decided
+ we needed a commercial vehicle to accelerate this
+ and make this happen.
+ So they were the first community
+ that we really could see an incredible fit.
+ It's for everybody, everywhere,
+ and we've had interest from corporates and so on,
+ but this was the thing that really galvanized us
+ and made us decide we're going to, you know,
+ hit the ground running and build a company.
+ And that was less than 12 months ago,
+ and 12 months later, we've raised 21.21 million
+ from incredible investors who share the mission and vision.
+ We've had amazing support from the Bitcoin community,
+ amazing support from people supporting the FedEmit protocol,
+ and we're not going to stop until billions of people
+ are using Bitcoin and Lightning
+ and other freedom-preserving systems.
+ - Amazing.
+ I could take us on a unbelievably long detour into this.
+ I started my career thinking I was going to do
+ post-conflict reconciliation.
+ - Oh my God.
+ - In the Middle East and East Africa, so.
+ - Oh my days.
+ - So one of the, I guess, validating things
+ is one of the experiences that I had
+ that really took a lot for me to learn and understand
+ and just come to recognize something was,
+ so I was in Northern Uganda,
+ and this was like 2006, 2007, 2008.
+ So the Lord's Resistance Army was starting to peter off.
+ You remember the, there's that big movement in the US,
+ which I'm blanking on the name of now,
+ but like the Joseph Kony organization
+ and all this sort of stuff that they were,
+ like, there's a lot of discussion around, you know,
+ genocide and all these sort of things
+ happening in the US at that time.
+ And so I was in Northern Uganda
+ that had been most affected by the Lord's Resistance Army.
+ And this group, this LRA group had been abducting kids
+ and turning them into child soldiers
+ for like 10 or 20 years at that point.
+ And the way that reintegration happened was,
+ there was a traditional ceremony called Mato Oput,
+ which was, it meant drinking the bitter herb.
+ And it was a traditional ceremony that had been used
+ totally different things but had been retrofitted by this group of northern Ugandans for
+ for the sake of reintegrating people basically who had escaped or who had been captured from
+ the Lords of Citizens Army. And it was so hard for me to understand how, through this
+ one ceremony, this community could just forgive these people who had committed such atrocities.
+ And it really took just like sitting and listening and sitting and listening and sitting and
+ listening. And what it came down to was, this was a model of reconciliation that came from
+ this community. That was, they had figured out how to connect something from their past
+ that was tradition to a new and important use case for community forgiveness. And one
+ of the challenges of international aid is often that people who think that they are
+ coming in to make a difference or do good still impose a set of values or presumptions
+ upon people, even with good intentions. And this was a way that this community was reasserting
+ power in a traditional way. And it didn't matter that to an outsider who had a different
+ sense of justice, it was hard for me to imagine. What mattered is that it was natively from
+ the community. And the reason that I was thinking about it as you were talking is that all over
+ the world, and it's not just villages who have gone through conflict that have these
+ sort of norms and mores and stuff, communities have developed their own ways of dealing with
+ things, their own power structures, their own sense of how trust flows. And it's not
+ that it's perfect, they're constantly in flux and dynamic, but they exist. And so layering
+ a technology that is designed to plug into whatever that set of community norms and trust
+ norms is, it makes a very intuitive sense to me. Again, hearkening back to that.
+ It's exactly that. I have been asked by people I know who are, let's say, in the altcoin
+ space, like, what's the governance model? And I go, well, the governance model is whatever
+ each community decides. I mean, people have ways of making decisions. They didn't just
+ sit there making no decisions until we came along. And it's likely for different social
+ reasons and structural reasons that if you go to 1000 different communities, companies,
+ organizations, they're going to have 1000 different ways, sometimes nuanced, different,
+ sometimes drastically different ways of running that work for them. And for us to come in
+ and say, well, we've got this one size fits all governance model for the entire, every
+ community everywhere is, there's a level of arrogance there, which is sort of, well, I
+ think it's pretty extreme. And so what we do is we are taking community and understanding
+ as a technology, a very powerful technology that's led to the modern world in great part.
+ So has capitalism, so is self-reliance, but these are all key parts. And we're just taking
+ what you do and turbocharging it. So we like to say we empower communities everywhere.
+ So we just allow you to put nitrous on what you already do by providing these tools. But
+ it is there, for example, in many parts of the world, there are community savings and
+ loan systems, there's Saco in Kenya, there's, there's many, it's very common, especially,
+ again, in parts of the world where you have no banking options, that they're, but they're
+ so minimal, or so expensive, they're not economically viable for you to access. So that's the have
+ no banking options, for example, or parts of the world where you have actually pretty
+ good banking options, but you can't trust them. So if you're living under an authoritarian
+ regime, and because of the travel rule, if you receive money from an aid agency, that's
+ opposing the state, they will have to say the source of funds, it goes to your bank
+ account. For example, in Belarus is an example of that great banking there, you get arrested,
+ or you get tortured or imprisoned because you've received money from a source that the
+ government doesn't like. And surprise, surprise, the government has a direct hotline with all
+ the banking institutions, the independent banking institutions. So that's another part
+ of the world where you cannot trust your banking options, even if they're good. These are parts
+ of the world that equal the majority of the world, either you don't have good bank options,
+ or you cannot trust the bank options you have to a greater or lesser extent. In those scenarios,
+ people need to find an alternative way. They weren't Bitcoiners, they weren't thinking
+ about money, they're thinking about helping their community, because a stronger community
+ is better for everybody, including themselves, because they understand there's an aligned
+ interest of a stronger, powerful community. And they come to Bitcoin, after trying other
+ things. Some of these people are sending in cash, bags of cash, and because of bribes
+ and so on the way, 60% of it doesn't make it to target. Some of it, you know, as an
+ alternative. So if there are ways where Bitcoin is an asset that, for example, people are,
+ if you're savvy, and in the local market, you will understand its long term performance,
+ and its greater ability in the global to be used to buy goods or services in a global
+ context. So you, there's always a significant subset of people in pretty much every market
+ and country worldwide, who's willing to accept Bitcoin in exchange for local currency, which
+ doesn't have those properties. So if you can give someone Bitcoin, they only need to find
+ one or two of those other people. And there's a ready market of people who take the Bitcoin
+ that you've received from friends, family, from aid agencies, and convert it into local
+ currency. So it gives you access to this, this, this global resource, which also has
+ the added benefit of being the most regulatory clear by country mile of any other assets.
+ And it has all these properties, it has built in support for multi signature support, most
+ signature custody, which is a very powerful concept. Up until the invention of Bitcoin,
+ it was not possible for multiple people to own an asset at the same time, it just wasn't
+ possible. You could both all be holding on to it at the same time, and because then argue
+ that we're all owning it, but that's not very practical. And so that's enabled that possibility
+ again, which allows you to decentralize and federate trust even further. So it's an incredible
+ asset combined with communities needs in these parts of the world. It's a match made in heaven.
+ And we built technology to allow that to to be as simple as possible.
+ On the theme of the technology, I wanted to ask you a little bit more about the approach
+ that you guys take to social recovery. So bringing this sort of, you know, this community
+ trust layer to custody of assets. And I think the context that we should have in mind as
+ we're as we're having this discussion is, obviously, the last two weeks have seen the
+ Bitcoin and crypto world more broadly have a lot of discussions of social recovery mechanisms
+ of the space between custodial and non custodial, the sort of ledger introduced their own sort
+ of ledger recover program, which, you know, if we if we take them at face value, sort
+ of the intention was to create space between full self custody and, and sort of, you know,
+ fully custodial options for a new set of people, but it had not gone over well, you know, probably
+ having to do with not just the model, but how it did or didn't sort of interact with
+ what their sort of brand promises has been before. But I would love to hear more about
+ about your sort of approach to social recovery and how you guys think about it. And then
+ maybe we can expand it out to the broader context.
+ Yeah, no, I mean, it kind of it didn't escape our attention as well, or my attention. But
+ so you've got first party custody, and let's do it yourself. If you can do that, it's the
+ best. And if you are going to do that, it does make sense. I mean, there are limitations
+ to hardware wallets as well that can be pointed out. But for most people, just from a pragmatic
+ point of view, self custody through hardware wallets, is if you're going to do it, you
+ should do it that way. You then have third party custody, where you're literally giving
+ everything to one stranger, whether it's an organization or an individual, and hoping
+ that they give it back to you later. What we have in the middle is this form of federated,
+ i.e. multiple, multiple people, second party custody, community, company, the company that
+ you're part of that is organizational custody. Now, one of the you still have access to a
+ certain amount of capital in that context. And that's stored on your phone, or your device
+ in the form of e cash is like eBTC versus lightning BTC, for example. And you still
+ want to deal with the issue of what happens if I lose my phone, my phone gets wiped, etc.
+ How can I recover these? Now, you can back it up using a seed, a 12 word seed, and that
+ option is there. And that's the normal option. But then the challenges were where do I store
+ my 12 word seed. And if I'm in a depending on where I am, I may be in a part of the world
+ where my house is not particularly secure, I can't just stick it underneath in my safe,
+ you know, it doesn't give me guarantees, or I cannot afford sticking in bank vaults or
+ having those options. So how do I secure it? The idea then is you need some way of backing
+ it up and storing with different people. Well, you need to find people that you can trust
+ that are reliable, that you can contact 24 seven to help you recover that and ideally,
+ you will know you already. So therefore, you don't have to give them any KYC information
+ because they've seen better than KYC, they have KYF know your friend know your family,
+ they've just known you over a period of time. So they know who you are, you know, they just
+ and even if they're not friends or family, they're part of the same community, they just
+ from their lived in experience.
+ There's the KYF happened over time.
+ Now, when you think about that
+ and the extensibility of federations,
+ why not have the Federation Guardians
+ do that for you automatically?
+ And again, it's not the Federation Guardians,
+ it's the Federation Guardians,
+ FedEvent servers are doing it for you.
+ They're just guarding the machines
+ and this is in the main handled automatically.
+ So even if they're not around,
+ they will still be able to recover
+ as long as the machines are online and connected.
+ And so one of the first FedEvent modules,
+ this is modules are,
+ think of them as application or apps,
+ ways to extend the functionality of the FedEvent.
+ You extend your mobile phone with mobile apps,
+ websites with web apps,
+ and or websites and computers with,
+ desktop computers with applications
+ with FedEvent modules.
+ So the first module that we as FedEvent, sorry,
+ added was the social backup module.
+ And this is an, again, it's an optional service,
+ but what it allows a user to do is to click a button,
+ take their private key,
+ encrypt it within their phone,
+ shard it, break it up into chunks.
+ Let's say there are seven guardians, seven chunks,
+ and then give the seven chunks to each one of those guardians
+ but encrypted.
+ So even if they put them together,
+ they wouldn't be able to reconstruct it
+ without it being sent back to the user.
+ On top of that, we provide a way of proving
+ that the user who sent the tag in the first place
+ is the same as the user who's recovering it
+ without revealing any additional information
+ to the guardians.
+ The way we do that is we ask the user to make
+ a three second video where they say the word FedE.
+ They just say the word FedE and that's it.
+ That video is then hashed.
+ And the hash of that video,
+ which is basically we take a fingerprint of that video
+ and that fingerprint of that video is then used to tag,
+ so a hashtag against each one of the shards and that shared.
+ So the guardians still have no way of reconstructing it
+ because it's encrypted and have no way of knowing
+ who it's for because they only have a hash to identify it.
+ So you know it belongs to whoever's video
+ matches this hash, but they don't know who it is.
+ You as the user are left with the video,
+ which is your proof that you're the one
+ who recorded this in the first place.
+ And the encryption key that was used to encrypt.
+ That's put together in a file called backup.fede.
+ And then we encourage you to save that file
+ in multiple places because the security requirements
+ are a lot lower.
+ It doesn't actually contain the password.
+ It's just the video to show that you access the password
+ and the decryption key.
+ So you can share it with yourself on WhatsApp or on a Slack,
+ or you can send it an email to yourself,
+ or you can send it to a few friends,
+ as long as it's not the guardians who you know who they are.
+ It can be anyone else,
+ the other 8 billion people on the planet,
+ just not the guardians.
+ Now, when you come to recover,
+ you will find one of those backups that you've made
+ and you'll click on it.
+ Oh, you rejoin the federation, which takes seconds.
+ Scanning a QR code is all it takes to join a federation
+ because you don't need an email.
+ You don't need phone number to join a federation.
+ So it's quicker to sign up to a federation
+ than to even sign up to WhatsApp or so on
+ because no person has the information that's needed.
+ You then click to recover
+ and you open one of these backups
+ that you've stored in multiple places.
+ It then opens up, it extracts the image
+ and extracts the password,
+ and then asks you to contact, in this case,
+ five of the seven guardians
+ and get them to scan a QR code that it presents on screen.
+ You go up to each one, let's say,
+ and you can do it over a video call
+ or you can do it in person.
+ If you're worried about AI and so on,
+ you should do it in person, obviously,
+ because then that's hard for AI, again.
+ So it's AI proof as well, and deep fake proof,
+ if you choose to only allow recovery in person,
+ until we have Androids that are as good as humans.
+ - Yeah.
+ - So you then walk up to the person,
+ they scan the QR code.
+ Only at that point upon scanning
+ is that one guardian sent just the video
+ where you're saying Fede.
+ Now, you are in front of them as well.
+ So you're not giving any information more
+ than they already see by literally talking to you
+ and seeing you,
+ because you're not saying your name, age,
+ date of birth or anything.
+ You're just showing your visage,
+ which they see because you're literally talking to them.
+ And they're hearing you say one word,
+ which they hear because you're talking to them as well.
+ And they compare that video against you.
+ And if it's you, and likely,
+ if they're part of the community,
+ they recognize you anyway,
+ then they will click OK,
+ and they will then send that one shard to you.
+ They will only be able to find the shard
+ because of the video,
+ because they will hash it,
+ and then they will finally be able to locate the shard
+ that relates to you and send it back to you.
+ You do that with the other five,
+ and half an hour later,
+ you have got enough shards needed
+ to recover your private keys.
+ Now, the entire process for backup takes 20 seconds.
+ And the recovery process is however long it takes you
+ to get, let's say it's four guardians,
+ three of the four to scan a QR code.
+ And for them to click, it's you.
+ But you've just done,
+ if you look at something,
+ there's various guides on best practice backup of 12 words.
+ We've just done the best practice backup process
+ of sharding it, encrypting it,
+ sharing with trusted people,
+ and ensuring that the trusted parties
+ constantly check their backup regularly.
+ That's the other thing.
+ Many people take their backup 12 words,
+ give it to a friend, one friend, not multiple.
+ But then that friend may not be in the regular habit
+ of every month checking their backup still available
+ and not being eaten by the dog
+ or waterlogged or lost or so, you know,
+ so that when in four, five, 10 years time
+ they need to recover it, they can't find it.
+ Again, because this is running
+ on the machines of the guardians,
+ the FedEmint software is just constantly just checking
+ these files that haven't been corrupted.
+ And if they have, you can be alerted the day that happens
+ and make a new backup,
+ not when you actually need it sometime down the line.
+ - How have people responded to this approach
+ as you've sort of, you know,
+ started to get this out there
+ and actually, you know, see the community's reaction?
+ - The response has been incredibly positive
+ because even before this situation
+ has been very, very positive
+ because people realize,
+ especially in these parts of the world
+ that we're dealing with,
+ that the backup problem is very difficult.
+ Also, it made people realize that even now
+ when they have first party custody,
+ they are actually very often still keeping their backups
+ in a second party or third party manner
+ and often not federated,
+ i.e. they're giving it all to one person.
+ And they say, yeah, but it's my wife.
+ So I trust them because, well, i.e.
+ part of your community.
+ You know, you've then just stated
+ that you trust your community then.
+ And which is, so it helps them realize
+ they are implicitly doing second party custody inherently.
+ But there's this mental sort of separation
+ between one type of second party
+ versus another type of second party.
+ But really what they're separating is
+ the examples they tend to give are untrusted second parties.
+ And the examples that they say are different
+ are trusted second parties,
+ which is why you only store with trusted second parties.
+ If you don't feel comfortable,
+ then you don't store in the federation.
+ And that's a really interesting segue
+ as to how the trust is a feature, not a bug.
+ Post this announcement, again,
+ we've had comments where people see
+ the significant difference.
+ There is no KYC.
+ There's no stranger that you're giving
+ and company and organization who has no interest in you
+ that you're giving the details to.
+ But instead you're giving it by your own choice
+ to parties that you know already.
+ And again, they don't get anything
+ until you wish to recover.
+ If you just to back up, you give nothing at all.
+ Whereas again, here you preemptively give information.
+ That's KYC information.
+ Here, you only on the point of recovering,
+ give them an image of yourself
+ while you're standing in front of them,
+ which is an image of yourself.
+ So you never give more information.
+ They walk away not knowing your name,
+ your date of birth, where you're from, your age,
+ other than from seeing you in person.
+ And also as a side effect, we realized,
+ again, there were questions around
+ what about defects and so on.
+ Well, this approach, again,
+ using your community as a technology
+ means that you could, if you want to,
+ meet in person to recover
+ and have that as a requirement
+ that all recoveries are in person.
+ Again, that's not scalable for a company
+ to have offices in every single town and city in the world.
+ But for community custody, it's incredibly scalable
+ because each time you add a community,
+ you have guardians related to it
+ who are available within that same community.
+ So it is actually feasible to walk up in person
+ and therefore be deepfake proof as well.
+ And I guess the final point is
+ we're not stating a certain security guarantee
+ that's implicit by hardware offline wallets
+ and then switching to something else.
+ You're already trusting these guardians
+ with the fundamental asset backing,
+ backing the e-cash in the system anyway.
+ So you're not changing the security guarantees
+ by offering the system
+ because you're asking the people
+ who are costing your Bitcoin
+ to help back up the way to recover your Bitcoin
+ versus your self custody, no one is in control.
+ And now you're offering a backup
+ to a different level of privacy and security.
+ - Yeah, no, I mean, it's super interesting.
+ the second party sort of trusted,
+ existing trusted community model
+ makes a lot more sense for a social recovery
+ than trying to graph that onto the third party relationship.
+ You know, because people kind of,
+ I think correctly understand that it's,
+ you sort of get into the same area
+ that you'd be with non-self custody anyways,
+ or, you know, custodial options.
+ So, okay, you guys just raised a bunch of money.
+ What is next for Fetty?
+ - A lot.
+ We looked back on the last year,
+ and we have done quite a lot in that period of time.
+ We've got an incredible team.
+ We have launched the first version of Fetty.
+ We've done trials in multiple countries
+ in two different continents behind the scenes
+ for federations and so on,
+ and got incredible feedback from that.
+ We tried to go to the hardest environments
+ and learn from there,
+ and just go very humbly in and learn.
+ So even in the last six months,
+ we made massive change to the product
+ based on the initial feedback.
+ And we've already received a torrent of feedback
+ from the launch of Fetty,
+ and that will improve Fetty,
+ and we'll relay some of that
+ to the FettyMint protocol developers as well,
+ so they can improve FettyMint.
+ So the next thing we have is over the next few months,
+ we, I'm gonna turn into Steve Ballmer
+ and be like developers, developers, developers,
+ 'cause we're a platform,
+ and what was Microsoft DOS without Word and spreadsheets,
+ and what was Mac without desktop publishing,
+ or even Xbox without Halo?
+ You need apps to be built on top of these platforms
+ for them to really be powerful
+ and suit the myriad demands of different communities
+ and companies around the world.
+ So we're working with accelerators,
+ we're with hackathons,
+ we're doing something with Bolt.fun,
+ we did something with Bitcoin++,
+ both inside the Bitcoin ecosystem and outside.
+ And when I say outside, I don't necessarily mean crypto,
+ I mean web2,
+ because you can build FettyMint modules,
+ which are built with Rust,
+ and they can extend the functionality of FettyMint,
+ and they can be completely powerful.
+ That whole social backup functionality I mentioned
+ was a FettyMint module, for example.
+ It's just, so it just shows you
+ how expressive these functionalities can be.
+ But you can also do FettyMods, which are effectively,
+ there's three stages of FettyMods.
+ Stage one are WebLN sites.
+ So WebLN-enabled websites can be integrated seamlessly
+ with, to experientially within Fetty.
+ Later on, stage two is you can take those WebLN sites,
+ and if you wish, and you don't want to handle the hosting,
+ you can package them up
+ and they could be run within a federation.
+ So a federation can do the hosting
+ and run it for the federation.
+ And then stage three is you can take those FettyMods
+ and other lower level FettyMint modules
+ can surface up a user interface, an API,
+ which these can access again.
+ So you get to a world where anyone
+ with the ability to build JavaScript web apps
+ can build FettyMods.
+ And if you look at it right now,
+ there are less than a thousand people,
+ just 950-odd, who are building open source on Bitcoin
+ based on numbers I was in Miami
+ for the various Bitcoin events.
+ There was a study on.
+ If you take the whole of the crypto web-free world,
+ there is about 20,000.
+ Well, how many people are building JavaScript web apps?
+ It's millions and millions.
+ So we want to take all of that energy
+ that is interested in developing here,
+ but doesn't want to learn a new esoteric programming language
+ and take 100% of their skill,
+ 90% of their code base,
+ and two or three hours of conversion training.
+ And they can be building for the benefit of Bitcoin lightning,
+ the Bitcoin ecosystem,
+ and all of the people and communities
+ that we're trying to support.
+ So we want to see hundreds of projects,
+ thousands of people developing,
+ but directly Weberland-enabled websites to begin with
+ and FettyMods later on.
+ And then the subset of who can go deeper
+ can build FettyMint modules that can do more advanced stuff.
+ So that's what we're going to do for the next few months.
+ And that's in advance of a full launch,
+ public launch to users later on near the end of the year,
+ where we will then have something
+ that had several months of feedback
+ from around the ecosystem, from builders everywhere.
+ Also, we'll have a really strong suite of FettyMint modules
+ and mods that can meet the myriad requirements,
+ whether it's interfacing with your accounting system
+ or whether it's adding community savings
+ or whatever you need,
+ or federating NOSTA, whatever you may need.
+ So we can therefore, a community coming and pick,
+ just like when I've got an app or a mobile phone or a computer,
+ I pick the applications and apps that make sense for my computer,
+ the same for a community.
+ And then we are going to be growing a big, big part,
+ I'll finish on this, of what we do is on the human side.
+ So on the ground, the only proven way of rolling out,
+ especially in the global South
+ and in some of these more difficult regimes,
+ is having people on the ground.
+ We are looking to hire hundreds of,
+ we call it the FedEye order, of FedEye masters, FedEye knights,
+ and FedEye ambassadors to locate, educate,
+ and inculcate communities around the world.
+ We start with the masters, there's one per region.
+ We'll have more to report on this,
+ but things are going very well.
+ And then they will bring on board the knights
+ who bring on board the ambassadors.
+ The end aim is to have hundreds by the end of,
+ actually by the end of next year,
+ and many hundreds by the end of 2026.
+ And these effectively can be on the ground,
+ identifying communities, supporting communities.
+ They're like a decentralized genius bar,
+ app store genius bar for the Bitcoin community.
+ Because federations and fediment are like an operating system,
+ and just like an operating system,
+ they can't do anything without the machine it runs on,
+ without the internet it connects to,
+ and without apps running on it.
+ The machine it runs on, we need Bitcoin nodes,
+ we need people like Umbrella and Startline,
+ and that has to be help,
+ you have to help communities with that.
+ It needs access to the lightning network,
+ so we have to decide, do you use
+ one of the myriad different providers,
+ Voltage, Bolt's Reserver, Zebedee, Breeze, so on.
+ We would work with communities to connect these
+ in the way that makes sense for them.
+ And then you understand what their requirements are
+ and say, okay, you need on and off ramping.
+ Maybe you're in Nigeria, you can use Bitnob.
+ You're in Guatemala, you can use IBEX,
+ maybe Neutron Pay, et cetera.
+ Or you need community savings,
+ well, there's a module that can do that for you and so on.
+ And we can help make them aware of all this stuff
+ that's out there.
+ But they all see it on one app,
+ and it's one clear, clean,
+ and because of things, protocols,
+ WebLN and LNURL auth,
+ and the fact that we have a built-in web browser
+ within these systems,
+ it provides this cohesive, simple experience
+ that brings together all of these aspects
+ of the Bitcoin ecosystem in one place.
+ So that's why we say we win
+ by ensuring the entire Bitcoin ecosystem wins.
+ - Love it, man.
+ This is great stuff.
+ I think it just makes so much sense.
+ Where can people keep track of the project
+ if they're interested?
+ - FedE, to keep track of that,
+ go to fede.xyz, very simple.
+ And for FedE Mint, which is the protocol behind it,
+ if you're a hardcore engineer
+ and you want to work on that
+ or build FedE Mint modules,
+ that's fede.org.
+ And for myself personally on Twitter,
+ I'm @Obi on Twitter.
+ I'm also @Obi.
+ You can find me on Nostra as well.
+ That's it.
+ Just keep track, get involved,
+ whether you're a community,
+ whether you're a builder,
+ we would love to talk to you.
+ - Appreciate you taking this all about it, man.
+ - Thank you, matey.
+ - All right, guys, back to NLW here
+ for just a super quick wrap up.
+ I said this during our conversation,
+ but it really does feel like what FedE's tapping into
+ is an incredibly normal and obvious mode of human existence
+ that happens day in and day out in the world today,
+ but which hasn't been mapped
+ onto this domain of money quite yet,
+ or at least not the domain of digital money.
+ People operate not just individually
+ and not just with third-party services
+ that provide them tools and resources for money,
+ but in the context of communities and groups.
+ Humans are social animals,
+ and we organize our lives
+ around the different groups we participate in,
+ whether it's teams or our families or our friend groups
+ or our work or our school.
+ When you view the world through that lens,
+ the question becomes why isn't digital money programmed
+ for that type of experience?
+ It's obviously too early to know
+ whether the exact approach that FedE's taking
+ is the right fit for those groups,
+ or even exactly what those groups' money needs are.
+ But in a world where everything is up for grabs
+ in terms of how we organize ourselves
+ and what the structures of the societies of the future
+ are going to be,
+ and how much we wanna trust the big institutions
+ that have been the pillars of society in the past,
+ experimenting along these lines
+ seems really, really valuable to me.
+ I wanna say thanks again, Obi, to coming on the show,
+ and thanks to the whole FedE team
+ for their work in these great experiments.
+ Of course, I also wanna thank my sponsor,
+ In Wolf's Clothing, Wolf,
+ the first startup accelerator for Bitcoin and Lightning.
+ And finally, I wanna thank you guys, the listeners.
+ I hope you are having a great Memorial Day weekend,
+ and until next time, let's build.
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ [ Silence ]

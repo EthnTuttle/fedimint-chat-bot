@@ -1,0 +1,1709 @@
+ (upbeat music)
+ - Hello, I'm Seth for Privacy,
+ and welcome to season three, episode one of Opt Out.
+ Opt Out's a show where I sit down with passionate people
+ to learn why privacy matters to them,
+ the tools and techniques they've found and leveraged,
+ and where we encourage and inspire others
+ towards personal privacy and data sovereignty.
+ In season three, we're gonna be taking a deeper dive
+ into cryptocurrencies like Bitcoin and Monero,
+ why we need them, where they can fit in your toolkit,
+ and how to think about privacy when using them.
+ This episode, I'm very excited to be sitting down
+ with Eric Sirian and Matt O'Dell to chat about Fediments,
+ a fascinating and really unusual new proposal
+ that seeks to ease onboarding and privacy on Bitcoin
+ with some important trade-offs.
+ Welcome on Opt Out, Eric and Matt.
+ - Hey, nice to be on.
+ - Thanks for having us, Seth.
+ Big fan of the pod, glad to finally be on it.
+ - For round two, you've been on before, Matt.
+ - Oh yeah, that's true.
+ (laughing)
+ It's been a minute.
+ Yeah, my staff has only been a listener so far,
+ so really happy to finally speak to you.
+ - Yeah, yeah, I'm glad to have you on as well.
+ I think we hadn't crossed paths until really
+ only a few months ago on Twitter,
+ but have really been a fan of what you've been building
+ with Fediments and your openness and honesty
+ with trade-offs and just the things that,
+ the approaches that are being taken within Fediment
+ are obviously very different.
+ So I'm thankful that you've been open to criticism
+ and just have, I think, taken a very good approach with it.
+ So I'm excited to jump into Fediments
+ for this first episode of Opt Out in season three.
+ And obviously they've been a hot topic
+ in the Bitcoin community and are quite a bit outside
+ of a lot of the normal proposals,
+ specifically because of the custody trade-off,
+ which is usually kind of one of those
+ untouchable things in Bitcoin.
+ So I think getting into a lot of the nuance and detail
+ in a way that maybe Twitter isn't a good medium for
+ will be helpful, but for those guests who,
+ for those listeners who don't know y'all,
+ do you mind just quickly introducing yourself
+ and then maybe telling us a little bit about
+ why you're excited about Fediments as a concept?
+ - Yeah, I think I will go ahead.
+ I'm Eric.
+ I have a background in computer science,
+ cryptography, distributed systems,
+ and have been in Bitcoin for a while.
+ And like over the years,
+ like the main topics that interested me
+ were privacy and how to bring Bitcoin
+ to as many people as possible,
+ like what we often call hyper-Bitcoinization.
+ And so the more I learned about cryptography,
+ distributed systems, like at some point,
+ I just got this weird idea, federated e-cash.
+ And over multiple years, like at first,
+ I didn't think it was a great solution for anything.
+ But over multiple years, like I got to the point
+ that I thought, okay, that's actually pretty cool
+ and began building it.
+ And apparently a lot of people got really excited.
+ Here we are.
+ - What's up?
+ I'm Matt Odell, return guest on Opt Out.
+ I have a show called Citadel Dispatch
+ that's focused on privacy, Bitcoin, Freedom Tech.
+ And I had Eric on the show,
+ maybe now it's like a year and a half ago.
+ It feels like a long time ago.
+ Eric's giving me looks.
+ - I think it was after adopting Bitcoin.
+ I was just in Europe.
+ - It was a little bit less than a year ago.
+ It was like 10 months ago, but in Bitcoin time,
+ that feels like 10 years.
+ - It's been a long time.
+ - And the impediments were in the early stages.
+ And I fell in love with the trade-off model.
+ I started talking to Eric a lot more.
+ I got him to Miami for Bitcoin 2022.
+ So I've just been very aware of the project
+ and excited about the project.
+ And I've been following it this whole time.
+ As for this conversation, Eric is the specialist.
+ So I will be, whenever Seth is asking a general question,
+ I'm gonna cede it to Eric first.
+ But I'm here to provide more insight
+ and just kind of jump in whenever.
+ And it's just an honor to be here with you two gentlemen.
+ - Yeah, for sure.
+ I wanted to have you on
+ 'cause you've been one of the main people
+ kind of ringing the bell for Fetiment
+ and making sure people are aware.
+ So I figured it'd be a good fit to have Eric on
+ as the technical expert for Fetiment
+ and you on as somebody who obviously sees it
+ as a useful tool for people.
+ And obviously you have a big focus on privacy on Bitcoin.
+ So to get things rolling, let's start with Matt.
+ What was it that woke you up to the need
+ for more attainable privacy on Bitcoin?
+ - I mean, so it was kind of over time.
+ Over time I saw this normalization
+ of these regulated services that were requiring KYC
+ and identification information.
+ It got, it was definitely very much a gradually
+ than suddenly type of situation.
+ You saw like an early, late 2015, early 2016,
+ like one exchange, one service after another
+ started making more and more stringent requirements.
+ I had already previously been interested
+ in using Bitcoin more privately.
+ I think the big wake up was in 2013 or 2014,
+ Coinbase got sued by the US government
+ and they told the, the US government told them
+ they had to give over every single user's information,
+ regardless of they, if they committed a crime.
+ Coinbase fought that case, but ended up giving them
+ like 10,000, 20,000 users information
+ that were like high value users.
+ If they did a certain amount of volume
+ and that included withdrawal addresses, names,
+ all this different stuff.
+ So the Bitcoin privacy conversation
+ has always been evolving,
+ but the fact that 99% of new users are coming in
+ through these regulated services,
+ they're providing all this identifiable information.
+ And then you have these basically surveillance companies,
+ these surveillance mercenaries,
+ and they call themselves chain surveillance companies
+ that are collating that information
+ and using it to track payments on chain, really elevated.
+ I think it really elevated the speed
+ which these tools kind of need to be provided,
+ the speed that these improvements need to be made
+ because they're very real risks that are happening today.
+ - Yeah, I think that that growth of KYC
+ and the growth of adoption for Bitcoin
+ and name recognition for Bitcoin
+ makes it all the more important that we have easy ways
+ for people to access privacy
+ because most people are not gonna jump straight
+ from opening a Coinbase account
+ to doing a Whirlpool and Samurai Wallet.
+ It's a slow progression.
+ So an interesting middle ground
+ that has different trade-offs,
+ I think does pose a lot of potential value.
+ - And I think, I always talk about,
+ like my favorite way to learn
+ is to just get your hands dirty.
+ I think that's the way most people learn.
+ I think though the problem is usually they learn
+ because they burn themselves.
+ And I burned myself as well.
+ So when I first got into Bitcoin,
+ it was being pitched as anonymous currency
+ that I didn't really have to do anything.
+ And within a few years, I look back
+ and I left so much bad,
+ like I just left leaked so much data on chain.
+ There was just so much.
+ And I was just like, that is absolutely ridiculous.
+ Why didn't anyone warn me about this?
+ And there's a million Bitcoin influencers,
+ but there's like a dozen of us talking about
+ the risk of privacy leaks on chain.
+ - Unfortunately, the exception for sure.
+ And then how about you, Eric?
+ What was it that woke you up to the need
+ for more attainable privacy on Bitcoin?
+ - Yeah, so first of all,
+ I believe that privacy is a requirement to live freely.
+ And so just to protect yourself against prejudice
+ and judgment by other people,
+ may it be like the legal system
+ or just your society around you.
+ And like with Bitcoin,
+ I spent a lot of time in my late teens
+ on so-called darknet forums.
+ Like just nice forums where you could post anonymously.
+ So people weren't judging you.
+ Like you could just be judged on the value
+ that you added to the conversation.
+ And that was really great.
+ And back then everyone was using Bitcoin.
+ And I thought like, okay,
+ like Bitcoin is this private currency,
+ not controlled by states.
+ And it's really cool.
+ But then like five years later,
+ when after getting out of school
+ and like doing other things,
+ I wasn't following the whole darknet scene
+ all that much anymore.
+ And five years later I noticed,
+ hey, these people aren't using Bitcoin anymore.
+ Why is that?
+ And that was really depressing to me
+ because I still believe that Bitcoin
+ is the best money there is.
+ And so it should be able to compete
+ also in the privacy space.
+ And yeah, that's what broke me up
+ to the need for more privacy on Bitcoin.
+ - Yeah, yeah, I love that.
+ And I think that's a key reason why I,
+ even though yes, a lot of my focus is on Monero,
+ I keep as much as I can also focusing on Bitcoin privacy
+ because so many people are going to come into Bitcoin
+ no matter what.
+ Like I don't think that's something where we're going to,
+ people aren't gonna come into another cryptocurrency
+ like Monero long-term, I don't think.
+ They're gonna come in through Bitcoin generally.
+ And so them having access to tools
+ that give them strong user privacy
+ is very, very important there.
+ So what was it that actually prompted
+ the creation of Fediment?
+ You talked a little bit about how you had looked
+ at this idea of federated Chowmeini cash in the past,
+ but weren't sure if it was a good fit or not.
+ But what was it that actually made you go,
+ "No, I need to dedicate time
+ "to really build out a project around this, Eric?"
+ - Yeah, so it all began with the release of Liquid
+ essentially in 2018.
+ And at that time I thought like,
+ why does Liquid have a blockchain?
+ Like you don't really need it.
+ Okay, it adds auditability,
+ but you trust the Federation anyway for fund safety.
+ And I had also done some research
+ on Chowmeini cash at university.
+ So it was like the natural thing to do
+ to just combine these two.
+ But the problem at the time was
+ it needs something called special plain signatures,
+ special cryptographic scheme,
+ which allows you to acquire signatures
+ without revealing the message that is being signed.
+ And the special variant of that allows you to do this
+ by involving up to N signers,
+ out of which you only need T.
+ Like some of them can be offline or malicious.
+ And that's what makes federations tick.
+ So like, with that knowledge,
+ I thought like, hey,
+ we could build a really powerful tool
+ to mix Bitcoins with that.
+ But it didn't appear to me as a payment tool yet.
+ And later on, I noticed,
+ hey, if we integrate this technology with Lightning,
+ then we can actually use this federated e-cash concept
+ to make Lightning payments.
+ And suddenly it isn't only like a privacy tool,
+ but also a payment and scalability tool for Bitcoin.
+ And that's when it began to make sense to me.
+ Because before that,
+ like if you just have the federated e-cash
+ without Lightning integration,
+ it has a higher centralizing force.
+ Because everyone, if you use it for payments,
+ everyone needs to be on the same federation.
+ And if you don't use it for payments,
+ it's not all that interesting.
+ So from then on, like I kept talking to people
+ and was figuring out like this problem
+ with the special plan signatures
+ had a lot of help from Tim Ruffing.
+ So in the end, by end of 2020, beginning of 2021,
+ I was really beginning to build a prototype of that.
+ And even going a step further,
+ at some point I met Obi Nabozo at a conference
+ at HCPP here in Prague.
+ And we discussed this project and he was excited about it.
+ And he came up with even like better use case for it yet,
+ custody.
+ Because the trust model of federated e-cash
+ made it such that it's also a good solution
+ for Bitcoin custody actually.
+ And so we had these three things
+ that essentially fixes for Bitcoin,
+ privacy, scalability and custody.
+ And that's just super powerful.
+ And it's really became like, yeah,
+ like everything I was doing from then on
+ was just federated e-cash.
+ - Yeah, I think that approach of it,
+ not only being a tool that you can either store funds in
+ or maybe spend within the fediment,
+ but actually being able to plug it into the Lightning Network
+ is what made it click as like,
+ okay, I can actually see this being useful
+ because you can gain that privacy
+ and make payments directly out of it.
+ So you're not kind of stuck
+ in this separate ecosystem of fediments,
+ but it plugs into the broader growing adoption of Bitcoin,
+ I think is the kicker for me
+ and actual like use case that it can pose.
+ - Right, and one honorable mention I should put in here.
+ There was also a script developed by Jonathan Logan,
+ aka Smuggler.
+ I think you had him on your podcast.
+ - Yeah, I did, back in first season.
+ - And yeah, they developed script in parallel
+ and I got some inspiration from there
+ and we were just communicating
+ and like they were motivating me to build my stuff
+ and the other way around, I think.
+ So it's really great that they did the scripting,
+ even though it seems to be pretty dead right now,
+ which is sad, but yeah.
+ - Yeah, I don't think it's survived,
+ but I think the idea had a lot of similarities
+ in the technical approach to privacy with fediments.
+ - And Smuggler was also on the first podcast
+ ever about fediment.
+ - Oh, nice.
+ I didn't know that.
+ I'll have to go back and find that one after this.
+ What was it for you, Matt,
+ that really got you hyped and excited for fediment?
+ 'Cause I think I've only really heard you talking about it
+ in the last two, three months,
+ at least more frequently than before.
+ So what was it that kind of made it click for you
+ as a potentially useful tool for Bitcoiners?
+ - Well, first of all,
+ part of the reason I'm talking about it more now
+ is 'cause when I had Eric on 10 months ago,
+ I think he told me his ETA for something
+ that we could actually play around with was like two years
+ and that he wasn't even confident in the two year mark.
+ Like that was a bullish number.
+ And then recently,
+ him and the rest of the team have made a ton of progress.
+ So it looks like we're actually going to be able to play with it in our hands.
+ And I don't really like to talk about things that are more theoretical.
+ It just seems like a waste of everybody's time.
+ There's a lot of noise in the space.
+ It's a very easy way to cut noise and focus on signal
+ is to only focus on things that are launched.
+ But in this case, with an open source project,
+ it's really nice to build some momentum pre-release
+ because they are looking for more contributors.
+ It does help the project out.
+ But with FedEments specifically, why am I excited about it?
+ I've spent years focused on trying to improve my own Bitcoin privacy.
+ Some of those years have been focused on education,
+ on helping other people improve their Bitcoin privacy.
+ The tools we have available for us are better than ever.
+ But the two main things I've learned is at the end of the day,
+ people, there's so much nuance with using Bitcoin privately
+ that the main hurdles are convenience,
+ like actual ease of use in UX, and cost.
+ And pretty much every Bitcoin privacy tool up until this point,
+ those have been the two main trade-offs.
+ I love Whirlpool.
+ I really love what Sparrow has done on the desktop UX for Whirlpool.
+ It makes it way more accessible than ever before.
+ But it's still an accessibility hurdle.
+ It's a cost hurdle, but I don't even know if cost is the main thing.
+ We talk about incentives a lot in Bitcoin,
+ and people are like, "Okay, if we can make collaborative transactions
+ like CoinJoin is cheaper than regular transactions,
+ more people will use it."
+ I'm not sure if cost is the main hurdle here.
+ To me, the main hurdle is convenience and ease of use,
+ and also this additional mental burden that,
+ "Oh, okay, if you do figure out how to actually do collaborative transactions,
+ go through that path, then also keep in mind your change
+ and label everything and do all these different other little things."
+ And that adds up in your head.
+ It creates this massive mental burden in your head.
+ The promise of fediment.
+ And then meanwhile, so all that education has been going through.
+ I've been onboarding a bunch of users into using Bitcoin
+ more privately and more sovereignly.
+ But we're completely outpaced by the overwhelming majority of users
+ that continue to use regulated services and continue to use custodial services.
+ That's growing at a massive pace.
+ To me, it just almost feels like you're just pushing a boulder uphill.
+ It's just like everything is stacked against you.
+ And with fediment, the trade-off model is not as ideal necessarily.
+ And we'll go into deep from a sovereignty level,
+ but it does make it extremely convenient and extremely cheap
+ while giving you very strong privacy guarantees.
+ And that's what appeals to me.
+ Yeah, and I definitely want to dive into those trade-offs later on.
+ But I think when I get a better picture of what fediment is solving for users
+ and really what we want Bitcoin users to get from fediment.
+ And obviously, like you mentioned, I think one point I want to highlight there too is
+ since this is an open source project, getting eyes on
+ and getting people thinking about it even before it's released is valuable
+ because you get the chance for more contributors to jump in,
+ you get more people, even non-technical people just looking at it
+ and trying to figure out what are the issues that I see in it,
+ what are the potential flaws that I see,
+ how would I care about the trade-offs, that kind of thing.
+ So getting attention on it even before it's released, I think, is important.
+ And like you said, I think it looks very promising that this will release,
+ that we'll actually have fediments.
+ It will be a thing.
+ So I think we're at a good point to talk through this.
+ But I think one question that I've gone over with other tools and projects
+ that I've talked with is just really what do you hope that users get from using fediment?
+ So not maybe a technical level, but what is it that once fediments are out,
+ you're hoping that people can gain by making the trade-offs
+ that we'll talk about a little bit more and starting to use fediment
+ as maybe their main way to interact with Bitcoin?
+ Or what do you envision there?
+ Maybe you want to start and kick us off there, Eric.
+ Right. Yeah, as I mentioned, my views on use cases for fediment have evolved over time.
+ And by now, I think there are two main use cases.
+ It's the payment side and the custody side.
+ On the payment side, I think what fediment actually is for most users
+ is just a custodial Lightning Wallet with really great UX.
+ But the custody is kind of reduced in the way that
+ you now don't trust a single provider, but like a federation
+ where like T out of N participants would need to
+ like collaborate against you to steal your funds.
+ So it's a much better security in my opinion.
+ But it doesn't impact UX as much because when you look at
+ like self-hosted Lightning Wallets, UX is typically really bad
+ because you have to manage channels or if you don't manage channels,
+ then you have to open them just in time, which leads to really weird fee behavior.
+ Like, for example, a Phoenix when I want to receive a payment
+ and suddenly I have to open a new channel and I have to pay a high fee.
+ How do you explain that to users that don't really know about Lightning and Bitcoin?
+ So it's all these UX hurdles you don't have with a federation or federated approach.
+ Because for the most part, it behaves like a centralized service,
+ just the trust is split over multiple parties.
+ So what you also get on the payment side, which most users don't even care about,
+ but what I want to give them nonetheless is a good default privacy.
+ So you cannot really sell the Bitcoin Wallet to users with this has best privacy.
+ I mean, we see this with Wasabi and Samurai.
+ Like how many people are using it actually?
+ Like not that many.
+ Like it's not a best sales pitch.
+ This wallet is super private.
+ But if you can give people great UX and also good default privacy,
+ they will use it because of UX and also get the privacy.
+ And that's what I want.
+ The second point is the custody side.
+ Like many people store funds on exchanges these days.
+ That's not necessarily because they want to trade,
+ but just because they want to use the custody of the exchange.
+ Because like what happens if I die?
+ What happens if I lose my passport?
+ Like this exchange has to take care of all of that.
+ And you don't have to be self-sovereign because self-sovereignty
+ means a lot of responsibility, which people don't necessarily want.
+ And with the federated trust approach,
+ we can probably talk about this a little bit more later, how this even works.
+ You can kind of outsource this custody to your federation,
+ to the guardians of your federation.
+ And that way, I hope that users will have a better option in exchanges,
+ which are regulated entities.
+ So if you hold Bitcoins on an exchange, they aren't really yours.
+ Because like a government might come in and just say,
+ "Hey, they are ours now."
+ Like with the gold in the US.
+ And yeah, in that sense, I hope we can achieve more decentralization,
+ even in the hyper-Bitcoin-esque world,
+ which will include many people that are not technical at all
+ and might not even have the financial means
+ to use some of the technology that hardcore Bitcoiners use today.
+ Yeah, and I love that you hit on the fact that
+ selling something as a privacy tool generally isn't going to bring the masses.
+ Like most people don't start to use something
+ because it is privacy-preserving.
+ Obviously, I mean, listeners of this podcast
+ are probably going to be in that group that would.
+ But most of the people that we know are not going to.
+ You can't even sell them on something like Signal
+ if you just pitch it as, "Hey, it's more privacy-preserving
+ and no one can snoop on your chats."
+ Like, yeah, people do want that.
+ And I think most people have a desire for that,
+ but most people aren't going to switch from something that's easier
+ because it's private or something that has a better UX because it's private.
+ And we've seen a lot in the privacy tool space
+ that the tools that succeed, like Signal,
+ do so by having a very simple UX,
+ having something that's comparable to other tools out there
+ and have unique features that sell people on it.
+ And then they get that default privacy.
+ And I think that's oftentimes the best approach with privacy tools.
+ And that's one of the things that does get me excited about Fetaments
+ because people don't have to care about privacy.
+ If they use it, they gain strong privacy.
+ Yeah.
+ It's funny that you bring that up because, sorry, Eric.
+ It's funny that you bring that up because oftentimes
+ when I describe why I'm excited about Fetaments,
+ I explain it as Signal for Bitcoin.
+ And why do I say that?
+ I say that because if you ask privacy purists,
+ if they support Signal,
+ they will tell you, "It requires a phone number.
+ I don't like that it requires a phone number.
+ I don't like that it's not permissionless
+ to be able to run your own Signal server.
+ You have to rely on their server."
+ So the purists on the privacy side would say that
+ Signal doesn't check all the boxes for them.
+ But ultimately, Signal has been able to get this private messenger out
+ to way, way more users
+ because they made a specific trade-off balance
+ that made it more convenient and made the UX better.
+ Yeah.
+ I think especially for privacy advocates,
+ privacy maximalists, let's say,
+ it's also important that many normal users
+ use these privacy tools
+ because otherwise, what crowd do you have to hide in?
+ Like privacy needs company.
+ That's a nice slogan, I think, from the Tor Project.
+ So that's what we are building with Fetimans.
+ We give normal users a really great UX.
+ They want to use it.
+ And they even provide our privacy maximalists
+ with an anonymity set.
+ Yeah, a good privacy tool provides privacy to people
+ who have no idea that they're getting it
+ or that they want it.
+ And by doing so, it also provides better privacy
+ to the people who are deeply passionate,
+ deeply understanding,
+ have more advanced threat models, et cetera.
+ So it is a very important point there.
+ Anything you want to add on what you hope users get
+ from using Fetimans, Matt?
+ I mean, like the way I look at it is,
+ I think for most users,
+ it will be used as like a main spending wallet.
+ When you look at like the two groups of users,
+ potential users of Fetimans,
+ I like to group them into like the Western world,
+ the developed world, and like the global South.
+ And so in the Western world,
+ people are probably not going to move away
+ from regulated services.
+ So I imagine Fetiman will be used
+ as a day-to-day spending wallet.
+ You buy at a regulated service,
+ they send into Fetiman,
+ they get some strong privacy guarantees.
+ It'll work every time you make a payment.
+ And you don't have to deal with channel management.
+ You don't have to deal with anything else.
+ And then those people will probably use it as a,
+ ideally use it as like a middle ground
+ between that and their cold storage.
+ Then they send it to better cold storage
+ 'cause they can afford to do that.
+ I think there's a very strong argument
+ that in the global South,
+ in regions where people,
+ it's harder for them to get expensive electronics.
+ They might be living on a lower paycheck.
+ They might end up relying on Fetiman
+ as a savings wallet as well.
+ And in that particular situation,
+ what I would expect is to see
+ more community type federations
+ where maybe the quorum of signers
+ is held by people that are trusted
+ within that local community.
+ And people feel comfortable
+ giving up some sovereignty to them
+ because they know,
+ they trust their judgment
+ more than their own personal responsibility.
+ Yeah. And I think that ability to,
+ for it not to just be a kind of faceless,
+ nameless group of people
+ actually custodying funds,
+ but the ability to build small,
+ almost community banks out of it
+ is a really fascinating piece to me
+ because it can be,
+ if you're trusting a federation,
+ I would be wary of trusting a federation
+ that I have no idea who they are,
+ but then I'd also be wary of trusting a federation
+ that everyone knows who they are,
+ so a government can easily go after them.
+ So that middle ground of a local community
+ where you don't need to advertise
+ that all of you are running a Fetiman,
+ but you can run that as a community,
+ the technical people in the community
+ can be the custodians,
+ be the people running
+ the lightning service provider,
+ if that makes sense.
+ I think it's a very fascinating use case there.
+ And we already see real world example of that,
+ which is the Bitcoin Beach Wallet in El Zante,
+ which is run by Galoy.
+ And with them, what they did was
+ they attached a custodial lightning node
+ on top of a community multi-sig.
+ And the result was
+ the majority of the funds
+ are held in the multi-sig,
+ so you need those community members
+ to basically come together to steal the funds,
+ if they want to steal the funds,
+ and then the lightning is single sig,
+ and that's a smaller subset.
+ And that was a distinct trade-off model they made.
+ Users of that do not have privacy from the custodians.
+ Fetiman to me is strictly a step up,
+ but it provided such a convenience
+ to the people of El Zante
+ that it got a lot of traction.
+ A lot of users ended up going that route.
+ And then if you can't compare all this stuff in a vacuum,
+ you compare that to something that's fully custodial
+ and regulated and run by the government like Chivo
+ as an option on one side,
+ and then on the other side,
+ you have maybe a user running their own lightning node,
+ holding their own keys
+ and being fully sovereign on the other side.
+ That Bitcoin beach wallet sits right in the middle.
+ I think Fetimans can make a massive improvement
+ on that middle ground.
+ Yeah, I think it's just a natural evolution.
+ Like Galoy with Bitcoin beach wallet
+ has shown that such an approach can work.
+ And now the question is,
+ where can we improve it?
+ And privacy is a big point there,
+ because especially when you have a wallet
+ provided as run by a local community,
+ you really need privacy
+ because you don't want your neighbor
+ to know how much money you make.
+ Like you want them even less to know that
+ than let's say some regulated exchange somewhere else.
+ Like there you might not even care.
+ Like what's the chance that someone will know you?
+ But if your neighbor knows what you're making,
+ then they might treat you differently.
+ So I think in these contexts,
+ privacy is even higher priority.
+ And so I hope over time.
+ we will just be able to adopt better and better approaches
+ to community custody and community banking, essentially.
+ - Yeah, yeah, and I want to dive into the trade-offs now,
+ but one quick thing I want to key off of what you just said
+ is I think the biggest difference to me
+ between Fediment and other custodial solutions,
+ and this is something that I harp on
+ with custodial solutions normally,
+ in those situations, you're completely giving up privacy
+ because the custodian is the one who holds the keys
+ or a key, and so they have complete visibility
+ into the ways that you use your Bitcoin.
+ But with Fediment, that changes,
+ which is a big, big departure from other solutions
+ and I think lessens the custodial dangers,
+ but I do want to dive into kind of what the key trade-offs are
+ and then why you view them as worth it with Fediment.
+ - Before, I'll let Eric jump into the trade-offs first,
+ but before we do that, just you mentioned this thing
+ about the privacy trade-off with custodians,
+ and this is just another thing that I've noticed,
+ and one of the cool things to me
+ about the work that Eric's doing
+ is it's very practical in nature
+ and it's taking into effect what real users are doing
+ and how they're interacting with Bitcoin,
+ and what I noticed is because I am so focused
+ on Bitcoin privacy, when people pay me,
+ a lot of times they will pay me from a cash app or a strike
+ because they know they're giving up full privacy
+ to cash up or strike, but they know that they're blocking me
+ from being able to tell anything.
+ So I call that custodial privacy,
+ and I see that narrative starting to form in Bitcoin
+ if we don't preempt it with better options for those users
+ where they will say, "If I want to use Bitcoin privately,
+ I will just trust my local regulated institution
+ to protect my privacy, and I will make all my payments
+ from there because it's more private than if I do it
+ in a more sovereign way."
+ - Yeah, that use of regulated exchanges or tools like cash app,
+ I think people are, I guess, trying to get back
+ to the system we have with Visa and MasterCard and banks
+ because right now that's kind of how the traditional financial system works.
+ When you make a payment, your bank knows about it.
+ They know every detail of who you paid, how much, etc.
+ But that information is generally private from the person you pay,
+ the rest of your banking details, of course,
+ and private from other people.
+ Obviously, the brokenness with that financial system
+ is oftentimes that data is freely sold and given away
+ by those institutions to make money off of your data.
+ But in theory, you have that better privacy
+ from the person you're paying.
+ So I guess Bitcoiners are kind of trying to get back there
+ and see some of the benefits of that system
+ over a transparent ledger.
+ But I do love kind of positing Fediment as the better version of that
+ in so many ways.
+ I think that's a good way to dive into the trade-offs
+ because there, as with any tool, and especially as with any privacy tool,
+ there are trade-offs that come with these things.
+ So, Eric, do you want to just kind of outline
+ what the key trade-offs are with Fediment?
+ I know one of them is custodianship.
+ And then why do you view those trade-offs as worth it
+ within the design of Fediment?
+ Yeah, certainly.
+ I think the trade-offs Fediment makes are what makes it actually interesting.
+ Because first of all, you mentioned the custodial risk.
+ Of course, when you compare it to Bitcoin,
+ it has a high custody risk
+ because suddenly you're trusting a set of people.
+ You might know them, but they could, in theory,
+ conspire against you and take your money.
+ And what my counterpoint would be,
+ I'm not building this primarily for people
+ that are using Bitcoin in a self-sovereign way today.
+ If you have your hardware wallet set up,
+ if you are running your own Lightning Node,
+ and doing all of that security, assuming that,
+ then you might not be the initial target market
+ for something like Fediment.
+ The actual target market is a much, much bigger amount of people
+ that are just using custodial solutions
+ and highly regulated solutions, even.
+ When I went to El Salvador for adopting Bitcoin,
+ it was really heartbreaking to see how many people
+ just recommended, "Hey, let's use a wallet of Satoshi."
+ But I can totally understand why, because it just works.
+ And so that's the first problem we have to solve, I think.
+ Getting these people off totally centralized solutions,
+ where you have a single custodian that could rug pull you at any time,
+ and instead transition to a world where you have
+ multiple custodians that have shared custody over your funds,
+ and that they have to conspire against you to actually rug pull you.
+ That makes it much less likely.
+ And also, you can choose people that you kind of trust already,
+ like from a local community, for example.
+ And then we can look at, "Hey, this is still worse than Bitcoin,
+ but how much worse, actually?" And maybe we can make it even better.
+ Okay. That's the biggest point, I think, that most people know
+ and most people discuss when it comes to Fediment.
+ Another thing, I always am a little bit worried
+ about the centralization, because what I definitely don't want to build
+ is a systemic risk to Bitcoin.
+ And in the beginning, when I didn't think of the Lightning integration
+ for Fediment yet, that was a big worry of mine.
+ Because in theory, if you have a payment system,
+ where you have to be part of the payment system or part of the same federation
+ to pay other users that are also in the same federation,
+ then that naturally has a huge centralization force
+ and would lead to humongous federations.
+ And we really don't want that.
+ Like this one federation to rule them all, if it actually works
+ and has many users and attracts a lot of funds,
+ then that could become a systemic risk to Bitcoin,
+ as some exchanges today probably already are.
+ That's the bad thing about it.
+ Some exchanges having a million Bitcoin,
+ that's not great from a system view.
+ Yeah, so a few other worries that people might have is complexity.
+ I discussed this a lot on Twitter some time ago,
+ like comparing Fediment with other like Uncle Jim solutions
+ to giving people access to Lightning and Bitcoin.
+ Like, for example, there's SimpleBitcoinWallet,
+ which allows you to have your own server,
+ which acts as a custodian for other people.
+ Like you can just connect my SimpleBitcoinWallet to it,
+ open a so-called hosted channel.
+ And the funds are actually stored on the server side.
+ The counterpoint to that is like, it's a single custodian.
+ Like it's easy to hack.
+ If they want to rug pollute, they can easily do that.
+ And it's much easier if you have, much harder to do that
+ if you have a federation, like a group of people
+ that would have to conspire and would lose,
+ or separately lose their reputation doing so.
+ Like you could imagine like if a group of people
+ that runs a federation and only one of them wants to rug poll someone,
+ and he asks the other and they're like,
+ "No, we don't want to rug poll."
+ So they will just blame him and exclude him from the federation.
+ Like it's a really hard coordination problem, actually,
+ which makes it relatively secure in my opinion.
+ Yeah, and lastly, there's software complexity.
+ When you compare FeddyMint to, for example, Galois,
+ like FeddyMint is much more complex,
+ like the cryptographic protocols used,
+ like the distributed system technology.
+ It's like a whole bunch of crazy, complicated technology
+ that we put together into this project.
+ And it's only possible because we have open source funding.
+ Like Blockstream has been paying me for quite a while now
+ just to work on this project.
+ Without any expectation for return or becoming a product anytime soon.
+ And I think that's the important thing here that the protocol is open
+ and gets funding from people interested in building this future,
+ this private future of having federated e-cashmints.
+ Because you couldn't really justify building such a complex protocol,
+ I think, from a business perspective.
+ Yeah, that's what makes it so powerful that we have all these supporters.
+ Like also, you Matt, like 1031 donated a Bitcoin to the project.
+ And we are enormously grateful about that.
+ And Blockstream sponsoring me, we have something else in the works,
+ like some other sponsorship.
+ Can't talk about it yet, but it's amazing how much positive feedback
+ the project has gotten.
+ And we can build it the best way we can imagine.
+ Yeah, I'm glad that you all have been able to secure good funding so far.
+ Because that can often be the death of promising projects
+ and that they don't get funding and the few people
+ or the one person behind them just gets burnt out
+ and has to step away and focus on just a paycheck.
+ So I'm glad that funding has not been an issue so far.
+ And thank you for walking through those trade-offs.
+ I mean, I think, obviously, custodianship is the one
+ that gets most talked about.
+ But like you mentioned, there are benefits to that.
+ And it's obviously not just chosen pointlessly.
+ It's a key aspect of both how FedeMet benefits people
+ and how it functions.
+ So it's a key thing, but obviously an important thing
+ that people understand.
+ Anything you want to add on for the trade-offs there, Matt?
+ Yeah, I mean, like the main trade-off is custody.
+ It's trust-minimized custody that risk is mitigated
+ by design to a degree.
+ But that is the main trade-off.
+ And the main benefit you get out of that is convenience
+ and cost, cheaper transactions, more convenient transactions,
+ and more private transactions.
+ I will say that, look, once again, I will say that FedeMets
+ do not exist in a vacuum.
+ We have to realize that we're operating in an environment
+ where 99% of new users are coming in through
+ regulated custodians and are using custodial products.
+ And we also have to realize and have some self-reflection here
+ that that's not just new coiners.
+ Eric mentioned his trip to El Salvador.
+ I can't count the amount of videos I saw come out of El Salvador
+ of hardcore bitcoiners that are running their own node,
+ holding their own keys, and then using custodial wallets
+ like Wallet of Satoshi to pay for a beer or buy McDonald's
+ or something and posting a video about it.
+ And I look at it, I'm like, "What's going on here?
+ Why are people choosing a custodial option like Wallet of Satoshi?"
+ And it's because of that convenience.
+ It comes down to that convenience.
+ So we need to make tools that offer a better trade-off model
+ that are also very convenient and give bitcoiners
+ as many options as possible.
+ Yeah, for sure. Very well said there.
+ [music]
+ Let's take a quick break from this episode
+ to chat about the sponsors of OptOut, CakeWallet, and local Monero.
+ CakeWallet is a key tool that I use daily
+ as it allows me to easily and quickly use Monero
+ for private by default payments.
+ It's available in both iOS and Android
+ and is a fantastic way to get started buying and using Monero
+ with a simple and easy to understand user experience.
+ I regularly onboard new users to CakeWallet
+ and hope that it will help simplify and ease your journey into cryptocurrency.
+ If you're interested in purchasing Monero for the first time
+ or helping to bring others into a parallel economy,
+ I'd recommend you look at using local Monero, like I do,
+ to buy and sell Monero while maintaining your privacy
+ and avoiding invasive exchange surveillance.
+ Local Monero is entirely peer-to-peer
+ and is an important part of opting out of the surveillance state
+ and into a parallel economy.
+ Thank you to both sponsors for their incredible support and partnership.
+ And I hope you'll take a moment after the episode
+ to learn more in the show notes or at optoutpod.com/sponsors.
+ And one thing we haven't touched on yet
+ that I want to get into for how Fetament actually works
+ is you've briefly mentioned, Eric, that it provides strong privacy to people
+ even though it's custodial.
+ Do you mind giving us just a quick overview of how that works?
+ I know Xiaomi and eCash is an older technology,
+ maybe even old enough that most people haven't heard of it.
+ But do you mind kind of introing how that works
+ and how custodians are able to have custody
+ but not have visibility into every user's activity?
+ Right.
+ I think there's a nice metaphor that I will use
+ instead of the blind signature schemes.
+ So let's imagine I have a Bitcoin
+ and I want to give that Bitcoin to you
+ because you are my bank provider or my custody provider.
+ What I can do is I take the Bitcoin
+ and I also write a little note like,
+ "Seth now owes me one Bitcoin."
+ And I put this note into an envelope.
+ But the special thing about the envelope is that it's write-through.
+ Like whatever you write on the outside,
+ it will appear on the document on the inside.
+ So I give you the coin and this envelope
+ and you can't open it because that's cryptographically secured.
+ And then you will take the Bitcoin and say,
+ "Hey, that's actually a Bitcoin,"
+ and just sign the envelope, give it back to me.
+ And what I can do is I take out the document and say,
+ "Hey, I have now a signed note that says,
+ 'Seth owes me one Bitcoin.'"
+ And at any point later on, I can go to you,
+ give you this letter, and you will know,
+ "Hey, I signed this and I will give you this one Bitcoin back."
+ And if many people do this,
+ since you never saw the actual letter
+ that I gave you in the envelope,
+ you can't distinguish my handwriting
+ or what's written on there exactly.
+ If it has a serial number,
+ then you could normally, if you would see the letter
+ in the first place, then you could write this down
+ and later on distinguish.
+ But you can't do this.
+ You only see the envelope when you sign.
+ And that way, I have an anonymity set
+ of all the people that ever gave you Bitcoin.
+ Awesome. Yeah. So you essentially,
+ you get an IOU for depositing Bitcoin.
+ But it's a blind-friend IOU.
+ Yeah, exactly.
+ It's one that the custodian doesn't know
+ that that's connected with that specific Bitcoin.
+ And like you mentioned, assuming you have more
+ than just you using the Federation,
+ you can hide in that crowd because they don't know
+ that any of them are tied to a specific incoming
+ or outgoing Bitcoin.
+ Awesome.
+ Yeah, exactly.
+ Anything else there, Matt, on that?
+ Nope. That's a great explanation.
+ Nice. Yeah. I'm glad.
+ I think that's a very good, like, non-binding.
+ non-technical way to explain blind signatures,
+ which are not the easiest concepts.
+ Thank you, Eric.
+ The main other thing that I wanted to touch on
+ and one of my main concerns with Fetiment
+ is really the legal and regulatory attack surface
+ that it could open up for Bitcoiners and for Bitcoin.
+ So I wanna dive in a little bit to hear
+ both of your thoughts on really what we can expect
+ or maybe your views on the legal
+ and regulatory attack surface that Fetiment may bring
+ for both custodians, the people actually running the mints
+ and handling funds and for users themselves.
+ 'Cause I think, well, obviously the point is
+ to not have to worry about regulators
+ and not be regulated entities.
+ Obviously when you're centralizing funds
+ behind less people rather than more,
+ in this case, people are giving up custody of funds
+ to a federation, which can still be geographically diverse.
+ And there are lots of ways
+ that they can protect themselves.
+ But we'd love to hear y'all's thoughts
+ on the potential legal or regulatory issues there
+ and how this might work in spite of that.
+ - Yeah, first of all, I'm not a lawyer.
+ So take everything with a grain of salt.
+ But when I talk to different people about this problem,
+ like the feedback I mainly got is that
+ like most jurisdictions have an exemption
+ for like doing such things,
+ like handing other people's money
+ and like providing them such services
+ if you don't do it for profit
+ or don't do it by way of business, it's often formulated.
+ And so one big hope is that this will pretty much exempt
+ smaller federations that just run
+ like Uncle Jim Federation pretty much
+ from any regulation at all.
+ And I know of some people
+ that are investigating this legal question,
+ but the problem is like it highly depends
+ on your jurisdiction.
+ It will have a different answer in the UK and the US.
+ And like, I think a lot of the target market,
+ global south, it's not even that relevant
+ because like the legislation and the actual enforcement
+ of it are kind of divergent.
+ So yeah, it's an interesting question
+ and we will have to ask lawyers for concrete answers.
+ - I would have been absolutely amazed
+ if Eric was also a lawyer with the rest of his credentials.
+ I mean, look, I think this is a very important question.
+ It is probably the question.
+ A lot of the pain points we see in Bitcoin
+ are because pretty much every time someone's a custodian,
+ they ultimately get the long arm of the US government
+ ends up pushing KYC and other regulations on top of them.
+ It still amazes me to this day
+ that while the Satoshi has been operating without KYC,
+ I don't know what the situation is with that,
+ but that does show that these enforcement things,
+ they take a while to happen, right?
+ BitMEX didn't have KYC for a long time
+ before their founders were thrown in jail
+ and they were slapped on the wrist
+ with a $10 million fine to add KYC,
+ but eventually it happened
+ and we should basically just operate under the assumption
+ that all single SIG custodians,
+ completely centralized custodians will get regulated.
+ Now, I think the jury could be out on a federation
+ and that's probably, to me,
+ one of the reasons why Federmint is cool
+ is 'cause it comes out of the box with this federation model.
+ There's an argument that it could be treated
+ like multi-SIG collaborative custody,
+ which up until this point, Unchained does KYC,
+ CASA doesn't, but Unchained does it
+ as part of their business beliefs.
+ They think if they're providing shared custody to someone,
+ if they're providing loans to someone,
+ they should know who that person is,
+ but my understanding is, at least in the US,
+ which is basically where all this financial regulation
+ comes from, they're not being treated
+ like a typical custodian.
+ So hopefully that's the case,
+ but once again, we shouldn't assume
+ that's gonna be the case.
+ So let's imagine a world
+ in the worst regulatory environment possible
+ and Federmint's being developed in that
+ because I like adversarial environments,
+ that's how we should build these systems.
+ The two main things that Federmint's have
+ to their advantage is the fact
+ that all of these different mints
+ will be interoperable with each other,
+ so people can move between them relatively easily.
+ It also creates an environment
+ where there will be many different federations
+ that are competing with each other.
+ And then the second thing is,
+ it's gonna come down to how easy it is
+ to basically run your own federation.
+ That bar needs to be as low as possible.
+ And when I say that on both of these,
+ if you look at the number one federated example,
+ which is Liquid on Bitcoin,
+ very few people are using it,
+ but it's been established for a while.
+ They haven't gotten hit
+ with these typical financial regulations.
+ I'm pretty sure that part of the reason
+ it seems like privacy work on Liquid has stalled a bit
+ is because they're afraid of regulatory responses there.
+ But what does Liquid not have that Federmint's have?
+ First of all, Federmint's have stronger privacy guarantees,
+ but that's not relevant to this part of the conversation.
+ Liquid is a single one federation to rule them all.
+ There's not many different Liquid federations,
+ and there's no interoperability there
+ with both the Greater Lightning Network
+ or if there was another federation,
+ like an easy way for those
+ to be interoperable with each other.
+ So I think the two keys are,
+ is making it easy as possible
+ for all these different types of federations to pop up,
+ whether they're NIMS,
+ whether they're local community members,
+ whether they're established public entities,
+ whether it's a mix of all three in a single federation
+ and the interoperability,
+ that's the best non-legal resistance we have
+ to financial regulatory attacks against Federmint's.
+ - Yeah, I think you hit the nail on the head there.
+ And ultimately, if we do enter
+ this very adversarial environment,
+ and obviously I'm not advocating for doing legal things,
+ but if you're in an oppressive regime
+ or an authoritarian government
+ is trying to prevent people from living,
+ from getting the things that they need,
+ Federmint's could still function
+ because you can have either the federation
+ not being in that oppressive country,
+ so they're in a different jurisdiction
+ where they don't have to worry about that.
+ You could have a geographically diverse Federmint
+ where maybe some people are local,
+ but not enough to actually be able to sign transactions
+ so that they can't really be pressured
+ into doing something to rug pull users or to comply.
+ And you can do a lot of unique things
+ that you couldn't do with something like a liquid.
+ Like obviously a liquid is, it's run by a company,
+ all of the federation members are known,
+ and it's much more easy for a government to pressure
+ if they chose to.
+ Whereas Federmint, in theory,
+ will have a lot of resistance to that
+ because anyone can spin up that federation,
+ but I'm glad that you hit on the point
+ that it needs to be very easy to do,
+ because if it's a very technical, complex thing to do,
+ I'm sure it's not gonna be super simple,
+ but if it's something that only extremely technically
+ competent people can accomplish,
+ there will be such a small number of people
+ that actually can run Federmint's
+ that it could open it up to being something
+ that could be shut down relatively easily,
+ 'cause then you just go after
+ those technically competent Bitcoiners
+ who care about privacy and want to be an Uncle Jim
+ or something like that,
+ and that group is not a million people.
+ So that flexibility, I think, is very key there.
+ But it will be interesting to see.
+ I mean, my worry would be it would open up ways
+ for the government to pressure custodians
+ to give up funds or give up information about users,
+ but yet again, another benefit of Federmint's
+ is they don't know information
+ about the people using the Federmint,
+ they can't give up transaction details.
+ So even if they are compromised,
+ they can't give over that information
+ because they don't have it.
+ That's one of the most powerful things
+ with privacy in a system that even is centralized
+ or custodial, it's one of the reasons why I love Signal,
+ is even if Signal is compromised,
+ they can't give up all of your information,
+ they can't give up your chats,
+ they can't give up information about you.
+ And that's been proven in court,
+ and I think Federmint's follows a very similar model
+ where, yeah, maybe you're not completely self-sovereign,
+ but you gain privacy from the people
+ who are running the service.
+ And so even if they're compromised,
+ it can still function well.
+ And you can still be protected
+ because they can't even give up information
+ because they don't even have it,
+ which I think is a huge part there.
+ I think the legal and regulatory side is interesting
+ and we'll need to get a better understanding of that.
+ But obviously my hope is no matter
+ what the legal and regulatory environment is,
+ Federmint's could function
+ and could be beneficial for people.
+ 'Cause obviously these tools need to work
+ in adversarial environments.
+ - You went back to the Signal example again.
+ And so like Signal, I mean,
+ if you talked about the threat of Signal's resilience,
+ is the same threat, right?
+ And that's not a far out theory.
+ Governments, including the US government,
+ have been trying to crack down on encrypted messaging
+ for a long time, right?
+ If they wanted to shut down Signal,
+ they could 'cause it relies on a centralized server.
+ They couldn't get any information from it,
+ they could shut it down.
+ Now, I would say that in this theoretical world,
+ if Signal ever got shut down, what would we see happen?
+ We would probably see something similar to Signal
+ that is more interoperable
+ and that it's easier to run the actual servers.
+ And that's what Federmint is.
+ - Yeah, yeah, love it.
+ Any extra thoughts there, Eric,
+ before we dive into some listener questions?
+ - No, let's dive into the questions.
+ There are some really good ones on Twitter.
+ I already saw them yesterday and really excited.
+ - Yeah, I asked with only like a day's advance notice,
+ but was thankful that lots of people jumped in
+ and asked some good questions
+ and ones that I was kind of surprised to hear from,
+ just kind of the broad Twitter space.
+ But I think they'll give us some good topics to dive into.
+ And I think very related to what you were mentioning
+ about the legal and regulatory side,
+ we had a question that was,
+ what financial incentive do Federmint custodians have
+ and how can they build a business model around it?
+ And I say it's related because you were mentioning
+ that that kind of Uncle Jim model
+ might be that they don't make money off of it,
+ that it's not a business,
+ that it's a community who are choosing
+ to provide a service for free to their community
+ to enable them to have privacy,
+ enable them to be able to spend funds,
+ enable them to be able to use Bitcoin
+ without the complexities of complete self-sovereignty.
+ But do you mind diving into a little bit
+ about what the potential business models
+ or financial incentive could be with Federmint?
+ - Yeah, exactly.
+ I think you already mentioned the main point,
+ like as soon as you make it a business,
+ you become a target of regulation,
+ much more than if you ran the business.
+ And like also, how much can you actually extract?
+ Like how much are people willing to pay
+ for an operator of such a federated e-cash mint?
+ And how many users would you need
+ to make it a profitable business for you?
+ And I think that all speaks against
+ actually monetizing such a federation
+ because you would need a lot of users
+ if you want to charge reasonably low fees,
+ so users still want to use it.
+ And that goes against like the core principle
+ of decentralization.
+ Like we don't want these big federations
+ because then you also don't have a trust relationship
+ to the operators.
+ And even more, something I was made aware of only recently,
+ like when you have someone who just operates
+ out of goodwill,
+ then like they might not be the type that would track for you
+ while someone who is just operating
+ because they make some money from it, like some fees,
+ like now they have this huge opportunity.
+ Like they could just take all the money
+ and be rich men on some island,
+ like that's much more attractive.
+ And how do you keep people mostly driven
+ by like monetary incentives?
+ How do you keep them honest?
+ And I think that's much more complicated
+ than someone who is just staking his reputation,
+ for example, because he wants to give a service
+ to his local community.
+ - Yeah, go ahead, Matt.
+ - I mean, I actually, I disagree with the Federman team,
+ Eric and his co-maintainers over there
+ on this point, like pretty hard.
+ I like the idea of community run nonprofit federations.
+ We already see, like places like in Africa or whatnot,
+ that there's NGOs that are set up
+ that literally just are providing services and money
+ and all this stuff to people that need it.
+ And they would be a perfect fit for federations.
+ But when we go back to regulatory resistance,
+ we're talking about one of the key aspects
+ is to have as many federations as possible.
+ And in Bitcoin, we talk about incentives a lot
+ and having aligned incentives.
+ Running the federation is the single most risky part
+ of the whole system.
+ If you're running a federation,
+ you become a target of different regulatory agencies
+ and also malicious individuals
+ that might want to rug pull all of your users
+ and get that money, right?
+ So running the federation
+ is the riskiest part of the whole system.
+ Those federation members,
+ there needs to be a strong incentive
+ besides goodwill to actually take on that risk.
+ And I think that's through different monetization schemes.
+ Now, the cool part about Federmint
+ is it's a completely open source,
+ free and open source project.
+ There's gonna be no restrictions on it.
+ So even if the default project is set up in a way
+ that the federation isn't making any money,
+ there's still ways for federation members
+ to then fork the project and add it in,
+ add different monetization schemes,
+ including fees and other value added services.
+ And I think what we will see in practice
+ in a successful post Federmint world
+ is there'll be monetized federations
+ and then there'll be smaller non-profit style,
+ more regional ones.
+ [ Silence ]
+ Yeah, it's tricky because I obviously love and prefer the Uncle Jim model.
+ And I think that would be the best thing for everyone.
+ But it is very hard to get enough people to run many federations completely out of just altruism.
+ There are certainly people like that.
+ I mean, I think a lot of the core Bitcoin community that I'm a part of and the people I talk with are fully on board with that.
+ But I think many, many people are not going to want to dedicate the time and energy to run something like this without some financial incentive.
+ So I'm curious to see what businesses get built on top of it.
+ I mean, if you are competing with other federments, I mean, that also builds in an interesting free market aspect where if someone's providing one for free at broad scale,
+ they could just pull in a lot of users because people don't want to pay fees.
+ But obviously, I'm sure there will be businesses that want to build out stronger, more trustworthy over the long term, more transparent custodianships
+ that strike the more liquid-like approach where it is a business that runs it.
+ And if you trust that business, that may be an interesting trade-off for you.
+ And then those Uncle Jims or it's the local community that run it.
+ But I mean, back to that regulatory and legal question, that's where it gets hairy.
+ Because if you are custodying funds, you're already opening up a good bit of threat from, like you said, regulatory bodies and then just bad actors who want to five-dollar-rent attack.
+ Which, thankfully, in a federation, it gets a lot harder.
+ If it's not just you custodying funds, maybe they don't want to actually try to five-dollar-rent attack seven out of nine people or whatever.
+ But in the government or regulatory body perspective, it gets tricky because then you're custodying funds, making transactions for people and profiting from it.
+ Which, yeah, in most jurisdictions, that may not fly.
+ But it'll be interesting to see what comes out of that.
+ But I am glad that the base open source project is taking the no-fee approach.
+ And then obviously, people can build on top of that.
+ That's one of the beautiful things of open source is you can take it, you can find a way to use it.
+ You can find a way to use it to monetize.
+ Actually, I'm curious about the license on the code to see what is being used there.
+ It's all MIT.
+ All MIT. Okay. Yeah. So, for you.
+ So take it and change it. Be my guest.
+ And I think at some point, like currently, we actually still have some sort of fees in the code base.
+ And I think we will just make it configurable.
+ But I will not go out there and tell people to set fees because that might get them in hot water.
+ So I don't want to do this.
+ But yeah, like both things work with the same code.
+ So that's great.
+ Yeah, I think that's the good sane default.
+ But I'm sure something that people play around with and try to build a business on top of.
+ It'll be interesting to see that develop over time.
+ Another really good question that we got, and this is one that I actually am curious about,
+ and I haven't dug into yet is what, obviously, when you're fully self-sovereign in Bitcoin,
+ your key thing to keep safe, to make sure you don't lose, is that seed phrase
+ that lets you restore your Bitcoin, get access to all your transactions, all your funds.
+ With giving up custody in a Fediment scenario, what does that user authorization or access look like?
+ Do we have ideas of what that could pan out to be?
+ Because I would assume you don't need a seed phrase anymore because you're not actually custodying the keys.
+ But maybe is it more like an email address and password model?
+ Or what do you envision for what will be built around this for users actually authenticating and saying,
+ "This is me. Now let me access my funds"?
+ Yeah. What is a seed phrase, really?
+ In the end, a seed phrase is just the root of an extended private key
+ from which you can derive multiple different private keys that you can then use in protocols like Bitcoin.
+ And I think basically, Fediment will work the same way eventually.
+ We're not implementing this right now, but eventually we want to be able to have a seed
+ from which you can restore your entire wallet.
+ Interesting.
+ But the interesting thing about it is what we didn't talk about much yet,
+ but the community custody approach.
+ Because what that means is if you trust your federation anyway, like the guardians of the federation,
+ and you know them and they know you, what you can do is you can encrypt
+ Shamir's secret shared backup of your seed phrase to the federation guardians.
+ And you just attach your name to it, for example, or the name they know you under.
+ It doesn't have to even be a real name.
+ Like if you're in the cypherpunk community, like you just use your handle on some platform.
+ And like if you ever lose your phone, then you could, for example, go to a certain amount of these federation guardians
+ and tell them, hey, I lost my phone. Can you please start a decryption process of my backup I gave you a long time ago?
+ And then they would do so and you would get your funds back, which is kind of cool, I think.
+ And that only works because you trust them with your funds anyway.
+ So there's no reason to not also involve them in the recovery process.
+ And that's actually the big thing, which might enable people to get off exchanges.
+ Like at least at least that's what we are building it for.
+ So people that are using exchanges today because they worry about like, what about inheritance?
+ What about if I lose my passwords on my phone?
+ Then this approach with a local community federation would allow them to have the security that even if they mess up,
+ they still have access to the funds.
+ The way I like to look at it is, is so you have this federation in place, which is basically this, you know, semi professional multi-sig already in place.
+ They're able to hold a backup for you split among the federation and the same kind of trust model that your funds are held.
+ Ultimately, then what does that mean on a backup restore process?
+ That means the user needs to prove to them in some way that they're who they say they are.
+ And depending on what type of federation it is, that could be a, you know, a private key signing a message that can be knocking on your neighbor's door.
+ That can be, you know, taking a putting in an email and password, whatever that specific fediment wants to do to prove ownership of the funds they can do.
+ And then they restore the backup themselves.
+ Yeah, I think like in thinking about fediment, one of the key things that I think you can benefit from is you can remove or reduce that friction of storing a seed phrase.
+ Because that is, I mean, if the target is those people who are keeping funds on exchange, I think a lot of reason people do that, like we mentioned at the beginning of the show is they do it because they're worried about losing their seed phrase or getting hacked or something like that happening.
+ So if you can remove that friction from fediments as well, I think that's another win.
+ Obviously, there are trade offs with that.
+ But like I think the Shumier secret stored with the custodians is a very interesting compromise because it still doesn't give one custodian the ability to steal just your funds without collaboration.
+ They would still have to collaborate amongst each other to do that.
+ So trust is still a key part of that.
+ Or distributed trust is still a key part of that.
+ So I mean, I guess it makes sense that it's not going to be something that's a core part of fediment or mini mint, but it will be up to the custodians themselves to see what they want to do with that.
+ But I do hope there are some at least some interesting approaches taken to step back from that seed phrase UI.
+ Because I think that can be a hurdle for those people who aren't comfortable with that.
+ But also enabling that for those who are especially with the compatibility between fediments, people to be able to move funds.
+ Just to be clear here, obviously the main negative trade off in that model compared to a traditional seed phrase backup in sovereign Bitcoin is, you know, if the federation disappears, you can't restore in another wallet.
+ You're completely tied to that.
+ You are trusting them with custodianship, but you're also they're handling the backup for you at the same time.
+ But that would be true regardless.
+ Because even if you had a seed phrase and the custodian, if that federation died or was compromised or whatever happened, you would lose funds.
+ That doesn't matter with the actual backup approach taken.
+ I'm just saying like when you think of a fediment backup versus when you think of a traditional Bitcoin backup, right?
+ Yeah. And that's that key risk with custodians is just like if your exchange goes full Mt. Gox or Quadriga CX or whatever the Canadian one was.
+ Yeah, you lose those funds, but it at least again doesn't rely on just one person keeping those funds properly.
+ So you could like if you have a I don't know, seven of nine, I don't know what a normal threshold would look like for for fediment.
+ But if you had like a seven of nine, if two members just go AFK or move or something like that, the federation still persists and they can add new members.
+ So it's again that middle ground between you holding your keys and being ultimately responsible and exchange holding your keys and being ultimately responsible.
+ It's an interesting middle ground there.
+ Next question, we touched on this a little bit before, but I want to hear a little bit more about how fediment pairs with lightning.
+ Because like I said, I think that's a kicker for me, because it not only enables cross fediment compatibility, but also just enables you to actually be able to pay from fediments without pegging in and out or whatever that process will be.
+ So can you dive in a little bit more on what to expect with that pairing with lightning and how they're symbiotic?
+ Yeah, so I think lightning is what makes the fediments really viable.
+ Because without lightning, you would have this problem of one federation to rule them all.
+ And that wouldn't be interesting, really.
+ But with lightning, you can suddenly pay everyone who is on lightning.
+ That means other federation users and also normal like self-hosted lightning users and custodial lightning users.
+ How we achieve this is through smart contracts inside the federation.
+ Like we have a part from the e-cash part and a part from the on-chain wallet, which runs in the federation.
+ We also have a smart contracting module.
+ It's very limited in scope, like it only supports two smart contract types that are needed for lightning.
+ And essentially, what you do is you lock up funds when you want to do an outgoing payment, say like, if someone can provide the pre-image to a certain payment hash, which is encoded in the lightning invoice,
+ then they get these funds and that incentivizes some external party, we typically call the lightning gateway, to go out and pay the invoice for you.
+ And then they can claim these funds.
+ And the other way around for incoming payments, there's a similar concept where the federation acts as a seller of a pre-image to the lightning gateway so they can claim incoming HTLC.
+ And like, abstractly speaking, there is a lightning gateway between the federation and lightning network, which bridges the trust gap between fully self-serve lightning and the custodial federation.
+ So what lightning gateway is actually doing is it trusts the federation, holds the e-cash tokens, and allows users to interact with lightning network.
+ The cool part about this is anyone can be a lightning gateway.
+ So you don't have a central point of failure.
+ If it goes down, if it's pressured by regulators or something like that, you can use a different lightning gateway.
+ And that doesn't have to, that's not only federation members.
+ Literally anybody can offer one if they're willing to take that custodial risk on the Fedament side.
+ And as a result, they can earn fees from it.
+ So that in itself is a competitive market within each Fedament.
+ Yeah, and in theory, the federation doesn't have to approve of gateways.
+ Like users just create smart contracts that tell the gateway, "Hey, I want to choose you and I will pay you if you act on my behalf."
+ So the federation can't even stop users from doing that, really.
+ Interesting. I actually didn't know that. I assumed that the federation would choose the gateway, not the user.
+ So it essentially will, I guess, eventually will be a pool of gateways that are offering their services in exchange for these tokens.
+ And then users can actually choose who they want to use as a gateway for sending and receiving payments.
+ In practice, it will probably still be communicated via the federation.
+ Just that the gateway registers with the federation and then that's where the user learns about the gateway.
+ But in theory, you could work around that.
+ If the federation becomes really annoying and you don't want to deal with that anymore,
+ you can totally just configure your own gateway in your client.
+ Yeah, which I think also would be especially valuable if you had worries about the federation.
+ Like you started to not trust that specific Fedament for some reason and you wanted to migrate to another.
+ Making sure to use a Lightning gateway that you do trust could be an interesting part of that to reduce the friction or reduce the potential headache that that could be to migrate.
+ It also, that 100%, but also when you pay a Lightning invoice, the node public key is exposed.
+ So you know which Lightning node is getting paid.
+ So there's a censorship risk as well if you have permissions, single Lightning gateways for these Federments
+ where they refuse to pay certain Lightning nodes.
+ And this alleviates, mitigates that issue as well.
+ Right, like that's one big pain point I currently have with Lightning integration with Fedement.
+ I can see we could take a similar approach to hosted channels where the user actually does the routing.
+ And so the Lightning gateway would never learn about the destination, like it would just learn about the next hop.
+ But in practice, that's really slow and would provide bad UX.
+ So what I'm hoping for is blind paths.
+ And I really hope that they will learn soonish.
+ So that would make Fedement even more powerful as a privacy tool.
+ I think blind routing just got PR'd against LND.
+ So it seems like it's closer than I expected, for sure, which is promising.
+ Yeah, that's a big piece there.
+ One more quick question that I had around the Lightning integration.
+ So I guess this is mitigated because you have privacy internal to the Federation,
+ but the Lightning gateway will know who is being paid and how much, all of that,
+ because they're the ones actually constructing the routes.
+ But I assume that's just not as much of a concern
+ because the Lightning Gateway doesn't know who within the federation is sending that payment.
+ Exactly. Yeah, that's the trade-off we have to make there.
+ I explained you could also let the user do the routing, but then every time a route fails,
+ you need to communicate with the federation. And that's typically pretty slow
+ with the algorithm internally. So every time you need to update some state inside the federation,
+ it takes a few seconds, one to three seconds typically.
+ So you want to avoid it. And the easiest way to avoid it in the case of routing
+ is just letting the Gateway do the routing. But if you're really paranoid,
+ we could also implement a much slower Lightning integration
+ that just passes the onion to the Lightning Gateway
+ and only learns the next hop it has to forward the onion to.
+ Yeah, it'll be interesting to see what different approaches are taken there.
+ That model probably doesn't fit the target audience of Fediment.
+ Because like you said earlier, if you have the wherewithal to run a node, you have the wherewithal to control channels
+ you're probably not going to be the person that Fediment is a good fit for.
+ And most people who are that concerned about send privacy within Lightning
+ are probably also not going to be a Fediment focus. But I think that key difference is that
+ the Lightning node knows that someone in the federation is paying coin cards
+ or whatever Lightning person you want to talk about.
+ And they don't know the source of originating onching funds.
+ That's a big part where you at least gain that anonymity in a crowd.
+ You gain that privacy in a crowd of however many people are within that Fediment specifically.
+ I will say, on the other hand, for receiving, it's really good.
+ When you imagine you actually have the full anonymity set now.
+ Even against external parties, like people are using world of Satoshi today to receive funds
+ and then forward them to their own node, just so the sender doesn't learn their identity.
+ But with the federation, even the federation itself doesn't learn where the funds ultimately go.
+ Yeah, I definitely agree.
+ When we talk about the harder core crowd, especially privacy focused Bitcoiners,
+ when it comes to receive privacy on Lightning,
+ we have Tony and future Paul are working on a private Lightning wallet
+ that they're calling Private Lightning Wallet.
+ They literally just have receives disabled in the wallet. It's send only.
+ So Fediments can be very useful on the receive side for even the more diehard Bitcoiners, I think.
+ Use it as a stopgap.
+ You send it into Fediment and then you send it to its final destination and the two things are disconnected.
+ Yeah, in my recent Lightning explorations in the last six months or so,
+ that's kind of the consensus is don't receive to your own node, which is crazy.
+ Absolutely crazy to me, but that's essentially the consensus is the better way to do privacy on Lightning
+ for receiving funds is receive to something like Simple Bitcoin Wallet
+ or Breeze or Phoenix or something like that using Tor and then send to your own node whenever you need to,
+ which is nuts.
+ But I think Fediment is maybe again a better fit for that specific model
+ until receive privacy on Lightning hopefully gets better and those problems are fixed enough
+ so that the self-sovereign people can actually benefit from privacy when doing things self-sovereignly in Lightning.
+ And then one last question.
+ I obviously couldn't let you off the hook without mentioning Monero at least once.
+ But I think there are very different focuses and very different approaches here
+ between Fediment and Monero as a tool for Bitcoiners.
+ I'm not going to take that focus because obviously Fediment is Bitcoin, it's not a Monero thing.
+ But for those Bitcoiners who want to get to better privacy in a more simple way,
+ I think right now the best tool in my opinion is using Monero as a tool for spending
+ even if you want to keep saving in Bitcoin.
+ But I think Fediment poses an interesting trade-off where people can, if they're really worried about price differences
+ between Bitcoin and Monero and that kind of thing,
+ Fediment can be an interesting tool to allow them to gain relatively simple sending privacy
+ or receiving just privacy in general when transacting without the complexities of the current Bitcoin privacy space.
+ So I would be interested to hear what you all think about the trade-offs of Fediment
+ versus using something like Monero today for spending.
+ Yeah, so the basic problem I think most Bitcoiners have with Monero is that if you want to use it,
+ like if you want to hold in Bitcoin but spend with Monero, you still need to hold the money you want to spend in Monero
+ and that for a longer time.
+ Like you cannot just go in and out, I think, instantly because that will leak a lot of information again
+ because the amounts would just match and that makes it totally silly.
+ Like if everyone just goes into Monero, then sends their money and then the other party goes into Bitcoin again,
+ that can be correlated.
+ So what you have to do is actually hold Monero for a longer time.
+ And there, like it's the exchange rate risk you already mentioned.
+ Like people might not want to do this.
+ And if you consider the custody risk of using a federated e-cash mint less than the exchange rate risk,
+ then that's for you.
+ If not, then, I mean, be my guest, use Monero.
+ But I think it's good for people to have options that work with only Bitcoin.
+ Because in my opinion, like ideally, we would live in a world with only one cryptocurrency.
+ Like there's so many, like just philosophical problems, in my opinion, with having multiple ones,
+ that it would be so much easier if we just had one.
+ And if I can make this world happen, then I will do so.
+ I think, you know, Eric nailed the response.
+ It comes down to exchange rate risk versus custodial risk.
+ I would add though for the Monero faithful listening, you know,
+ one of the things you hear often in the Monero community is,
+ "Okay, so I did swaps with Bitcoin and then I got tainted Bitcoin.
+ You know, my Bitcoin is blacklisted or whatever.
+ I can't use it on whatever service I want to use it for."
+ And a lot of times the Monero community, maybe they need to swap into Bitcoin
+ to make a payment that only a merchant accepts Bitcoin.
+ Or vice versa, where they have Bitcoin, but they want to get to Monero
+ because Monero is not on as many exchanges.
+ Now, FedEmint offers two kind of interesting improvements there.
+ First of all, in the simplest way, you know, you can go into a FedEmint
+ and then from the FedEmint, then pay into a swap,
+ whether that's a trust-minimized atomic swap or one of the centralized services,
+ kind of try and break that taint type of situation,
+ give you some privacy on the Bitcoin side, or vice versa.
+ You come into Monero, go through a FedEmint on the opposite side
+ before you make your payment.
+ You actually use FedEmint as the payment wallet.
+ But I think there's also, I mean, look, this is going to be
+ completely free open source software.
+ There might be an argument, there might be a possibility here,
+ it's above my pay grade, but it makes sense to me in my head
+ that instead of Lightning Gateways, you have Monero Gateways on FedEments
+ where people pay Bitcoin in, and then they're able to,
+ in a relatively trust-minimized way, swap into Monero
+ better than the current UX of Monero Bitcoin atomic swaps.
+ So I would tell the Monero community, don't immediately dismiss it
+ and maybe consider building on top of it.
+ You stole my talking point, Matt.
+ I'm glad I'm not the only one who's been thinking about that.
+ No, I mean, that was one of the things that I was thinking about
+ when I first learned about FedEments is,
+ couldn't you do this with a Monero Gateway as the spender
+ if you don't want Lightning or you're concerned about something else?
+ You can. I mean, the primary risk then is that that gateway provider
+ is taking on exchange rate risk between Bitcoin and Monero,
+ which obviously could be good for them or could be bad for them.
+ And that's a very different risk than the Lightning Gateway risk
+ of the challenges that come with Lightning,
+ but it is still theoretically pegged to Bitcoin.
+ And there's risk loss of funds and all that other stuff,
+ but generally they're not under exchange rate risk.
+ I think that's still the main concern, but that's an interesting piece
+ of FedEments is, in theory, it could be incomposable in a way
+ that you enable a provider to be the Monero side of that transaction.
+ And you kind of enable the opposite of an old service
+ that was called XMR.2.
+ It was Bitcoin to Monero, and they were just a central provider
+ that would let you pay Monero, and then they would pay a Bitcoin invoice.
+ That was before Lightning was big or anything like that.
+ But this would essentially be the opposite, where you could have Bitcoin,
+ keep it in that FedEment wallet, gain privacy on the Bitcoin side,
+ and gain privacy on the Bitcoin side from the Monero gateway.
+ So you also don't have that risk of, like right now,
+ most people are going to use an instant exchanger or something like that
+ to actually go between Bitcoin and Monero,
+ and then they gain a lot of information there.
+ So there's a lot of fascinating potential there of maybe
+ not using Lightning Network and using Monero,
+ or using it as a tool to bridge those things.
+ I think that would be a really cool thing to build
+ for a more privacy hardcore crowd.
+ It obviously doesn't make too much sense for users
+ that I think we are targeting at first.
+ You probably don't want to subject someone in the global south
+ to the decision between, "Do I want to pay with Monero?
+ Do I want to pay with Bitcoin?"
+ You want to make it as seamless as possible.
+ But building such integration, it's totally possible.
+ Our current implementation is super modular.
+ We can just build another module that implements, for example,
+ this conversion, and then you're good to go.
+ And that would be really cool, actually.
+ If someone out there wants to build this,
+ we're currently in the process of enabling that we can integrate
+ external modules.
+ Currently, all the modules live in the main repository,
+ but that has to change soonish.
+ So after that, I want to see many different things
+ you can do with federations, and that would be super awesome to see.
+ Because users can choose their gateway.
+ They could just choose to use a Monero gateway
+ for payments when they want to.
+ Exactly. And the question was about Monero,
+ but in the developing world, particularly in Latin America,
+ Africa and stuff, there's a lot of demand for stablecoins.
+ The same exact thing can play out with stablecoins.
+ Yeah, exactly.
+ The only problem really is that you get a free option,
+ and we have to solve this somehow.
+ But I think in most settings, it's more of an engineering question.
+ You don't have to solve it perfectly.
+ If you solve it good enough, then it will work in practice.
+ Maybe not in theory, but in practice.
+ And we are definitely working on that.
+ It's on the roadmap.
+ Not currently working on it, but it will be there eventually.
+ Yeah, a fascinating piece of it is that it's not necessarily something
+ that's locked into native Bitcoin only.
+ It is extensible, and it could be plugged into other things,
+ which I think is an interesting aspect.
+ Obviously, the focus is Bitcoin for now,
+ and the focus is Lightning, which I think is a good fit,
+ because it nullifies a lot of the problems with both,
+ with interesting trade-offs.
+ But yeah, really, really interesting stuff.
+ Any closing thoughts on FedEments before we conclude here?
+ I want to live in a hyper-Bitcoinized world.
+ I've already kind of been doing this in El Salvador, in Bitcoin Beach,
+ and I want this everywhere.
+ That's why I'm building FedEment.
+ I just wanted to thank you for having us on.
+ Look, at the end of the day, I hope that Bitcoiners have
+ many, many different options available to us
+ with many different trade-off balances.
+ And I think that, especially in the short term, short to medium term,
+ FedEments provide very promising trade-off balance
+ for a large number of users, and I'm excited to play around with it
+ in the real world relatively soon.
+ Awesome. Well, thank you both, Matt and Eric.
+ And just the last question is, how can listeners jump in
+ and help support what you're doing with FedEment?
+ For people with more technical background,
+ there's the GitHub organization, github.com/fedement,
+ and the implementation is currently called Miniment,
+ but we will rename it soon because it leads to a lot of confusion.
+ They can just look at the issues, the PRs that are being opened.
+ We also have a Discord that's linked to there.
+ Just check it out and play with it, give feedback.
+ That's much appreciated.
+ Awesome. Well, I will definitely make sure to get that in the show notes
+ and make sure that I have lots of links for people who want to dive in more.
+ But thank you both so much for coming on.
+ Thank you, Eric, for diving into the technical aspects of FedEment
+ and walking us through what it provides.
+ And thanks, Matt, for jumping on and kind of giving us the perspective
+ of somebody who obviously is focused on privacy within Bitcoin
+ but has been excited about FedEment.
+ So I think a very valuable pairing, and I'm thankful to both of you
+ for carving out some time to talk about this.
+ Yeah, thanks for having me on. It was an awesome chat.
+ We can definitely do this again.
+ Once it's launched, I'd like to be on again.
+ - For sure. - Fuck yeah.
+ Cheers to that.
+ Thanks, guys. Have a good one.
+ Yeah. Bye.
+ [MUSIC]
+ Thanks for listening, and I hope you enjoyed this episode of Opt Out.
+ If you did, please take a moment and subscribe to the podcast.
+ Or if you're already subscribed, share it with one friend or family member this week.
+ As always, you can check out the link to the guest content and contact info,
+ as well as links to all of the tools we discussed in today's episode.
+ Now get out there and opt out this week.
+ [MUSIC]
+ (roaring)

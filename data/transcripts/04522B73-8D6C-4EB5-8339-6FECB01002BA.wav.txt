@@ -1,0 +1,724 @@
+ I looked at Bitcoin, it was still there, it was still growing strong.
+ I realized that not only was this credible technology, but it had staying power.
+ It was anti-fragile.
+ It was a money that when attacked, it wasn't sturdy.
+ It didn't just stay the same, but it got stronger from being attacked.
+ That's when I realized I wanted to be a part of it.
+ What's up, Sats fans?
+ We got another great episode for you guys today of Swan Signal.
+ I'm your host, Sam Callahan.
+ I'm the lead analyst at Swan Bitcoin.
+ If you care about your financial future, you need to check out a couple of our offerings,
+ including Swan IRA and Swan Private.
+ Swan Private is our white glove concierge service where you get a trusted partner on
+ your Bitcoin journey.
+ We offer all kinds of education and research projects, as well as exclusive events to our
+ Swan Private customers.
+ Check it out today at swan.com/private.
+ Also, Swan IRA.
+ Swan IRA is the best way to gain exposure to real Bitcoin in a tax-advantaged account,
+ like a traditional IRA, a Roth IRA, or rolling over your 401(k).
+ So if that interests you, check it out at swan.com/ira today.
+ Today, we're going to be talking about custody solutions.
+ It's never been more pertinent today than to talk about self-custody and the importance
+ with all the news going on with the current exchanges and SEC lawsuits.
+ We're going to get into different custody solutions with an entrepreneur and founder.
+ We got Obi Nwansu on with us from Fetty.
+ When we talk about real-world property rights, those are traditionally enforced by laws in
+ the state.
+ But with Bitcoin, it's so groundbreaking because it removes the state from the preservation
+ of property rights.
+ And I think when we think about this revolution of Bitcoin, really, it comes down to private
+ key ownership and self-custody.
+ And so it's never been more important to provide better custody solutions.
+ And I think what Obi and his team is building at Fetty is at the forefront of providing
+ better custody solutions for individuals around the world.
+ So, Obi, welcome to Swan Signal.
+ It's great to have you here this morning with me.
+ Thank you for having me, Sam.
+ Or should I say Uncle Sam?
+ Uncle Sam.
+ Yeah, my sister just had a baby, so I'm Uncle Sam officially.
+ Couldn't be more thrilled about that.
+ I love that.
+ So thank you, Obi.
+ I love that.
+ Sorry.
+ Yeah, so like I said, I'm really excited to have you here today because I've been reading
+ a lot about what you're building at Fetty.
+ But before we get into that, I'd love to hear just your backstory because you've been an
+ entrepreneur in Bitcoin for a long time and you ran an exchange yourself, Coinflora, for
+ a long time.
+ So I would love to hear about your backstory, about how you got into Bitcoin just real quick,
+ and maybe some lessons learned from being an entrepreneur and specifically around being
+ an exchange founder, because right now it's all in the news about exchanges.
+ And to think about what you're building now compared to what you built before, I think
+ it's really interesting, that connection there.
+ So maybe go into the beginnings of Bitcoin and then maybe what you built with Coinflora.
+ Well, I'll start with the lessons learned.
+ So before Bitcoin, I was an entrepreneur for seven, eight years.
+ And the lessons learned from that is don't do it unless you are slightly masochistic
+ and you are very driven.
+ And then I became an entrepreneur in Bitcoin, running the UK's longest running Bitcoin exchange.
+ And the lessons learned from that was definitely don't do it unless you're willing to lose
+ years of your life expectancy.
+ It's one of the most challenging senior leadership roles in the Bitcoin space.
+ I would say.
+ But let me reverse track, because I wanted to start with the headline.
+ So my background was I was born in the UK.
+ I was into computers from a very young age, building neural networks in secondary school.
+ I think you would call that high school, I think.
+ And then I studied computer science and cognitive science at university.
+ And then after that, dot com era one and two for a number of successful companies.
+ And then I became an entrepreneur for myself.
+ During that period of time as being an entrepreneur, I was informed or made aware of this
+ really crazy and interesting idea called Bitcoin.
+ Two or three friends sent it to my way because they knew that I was into tech because I was
+ a geek.
+ And I was into things that would right the wrongs I perceived in the world.
+ And so they saw Bitcoin and they independently realized that this was something that would
+ be right up my street.
+ When I read the white paper in 2011, I thought that this was amazing technology, really elegant.
+ I always loved elegant solutions to problems.
+ And it had the potential of being the world's first meritocratic money, free and fair money.
+ I was in the middle of my last business before getting into Bitcoin.
+ And so I left.
+ I bought some, but I forgot it.
+ Two years later, 2013, I sold my business.
+ And my soon to be co-founder came to me and said, look, maybe we should do something in
+ this Bitcoin space.
+ I looked at Bitcoin.
+ It was still there.
+ It was still growing strong.
+ And I realized that not only was this credible technology, but it had staying power.
+ It was anti-fragile.
+ It was a money that when attacked, it wasn't sturdy.
+ It didn't just stay the same, but it got stronger from being attacked.
+ And that's when I realized I wanted to be a part of it.
+ And we set up the world's, the UK's longest running Bitcoin exchange.
+ It started in 2013 and sold it at the end of 2021.
+ And that was my background before where I am with FedE.
+ And it's an interesting story of how I transitioned to FedE, but that's my background.
+ Yeah.
+ And, you know, obviously you said it's a big headache running an exchange.
+ So what are some of the kind of challenges of running a Bitcoin exchange?
+ Is it more from an operational standpoint or is it around regulations that you found
+ it challenging?
+ Because obviously you had success.
+ I mean, you ran it the longest running one and for almost eight years, you guys ran that
+ exchange.
+ So how did you overcome those challenges and what were they specifically?
+ Like there are different parts.
+ One, the security.
+ We launched in 2013.
+ It was literally the three people above a garage like launch.
+ We hadn't even started advertising from the day we launched.
+ We had multiple attempts of hacking attempts.
+ People was trying to see if there was flaws in our system.
+ From day one, and that was consistent and persistent for eight years.
+ So you're constantly on the state of vigilance.
+ It's a complex system.
+ It's a system that needs to be running 24 hours a day, seven days a week.
+ In a period of eight years, we had literally minutes of downtime in an eight year period.
+ So it's like 99.999.
+ And that's still that's the MVP.
+ That's the expected level.
+ It's very few businesses are expected to have that level of uptime because when it's down,
+ it costs people money.
+ But again, there's a lot of stress around that.
+ Obviously, there's intense competition as well.
+ And the regulatory environment was also very ambiguous.
+ And so that is also stressful.
+ And when you add them together, it's an incredibly stressful business.
+ But it's also incredibly motivating and inspiring.
+ There are times where, especially for me, although we had a number of clients, high
+ net worth, institutional, I really liked it when someone who needed it the most, someone who
+ benefited from being given access to Bitcoin, gained that access, gained an element of
+ financial freedom.
+ That made it all worthwhile.
+ Yeah.
+ Yeah, that's what it's all about.
+ I know at Swan, when I see folks from certain countries access our platform to purchase
+ Bitcoin and protect their savings, it really reminds me of why I do what I do there.
+ And CoinFlora is interesting because obviously, Binance and Coinbase is all in the news over
+ the last couple of weeks because of these SEC lawsuits of being unregistered brokers,
+ exchanges, and clearinghouses, securities.
+ And while they were kind of ramping up listing tokens throughout 2019, 2020, CoinFlora actually
+ did the opposite.
+ CoinFlora actually decided to focus more on Bitcoin.
+ So maybe talk about that.
+ And I would love to just hear some of your takeaways from the recent announcements around
+ Binance and Coinbase.
+ Does it surprise you?
+ What are some of the major takeaways from that news?
+ So why did CoinFlora decide to pivot to Bitcoin?
+ And then what are some of your takeaways from the recent developments around the SEC lawsuits?
+ Yeah, I mean, we pivoted because we thought it was just logical.
+ A lot of people sometimes say, you're a maximalist and so on.
+ I always say, no, I'm a Bitcoin rationalist.
+ I review things and I test my hypotheses.
+ And I'm pretty strict about that.
+ And based on common sense, it seemed to me, by checking
+ What was the regulatory treatment of different cryptocurrencies?
+ What was the level of decentralization?
+ What was the level of technical competence of the people operating the systems?
+ And what was the level of support, ground organic support?
+ If you went through those four measures, we had a criteria to decide what we listed.
+ And it just turns out that literally the only thing that made the cut was Bitcoin.
+ We would test that regularly.
+ And Bitcoin would be the only thing that made the cut.
+ And to be fair, even Bitcoin only just make the cuts.
+ There's lots more work to make it clearly past that.
+ But if Bitcoin just makes the cut, everything else is very, very far away from that.
+ So it was quite interesting at the time in 2016, 2017, many exchanges would say they
+ had criteria for what they listed.
+ We were the only ones who were public about our criteria.
+ And one hypothesis was that any objective and rational criteria would only end up with
+ Bitcoin.
+ Therefore, you couldn't show your criteria because it would be either irrational or subjective.
+ There was no way that you could find a way that the gamut of coins being listed would
+ fit into any reasonable criteria.
+ So we listed Bitcoin.
+ Now it so happens that I find Bitcoin is the first cryptocurrency.
+ It's the most widely adopted.
+ And there are a number of technical aspects to it that I find incredibly interesting.
+ But we wanted, we're a commercial company and we want to be very objective about what
+ we did.
+ And it just so happens it's, whether you're subjectively or objectively, it becomes Bitcoin.
+ So that's why we listed Bitcoin.
+ I was actually, the only thing that sort of surprised me about what's happened recently
+ was how long it took.
+ I was talking about this in 2019, why we chose to list Bitcoin and not others, explain the
+ objective criteria.
+ And I felt that it would, over the following three or four years, it would be clear that
+ others shouldn't be listed for very objective reasons.
+ And regulatory reasons were only one of them.
+ So it doesn't make, the only reaction I would have is how long it took.
+ Then again, we were the only exchange to do provable solvency.
+ After Mt. Gox, a number of exchanges promised to do this.
+ We said that we would as well.
+ I think one or two did one provable solvency and then didn't do one again or had a gap
+ of several years before they did it.
+ While we promised to do it and we did it every month without fail for the eight years we
+ were around.
+ But again, I was surprised it took eight years before many started to do it again.
+ But again, even then, they started, but then some have stopped again.
+ Because it was, even though it's not perfect, the argument that it's not perfect, therefore
+ we should do nothing didn't seem rational to me.
+ I feel like you should do what you can and then keep investigating ways to do more.
+ And so I estimated wrong by eight years there.
+ Sometimes the market can stay irrational longer than you can stay solvent, although that's
+ not relevant to us because we were very solvent at the end.
+ Yeah.
+ Well, I got to give you guys credit.
+ Like CoinFlora was transparent about their proof of solvency, as you put it.
+ You're doing proof of preserve consistently, as well as being transparent about those listing
+ policies that you've had.
+ And that's one thing that exchanges like Binance would always refuse to acknowledge the lack
+ of transparency around their listing policies.
+ And obviously they listed everything under the sun.
+ And now there's a lot of regulatory risks there to that platform, as well as the users
+ that have their funds on that platform.
+ And that can be a problem because we talked about how it's really rewarding when people
+ who really need Bitcoin around the world, who need access to Bitcoin, have to go through
+ these other third parties like Binance and take on the risk.
+ And it's just the reality that a lot of people throughout the global South and in countries
+ that really need Bitcoin have been using exchanges like Binance and they have their funds on
+ exchanges like Binance.
+ And so let's maybe get into some of the alternative custody solutions that are out there for these
+ people and why you decided to go from running an exchange and now to what you're building
+ at Fedi.
+ And maybe we can just get into that a little bit.
+ Yeah.
+ The situation is quite interesting in countries, when we say the global South, and I would
+ say post-Soviet regions.
+ So we're talking about Africa, Southeast Asia, South Asia as well, like India, Latin America,
+ Middle East, North Africa, MENA region, and also post-Soviet regions like Belarus, Kazakhstan,
+ Ukraine, etc.
+ When you look at it, there are certain exchanges like the one you mentioned, which have incredibly
+ large market share, 50 to 60 to 70 percent.
+ And so that's the situation they have.
+ And now, there are people who self-custody, but often it's in ways which aren't particularly
+ secure or particularly safe.
+ They might self-custody on a software wallet without multi-sig to compensate for the fact
+ that it's a software wallet.
+ The percentage of people who can afford a good quality hardware wallet is very low,
+ because the amounts they are holding make it not make economic sense.
+ So a solution is needed to allow them to have access to the level of service and user experience
+ that people take for granted in the West, but with the assurances or comfort around
+ the security of custody that we also take for granted in the West.
+ While I was in the last year or so of CoinFloor, it became clear to me that the solution that
+ we had, including CoinFloor, weren't going to cut it.
+ We could be a great solution for someone in the UK or Europe, but not for the people who
+ needed it the most.
+ That's when I started looking for an alternative and eventually decided to sell CoinFloor to
+ focus on finding this.
+ It was in the last few months of selling CoinFloor that I found myself in Prague, in Parinelli
+ Ponies, which is this place where incredible cyberpunks and hackers and coders come together
+ and share knowledge, where I met one of my future co-founders and the inventor of the
+ FedEments protocol.
+ His name was Eric Sirian.
+ He wouldn't say himself, he's a very modest guy, but he's a certifiable genius and a true
+ cyberpunk.
+ He'd invented a way of taking one of the oldest digital cash systems or digital value transfer
+ systems, the e-cash protocol, invented by David Charmin in 1983.
+ In fact, this year, it's 40 years old.
+ But solving one of its critical flaws, which is it requires trust in one bank, one institution.
+ He found a way of federating that bank so that one, you can use money that could be
+ federated.
+ That was Bitcoin, the first money that could be owned by multiple people at the same time
+ due to multisig.
+ Then the bank itself or the mint it's called, it's not technically a mint, but it's called
+ a mint, it also be federated as well.
+ By doing that, if you could federate the David Charmin's mint technology, then you could
+ solve this weakness for e-cash.
+ And hence, FedEment was born, a federated Charmin mint.
+ Now when I saw it, I realized that the e-cash protocol had incredible properties.
+ It had great privacy properties that a lot of people talk about, but actually, it had
+ other really interesting properties.
+ It was a form of custody because once you hold e-cash, you can custody it, it has its
+ own private keys and so on.
+ It also is a bearer instrument.
+ What I mean by that is acts like tokens or cash that you would have in your wallet.
+ And that gives you even more abilities because if I send it, if then e-cash from myself to
+ you, I don't need to go for an intermediary, I can send it directly.
+ Then I don't need to go through the intermedium of the internet.
+ If we're in person, I can literally give you the e-cash without an internet connection
+ even.
+ So it allows transfer to a limited extent without the internet connection.
+ It allows transfer without any intermediaries, meaning that there's sort of no limit to how
+ much it can scale.
+ It operates in a very intuitive way.
+ It operates like cash in a wallet.
+ Each note or coin is a different file and if I want to send you a certain amount of
+ money, I just add up the file.
+ that add up to that money. I add up the coins, add up the amount I've sent them to you, and I just
+ send them to you. So it's very intuitive. I would dare say it operates the way most people think
+ Bitcoin operates the first time they hear of Bitcoin. And then they realize it doesn't operate,
+ Bitcoin doesn't operate like a coin. It actually operates like this sort of decentralized ledger,
+ which is not what the name suggests. It's not called decentralized ledger, it's called Bitcoin.
+ And it has great privacy properties. So with all of that combined, it seems like the ideal platform
+ for being able to custody someone's value in a scalable way. And the more we looked at it
+ over the following months, the more we realized that this system to be able to federate
+ a process had greater and greater applicability. So it wasn't just for federating your money,
+ but also you could do the same with your data. Why store your passwords with LastPass,
+ which got hacked a year ago, when you can store it yourself within your community?
+ Why have your communication by WhatsApp, which could be eavesdropped by a third party,
+ when you could have communication within your community and on and on? And so we proceeded,
+ and eventually that led us to where we are today, where FediMint is a protocol, which is one of the
+ most widely used protocols in the Bitcoin space after Bitcoin and Lightning. And Fedi, as an
+ organization, was set up to accelerate the adoption of FediMint. Gotcha. Let me just,
+ just so I understand what FediMint, the protocol is before we get into Fedi.
+ So from my understanding, FediMint, like what you were just saying, it combines
+ Chami and eCash, federations, which is kind of like a multi-SIG technology, similar to
+ Liquid Network, and then Lightning swaps, right? It integrates with Lightning. So
+ a group of individuals can pool their Bitcoin together. They can mint Bitcoin-backed tokens
+ called FediMint Bitcoin, if you will. And then that allows for really fast and private transactions
+ within that federation, within that community. And then they can swap that for Bitcoin through
+ the integration with the Lightning network. And that's the FediMint protocol. Do I have that right?
+ Or is there any other nuance? I think that FediMint can do all that, but it can do much more.
+ So at the base is what you call the federation protocol. You said like Liquid. But it's so,
+ FediMint can take any application and run it in a way where it's run by a community or trusted
+ member of a community, as opposed to one person. As opposed to one company, let's say Coinbase,
+ running an application, or one computer, or your mobile running it. You can have a series of
+ different people running the same program. And then FediMint will coordinate that so that as long
+ as the majority of them are honest and running, it will continue to tick along. So if one machine
+ fails and it reconnects, it will carry on running. If one machine becomes a bad actor, it will
+ continue to run. But that's what the core base protocol does. Now, why would I want to run
+ something in that way? Well, one, I can pull resources. Anything where it's useful to all
+ the resources of multiple people would benefit from that. Or two, I can get economies of scale,
+ because I can, again, work together. Three, some different people with different abilities can
+ cover for others as well. So you can have each other's backs. Anytime that that's useful to do,
+ you can do this. And finally, it leads to a far simpler, and more powerful, and more reliable
+ experience, because it's resistant to failure. As opposed to if you have one system, one server,
+ and it goes down, everybody who's using it is affected. Here, it would require a number of
+ things to go down. So what's that useful for? Well, the first thing, the first app that that's
+ useful for is value and money. Clearly, you'd want your money that you're using, or any system of
+ money, to not fail for all users if one machine fails. That's not good when you want to make a
+ payment and you're waiting for one machine. Also, you want economies of scale. For example,
+ the Lightning Network. It's useful to run what we call lightning swaps to be able to access the
+ Lightning Network in a way where you can amortize or share the costs of going on-chain and off-chain,
+ for example, rebalancing lightning channels between multiple users, reducing costs for everybody,
+ for a community. Also, increasing reliability, because you can have multiple lightning service
+ providers servicing a community. So if one's price is high and the other one's low, the community can
+ seamlessly choose the lowest cost, giving them better prices. But it goes beyond that. If I'm
+ storing passwords, it may make sense for me to store that within my community, as opposed to
+ storing that with a third party. Or if I'm having conversations and chats, etc., it may make sense
+ for those chats to run within my community in a reliable fashion, as opposed to by a third party.
+ So do I want to control my money within my community? Does my community want to control
+ its data? Does my community want to control other aspects of its digital life like chats?
+ If so, then it makes sense to run it within a federated manner. This is the way towards a
+ decentralized web, where instead of five or six big tech companies where we store all our data on,
+ you can bring it into communities. So hundreds of thousands of communities around the world
+ can have their own personal Dropbox, their own personal WhatsApp, their own personal Coinbase
+ running for their benefits. And as a user who is a part of multiple communities, I can pick and
+ choose where I store or the place they store my money, the place they store my data, and the place
+ they store or execute aspects of my digital life, like my conversations. So it started with money.
+ And the first app, you think about it if you have the iPhone, it comes pre-installed with a phone,
+ calculator, calendar app. But it can do much more than that. So FediMint, the apps that it comes
+ pre-installed with are Bitcoin, E-cash, and what you call lightning swaps. But there are people
+ working on federated password managers. And we've shown on the Fediap chats happening within
+ federations and federated web servers and more and more. It's actually a platform to scale Bitcoin
+ to really be able to be the base of a decentralized web.
+ A decentralized web. And we all know the problems with the current centralized web that we have
+ in terms of censorship and a lot of power being basically siphoned to a few large companies. And
+ when we think about not just money, but the data that can give back to the user or into these
+ federations, I'd rather trust the community that I'm within rather than a big company that could
+ act against my interests. And even right now, we're seeing examples of this with Apple rejecting some
+ lightning apps from the app store. We have Zeus Wallet had problems with it. We had Fold having
+ problems with it, as well as Domus, the client for Noster. All have been issues with just getting
+ onto the app store. So when you see things like that, does that make you think this is why we're
+ building what we're building at Fedi? I think, I mean, I was in Oslo,
+ there was a freedom forum and with Will, and I think it was the day before he was about to go and
+ announce, make some announcements around Domus. And then the announcement came out that he was
+ having challenges there. And we have mechanisms to permissionlessly make available software.
+ We have the internet already, but there are limitations in the ease of deployment, having
+ some sort of central place and the convenience of the alternatives mean that many people use that.
+ So I think having something that combines the permissionlessness of the internet and of Bitcoin,
+ but with the ease and the experience of some of the systems that you've mentioned,
+ is the way we need to go. And our belief is that FediMint as a base is going to be able to provide
+ that. And other people are working on other solutions. We think this has got incredible
+ traction. It's a very simple protocol as well. Again, back to the elegance and simplicity of
+ Bitcoin, et cetera, it's a very simple protocol. It's not trying to do too much. The thing it does,
+ which is take something that you would normally run on one machine, federate it so it runs on
+ multiple machines so there's no single point of trust and operated by a community for the benefit
+ of the community. And just to be clear, when I say a community, that's any organization of people,
+ that's a company, that's an organization, that's a charity, that's a village, that's any form of
+ organization is a community. So worldwide, there are really millions of communities ranging from
+ four people to 400,000 people in sites.
+ And this is, you know, we're starting to see these collaborative custody solutions, like what FedE's building.
+ In between this like self-custody over here, and then there's trusted third parties holding it on exchange or so.
+ And we're seeing this like in between these solutions come to market.
+ And it's really exciting because one of the things that I find really interesting,
+ and it sounds like you studied some of this at university, but you're kind of bringing like a human component to it.
+ Like how do humans actually behave and who do they actually trust in their lives?
+ And so were you kind of thinking through that when you thought why FedE would work?
+ Like, okay, so people would rather trust people they know in their community.
+ And also people are incentivized not to, let's say, screw over people in their community because they don't want to be like banished from it.
+ Did you think through some of these like human behavioral components when thinking why FedE might work and why it wouldn't?
+ Yeah, I mean, the first hint was, I mean, one, I'm part of a community.
+ I have family, I have friends and so on.
+ And you subconsciously think about this, but in CoinFlow, we were trying to get people to self-custody.
+ And if you can do it, self-custody is the absolute best and you should do it.
+ And we really actually, which we weren't paying lip service to it, we really tried.
+ But we had people who got the idea of Bitcoin.
+ One person comes to mind, especially this really streetwise woman who became a good friend of mine.
+ And when I asked her why she didn't self-custody, she said, look, I get Bitcoin, but I trust you, CoinFlow, and me, specifically Obi, more than I trust myself.
+ And that actually is very common for a lot of people.
+ And when I asked her who she trusts more than me, she said, well, given that she thought about it, given that I eventually decided to use you because my son recommended it, by definition, I trust him more than you.
+ Because, well, if he'd said to use Wibble Wobble exchange, I would have used that.
+ That was where the first spark went in my mind.
+ But it was but then when I met Eric and later Justin, and we started looking at FeddyMint and its potential, over the following, no, actually approaching two years now,
+ we've had the chance to think about the nature of custody, the nature of community a lot.
+ So a lot of our thoughts have just matured over time and we've become more and more convincing.
+ There's been this missing piece in actually almost all of the Bitcoin ecosystem.
+ So on one hand, we've got there are three forces that actually have been pivotal in advancing human society.
+ One is the self-reliance, the quest to increase our knowledge, our capability, our skills.
+ That clearly has moved society forward.
+ Specialization, professionalism, etc.
+ That thread is equivalent to self-custody, the idea to increase your knowledge, to be able to custody yourself or the desire to learn how to fix your own car yourself or so on or whatever it may be.
+ And that's a very powerful force for improvement in mankind and society.
+ The second is competition and the competitive forces that lead us to excel as well.
+ When we know this, when you have a business with no competition, it can be a challenge.
+ But when you have competition, it leads you to be the best you can be.
+ And we see that in society with capitalism and competition, etc.
+ And from a custody point of view, for money, that's similar to the idea of using an exchange, which are all competing commercially with other exchanges.
+ There's one other force that has been critical to our advancement and human flourishing, which is collaboration, where we work with other people towards some goal.
+ It's the basis of society and community and so on.
+ And arguably, it could be considered, if not as important, maybe more important than the other two.
+ But up until FedeMint, there hasn't really been this analog of where we're taking this fundamental, it's actually a technology, this fundamental technology of community and using software, using technology to turbocharge that existing capability to its logical extent.
+ And that's what FedeMint does. It takes this fundamental ability of humans, which is to form complex communities, really only aped by bees and termites in the entire animal kingdom.
+ No other animal forms complex society.
+ And think about termites. We don't know how they manage to air condition these mounds they make.
+ You can go to the savannah or the jungle and you see a safari and you see these.
+ We still don't understand exactly how they work.
+ But, and so termites don't even technically have what we would call a brain.
+ They have a few nerve cells and they have no hands.
+ They manipulate the entire world with their mouth.
+ So they don't have opposable fingers, they don't have a brain, but because they form complex society, they have superpowers.
+ But we have all three.
+ We've lucked out.
+ We have everything, which allows us to be the dominant species on the planet.
+ And forming complex society is a superpower.
+ Fedimint allows us to take that and combine it with technology.
+ And once you do that, you realize that it's the missing piece of the Bitcoin ecosystem.
+ Bitcoin is its base protocol.
+ It's a foundation for everything.
+ Fedimint, you can see as cities where you can have this dense economic activity, more complex features and functionalities can be added.
+ There's no limit to how much you can extend a particular Fedimint.
+ It can specialize for some purpose, federated mining pools or whatever you may want.
+ And then they're connected by this transport grid of motorways and roads, which is the lightning network that interconnects all these cities together.
+ Just through simple analysis, you can see that that scales to global level.
+ If everybody, if there was no city and there was just roads, then everybody would have to have their own personal road and the world would be all road.
+ On the other hand, if there were no roads and only city, then that means, which is like a monolithic side chain, that would be conceptually the same as the entire planet, humankind living in one city, which again, probably not scale either.
+ So this idea of this and also not be very resilient, one bomb and that's it, everybody's gone.
+ We're not redundant as well.
+ So having this combination of this foundation, which you can rely on, like the earth, you have cities connected by a transport grid of roads that leads to this federated global scale, decentralized OS network.
+ And that is what we are motivated to see happen.
+ And we will see that happen over the coming years.
+ So in a way, FedeMint will help scale the Lightning Network and vice versa, it sounds like a symbiotic relationship in a way.
+ Yeah, and the Lightning Network scales FedeMint.
+ FedeMint's are islands, without Lightning Network, you can do a lot within that, but without access to the rest of the world, it's like a city without access to roads and the sea and commerce with other parties.
+ It's a shadow of its capability.
+ Yeah, I just I think it makes a lot of sense because when I'm talking to a loved one or a friend who's getting into Bitcoin, teaching himself custody, a lot of them don't know what they're doing and they don't feel comfortable and they want to go to their more tech savvy friend to help them through this.
+ And to me, that's kind of what like a guardian is within a federation is they they assume the responsibility of maintaining the community's multi-sig wallet and authorizing spending a Bitcoin within and outside the federation.
+ And that kind of distributes the custody within the federation amongst all these guardians who assume that responsibility, if I'm saying that correctly.
+ And, you know, to me, it's it's really makes a lot of sense. But is there any like privacy concerns when it comes to those guardians knowing all the transactions within the federation or is there any risk that could happen when the guardians have that power or maybe can go into that a little bit?
+ OK, well, first of all, the way it can work in terms of the interaction can be different. It can work in that way or it can work in a way where effectively users are buying right.
+ Users are buying signatures from from the guardians, so they're providing Bitcoin and being and they are also providing e-cash and e-cash unsigned e-cash and that's e-cash is being signed.
+ That's that's the other way it can work. And but when they get the cash back, the cash is a bearer instrument held by and custody by the users still.
+ They still have to have some backup of it if they lose.
+ If they lose the e-cash, like if you have a wallet, you lose your coins.
+ It's custody.
+ So the e-cash is actually, this is why, the e-cash is not actually minted by the mints
+ technically.
+ The user mints their own cash.
+ It's just signed by the mints first.
+ And the second is, so effectively you're buying signatures.
+ Like if you're going to a film convention and someone's signing, you're paying $50 to
+ get a signature for someone for your book or an autograph.
+ That's one thing to note.
+ And as I say, when you go away with the book, you're holding the book.
+ The movie star who signed the book doesn't hold the book.
+ And it's even more than that in the case of e-cash, the mint not only is not holding or
+ creating the e-cash, but they don't know what the e-cash was to your privacy question.
+ So when you give them this book to sign, what you're really doing is, or this picture to
+ sign, what you're really doing is putting that picture in an envelope, sticking some
+ carbon paper in between the envelope and your picture.
+ And then you're giving them an envelope to sign.
+ And they sign the envelope.
+ You're also giving them some Bitcoin as part of that transaction.
+ And then you take away the envelope.
+ And you go around the corner, open the envelope, take out the picture.
+ And now the signature that they made on the envelope has been transposed onto the transfer,
+ sorry, onto the picture that you'd put inside the envelope.
+ So with e-cash, you go along with a hundred satoshis and a hundred envelopes, and they
+ would stamp or sign each one of those with a signature saying, "One sat signature, one
+ sat signature for all a hundred."
+ You go away, open the envelope, and you have a hundred different documents that you made
+ that weren't signed and now have been autographed by the mint.
+ But if you lost those, the mint has no way of knowing what they are because it doesn't
+ know what it signed other than it signed a hundred envelopes.
+ It doesn't know what's inside them.
+ You still have to protect and look after that.
+ However, this is where Fediminter, the federation, comes in.
+ Because just like the default apps are Bitcoin, e-cash, and Lightning, you can add functionality.
+ And there really is no limit to the functionality you can add.
+ So one functionality that we added pretty soon, Feddy added, is an idea of social backup
+ where, okay, you've got these, but you can create a 12-word key to help regenerate all
+ of the e-cash that you created yourself.
+ How do you back that up?
+ Well, why not back it up with the trusted members of your community who are already
+ there running this Fediminter system?
+ So the Fediminter module trustlessly encrypts the keys that represent your e-cash, then
+ splits it up into chunks.
+ We also know the shards, depending on the number of guardians, let's say there's four
+ systems, four chunks.
+ And then it will share those chunks with the guardians.
+ And all of that process, you can write the code is written in a normal programming language.
+ You don't have to learn a new crazy programming language or complicated programming language.
+ And the code also covers the process of helping you recover it again without revealing any
+ information that you haven't, that's any personally identifiable information beyond what you have
+ revealed to them in the first place.
+ So initially you reveal nothing to them, and to recover, you have to go up to them.
+ So you reveal your face to them and your voice, because you have to go up to them and talk
+ to them.
+ You don't reveal anything more than your face and your voice, which is necessary anyway,
+ because you have to get on a video call with them or call them.
+ So you would have to do that.
+ And obviously you wouldn't want your keys to be returned to someone who is not showing
+ their face and not telling their voice.
+ That would probably be, you'd probably not be something you want to return your keys
+ to.
+ Well, it sounds like you can just do these very interesting things in terms of building
+ some safety nets that aren't possible with other custody solutions when you use the power
+ of community.
+ And that's really what Fetiment I'm learning is.
+ It's really, like you said, it's like community embedded in a technology.
+ And that's what you guys are taking advantage of at Fetty.
+ And it's really more than like some wallet.
+ I think initially you're like, "Okay, this is like a wallet."
+ That's why we don't want to call it a wallet.
+ Yeah, not a wallet.
+ It's really something much more.
+ Yeah.
+ It's like calling iPhone a calculator app because it's got a calculator app on it.
+ It is a calculator, but it's also a calendar app.
+ It's also a phone app.
+ It's also a web browser.
+ All of these.
+ Now, there's an overhead to being run as a federation.
+ It's not as fast.
+ So if your thing doesn't need the resilience of no single point of trust, or if it does
+ fail and it's not the end of the world, then you probably don't want to run it.
+ So I wouldn't suggest Grand Theft Auto federated.
+ You could do it.
+ You literally could do it.
+ But what's the point?
+ If it fails, you just restart the game.
+ Pac-Man federated as well.
+ But for what we think is this, when it comes to, that's why money was the first app, because
+ when it comes to money, that's one thing that, you know, being the absolute fastest, if it's
+ under two or three seconds, it's good enough, as opposed to fractals of a second.
+ But the benefit of having no single point of risk is worth it.
+ Certain data, not all data.
+ If it's, you know, cat pictures that are, if it's your own cats and you love them to
+ death and no one else has it, then you probably want to have that federated and backed up
+ in multiple places.
+ If it's a general cat picture of a normal website, probably not so useful.
+ So but certain data, an example, for example, is, an example would be passwords.
+ Your sensitive passwords, you might want that backed up.
+ You don't want to lose all those passwords.
+ Or sensitive private information, you might want that encrypted and backed up amongst
+ people that you trust the most, where they still can't actually collude to recover it,
+ but they can take on the responsibility of storing it for you.
+ Or certain conversations.
+ If you are, everybody will have conversations they want to keep private, and there's certain
+ parts of the world where it becomes even more important that you keep your conversations
+ private, because if they're discovered, you could be in personal danger.
+ You're talking about certain stuff that's taboo or so on.
+ You'd want to be sure that it's, that as best as possible, that it's, it's kept private.
+ And again, would you want to run those on a centralized third party site, which or,
+ or on this federated service.
+ And you'd want all of this with an experience which is as simple as the experience of using
+ one of these centralized services.
+ And that's what it does.
+ It gives you this level of, of, of sensitive reduction, and this level of privacy, and
+ this level of resilience while still having a user experience, which is as good as the
+ experience of the centralized services.
+ And that's, I mean, that's what I was learning when I was researching Fetty.
+ I mean, it's much more than a wallet.
+ You guys have like chat functionality built into it.
+ Any, you have a functional browser where any kind of website can plug in and, you know,
+ directly into a federation and get all these benefits that we're talking about.
+ And so I'm really excited about the potential here.
+ And the last thing I wanted to talk to you about is basically how this helps scale Bitcoin
+ and help scale lightning and why you think it's, we're doing this in the correct way
+ when compared to other ones like Ethereum who had to scale in a very different manner
+ and why you think maybe the way that Bitcoin is scaling is more beneficial long-term for
+ the network and compare the pros and cons for how these different networks are trying
+ to scale, because I heard you speak on this and I think you had made some really good
+ points.
+ Yeah.
+ So it's quite interesting.
+ Ethereum has taken this sort of haphazard Russian, you know, Russian where, where others
+ fear to tread type approach.
+ And if you look at where their trajectory is, they will, they're slowly ending up to
+ where we are now today with Bitcoin.
+ When I mean today, I saw only just this year, we have this, we have these core elements.
+ We have Bitcoin as the base.
+ It is, uses proof of work.
+ It is, is incredibly mature, incredibly decentralized.
+ and it's not trying to scale to millions of transactions a second on the base layer,
+ because it realizes that will sacrifice security and decentralization, which you don't want to sacrifice on the base layer.
+ So we've got that. We have Lightning, which is this mechanism to transfer and settle,
+ almost instantly, value from one place to another. It can do it at low cost and at high speed,
+ but there is a requirement to now and again perform settlement between Lightning channels and the main chain,
+ which can be costly if fees are high. And we do expect over time a global adoption for fees to be high.
+ And then you have now FedEvents, which allows you to add any functionality you want.
+ You can either use in our system, but the protocol could accept other program languages,
+ but Rust to add really complex functionality, or you can add functionality,
+ which probably can get you 80% of the way that you can get to the really low level Rust stuff,
+ just using HTML, CSS and JavaScript, which is developed by millions, tens of millions of people around the world.
+ You can extend it very easily and very quickly. It reduces trust.
+ It's naturally decentralized in the sense that there are hundreds of thousands of communities of different sizes around the world.
+ And as the community gets above a certain size, there's this natural desire for people to say,
+ "You know what? I want this set of functionality, but the rest of the community doesn't.
+ I'll set up my own federation for that, because I can be a member of multiple federations,
+ just like I can be a member of multiple communities."
+ So that's the structure. You've got the base, the earth, and you've got the cities,
+ where you have the economic and functional density, and then you've got this transport connection.
+ Now, you have this in Ethereum and other platforms as well, but with some significant caveats.
+ First, you have this, let's just take, and it's very similar for every other crypto.
+ You've got Ethereum as a space layer, but it's less mature.
+ It's overly complex, because if the functionality is happening in the cities, not on the earth,
+ then you don't need the additional complexity there.
+ So it's overly complex, giving it a higher attack service, etc.
+ Then, the closest equivalents are these concepts such as roll-ups.
+ You've got these zero-knowledge roll-ups or optimistic roll-ups, etc.
+ They provide you a level of privacy, they provide you a level of extensibility,
+ and they provide you a level of scalability.
+ However, again, they are incredibly complex. They introduce a new token, almost invariably,
+ which has its own negative incentives, because it's like the child will always want to eat the parent,
+ a bit like spiders have these children, and they want to eventually consume the parent.
+ When you create your own token, the incentive is that you want to be bigger than the thing that you're dependent on and overtake it.
+ Also, because they have different tokens, they are all incompatible with each other and in competition with each other.
+ As opposed to in cooperation with each other, they want to be the one roll-up that rules them all.
+ Whereas, because with FedEments, it's done for your community, you have no incentive to provide it to anyone beyond your community.
+ So, if someone wants to go beyond your community, say, "Well, here, download it and use it. It will help you, but you run your own."
+ So, it's naturally decentralizing versus roll-ups, which are naturally centralizing and incompatible and competing.
+ It's like lobsters in a bucket, constantly pulling each other down.
+ And then, finally, you have, instead of in the Bitcoin space, you really, there are alternatives,
+ but the vast majority of people in space see Lightning as the interconnection protocol.
+ So, there's a lot of uniformity and consensus around that.
+ That is not the case when it comes to other cryptos.
+ You have a multitude of cross-chain, what are known as cross-chain bridges.
+ You all know them because they're the ones that are often in use for being hacked or breaking down or having flaws,
+ unlike Lightning, which has been incredibly reliable compared to these.
+ And again, incredibly complex, competing, incompatible, and on top of that, very, very unreliable.
+ So, although you have a similarity of infrastructure, one is very, very unreliable and very divisive
+ versus one which is very, very united, reliable, mature, and simple.
+ So, now that FedEvent completes, or we say completes, the Bitcoin ecosystem,
+ we're really excited for the, I mean, I'm holding it in, but we're really excited for the coming months and years.
+ Yeah, it's well said. And everything that's kind of, you mentioned, that's being built on Bitcoin, that foundation,
+ it's like the value kind of trickles down to that base layer, into that token,
+ and it always takes advantage of that decentralization and security of that base layer.
+ It's the bedrock of the entire system. And I think that's the big difference, big caveat that you mentioned.
+ FedE just raised a Series A, congratulations. You said that anybody can join a federation,
+ and I saw you guys just did the first pop-up federation in BTC Prague.
+ And then you guys also launched the alpha release of FedE, of the app.
+ And so, maybe tell a little bit about what people can do if they want to play around with FedE,
+ if they want to join a federation, maybe explain how they might go about doing that.
+ So, yeah, we announced FedE Alpha. This is designed for builders,
+ because later on in the year, we're aiming for near the end of the year to have this full public launch of FedE.
+ But between now and then, we really want to sort of ramp up the number of what we call FedE mods and FedE modules,
+ working on top of FedE, and also just increase the general number of Lightning-enabled websites,
+ because they work really well with FedE and with every other Bitcoin and Lightning wallet.
+ So, if you're a builder right now, go to fede.xyz/builders, but you can also see it from the top of the homepage,
+ and get involved, add functionality, add new FedE modules.
+ There's already a list of features that different communities from the global south to the west,
+ the corporate to consumer are interested in, or start thinking about making FedE mods,
+ or just make more Lightning-enabled websites.
+ And we're going to be really, really trying to increase the number of those out there now,
+ because the experience is mind-blowing, especially when you use protocols like WebLN,
+ and people just don't realize how slick it is from payments.
+ Beyond that, if you want to play around with creating your own federation, you can go to fede.org.
+ There's more information about doing that.
+ But again, as FedE, we are looking to put in place tools to make it really, really easy for people to build their own federations,
+ like point and click.
+ We already got it down to three or four minutes.
+ We want to get it down to seconds, ideally, to make your own federation.
+ So that's how you can get involved.
+ Go to fede.xyz, especially if you're a builder.
+ But if you're a community as well as interested, sign up to our waiting list,
+ so that when it's available, you'll be the first to know.
+ Awesome.
+ Yeah, we definitely need more developers building on the FedEment protocol,
+ as well as building Lightning apps.
+ Lightning.
+ Yeah, absolutely.
+ So, Obi, thank you so much for taking the time to talk with us today
+ and tell us all about FedE and your experience in Bitcoin.
+ Thank you.
+ I really enjoyed this.
+ Do you have a Twitter that people can follow you or where you want to point to just before we let you go?
+ Yeah.
+ So just to let you go, just before we go, one, for me, the best way to get me is on Twitter.
+ I'm Obi on Twitter, O-B-I.
+ I'm one that I'm obviously early to Twitter, so I have this three-letter Twitter showing my age.
+ And the other is FedE.
+ So go to FedEBTC, so F-E-D-I-B-T-C on Twitter.
+ Awesome.
+ Well, thanks again, Obi, and good luck with everything you're building at FedE, really exciting stuff.
+ And thanks for coming on Swan Signal.
+ Thanks very much, Matty.
+ If you care about your financial future, you need to check out a couple of our offerings,
+ including Swan IRA and Swan Private.
+ Swan Private is our white-glove concierge service where you get a trusted partner on your Bitcoin journey.
+ We offer all kinds of education and research projects, as well as exclusive events to our Swan Private customers.
+ Check it out today at swan.com/private.
+ Also, Swan IRA.
+ Swan IRA is the best way to gain exposure to real Bitcoin in a tax-advantaged account,
+ like a traditional IRA, a Roth IRA, or rolling over your 401(k).
+ So if that interests you, check it out at swan.com/ira today.
+ [Music]
