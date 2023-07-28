@@ -1,0 +1,2194 @@
+ Everything else versus Bitcoin essentially gets spent and dies.
+ I want to be able to have reactive security.
+ And I think OpVault is today the most straightforward, easiest to use way to do that.
+ I will not be insulted by a clockmaker.
+ Overall, these kind of ways to make the network easier to both build on and interact with, I think is a really big deal.
+ If Bitcoin existed when we started Twitter, we would not have to go down the ad model path.
+ I mean, as simple as that.
+ Integrating Lightning into a social network is the killer app.
+ Hello and welcome to the Bitcoin.Review podcast, where we explore developments and projects with the people who actually make them happen.
+ The show is supported by Pod 2.0, SatStreaming and CoinKite.
+ If you're a new listener, I'm NvK.
+ I run CoinKite, where we've been helping people secure their Bitcoins for over a decade.
+ We make the cold card and fun products like the Block Clock.
+ You can find more information about it on CoinKite.com.
+ If you haven't had your brain completely destroyed by the segregated witness episode, I hope that the e-cash episode will finalize.
+ It's going to be fatality of your brain on this one.
+ So I have with me a really good group of folks, two of them who are working on the biggest projects.
+ Who are deploying e-cash out there in the world.
+ So welcome, Kali.
+ Hey there, NvK.
+ Hey everyone.
+ Thanks for having me.
+ Hey, so which project do you work on?
+ Oh, it's called Cashew, as you say, or I say Cashew, which is a Tommi e-cash system built on top of Lightning, basically for Bitcoin Lightning.
+ Yeah.
+ Very cool.
+ Mr.
+ Eric.
+ Hey guys.
+ Thanks for having me.
+ What's the name of the project you're working on?
+ Yeah, I'm working on Fediment, which is a federated e-cash protocol on top of Bitcoin with connectivity via Lightning.
+ Nice.
+ Rindell, thanks for coming back, sir.
+ Hey, good morning.
+ Good to see everybody.
+ And Mr.
+ Odell.
+ Very excited for this conversation.
+ I can tell by your tone.
+ It's an early one.
+ I am wrecked.
+ I actually didn't sleep.
+ Like, it's very rare that I don't sleep.
+ And like last night was brutal.
+ I think it was just hot.
+ So, yeah, third cup of coffee might get me going on this.
+ Had a very whiskey-fueled Easter.
+ Oh, that's nice.
+ Yeah, very nice.
+ For me, it's almost evening.
+ So I've been already having a couple of beers today.
+ Oh, look at that.
+ I bet Odell was having the whiskey during Easter because he was trying to tell people that the banking system is going to collapse and family does not want to hear about it.
+ Guilty.
+ All right, guys, let's start at the signal here.
+ Who cares about our personal lives?
+ So e-cash, very old tech.
+ Mr.
+ Chowmian invented this in the 80s, right?
+ And it was kind of like interesting.
+ But, you know, it was not viable, right?
+ I mean, every project that tried to employ it sort of failed.
+ And I have an opinion about this.
+ Well, might as well give it.
+ It's because Bitcoin didn't exist.
+ So you didn't have a source of truth.
+ You didn't have a way to peg in and peg out.
+ You didn't have a way of interacting as an on and off ramp with a system that's digital without digital money.
+ Right.
+ So like match made in heaven, this thing is now actually usable.
+ It's super cool.
+ Very well proven technology, very well studied.
+ But then comes Eric and Kali and and like take this thing to a whole other level.
+ And and because of Bitcoin, because of Lightning.
+ And and I hope we can we can sort of explore, explore this in depth here.
+ So who's going to volunteer to to give a little bit of a technical primer of what is E-cash?
+ What is E-cash now?
+ And sort of like where we're at on how you guys are exploring it.
+ So I'm going to try that here.
+ First of all, maybe just a comment on what you said.
+ I'm not so sure that DigiCash, which is the company by David Chong, who invented this whole thing in 1982.
+ DigiCash, the company was founded eight years later.
+ So 1989 or 90 or something.
+ So there was a pretty long gap between those two events.
+ And DigiCash itself tried to be viable for almost a decade.
+ But I think active it was for maximum five years or so.
+ And when you look back on the reasons why it failed, it's not usually because the fiat system was so prohibitive.
+ So that's also my take.
+ I share the take with you that E-cash needs Bitcoin to really shine.
+ But when you look back, the reasons why DigiCash itself failed was literally poor management.
+ So there were insanely huge deals on the table.
+ Deutsche Bank was interested, but that wasn't even the biggest one, I think.
+ Microsoft.
+ You know, Microsoft want to put it in Windows or something?
+ It's insane.
+ They wanted to put a DigiCash wallet into every Windows 95 installation.
+ But David Chum then wanted too big of a share of the income there or the money generated.
+ So Microsoft pulled out.
+ He has a history of expecting a little too much and wanting too much of a cut of things.
+ And the third one is Visa.
+ Visa offered them 40 million back in the 90s.
+ That was still real money.
+ Right.
+ And he just said, no, I want double of it just in the last couple of days or so.
+ So the deal also failed.
+ So my way of seeing, looking at this is DigiCash then crashed or was, you know, just a closed shop.
+ And then a couple of years later, PayPal and credit cards on the Internet really blew up.
+ So I think...
+ How convenient.
+ Yeah, I think so.
+ If things would have gone a little bit more different back in the 90s, I think the default online payment experience today could have been, without Bitcoin and everything before, could have been perfectly private e-cash.
+ On the fiat system.
+ That is technically possible.
+ I know regulatory problems then started with, you know, everything that's happened later.
+ But it's just, I mean, it's unimaginable today to build e-cash on fiat, I think.
+ You know, just as a small tangent on that, like, you know, yes, it was technically possible.
+ But can you imagine if it was just a little bit successful, the regulators would have come crashing on it?
+ Yeah, it's true.
+ But that's what also people said about Bitcoin.
+ So, you know, once something spreads a bit...
+ But you could stop e-cash on Windows, right?
+ You could stop e-cash on Visa.
+ And there is no digital on and off ramp without the fiat system.
+ You know, like it's one of those things that like, yes, it was kind of possible, technically speaking, but you would have been killed it.
+ At least in my opinion, it would be killed because...
+ Too easy.
+ Like, you know, Liberty Reserve, Bitgold, like every other Bitcoin sort of pre-digital cash that pre-Bitcoin that was attempted got killed when it got more attention.
+ Right.
+ The banks are the choke point.
+ It's the banks.
+ That's right.
+ Yes.
+ Well, and importantly, like traditionally, e-cash relies on a central issuer.
+ So even if you have transactional privacy, like that's still where you're going to apply all of your regulatory controls.
+ There's somebody to jail.
+ Yeah.
+ Yep, exactly.
+ So sorry for the tangent, but let's...
+ No, no, it's good.
+ It's good.
+ We need to sort of give people like, you know, why's and the who's and go for it.
+ So how it works, right?
+ E-cash works the way I thought when I first learned of Bitcoin, how I thought it works, but then I learned that it's not the way it is.
+ So in Bitcoin, you have the blockchain that is somewhere out there in the network.
+ What you hold is your keys and you construct transactions that you then submit into the network and eventually they get mined and that becomes a Bitcoin transaction, right?
+ So in Bitcoin, you hold keys and then you make transactions.
+ With e-cash, it's very different from this setup.
+ What you actually hold are digital pieces of data that represents the money itself.
+ It's not a key to the money, but it is the money in the system.
+ And you hold it literally on your hard drive, on your mobile phone.
+ And when you want to pay someone, you take a little bit of the data and you send it over the wire to someone else.
+ And then they receive it by sending it once to the mint, destroying it and getting a new one.
+ That is how you prevent the double spend, basically.
+ So the whole setup of how e-cash is built is very different from all the blockchain stuff that we've seen later.
+ And yeah, it seems it's a good fit to combine this with the blockchain.
+ It seems, you know, once we have Bitcoin, we can build on top of it.
+ But it's a very high level overview of the dynamics.
+ Yeah. Fun fact.
+ When you say it would be good to combine with a blockchain, people actually tried it.
+ And I think that was the original Zerocoin protocol paper that came out that implemented e-cash on Bitcoin.
+ And then it turns out, yeah, Bitcoiners don't really like having some moon math running on their blockchain.
+ So they continued development and that's where Zcash came from originally.
+ You know, I think David tried to launch his own shitcoin as well.
+ I think it was maybe like 2016, around that time.
+ I forgot the name of his shitcoin.
+ Yeah, I mean, the incentives are just very strong to do that.
+ Is it called Terra or something like that?
+ Anyways, you know, after Bitcoin, a lot of projects try to do e-cash sort of blockchain, e-cash things that sort of, hey, how can we just stick one thing on the other?
+ But at least to me, the true advantage here is Bitcoin really provided the on and off ramp to the mint that you wouldn't otherwise.
+ Right. I mean, like, you know, Visa is just sort of like paper.
+ Right. Like you can't like Visa is not like an actual token that you can sort of bring back and forth between your mint and a person.
+ So you need like a provable money token, which is Bitcoin, right, that you can then use with this other decentralized thing.
+ Yeah, like you want both common money for people to settle in and out of the mint with.
+ But I think you also want a common neutral money for mints to settle with each other with.
+ Because one of the problems that every ecosystem runs into is kind of this like cold boot, like bootstrapping problem of, you know, nobody wants to use your money if there aren't goods and services that accept it.
+ And nobody wants to build like marketplaces if nobody's using the money.
+ And so if you have if you just went off and made your own Chami and mint, that's like NVK cash or something.
+ And the only thing that people can buy with it is Sats cards.
+ Yeah, any day now.
+ The only thing that people can use is, you know, Sats cards and it like derives its value from like the future ability to buy Sats cards with it.
+ That's going to have very limited utility and like not a lot of people are going to use it.
+ If you can have, you know, NVK cash, but it's redeemable for Bitcoin, then that's a lot more valuable because like now you get to lean on the network effects of Bitcoin.
+ Well, I mean, any money network is only as valuable as your capacity of getting in and out of it.
+ If you can't trade the tokens, right, for something else, it's a problem.
+ And, you know, as you've learned from PotatoCoin, which was really a guy in Russia trying to use potatoes and he actually got the whole village to use potatoes to buy and sell.
+ And then he got to he went to jail.
+ Like, I mean, you know, the Russians, it got so successful that he got arrested.
+ And I don't know what came to the guy after that.
+ But this is this is the importance of this on and off ramp.
+ But I think it's not only being an on the off ramp, like Bitcoin is the first money that can be programmed.
+ Right. Yes.
+ And that kind of allows a lot of permissionless innovation.
+ And I think that's what we're seeing here.
+ Like Bitcoin gave us permissionless, permissionless monetary innovation and Lightning made it made it scalable.
+ Like for only Bitcoin, like these e-cash mints would still be kind of isolated because you always have to go on chain to switch between them and to settle between them.
+ But with Lightning, we now have a superpower.
+ We have an instant settlement network between different kinds of e-cash mints even.
+ Or it doesn't even have to be e-cash minted.
+ Like Kalle can be using cashew.
+ I can be using fanny mint and we can transact with each other while some third party runs their own Lightning node in a fully self-controlled manner and they can still transact with us.
+ And that's what freedom of transaction is really about, like permissionless innovation.
+ I want to get into scalability soon because, you know, Lightning scales only to a certain extent.
+ And I find that the e-cash solutions are a huge deal because they can scale us to the 8 billion people after that.
+ We'll get there. But who wants to explain e-cash technically?
+ Like, you know, let's give a proper explanation of what's actually going on under the hood.
+ OK, I can jump in again.
+ So an e-cash system is a closed system.
+ You can basically imagine it lives inside this network of Bitcoin nodes.
+ There is this e-cash system.
+ Now this e-cash system gives out tokens that you can trade inside of the system.
+ Right. It's inside money, outside money kind of thing.
+ So the way it works in cashew, and I guess also like I'm going to just explain it, how it works in cashew.
+ And Eric, you jump in whenever you need to correct me anything that is related to Feynman.
+ So if you want the e-cash from Mint, you would ask them, hey, Mint, I want to have e-cash.
+ And Mint would say basically, yeah, pay this Lightning invoice.
+ And if you pay this Lightning invoice, you give me a Bitcoin and I will give you e-cash in return.
+ Basically, that is that you can redeem later for this Bitcoin back.
+ So you get the e-cash.
+ Now, the important part is the Mint gives a blind signature on a piece of data that you gave to the Mint before.
+ So what you as a wallet do basically is you generate random data.
+ Could be random, could be also committing to something else, but let's make it simple.
+ You take random data and you blind it with a blinding factor, it's called.
+ And then you send this blinded message to the Mint.
+ And the Mint now signs this blinded message.
+ What you get is a blind signature.
+ Send you back the blind signature.
+ And because you were the person who blinded this initial secret, you can unblind this blind signature.
+ What you get is a signature on your original message.
+ The fact, you know, the important bit is the Mint has never seen your original message, but it can verify the signature that it just gave you when you later show it.
+ Now, this blinded signature and the secret message, sorry, unblinded signature and the secret message together is the e-cash.
+ So when you put them together, you can treat it as a piece of money and it's a piece of data.
+ And that you can now send around basically in a network.
+ And, you know, for the privacy, which makes this whole system extremely private is if I send e-cash now to Randall and then Randall goes back to the Mint and says, hey, Mint, look, I have now this piece of e-cash that is worth half a Bitcoin.
+ I want it to be paid out onto the Bitcoin network again.
+ The Mint doesn't know that this e-cash that Randall just redeemed back was the one that I actually created when I painted.
+ Basically, there is no way to link the peg in to the peg out.
+ And with that, also all the transactions happening internal in the system are basically not traceable.
+ That gives it this fantastic privacy properties.
+ So, you know, like you could say this, like, you know, like your Mint, it mints out a bunch of say tokens with, you know, let's ignore the part that the other person gave a signature first.
+ OK, so essentially you have a bucket where all the Mint tokens go in.
+ Anyone can take these tokens, trade with each other as long as they're still the same kind within the same network.
+ Nobody knows who traded with who and how much those were worth.
+ That's like one of the best sort of anonymity sets that you get for using this technology within the same Mint with each other using the same token.
+ I need to maybe correct here, at least in the signature scheme that Cash uses, the Mint knows the volume happening at each point in time.
+ I'm not sure if that's also the case.
+ And there is also your latest release with the news that we can get to in a bit.
+ But the key here is like, you know, like if we just go back to like normal people here, you have now a money that as long as you're using with each other for the same kind of money and not going back to Bitcoin or Lightning.
+ Right. Like you have like a nearly perfect anonymity set.
+ Right. Like it's beautiful.
+ Like you really can't know who they are, how much they transacted.
+ But if you trust the Mint, you know that there is a certain level of the distribution of those tokens.
+ Right. You know the cap.
+ You know the volume of money that's in there.
+ Now, what prevents a Mint from just creating a bunch of money, right?
+ Devaluing everybody's money in the current solutions.
+ Before we get there, I mean, I think it's just really important to just why is why is this tech interesting?
+ Why? Why should this tech be interesting to Bitcoiners?
+ And the reason is, is because no matter how strong our principles are about using Bitcoin as freedom money or using Bitcoin in a sovereign self-custody way, users ultimately want convenience and they want low cost.
+ And as a result, what we see is many, many users using custodial Lightning wallets that give them no privacy and that they have to trust with both custody of their coins and with their privacy.
+ So we see we see wallets like Wallet of Satoshi that are extremely successful.
+ So how can we improve that trust model if that's going to be the result of people using Bitcoin anyway?
+ And I think that is a key aspect that people miss.
+ Yeah. And also, like, just if we have to trust someone, then we want to move this trust assumption more local to the people, like move it into their communities instead of to some random third party on a different continent.
+ Like that's one of the bigger problems, I think, generally with third party custody, like that you don't have any reason to actually trust this other party.
+ And this problem is to some degree removed when you trust someone in your community.
+ You know who to punch.
+ That's my sort of easy way of explaining it.
+ Yes. So.
+ Yeah, go ahead, Kalle.
+ Maybe also, you know, on top of the privacy that we just discussed within the system itself.
+ So you can do payments that are not correlated to each other, basically to the individual users.
+ Funny, fun fact, Amint itself doesn't have the concept of a user or the concept of a wallet.
+ It doesn't need to, basically, like compared to regular custodial solutions where you would have a database with IDs, you know, Kalle ID, NVK ID sends Bitcoin back and forth.
+ You would have to track that.
+ Amint itself doesn't even have the concept of a user or a wallet.
+ It basically just takes in Bitcoin, gives out e-cash, takes in e-cash and gives out Bitcoin.
+ That's the two main functions.
+ So even although, you know, not even, but on top of the privacy that you get by transacting inside the Amint, you also get a privacy by pegging out of the Amint.
+ Because, you know, just it follows from that, that if you then tell the Amint, you know, I don't want this e-cash anymore.
+ I want to have it on my Lightning or my Lightning wallet.
+ You just give it some e-cash and Amint doesn't know who you are.
+ So basically you can come in, then you are completely blind.
+ You're completely, you know, anonymous.
+ And then even on your way out, the Amint still doesn't know who you are, basically.
+ So there is no entering a password or whatever, signing in with some kind of ID.
+ Yeah, there's kind of two anonymity sets at play here.
+ There's like you're the anonymity set of the users of the Amint.
+ And so inside the Amint, the Amint operator can't tell who's trading with whom.
+ Because as Callie mentioned earlier, there isn't this big replicated ledger that everybody shares.
+ Instead, it's your coins are what you have on your computer or in your phone.
+ And if I want to pay Odell, I hand him a blob of data.
+ He goes to the Amint to redeem it for a new blob of data.
+ So there's, you know, a database interaction there.
+ But, you know, just because Odell and I are trading doesn't mean that MVK and Callie need to update their local copies.
+ Right. So it's more private.
+ It also scales more naturally with how we usually build computers and databases and networks.
+ So you have kind of good privacy inside the Amint.
+ But then also when you're interacting with the Amint from the broader, either layer one, Bitcoin or Lightning Network, all of the users of the Amint kind of ride on common rails in and out of the Amint.
+ And so to an outside observer, if you have a Mint with a thousand people inside of it, they can't distinguish individual transactions going from outside of the Mint to individual users inside the Mint, which is pretty cool.
+ It's a little bit more nuanced with Lightning still, unfortunately.
+ Because currently in Lightning, we don't have a good way of providing privacy for the recipient, for example.
+ Like when I'm sending a transaction to someone from Amint, the Amint might still learn to whom I actually send it.
+ I'm really looking forward to Blinded Paths for that, which are a fake part of Bolt 12, but also being explored independently now.
+ And that would fix the problem, I think.
+ And also, there's this really interesting invention, I think, by Fiat Jeff and I think
+ Antoine, like the guy behind Simple Bitcoin Wallet, where they do the routing client side
+ and only tell the mint, or like, they would be telling the mint to forward the onion message
+ or like an onion payment, but they have already done the routing client side.
+ And that would be super interesting to implement, I think, both for cashier and for payment.
+ So you're probably referring to hosted channels.
+ Yes, exactly.
+ Hosted channels with e-cash would be very powerful.
+ Exactly.
+ Absolutely.
+ I also see a way there to improve it.
+ So where does the money come from?
+ Right?
+ Like, how do people know the supply of the mint and that they're not being...
+ They're not being...
+ What's the word?
+ Debased?
+ Debased.
+ That has been all the rage on Twitter the last few days, I feel.
+ No, I mean, like, we know, right?
+ But like, how do we explain the different options of trade-offs that you can have, right?
+ Because there's a few different ways of going about this too, right?
+ Not every e-cash network or mint is the same.
+ There is different options.
+ So let's start sort of exploring maybe some of them.
+ Yes, so in my opinion, with all the research I've done, you cannot really have such an
+ auditability without either reducing the privacy of the system or without introducing zero-knowledge
+ proofs where the users that are spending e-cash notes have to essentially prove that their
+ note that they are spending is part of the issued set of e-cash notes.
+ Like if you do either of these, you can totally have auditability in the e-cash system.
+ But like, for example, the CKP route, like if we wanted to keep the privacy and just
+ add on some zero-knowledge proof, then that would mean the users would need to know about
+ all the issued e-cash notes in existence again to produce these proofs, at least as far as
+ I'm aware.
+ Like you might be able to build some multi-party computation protocol between the mint and
+ the user where they can get some help in constructing these zero-knowledge proofs.
+ But in the end, that would make for a much more complicated system, which is much closer
+ to CKash.
+ Mimbo, right?
+ I think it would be close to CKash.
+ Yeah.
+ OK, so I think this is the important part for people to realize is that, you know, Bitcoin
+ has the UTXO set that's public and kept by everyone and does not have blinded signatures.
+ Because accounting for the money supply is Bitcoin's tradeoff, right?
+ Like it's the most important feature that Bitcoin has.
+ It's kind of the whole point.
+ Now that whole point comes with privacy tradeoffs.
+ Bitcoin will never have perfect privacy.
+ And that's the reason why we need these other second layers and third layers.
+ By the way, I'm putting e-cash in a third layer.
+ So that, you know, you can find these other tradeoffs based on different amounts and sort
+ of like you can have like a nice rainbow of tradeoffs to pick depending on what you're
+ trying to do as a user participating in this network and trying to make payments.
+ So I mean, we already have this problem in Lightning itself.
+ So it's very easy to prove how much money you have on chain, right?
+ You publish a proof of reserve.
+ Someone has been doing it who runs an exchange these days, basically.
+ But even on Lightning, Walletosatoshi, let's take it as an example again, cannot prove
+ that they have the Bitcoin that they say they have.
+ Like let's imagine we know every user's balance somehow.
+ We tally it all up and we know it's this amount of Bitcoin.
+ Now we go to Walletosatoshi and say, "Prove us that you have this Bitcoin."
+ They can only point to their channels and say, "Look at these channels."
+ But in these channels, we don't know what their balance on their side is, basically.
+ So we have this kind of problem there already.
+ Yeah, or at least you would need the cooperation of the channel peer to sign a message essentially
+ that states the current balance because like the problem is...
+ Of all channel peers.
+ Yeah, yeah, yeah.
+ Of all channel peers to have a sum of all these channels.
+ And it's an instantaneous like balance snapshot, right?
+ You'd have to continuously roll it.
+ I saw some faces when I mentioned a third layer.
+ We can go into it later.
+ Yeah, no.
+ I think it's important because, and I guess I'll explain why at least I see it that way.
+ So Lightning is still sort of moving UTXOs, right?
+ It's just choosing when, but it's still sort of using a Bitcoin UTXO.
+ While eCash, not really.
+ So I kind of feel like the third layer is sort of like it's leveraging Bitcoin, but
+ it's no longer Bitcoin.
+ While Lightning is Bitcoin, but kind of not sometimes.
+ I don't know.
+ I want to be extremely pedantic about this.
+ Please do.
+ It's a good one to argue about.
+ If you say it doesn't have to be Bitcoin and then it can be layer three, basically, why
+ not layer five, right?
+ I would ask you why it's not layer 76 then.
+ It could be if you have another two layers of eCash.
+ What is that?
+ Is that the web interface to use the eCash?
+ And is that the mail envelope in which I send my eCash and an SD card?
+ Or you know, it becomes quickly, it really dilutes the definition.
+ So for me, I'm extremely pedantic about it.
+ I invite everyone listening to be as pedantic as I am.
+ Is to be a layer of Bitcoin, two main things have to be met.
+ Is first, you have no other way of measuring the money.
+ So it must be denominated in Bitcoin, whatever this new layer is.
+ And second, in case of a conflict, you must be able to almost always fall back to the
+ chain, to the layer below in case of conflict without having to ask anyone's permission.
+ In Lightning, we have this, right?
+ So if your channel partner cheats on you, then you just say, no, here's a punishment.
+ You go back to on-chain, you have your money.
+ Now for me, layer three, let's say it would be built on top of Lightning, would have to
+ obey to this rule as well.
+ So that means in case I don't, I don't know, you don't honor my eCash, I would have to
+ have some kind of mechanism to get my money on Lightning, at least on Lightning, without
+ having to ask you nicely whether you want to cooperate or not.
+ I think for me, the layer three is no longer Bitcoin.
+ I feel like the layer two is where we have that rule set that you described, right?
+ So you have to go in and out.
+ You have to be essentially clearable to UTXOs, right?
+ Now layer three is something that is leveraging Bitcoin.
+ It's leveraging Bitcoin's truth, but it's not necessarily like it doesn't have to be
+ Bitcoin.
+ I guess that's sort of like where we differ.
+ And I think like many other things are going to come that are not necessarily payment channels,
+ so Lightning, right, that could also serve in the layer two place, which are redeemable
+ for Bitcoin.
+ But I think layer three is where the, you know, the loosey-goosey sort of like whatever
+ is connecting to Bitcoin, let's put it this way, somehow lives.
+ And that's sort of like a very sort of broad space, right?
+ I mean, maybe Visa decides to like, you know, use Lightning ins and outs somehow.
+ And you know, to me, that's them using Bitcoin that to me is layer three.
+ So yeah, I mean, I share, I agree with your explanation.
+ I just don't think that that's the like the actual layer.
+ Let's put it this way.
+ Yeah.
+ Also from a FedeMin perspective, like this layering discussion is even more complicated.
+ I think Cashew builds directly on Lightning, right?
+ Like you don't even deal with on-chain Bitcoin right now.
+ But with FedeMin, the federation holds on-chain Bitcoin.
+ And then through some elaborate protocol, we incentivize some external third party that
+ cannot cheat the users to make Lightning payments for them.
+ So if you were to think about it, like, does it build on Bitcoin or does it build on Lightning,
+ you cannot really tell which one it is.
+ So maybe your layer three definition would be much easier for us to deal with because
+ like it's much looser.
+ Like everything is a layer three, essentially.
+ Yeah.
+ Anything that sort of goes in and out of Bitcoin to me is like layer three.
+ It's like, it's just, you know, you're really just floating on the top of it.
+ Like you're just leveraging it.
+ Anything goes, man.
+ That's right.
+ I mean, I'm going to argue that it's actually not a layer of Bitcoin at all, right?
+ Because like in my mind, layer two is you take Bitcoin transactions and you apply some
+ other protocol for how you compose these Bitcoin transactions together, right?
+ So like Lightning, you have this extra layer of networking, an extra layer of semantics
+ on top of like, how do we update a particular shape of a Bitcoin transaction?
+ So a layer three would be let's take a layer two like Lightning and apply some extra protocol
+ on top of it for how we compose particular Lightning payments together, for example.
+ I would say that these EECash systems that have Lightning compatibility are separate
+ systems that have Lightning compatibility, use Lightning to move money in and out of
+ them.
+ But, you know, a cashew mint is not itself composed out of Lightning.
+ You know, the best way I like to sort of like make it very simple for people to understand
+ second layer is that you're using essentially zero confirmations in a way, right?
+ Sure, the parties may be confirmed, whatever.
+ But like, but you're not leveraging a on-chain transaction for finality yet.
+ Right.
+ So that's why it's like a softer, you get all their benefits, many of them, right?
+ But you're not truly relying on that on-chain transaction for your transactions, for your
+ trade, not your transaction, for your trades finality.
+ Yeah.
+ I think all Bitcoin scaling solutions ultimately involve how do we not publish this on-chain
+ transaction until as far in the future as possible?
+ How do they not take four megabytes?
+ Yeah, exactly.
+ And then the tradeoffs are just what guarantees do you get between when somebody hands you
+ the sandwich and when the transaction actually goes on-chain.
+ And with Lightning, that's one set of tradeoffs.
+ With EECash, it's a different set of tradeoffs.
+ With Liquid, it's a different set of tradeoffs.
+ And it's what do you do between exchange of goods and actual transaction finality on Bitcoin.
+ Kali, before we move on to something that I want to explore, I want to give you the
+ final word on the pedantic version of the layers.
+ You get the final word.
+ So, yeah, I just, as I said, I think we need very, very strict definitions here because
+ people start just making up these words and advertise their projects or whatever.
+ There's so much bullshit going on just because we don't have these words fixed.
+ If you hear stuff like that, be a bit cautious.
+ Thank you.
+ So, I think this is a good place for us to start exploring the two implementations of
+ EECash that actually have users and are sort of like playing around.
+ So Kali, why don't you start explaining to us what Cashew is and then maybe we have Eric
+ explaining what Fedi is or Fedi Mint.
+ And then we sort of like can discuss some of the tradeoffs and some of the differences.
+ That could be a good sort of like launching point for people to understand this a little
+ bit better.
+ Yeah, so Cashew is basically the idea of Cashew itself is to be a simple to implement protocol
+ that allows you, if you run a custodial service, to just take out all the legacy custodial
+ stuff with the database where your users are stored and stuff, you just rip it out and
+ you replace it with a protocol like Cashew.
+ And so we're trying to build this protocol that is extremely easy to implement and that
+ allows you to take Bitcoin from your users in and give them EECash out.
+ And so this works quite easy.
+ You can, for example, just I'm going to make one example of where this might be useful
+ is you have an API endpoint, for example, and it gives weather data, let's say, and
+ your business model relies on you have to ask your users, you know, pay me this lightning
+ invoice and then you have 500 requests.
+ You can make 500 requests and I will give you weather data 500 times.
+ So what you need to do is you have this database of user IDs and it says 500 requests for this
+ users and then you tell it this database.
+ Now I imagine Cashew as something that you can take out the system and replace it with
+ this EECash and say, you pay me this invoice and I will give you EECash in return.
+ I don't remember how many requests you have.
+ You get the EECash.
+ And now when you want to make a request to this API endpoint, you include a little bit
+ of EECash in your request.
+ So basically, like, you know, right, like back in the days, you write a letter and you
+ would put in the stamp for the response into the letter, basically.
+ That's basically how I imagine it.
+ It allows you to build these very, very simple applications where you can just replace the
+ custodial management of funds with an EECash management.
+ So you would say like in a real world scenario, I like your one time you gave this explanation.
+ Say for example, you have a school and you want to essentially provide a way for people
+ to pay each other.
+ Maybe it's to like buy and sell the books around and, you know, use the cafeteria and
+ you know, that sort of like a small money network.
+ Right.
+ And maybe they're not like, you know, rich enough to have Bitcoin.
+ Right.
+ So you could use the school could be the mint and then have its own monetary system that
+ does go in and out of Bitcoin with lightning.
+ That's how we get in there.
+ Yeah, exactly.
+ I deliberately chose this API example just to not make it a physical community.
+ But obviously, I mean, that digital communities, I don't know, a telegram channel or fans on
+ the Internet or something.
+ But there are these physical communities as well, like a school, like a village, like
+ a conference hall or something where you would want to have this internal money system.
+ Would you say that this would be great for a poker website, trying to do poker chips
+ very fast in an accountable and private way?
+ So it's much better than using a database, but still a single point of failure, right?
+ That this single issue or the single person to punch.
+ Exactly.
+ It would be terrible for a dark market, right?
+ Because the dark market now has a single point of failure and there is no enforcement on
+ how to clear this back to Bitcoin if there is a failure there because it's e-cash.
+ Yeah, it's just sort of like two kind of digital examples of this to me is a great way for
+ websites to replace a database of tokens.
+ Yes, absolutely.
+ And I'm not even sure about the dark market.
+ So I think there are dark markets out there that have a balance.
+ So you basically pay the dark market, then you have a balance on a sheet and then you
+ buy the goods and it gets subtracted from your database entry and added to the seller.
+ Oh, nowadays, it could be unpasteurized milk, dark market, right?
+ I mean, like you don't have to go far.
+ Exactly.
+ Or vaccine papers.
+ So Eric, do you want to now like explain to us a bit about FedEvent and what's sort of
+ like, what is it, what the goal is and like the more complicated stuff you can do with
+ it?
+ Yeah.
+ So fundamentally, I think both projects started with the same insight, kind of, that e-cash
+ is a really powerful system to build transaction systems and that we can now build such a system
+ on Bitcoin because Bitcoin allows permissionless innovation.
+ But the difference between Cashew and FedEvent lies in the fact that with Cashew, you still
+ have a single point of failure.
+ So it's much easier for like someone who runs such a system to run away with the money and
+ like, rug pull all the users or being pressured by third parties to do so.
+ And with FedEvent, what we achieve is we split the trust or multiple people.
+ Like when I speak about a federated system, it means there are n people, let's say four
+ people.
+ And as long as t of them, in the case of four, it would be three, like as long as three or
+ four people are honest, the system keeps running according to the protocol.
+ And then once more people go bad or become malicious, then at first the system stops
+ working and in the worst case, if let's say three out of four of these people become malicious,
+ then they could actually steal the money.
+ And what allows you to do is in a community where you have like some relatively high level
+ of trust, but like not ultimate trust, like there's probably for most people, only one
+ person they trust ultimately, which is themselves or maybe not even that.
+ And in that case, you can take some really high trustworthy people out of your local
+ community and they become your Lightning service provider, essentially.
+ And they issue you these e-cash notes.
+ You can redeem them with them, pay Lightning invoices or pay internal invoices between
+ each other if you're in the same community.
+ And that gives you this really scalable system to use Bitcoin in a world where hyper-pinkolization
+ happens essentially, because people did the calculations.
+ It's infeasible.
+ Like first of all, on the technical level, it's infeasible to onboard 8 billion people
+ onto Lightning.
+ Like it would take years and we couldn't do anything else during that time.
+ So that doesn't really work at least as of now.
+ And the second point is we already see it.
+ Like Matt mentioned that most people using Lightning do so in a somewhat custodial way.
+ Like a lot of people are using Wallet of Satoshi, like the slightly better alternative is a
+ Bitcoin beach wallet where they already have this community custody concept in place, but
+ it still allows these operators to see everything that's going on.
+ And like an interesting observation there is the closer you move the trust, like for
+ example, if you have your neighbors operate your Lightning node for you, then you really
+ don't want them to know what you're spending your money on.
+ So that's why the privacy aspect, at least in my opinion, is even more important when
+ we are talking about these localized systems.
+ Like it's not that bad, at least in a social context, if like some random Coinbase employee
+ knows that you have bought some porn magazine, but it's really bad if your conservative neighbor
+ knows that, who's running your local e-cash mint.
+ Yeah, I think there's been this thing that we've talked about for a couple of years about
+ the way that Bitcoin is going to scale, not only in terms of technically, but also in
+ terms of usability is that you'll have your neighborhood Bitcoiner who runs the Uncle
+ Jim Lightning node and then all your friends and family use your node.
+ And do you really want that person knowing everything that you're spending your money
+ on and like all-
+ They have nothing to hide.
+ Yeah, right.
+ Exactly.
+ And so something like Cashew or FettyMint is a strict upgrade for that system.
+ And if you think about other things like I use Stacker News to like upvote posts or I
+ use the Fountain Podcast app, it would be better if even though that's a custodial system,
+ if I had some privacy about what things I'm exchanging my stats for or who I'm sending
+ money to in those systems.
+ So I think a lot of people look at something like Cashew or FettyMint and say, "Oh, I'll
+ keep my Bitcoin in Bitcoin.
+ Thank you very much."
+ And this isn't a replacement for Lightning.
+ This isn't a replacement for Bitcoin.
+ This is a upgrade to custodial systems that people are already going to use, both for
+ like usability and privacy perspectives.
+ I think Stacker News is actually a perfect example because to have true freedom of speech
+ and freedom of expression, you need some level of privacy.
+ Otherwise, there can be all sorts of group pressure and social phenomena that you won't
+ actually use your freedom of speech.
+ So having some private way of like, what do you do on Stacker News?
+ It's essentially you upvote posts that you think are insightful.
+ Like without that, you don't get the true signal.
+ You get what people think is acceptable.
+ And yeah, so integrating some sort of ecosystem there would be really powerful.
+ So let's get a little bit more in there.
+ Like how does FettyMint actually work and how are you, you mentioned that you guys are
+ going to use a base layer somehow and it is federated.
+ So like, why don't you explain to us a little bit of like how you actually accomplishing
+ these things technically?
+ Yes.
+ So basically what FettyMint Federation is, it's a group of people that run consensus
+ algorithm between each other.
+ It's a lot like Bitcoin, but it's since we only have a limited set of people that participate,
+ we can use like not proof of work, but some other Byzantine fault tolerance algorithms.
+ I don't have to go into that, but essentially what they lead to.
+ Oh, please do.
+ This is the podcast to do it.
+ Are you guys still using Honeybadger BFT?
+ We're currently still using Honeybadger, but we have some of Bitcoin intern actually who
+ wants to explore different BFT algorithms that are a bit more efficient and that scale
+ better to larger federations.
+ But Eric, why don't you really explain that to us?
+ Because I think it's very interesting.
+ What you achieved is insane, by the way.
+ It's an insane achievement.
+ I must say that because it also kind of replaces some of the federated sidechain ideas that
+ are, you know, you can have a sidechain without a blockchain kind of way innovation that I
+ think of it.
+ So why don't you explain to us the Honeybadger BFT algorithm that you need to have this federated
+ signing of E-cash?
+ So maybe I start with.
+ stating why we even need that. Like the fundamental problem we have with any federated system is if
+ Alice has some money and wants to pay Bob, then we would send this transaction to all the
+ federation members, right? Like Alice would create a transaction sending money to Bob and giving it
+ to all the four federation members. But that's the happy case. Like that's if Alice is actually
+ honest. But what happens if Alice in one transaction pays Bob and in a different transaction
+ pays Charlie and then gives these two transactions to two different sets of federation guardians,
+ like these people running the federation, then what do we do? Like we have a conflict there.
+ And like to solve this conflict, essentially what we do is we create deterministic ordering
+ of this transaction. So a BFT consensus algorithm is everyone, like each of the four guardians in
+ the federation can contribute transactions to the consensus. And then at the end of it,
+ a subset of these transactions is chosen, put into a deterministic order, and then you just process
+ these transactions. And for example, if Alice wants to double spend, then the first transaction
+ goes through and the second one is cancelled, because we know it was already spent.
+ So if I can ask a question, and you can correct me, but because I think this is the real
+ point here, is when you have a system where you have, let's say, a three out of five,
+ right, you need three confirmations and the two you don't need. So you have this e-cash and now
+ you want to spend it and you only show it to three of them and two others never see it.
+ And when you do this like three times, you can double spend an e-cash note because you can pay
+ it, you know, to show it only a subset first and then rotate and show it to the next subset and
+ rotate to show next subset. And what you end up with is at the end, an e-cash note that you have
+ shown to one subset, but also have spent to another subset. So that is the problem that you need to
+ solve, basically. Yeah, like in the e-cash case, that's the specific problem there that you can
+ actually create money out of thin air. If you have this, it's called equivocation in the literature,
+ telling different sets of the system participants different truths. And to prevent equivocation,
+ you typically use contenders protocols to make sure everyone's on the same page.
+ Well, and something that I think is really important to think about, especially like a lot
+ of people from different backgrounds listen to this podcast, there's a really classic article,
+ I think, came out of Sun Microsystems. There's a Wikipedia page about it now called fallacies
+ of distributed computing. I think everybody should go and read it. You know, basically what
+ it comes down to is that computers and networks are a lot crappier than we like to imagine that
+ they are. And you can have like arbitrary network partitions, you can have arbitrary latency between
+ two links in a network without impacting the entire network. And anytime you have a distributed system
+ where lots of nodes all have to come to agreement on the same answer, you have to account for these
+ things. And you have to deal with the fact that like in a five node federation, maybe all the
+ nodes can talk to four of them, but then like two of your nodes can't talk to each other.
+ And you can't tell the difference between a failure from just networks sucking and from
+ somebody attacking your network. There's a whole list of these things. It's called fallacies of
+ distributed computing. You know, people should go and read it. But it's important that, you know,
+ your system can deal with just intermittent network issues as well as active attempts to
+ double spend the way that Bitcoin handles that is through proof of work and Nakamoto consensus.
+ But since something like Fetimint has a different operational footprint, they have to handle it
+ differently and they can make different tradeoffs. And right now they're using a algorithm called
+ Honeybadger BFT to do that. So just sort of like simplifying this, like the way you're finding,
+ the way you're proving that it was not double spent essentially is by bundling in a deterministic
+ transaction. And because it's deterministic, you can't cheat. So that gets canceled if somebody
+ else tries to double spend in a different round or rotation.
+ Okay. So like what the BFT consensus gives you is like, first of all, everyone gets the same
+ transactions, like everyone gets the same output each round. That's like the most important thing.
+ And secondly, when there are multiple rounds happening after each other,
+ you also get the deterministic ordering of these transactions. So you cannot connect to two of the
+ guardians and tell them, "Hey, I want to first submit this transaction paying Bob, and then the
+ transactions paying Charlie. And like the second one fails because I'm double spending." And like
+ giving these transactions in a different order to the other two peers.
+ So it's the order, sorry.
+ Yeah. I mean, the order is important because-
+ Yeah, of course.
+ Determines like which one gets canceled, right?
+ Right.
+ And but also it doesn't work without everyone having the same view on the outcome, right?
+ Okay. So you've sort of put together a great way of having a better, I wouldn't call it a proof,
+ but a better assurance that you have not created or paid, double paid somebody, right?
+ You have not double spent.
+ The cool thing about the BFT consensus impediment is that after you have achieved BFT consensus,
+ you can pretty much think about the system as if it was a completely centralized one.
+ Because after that point, if all your further operations are deterministic,
+ like just deterministically applying functions on top of the output from the consensus,
+ then don't really have to think about it being a distributed system all that much anymore.
+ Like there's still some special cryptography you need, and we can get into that because
+ that's like one of the bigger challenges that I faced with FedEvent.
+ But the cool thing is after you have consensus on which transactions happened in which order,
+ it's not really a distributed system anymore you're thinking of.
+ And that makes it much easier conceptually.
+ So please do go in there because, you know, if this was perfect, right, we wouldn't need proof
+ of work. So there is some trade-offs that are made.
+ Right, right.
+ And that's, I think, it's important part for us to get into.
+ Yeah, I think we can get us out of the way rather quickly because like proof of work was
+ enormous innovation because these BFT algorithms or BFT consensus algorithms, they only worked for
+ known sets of participants up to the point where Bitcoin was invented.
+ Like it was an unsolved problem how you can have an open set of these participants
+ and consensus systems without totally failing and Bitcoin solved that through proof of work.
+ And with Federation, you have just a different problem.
+ You know, the people that are participating, so you can use algorithms that are more efficient,
+ I'd say that have lower latency, like Bitcoin has the 10 minute block time,
+ with FedEvent we go down to like a second or a little bit more than a second.
+ But do you think it is fair to say, because I'm really bullish on FedEvent in that regard,
+ that it, so since, for example, Liquid sidechain, I think, uses a similar consensus algorithm among
+ the guardians of the sidechain to come to a consensus of the new state of the sidechain,
+ right? But what they did there is basically to have, we have the blockchain and Bitcoin,
+ then we have these guardians holding money from that blockchain in a multi-sig and processing
+ on the side, something that is again, a blockchain. I see FedEvent, and please correct me if I'm wrong,
+ as a way to get rid of the sidechain and have very, very similar properties. Basically,
+ you can still have this multi-sig where you put the money in, but instead of just rolling over
+ a state over and over again in a block versus block versus block, you can even have scripts
+ and all the other features of a sidechain inside this much more anonymous and completely differently
+ built system and ecosystem. Yeah, that's actually gets into how FedEvent got started. Like when
+ Liquid was released, I saw it and it was amazing because like it didn't occur to me, you could have
+ this multi-sig wallet with like some BFT consensus running between all the guardian nodes and then
+ implement anything you want on top of that. And it would be like somewhere between a centralized
+ solution and a fully decentralized one. It gives you this trade off. But I was thinking, like,
+ why is this even a blockchain? Because the guardians could cheat at any point in time,
+ they could just run away with the money if they were malicious and you could see it,
+ but you couldn't really do anything about it. And at the time, I was also learning about
+ blind signatures and cryptography in general and was like, okay, if we could build such an old
+ chowmein ecosystem in a federated way, that would be so awesome. Like we'd still have the
+ multi-sig wallet that keeps the Bitcoin. But then instead of having another blockchain, which is
+ like a really inefficient data structure in many ways, that has to be validated by clients.
+ We just issue these e-cash notes and people can use them to pay each other. At that point,
+ I wasn't really aware of how to integrate with Lightning later on. But it would be a really
+ private way to transact inside your community. So looking at Cashflow and FedElement,
+ every day more, I think that shitcoins probably don't need their blockchains either.
+ Yeah, we made them irrelevant. But they never did. I mean,
+ you know, they would have been better in Pulsegrass, but you can have like, you can have
+ signed roles. So anyways, so, okay. So let's, let's explore this a little bit more. So like,
+ this is good, right? Like we're trying to get to here is like, it's why do we need this? Because
+ we're explaining the actual technical trade-offs of like Bitcoin efficiencies and inefficiencies
+ versus this, right? And we've explored Cashew, which is a simpler sort of version of this,
+ right? So how does, how does the federation works on FedElement?
+ Okay. So for federated e-cash, like FedElement has grown into kind of a federated application
+ framework by now, but for the federated e-cash use case, we have two sides. Like on one side,
+ we have a multi-sig wallet, which keeps a Bitcoin on chain. And on the other side, we have e-cash
+ mint, which issues threshold signed e-cash notes. So instead of using a blind signature scheme,
+ we're using a threshold blind signature scheme where a certain number of the guardians has to
+ cooperate to issue these signatures. So you're still generating your random number as a client,
+ you're still blinding it and giving the blind random number to the federation, but then the
+ federation engages in a multi-party computation protocol that generates a blind signature for the
+ nonce. Like the particular protocol used is like threshold BLS blind signatures, like based on
+ parent cryptography. It's a pretty straightforward protocol actually compared to other ones,
+ because it's only like one round. Like every guardian generates the blind signature share,
+ they exchange them, then they get combined. And as long as we have T out of N of the signature
+ shares, we get a combined blind signature. And that's sent back to the client who can use the
+ blinding key to unblind it. And now they have like the random number, which we most of the time call
+ a nonce and the signature and the nonce signature pair is the e-cash note, which you can now just
+ spend like Kalle already explained. Sorry, that's really interesting. I didn't realize that you
+ guys were doing MPC for computing the blinding factor. I mean, it's no, not the blinding factor.
+ I mean, you can view a blind signature generation on the server side as kind of MPC.
+ I mean, in the end, it's just generating the signature shares and combining them.
+ Would there be any advantage really of doing MPC for the blinding factor?
+ No, not really.
+ I mean, maybe in the future, like one thing we haven't gone into really yet is like the biggest
+ problem I have for FeddyMint right now and that Kalle probably has with Casio is that we need
+ different denominations for e-cash notes. We could have like e-cash notes that are always worth like
+ one Satoshi and that would scale horribly because suddenly you'd need like millions of e-cash notes
+ just to pay like a few millibit coin. Megabytes of e-cash notes.
+ Yeah, that doesn't really scale. So what we'd probably like is e-cash notes that commit to
+ the amount they represent and commit to it in a blind way where we can have proof that when you
+ have a transaction that the input e-cash notes have the same value in total as the output e-cash
+ notes like a lot like confidential transactions on Liquid.
+ You know, I hear a denomination on the tokens that I'm like, "Oh, those are Sats cards with
+ e-cash tokens on them that then could be redeemed." Because like all you have to promise is that
+ you're keeping it secret. That could be a funny thing.
+ Okay. So how is a Mint formed and how are the federated, like the actors of the federation
+ chosen? How do I go about starting a federation on FediMint?
+ So there are two parts to it. Like the one that's closest to what I'm working on each day is the
+ technical part where we assume we already have like a set of people, like for example, four people.
+ And then we just run the FediMint daemon. It opens a port where it can connect to WebUI.
+ Then you have to exchange some, like essentially your IP addresses and your ports that you're
+ running on. You have your group of friends, you all know each other's telegram or signal handles.
+ You just exchange this information. And then FediMint engages in something that's called a
+ distributed key generation protocol where all the keys necessary for issuing these planned
+ e-cash nodes are generated.
+ How do you prove that I'm not generating, say, three keys on my local system pretending to be
+ three different systems? Because let's say we're all anon to each other, right?
+ Yeah.
+ And say Matt is going to be one key, Kalle is going to be a key, Eric's going to be a key,
+ Rindel is going to be a key. And I'm going to pretend that there's another five guys you guys
+ don't know about. Okay. And I'm going to add them all and I'm going to be their sock on telegram,
+ right? And I'm going to pretend I'm all of them and I'm going to sible this network now.
+ How do we prevent that from happening?
+ That's a problem that cannot be solved in the technical realm. Like there we have to go into
+ the social realm and get different solutions. Like when we're talking about like big online
+ communities, then it's much harder to really guarantee that. And you probably have to go by
+ activity. Like if someone is not really active, then I guess they have a higher likelihood of
+ being a sock puppet.
+ So what you're describing is that this is a limitation of FedEmit, right? Like you have to
+ have a certain threshold of trust with the parties that you're entering into a federation with.
+ Yes. And that's what...
+ If you want to have a sible resistant open set of validators, then you add Proof of Work.
+ Yes.
+ Like that's why Bitcoin exists.
+ Exactly.
+ Yeah.
+ Don't reinvent Bitcoin. Don't reinvent Bitcoin.
+ That's right. So we're degrading, right? That a non-anti-SIBO defense mechanisms that Bitcoin
+ have, right? So that it can coordinate truly being a non. So that we can have this efficiency,
+ right? And jumping to a non-Proof of Work algo as a federation.
+ But like, that's also why one of the most promising use cases is communities, like
+ physical communities where you actually know the people that...
+ You know how to punch.
+ Yeah, exactly.
+ I know, seriously. It's, yeah, it's this best feature of the protocol. So you know how to punch
+ when the money disappears. Proof of punch.
+ Yeah. And so that's why a lot of focus is currently on communities that A, have a need
+ for some sort of Bitcoin banking system. And secondly, that have this tight social
+ connection still. Like in the West, we often lack that. But for example, in the global South,
+ it's mostly still intact. Like there are local communities where you have a whole village that
+ essentially knows each other. And like if they're like four village elders or like four,
+ probably not elders because they need to run some good little computer software.
+ But for people that enjoy high trust in their community, then yeah, you can spin up a FedEmin.
+ Well, I mean, it's better than being a single signer, right?
+ Yeah, exactly.
+ The elders kids.
+ That's right. So you have like three people, right? Ideally, or something like that. Minimum,
+ you'd say like at least three people to start somewhere with a little bit of a better
+ sort of single point of failure resistance.
+ We generally actually, we generally require like four people or seven people. Like it's a little
+ bit different than with Bitcoin multisig due to the...
+ Why is it four instead of three? I'm curious.
+ Yeah, there is actually a theoretical proof for asynchronous Byzantine fault tolerant
+ consensus algorithms that if F is the number of maximum malicious peers and N is the number
+ of total peers, then N has to be a greater than three times F, like greater. So it's at least
+ three times F plus one.
+ Okay, so four.
+ And you cannot have any better algorithm if it should work in asynchronous network conditions.
+ So that's why we went with that. And it gives us the best reliability and like the,
+ it makes it the most bulletproof, essentially.
+ So, you know, one of my biggest criticisms of Liquid when it came out was the fact that you
+ couldn't bootstrap a federation, a competing federation, which in my view, killed the
+ project. And you ended up with just sort of, you know, exchanges are using it right now, but they
+ use it between each other and sort of like, it's not like they're just using it like as they could
+ have used just Postgres, right? Like, so a huge part of having non-proof of work systems is its
+ replicability in terms of competing groups, chains, right? For lack of, it's not a chain, but
+ competing pools. So, you know, I found that like when, you know, you guys launched the project,
+ I'm like, okay, well, this is great. They're already starting it right. At least that part,
+ right? So, sorry guys, one second here.
+ I think that's also a central point of Fediment that we don't aim to have like this one federation
+ to rule them all, but rather deploy a lot of these small federations in their local communities.
+ So that like there's no systemic risk to Bitcoin essentially.
+ And to take that thought a step further, like this, the Fediment project, and I would say maybe
+ Charming Mints in general, like rides or dies on how easy it is to roll up these servers,
+ whether that's a single SIG server, or if that's a federation server,
+ like that needs to be as easy as possible. Otherwise there will not be competition.
+ Sorry, my kids were ringing the bell. I thought it was a delivery that's important.
+ So another issue was, you know, producing, implementing a liquid HSM is not a simple task,
+ right? It's very hard code to write. That was also not open, right? What I'm seeing here now
+ is you have similar systems in terms of purpose that offer like a substantial improvement
+ in easiness of implementing, deploying. And it seems like an evolution of that protocol in terms
+ of like, not technically they're different, but in terms of like better sets of trade-offs
+ and better efficiencies, because again, it's not a blockchain, while Liquid is.
+ And I think you guys are doing that like, right. Is this how you guys thought this through?
+ Is it like the one button deploy, mint one button deploy, pull kind of the idea?
+ Yes, we are working a lot on making it as simple as possible. And I think later this year,
+ we will also try to integrate with some of the node packages that are out there. So people have
+ even easier time setting it up. Currently, it's still under heavy development. So it doesn't make
+ as much sense to do that yet. But we already have a really convenient web interface. And
+ yeah, it's really just five minutes setting it up. Like over the last month, I did a bunch
+ of workshops showing people how to set up Fetimint. And yeah, it's after a while I got into
+ like a habit where I could do it in like five minutes, essentially, and then you have a federation
+ running. And regarding your comments about Liquid, like I have huge respect for the people who build
+ it because they were first movers. Like, they had to essentially find out a lot of things for the
+ first time. And Fetimint has profited enormously from these learnings. So for example, the HSMs,
+ they are really good for like some really long tail events, like for some really complicated
+ hacks that someone could try to pull off, but they also make it really hard to iterate on the code.
+ Like it makes it so much harder to upgrade the system that uses HSMs. So for Fetimint,
+ for now, we're saying like, no, we don't do HSMs. Like we keep it simple. And we want to iterate,
+ we want to get people to play with it rather than
+ building like the perfect thing that's maybe ready in 10 years.
+ Like that's a trade off too.
+ Yeah. Regarding the ease of setting it up that Matt just made,
+ I think that is a very critical point actually.
+ And also something that I learned actually a lot from Ben Ark
+ himself, because the creator of Ellenbiz.
+ Ellenbiz was very influential in that sense that it allows,
+ you know, the dream of being an uncle Jim,
+ literally just a couple of clicks.
+ So you have your lightning node and then you set up this magic piece of software
+ that allows you to infinitely generate wallets and give them around in your,
+ in your subnet basically, or in your community, family, whatever.
+ With trade offs.
+ With trade off, obviously trade offs, but you know, his,
+ his argument was always,
+ and that is something that I very much agree with is that if you make it easy
+ enough to deploy this on a wide range of locations on the planet,
+ it becomes impossible to kill. And I think that is the strength of ease.
+ So something that often in developing software,
+ people also tend to forget, you know, that adding features makes it powerful,
+ but making it extremely easy to use and to set up gives it a completely different
+ power, which is that many people will be able to adopt it, which, you know,
+ makes it resilient against attacks and so on.
+ Yeah. It also,
+ I think it's really important for the customers or the users of a particular
+ mint to have a credible, easy exit path, right?
+ Like if I set up a cashew mint or a feta mint with like my
+ local community or like my local bit devs community,
+ and then I start, you know,
+ abusing the members of my mint by withholding, you know, withdrawals,
+ or by putting sauce on your steak, like,
+ putting sauce on my steak or, you know, whatever the thing is,
+ if anybody else in the community can click two buttons inside of Ellen bits and
+ spin up a new mint and say, Hey, everybody,
+ you should leave that mint and you can leave over lightning.
+ If you should leave that mint over lightning and come to my mint that I just set
+ up in five minutes, then, you know,
+ the pressure is on me as a mint operator to behave in a trustworthy
+ way, because like there,
+ there's marginal switching costs for all of the members of my mint.
+ If it's very expensive or very hard for people to run competing mints,
+ then I end up with like a natural monopoly because nobody's going to compete
+ with.
+ What's the security requirements and thresholds for you to run
+ to be a member of the Federation?
+ Like, can you just use your general purpose, like everyday computer,
+ or like, do you need the proper HSM for this?
+ Like what's the security threshold here?
+ For feta mint, you don't really need any special hardware.
+ Like you can just use a normal.
+ Can I run it on my computer? What happens if I get hacked?
+ That's why we have this threshold. Like if only you get hacked,
+ that's not a problem.
+ Is it easy to rotate the keys?
+ Not yet, but it can be made rather easy.
+ Like you just run the distributed key generation algorithm again,
+ and then you just move all the funds to the new Federation.
+ That's in theory, not a big deal. It's more of an engineering challenge.
+ So we haven't gotten to it yet.
+ That's huge. That's huge because it's super low barrier of entry, right?
+ It means they can run a shitty digital ocean VPS
+ where my signing is done on a certain threshold that policy that I put there.
+ I don't know if this is still the case, but like a year ago,
+ the bootstrapping script that came with Fetamint would run,
+ I think it was four nodes and then one of them was like actively crappy.
+ And it would like that was a way of exercising the.
+ So it was a Windows machine?
+ Yeah. Anyway, so like you can see that BFT doing the right thing.
+ Like that's why you have three out of four.
+ Matt.
+ Well, first of all, I mean, I think at least in the beginning,
+ most people will be running it on, you know, different cloud server instances,
+ particularly because I mean, Tor is fucking unreliable.
+ So if you're running it at home, you're exposing your IP address of the Federated
+ server. But to what Rindle said, I think it's an important point to mention.
+ There's two different aspects here, right?
+ It's it needs to be easy for people to run these servers so that we have
+ competition. That's more on the open source Fedamint protocol or on
+ cashews protocol, right?
+ Like anyone should be able to run the servers.
+ But then in terms of switching costs, that's going to be a front end problem
+ to solve. There's going to be many different front ends.
+ One of the front ends is being maintained and shipped by Feddy
+ Eric's company, right?
+ Which is going to be but there'll be many different front ends.
+ But what's kind of cool about how they're looking at it is this idea of easily
+ connecting to multiple different Fediments from one front end.
+ And then as a result of that, you kind of can imagine a drop down menu where you
+ have all these different Fediments that you're connected to in the same front end.
+ And then you can easily switch between them, ideally like one or two button
+ presses like exit this Fediment to this Fediment.
+ And you can just move between and you can constantly rebalance if one is for like
+ spending cash or one is for larger savings or something like that.
+ Would you say that would be similar to like how Cashew does with LNBits?
+ You just kind of go there, you just add an IP, click and boom.
+ Just to clarify, I co-founded Feddy with Obi and Justin Moon.
+ But day to day, I'm mostly staying on the Fediment side as a lead maintainer
+ there and try to stay out of the commercial side to be as impartial as
+ possible, because we want to see multiple implementations, multiple front ends for
+ the Fediment and to see it grow as an ecosystem.
+ Because I mentioned it a few times, like Fediment isn't just federated e-cash, it's
+ like a federated application building platform.
+ That's normally how a lot of these protocols die is because you have a company
+ that's a little too closed, even though it's open source.
+ But they are a little bit too closed on how it gets deployed because, you know,
+ they want that sort of like moat and fair advantage on starting out, which is fair.
+ You know, you got to pay bills, but they end up just getting a little too harsh
+ on that, like Liquid did, you know, Blockstream did with Liquid.
+ And then, you know, there's no competing, there's nobody else interested in using
+ somebody else's platform instead of a protocol.
+ And then it kind of goes nowhere.
+ So props to you guys for sort of like choosing this sort of like, let's get this
+ idea, this open protocol out and then sort of like monetize
+ through like, you know, just being very good at it and having a lot of great ideas.
+ Yes. And maybe to Matt's point,
+ like I have some insights into the app development, obviously.
+ And one interesting thing that's being discussed there is like if you have a
+ community that's growing and it's becoming kind of too big for the
+ threshold that was chosen, like let's say we have a three out of four community and
+ then more and more people join it and it becomes kind of risky.
+ And the app would determine that using some factors, then it would kind of nudge
+ people to start their own communities.
+ And you can join multiple federations like that's totally possible.
+ And it's encouraged to do so.
+ So over time, we could have like one federation as a start and then
+ these many, many smaller federations spinning off from that just over time by
+ naturally like more and more people being attracted and then like becoming a worse
+ risk tradeoff and then becomes feasible.
+ Like if you have enough users, then you can actually spin out like a smaller
+ federation for a smaller sub-community.
+ Right. Yeah.
+ Rindel, I think you wanted to say something.
+ Yeah, I was going to say to exactly what Eric's talking about or Matt said a few
+ minutes ago, there's a Cashew wallet called NutStash.
+ I think it was done by Gandalf21.
+ I love the naming.
+ And it's just absolutely brilliant branding.
+ I love everything I love about that thing.
+ And what's cool about NutStash is it's a wallet interface that's compatible with
+ the Cashew protocol and you can actually add multiple mints to it and then you can
+ like one click shift money between these different mints.
+ And what it's doing is it's doing like a lightning payment from mint A to mint B.
+ But the user experience is I have, you know, 500 Satoshis in mint A and I want to
+ split it between mint A and B.
+ So I just sort of shift my money from one to the other.
+ And it does a redemption and payment on one and then like a receive and mint on the
+ other. But, you know, because these things are connected to each other or lightning,
+ it's a really smooth experience.
+ Yeah, it's fantastic.
+ NutStash is amazing.
+ You can check it out on NutStash.app.
+ And it's made by a developer called Gandalf21.
+ He's an amazing guy.
+ But I just, you know, to comment on what we just said and how this influenced the
+ Cashew development itself, this openness really had an impact on what the apps look
+ like today, because so first when we started working on it, we made everything in the
+ open, all the API endpoints, everything was discussed with everyone who was interested
+ in how to make it more efficient and so on.
+ But, you know, it became very immediately clear that if you make it super easy to spin
+ up a mint, which is in Cashew, three clicks in LNBits, and if you do it with the Python
+ thing, it takes you two minutes to install and just boom, you are mint basically.
+ So it turns out that if you increase the number of mints just suddenly, then the wallets,
+ all of them become less usable if they don't support multiple mints.
+ It just becomes boring.
+ You know, you're just part of this mini mint that someone has put up there and you can
+ basically only pay these 15 autists in that same mint or something.
+ So it's not fun to use it.
+ So just the availability of mints and I've looked it up on LNBits on the demo server,
+ which is one custodial demo server that you should not use.
+ But already people have made more than 300 different mints on there because it's click,
+ click and then you have a mint.
+ Right. It shares Lightning Node with all the other mints, but it's a true e-cash mint.
+ So all of the Cashew apps basically have multi-mint support now.
+ You have Cashew.me, you have the Python client, there is a Golang client.
+ All of them need to because otherwise the UX becomes just unbearable, basically.
+ I think the last few years sort of like gave us this a little bit more clarity on this
+ sort of like the open source meme or open source sort of like movement.
+ I think things were a little bit convoluted, a little bit sort of like heated for many
+ decades. And I think it created a lot of confusion and sort of like made things a little
+ too black and white for people.
+ So people chose to sort of go one way or go the other way and hate each other and all
+ those things. So I think what's been happening because of Bitcoin, really.
+ Is that we're starting to realize that there is this better space where, you know, we're
+ all like protocol maximalists for the fussiness of it.
+ Like it has to be essentially public domain.
+ Right. It's not even GPL.
+ It's like literally public domain.
+ That's the protocol. So it never becomes a platform.
+ And the people who invent them often find that is in their interest, their self-interest
+ to bootstrap those protocols with open clients, open servers and things that foster
+ the adoption of that protocol.
+ And then they'll go and they'll try to find moats and values and businesses where the
+ value add is at.
+ Right. So they will build specialty clients that may be open, closed, who cares?
+ Right. And this creates this sort of like a healthy place where the creators find a
+ direct source of revenue from their creation, but they don't hinder society from fully
+ benefiting from the creation to after Nostra came out, you know, like you're finding
+ this sort of like extremely amazing snowballing of this model happening where because
+ we used to we used to have right this sort of like the foundation owns the protocol and
+ then there is a company to the side that owns the implementation.
+ But it was never sort of like clean thinking.
+ Right. There was never sort of like nobody fully understood like where one starts, the
+ other one ends. And I think this this clarity is really starting to snowball now.
+ And it's giving us this like ultra fast pace.
+ I mean, I'm seeing this on Nostra.
+ I'm seeing this on Lightning.
+ And Bitcoin took like over 10 years for this to be clear.
+ I don't know. I just felt like this was like a it's a super interesting thing because
+ I'm seeing it again and it's exciting because it pushes people to really innovate much
+ faster because they also know they're going to have a way to eat after.
+ It's very cool place to be in.
+ Yeah, I have a very strong opinion on this, I think.
+ Something else that's happened in the last decade is the old way to monetize your open
+ source project was to provide like either ProServe for setting up the server or whatever
+ the back end was or to provide like extra bits.
+ And then you had the three big cloud providers basically strip mine open source by
+ saying like, we're going to host MongoDB as a giant scale out service and completely eat
+ the business model of like hosting MongoDB as a service.
+ And now Mongo has no way of making money.
+ And so I think that the incentives used to be to make a really good piece of open source
+ software, but make it kind of hard to deploy so that you would pay people to come and
+ deploy it for you.
+ And then Amazon made that a one click operation and completely destroyed that business.
+ So now the thing to do is let's make it as easy as possible to deploy and customize these
+ things. And then the value add is custom clients, custom data, custom integrations.
+ And that, it turns out, is actually better for the community because people can iterate
+ on top of it faster.
+ It's amazing that you could find this incentive alignment out of all this mass where
+ like, you know, open source people eat and it's not Microsoft and Amazon who make money
+ out of GPL, which has always been my beef.
+ It's like you have this evil corpse.
+ They make all the money out of all the public domain.
+ That's pretty cool.
+ Yeah. And Bitcoin also gives us a way of rewarding the people that built the software,
+ like value for value, essentially.
+ Like if you're building a Lightning wallet, why don't you include some, let's say, opt
+ out functionality that just sends a small donation depending on the usage of the app
+ to the creator at the end of the month?
+ Like, why not?
+ We can do it now.
+ Like it was totally infeasible for most of the open source history.
+ But now we do have the tools.
+ Well, it's because we were never able to send a Mili Satoshi in terms of dollar terms.
+ Yeah, exactly.
+ But now we have the tools.
+ Now we do.
+ But I also think that we now have more customers, right, where we didn't before.
+ Before the customer was the product, too.
+ So you only really had Twitter as the customer of your technology, not the Twitter
+ users as the customer of your technology.
+ Right. On Nostr, your customers are both the users and the applications using your
+ stuff. Right. It's just it's a more broad thing.
+ We don't know how this plays out either.
+ It's just an exciting new dynamic that's fairly new.
+ And I think people are not paying attention to it.
+ Yeah, I think there's an ongoing cycle kind of in computing.
+ First, you move the business logic to the server and then you move it back to the
+ client and you move it back to the server.
+ And currently we are moving a lot of our business logic back to the clients because we
+ have enough computing power and it brings us certain benefits like censorship,
+ resistance and scalability and a lot of good things that allows us to not have the
+ central server as our customer, but the actual user.
+ Yeah. Kali, I think you had a good sort of like, not a segue, but a fun pivot here,
+ which is proof of reserves.
+ Yeah. So maybe if you allow me to go one step back again, because I'm going to get
+ to proof of reserve immediately after that.
+ So the two big problems of eCash are, in my view, maybe there are more, the two big
+ problems are its custodial.
+ So you leave your Bitcoin with someone, they can take it away from you.
+ And the other one is it's hard to audit.
+ So it's hard to figure out whether someone prints more eCash than they have Bitcoin,
+ basically. So as we've heard before, FedEmint really improves the first problem a lot by
+ just federating the Bitcoin and the signing process into multiple servers.
+ I think that also comes with the cost of implementation and so on.
+ So in cash, we don't do that.
+ It's just a single SIG server.
+ That means that if the one server rocks you, your money is gone.
+ So that is the problem number one.
+ And the second problem is this proof of reserve, but or actually the problem is proof of
+ liabilities. But because proof of reserve is solved these days, it's on-chain proof of
+ reserve. You can do it.
+ We also alluded before proof of reserve is not really possible with Lightning, but there
+ are ways around that.
+ But for an eCash project or a protocol or a mint, you would have to figure out somehow
+ how you can prove whether the liabilities of the mint equal the proof of reserve or at
+ least are smaller than that.
+ So we've been thinking about this for a long time.
+ And just how do you make that for your cash?
+ I just want people to know that the mint didn't print any money out of thin air.
+ And usually, you know, Eric has summarized two attempts on this.
+ And I would actually like his opinion on this, because you said before you think it's
+ impossible. I think now it's possible since a couple of days, basically.
+ We found a new way of approaching this.
+ So here's how it goes.
+ In Cashew, a mint does two operations.
+ It first gives you out the eCash.
+ These are the blind signatures that's giving out.
+ And then there is a second operation, which is burning the eCash.
+ When you spend it again, you redeem it and you reveal the secret.
+ So there's essentially each mint, the minimum mint design for each eCash project is it
+ needs a list of spent secrets.
+ It's a list that grows for all the money.
+ So you can record it in a database that says this note has been spent once.
+ I'm not going to honor it again.
+ That's how you prevent the double spending.
+ So when we built Cashew, it became pretty clear immediately that this will, you know,
+ over a long period of time, if you have thousands and millions of users, this would
+ grow. This is a list that will grow forever and ever.
+ And you have to keep the list forever because you don't know when someone with a very
+ old eCash note will just appear and try to spend it.
+ Right. So one solution that came up to that was let's introduce key epochs.
+ Right. Very simple solution is that we have one set of private keys for the mint that is
+ valid for one year, let's say.
+ And then after one year, we make a cut and then we rotate the keys to a new set of
+ private keys. And then we slowly rotate all the eCash from the old epoch to the new
+ epoch. And then once all the eCash is redeemed from the old epoch, we can just prune
+ it from the database and keep going on with the new key epoch, basically.
+ So for scalability reasons, we've come up with this rotation of keys initially.
+ Now, it turns out that you can use this same mechanism to build a proof of reserve,
+ proof of liability system.
+ And the way it could work is that the mint now publishes these two lists that it has.
+ So there is a list of all the blind signatures it gave out.
+ And then there is a list of all the secrets that it redeemed.
+ These are two different lists.
+ And usually they're kept inside the mint.
+ No one is interested in them.
+ But now in this new scheme, the mint could publish these reports, let's say once a
+ month. It would publish a whole list of money I gave out to everyone and a whole list of
+ money I redeemed by everyone.
+ And you could tally it all up.
+ And what the end result would be, how much money is in all the wallets out there.
+ Right. So if you have all the issued money minus all the redeemed money, that is the
+ open balance of this mint, basically.
+ So you would publicly open these, publish these lists.
+ And now here comes the kicker.
+ A user that has a wallet now could basically, once these lists, these reports are
+ published, could go back and check whether the money that I ever owned is included in
+ this list or not. So basically what you can say is that the mint will try to make its
+ liabilities as small as possible and make it, it's a notorious mint, will try to make
+ its liabilities, this first list, as small as possible.
+ And it will try to fake redeems as much as it can.
+ That's dishonest mint.
+ But with this, when you force the mint to publish this, you as a user can basically
+ prove that the mint hasn't included the e-cash that it gave you into this list.
+ So basically, one month later after this is published, you could come and show to the
+ world, I hold e-cash from this mint, but the mint didn't include it in its proof of
+ liabilities report, basically.
+ That's how you catch the mint.
+ Now, someone listening might now notice, wait, this is flawed, because how do you know
+ that all the e-cash that you gave out will also be redeemed or the mint could just
+ pretend to be a user and just produce fake burns?
+ It could just fake redemptions basically to keep its liabilities low.
+ But that's where the rotation part comes in.
+ Basically, if you force the mint to rotate the keys every few months or so, you close
+ the time window in which new e-cash can be produced.
+ So basically, if you say the mint doesn't produce e-cash notes from this old epoch
+ anymore, then it cannot fake an arbitrary amount of redemptions, because people will
+ just appear out of nowhere and someone will say, wait, you faked some redemptions.
+ You say that the key epoch is closed.
+ You pretend as if it's a close, but it's actually not.
+ I still hold money from that key epoch, basically.
+ So that's how you catch a mint producing fake money, basically.
+ And I'm super stoked on this, because the key point of this was this time window, actually,
+ that I didn't think about, that you need this predefined time in which you close the key
+ epoch round.
+ And once you have that, you just suddenly have this public way of auditing the mint.
+ And it may be that if you want to try to catch the mint at lying, you need to reveal your
+ privacy.
+ You know, the unlinkability of e-cash gets broken for the person who wants to catch the
+ mint lying.
+ But I think it's basically a very fair price to pay.
+ Everyone would pay that price to reveal their privacy once to catch the mint at inflating
+ the supply without telling everyone.
+ How do you enforce the epoch?
+ You wouldn't enforce it.
+ You would just control it socially, basically.
+ The mint would commit publicly that it will rotate the epoch every 12 months or so, or
+ every month.
+ But how is time counted?
+ How do you not cheat time?
+ I mean, I would obviously do it with a block time and not real time.
+ But that was just trying to understand that.
+ And you would obviously also, I think, without saying it goes, you would publish these lists
+ and open timestamp then as well onto the Bitcoin blockchain, because you don't need a blockchain.
+ You just need a timestamp of your documents.
+ But so that way you can also make sure that no one has went back and just manipulated
+ the list after releasing a notorious one.
+ Is the trade-off that at the public review time, everybody goes to jail kind of thing?
+ Or what's that anonymity set left there?
+ So if you, that is true.
+ If you make this epoch too small, it becomes bad for the privacy because now you have a
+ pool of users that is maybe, you know, if it's only one day long, for example, then
+ that means that only the people who use the e-cash in that single day are the anonymity
+ set.
+ So you want to make it long enough such that the anonymity is still great, but you want
+ to also keep it short enough so that you can actually catch the mint fast enough when they're
+ trying to inflate the supply.
+ You need to wait at least this one epoch until you can catch the mint after the epoch.
+ You know, I'm imagining sort of like a Girls Gone Wild situation here where they're all
+ on stage and they all just lift their shirts at the same time.
+ But yeah, so a single user would be enough to catch them in that line.
+ So the mint would pretend this epoch is now cleared and I've paid you all back.
+ But then someone just single user would be enough to say, no, I can prove that you did
+ not and then something fishy is going on.
+ And you don't even have to reveal the blinding key or lose your privacy, actually.
+ Like I think having a public spend list is enough because if your e-cash note isn't included
+ in the public spend list, but it's still validly signed, then you know.
+ And like this old mint or this old epoch doesn't have any money left in it.
+ Then, well, obviously there was inflation somewhere.
+ And I think that the really cool thing that didn't occur to me about this scheme is that
+ you can actually prove it.
+ Like this automated bank run kind of idea has been floating around for a while, I think,
+ at least in the FediMint land.
+ But actually being able to prove that your mint was cheating by publishing this spend
+ book, that's really cool.
+ Because otherwise you would just notice, okay, well, I cannot get my money out of the mint
+ every few months or so when it happens.
+ And so this simple proof of liability, and it's actually simple, I think, you know, you
+ would have to read it to maybe really understand if you just listen to it right now, it might
+ be a bit confusing, but it's actually a simple one.
+ And what's fascinating to me, so I've been thinking about this only in the last 72 hours,
+ it starts causing more and more ideas in my brain, which is actually that once you introduce
+ a proof of liability, then you get away, you know, you suddenly, so many other problems
+ go away.
+ For example, in cash, the single SIC problem in cash is that someone could just run away
+ with your money.
+ It basically gets fixed by this proof of liabilities because now a cash mint, what it could do
+ is just keep a very tiny float of the money in the e-cash mint itself in the Lightning
+ node and the majority of the fund can just go to on-chain.
+ That's where you want them to be able to proof of reserve anyway.
+ And then you can just do a multi-SIC and suddenly you have just unstealable money with a single
+ SIC e-cash server that can just spend very fast only the balance on the Lightning.
+ Could you transfer this proof of liability for somebody else to assume the mint from
+ that checkpoint?
+ You need to repeat the question.
+ I didn't get it.
+ Like, how do you, what do you transfer?
+ So you now have this proof of liability, right?
+ When you essentially do the reveal.
+ Can another mint assume that and now be the new mint?
+ So you would, you would sign the reports with somebody else.
+ Yeah, with your private keys of the mint, basically.
+ So you should be able to verify that this mint, that the report is literally from the
+ mint that gave out the e-cash, but that should be easy to solve.
+ So one of the things that's also really interesting about this scheme is if you imagine a world
+ where you have a single SIG issuer, right, like in cashew, a way that they could inflate
+ the money supply or double spend is that, you know, I'm the mint, but I'm also a user.
+ I buy a sandwich from Odell.
+ He goes and burns the token at the mint to get a new token.
+ And I say, yep, I've written down that that token's been burned.
+ And then I just erase that entry.
+ And now I go and hand the same token to NVK to buy a sats card.
+ And I can just like continuously double spend this same token because I'm getting value
+ for it, but I also control the ledger.
+ And what's interesting is if you publish the spend list, and if you timestamp it with something
+ like open timestamps, then clients could periodically download a snapshot of the spend list.
+ And if I receive a token that's on the spend list, then I just reject it and I don't vend
+ the good or service.
+ So you know, there's this thing where you might not want to do that, you know, in line
+ with every transaction or something.
+ But the possibility of people maintaining a synchronized snapshot of the spend list
+ might be enough to like deter that abuse from the mint.
+ I think that case is actually not really what the mint would do because they already have
+ the key, they can print arbitrary e-cash, like they don't have to double spend like
+ that.
+ Sure.
+ Yeah.
+ But it's really interesting that you can prove that the mint was cheating, because then like,
+ even if only you are stuck on the old mint epoch, and everyone else has migrated over,
+ you can at least warn them that this mint went fractional reserve.
+ Like what you're doing is when you're migrating between epochs, you're staging a bank run,
+ more or less.
+ And now instead of only knowing for yourself, that the mint was fractional reserve, you
+ can prove it to other people that will then hopefully be wise enough to take your money
+ off that mint.
+ And also, in regards to the option where you would keep a lot of the money in a multi-sig
+ kind of offline wallet in a single-sig mint, that only really helps you if you don't allow
+ like arbitrary amounts of money coming out from the multi-sig into the hot wallet of
+ the mint each epoch, like you need to limit it kind of.
+ And that would also limit users that want to get out of the mint, which might be kind
+ of problematic or like it's a trade-off.
+ And it's often all you need is like one bank run to happen in one place to sort of inform
+ how people should go about the other places that are similar within that human sort of
+ time span.
+ Right.
+ So if one bank goes bad, everybody goes check their shit.
+ Yeah.
+ My mint doesn't have a solvency problem.
+ It has a liquidity problem.
+ Exactly.
+ I mean, that would be a question of how to manage capital as efficiently as possible.
+ Right.
+ Because in my experience, when you look at, you know, if you look at a system where money
+ flows in and out, the float is on the order of a percent or so.
+ People just leave it sitting there for most of the time, basically, in every kind of bank
+ account or a Bitcoin wallet or whatever it is.
+ So there you have the trade-off between, because Lightning, again, is not auditable money.
+ Right.
+ So you have to make this trade-off to say, I want to, let's say, have 98% of the funds
+ on an auditable multi-sig wallet that no one can run away with.
+ And I'm OK with having 2% of the funds in a hot Lightning wallet that I cannot audit
+ as well.
+ Basically, I could spend it without anyone noticing it.
+ At the same time, you have to then calculate against whether that is enough to have a good
+ UX for people suddenly wanting to make a bank run without having to wait for new funds to
+ appear on the Lightning node or something.
+ So would it be stupid to sort of, you know, for a mint that has less velocity needs to
+ just do it on-chain?
+ I mean, you know, you can have a much smaller Taproot multi-sig there that, so it's like,
+ you know, you're still using last block space, but it's still on-chain.
+ And you can do it with thresholds, well, eventually.
+ And have something that maybe has less velocity, but more accountability.
+ That could be interesting.
+ Also one comment to the idea of the multi-sig.
+ I think if you go all the way, then eventually you end up at FeddyMint actually.
+ Because what we are doing is we have all the money in the multi-sig and we also threshold
+ issuing these e-cash nodes because that's still the weak point in, I think, the single-sig
+ e-cash, but multi-sig Bitcoin scheme.
+ Like you don't really have an audit.
+ That's not what you do there.
+ It's more of an attestation.
+ Like you attest at the point in time when everyone switched over, there were enough
+ funds.
+ But in between, you don't know anything about that.
+ Like between these attestation points, the single issue of mint could totally go and
+ print all the money they want.
+ And you cannot prove anything about that.
+ And during that time, if they generate like a lot of outflow, you couldn't really determine
+ if that outflow is natural from users or if the mint has gone bad.
+ So could you redeem to Bayes Layer instead of redeeming to Lightning?
+ Yeah, I think, I mean, as Eric said, I think that is how FeddyMint basically works.
+ It is primarily the funds are stored in a multi-sig, but the Lightning functionality
+ is another participant in the network that does a swap into the Lightning network.
+ Because Lightning is multi-sig, so that's the part that I was missing there.
+ Like Lightning is really hard to federate, actually.
+ And also, you might not even want to federate it because like managing a Lightning node
+ involves a lot of choices and federations aren't good at making choices on their own.
+ Like how you do it typically is you would make a proposal and people vote on it.
+ It's much too slow to manage a Lightning node with that.
+ So instead, what we're doing is we have this external party, which runs the Lightning node,
+ but which can make payments on behalf of users and receive payments on behalf of users in
+ an atomic way.
+ So they cannot cheat.
+ All they can do is at worst, they can dust the user, like they can not provide their
+ service, but they cannot take the money.
+ Like it's all atomic, atomically linked by the pre-image that's travels through Lightning
+ network and their spot contracts being executed in FeddyMint.
+ So that's how we couple the single-sig Lightning node to the multi-sig FeddyMint.
+ But I want to get back to your point where you said that the Mint can basically, you
+ know, between these attestation periods, which are, you know, these key epochs, when you
+ roll over funds from one key to another, that inside these epochs, everything could go wrong.
+ And I mean, not everything quite, there is still a limit, I guess, because it depends
+ on how often you release these reports, for example.
+ But you're right in a sense, but I don't think that it's actually an issue because for FeddyMint,
+ it makes sense because you're focusing on community custody, where the chance of being
+ stolen maybe is the primary problem that you need to solve basically.
+ But I think for a large custodian, for example, or a bank, I think the problem is more the
+ fact that they could inflate the supply without anyone noticing.
+ I don't think that, you know, it's very likely that wallets of Satoshi would just run away
+ with the money and nothing could, I mean, there is still, you know, you could still
+ punch them by following up on them in the physical world.
+ But catching a Mint, just inflate the supply 1% a year, 2% a year, that's much more problematic
+ in a big setup like a whole bank, for example.
+ So I'm extremely fascinated of the solution or just the possibility because I myself,
+ I don't know of any other system where you can actually audit the liabilities basically
+ publicly.
+ I mean, even if it's not applicable to Cashew or FeddyMint or whatever, if the scheme alone
+ is interesting by itself, because show me a bank where you can audit their liabilities
+ or an exchange.
+ I mean, all of the exchange releases.
+ Oh, it's by design.
+ They all release proof of reserves, but it's not worth anything if you don't also release
+ a proof of liabilities.
+ But how do you check the liabilities?
+ I mean, how do you check that there is not some Kraken user out there who has a very
+ big number on their balance basically, although there is no Bitcoin backing it up in this
+ proof of reserve?
+ That's a problem.
+ And I see, I mean, if this whole thing works, we have to implement and see what are the
+ trade-offs.
+ But I'm just really bullish just on the possibility of introducing a liability check, public
+ liability check for custodial entities.
+ Very cool.
+ Definitely.
+ It helps a lot.
+ I fully agree there.
+ It's just what I want to point out is it's not a full auditability solution.
+ It's like periodic attestation.
+ And that's totally a breakthrough.
+ Well, it's a huge upgrade.
+ Yeah, definitely.
+ And probably like the whole theme for all of the eCash stuff is that it's not a silver
+ bullet.
+ It's a huge upgrade.
+ It's a layer 3.
+ It's better trade-offs than what we have.
+ So guys, there's just one more thing that I wanted to get it in.
+ I mean, maybe we get into some other things, but like this one, I definitely wanted to
+ get in before the two hour mark, which is something that kind of caught my attention
+ like extra to Fetiment, which was Fetipools.
+ Do you guys want to like touch a little bit on that?
+ It's like, it's a super interesting idea.
+ And that kind of like got my brain spinning a little bit for like, oh, holy shit.
+ So like, you know, this is not just like a banking sort of solution here.
+ Right.
+ There's all these other interesting sort of programmatic things that you can do that
+ can start solving like some real problems that we have, like how do pools pay small,
+ tiny amounts of Bitcoin to their miners in a more private way.
+ So anyway, so like who wants to sort of like explain what Fetipool is and why that's even
+ possible to do with Fetiment?
+ Yeah, so maybe I should start and then Odell can correct me if I'm misrepresenting anything
+ anywhere.
+ But like to my understanding, Fetipool as a concept solves like a different dimension
+ of the mining pool problem.
+ Like there's already a stratum v2, which solves the block construction, the block template
+ construction problem that we decentralized that again, so that miners themselves can
+ propose their own block templates so the pools cannot censor transactions.
+ Improves it, I wouldn't say fixes it.
+ Yeah.
+ Okay.
+ Yeah.
+ And then like there's the second axis where we want to improve that miners cannot be cheated
+ out of the money because like pools have to take custody of the block reward and then
+ split it up.
+ And that's what Fetipool, in my opinion, solves.
+ Yes.
+ So I mean, if I was going to just from a high level here and I might as well while I'm speaking
+ now to say that I'm dropping in five minutes and this has been a fantastic conversation.
+ Unfortunately, I have to leave early is the cool part about Fetimints is it mitigates
+ and reduces a lot of the risks we see with custodial wallets.
+ And once you start to talk about custodial wallets, where do we see issues with custodial
+ wallets and central points of failure in Bitcoin?
+ We see it on exchanges.
+ We see it on custodial wallets like Wallet of Satoshi.
+ Those are obvious areas of target for Fetimints to improve that trust dynamic.
+ And then of course, we also see it with mining pools.
+ Mining pools operate custodial wallets for their miners, the individual miners that connect
+ to mining pools.
+ There's a lot of trust there with the mining pool operators.
+ Now Stratum V2 is an extremely promising protocol improvement.
+ Fetipools is complementary to Stratum V2.
+ So what we'd like to see, or at least what I would like to see personally, is essentially
+ a Fetipool implementation that also includes Stratum V2 and the benefits that come with
+ Stratum V2.
+ But instead of having a single SIG custodial wallet that we see with mining pools currently,
+ you would have a multi-SIG federated wallet that also comes with the Chami and eCash privacy
+ benefits for the individual miners.
+ And there's an interesting thing there specifically with job negotiation, this idea that instead
+ of the current – currently mining pool operators are choosing which UTXOs are included in a
+ block, Stratum V2 kind of tries to flip that on the head and allow individual miners to
+ run their own nodes and propose which transactions are going to be included in a block to try
+ and reduce that censorship risk.
+ Fetipool, you could actually – but the big complaint that we see there is most miners
+ are not going to run their own nodes.
+ They're not going to be well-connected nodes.
+ They're not going to be constructing their own blocks.
+ There's a lot of friction there.
+ In a Fetipool, we could have a kind of hybrid model where the people that are running the
+ federation servers, let's say it's seven individual miners, right, and the quorum is
+ a five of seven or something like that.
+ Those seven individual miners that are running the federation servers could also be doing
+ the job negotiation and choosing which transactions are included in a block.
+ So then the smaller miners that are part of that Fetipool, instead of imagining all the
+ smaller miners all running their own nodes and doing this job negotiation and the latency
+ that gets included with that whole process and whatnot, they could just kind of delegate
+ who they want to do the transaction selection to those federation members.
+ So you could have like seven different members in a pool basically all proposing block templates,
+ proposing which transactions are included, and then a bunch of individual miners then
+ choosing which of those seven they trust with the job construction.
+ So then all of a sudden, you have competition within a pool on who is constructing the transaction
+ rather than having to completely leave the pool and go and switch to a different pool
+ because you like how they choose the transaction.
+ So you actually have this cool little competition, a game theory dynamic that happens internally
+ within the pool.
+ Does that make sense?
+ That was great.
+ Yeah.
+ And I just want to add, we shouldn't stop at Fetipools.
+ There are so many other applications that we could federate.
+ And as Matt mentioned, everything essentially that takes custody of your Bitcoin and then
+ allows you to do something smarter with it, that can be implemented as the Fetiment module.
+ And if there are hackers out there that are listening, please come and build modules.
+ It would be awesome.
+ And we just finished a big materialization effort.
+ And now it's much, much easier to just implement your own applications on Fetiment.
+ Very cool, guys.
+ Now I have to drop.
+ This conversation was great.
+ Appreciate you all.
+ Cheers.
+ Cheers.
+ Any final thoughts, Matt?
+ I did a full write up on Fetipool on my blog, discretelog.com.
+ Check it out.
+ Awesome.
+ That was great.
+ Thanks.
+ All right.
+ Now that Matt's gone, let's get into the real talk about privacy.
+ Well, you have nothing to hide.
+ So that's right.
+ So guys, I mean, we covered quite a bit.
+ I still have a little bit of time.
+ Is there any other technical aspects that you think people maybe miss?
+ We're going to get to Nostra in a second, too.
+ But I find that oftentimes people sort of restrain from doing the brain dump of some
+ of the technical parts.
+ And there's a lot of people there who appreciate that.
+ So is there anything else that maybe we should talk about?
+ I think Kalle, he's doing like hand raising there like there's no tomorrow.
+ So Kalle, go for it.
+ I think what's also an interesting point is to talk about scriptable e-cash, because I
+ think that it also goes into direction of what I tried to say before, why I think Fetiment
+ is a killer of liquid.
+ It's not a killer.
+ I love liquid.
+ Don't get me wrong.
+ But it's something that achieves something very similar because it allows scripting.
+ So what you can do with e-cash is, you know, usually if you have a scripting language on
+ a blockchain, you would have all the participants verifying the blocks, execute all the scripts,
+ and then see if the scripts are valid or not.
+ And if they are valid, then the transaction is valid.
+ So how do you achieve something similar with e-cash?
+ It turns out that in the very beginning when I tried to explain how it works, I said that
+ at least that's how it works in Cashew.
+ I imagine it's similar in Fetiment, but please correct me there as well, is in the beginning
+ I said you generate the secret, and then you blind the secret, and you send it to the mint,
+ and then the mint signs the secret.
+ Now what if that secret is not just a random number, but it's actually a, for example,
+ script hash?
+ So basically, like we know with pay-to-script hash, there's a whole script that you want
+ to have executed.
+ and then you take a hash of the script
+ and now it looks like a random number
+ and you let that to be signed from the mint basically
+ and say, please sign me this random looking number.
+ The mint doesn't know that there's a whole script behind it,
+ it just signs the number and get it back.
+ Now, when you, and that's the idea
+ how it works in Cashew today,
+ is when you then want to spend this special piece of eCache
+ that is not generated from a random number
+ but from actually a script hash,
+ then you can only spend it when you send it to the mint
+ and then the mint will ask,
+ give me the script for this eCache as well.
+ I will honor your eCache only if you can give me a script
+ that it was committed to with this random secret
+ and if the script is valid, obviously.
+ If the script doesn't run through, I'm going to honor it.
+ And that sounds super simple because now you just,
+ instead of redeeming eCache directly,
+ you just also supply script to redeem the eCache
+ and the mint now has a state machine,
+ runs the script, in Cashew's case,
+ it's literally Bitcoin script.
+ So you can use Bitcoin script to script your eCache.
+ The mint then just puts the script
+ into its virtual state machine, runs the script,
+ and if the script says true,
+ then the eCache is valid, basically.
+ That's, you know, once you introduce this,
+ basically have, you know, a whole new universe opens up
+ what you can build.
+ You can build smart contracts out of it, I don't know,
+ trade atomically between one person and another.
+ You can now make an atomic swap
+ between eCache and Lightning or a shit coin and eCache
+ and basically all the things that you can do
+ on a blockchain, but without anyone having to run
+ every script, basically.
+ You just have this one server or a federation
+ in the case of FeddyMint that needs to execute the script
+ and says, yep, this is okay.
+ I can honor this eCache transaction.
+ - Yeah.
+ - Well, in your case, your eCache token
+ is committing to Bitcoin script
+ because like that's what was available
+ in the library that you used,
+ but it doesn't have to be that way, right?
+ It could be that, you know, your eCache issuer
+ executes whatever script semantics or whatever VM you like.
+ So you could build whatever crazy smart contracting system
+ that includes external data.
+ Maybe you want to have an eCache where every transaction
+ is like the settling of a bet or a financial transaction
+ that relies on external pricing oracles,
+ like whatever you want.
+ - You can make an eCache mint that is basically an exchange.
+ So it's literally only for an exchange for people to trade
+ one shit coin against another shit coin, for example,
+ but atomically using eCache, could be.
+ - Yeah, so it actually, to some degree,
+ it works really similarly in FeddyMint.
+ Like we don't randomly generate our nonces
+ because the federated model, it's actually necessary
+ to have a key in there that can sign the transaction.
+ 'Cause we have this weird little problem
+ that when we create an eCache transaction
+ that takes some eCache notes as input
+ and issues new ones as output,
+ then if you submit it to a malicious guardian,
+ then they could just take the eCache note
+ from the input side and attach it to a transaction
+ of their own that pays themselves.
+ So we already need the public key in there
+ to sign the transaction.
+ So this rebinding attack cannot happen.
+ Like that's also why you generally
+ always want a public key in a Bitcoin script.
+ Because if you only had, for example, a hash,
+ and then you need to reveal a pre-image,
+ anyone could just take this input
+ and attach it to their own transaction.
+ And it's totally imaginable that we extend
+ this public key with a taproot-like construction
+ that can also commit to a bunch of scripts.
+ And to be honest, I think this scripting system
+ of Bitcoin is probably one of the things
+ that people would really like to fix if they could.
+ And so I wouldn't go to Bitcoin script for that.
+ But one really interesting idea
+ that a friend of mine is working on is simplicity.
+ And I think he will be talking about it
+ at Bitcoin++ in Austin next month,
+ how to integrate FedEmint with simplicity
+ and how to have scriptable eCache notes.
+ And that opens so many new possibilities.
+ It's amazing.
+ And you have a formally verifiable scripting language
+ without the weird semantics of Bitcoin script.
+ And some of the privacy of eCache notes.
+ That would be just mind-blowing.
+ - Yeah, that's really cool for a bunch of reasons.
+ I mean, it's really cool for FedEmint users,
+ but I think it's also really cool for Bitcoin users.
+ 'Cause one of the problems that I think we historically have
+ when weighing new soft forks or new op codes
+ is you have this like chicken and egg solution
+ where we're like, we don't wanna add new features to Bitcoin
+ if it's not actually useful,
+ or if there's not market demand,
+ or if there's not software support for it.
+ But like, how do you go and build those things
+ if it's not available in Bitcoin?
+ And so that's where the idea of like
+ the Bitcoin Inquisition subnet comes in,
+ or a lot of times people say,
+ oh, go add it to Liquid first.
+ We'll test it on Liquid and then we'll add it to Bitcoin.
+ It'd be really cool if like you could go
+ and build interesting smart contracts in Simplicity
+ on top of FedEmint, like show that there's demand,
+ work out all of the conceptual ideas.
+ And then that makes it more obvious
+ whether or not we should have something like Simplicity.
+ - Well, I mean, you know, there's also the problem
+ that like elements is like 80,000 diff.
+ You never get merged.
+ I mean, like realistically speaking, right?
+ - I think the problem with having that on eCash
+ is that it's too different from Bitcoin already.
+ - That's true.
+ - You know, you took so long.
+ So what I think would be the solution here
+ where FedEmint definitely can help
+ is making SIGNETS deployable
+ as a Bitcoin sidechain to everyone.
+ Like make it available to everyone
+ to deploy SIGNET sidechains.
+ Like just take any fork of Bitcoin Core,
+ set up a FedEmint with a module
+ that can sign SIGNET blocks
+ and just let them try out
+ all the crazy software features they want.
+ That's like something I really want to see
+ because then we could test out OpcTV.
+ We could test out Simplicity, all the things in parallel,
+ like without having to press implement it in elements,
+ which just-
+ - Whatever makes the conversation of drive chains go away
+ is worth-
+ - Pursuing, yeah.
+ - Yeah.
+ Like anything really.
+ I mean, same for Taewoo Emissions.
+ Like whatever makes it go away as a conversation,
+ I'll take it.
+ - That's good.
+ So I guess like the last thing before I close this up,
+ maybe like we should touch a little bit on Nostr
+ and Ecash because it does seem to have
+ a little bit of a match made in heaven kind of situation.
+ They're very similar to Lightning and Nostr.
+ I think the velocity of Ecash being used on Nostr
+ could be better than using Lightning perhaps.
+ So I think it's maybe worth exploring there a little bit.
+ - So the nice thing about Ecash,
+ and that's the different thing,
+ that's what in the UX perspective
+ really sets it apart from Lightning,
+ is that Lightning is a pull-based system.
+ You have to generate an invoice first
+ and then the invoice has to communicate to the sender
+ and then it can be paid.
+ Whereas Ecash is a push-based system.
+ So you take your money and you throw it to the receiver
+ and they need to catch it somehow.
+ That changes a lot of things,
+ like just from the possibilities of what apps you can build.
+ And for a push-based system, right now in Cache,
+ most of the time when you have a Cache transaction,
+ so you either scan something
+ that looks like a Lightning invoice
+ and then a Cache transaction happens in the background,
+ that's again pull-based,
+ or you take this piece of text
+ and you send it to someone on Twitter
+ or on Telegram or Signal, whatever,
+ to any text transport basically.
+ But for these text transport systems,
+ you need identity, right?
+ You need to know the receiver somehow
+ and send it to the, I don't know,
+ a Twitter handle or whatever.
+ And I think Nostar really fixes this.
+ So Nostar, I think Nostar for me personally,
+ it's more interesting for the other stuff, you know?
+ It's notes and other stuff transmitted over relays.
+ I'm really bullish on the other stuff basically.
+ And the other stuff will be,
+ and already we're seeing this,
+ will be machines talking to each other.
+ So you have software talking to software over Nostar,
+ not people talking to people over Nostar.
+ And one of the ways that already you can use in Nutsdash
+ has a Nostar client built into the wallet.
+ The cashew nutshell,
+ that is the Python command line interface,
+ also has Nostar built in.
+ What you can do with these is basically
+ you just say cashew send and then the amount
+ and then add a Nostar pubkey or a NIP5 identifier,
+ whatever.
+ It takes the e-cash and just wraps it into a Nostar DM
+ and sends it over to the user.
+ So the UX becomes, you open your wallet
+ and then suddenly it makes bing
+ and you see a DM just arrived in your wallet
+ and you got some e-cash that you redeem immediately.
+ - So I guess like two sort of very high level things.
+ Do you think it would be worth changing Zaps
+ to support like e-cash tokens?
+ Because right now one of the issues is Zaps
+ that you can't even prove so you can do washing, right?
+ You can't prove that the receiver sent
+ a real Lightning transaction.
+ Is there no point in making Zaps with tokens?
+ - I'm not sure.
+ I mean, the Zaps are, I mean, they're super popular
+ but they're not in line that much
+ with how LNURL actually works,
+ although it uses LNURL in the background.
+ And at the same time, the reason why Zaps mean anything
+ is because it's hard to run a Lightning node, right?
+ If it were super easy to run a Lightning node,
+ everyone would just fake Zaps as much as they want
+ and it would lose its meaning.
+ So basically I think like, although I love it so much,
+ just being very honest about it,
+ I think Zaps itself is built on a foundation of sand.
+ Somehow it will go down as things become more easy to use.
+ - Oh, I think somebody is just going to figure out a way
+ of adding a proof to the other end before the client.
+ So you're still going to rely on the clients
+ to display it truthfully, right?
+ But technically you could add a proof to the other side.
+ - Yes, but nothing hinders you
+ from just spinning up infinitely many identities
+ and zapping yourself all day long basically.
+ - No, no, you could make it, yeah, I guess.
+ - Yeah, so.
+ - Well, then maybe with Cashew it's true.
+ I mean, you could have it so that the mint validates that.
+ - Yes, in that case, you have the same problem
+ that you can pay yourself all the time.
+ So I think that that's, it comes back to what we had earlier.
+ If you have an anonymous system,
+ then only Bitcoin fixes this basically.
+ - That's right.
+ - So you need some kind of proof of work
+ or something to get rid of fake identities.
+ - So where, like aside from just sending like Cashew
+ or Fetty Mintz, I mean, is there a name yet
+ for your unit of account, at least for the,
+ on the Fetty Mintz side for like how to describe it?
+ I know people would just choose whatever they want, but.
+ - I think there shouldn't be actually.
+ I think maybe FMPTC,
+ that's what we use in some documentation,
+ but in my opinion, E-cash should never be used directly.
+ Like I think it's an anti-pattern
+ to actually send E-cash in most cases.
+ Like maybe it makes sense for such push payments,
+ but the problem is you lose your compatibility
+ with the rest of the Bitcoin ecosystem.
+ Ideally, what I imagine for Fetty Mintz
+ is that all interactions will be violating invoices.
+ That way it doesn't matter if the other side
+ is on a Fetty Mintz, on Cashew,
+ or on something completely different.
+ And like we avoid this monoculture essentially.
+ Like otherwise what happens if like one of these projects
+ becomes too big and we now have our custom way
+ of transferring money?
+ - Yeah, no, no, but like, you know,
+ I'm just referring to sort of like the general term, right?
+ Because unfortunately we can't use the word crypto anymore
+ for cryptography, that's gone.
+ We can't use the word token anymore
+ because it's gonna just feel like it's a shit coin, right?
+ So I feel like when people who are not as technical
+ or sort of like discussing this and discussing ideas
+ and maybe what they wanna invent as companies
+ that add value add and whatever,
+ they often need the term, right?
+ To describe it so that it really represents,
+ you know, this e-cash token.
+ - Like we call it e-cash notes generally.
+ - Yeah, maybe notes like a bank note
+ because it really also gives you the impression
+ of a piece of money that you can hand around.
+ - We've also switched over the years multiple times.
+ Like we started with coins and we went to tokens
+ and that was apparently too shit coiny
+ and now we are at notes, so.
+ - Yeah, 'cause coin implies blockchain.
+ - Yeah. - You know, unfortunately.
+ - Yeah. - And for Cashew,
+ you can say nuts.
+ - Yeah, I know. - Yeah, we also say
+ nuts sometimes.
+ - See, like the job that he did
+ with all the semantics around Cashew,
+ I think really made e-cash like happen
+ in the minds of people in the last year.
+ Like people started to understand it
+ because you created all the little metaphors
+ and all the little terms that people needed
+ to describe the ideas, right?
+ So that's why I was asking.
+ So like notes is a great one.
+ I'm gonna start using that.
+ - But can I come back to Eric,
+ which is said about using e-cash directly
+ instead of Lightning invoices.
+ I have to think more about this.
+ I think I agree if you're talking
+ about user-facing Lightning wallets, right?
+ So in the best case, a Cashew wallet,
+ also a FediMint wallet, right?
+ The user doesn't even know what they're using.
+ They're just, you know,
+ they get used to using a Lightning wallet here
+ and then they switch over to a FediMint Lightning wallet
+ and they just keep using it
+ and get this perfect privacy for free basically
+ on top of it. - Exactly.
+ - So I get completely where you're coming from.
+ But still, it's very worth exploring
+ how if you strip away the Lightning stuff from it,
+ still what it enables you.
+ For example, just, you know,
+ including e-cash in a Nostradam.
+ It could be including e-cash in a HTTP request
+ or it would be, you know,
+ putting e-cash into onions when you do onion routing.
+ E-cash layer by layer,
+ you could pay a Tor relay, for example,
+ and each Tor relay can just take out some e-cash
+ from the relay, from the layer that you wrapped.
+ So there are many, many things
+ that are still completely unexplored
+ because we didn't have this digital representation of money
+ being able to send around.
+ I think we will still see people experimenting
+ with bare e-cash without wrapping it
+ around the Lightning UX.
+ - I mean, I'm perfectly fine with that.
+ Like, especially when you're talking about,
+ say, for example, the,
+ I'm not sure how I feel about this is the best example,
+ but Stacker News,
+ which to me really just reminds me of poker websites,
+ like any gambling site, right?
+ Where like, you know, people sending bare notes
+ would be way more beneficial
+ than people using Lightning to send those notes
+ because you're only losing efficiency
+ by using Lightning in this instance, right?
+ You're not gaining anything.
+ If anything, you're actually losing privacy.
+ So might as well sort of just send this notes around
+ as we're doing our gambling on the table, right?
+ And then the Lightning in this case
+ would be just used for clearing.
+ - Yeah, I think you got the point there.
+ The problem that I foresee in the future
+ is that there will be many incompatible e-cash systems.
+ So maybe one thing we should take from that
+ is that we might want to work on
+ like a standard how to represent e-cash
+ in a way that can tell the application,
+ like what kind of e-cash is this?
+ Is this pediment e-cash?
+ Is this cashier e-cash?
+ Is this some random third party e-cash?
+ - Are you thinking of doing like a, I don't know,
+ BIP 21 style like URI,
+ where you have like a URI that has
+ whatever the lowest common denominator is,
+ whether that's a layer one address
+ or a Lightning invoice or something.
+ And then you have some optional fields that are like,
+ here's the cash you know,
+ here's the pediment note, whatever.
+ And you have tolerant readers that can read it and say,
+ okay, this is the version of it that I support.
+ So I'm gonna use this particular layer.
+ Is that what you're thinking or something else?
+ - Not necessarily.
+ Like the problem is a lot of these protocols
+ won't be a compatible necessarily.
+ So I think compatibility can at best be achieved
+ on the client layer,
+ or like the recipient on the recipient side.
+ So for example, if I only have pediment e-cash from my mint,
+ then I would encode in the e-cash note,
+ which mint it's from and which version of pediment it uses.
+ And then I can send it to a cashier wallet.
+ And if the cashier wallet kind of has a stub pediment client
+ that can at least redeem the pediment e-cash note
+ and then transfer it via Lightning invoice
+ to the cashier instance that the user's actually on,
+ then we would have some minimal sort of interoperability
+ at least, otherwise, like we would end up
+ with totally separate ecosystems
+ that cannot talk to each other.
+ And I think that would be a very sad state of things.
+ - I have different opinions on that, but I mean, it's great,
+ but I think it's also nice
+ when things don't necessarily talk to each other
+ because we could always go back to Bitcoin
+ to find like a deeper sort of more higher value consensus.
+ So I think people get too preoccupied
+ with trying to make things compatible.
+ Like, you know, one of my biggest beefs with Lightning
+ is the fact that we had 50 different payment channels papers
+ and we ended up with just sort of like one
+ that took kind of like almost too long to ship
+ because everybody was trying to make everything compatible
+ where we could have had three different Lightning systems.
+ They were very, completely incompatible.
+ They clear with Bitcoin,
+ but they could have had different,
+ very, very different trade-offs
+ with very different powerful futures, right?
+ So I feel like sometimes like people,
+ because we have Bitcoin and that's the only reason
+ we can afford to try things that are not sort of compatible
+ in the other layers, like layer three.
+ But I think like, I mean, there's a million other questions
+ and things we could talk about,
+ but I think this is a very good point
+ for us to sort of like close up
+ without sort of getting too much in the weeds.
+ And I think it would be great to maybe do another one
+ where we explore like a few different ideas
+ and maybe in a few weeks or a few months,
+ we're gonna have like some more examples
+ in real world of things happening,
+ especially if a moon stops snoozing and ships.
+ So guys, listen, thank you so much.
+ This was awesome.
+ Any final thoughts?
+ Rindell.
+ - I'd say people should go and play with these systems.
+ Like the Fetimint repo is really well-documented
+ and like it's gotten a lot more organized
+ in the last like year or so.
+ So like go check out Fetimint and also play with Cashew.
+ Like I think three of the mints on the EllenBits test server
+ were just from like me messing around.
+ And you know, you can take 10 cents worth of lightning
+ and make a shitload of e-cash on Cashew
+ and just like play with it and send it to yourself,
+ send it to other people on Oscar.
+ I feel like just playing with this stuff
+ is sometimes the fastest way to get some intuition around it
+ and what it can do.
+ So definitely go play with it.
+ - Kali.
+ - Yeah, on that, just reach out to me.
+ I mean, I know there are people
+ who want to get started building on Bitcoin
+ and whatever project interests you,
+ if it's Fetimint, if it's Cashew,
+ if it's another Bitcoin-based project,
+ like independent of what we have just talked about today,
+ we need more Bitcoiners.
+ Literally, this is your moment.
+ Dive in, start with stupid things, just have fun
+ and you will find things that interest you.
+ And if you want to play with Cashew, please look at it.
+ It's extremely simple.
+ You can build a JavaScript application
+ doing e-cash stuff in literally a couple of hours or so.
+ So look at the documentation on cashew.space.
+ If you have any questions, Kali BTC, that's me.
+ I will hold your hands and show you the way, the nut.
+ I will show you the nut.
+ - Yeah, Kali, where can people find your nuts?
+ - My nuts are usually positioned on Noster
+ or on Twitter, on the Kali BTC,
+ but that's the last thing I'll say.
+ - Thank you.
+ Eric, any final thoughts?
+ - Yeah, so if people want to learn more about Fetimint,
+ visit fetimint.org.
+ We have some great explainers there
+ or look it up on github.com/fetimint/fetimint.
+ I think we went into a lot of interesting topics today.
+ So thanks for having me
+ and yeah, looking forward to working together with everyone,
+ especially with Cashew.
+ The project has always led to some new insights.
+ I think by working together,
+ we can build something much stronger.
+ So yeah.
+ - Well, thank you guys.
+ And I think any mobile dev out there,
+ please, somebody, please make a Cashew Fetty,
+ like an e-cash wallet that has proper integrations
+ with Lightning as an actual app.
+ Because I think what's missing right now
+ is like a very, very friendly way
+ for you to just like send and receive
+ that does not involve a web.
+ I think that would be super, super cool.
+ And I think you can probably find monetization to that,
+ like not too far from now,
+ you're gonna be ahead of everybody.
+ I think it's gonna be a very common thing,
+ the same way Lightning wallets exploded.
+ So I guess with that, I mean, again, thank you so much.
+ This was absolutely awesome.
+ We're gonna do more of this stuff about layer three
+ at some point soon.
+ We're gonna put layer three on the name of the episode
+ until Kali's nuts explode.
+ So thank you.
+ Thank you so much, guys.
+ You have a great day.
+ - Amazing.
+ Thank you for having us.
+ - Thank you.
+ Have a great day.
+ - Thanks for listening.
+ For more resources, check the show notes.
+ We put a lot of effort into them.
+ And remember, we don't have a crystal ball.
+ So let us know about your project.
+ Visit bitcoin.review to find out how to get in touch.
+ (upbeat music)
+ (upbeat music)
+ [no audio]

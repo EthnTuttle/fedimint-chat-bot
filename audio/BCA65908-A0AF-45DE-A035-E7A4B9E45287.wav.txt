@@ -1,0 +1,1392 @@
+ So we've built this for a while, but because API calls are basically free,
+ there really wasn't a good match for it. There were some good matches for it and people would
+ do it, but as they were doing it, yeah, I can do it this way, but I can also do it with dollars.
+ This is a really interesting paradigm when it comes to AI stuff is that there's basically three
+ or four different aspects of AI that make it so you cannot use credit card relationships in order
+ to solve the monetization problems there. But you can with Bitcoin and Lightning, as it exists today,
+ not requiring any changes to the protocol.
+ What is up guys, welcome back to AI Unchained. This is episode five. We have Cody Lowe on the
+ show today and I am actually away from the house and away from the studio, but I really wanted to
+ get this. I haven't been able to stop thinking about this since we did this episode. This is a
+ freaking amazing conversation and I'm super excited about this episode and I wanted to go
+ ahead and get it out and I realized it's going to be a week if I don't just go ahead and record.
+ So here I am, not in the studio, and this dog in the background. We're going to go ahead and get
+ into it. This is a conversation about how AI and our current payment systems, why they are not
+ compatible and what has changed. What is unique about this new environment and why Bitcoin and
+ Lightning may very well be perfectly suited to solve this problem. But I will let Cody lay out
+ the argument for us and we will go ahead and get right in really fast. I just want to say that if
+ you if you're a Bitcoin saver, if you own Bitcoin, you don't actually own it unless it's behind your
+ keys. And that's why you need to get the cold card hardware wallet and you can get 9% off with code
+ Bitcoin audible. All one word. That's the other podcast. Bitcoin audible gets you 9% off the cold
+ card. So check it out. The link will be right there in the show notes. With that, let's go ahead
+ and get into today's show. I unchained episode five Fiat incompatible. Cody, welcome to a I
+ unchanged man. It's good to have you on. Thank you, guy. I've been listening since you started this.
+ Hell yeah. Hell yeah. There's kind of this little community of within Bitcoin, which is already a
+ small enough community. There's another little community of like a Bitcoiners. Right. Very,
+ very early for that. And so it's been fun going along this journey with you.
+ Nice. Nice. I'm still like a crazy novice. I'm reading through this really long piece right now.
+ In fact, I might I might do it on the show. But this really long piece on like how to understand
+ like what is a language model? Like how do you how would you build one from scratch? Like what's
+ the what's the whole neural net and everything? And it's like very simple terms. Well, ish.
+ But but it's really good. But I mean, that's that's that's where I am. I feel like I'm reading
+ the white paper of Bitcoin, you know, like, yeah, I'm not at the house and episodes deep, right?
+ Like I'm I'm at the very beginning of this, but I'm stoked. So it's yeah, it's a crazy space.
+ Well, that's something. So if I could just give two quick recommendations for that one, right?
+ Like, I don't know if you know who Andre Karpathy is, but he used to like part of open AI, like
+ part of some of the original guys that open AI. And then he led Facebook's sorry, not Facebook,
+ Tesla's self driving team for vision. Right. And then he left for a little bit. And then he started
+ just doing YouTube videos, right? Of like, hey, this is like how all of this crazy stuff in AI
+ works. Like really old mini. God, that sounds like like he from scratch implements and builds
+ GPT. Right. And then he's just got awesome. Yeah. Right. It's like video. Yeah. Right. And he's a
+ dude in a Jupiter notebook. Right. And then also, guys, he's got this very great blog. And he's
+ actually he's not like a bit corner per se. Right. But like, you know, he's like kind of written
+ about a little bit. He's got one of the best pieces I've ever seen of on Bitcoin. Right.
+ On for the technical perspective. Right. Wow. Because it's a from scratch implementation
+ of Bitcoin, of that just like writing Python code. He like from nothing makes a public key,
+ creates an address off of it, connects to a Bitcoin node, broadcasts transaction in order to
+ pay himself. Right. But he does it from scratch, just writing very basic Python. Right. And so
+ it's pretty amazing. So I send him. Yeah. He's like a god within the AI community. Right.
+ How do you spell the name? You said Andre Carpathia. Yeah. K. C. K. A. R. P. A. T. H. Y.
+ He's one of those guys like it sounds like one of those guys where it's kind of like,
+ oh, hey, Carpathia dropped another video. Let me stop everything that I'm doing and watch this
+ thing. Nice. Like, just a couple days ago or maybe maybe a week ago, like things are moving so fast
+ in this space. Right. Is that just like a little bit ago, he did like a state of GPT. Right. Kind
+ of like a summary of like, this is where GPT was. This is where it's gone to. This was the inflection
+ point with GPT. Where are we today? Right. So that's awesome. Do you think he would be
+ does he do podcast appearances? I reach out like one bug him. I don't know. He's
+ that'd be great to get him on to like, just kind of like, he's a brain. Like, what is it?
+ You know, like, tell me, explain this to me. No, he's very busy. Yeah. When he left Tesla,
+ he was like, hey, I just want to make videos. Right. And then like a couple weeks later,
+ he gets he's like, and now I'm back at OpenAI. Right. But it's this beautiful thing that he did.
+ Right. Of that. There's like seven or eight different of these videos. Right. Of just like
+ they're an hour and a half long. It's just him in a Jupyter notebook of like the expert on all of
+ this stuff. Just like also like fundamentally, he's like a hacker. Right. Like he's not like
+ some big I mean, he does like a bunch of academic stuff. Right. But fundamentally,
+ he's just a coder. Right. And so it's so cool just being like, hey, this is how this works in my head.
+ And let me explain it to you through a Jupyter notebook. Right.
+ That's really cool. That's really neat. Well, tell me about you.
+ To be perfectly honest, I don't know a whole lot about Cody outside of the things that I've
+ I've been following and just checking out since I mean, I think the first time I bumped into you
+ was with the stuff here. So, yeah. Yeah. So introduce me and the audience to Cody.
+ Yeah. So I guess like now, like podcast start. Right. So we can kind of be like the obligatory
+ intro and stuff. Right. So I've been a fan of yours for a long time. Right. So like a long
+ time, Bitcoin audible listener and stuff. Right. So for me, I kind of grew up all around the world
+ because my mom's in the Foreign Service. Right. So like never lived anywhere more than like three
+ years at a time. So I lived all over the place and then I keep talking. And so then I go to college
+ when I'm in college. I kind of go down the finance route. Right. But like, you know,
+ while I was there, right, I encountered Nissan, Nicholas, right. Of like before he like kind of
+ loses his mind after he breaks it. Right. And then recognize that there's a lot of problems
+ with like the standard finance thing. I'm like, OK, well, I thought I was going to go down the
+ investment banking route. Like, what do I do? I don't know. I'm like, I'll try to break or write
+ of like that's like a fun thing. And it's, you know, a privilege to lead Marines. Like there's
+ no nowhere else you can go where it's like, hey, I'm 21 years old. Right. And like I've been
+ training as an officer for the last it's like nine months worth of training. Right. So first you go to
+ the basic school where you get trained as a provisional rifle platoon commander, because
+ in the Marine Corps, every Marine rifleman. Right. And every officer has to be trained to lead a
+ rifle platoon. Right. And so even if you're going to be a gag like so like a military lawyer or a
+ pilot or a cook or like someone sitting behind a desk or whatever. Right. Like you get trained on
+ that job. And the reason why is because the entire organization exists to support the 18 year old
+ leading the other three 18 year olds into a fighting role. Right. So insofar as you're in
+ this organization, the reason why you're here is because you support that guy and you need to
+ know how his job works. Right. Got you. Yeah. And so like I see that a lot within the Bitcoin
+ community as well. Right. Of that. There's like a very clear mission alignment of that. The most
+ important people in the Bitcoin community are the developers. Right. And so in Bitcoin, there's like
+ this big impetus to like learn a little bit about coding, to understand like, you know, the fact that
+ like these open source devs are basically like, you know, like the peak of the peak when it comes
+ to the Bitcoin community, I think is like a huge plus for us. Right. And so like, yeah. So join the
+ Marine Corps, become an infantry officer, lead Marines, go on deployments to like Kuwait. We're
+ a crisis response company where we like hopping around the Middle East doing like all sorts of
+ stuff there. Right. Covid happens. And then because Covid is happening. Right. It's like we have these
+ like 24 hour and 12 hour tactical operations center watches. Right. And so you're stuck there
+ basically waiting for the phone to ring. Right. Because it's like, hey, my guys are going to jump
+ on a bird. We're going to go to like Syria or something. Right. And, you know, like once Covid
+ happens while we're on this deployment, well, the phone stops ringing mostly. It's like no one's
+ really doing anything. And so, you know, you've got these really long times in the tactical
+ operations center where you on these things called nipper computers, which are unclassified computers,
+ but they're very limited in what you can do. Right. And so, you know, it's a computer. You
+ can't go on social media, those kinds of things. Right. Sure. So it's kind of this little exercise
+ in like, what can I get access to? Right. And I find Bitcoin.org is not blocked. And so a
+ intro to Bitcoin becomes that like, you know, I read the white paper, right? I'm like, that's
+ like because the only resource I can get access to all of these long watches and stuff. And it
+ hit me. That's funny. Right. Yeah. And so start going down the Bitcoin rabbit hole for those ones
+ as I do that kind of same philosophy of why I like the Marine Corps so much is like coming into
+ Bitcoin. I was like, I have to learn to code. I have to become a developer. And that was about
+ like two and a half years ago. So then finish up active duty time, start going back to school,
+ start getting gigs, working on Bitcoin stuff. Right. And then as I kind of become more than
+ the development track now, I'm at Feddy doing I'm the head of developer and product support for
+ Feddy. Right. So we can talk about Feddy at the end for this stuff. But I think this.
+ No, I'm fascinated by what's going on with Feddy. I mean, I know this isn't like a Bitcoin podcast,
+ but it's hard not to talk about it. There's AI going on. Yeah. Nice. Nice. Yeah. So.
+ So I start getting into AI stuff because the way that I learned how to code was,
+ again, on these Nipper computers, it's a Windows computer. Right. And so I don't know
+ like how much of your audience have tried this, but like trying to learn how to code on a Windows
+ computer is very, very difficult because it's using like Windows little thing. Right. Instead
+ of like an open source thing like Linux or if you're using Mac. Right. Like it's like compatible
+ with Linux. Right. Like a lot of coding materials is all built for like not Windows. Right. And
+ also because the computer can't get access to the terminal, it becomes really, really hard for me
+ to like I'm trying to. Oh, I didn't think about that. Yeah. Yeah. Well, I find Repl. It, which is
+ an in browser I.D. that's not. Yeah. So all of a sudden, while I'm on these 12 hour watches. Right.
+ And the phone's not ringing. Right. And so, you know, like we're like, you know, like I'm doing
+ like the normal if drops or stuff. Right. Like we're going out, we're doing drills, we're doing
+ ranges. We're like, you know, hopping around different places and stuff. But during these 12
+ hour watches where I'm just in the tactical operations center, just like, you know, there's
+ nothing that we can do. Right. And so it's just like teaching myself how to code, like reading as
+ much as I can for this stuff. Right. On the stuff that I have available to I find replete and I'm
+ able to just like, you know, basically take off. Right. In terms of like doing the coding stuff.
+ Right. And so I've been kind of doing that since then. And so that's how I become technical,
+ start developing all that kind of stuff. Replete did this big pivot into A.I. and like I've been
+ kind of like focused on like using them for a very long time. So I was like, hey, this is like
+ they're like now is the time to start paying attention. So I was like, all right, cool. It's
+ like as much as time as I'm spending on Bitcoin, I'll start with that in the timeline. Was that
+ pre GPT? That was basically when GPT came out. Right. So GPT three specifically. Right. So
+ GPT three. So the division model rate was like when that came out, there were a lot of people
+ who were like, I see where the puck is going and it's going to be crazy. Right. So let's start
+ skating in that direction. Right. And so we start doing that. And then for me specifically as a
+ Bitcoin, I kind of start seeing this opportunity of that. It's like you think about different
+ computing paradigms as they come around. So like when like David Choms, Chomian e-cash. So if you
+ guys aren't familiar with this, David Chom, he invented like Chomian e-cash, which is basically
+ a blinded signature scheme where the mint is you're able to have like a bank where the mint
+ doesn't know any information about its users. It doesn't even have a concept of a user. Right.
+ There's just e-cash notes. Right. And so that was going to be a system that was going to be
+ shipped with and embedded into every single Windows 95 copy that ever went out. Right.
+ It's so crazy how close we actually came like to having e-cash like and when it was when it was
+ not odd to think about like you like that you would have this surveillance that it was insane to
+ think that you have this surveillance apparatus and people wouldn't have privacy. People's
+ interaction with money was cash, you know. And so obviously you would want the same thing
+ in the digital realm. And it's like a bunch of like little quirks. And, you know, maybe that
+ Chom was just like a not a good businessman, but a brilliant coder, you know, like, but they were
+ just yeah, a couple of pieces fell in the wrong direction and it just stopped. But yeah, exactly.
+ You get a new computing paradigm with like the operating system and we could have had cash there.
+ Yeah. Then you get with like e-commerce, right? Like Visa was trying to do something similar.
+ They were like, hey, David Chom, like all the e-cash guys, right? Like you guys have a working
+ digital payments mechanism that we don't have. Right. Like let's buy you or let's make a deal.
+ Let's like use you guys for online commerce. Okay. So they adopt it for the digital payments nature.
+ But it just so happens that using this system,
+ the users achieve perfect privacy.
+ That could have been the way that we went.
+ That deal ends up getting blown up.
+ They develop the system that they use right now,
+ where it's basically like, you're through your credit
+ card, you swipe your credit card, you give them access.
+ Every time you swipe your credit card,
+ it's like giving the other person your private key.
+ This is so crazy.
+ And that's one of the things that really got me
+ when I first heard about Bitcoin,
+ was one of the critical characteristics of Bitcoin,
+ that I was like, man, this is so fundamentally different,
+ is that it's a push instead of a pull system.
+ Is that you make payments, you don't give people,
+ whereas credit cards, you give access and they take payments.
+ And you just trust that they're going to take the payment
+ that you owe, but you just gave them the key
+ to your whole account, basically.
+ Well, and this is where this ties into AI, right?
+ Because now we have a new computing paradigm, right?
+ And the new computing paradigm is
+ that what previously with e-commerce you could do,
+ you could basically amortize the cost of most of your users
+ through the power user, right?
+ Is that, hey, only 10% of the people who visit my website
+ actually pay for it.
+ That's fine, because the cost for doing the API calls
+ for everybody else is basically free, right?
+ And so I can kind of amortize that across them, right?
+ So, but now when it comes to using these AI tools,
+ especially the stuff on the cutting edge, right?
+ You can think about like every time you're doing
+ like a mid-journey call, or every time that you're doing
+ like a GPT-4 call or any of the like really bleeding edge
+ stuff or whatever, is you're just sitting there
+ setting fire to a graphics card, right?
+ And like, I can't just let someone show up
+ and set my graphics cards on fire.
+ - Yeah.
+ - Is that this doesn't work anymore.
+ So this is kind of like a new computing paradigm
+ for this stuff.
+ And so a lot of the stuff that we've built
+ over the past couple of years as lightning developers
+ and stuff is this mechanisms where you can gate APIs
+ with lightning payments, right?
+ - Yeah. - L4 specification.
+ It recently was opened up as a blip by Lalu, right?
+ So we've built this for a while,
+ but because API calls are basically free,
+ there really wasn't a good match for it.
+ There were some good matches for it and people would do it,
+ but like as they were doing it, yeah, I couldn't,
+ can do it this way, but I can also do it with dollars,
+ right?
+ This is kind of a really interesting paradigm
+ when it comes to AI stuff is that there's basically
+ like three or four different aspects of AI that make it
+ so you cannot use credit card relationships
+ in order to solve the monetization problems there, right?
+ But you can with Bitcoin and lightning as it exists today,
+ not requiring any changes to the protocol, right?
+ And so one of the cool ones that we can start with
+ is by talking about micro payments, right?
+ So one of the big issues that I have is that
+ when use random users show up at my site, okay?
+ Like I, as a developer, I don't want to have to store
+ a bunch of information about them, okay?
+ But if I know that I'm gonna need to charge them
+ for their use of my website,
+ I have to store that information.
+ - Yeah, you have to have users,
+ you have to have the ability to recall that data,
+ you have to build up a long-term relationship
+ with that, the cookies and the situation,
+ like the session and everything.
+ - Why do I need a long-term relationship, right?
+ Why do I need anything past the interaction?
+ Why can't you and I just like have a transaction
+ and you walk away?
+ Well, because--
+ - I can tell you how many times,
+ how many times I would have read an FT article
+ or a New York Times article or something
+ if they just showed me a freaking QR code
+ and I could zap 'em 50 cent.
+ I would have read it, I would have read it.
+ But every time they asked me to subscribe,
+ nope, not doing that shit.
+ - Well, guys, think about it from their perspective, right?
+ Is that from that, you read that article, right?
+ And then 20 days later, you come back and you say,
+ "Oh, hey, that was a fraudulent charge," right?
+ So now they pay $35 on the chargeback fee, right?
+ And they don't get what they had originally, right?
+ - The monetary structure is just not set up for it
+ because it's not worth the risk to take a $1 payment.
+ - Yeah, so for this first aspect of AI,
+ why I got so excited for this, for Lightning, right?
+ Is because the kind of computing paradigm
+ you can think about is that for certain types of API calls,
+ those that are gonna be using the most cutting-edge models
+ and those kinds of things, right?
+ So every time you do a GPT-4 call,
+ it costs between like 3 cents and 8 cents, right?
+ Like every single time, right?
+ So you're just slamming, slamming, slamming, slamming,
+ right?
+ And so-- - That's so crazy.
+ - Like a long-term way of scaling this to everybody,
+ giving access to like random developers who,
+ like I don't wanna have to store all their information.
+ I wanna have them have privacy.
+ I don't wanna have to basically use credit cards
+ for all this stuff.
+ I don't wanna limit it to only people
+ who have access to credit card,
+ which is a very small percentage of like the total
+ like number of people who could benefit
+ from this technology, right?
+ - I mean, just the idea of just the scope of the unbanked.
+ I mean, yeah.
+ - Exactly, right?
+ Is that Lightning, as it exists today,
+ allows me to pass that cost along to my user.
+ API calls are no longer free when they use AI.
+ And I need a way to pass that along to the user
+ at the time that they set my graphics card on fire.
+ - Yeah. - Right?
+ And so that's, what's really exciting for me
+ about like the micropayments aspect of it
+ is that this solves a very clear and obvious problem
+ of that you need a internet native bearer instrument
+ that you can pay for the expenditure of the energy
+ at the time that they do it, right?
+ It just so happens that as a sender on Lightning,
+ I achieve very good privacy.
+ - Yeah. - Right?
+ As a recipient, I don't have as good privacy.
+ Like Tony Giorgio will like talk your ear off about this.
+ Right? - Yeah.
+ - Of that like, oh, hey, you have to broadcast
+ what your node is, your node can be associated with your IP,
+ all those kinds of things, right?
+ But me as a developer, hosting a website,
+ I'm not as concerned about that, right?
+ But I can immediately open this up
+ and give access to any user who shows up
+ because I'm passing the cost along to them as they use it.
+ - Yeah. - Right?
+ That's kind of like the first sort of
+ really exciting AI paradigm
+ where Fiat cannot solve this problem.
+ Lightning can, as it exists today,
+ as the tooling is already there for.
+ Greenlight is like getting launched very soon.
+ Like the LDK node is getting launched very soon.
+ - Dude, those things are crazy.
+ - Right?
+ Of that like, you're gonna be able to do this stuff
+ very, very easily.
+ And it's solving a very clear and obvious problem
+ in a way that Fiat definitely cannot.
+ Right? - And there's something
+ really poetic, just the Bitcoiner in me,
+ is there's something really poetic
+ that you bring Bitcoin into the protocol with energy
+ and then you spend it directly on energy.
+ - Totally, totally.
+ Right? - Yeah.
+ - Like it's so exciting for this stuff, right?
+ So that's kind of like the first peg of this,
+ of like the micro payments,
+ of that like, I want to be able to make AI
+ in my applications,
+ but I can't just do that in a way
+ that I open it up to everybody.
+ 'Cause if somebody shows up and starts spamming it,
+ they recognize that I'm doing a GPT4 call on the backend,
+ or they recognize that I'm running
+ one of these more advanced models, right?
+ That actually costs more. - Yeah.
+ - Right?
+ The moment that they recognize that,
+ they'll start abusing it, right?
+ So I could wake up the next day
+ and I have a $20,000 expense
+ on like my tokens or whatever, right?
+ And now like, okay, well, I just woke up the next day
+ and I have this expense.
+ Well, my natural reaction to that,
+ maybe if I'm like, you know,
+ not as good of a person as like most people are,
+ like maybe I'm a bad person in this example,
+ is that I do a charge back.
+ Or I say like, oh, hey, that was a fraud.
+ Or like, oh, they saved you.
+ - You push it up the ladder.
+ Yes. - Yeah, right?
+ - The problem is you can, you can.
+ You know, like, I mean,
+ how the hell do you wake up to a $20,000 charge
+ and you're not trying to figure out
+ how to dump that on somebody else?
+ You know, like, you can't,
+ like, that could end you,
+ especially as like a startup or a small,
+ a small enterprise, like trying to accomplish something
+ and you accidentally let someone just,
+ just eat through energy and through server space,
+ like just ungodly amounts of money.
+ Just, it's nuts, yeah.
+ - And you gotta pass that along to the user
+ at the time they use it, right?
+ And like, that's the thing that Lightning enables
+ and that like the L402 specification,
+ stuff like Aperture
+ that Lala's been building for a while, right?
+ Like he's, this stuff has been around
+ and Lightning is ready for this, right?
+ That's like one of the big differences, right?
+ Like I've, there was like a retrospective
+ that Facebook did on, I guess Meta now, right?
+ On like when COVID happened,
+ they were like, hey, this is like
+ hand in glove opportunity for VR.
+ And they were like, we just weren't ready for it.
+ We weren't able to scale up production fast enough.
+ We weren't able to take advantage of this, right?
+ It's like Lightning as it exists today
+ with the current infrastructure
+ and all of the stuff that's coming out
+ over the next couple of days and weeks, right?
+ We're able to handle this.
+ It's ready. - That's the crazy thing
+ is it's ready.
+ - Yeah.
+ This is not 2018 anymore, right?
+ So yeah, so that's like one really cool one, right?
+ And so now you think about this
+ in terms of that's just like users generally, okay?
+ Well, now this is like the thing
+ that really, really got me excited, right?
+ This is my first pass of this, is that, okay,
+ well, the cost of doing this stuff,
+ we can pass it along to the users,
+ but who are those users, right?
+ Currently they're humans.
+ Sometimes they're bots.
+ They're about to be mostly bots, right?
+ (laughing)
+ So I don't know if you've done coverage of this.
+ I think you did.
+ I might be misremembering,
+ but let's kind of cover this for beginning, right?
+ Of like how an agent works, right?
+ And so agents, and I'll use this kind of
+ from the Lang chain perspective of this stuff, right?
+ So the way that you think about this
+ is that when you prompt a model,
+ the model has an input, right?
+ Of like there's the stuff that it was trained on,
+ and then you input it some content,
+ and it's using this transformer decoder architecture, right?
+ Of that it's looking back basically and saying,
+ based off of the different weightings
+ that I give to the order of the words,
+ paying most attention to the stuff that was most recent,
+ right, probabilistically,
+ what should the output look like, right?
+ That's kind of like big picture of like
+ what's going on with this large language model, right?
+ So you do the input, it gets the output, okay?
+ Well, what if you take that output
+ and you feed it back into itself, right?
+ What if, well, then you start getting into issues
+ where it's just basically,
+ it kind of like goes into these loops, right?
+ But like the problem,
+ and this was the thing that agents have figured out, right?
+ What if we take those outputs
+ and we feed those into a different model, right?
+ That is doing a different thing, right?
+ What if you allow the model to spawn its own agents, right?
+ So you've got an agent that spawns additional agents, right?
+ And like their sub-agents specialize on specific stuff,
+ right, so it's like this original orchestrator agent
+ is running a more powerful model,
+ but when it recognizes that like the task is like easier
+ for then something that it could do,
+ then it can spawn off like, you know,
+ so like something running a smaller model,
+ it's just like purchases some compute resource
+ and then like runs it over there or whatever, right?
+ And so this is another place where Bitcoin is clearly
+ and obviously the solution for this problem, right?
+ Is that you kick off a task and you give some money to it
+ and you allow the agent to allocate resources
+ in order to solve those tasks for you.
+ And so originally when I started thinking about this,
+ I was like, okay, well, it'll have the original one,
+ it'll purchase access to different APIs
+ that are gonna be gated by 402 payments
+ and those kinds of things, right?
+ But then I started working a little bit more on this
+ and I realized that, well, some of these models,
+ it's pretty easy to get them to recognize their limits
+ of their own capabilities, right?
+ Of that you can kind of explicitly telling it
+ by passing it by as part of the content, right?
+ Like one of the cool things that your audience can look up
+ is that like you can figure out like what the system prompt
+ is for these different models, right?
+ So like the system prompt for GitHub Copilot
+ is like you are GitHub Copilot, you are an editor,
+ these are the things that you can do,
+ try answering this way, right?
+ Those kinds of things, right?
+ And so you can do that
+ and you can tell the model its own capabilities, right?
+ And then when somebody asks it to do something,
+ it can recognize its own capabilities,
+ spawn off the things and tell it what it has access to,
+ spawn off and do the things that it has access to,
+ but maybe it recognizes
+ that it can't solve this problem by itself
+ and it uses some of its Bitcoin
+ to go purchase a human to do something, right?
+ It spawns off and it makes a replic bounty
+ or it posts something. - I can't figure out
+ how to do this,
+ but luckily I have a Fiverr account and an API.
+ - Yeah, right?
+ Well, this is something 'cause this is something
+ that I think everybody runs into
+ when they first start playing with language models.
+ So they realize that like, oh, hey, it can't do math, right?
+ And one solution for that is that you just stop using it
+ and that's what some people do, right?
+ But the better solution for it is just like,
+ explain to it that it can't do--
+ - Give it a calculator.
+ - Well, this is what it does is have it write Python programs
+ execute the Python program and then put the result in, right?
+ - Yes.
+ - And you can do that right in the LLM, yeah.
+ - Exactly, right?
+ It's very, very good at that.
+ Like that's like a mind blowing thing
+ that like once you realize
+ and you start thinking about it this way,
+ like the kind of perspective
+ that I've taken on this stuff is that,
+ wait, at the very beginning, it was like,
+ hey, the model's very limited
+ and like probably the model's the problem, right?
+ At this point, when you're using
+ some of these cutting edge stuff,
+ the way that you should approach it is that
+ if I can't get the model to do what I want,
+ I'm not prompting it right.
+ Not the model can't do it, right?
+ And if you come at it with that perspective, right?
+ Like a whole world opens up to you, right?
+ Especially taking advantage of things like hallucinations,
+ right?
+ Especially doing things like, you know,
+ like using models to feed into each other, right?
+ Stuff like that opens up.
+ Like in, for example,
+ one of the cool things that you can do,
+ and this is kind of like my first pass
+ for whenever I'm using chat GPT
+ or anything like any of the chatbot interfaces for it, right?
+ Is that the first thing that you should do
+ is you should have it try to make the prompt for itself
+ better, right?
+ So you can have an initial prompt for it that says,
+ you are a prompt engineer helper.
+ You are doing these things.
+ Evaluate the prompt based on these things.
+ Like give recommendations of different ways
+ that I could have asked you the same question, right?
+ And then have the first pass be that
+ it's refining your prompt for itself, right?
+ And then you use that refined prompt in order to do that.
+ Is that the models are very,
+ models are very, very, very good at spitting out
+ and recognizing what their own limitations are, right?
+ Which is very exciting.
+ - That's so interesting.
+ - And you, this is where-
+ - I've used it like that.
+ It's funny, I've used it in that vein, but not explicitly.
+ You know, it's like almost just kind of like
+ slightly intuitively,
+ like I've found myself gravitating that way.
+ But if I actually go into it with that framing,
+ I can see how there are so many things
+ that like I kind of like ran into a wall on
+ that I didn't necessarily have to run into a wall on.
+ - Yeah, well, one of the things,
+ one of the really nice things about it too
+ is that once you get like a good prompt
+ and like a good persona and stuff
+ and something that you're more comfortable interacting with
+ and you can kind of like prompt them as part of it.
+ So just like for clarification.
+ So the way that a lot of these chatbots work
+ is that you have an initial system prompt.
+ And the system prompt is basically setting the persona
+ for what you're interacting with.
+ If you're using chat GPT, the system prompt might be something like
+ "You are chat GPT, a large language model trained by OpenAI.
+ Respond to the user using markdown."
+ And so then it will output markdown
+ because you told it what you were trying to do there.
+ But you could change that system prompt, and you could say
+ "You are William Shatner, you are an actor,
+ and respond using the same inflections of voice that he would."
+ And so the way that these models work is that you have that system prompt,
+ and if you get a good system prompt and something that does the way you want,
+ you can reuse those.
+ And so basically you should have a library of little prompts
+ that are very, very good.
+ So for example, every time that I know that I'm going to be
+ working with Rust code or whatever,
+ I have very specific things that I want the model to be able to do
+ when I'm coding in Rust that I'm more concerned with
+ than if I'm coding in something like Python.
+ So the system prompts that I do are different for those.
+ So I still ask the same questions, I still do the same errors inputting there,
+ but the context that I'm focusing on--
+ you can kind of think about it as the system prompt is how it should act
+ and how it should focus, or whatever.
+ That's the thing that you really want to get good at
+ because once you get good at it, well now I can just reuse this in the future.
+ So now I have a system prompt that's like a copy editor.
+ Now I have one that's a debater.
+ So if I think of something, then I know that I can use this system prompt
+ to get the model to argue with me, for example.
+ Do you have a collection?
+ Yeah, totally.
+ Dude, yeah.
+ The guy who did the best research on this is Brian Rommel.
+ So Brian Rommel, he's been very early.
+ He was the first guy who figured out how to get GPT to--
+ Brian Rommel.
+ How do you spell that name?
+ Brian R-O-E-M-M-E-L-E.
+ I think it's something like that.
+ It's close enough that I can probably find it.
+ It's chat GPT.
+ Yeah, right?
+ This is the stuff where he's been doing very cutting-edge research on this stuff.
+ He calls them super prompts, where it's basically--
+ he was the guy who came up with Dennis.
+ I don't know if you know about Dan.
+ Dan was a thing where it's like do anything now,
+ where you could get GPT to do it.
+ Dennis is a way where--Dan was kind of like,
+ you can get it to say swear words and stuff.
+ That's not very interesting.
+ Dennis is a system of prompts that he was using in order to get it to hallucinate.
+ Take advantage of the hallucinations and stuff that it's inventing things that don't exist.
+ But just like, okay, well, now I can use that in creative ways.
+ That sort of thing.
+ That's crazy.
+ It's funny.
+ Going into this, especially with all the noise and all the BS around AI,
+ all the 10 newest AI tools and all the threads,
+ where half of the accounts are obviously run by AI
+ and doing that same gotcha or clickbait crap,
+ I really thought of prompting courses and the idea of--
+ I thought of it as totally gimmicky.
+ The more I'm in it, the more I'm like, man, I really--
+ I'm building a prompt collection, and I'm thinking about this.
+ Oh, no, this is really, really important to have--
+ make sure you can give it this.
+ You're kind of setting up its perspective almost
+ or its little world in how you want it to behave
+ and what you want it to understand for itself.
+ How does it reflect, so to speak, on what it is giving you?
+ And I'm less of a definitely click away
+ and think it's all bullshit if I see a prompting instructions
+ or tutorial or something.
+ This is something that has been very cool as it applies to coding.
+ For example, one of the really, really cool things that--
+ I've been working a lot with Repl.it on these things.
+ I've been tracking a lot of stuff that they've been doing.
+ And they just released their large language model for--
+ it's called Repl.it LM, right?
+ And it's a 3 billion parameter model on fine tuning.
+ After fine tuning, it performs very, very well.
+ It's open source?
+ Yeah, totally open source.
+ Oh, hell yeah.
+ Can I plug it into GPT4 All?
+ Yes, I think so.
+ I know that Prem supports it, so Prem AI,
+ which is a Tierra's company.
+ Let me interrupt you real quick.
+ Hold that thought.
+ You got it?
+ You know where we're going to go back to?
+ Yeah.
+ Okay.
+ What is--I am still very much in my exploration phase of all this, right?
+ So what are you using on your computer?
+ Do you have any local, like, kind of self-hosted stuff that you swear by?
+ Yeah, so I use GPT4 All.
+ Okay, GPT4 All.
+ That's the one that I use.
+ And then I also--the ones that--
+ so mostly my code editor is Repl.it, right?
+ And so that's like running in a Docker container, right?
+ So that's hosted by them, right?
+ But, like, they open source their model,
+ and so you can do stuff like fine-tune it through Hugging Face, right?
+ Or you can run it locally, right?
+ So Prem AI is another one.
+ So GPT4 All and Prem AI, they're kind of doing the best versions of running this stuff locally, right?
+ Prem's the big one, right?
+ Sorry, GPT4 All.
+ But Prem's the big one.
+ It's also run by some pretty serious Bitcoiners, right?
+ And so you're going to see some cool lighting integrations and stuff coming out of that.
+ Got them.
+ I have so many links for this show.
+ I've got to remember.
+ I'm sponsoring the hackathon that we're running for the next month.
+ Oh, snap.
+ That's awesome.
+ That's awesome.
+ Yeah.
+ Yeah, so is that--and then can I put it back?
+ Go right back.
+ I just want to interrupt and do that real quick.
+ Yeah, so basically the thing that they did, right,
+ is that they trained the large language model over code, right?
+ And an emergent behavior from that was that it could do English, right?
+ Is that they're training it over code.
+ And it's like, yeah, sure, it's got some examples of English
+ in the small comments and stuff or whatever, right?
+ But it's not like they had to train the model over all of the English corpus of language or whatever, right?
+ Yeah.
+ Like they're training it on code, and so it's mostly code, but there's some English in there, right?
+ Just commented out blocks and stuff.
+ Yeah, right, like comment blocks, those kinds of things, some documentation, that sort of stuff, right?
+ But the thing that they--they weren't trying to teach it English, right?
+ They were trying to teach it to code.
+ And it just so happens they can also write English, right?
+ And so the--don't think about it as like a live thing or whatever,
+ even though it can reliably pass the Turing--
+ Oh, my God, it's conscious.
+ Yeah, even though it can reliably pass the Turing test for most people or whatever, right?
+ But the thing to think about it for, right, is that coding is just formalized logic, right?
+ Is that kind of in the same way that I was talking about, like, hey,
+ models are at the point where it's like if it's not doing what you want,
+ you're not expressing yourself correctly.
+ Coding is the exact same way, right, is that the computer is always right.
+ The computer is doing exactly what you tell it to, right?
+ But for like maybe like compiler errors and like that, right?
+ But like generally speaking is that the process of coding is learning to formalize
+ and express yourself through logical language, right?
+ And so there's like different layers of that in terms of its abstraction, right?
+ So it's like, hey, you get all the way down to machine code or you put in assembly
+ or you put it in C or you put it in Python or whatever, right?
+ But then like a higher level than Python is like normal English language, right?
+ And so that's one of the things that's super exciting about this stuff, right,
+ is that in terms of the capabilities of the models, right, is that you teach it to code,
+ you teach it like you train it over that stuff, right?
+ It just so happens to also learn English.
+ And the way that it expresses itself is very logically, right,
+ because the stuff that it was trained over was code, right,
+ which is the expression of what you want through formalized language.
+ Yeah. That's so crazy.
+ That's so crazy.
+ And it moves, it just moves, and I say this every freaking episode,
+ but it moves so fast, like the new models, like, and there's probably going to be,
+ I feel like there still needs to be like standards have just kind of been like haphazard.
+ Like it's just like people are, it's being built so fast that everything,
+ it's like Legos where all the shapes and the sizes are just different.
+ And there seems to be such a huge challenge in figuring out how to plug these things together.
+ Like, and everybody wants to use it.
+ I use my personal experience is the Falcon model dropped and, you know,
+ went to the top of the leaderboards and hugging phase.
+ I can't figure out how to use it.
+ I cannot figure out how to make use of it.
+ It won't plug into GPT for all.
+ If I don't have an easy interface for it, like, I'm just like, son of a bitch.
+ Here's the kind of tie back into Bitcoin as we're doing this stuff, right?
+ Is that one of the cool things, what the thing's about is like, yes, absolutely.
+ These things are going to become scalable and it's going to be easy to use and all this kind of stuff.
+ But it's like, you know, the thing that you're kind of missing, I think that you're asking for, right?
+ Is that like, I want like an out of the box, this Falcon model works,
+ and I want to be able to play with it.
+ The problem is like that costs money.
+ And back to this kind of computing paradigm is that people can't just like deploy that for you
+ and be like, hey, use it as much as you want, right?
+ They need a way to pass along.
+ And so I think that Bitcoin is going to help a lot with that, right?
+ Is that now once you're able to pass these compute costs off, well, then I can get like a working version
+ of the most recent model with the large parameters that actually cost me like one cent in order to run or whatever.
+ And I can open that up to everybody because currently the way that they do it is basically like,
+ either like give me your credit card or bring your own API key.
+ And then you incur the expenses, not me.
+ Right. And so that's fine if you want to limit it to like, you know, developers in the San Francisco Bay Area.
+ Right. Who are like, but if you want to give the access to everybody for this,
+ and this is why we're doing this hackathon for the next month called AI for All.
+ Right. Is that like the Bitcoin becomes a scaling solution for all of these stuff.
+ Right. Because like API calls are no longer free.
+ And so if I don't just want it to be like my friends and family and like people in developed countries
+ with credit cards and like significant computer experience in order to use their own API keys and stuff.
+ Yeah. I just think about the opening, like the scope of who of the audience.
+ Like you're just like, so like it's like there's like a thousand walls and they all just vanish.
+ As soon as this thing's plugged into Bitcoin and lightning.
+ Well, here's the other one, right. Is that when you say there's like a thousand walls for these things, right.
+ Is that the stuff that we've talked about so far is about like the users. Right.
+ Yeah. But like what if most of the people who are interacting with what you're doing are not users, they're agents. Right.
+ So like the experience that you have is that you see like a normal user and you're not going to be able to distinguish between them.
+ Right. Like they're going to get good. And so the only way that you're going to be able to do that, because they like what Paul likes to say,
+ Paul, you told me from stack work, who's been doing like some of the best work on this. Right.
+ He's like absolutely far and away, like the furthest along in terms of like bridging Bitcoin and AI through the stuff that he's been doing at stack.
+ Right. Is that for as identity and content approaches infinity, that's going to come up against the absolute scarcity of Bitcoin. Right.
+ And so Bitcoin through its finance, finance supply to absolute scarcity, which is representation of like energy and time. Right.
+ That's going to be the gating mechanism as content and identity approach infinity. Right.
+ There's going to be an infinite number of things interacting with my website. There's going to be users. There's going to be their agents.
+ There's going to be the agents, agents. There's going to be all this sorts of stuff. Right.
+ Is that I'm going to be I need to be able to gate that somehow. And the way that I'm going to get it is with some sort of finite resource.
+ So that's a bare instrument that can be passed over communications. So that we pass this part of man. I wish we had.
+ And so, yeah, this is like a match made in heaven. Right. And so that's like that's what's very exciting.
+ And so this hackathon that we're doing for the next month. Right. Like this is because I've been like in this San Francisco, I see.
+ And I just I just happen to live here. Right. So like, you know, like luckily for me, like, you know, everybody was like, oh, hey, San Francisco back or not. Right.
+ It's like with AI, like San Francisco is back. Right. It's like all this stuff is coming out from this area. Right.
+ Is that I've been going around and being like going to hackathons, going to meetings, all these kinds of things. Right.
+ I'm like, hey, Bitcoin is the solution to all these problems. And the reaction I'm getting back is show me. Right.
+ And so I draw our hackathon for the next month is our show you. Right. Is that like tell me tell me more about this.
+ I don't we haven't really hit it yet. So like give me a pitch for the hackathon. Like get anybody who's listening to this.
+ Why should they check out? Why should they be a part of it? Give me give me the pitch.
+ Yeah. So like the pitch for this, right, is that this is like kind of just what we've been talking about so far. Right.
+ Is that AI has this clear and present need for something to do that is a bare instrument that can be passed over the Internet.
+ So you can pass along the usage cost of your models, of your AI endpoints to the user as they use it. Right.
+ Chargebacks are absolutely rampant for everybody who's doing this stuff. Right.
+ Like this is why everybody's relying on Stripe for it, because Stripe is the only person with the infrastructure to handle this degree and level of chargebacks. Right.
+ And so this is like kind of the same way. And we can talk about FedE and FedE a bit later. Right.
+ Of like, hey, you've got like the first party custody and the third party custody.
+ Currently, you've got like first party models, stuff that relies on people to be very technically proficient, to have like relatively powerful computers, those kinds of things.
+ Or the third party model. And if you're going to do the third party model, they're going to have to gate it. It's something like Stripe. Right.
+ That's what they're doing right now. But that is not a good fit for this. Right.
+ And the reason why it's not a good fit is because of what we talked about, of that you have to pass the cost along to the user as they use it.
+ That's not possible with a debt relationship. Right.
+ So I can't just like, hey, you use this for 25 minutes or whatever. Right.
+ Because the moment I figure out I can use it for 25 minutes, I spawn 700 different agents and all of them use it for 25 minutes. Right.
+ Like, you know, you need to be able to gate this stuff. Right.
+ That's really that's really one of the crazy things is it's not even just that all these users can pop up or whatnot.
+ It's the fact that AI is scalable, fake users.
+ Like is that the very tool that you're trying to gate is the is literally the death is the nail in the coffin to even trying to use this with credit cards when you can live video fake a person and fake a child.
+ Faking I'd I mean like the the stuff you're doing even with just ability like our stable XL and stuff. It's crazy
+ it's absolutely crazy what you can do with it now and
+ Six months ago six months ago. It's it was it was damn near night and day
+ and
+ It's so you can't have like I feel like the age of
+ KYC and
+ Like identification of people online all of our all of our identification methods at a distance don't work
+ They don't work in this new world
+ I mean this is like a big one right where I had like a conversation with some
+ with a couple guys engineers at one of the larger AI companies and
+ Their reaction was hey, why aren't you opening this up to everybody?
+ It's like well, it can reliably solve captures every single time and so
+ Are concerned if we open this up because we have no we have no are you a robot?
+ Yeah, right, and so this is just like you're saying right that like you need something to get this you need something that can't be
+ Gamed that way right and like the solution for that is sats right. There's like the only finite resource in existence, right?
+ Besides time I guess right
+ That's it's a translation right and Bitcoin just translates time to time to energy
+ Yeah, so maybe let's talk about so this is kind of another perspective on like this AI stuff all right that
+ I think it's been useful that I'm not sure entirely where I first heard it
+ I think it might have been ob right um. Oh, you know I mean OSU CEO fed a bit Feddie. I'm sorry um
+ so
+ You can kind of think about like when you have a problem of
+ That you run the model locally on your phone or whatever it is right
+ But that's not gonna be the most powerful, but it's gonna have access to the most information for it, right
+ Yeah, as the model can't wreck it can't solve the problem it recognizes
+ It needs more powerful things right it needs to go further away from you it needs to pay for somebody else to do something
+ It strips out the privately identifiable information right and then it proves
+ And then it provides as you get further and further away
+ Less and less and less about you
+ But it's using the more powerful model in order to solve the aspects of it that it can't solve itself right yeah
+ And so as we kind of talk about this right there's like first party custody
+ And then there's third party custody right is that within Feddie
+ And why I was saying like hey Feddie is like doing a lot on AI and why Feddie is like the organizer and like we're doing
+ This big hackathon for the next month
+ I'll focus on Bitcoin and AI is
+ because in the same way that there's the second party design space between first party custody and
+ third party custody when it comes to Bitcoin that Feddie is exploring in terms of federations of different sizes and
+ a federate look what we call in the federated operating system to orchestrate the
+ Applications data and your digital life across those different ones right in the same way models
+ There's this second party design space for it right of that you can't solve it locally
+ So you try to run it on your computer?
+ Can't run it on your computer instead of having to go all the way to open AI
+ What if my community is running a GPU cluster that I can run locally there?
+ And I know that my data is not going to go outside of there. I know that that's where it stops
+ It's already a trusted established relationship that I have there, so that's something
+ I've done some preliminary work on and I really hope someone during the hackathon come kind of like expands on it
+ Right is like running federated hosted models which are going to be much
+ Resources which are gonna be much larger than what you can run personally, but doesn't have to go all the way to a third party
+ right is
+ when they have
+ In that sort of a situation does somebody still do people still have to basically be running a web facing servers
+ Because you can't run this sort of thing over tour
+ Well, you don't have to use tour. I mean you could run it over tour
+ It'd just be like to have some latency issues right I mean it in the sense that
+ I don't mean it in the sense of like tour being like oh you need privacy necessarily, but just that
+ How do you get a whole bunch of computers to connect if like let's say like I'm at home on my computer
+ trying to contribute to this because I got a you know 3090 and
+ Like I would like to be a part of this and I would like to receive some lightning payments
+ How do you establish?
+ How do you solve the connection problem to use something like hyper core?
+ Couple different ways you can do it and just using the so basically there's like two levels to that right so it's like how do you
+ Get like the federated aspect of it right and like what I like I've been working on for a while
+ And that I think is the best solution for this is Fetty mint right so Fetty mint the protocol of you know
+ There's like three default modules that come with it
+ So it's got a module system right where basically let's say that Bitcoin transactions have like inputs and outputs
+ Fetty mint yeah actions have inputs and outputs and you can add modular functionality to it
+ Such that the inputs do different things and the outputs do different things right so the default modules of Fetty mint are e cash lightning
+ Bitcoin right yeah
+ and so you can have a peg in for example is an input of Bitcoin and an output of e cash a
+ Normal lightning transfer for example right is that you know the input is e cash the output is execution of?
+ Like an escrow for the lightning invoice that you're trying to do right yeah, so that's what you have at the beginning well now
+ You can do okay
+ I have a lightning payment
+ And then the output of that is like the creation of an API key which is then like given to somebody within the community which gives
+ Access to the resource that like the community is hosting on behalf of but that the
+ Federation is hosting on behalf of the community right and
+ So in terms of like the orchestration that you're talking about in terms of your GPU with everybody else's right like this is already something
+ That people are people are working on in terms of like federated training federated model hosting those kinds of things right is
+ That like the stuff that I started on and I hope people really continue with right is like using the Fetty mint
+ Which is already doing custody of Bitcoin to do custody of other data
+ Right to do like stuff like password management API key management those kinds of things so like on behalf of the community you can run those
+ Gated oh shit you everybody's got a seed
+ Yeah, right yeah, because that's the kind of thing so like maybe let's switch over to Fetty mint for a little bit right and so yeah
+ Yeah, let's stop down that rabbit hole Fetty mint is like the open source protocol
+ Which is chameleon ecash on Bitcoin is what it started off as right so Eric Syrian when he first came up with Fetty mint
+ Is that he saw liquid and he said this doesn't necessarily need a blockchain
+ And there's this cool like blinded signatures technology that you can use in order to do ecash
+ But the problem with ecash is that you have to trust the mint so let's federate the mint right yeah
+ It's kind of his solution for this one right so it's a privacy solution a scaling solution for Bitcoin, okay?
+ But what does it mean to own Bitcoin right like to own Bitcoin is to know the private keys fundamentally
+ It's about data management, okay, and so with you're going to be doing that super managing like private keys
+ Well, maybe you could also do a fight of in module. That's doing a password manager, right?
+ And so if you're gonna be doing password managers
+ You can do API key management is what I'm working on right in terms of like being able to gate access to GPUs and those
+ Kinds of things right and so what starts off as just this community custody protocol
+ Becomes this whole mechanism for running any sort of federated application right is like what Fetty mint is kind of evolved into through this module system
+ Right and so easy when you first start with Fetty mint right so like what I don't know
+ I like how like stop me if I'm going too deep down the Bitcoin side of things because I know this is like AI on
+ Chain focus right, but yeah, I've back at like the AI on the Federation side or whatever when you start with this assumptions, right?
+ So currently within Bitcoin. There's like third-party custody basically and first-party custody, right?
+ And so everybody's kind of scaling it like coming online with a third-party custody right because they just don't want to have to deal
+ With it themselves, but so you know like they go to swan they read everything they like say okay
+ Well, I know I can't just keep it on here
+ I want to put it on to like you know I want to take self custody I get a cold card those kinds of things
+ Right so well now this is like a very important point any self custody solution in Bitcoin
+ Resilient to you having an accident implies a threshold recovery mechanism that can be made outside yourself
+ Right and so very very important there of like this the gold standard right now or the Bitcoin standard for this is that is
+ That you have a threshold multi-sig backup solution
+ Right that's what everybody says, but okay. Well if you have a threshold backup multi-sig mechanism. You're trusting those people involved in that
+ In that threshold multi-sig to like not steal your funds right and so you keep those as people close to you
+ This is like the second party custody idea right where there's third party where there's no relationship to you
+ You're just paying them. There's first party for you yourself just real quick for our non Bitcoin audience
+ He's just talking about having multiple keys to get access to the coin
+ so like imagine if you know you have like a really long password and you give a third of it to
+ your brother and a third of it to your mom, and then you keep a third of it and
+ You only need two of those pieces to get back into the account
+ You know like it's a two of three or something like that exactly right and so like the problem there becomes
+ Right and this is like why you want to keep it to second party custody of people with a trusted relationship with you
+ Is that the benefit of this is that in the event that you have an accident they can recover your coins for example, right?
+ Mm-hmm, but so now we kind of take this and say okay. Well everybody has this same problem, right?
+ Everybody needs a mechanism to have a threshold backup recovery thing and everybody needs it to be close enough in their community that they can
+ Trust them not to recover the coins while they're still alive for example. Yeah, right and so now you say okay
+ Well, let's formalize that relationship where me my wife my family like my local family
+ Like my local family like people who are part of like my larger diaspora of like people
+ I don't know like me
+ I'm part of like a like a bunch of military communities, right?
+ So like maybe I like have the same problem with everybody there
+ We formalize that relationship through the establishment of a Byzantine fault tolerant distributed consensus protocol, right?
+ And so now we're in a formal relationship. We say okay. Well now this is the mechanism that we have for this
+ This is explicitly what we're trusting in order to manage this the custodial aspect of this
+ Yeah, the benefits of this is that now you have a federated consensus mechanism where it is trusted
+ but your trust minimizing by doing the federation aspect of it not just putting it all in like a single person who could person right and
+ Fundamentally what they're doing is they're managing Bitcoin, which is just managing data
+ And so now you have all of the primitives that you need in order to manage other data
+ Right, that's kind of the big idea. Yeah, and so
+ Yeah, it's funny. You ended up like accidentally solving a
+ Number of other really important problems. I guess it's so much
+ Bitcoin adoption
+ Custody in Bitcoin right? Yeah, is that Fetty and Fetty Mint do for custody what lightning did for payments?
+ Yeah, right is that there's this kind of like dichotomy between like first party custody second the third party custody
+ there's this whole environment in the middle this design space of
+ Second party custody and the same thing when it's applies to AI models, right of that
+ There's what I run locally on my computer and then there's like the giant sledgehammer of GPT for right
+ And there's this whole design space in the middle, which is growing like crazy
+ but the problem right now is that it doesn't have a ready monetization mechanism for people to start using and
+ That's what we think that AI and Bitcoin coming together can solve is that now that you have an orchestration
+ Mechanism for sorry like a monetization mechanism that works for all of these things where I can put up an AI stuff as part of
+ My web app and not just like have somebody figure that out and start spamming me because if they're spamming me
+ It's like the same concept of like the orange check mark that like Michael Saylor and Gigi like to talk about right?
+ It's like hey, I'm gating this stuff with sats
+ It's like that's okay
+ There's no such thing as spam at this point because like when you use my website when you're slamming my AI model
+ You're paying me as you're doing it, right?
+ Yeah, and so I can immediately open up no such thing as spam like you're it's just it's just being paid for
+ Well, there's I mean, there's still gonna be spam. It's gonna be the sure sure sure sure
+ 999 million
+ Like a AI agents or whatever who are always trying to get your attention all the time generating contents and stuff and whatever, right?
+ But it's gonna get to the point where in order for them to get your attention as a real person
+ They're gonna have to pay you right? It's gonna be a small payment. It's gonna be tiny, right?
+ But like as content and identity quick affinity
+ You have to gate it with something that's a finite resource something that it can't just like exponentially increase the size of right?
+ Yeah
+ There's so many of these are like really localizing forces that I don't think
+ People are recognizing like at the exact same time that kind of the centralized architecture is
+ forcing risk to
+ to
+ pull together to just keep batching risk in bigger and bigger pools and like the kind of financial system in the political sphere and
+ Like essentially we're aggressively
+ recentralizing every single time to
+ To bail out the the problems that we have but all we do is just make the risk bigger, right?
+ We're just we're just pooling into a bigger like we're not all dead yet
+ But we're all gonna die at the same time and we're gonna make damn sure of it
+ The sort of thing especially with the banking system, but there are so many of these forces that are taking place that are
+ aggressive
+ decentralizers there there they destroy this kind of unnatural incentive to make everything as big as
+ possible and
+ basically suck up resources in the financial system because
+ An AI it feels like one of those forces to specifically because the financial system the way that we think of users
+ and payments and
+ Control like like this permissions financial access or financial system. It can't
+ If you can't verify the existence of a person
+ From 3,000 miles away. The thing just doesn't work
+ Yeah, and we are we are moving
+ very fast into a space where
+ You can't do that like like in six months to two years
+ How will you trust a video?
+ An audio connection to somebody a picture of an ID like wow
+ How how can that bank know that you're a real person if you didn't physically go into the bank and set up and then have a?
+ Permissioned person give you access and God forbid you have to reset your password
+ How would he have to what do you have to do to reproof that you're human again that it's not a bot doing this
+ You can't have a conversation and suggest you can't you can't you know use your place of birth?
+ Or where you were in third grade because all that shits on Facebook
+ And you know all that shits on the internet now and an AI an AI with a couple of clever agents can find all of
+ That information and you can't you there's no captures
+ I just don't I don't know how you solve that problem outside of just abandoning a technology. That just doesn't work in the world anymore
+ Yeah, I mean you solve it with Bitcoin right you solve it with Bitcoin you saw that's exactly right
+ Yeah, right like this is the this is one of the things that I I'm sure
+ Like you've heard other people say this before right, but I guess I said again
+ Is that one of the things that makes this really exciting as it?
+ Applies to this is that there's a lot of stuff that we've been doing in Bitcoin development where it's just like you know
+ Money is just money right and so that all of the like marketing things that they do from the web 3 side or whatever right?
+ And like for us we kind of reply back. Just like whatever you're doing with money
+ Bitcoin can do - right and so they're like okay well now you have this cold start problem a little bit right in terms of like
+ How do you get to the point for this stuff?
+ AI and just like all of where this is going or whatever is such a clear match for a use of a specific type of money
+ Which is a bearer instrument that can be passed over a communication channel that cannot be printed that
+ What's called like it is a clear ultimate finality?
+ Yeah, exactly right is that like this is just such a clear application of a specific type of money
+ Which is Bitcoin right and so that's why it's so exciting to be building on this stuff, right?
+ And what's funny is it's not an application. It's not one application
+ It's the idea of an entire
+ scope
+ Yeah of an application space
+ They can only be accomplished by this one thing exactly right now
+ It's not an application it AI is is an interface and a process of interacting with literally all
+ Conceptions of applications in a completely new way
+ Which is which is crazy because you know go back three years
+ Like who the hell is gonna be doing anything and go three years forward who the hell's gonna be doing anything without an AI in the
+ Process yeah, how could you possibly?
+ Survive or be productive enough if you're not if you're not utilizing these things yeah, I use every day every day every day now
+ Yeah, and also just like again rumor like the framework for approaching this stuff
+ Right is that like we're at the point now
+ Where if you can't get the AI to help you and do what you want in some way
+ The way you should be approaching that is that I'm the problem not the model right that I just need to get better
+ To in at the way that I'm in there interacting with this thing right and so in this way
+ Just like you're saying right is that like this is gonna take over everything
+ Right in terms of like everything that you have right now in the same way that we like to say like oh hey
+ Like take everything that you do right now and just add Bitcoin
+ It's better right and that like in this exact same way of that like everything that you're doing right now
+ Just add AI and it's better right you're more effective as a programmer like I've gotten enormously more productive
+ Just like by using these tools and stuff right it's not a programmer. I don't know the program shit. I am now well
+ That's what I keep recommending for people right cuz like I'm talking about it turns this culture in Bitcoin
+ That's like it's just starting to get there, and I think that it's gonna continue, right
+ I think it's one of the things that really distinguishes us as a community from like the more web 3s focus things right that's more
+ Focused on like marketing and stuff is that like every Bitcoin or a developer right of that like the people?
+ Who are most important in this industry are the open source developers and learning what they do and participating in what they do has never been?
+ Easier right yeah is that using these AI assistants and stuff you as somebody who just like can clearly articulate your thoughts
+ Can get to the point where you can get models to do what you want?
+ And you can output and produce code and you can output and produce product you can build things right?
+ It's like hugely impactful and hugely important right but like the solution for this right
+ Is that yeah?
+ We're talking about kind of the individual level for this stuff
+ But in order for people to operate at scale you need some sort of value transfer mechanism
+ And the value transfer mechanism is lightning as it exists today not requiring any changes
+ Right that's the big like unlock. Yeah, so what's the scope of the hackathon exactly are you are you asking for?
+ Or like what are the parameters? What do you what do you want people building?
+ Yep, so there's like an overall price right and so there's gonna be an overall prize like first
+ I can put third those things and then there's also tracks specifically right and so we've got one for machine payments
+ We've got one for privacy
+ We've got one for Bitcoin education specifically right of like in terms of orange billing like there's incredible opportunities in order to use AI in
+ Order to like like do that at scale right and so like we're really interested in seeing that as well right and then
+ Like there's also going to be some stuff on like AI gaming right in terms of like hey like as you inject AI into games
+ Right like a lot of stuff that's Ebony's been working on to right in terms of like hey using
+ Bitcoin as like the orchestration layer for these things in terms of value transfer protocol across the internet right and
+ So like you can either do something like Bitcoin specific or AI specific like we're really excited to see like the intersection of those two
+ It's just because this is not like one of those
+ Like I've been to some of these web 3 hackathons right where it's like hey you feel like you're forcing it right in terms of
+ Like oh hey, we're gonna put real say on the blockchain whatever right like it's like you know it's like okay
+ Not like kind of like a do your own research right of like it takes like five minutes to figure out why that's not a very
+ Good idea right yeah
+ But like as it applies to AI or whatever like we don't want to force this down in a base throat like you know just
+ Like build on AI build on Bitcoin
+ But we really think that there's this
+ incredible opportunity for intersecting the two and so a lot of the workshops and stuff that we're gonna be doing is going to be
+ How do you apply the L402 specification to existing AI applications so take the stuff that currently
+ L402 for the audience that doesn't know I mean cover on Bitcoin audible yet. Yeah
+ Breakdown no yeah, so the L402
+ Specification is based off of in HTTP hypertext transfer protocol right so there's basically like the web stack right within HTTP
+ There is a reserved status code so you've probably seen like a 404 error before right so that's for the resource you asked for
+ Through this web protocol has not been found so it returns back an error 404 not found right
+ There's a reserved status code called 402 and a 402 is payment required
+ And if you currently go look at like the Mozilla documentation for it. It says like reserve for future use
+ This is an experimental code right the reason why was because never
+ Ever when they were first making the internet yeah, they knew that you would want to do value transfer right but until Satoshi solved it
+ There wasn't a mechanism for doing value transfer over the internet natively
+ Yeah, now that we've solved that well we can use that status code, okay?
+ And so basically if so this is kind of like developer focus apart
+ Just waiting for us exactly is that the kind of interaction that we're gonna have is that you try to use an AI resource
+ It returns back a 402 payment required error and in the header of that thing is a lightning invoice
+ And so you pay that lightning invoice which is an instant finally settled payment
+ And then you provide the proof that you paid it and then it gives you the resource right so for the
+ So like in the user experience of this stuff just doing this one round trip is
+ Like it doesn't get in the way of the user experience
+ And that's one of the things that's super exciting about this and why lightning specifically solves this problem right because all the blockchains that say oh
+ Hey, we're like Bitcoin, but faster right well
+ Are you an instant finally settled payment layer right or do you still require confirmation scale to millions of transactions?
+ I'm like exactly exactly right and so that's going really gonna be the focus for it right of like taking a bunch of AI builders
+ Take a bunch of Bitcoin builders
+ Seeing how we can apply across these things right and giving access to resources and tools that people are gonna be able to use in
+ Order to make it super super easy, right?
+ dude the the next arcane research report for lightning like you think about you open up one or two of these things and
+ Find like a solid a solid use case or just like a solid product
+ We're talking about overloading lightning nodes
+ Like that you know like like we'll go from zero to a hundred so so fast
+ Well, let me just tell you like some specific stuff that we're gonna do this for this one right so like voltage is gonna
+ Allow people who are signing up for the hackathon they're gonna give it like let them get deals on doing a mainnet node access
+ Right like green light green light as we're doing some workshops on how to use green light and getting some API key access for that
+ One so if you want to use green light for it for doing the back end for it
+ And then one of the workshops
+ I'm doing is just how to take a core lightning node right and just run it out of a rebel run it out of whatever
+ You want to run it on because what you're doing is
+ So on replicates is that just using rose it like a like a docker thing yeah kind of right and so
+ Like basically I have a bunch of different options for the ways that people can interact with lightning because like for us
+ It's like you know I mean on the FedE side to write is that like for getting people using lightning or whatever like we think
+ That there's like a very good solution for many different communities right which is the second party custody solution, right?
+ But like okay well now we're also gonna get some options for if you want to run a node yourself
+ Right like this is like the way that you would do it if you want to use like some of these services
+ Or like like I'll be for example like a boomi is gonna be doing some workshops and stuff like that right if you wanna use
+ Them like also great, too
+ Right but like this is a clear and present example like one of the things we're talking about right of like
+ David charm and like charming e-cash getting in the way of the deal and closing it right is that like for FedE
+ The way that we think about things is that if Bitcoin wins everybody wins right yeah
+ Is that we're at this stage right now where it's not that everybody should be using FedE for solving these problems
+ It's that FedE is a solution like within the space of everybody should be using lightning and Bitcoin to solve these problems, right?
+ Yeah, super excited to have like involvement of so many different parts of the like Bitcoin and AI communities as part of this hackathon, right?
+ so
+ Dude, that's so crazy. I didn't know how many people were invited know in green light and voltage and
+ What is that buddy been doing? Do you know details on that? I haven't heard anything about them or at least I haven't dug into anything
+ Join the hackathon oh man
+ Hell yeah, well how is as a as a
+ spectator
+ What you join the hackathon like like what does that mean how do I keep up is there gonna be like
+ Breakdowns of stuff. Yeah, we've got a discord. We're gonna be organizing stuff. We're gonna be pushing stuff through Twitter
+ We're gonna be doing like you see me invite. Yeah, absolutely right as we're gonna be doing
+ All the workshops are gonna be run through replete and one of the nice things about replete right
+ And this is what are the reasons why I really really am excited to be working with these guys and why I've been focused on
+ Them for so long is that there's millions of developers who are about to come online who want to be able to code
+ Right and they're primarily be primarily gonna be coding on mobile phones, right?
+ And replete is the only guy in town who's going after those developers and saying we're gonna build a browser based IDE
+ Yeah, you can run this on a phone right? That's great. I know is that it's smart for any developer out there
+ Right is that like you can get like a full unique shell with like you know
+ It's got like everything that AI Scott right and this is kind of like another thing
+ I'm applying AI yeah
+ They were so early to this is because they wanted to go after the mobile developers right and the mobile developers
+ You're not gonna sit there and type in on your phone everything you need AI need an interface you need a language model, right?
+ Yeah, exactly and so they're the only game in town has been going after that
+ So all the workshops and stuff that we do that go to hosted through replete
+ If you're just running on a phone you'll be able to run the same code that they do
+ wherever you are if you're like a 14 year old developer in India who's like got this or you're like in one of these global
+ South communities that like Betty's gonna be rolling out in or like like anybody who's like
+ Kind of like underserved right now who can't get access to the stuff happening in San Francisco because they either don't have credit cards
+ Or they live in a country where they can't satisfy the KYC requirements or anything like that
+ Bitcoin is the way to orchestrate access for all of those people to all the crazy cool stuff happening over here, right?
+ Because the reason why you can't scale this stuff to everybody else is because you have this fundamental monetization problem, right?
+ Yeah, Bitcoin solves and when you solve that you can bring AI to the rest of the world, right?
+ That's why it's called AI for all the hackathon
+ Yeah
+ Dude, one of the things that just popped in my head like while we've been talking about this is that
+ you know so many people for long spans of time especially as we just kind of
+ Explode and the number of devices and the variety of devices that we have on the internet is the scope of idle
+ Resources yeah that are always just available
+ This is exactly the sort of thing when you when you can actually build up a user base
+ And you can attack like you have like a very strong network effect and like a value
+ Mechanism to pull people into it and you can basically
+ directly pay for
+ computer resources
+ regardless of its origin
+ Irrespective of where it is
+ This is exactly what unlocks all of those
+ I mean the the GPUs that I just bought for the AI machine
+ That thing will never not be running if I can if I can take a lightning payment
+ Spend five cent in energy and get eight cent in an eight cent lightning payment
+ I would never I would never turn it off. It's in color
+ And this is like I mean just kind of
+ Bringing this to like all the things that Bitcoin has been solving on this one or whatever the same monetization problem that AI is having
+ Is the same thing that Bitcoin has been solving in energy?
+ And this is why we're so ready for this because we've been solving it on the energy architecture part right yeah
+ There's of like 30% of all energy is either idle or wasted right yeah
+ So Bitcoin on the base layer Bitcoin eat fighting aspect has been doing this
+ Lightning developers have been seeing that happening and like all the lightning developers like Bitcoiners Bitcoin developers are like the most educated
+ Energy on energy policy and like energy usage of any group of developers anyway like nobody knows as much about energy as Bitcoiners
+ Do right I've never spent so many hours. I never thought I'd read read so much
+ Jargon II bullshit about the grid yeah, and how it works ever in my life
+ I no reason no reason to care
+ But this is the place to see it right because like you know kind of like that your margin is my opportunity
+ It's like your unused GPU or your on your stranded resource
+ Like energy resource is my opportunity right yeah, and kind of the same way like I'm not as familiar with the numbers for unlike
+ GPUs and stuff right, but I know that they're I'm sure that they're not being run as peak capacity, right?
+ I know that a lot of people are running them all the time
+ But it's mostly that they're just buying them up, right?
+ Like the reason why Nvidia stock is going to the moon right is because everybody's buying their GPUs
+ But maybe the idle time on that is like 10 20 30 percent probably more right but like probably way higher
+ Yeah, yeah in the same way that like uber and all of and lyft and all those guys have been talking about this for years
+ of that like people purchase cars and
+ 92% of the time or whatever. They're just idly sitting in a parking space, right? Yeah is that if you
+ Like automate the car if you give it an autonomous driver
+ Right and just allow it to it brings you to your destination and it goes off and then it just taxis people around
+ It can be used 100% of the time, right?
+ And so in that same way that you're doing that you can do the same thing with GPUs
+ But the thing you need is a monetization orchestration mechanism, right?
+ So like a marketplace for these GPUs ability for people to pay you at the time that you use them not have these debt
+ Relationships and all that kind of stuff right and so like that's the that's the big like unlock here, right? That's so interesting because
+ Like the idle resource problem isn't a get everybody to do it. It's a it
+ It's a coordination problem. It's a coordination problem
+ But the crazy element and that's like really what uber and Airbnb and these things have unlocked is how do you coordinate between?
+ The the idle resource and the person who needs the resource
+ Well, one of the interesting things about because we're in we're talking about specifically a space of computational resources that don't have
+ that meat space
+ Sort of finality or that like, you know
+ Like you can you can simply prevent someone from getting into your Airbnb and like, you know, it's a physical thing
+ It's a physical resource with the car. You don't have that same
+ that same protection you don't have that same dynamic in the digital space and
+ Even worse is you have a credit based payment mechanism that is pull based
+ which means that you you have a
+ Permanently
+ Spent an irreversible resource with a not never permanently
+ received and
+ reversible
+ monetization mechanism or
+ capital exchange precisely so your feedback mechanism is wildly out of balance in one direction and
+ when we're talking about
+ Performing the use of these research
+ I mean just like you said at the very beginning of this thing is that you could wake up and expend
+ $10,000 in resources by accident
+ but just because somebody abused your API is
+ When you when you have scaled it to to execute on those resources that fast and that iteratively
+ That you could burn through that amount of capital
+ You're you're also multiplying the cost of using the credit instrument
+ Like it's it's literally an exponential like all of the problems of the credit card industry
+ just got exponentially worse and they're only going to continue to get exponentially worse as people figure out how to use these tools and
+ This becomes more of the actual economy as this as the GPU resource
+ Essentially becomes a critical piece of all of the things that we do which is probably gonna be really fucking fast that that actually happens
+ and
+ This is the thing to think about right is that like you don't see it right now because like spam filters
+ I like still relatively effective about this stuff. I'm just like think like same time next year or the year after
+ You're gonna be able to reliably pass basically any spam filter
+ That all that's supposed to be like oh hey
+ This is like a human versus not a human whatever right and spam filters are already pain in the ass for humans
+ Yeah, punching those captures sometimes. I get it wrong like three times. I'm like what the what the hell is this thing?
+ Yeah, the thing to think about for it right is like why are they doing these spam filters for this stuff or whatever right?
+ It's because if you get access to my resource and you're a bot or whatever and then you start like spamming me or then you
+ Start like abusing my GPT access or using my cloud access or whatever. I'm using right mm-hmm
+ Then that's gonna cost me enormous amount of money, right?
+ But if I can pass along all of the costs that I'm incurring to the user as I as they use it, right
+ I don't care who the user is I don't care if you're an agent
+ I don't care if you're a bot right because you're paying I see just because I'm just like yeah
+ Well, so like this is not like a bypass or a kid. I see a lot
+ Sorry, but it's like think about it conceptually of like why I mean like a goal like the purpose that KYC serves
+ Is kind of become becomes redundant? Yeah?
+ It's like well
+ Why do I need to know your address and your who you are and those kinds of things the reason why is because we're entering?
+ A debt relationship potentially yeah where you give me money, and you could take it back 30 days from now or whatever right mm-hmm
+ And at the time that you take it back
+ I need to be able to follow up with you go that sort of stuff know who you are so that if you show up
+ Again, then I don't do that or whatever right yeah
+ But like at the time that I'm incurring the cost you're passing it to me
+ And so insofar as people are using my service. It is always in the black right yeah
+ That just creates an entirely different paradigm right where you don't have to have a debt relationship
+ Like I don't have to know anything about my user except for the fact that they paid me right
+ So crazy yeah
+ So this starts when
+ This starts very soon, so it's an entire month of July right and so like July July
+ Okay, July 1st through the end of end of July and you can join in at any point like you know
+ We're always gonna be helping out like it
+ I really want to see like the people who don't know how to code like coming in and like trying to participate in this stuff
+ And like like me other mentors guys who are gonna be there are all there to help you right in terms of like the thing
+ with Bitcoin and I think with AI generally just generally speaking like a
+ There's kind of this I mean this quote that occurs to me right from Steven Pressfield's book the Lionsgate
+ Where they're talking about the type of people who they want to join right and so they're saying like hey
+ I want like a like an I want somebody who when I say like a hole needs to be dug
+ It's like I am a spade. I like you need a soldier. I am a soldier. We need a fireman
+ I am a fireman like I am the I have no ideology. I have no
+ Like commitment to this I have no ego
+ I am like the epitome of service like and I exist for one purpose which is to build on behalf of others right mm-hmm
+ And the response is like there aren't any people like that right and the guy who's speaking right says like there will be
+ Right and I think that that's something that I know you've been doing some like kind of exploration on this thing
+ I know John ballast has been doing the same thing right of that like
+ Encountering Bitcoin and seeing the way that it kind of like organizes things right
+ Changes you and makes you
+ Recognize a lot of these things and makes you a better person makes you these things or whatever like a lot of people had this
+ Experience right where like encountering this has like said okay?
+ Well like this finite perfect version of money was not perfect right but like this very very good version of money
+ Recognizing some of the defaults of the fiat system
+ It's like made you better as you do this thing like I think that AI is gonna be exactly the same way right
+ Where it's like as people encounter AI and as people start using and as all the orchestration is done by
+ Like Bitcoin as these things we're gonna see Bitcoin expands rather as the economy right it's gonna kind of infect everything
+ And like the same way that it's like hey there aren't any people like that like there will be right when I'm something straight
+ I'm like hey there aren't people who want to like pay for things in Bitcoin or whatever right it's like there will be
+ Because everyone is gonna run into this problem everyone already is running into this problem right like this is something that Bitcoin clearly solves right
+ Man
+ Dude uh
+ We should probably end it here. We're getting a little bit. Yeah, a little bit late
+ Is there anything else you wanted to bring up? I mean I could probably go for a while
+ Yeah, no, I know you have other work to do
+ No on the AI thing or whatever
+ I'm just like I'm so excited for this right just because like the thing that we've been talking about for the last like
+ What is this like almost like over an hour right is that like?
+ There's a clear and present problem that AI is facing
+ That Bitcoin is a very very very good solution for and a clear and present
+ Solution like exactly right and the thing that I'm super excited about for this is that the reaction that I think a lot of Bitcoiners get when we try to talk about the benefits of Bitcoin is like show me right
+ Show me people using this is why El Salvador was so huge right of like show me merchant adoption
+ Okay, like Bitcoin Beach showed you merchant adoption. They showed you the way to do it
+ They showed you that if you get rid of the price volatility
+ And you just allow people to use Bitcoin experience they have is just like using dollars for this stuff in terms of the price stability
+ And allows them to make economic calculations it works and so now everyone says okay that works
+ And we're gonna start applying it over here, and you start seeing a scale out
+ That's exactly what's gonna happen through this hackathon with AI is that we encounter these AI companies
+ And we go to all these like different AI teams
+ And then they say hey we have this clear and present problem with monetization
+ And then we say okay Bitcoin fixes this and they say show me and we have a suite of projects people building on this stuff
+ We've developed the L4O2 specification which only like formalized became a special specification like two weeks ago or so right of like
+ You know formalizing that relationship and formalizing that interaction and stuff right of like having this be the standard
+ That people interact with is that this is gonna be our chance for you like hey
+ Like Bitcoin fixes this and it is fixing Bitcoin is fixing this
+ Bitcoin fixed fixed here look see right yeah, yeah
+ That's awesome. Dude. How do I and everyone else stay up on this you're gonna be
+ Yep, all are only streaming this on Twitter, and what do you got constantly pushing through Twitter?
+ There's gonna be a discord for organizing like the hackers and doing like meeting teams and all that kind of stuff
+ And then my following you on Twitter. What's your Twitter handle at Cody low kod? Why?
+ Okay, that's easy yeah, all right
+ In the show notes where else?
+ Eddie and stacker organizers for it and so we're gonna be pumping out content for it continuously as we do this and then
+ Yeah, and then it's like we're doing to bolt that fun platform
+ So anybody who was involved with legends of lightning and shock the web and those things like it?
+ I think yeah, right so like yeah, that's it nice
+ dude
+ This was a wonderful conversation. This was this was awesome. I'm so jazzed. I hate this
+ I hate this I do this before I go to bed, and then I can't sleep. I can't fucking sleep
+ I get so jazzed about some of this stuff, and I'm like oh my god
+ What's gonna be and I gotta fucking play with jet gbt for and figure out how to plug in that new model?
+ yeah, but uh yeah, I want to I'm gonna bug you about those prompts and
+ also, I'm probably gonna I mean we're in that telegram group and
+ I'll be bugging you about the tools that you use because I want to kind of get into
+ More videos specifically on that and I want to see
+ I'm just I'm just so excited to see how these apply, and I'm gonna be following this shit like like crazy this this month
+ I am
+ Man, I am very stoked okay. Yeah, dude cody. Thank you. Thank you for coming on the show
+ And for making this work in the the craziness that was today and trying to get this organized
+ And maybe we started 20 minutes late. Maybe I'm a big deal you know
+ Thank you, man. Yep. Yeah, all right, man. I'll catch you on the telegram cool. I did later
+ I hope you enjoyed that conversation
+ I am I still like I said it's been it's been a couple of days now, and I'm still just
+ I can't I can't get this one out of my head a huge huge
+ Thank you to cody for coming on the show we will be talking about this again, especially after the hackathon is over
+ No doubt I will be having him back on to kind of go over a lot of the projects if you want to participate
+ in this
+ Know the link will be in the show notes. It is right down there in the description of the show
+ so definitely explore it especially if you are a builder and
+ If you're just highly technically illiterate, you're not quite a builder understand that you might actually be now because AI
+ can write code for you and
+ So maybe you can build something that you don't think so if you have a great idea reach out to people find a community
+ see who is building and
+ Work with somebody because because this is the time to build this is this time to
+ This is where all the opportunity is right one massive change is in the process of happening
+ And I think we are seeing this happen, and I actually think I mean I'll talk about this in the guys
+ I'm having a guys take on Bitcoin audible, so if you if you're a listener of that show
+ I'm stay tuned for that
+ I want to have that out this week
+ And this will take this idea that we covered in this show and kind of run with it
+ because I think what we've seen with Twitter recently with the rate limiting and
+ Trying to blue check or verify everybody. I actually think this is not unrelated
+ and we're kind of witnessing this change this this shift away from the open internet because
+ apis
+ An API call cost money, and I think AI fundamentally changes this relationship
+ And I think I think lightning is the solution
+ At least I can't I can't see how it just doesn't these puzzle pieces don't just fit snugly together
+ So I'm gonna expand it expand on it and kind of run with it in that episode of Bitcoin audible
+ So stay tuned for that one check out that show
+ And subscribe over there if you haven't and of course subscribe to AI unchained subscribe to this YouTube channel
+ So you don't miss all the the many many great conversations and shows we have on the way
+ There are a ton of links down in the description. I think I saved like eight or nine or something just from this conversation
+ so
+ definitely check those out if you haven't and
+ I'll catch you guys on the next one. I'm guys one. This is AI unchained and until next time everybody
+ Take it easy guys
+ You
+ You
+ You
+ [MUSIC]

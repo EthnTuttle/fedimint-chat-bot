@@ -1,0 +1,2211 @@
+ We're effectively the outsourced business development arm for the entire Bitcoin ecosystem.
+ Inherent in our model is that we win by ensuring the entire ecosystem wins.
+ Hello there, how are you all doing?
+ You're right.
+ Now we're back at it here.
+ We're getting some shows ready.
+ We've got so many lined up in the next couple of weeks.
+ I can't wait to let you hear them all.
+ We've also got our live event in a few days.
+ We've got Lynn Alden, Jeff Snyder, Troy Cross and Harry Sutter all doing a live What Bitcoin
+ Did.
+ If you want a ticket for that, head over to whatbitcoindid.com and click on WBD live.
+ Anyway, welcome to the What Bitcoin Did podcast, which is brought to you by Iris Energy, the
+ largest NASDAQ listed Bitcoin miner using 100% renewable energy.
+ I'm your host Peter McCormack.
+ And today I've got Obi back on to talk everything Feddy and Feddy Mint.
+ Now listen, Feddy Mint is something I've struggled to get my head around.
+ I've had Obi on the show before to explain it to me and recently we had Callion who went
+ through his implementation of e-cash.
+ But I still struggle to get my head around it.
+ The thing I can't get my head around is how us as Bitcoiners are encouraging people to
+ give up their private keys.
+ So you know what I did?
+ I said to Obi, come back on the show, convince me and maybe even run through setting up a
+ federation as well.
+ That was a blast.
+ I hope you enjoy this.
+ I think Obi's a great guy and I'm definitely coming around to the idea.
+ But if you've got any points about this or any questions, drop me an email.
+ It's hello@whatbitcoindid.com.
+ I mean, I hate my voice.
+ I hate it.
+ Why?
+ I don't know.
+ I just, because it's, you know, the whole thing about voices, right?
+ You hear it different from everyone else.
+ Except for now I can actually hear what other people hear.
+ Yeah.
+ So I'm hearing, I'm like, wow, I sound like a fucking moron.
+ How do I have any friends?
+ Why is everyone listening to my podcast?
+ But yeah, no, Danny's been unbelievable and he's not just obviously a work colleague.
+ He's a friend now and I want him to be successful.
+ That's the best way.
+ Yeah.
+ He drinks whiskey now.
+ I do drink whiskey now.
+ I was just thinking, I repeat this again and again, but I've had different experiences
+ with partnering with people in the past and the two co-founders I have right now, Eric
+ Sirian, El Sirian and Justin Moon, they're incredible people.
+ And I always feel the most luckiest thing for me was meeting, initially it was Eric
+ because it was completely accidental.
+ We share a number of core philosophies with each other, but you know, we just come from
+ two completely different worlds.
+ And it was like pure accident that we bumped into each other.
+ Otherwise we would have probably never met, even though we were both in Bitcoin circles,
+ it's just the people we hang out with and everything.
+ Well, we're similar.
+ Me and Danny are aligned on a lot of our views.
+ We are into very similar things, football, et cetera.
+ And it all happened.
+ Danny just dropped me an email one day.
+ He's like, yeah, you basically made your production shit.
+ Can I do it for you?
+ Yeah.
+ In as many words.
+ And I was like, all right, you do the next show.
+ And he's done every show since.
+ And but he now he doesn't even do that job.
+ He runs the show.
+ He's the gatekeeper to guests.
+ He picks a direction.
+ I manage the partners and I do the business side, but Danny will eventually do the business
+ side as I.
+ It does feel like Danny's almost already running the business right now.
+ Yeah.
+ He needs to come and run Bedford with me.
+ Pete's trying.
+ Yeah.
+ But mine is a weird thing because I have a central vision and everything is about everything
+ I do now is focused on will that get me one step closer to get in Bedford in the football
+ league.
+ I don't care if Bitcoin doesn't go up for ball or not.
+ That is my goal.
+ One goal I have in life is to get Bedford in the football league.
+ And if I can do that, I will definitely die a happy man.
+ Is that your biggest career goal now?
+ It's always been.
+ Dad, what dad?
+ How old do you think I was when I first said I wanted to buy Bedford?
+ What do you remember?
+ It's been in my head since I've been a teenager.
+ And I never knew how I could do it.
+ And then figured it out, like had that little brainwave recently.
+ I was like, hold on, I know a lot of rich fucking people.
+ Let's get behind this.
+ And then also there's that trade off that it's the perfect team because it's a shit
+ nothing team in the middle of nowhere.
+ So you get a whole journey for now.
+ Feels like an underdog story a bit like Bitcoin is an underdog story.
+ And just we can attract a global fan base of Bitcoiners go, yeah, this is our team.
+ We'll adopt it.
+ But we had to be the first.
+ There's no second Bitcoin team.
+ There's only one Bitcoin team.
+ And so we had to be the first.
+ And once I realized it's like we had to do it and I'm not in it for the money.
+ I'm losing personally money on it because I put money into it.
+ The equity I hold in it, I will, my expectation is over the years, I will sell that off to
+ buy this infrastructure we need.
+ But it will come back in time.
+ If you're doing something that you're really passionate, you've heard of the concept of
+ Ikigai.
+ Yeah, of course.
+ That's Travis King's funds.
+ Yeah.
+ And if you're lucky enough to find your Ikigai, then there's nothing more empowering.
+ I feel like a fan, man.
+ It sounds like you found yours.
+ So everything else, the universe will bend to make it work once you found it.
+ I think I'm lucky enough to have found it.
+ And then I'm surrounded by really good people helping.
+ Like my dad's here.
+ He's running the kit.
+ My sister comes up to all the games.
+ She runs the merch down behind the bar.
+ Emma, like everyone is getting behind it.
+ Like so many people want this to work.
+ And it is working.
+ And we've got nine ticks to do.
+ You will work.
+ It will work.
+ Well, the first few ticks are easier.
+ We will get progressively much harder.
+ It's going to be really hard, but it will work.
+ Yeah.
+ There was just certain stages I'm going to need a billionaire to go, "I'm so fucking
+ rich.
+ Here's 2 million, go and get promoted."
+ Then you'll make it happen.
+ Yeah, I'll do my best.
+ You'll make it happen.
+ I can just tell you, once you found it, you will move heaven and earth to make it happen.
+ It won't be me.
+ It won't be because of me.
+ It won't happen.
+ Like I'll put everything into it or a lack of work, but we'll see, man.
+ Anyway, listen, we're not here to talk about me.
+ We're here to talk about you.
+ Talk about Feddy Min.
+ Okay.
+ A lot of this, we're going to rehash what we did last time, but that's okay.
+ Certain things need revisiting.
+ You're getting talked about a lot.
+ People are very excited about what you're doing.
+ People I know and trust love what you're doing, but I still have some questions nagging at
+ me.
+ We're going to revisit them.
+ I know it must be fucking boring for you to do it, but let's do it because I know some
+ listeners have the same questions.
+ But TL;DR, explain to people what Feddy and Feddy Mint is because there's two separate
+ components.
+ Explain the mission.
+ The mission, what Feddy is, and what Feddy Mint is.
+ I'll start with the mission because that derives everything else.
+ The mission for Feddy is to empower communities everywhere.
+ The way we see it is that we want to find a way for communities to be able to take control
+ of their resources, including their money and their data, so that they can effectively
+ take control back from big tech and so on, and bring it back into the hands of the community.
+ As a result, if we can do this and repeat and repeat and repeat for communities, whether
+ they be families, whether they be companies, whether they be villages or towns, in millions
+ of places eventually around the world, we can help level up humanity.
+ That's the mission.
+ How do we do that?
+ Well, first of all, you start with Feddy as a company.
+ Feddy is the first manufacturer or builder of a federated OS.
+ We don't think this exists, so this is a new category or thing.
+ You can think of it like an iOS for your mobile phone.
+ It's the thing that makes your mobile phone work, and it manages your personal life, or
+ an Android OS.
+ But a federated OS is an OS for your community.
+ Of course, that includes custody.
+ It includes being able to use different features or services and so on.
+ But also, it goes beyond that.
+ You could be able to use data as well.
+ It can integrate with many other services over time, Nostar, even AI systems.
+ Why should it be run by big tech?
+ Why don't communities have their own AI, et cetera?
+ So this is the grand vision.
+ Now, how is that possible?
+ How are we able to have such a broad vision?
+ Because there was this technology that was invented.
+ The idea came about three years ago, and the first line of code was written over two years
+ ago called FedEmint.
+ It was invented by one of my two co-founders, Eric Sirian.
+ And this is a form of community Bitcoin protocol.
+ It allows you to take Bitcoin, which you would normally run for one person, and run it for
+ a community.
+ With this platform, you have a number of people within the community.
+ We call them guardians, trusted members of the community, who run this platform on behalf
+ of the community.
+ It allows you to have baked in by default automatically a level of scalability beyond
+ Bitcoin and Lightning.
+ It gives you a level of privacy using a protocol called Charmy and eCash.
+ And it gives you, and this is a key element as well, a level of extensibility.
+ So you can extend it with additional features.
+ Basically, it's unlimited in what you can do.
+ So it's the missing piece of the Bitcoin ecosystem.
+ With this, you can think of it as the shield for Bitcoin, Lightning as the sword, and Bitcoin
+ as its base, as the defender.
+ It allows you to effectively do whatever you want to do to be able to scale resources and
+ data for your community and for Bitcoin.
+ There's a lot there.
+ - Yeah, no, there is.
+ So Feddy Mint is the protocol, Feddy is a company.
+ Could other people create their own companies and compete with you and create products?
+ - Yeah, absolutely.
+ And we hope to see that happens.
+ As I say, Lightning is a protocol and there are many companies making Lightning services
+ and products.
+ And we will see those.
+ Now the way we deal with that is proof of work.
+ So we have an incredible team.
+ We have an incredible set of supporters from within the Bitcoin ecosystem, from within
+ the investor ecosystem, but also many of our customers as well come from broad swathes
+ of the world, whether it be, we have what we call hyper communities, which are Bitcoiners
+ who are passionate about Bitcoin, but also passionate about parts of the world, whether
+ it be Bitcoin Acaci in South Africa, or Bitcoin Lake in Guatemala, and so on.
+ - Bitcoin Bedford.
+ - Or Bitcoin, when you're ready.
+ - We're ready.
+ I literally just-
+ - You ready for Feddy?
+ - I was like, hold on, should we have a Bedford Federation?
+ What can we do with this?
+ - Yeah, are you ready for Feddy?
+ Then we're ready for you.
+ - All right, well, listen, go on, go on, go on, you finish.
+ - But it's also beyond that.
+ It's people who don't really think about Bitcoin or money in this sort of day to day, but they
+ have to deal with it because of the challenges they're dealing with.
+ So people who are trying to help raise or highlight the plight of people living under
+ the yoke of oppressive regimes or dictatorships around the world, and everything in between.
+ Also we're seeing it in terms of organizations who want to take personal custody of their
+ treasury and not have to give it to third parties and large multinational organizations
+ and say, well, why do we give it to multiple banks who we are increasingly less comfortable
+ custodying with when we can hold it ourselves?
+ Or our data, why do we have to give it to big tech when we as an organization can bring
+ it back in and manage it ourselves?
+ If we can help with all of that, there's interest there.
+ - So let's run through an example use case, because that's going to be the best way for
+ me to explain them what the challenges I see or the things I've struggled with.
+ And then we can work through that.
+ So talk to me about specific use case of any federation that you think could set up, give
+ me a scenario and how it would work and the reason they would want it.
+ - So there's many examples we've already, so for a number of months, we've already been
+ in closed beta with different organizations.
+ I can give you one example, a community of farmers and farmers cooperatives in West Africa
+ and a number of countries, five or six farmer cooperatives, a hundred to 200 different farms.
+ And obviously there's a farmers and all the employees, et cetera.
+ Now right now they have to buy pesticides and fertilizer and they buy it at retail.
+ It's incredibly expensive, so they don't buy enough and they don't get good crop yields.
+ And so they earn less money for their land.
+ Now if there was a way for them to access credit at reasonable rates, they would be
+ able to hold, take on money by, and also if they could organize as a community and buy
+ in bulk, they can buy at bulk, get wholesale rates, buy more pesticide and fertilizer,
+ massively increasing their production and leveling up their society.
+ Now what can be done with that is we can set up a federation for that community of different
+ farmers, farmers cooperatives and farmers.
+ People can then send capital directly to the different farmers.
+ Farmers can use the Feddy app because the Feddy app includes chat and communication
+ to organize with each other, one, like a group per cooperative, send value directly within
+ this federation when it's ready to, when they're ready to make a bulk order and then organize
+ for that bulk order and then pay the suppliers in bulk.
+ Now instead of having to move around and transfer lots of cash between different parties and
+ it's taking a lot of time, a lot of hassle, a lot of communication, this can be done easily
+ in seconds.
+ Now you could say, well, why didn't I use digital cash?
+ But then I'll be paying potentially fees anywhere from 2% to as high as 30, 40% of
+ transaction.
+ 30, 40%.
+ For very small amounts.
+ It can be as high because there's a minimum fee and sometimes it's with minimums, it could
+ be as high as 30, 40% for e-cash.
+ But that must be like, for digital cash, that must be like $1, $2 purchase.
+ Yes.
+ But even the average is two or 3%.
+ Whereas when you're sending, but there's still a significant for a significant percentage
+ when you compare to fractions of a percent.
+ So and that's effectively, it still takes value away, which can be used for productive
+ goods.
+ So all these different cooperatives send their money into the Federation and then they negotiate
+ with the-
+ No.
+ So the different cooperatives would be part of the Federation.
+ The different farmers would be part of the Federation.
+ So instead of them having their own wallet, because remember, they could be talking about
+ small amounts of money each, a few hundred dollars maybe of each worth of capital per
+ farmer.
+ Now let's say the alternatives is hundreds of farmers that would they buy a hardware
+ wallet for 50 to a hundred dollars each.
+ So then, and they'll have to understand how to use it.
+ It has to be very simple.
+ Again, it has to be converted to their language.
+ There has to be all of these things that need to be done.
+ With the system we have, it will be multilingual.
+ It will be able to be set up to work and act in the way that they need it for their service
+ without any extraneous elements because each community is set up correctly for that community.
+ They'll be paying near zero fees for transferring.
+ And they, by the use of the Fediment, it's effectively a multi-sig wallet.
+ So when it comes to first party custody, the best way to back up is first party with multi-sig.
+ That's complex to do, but if you have a Fediment, you automatically get that for your community.
+ So you're getting this multi-sig backup of the data without you having to do anything.
+ You have this incredibly simple experience, but a best practice way of backing up as well.
+ What was that?
+ Because I'm connected to the screen.
+ So every farmer would be.
+ in the Federation?
+ - Every farmer would be in a Federation.
+ - Would they be, are there groups?
+ Like, do they join like a cooperative
+ and they're cooperatives?
+ Or is it just every farmer across all cooperatives
+ are in there?
+ - Every community can set themselves up
+ the way they want to be set up.
+ But in this particular example,
+ you would imagine that there'll be say five cooperatives
+ and each one would set up a group.
+ Just like you have a WhatsApp chat
+ and there's different groups.
+ There'll be a group for a cooperative
+ and the farmers who are part of that cooperative
+ will join that cooperative.
+ And they would talk in that group.
+ And then when it comes time to pay,
+ they would send the value needed to make a payment.
+ So they would use it to organize,
+ the Feddy app to organize and to handle payments.
+ - Okay, so you, me and Danny,
+ we're all different cooperatives.
+ We, somebody on behalf of us is negotiating the rates
+ for the fertilizer.
+ - Yeah, or each cooperative would probably negotiate
+ the rates for the fertilizer as a cooperative.
+ - Okay.
+ - And there's 50 and you, me and Danny
+ could be three different farmers
+ who are part of one of those cooperatives.
+ - I get it, I get it.
+ - And then we would join the group within the chat
+ related to our cooperative.
+ We'll talk and agree that we want to buy this fertilizer,
+ bulk buy it.
+ And when it comes time to pay,
+ we would just literally click a button and pay
+ as opposed to having to transfer cash around,
+ having to organize, having to have village town halls
+ and so on.
+ It can all be organized digitally,
+ the conversation, the payment and the disbursement and so on.
+ - And when we pay, do we pay into a central pot
+ that goes out or do we all pay individually
+ to the recipient?
+ - You would pay into, you would pay in that case,
+ a central pot and then it will go out
+ so that you can bulk pay.
+ So that's one example.
+ - Sorry, one more question on that.
+ And the person we're paying,
+ that we're buying the fertilizer from,
+ do they also have to be in the federation
+ or can we buy outside of the federation?
+ - They can accept,
+ anyone who can set the lightning payment
+ or Bitcoin on-chain payment can be the recipient
+ of the money.
+ Or alternatively, if you could find someone locally
+ who's willing to accept the Bitcoin,
+ like a local entrepreneur or so on,
+ to set the Bitcoin and then on behalf of you,
+ give you cash to pay at the point of payment as well.
+ - Okay, so that all makes sense.
+ I get that.
+ - And that's one example.
+ - Yeah, and I'm sure that there's lots of ones
+ and that coordination is super useful
+ and that coordination helps people
+ actually negotiate better rates.
+ I get that.
+ And if it saves a 3%, that's really good.
+ I mean, I guess like as a technology,
+ the user experience, you can solve very quickly.
+ There's still volatility risk on the price.
+ You know, I could argue that the 3% fee
+ is the price you pay to not have volatility.
+ I mean, volatility can go to the upside and to the downside.
+ There's still gonna be a challenge.
+ You know, so if people used Fedian,
+ they were gonna save their 3% and coordinate them,
+ then Bitcoin did one of its dumps by 10%.
+ That's a tough situation for someone to go through.
+ - Very.
+ So there are many solutions there.
+ First of all, FediMint is multi-asset capable.
+ So it's full reserve in the way it works by default.
+ So you would deposit Bitcoin
+ and you'd be credited a certain amount of Bitcoin
+ within the system, within this wallet.
+ - The e-cash.
+ - The e-cash, yeah.
+ And that can be used within the community.
+ However, if you were to deposit a stable coin,
+ then you'll be credited
+ with a certain amount of stable coin instead.
+ So that's possible as well.
+ Third, we can show this later on,
+ but it's extensible.
+ And this is really key.
+ You can, anybody of the millions of,
+ not the tens of thousands of people
+ who can build smart contracts on multiple chains,
+ but of the millions of people
+ who can write software for web too,
+ they can very easily convert
+ and write extensions for a given FediMint
+ to be able to allow it to do pretty much anything
+ that you could imagine could be done on a website,
+ could be done on a FediMint.
+ - Amazing.
+ - But in a federated manner
+ where you're not trusting one organization,
+ one website, one person,
+ as long as the majority honest, it continues to run.
+ So you could take that concept.
+ And there was an idea that was initially put forward
+ by Taj Dreijer, one of the co-founders of Lightning,
+ discrete lock contracts with difference.
+ And technically with a few upgrades to Bitcoin,
+ it could be possible to do it on Lightning easily,
+ but they haven't yet been done
+ and they hopefully will happen in time.
+ However, that limitation isn't there with FediMint.
+ So we did a hackathon at the beginning of this year
+ and one of the submissions, which went on to win,
+ created something called Stability Pools,
+ which is a way to basically take Bitcoin
+ and you could effectively think about it
+ as depositing it into this virtual USD,
+ or for example, or some other assets,
+ this USD store account until you need it
+ and then you can withdraw.
+ So you receive payment in Bitcoin,
+ but then you can just quickly just deposit it
+ and it will be locked to that.
+ It will still be stability locked to that value,
+ USD to Euro, so on.
+ So what could happen is you receive payment,
+ you lock it to USD until you need it,
+ and then you unlock it back to Bitcoin.
+ It flips things on its head.
+ Bitcoin is used for payments
+ and Lightning is used for payments
+ 'cause it's available everywhere.
+ It's one standard that everybody knows.
+ It's near instant, it's very low cost.
+ And then you use a stability pool
+ to take your Bitcoin and lock its value.
+ It's still Bitcoin all the way through.
+ There's no bank backing it.
+ But instead of its price being volatile
+ and the amount being constant while you lock it,
+ the amount is volatile and the price is constant
+ until you need it and you unlock it.
+ 'Cause you're just, for you, you're okay with that
+ because you just want the price stability
+ with some other asset that you want it to be stable against.
+ And then you unlock it and then spend.
+ You also can partially unlock.
+ So say I receive salary or wage
+ or money from a friend or family,
+ and I immediately lock it.
+ And then when I need to spend,
+ I want to spend $5 of it, I unlock $5 of it
+ and it gets withdrawn out.
+ And in fact, we can show a-
+ - Just before we do that, can I ask you a question?
+ If we had the federation set up between the three of us
+ in that cooperative example,
+ so we all put Bitcoin in and get
+ what Bitcoin did cooperative e-cash.
+ To buy off the fertilizer supplier,
+ do they have to accept the e-cash
+ or do they peg out to Bitcoin?
+ - They don't have to accept the e-cash.
+ - So they can receive payment in Bitcoin from our-
+ - Yeah, that's it.
+ So when, think about a fediment
+ as a community owned lightning wallet.
+ So from the outside world, it's a lightning wallet
+ and it can make payments over the lightning network.
+ It's just that the fediment protocol
+ and the e-cash protocol handles how the Bitcoin
+ that's been sent to that wallet
+ is apportioned amongst the members of that wallet.
+ And also it handles ability people to be able to say,
+ I want to spend.
+ And then what will happen is that e-cash
+ is transferred to someone else within the,
+ it can work in two different ways.
+ It can be sent back to the guardians
+ and they can destroy it
+ and send out a certain amount of Bitcoin on chain
+ for equivalent to the amount.
+ Or for lightning transaction,
+ what technically happens is it's sent internally
+ to someone else who also is running a lightning node.
+ And then that person, after receiving that,
+ sends out a certain amount of lightning
+ over the lightning network to the address you sent.
+ So this is what lightning service providers do,
+ but normally it's lightning connection on one side
+ and lightning connection on the other side.
+ Here it's e-cash on this side and lightning on the other side
+ but from your point of view,
+ experientially it just looks like a lightning payment.
+ Whether you're sending it to someone else
+ within the fediment
+ or whether you're sending it to someone else
+ on the other side of the world,
+ who's got a moon wallet or a wallet of Satoshi
+ or a blue wallet or what have you,
+ or to someone else who's also in another fediment
+ somewhere else, do you lightning invoice pay?
+ - So if we were transacting within the federation--
+ - It would still be a lightning invoice.
+ - It's still lightning,
+ it's not like a e-cash token swap kind of thing.
+ It's still--
+ - So what the protocol cleverly does
+ is it recognizes internal and it just does an e-cash swap.
+ But from your experiential point of view,
+ you just pay the lightning invoice.
+ - And for internal--
+ - It would just never fail because it's internal.
+ There's no liquidity issues there.
+ And also it would be basically almost,
+ probably just free or 0.11 milli Satoshi
+ or something like that.
+ Maybe a tiny fraction of a penny.
+ - This show is brought to you by Leden.
+ From savings accounts to personal loans and even mortgages,
+ Leden's financial services enable Bitcoiners
+ to experience the benefits of holding today
+ without selling their Bitcoin.
+ Leden has a robust risk management strategy
+ which always prioritizes safeguarding clients' assets
+ with no DeFi yield farming.
+ And Leden only supports Bitcoin and USDC,
+ two of the highest quality
+ and most liquid assets in the industry.
+ They also are dedicated to transparency
+ and are the first digital asset lending company
+ to complete a proof of reserves attestation
+ which they re-verify every six months.
+ With multilingual support on standby 24/7,
+ Leden is there to support all your needs.
+ To find out more, please head over to leden.io
+ which is L-E-D-N dot I-O.
+ Also today we have Ledger.
+ Now Ledger is the world leader in Bitcoin security
+ and is the best way to own and secure your private keys.
+ If you're still holding Bitcoin on an exchange
+ or with a custodian,
+ it might be the time to take your security more seriously.
+ Remember, not your keys, not your Bitcoin.
+ Now Ledger hardware wallets paired with the Ledger Live app
+ are the easiest and safest way
+ to start managing your own private keys.
+ You can send and sign your Bitcoin transaction
+ with full transparency in the Ledger Live app.
+ And honestly, look, it could not be easier.
+ I have been a Ledger user since 2017.
+ I love their products
+ and I'm still using the same hardware device
+ I bought back then.
+ Now if you want to find out more
+ or purchase a hardware wallet from Ledger,
+ then please head over to shop.ledger.com
+ which is S-H-O-P dot L-E-D-G-E-R dot com.
+ Next up we have Iris Energy.
+ Now Iris Energy is the largest NASDAQ listed Bitcoin miner
+ using 100% renewable energy.
+ Their strategy is to target markets
+ with low cost, excess renewable energy.
+ And they build out their own
+ highly efficient Bitcoin data centers.
+ They are led by a seasoned management team
+ with a track record of success across renewables,
+ infrastructure and digital assets.
+ Now Danny and I met the team recently in Canada
+ and we're super impressed with their values
+ which align with us.
+ So they are a great fit for what Bitcoin did
+ and you the listeners.
+ Now we are going to be working with the Iris Energy team
+ on everything we do from podcasts to films and live events.
+ And they are even sponsoring my football team, Real Bedford.
+ I'm really, really happy to be working
+ with such a forward thinking and sustainable Bitcoin company.
+ But if you want to find out more about them,
+ please head over to irisenergy.co
+ which is I-R-I-S-E-N-E-R-G-Y.CO.
+ - Okay, so which video do you want me to pull up first?
+ - So I think actually,
+ do you have a Lightning wallet on you?
+ - I've got a few.
+ Let's just go with wallet Satoshi
+ 'cause that's what I set up for my Nostra recently.
+ - So if you give me a receipt on your wallet Satoshi for,
+ I always like it for 21 sets if that's okay.
+ - Yeah man.
+ - Good first number.
+ - Right.
+ - So a request to receive 21 sets.
+ And I will with my,
+ so I'm a member of a federation,
+ call it Mainnet One.
+ And I've got some sets on it, like 17,000 sets.
+ And I will now,
+ so I'm going to click send
+ and then I will allow camera access.
+ I'm going to scan your transaction and I click send.
+ And now.
+ - Yeah, just received it.
+ - And I just sent.
+ Now what happened there is,
+ I'm part of this federation
+ and there are multiple members of this federation.
+ It's cryptographically near perfectly private.
+ So I have no idea how many.
+ I know because it's our internal worries,
+ but it could be,
+ there could be any number
+ because the Charmin eCash protocol
+ means that it's not possible to know.
+ But I actually sent eCash to someone else in that network
+ who is running a Lightning Node.
+ And then they, after receiving that eCash
+ of a certain amount of sets, 21 sets,
+ they then sent on 21 sets to you over the Lightning Network.
+ - They didn't know it happened.
+ - So what happens is,
+ so the FedEmit protocol is, I say extensible.
+ And it comes with, just like with iOS,
+ it comes with some standard apps.
+ With the federated OS, it comes with free standard apps.
+ One is Bitcoin multi-sig.
+ So it can handle and deal with the Bitcoin network
+ in a multi-sig manner.
+ Another one is eCash.
+ So it can handle and create and destroy eCash
+ in an automated manner.
+ And the third one that we have as standard
+ is Lightning emulation.
+ So that anybody who's a member of this
+ thinks it's connected to the Lightning Network,
+ but it's the Lightning Network
+ that causes zero seconds to form a transaction,
+ zero seconds to close a channel,
+ and therefore if it's zero,
+ and it costs zero to form a channel
+ and costs zero to close the channel.
+ So as such, I can just form the channel and send it to you
+ because I don't have to wait 10 minutes
+ and it doesn't cost money.
+ So I can just instantly create the Lightning channel.
+ So when you're connecting to a core Lightning or LND,
+ it just thinks this is just a really fast,
+ really low cost Lightning channel to route across.
+ And it just magically routes the transaction
+ over the Lightning Network.
+ - And that 21 sats you just sent me,
+ did that destroy some eCash?
+ - No, because in that case, as I said,
+ someone else in the Lightning,
+ someone else in the FedE Mint was running Lightning nodes.
+ So I just sent eCash to them.
+ And they, so the eCash has just moved around
+ from me to someone else.
+ And they also had 21 sats on a Lightning channel
+ and they've sent that on.
+ So their balance is up 21 sats on eCash,
+ but they're down 21 sats in Lightning Bitcoin effectively.
+ So imagine they had--
+ - But that federation has a certain amount
+ of Bitcoin deposited into it.
+ But that federation is now down 21 sats.
+ - No, in that scenario,
+ let's say there was only 21 sats in the entire federation.
+ - Yeah.
+ - And there was, ignoring the four guardians or more,
+ there was myself and someone else
+ who's got a Lightning node and me.
+ And they have zero sats and I have 21 sats
+ in terms of eCash.
+ But they also have a Lightning node
+ with 21 sats worth of capacity in it to be able to send.
+ - Yeah.
+ - I now pay you and you're on the Lightning network.
+ So I locate this other person, connect to them.
+ I send them the 21 sats.
+ So there's still 21 sats within eCash.
+ - Yeah.
+ - But I have zero of them and they have 21 of them.
+ And then they take the 21 sats that they had
+ in the Lightning network and send it on to you.
+ So they now have zero capacity on their Lightning channel,
+ but they have 21 sats.
+ So the number of sats within the--
+ - Hold on, are their sats on their Lightning channel
+ outside of the Federation?
+ - Yes, the Lightning channel is outside of Federation, yes.
+ - But using that scenario, I've been like,
+ well, I wanted those sats.
+ - You as the Lightning node operator.
+ - Let's imagine you're the Federation.
+ You're in the Federation, you've got a Lightning node
+ with some sats on it.
+ I'm in the Federation, I've got the eCash.
+ And then he's outside of the Federation.
+ So the Federation has been created with 21 sats in it.
+ and have a great day.
+ And so I want to send eCash to Danny.
+ - Yeah.
+ - But I actually really want to send 21 sats.
+ So I send the eCash, it goes to you.
+ So the 21 sats that I have within the Federation go to you.
+ Your 21 sats that are in your separate Lightning wallet
+ go to Danny.
+ - Yeah.
+ - Okay, so the 21 sats has moved around the Federation.
+ - From one person to another.
+ - From one person to another.
+ - Yeah.
+ - But you've lost your 21 sats of, it's a swap.
+ - It's exactly what happens
+ with the Lightning Network right now.
+ If there's a payment between myself and Danny
+ on the Lightning Network, ignoring Ferdinand,
+ and you're the Lightning node that we use to relay it,
+ we have channel, my channel has 21 sats of capacity
+ and you have 21 sats of capacity to Danny.
+ At the end, I send you 21 sats.
+ I now have zero and you have 21.
+ And he has zero, you have zero on his channel and he has 21.
+ - I'm trying to balance the books here though.
+ So you've gained 21 sats of eCash?
+ - Yes.
+ - And lost 21 sats in your separate Lightning wallet.
+ - Correct.
+ - Yeah.
+ - But what you would have done in reality
+ is gained 22 sats of eCash
+ 'cause you would have charged a fee
+ just like every other person on the Lightning Network
+ and lost 21 sats.
+ So you're up one sat.
+ - Where did that additional sat come from?
+ - It's the fee, just like the way the Lightning Network was.
+ - But where did it come from?
+ Because our--
+ - Oh, in the example I said it was 21 sats total.
+ So I would have been able to send 20, say.
+ - 20.
+ - 'Cause you would have said
+ there would have been a fee of one sat to do it.
+ - Okay, so you would have sent 21 to me.
+ But I--
+ - But including minus the fee, yeah.
+ - Yeah, minus the fee.
+ - The example should have been 22 sats I had
+ and I wanted to send 21.
+ So I would have, you said it was one sat to do this.
+ So I would send you 22 and you send on 21.
+ - What if no one within our federation
+ has any sats separately in a Lightning Channel?
+ - Then you won't be able to use the Lightning Network.
+ Which is what--
+ - You wouldn't be able to convert the e-cash into that.
+ - So yeah, FediMint are an island
+ without the Bitcoin extensibility
+ or without the Lightning extensibility.
+ Bitcoin, if you send it on-chain, in that scenario,
+ you would send it back to the federated Mint,
+ which would be the guardians
+ and they would receive the 21 sats, destroy them.
+ And then on-chain, Bitcoin on-chain,
+ they would send Bitcoin.
+ But if it's Lightning,
+ then the guardians don't get involved.
+ They don't even see it.
+ - Yeah, no, no.
+ - They don't get that.
+ - Basically it gets sent to someone else.
+ But if there's no one within the FediMint
+ who is running a Lightning node at all,
+ then it doesn't have access to the Lightning Network.
+ Which is why we always say FediMint and Lightning
+ work hand in hand.
+ FediMint is the home for your money
+ and resources and data.
+ And Lightning is the way to transfer
+ your resources and money.
+ Whereas something like Nostra
+ is a way to transfer your information.
+ But this is the place where it's the home
+ for your communities.
+ - And so when we set up our federation
+ and between us, say you, me and Danny create a federation,
+ we all put one Bitcoin in, that creates the e-cash.
+ Do we give our e-cash a name?
+ Do we call it Pete, Danny?
+ - Do you give the e-cash a name
+ or do you give the federation a name?
+ - What I'm saying is when it appears on screen.
+ - It's all Bitcoin.
+ It will just see it as Bitcoin.
+ Just like with Lightning.
+ Lightning is technically slightly different properties
+ to base layer Lightning, base layer Bitcoin,
+ but we just call it all Bitcoin.
+ - So it's all Bitcoin, so it's still Sats.
+ - It will still be shown as Sats.
+ - So why do we say e-cash?
+ E-cash threw me, e-cash made me.
+ - You still be seeing it as Sats.
+ - The e-cash thing threw me because it was,
+ in my head I was like, tell me if I'm wrong here,
+ but I was given the impression
+ that you're creating a new currency within the federation.
+ - Yeah, that you kind of like,
+ I remember that one analogy was,
+ it's like someone taking tickets at the fair
+ and you get like, you put your Bitcoin in
+ and get a ticket for this like new-
+ - Yeah, but again, it's just a difference of perspective
+ where people get bogged down into the detail.
+ But if I go to a fairground and I get tickets
+ for different tokens for CLDs on rides,
+ so I give them $50 and I get given-
+ - 10 tickets.
+ - 50 tickets each worth a dollar.
+ And I walk around and they say the ride,
+ they don't say the ride is worth 10 tickets,
+ they say the ride is $10 and you still get them 10.
+ - No, no, no, no, you go to place
+ and they'll say it's five tickets.
+ - Sometimes, yeah.
+ - No, I think the confusion in that is,
+ if you're right, that's the confusion gone.
+ But in my mind, it was like, okay,
+ we set up this federation, we each put 10 Bitcoin in,
+ but in our system, you get the denominations difference.
+ You get 100 e-cash of this and you get 100.
+ Like I had this impression there was a different currency
+ with a different denomination.
+ - So I think denomination is separate to the currency itself
+ 'cause I mean, 10 Bitcoin can be 10 Bitcoin
+ or it can be a billion sats, it's still 10 Bitcoin.
+ - But I'm saying it's always-
+ - Yeah, they're different denominations.
+ - It's not like we go in there and you get,
+ okay, so for your 10 Bitcoin, you get a thousand OB coin.
+ - No, it'll still be Bitcoin, yeah.
+ - And it's exactly, aha.
+ - Yeah, it'll still be Bitcoin, yeah.
+ - I would totally got a different impression.
+ - Yeah, I did too 'cause I remember when we spoke
+ to Eric Yakes as well, he was saying that like merchants
+ would have to choose to accept different types of e-cash
+ and then if there's hundreds of federations
+ and that becomes really confusing.
+ So that kind of threw me a bit.
+ - I think if you're not a member of a federation,
+ then you can't use that e-cash.
+ So it has to be converted to Bitcoin,
+ lightning Bitcoin to go over the lightning network
+ or main chain Bitcoin to be using the main chain.
+ But it's just like lightning Bitcoin to use on main chain,
+ you have to convert it.
+ You have to publish a transaction
+ and then it has to be memorized on the blockchain.
+ - Okay, so this is better because essentially
+ what you're getting is you're trading your Bitcoin and sats
+ for a representation of Bitcoin and sats in the system,
+ which you can move around between yourselves
+ like free and easily without using the network.
+ It's like a closed.
+ - But without the network, it loses a lot of its power,
+ which is why they work hand in hand.
+ - Yeah, but within the network, if I send you
+ and then you send to Danny, it's a closed part.
+ It's almost like a-
+ - It's like the intranet.
+ - It's like liquid.
+ - Yeah, but it's sort of one, one for the entire world.
+ We're talking about eventually 1 million.
+ - Yeah.
+ - So that you have, it's like a side chain,
+ but a million side chains.
+ And because there's a trust dynamic
+ where you have to trust the guardians,
+ 'cause the problem with any scaling solution
+ is there's a natural desire for it to centralize.
+ Having run an exchange, I realized that you can see
+ liquidity begets liquidity.
+ You naturally want to centralize.
+ So if you go to a third party,
+ you will end up with one huge exchange.
+ And that's why you have that,
+ you see that right now with Binance, et cetera.
+ But because there's a trust dynamic,
+ because you need to know and trust the guardians,
+ it never goes above a certain size.
+ So if you want to scale, you have to form another,
+ there's a natural incentive to form another federation,
+ another federation, another federation.
+ So you end up with this world where
+ there are hundreds of thousands of millions of communities,
+ each one able to have that superpower
+ that normally is resigned to the big tech
+ and large exchanges, but in the hands of the community
+ where they can then choose
+ and they can make the same decisions
+ that normally they've abdicated to someone else who,
+ often if it's a curly haired guy in the Bermuda,
+ it doesn't end well.
+ - No, I think I get it now.
+ So like previously, I thought you were basically,
+ almost like you're handing me some Bitcoin.
+ I was going, here's my P coin
+ and here's your denomination of it.
+ And this is how much you've got.
+ But actually what's happening,
+ it's a little bit more like Liquid.
+ When you go into Liquid, you get LBTC.
+ It's a one for one peg, essentially.
+ And when you peg in,
+ and then when you peg out, you get the same.
+ It's essentially the same,
+ but what you've really got is federations.
+ They can form bridges to each other across the world.
+ So each one is a federation,
+ but if there's a lightning connection,
+ these federations can bridge to each other.
+ - And there's a massive incentive to have a lightning.
+ - That changes everything.
+ - Yeah, there's a massive.
+ So it's like, and by the way,
+ Blockstream was the first person to see the genius
+ of the idea of Eric, my co-founder.
+ And they'd sponsored it for, I think,
+ well over a year before I even heard of the protocol.
+ So yes, there are a lot of similarities with the,
+ that is a federation as well.
+ Liquid is a federation.
+ - But it's a closed one.
+ - Yeah, but it's a federation as well,
+ but it's one federation for every use case
+ for the liquid network.
+ You can imagine each FedEment is like a mini liquid
+ in that sense.
+ And there are also,
+ each one can have different functionality.
+ The way the functionality works in FedEment,
+ it uses Charmian e-cash
+ as opposed to confidential transactions.
+ And it's fully extensible.
+ So you could add any application
+ that you could in theory run on,
+ applications of a web server
+ could in theory run on a FedEment.
+ So each community can take charge.
+ - I'm gonna give you a really terrible analogy.
+ I'm gonna say that Liquid is China
+ and FedEment is the USA, whereas each federation,
+ my point being is,
+ Liquid is a closed federation.
+ You're in or you're out.
+ And when you're in, you can share it there.
+ Whereas you're like States.
+ So like in America, you have separate States,
+ which you can move between, you're like separate States.
+ And as long as there's a bridge or a motorway
+ or an airport between the two,
+ you can travel between the federations.
+ - I would say that's a Liquid a disservice
+ because there's no technical reason why.
+ And I believe people already do
+ where you could not have some sort of a bridge
+ between Liquid and Bitcoin main chain
+ or Liquid and the Lightning Network as well.
+ I guess that with FedEment, it's just all baked in a standard
+ so that you get it automatically.
+ You know that every, it's just like when I say
+ you get the Android app or you get your Windows PC
+ or your Mac OS and you know there are like several apps
+ a standard and you're always gonna have e-cash
+ and you're always gonna have Bitcoin
+ and you're always gonna have, and also really key,
+ and it really makes it work.
+ You're always gonna have this Lightning integration
+ because think about it, if you're a Lightning Node operator,
+ you have to, if I have a thousand different users,
+ I want to, I have to, the first thing
+ they're gonna wanna do is receive Bitcoin.
+ Before they spend, they have to receive.
+ So the way the Lightning Network works,
+ I, if I connect to you to be able to provide you service
+ and I wanted, my revenue stream is to earn fees from you.
+ But the first thing I have to do is I have to lock up
+ some Bitcoin in a channel for you to receive it
+ in order for you to spend it.
+ - Yeah. - Yeah.
+ If even if you're getting it from family abroad or so on,
+ I have to lock up.
+ So I open up a channel with you and you have no money.
+ So I have to lock up Bitcoin to you.
+ And so let's say you wanna,
+ you've got a thousand different users in a village
+ and you know, average salary is,
+ it could be like $10 a day, maybe less.
+ But you think, okay, what's the reason about to lock up?
+ Let's say $100 worth.
+ Well, for a thousand people,
+ I'm now locking up $100,000 for a thousand,
+ sorry, $10,000, no, $100,000 for a thousand different people
+ just in case they may need a deposit.
+ And so there's a lot of capital locked up.
+ And then some of them may use it, some of them may not,
+ but I have to lock it up just in case.
+ Otherwise they try to do deposits.
+ And if I've under guessed, I've only locked up $5
+ and then I need 10,
+ I'm gonna have to do a second on-chain transaction
+ 'cause each one of those costs me money as well.
+ Now, if I've got, compare that to a FedEmit,
+ I need to open up one channel for the entire village
+ and I lock up an amount,
+ which I think is the average amount
+ that I'm gonna need on a daily basis,
+ which will be a small fraction of that.
+ I might be, I only need to lock up a thousand or $2,000
+ to cover the entire village.
+ And if I go over that,
+ I only need to do one top-up transaction.
+ So I get much, much higher capital efficiency
+ for the same revenue.
+ And actually my costs go even lower
+ because I'm doing far less on-chain transactions
+ for the same revenue.
+ So I make lower costs.
+ My admin cost goes down as well
+ 'cause it's easier for me to manage.
+ My channel rebalancing and predicting is less
+ because to open up a channel on this side,
+ on the FedEmit side, is zero costs and it takes zero seconds.
+ So I can always do it just in time at no cost.
+ So this is why you see a lot of interest
+ in Lightning service providers to work with us
+ because we increase their revenues,
+ reduce their costs, reduce their efforts,
+ which makes them more profitable,
+ which means more capacity on the Lightning network.
+ I had a four-hour conversation in Oslo Free Informant
+ with Rene Picard.
+ - I love Rene.
+ - And he's a great guy.
+ And one of his concerns was fee incentives.
+ And he said, "Look, if we get broad-based deployment
+ "of FedEmits around the world,
+ "this could go, potentially it can go some way
+ "towards solving the fee challenges of scaling Lightning."
+ And when I heard that,
+ this was something I wasn't even thinking about at the time.
+ It just made so much, even more sense than it made before.
+ - Yeah, but there's also another,
+ there's an alternate risk there in that
+ if you get broad, massive use of FedEmits,
+ are you taking away on-chain transactions
+ that provide the security once the block rewards have gone?
+ - I don't think so, because you'll still need
+ at some point the, again--
+ - To settle.
+ - You'll still need to settle.
+ At some point, you will potentially build up
+ a balance of e-cash.
+ And to be able to spend that or hold that in self-custody
+ or balance between different federations
+ or between different channels,
+ you will have to withdraw that,
+ and that will require the destruction of that e-cash
+ and an on-chain transaction.
+ - The e-cash--
+ - It'll just be at a larger amounts.
+ And even if the fees are higher, it's fine,
+ because you're now running this as a business
+ and you're making profits, so you can cover the fee,
+ because you may have made $200 in fees,
+ so you're happy to pay $50 on transactions.
+ - Obi, I think the e-cash thing throws me,
+ the word e-cash throws me, and I don't think--
+ - That we shouldn't use it in this conversation.
+ - Well, no, but when I say that, if it's throwing me,
+ I think it might throw other people,
+ because in the idea, it's making me think
+ there's another currency I'm getting.
+ That's what it's making me think.
+ Tell me if I'm wrong, or you think--
+ - No, no, I think I was the same.
+ - Yeah, I feel like I'm going in and getting something else,
+ but really I'm not, I'm just getting Bitcoin,
+ but you're using e-cash to refer to the fact
+ it's like a virtual Bitcoin.
+ It's not actual Bitcoin.
+ - It's still Bitcoin, but with different properties.
+ Different properties, different trust dynamics,
+ but different features.
+ Some functionalities are increased, some are reduced.
+ - Why do you use the term e-cash, then?
+ Why don't you just say you get Bitcoin?
+ - This is the technical term for what it is,
+ and so this is where I think,
+ as we now move to the point to promote this globally,
+ we are developing new language that just is just--
+ - Do you know what I'm gonna do?
+ - More comfortable for just everybody to understand,
+ but when you're talking to a technical community,
+ e-cash is the correct term.
+ - No, I get that, and so I'm gonna be,
+ do you know what I'm gonna do?
+ It's like anyone listening or watching on YouTube,
+ just throw in the comments,
+ just, "He's never done this before,"
+ but tell me if the e-cash thing threw you.
+ Either I'm a moron or I'm on my own,
+ well, not on my own, 'cause Danny's with me.
+ Either we're morons or everyone else is confused by it.
+ I just wanna know, and I'll send you all the comments
+ so you can see.
+ - I really appreciate it.
+ - That's a huge fundamental shift in me understanding it,
+ because, like I say, I was under the impression,
+ you set up a federation, people have been in Bitcoin,
+ and you're basically creating your own currency.
+ It's a bit like when banks,
+ the free banks that we covered with Matthew earlier,
+ You deposited gold and they gave you notes, but those notes were.
+ were dollars.
+ They're not-- they weren't grams of--
+ those notes weren't grams of gold.
+ They were dollars.
+ They were representation.
+ But this isn't-- you're just getting
+ sats and Bitcoin within it.
+ Within a closed system, yes.
+ Yeah, yeah, yeah.
+ OK, wow.
+ That's a big change.
+ They're different, but just to be for the sake of--
+ because there'll be people who will be shaking at the screen.
+ There are different-- and it's the same between Lightning
+ and Bitcoin.
+ It's still sats, but there are different trade-offs
+ and trust assumptions being made.
+ And the same happens again when you go to a Fedi Mint.
+ I'm cool with that.
+ OK, now we need to see it.
+ OK.
+ So which one did you want to see?
+ I think-- so I just sent you a transaction.
+ So do you want to--
+ I think what would be interesting to see--
+ and we can show you this at another time--
+ is this is what, say, the Fedi app looks like.
+ But before we do that, we have to understand
+ you first set up a federation.
+ So a group of people, Bedford FC--
+ Rail Bedford.
+ Rail Bedford.
+ Sorry, Rail Bedford.
+ Apologies.
+ The auction room.
+ Yeah, the auction room.
+ Bedford the town.
+ We set one up in the town.
+ So Rail Bedford.
+ Rail Bedford wants to set up its own Fedi Mint.
+ And you've got these people.
+ You work together.
+ You trust each other.
+ You already trust them right now.
+ If people were going to--
+ could right now throw a game, your defenders
+ and your goalkeeper could throw a game and earn money from that.
+ But they don't.
+ But why do you-- how do you trust that they don't?
+ Because--
+ Well, there's no--
+ if we were in the football league,
+ that's a different story.
+ But imagine in the football league.
+ Yeah.
+ Well, I think there's a criminal risk.
+ But still, that's the risk with any--
+ that's the same if you give the example of someone running off.
+ There's always a criminal risk.
+ But--
+ They don't do it for two reasons, multiple reasons.
+ One of the reasons they wouldn't do it
+ is that their personal moral code doesn't want them to do that.
+ Their second one is there's no incentive.
+ The incentive isn't big enough.
+ And the third one is there's a criminal risk.
+ Yeah, so criminal risk--
+ Which is then because--
+ --moral code--
+ --reputational.
+ Let's say you get into--
+ Reputational risk.
+ Reputational risk, criminal risk,
+ and you also mentioned that--
+ but imagine also you're now in the sort of not Premier League,
+ but you're getting there.
+ Career risk.
+ But you're now in the Premier League.
+ There is a financial incentive there at that point.
+ So really, it's moral risk and criminal risk.
+ So you've just explained it.
+ And that's the key.
+ In a community where you care about the others
+ and individuals, there is social capital
+ to be lost by doing something like this.
+ But SPF had moral and career risk,
+ or moral and criminal risk, and took it.
+ And now he's facing jail time.
+ So there's a difference.
+ When you're dealing with--
+ he's dealing with strangers.
+ There are people at the other side of a computer terminal
+ that he doesn't know.
+ He doesn't have a relationship with.
+ And also, if he did something to,
+ he can continue on with his life.
+ Whereas if you're a part of a community,
+ a close-knit community, you spent your life there,
+ and then you do this, you can be ostracized from the community.
+ You'll never be able to transact with anyone again.
+ You'll never be able to work with anyone again.
+ Imagine now, every time I want to buy something
+ from anybody in that village or town--
+ You might be in Panama with cocktails.
+ Yes, but then you're dealing with amounts
+ of which are very significant.
+ But let's just say you're in a village or a community.
+ You did this.
+ Now, from now on, if I wanted to buy anything
+ from anyone else in that community,
+ I would always have to go somewhere else where
+ my reputation hasn't been spread.
+ There's a cost.
+ There is a cost to do that when you
+ have a second-party relationship, i.e.
+ your friends and family, which isn't the same when you're
+ dealing with a person in the other side of the world.
+ Well, yeah, but there's always a trade-off, Obi.
+ It will be the size of the honeypot
+ and how far they have to go away to deal with that.
+ Like, if it's a small honeypot--
+ Which is why there's a natural limitation on how much it
+ scales, which is why you end up with hundreds of thousands
+ of ferdiments versus one large honeypot.
+ No, no, I get that.
+ Which is a very good thing.
+ We want something that naturally wants to be distributed
+ and has limitations on how much concentration can happen.
+ That trust dynamic solves the natural desire for systems
+ to build up and focus liquidity into one place.
+ I think it's a non-zero--
+ Sorry, I'm interrupting you.
+ I think it's a non-zero risk, though.
+ Of course, there's a non-zero risk.
+ But there's also a non-zero risk that a lightning channel is
+ not closed before someone else, a militia
+ acts to close it.
+ They're all non-zero risks.
+ Let me try and think of a better example.
+ A federation created in a family that's
+ got 25 family members all keeping--
+ like here in the UK, all keeping in because dad can't manage
+ a multi-sig, my sister can't, my brother could.
+ But so we'll just do one together.
+ How many rogue family members just
+ park off and steal the money?
+ Because we could have a lot of money between us.
+ So is the example you give my two members of family
+ that you don't trust and you worry that--
+ Maybe you do, but maybe they go rogue.
+ What I'm saying is there's going to be a scenario where somebody
+ is going to collude with somebody within a federation
+ to say, we can steal this.
+ I think there's a non-zero risk.
+ And I think it would happen at some point.
+ The incentive-- you'll get a meeting of incentive and--
+ I think--
+ Moral code.
+ I think the same risk happens with--
+ and it happens more frequently and the risk is higher--
+ with highly centralized third parties who
+ are strangers who have no connection with you at all.
+ So replacing the risk of--
+ I think you're reducing the risk,
+ but not getting rid of it.
+ You're reducing the risk.
+ And that's what we're aiming to do.
+ OK, that makes sense.
+ But and to be very clear, the best
+ is to use self-custody with multisig.
+ Yeah, of course.
+ That's the absolute best.
+ And if you can do that, you should.
+ But what happens with FreddyMint is
+ we're giving communities the ability, the 90% who
+ can't do that for reasons of technical complexity, cost,
+ and just psychologically, because it's just
+ frightening to do, a way to still have this best practice
+ backup approach where it's of multisig,
+ but with trade-offs applied for the community.
+ Well, you know what, Obi?
+ The thing-- it harks back to when I first--
+ well, not first.
+ I think second or third time I went down to El Salvador
+ and I was in El Zonte.
+ And you know what?
+ Most people there are poor.
+ And a lot of people--
+ their houses are basically a shack, like tin sides.
+ And it's a shack.
+ And I was thinking, all right, this is great.
+ They've got Bitcoin now, and I've got Bitcoin.
+ But when I'm at home, I live in a house
+ with bricks, with an alarm, and security cameras.
+ And if I want to set up a multisig,
+ I can distribute my wallets to friends, family, banks.
+ I can put in some pretty hardcore security.
+ These people don't leave El Zonte much at all.
+ And where are they going to-- firstly,
+ how are they going to get three treasures or three ledgers?
+ Where are they going to distribute them,
+ even in their own home?
+ What are they going to do?
+ Bury it in the mud under their bed?
+ It's not set up.
+ Multisig is great.
+ Hardware wallet-based multisig is
+ great for developed Western nations.
+ And the developing world, it's no good.
+ And so you've solved that problem, which I think is great.
+ - Multisig is great, full stop.
+ And what we've done is we've found a way
+ of giving the other 90% access to the best practice.
+ Because we shouldn't then give them a--
+ we should try and give them as close to possible to that.
+ Now, because currently, the alternative
+ is if you can't do full multisig,
+ then go off and give it to a complete stranger.
+ And we're suggesting this alternative,
+ that the community can come together
+ to find the trusted members of the community.
+ And then they can amortize the costs
+ of this across the community.
+ - I guess what I'm then thinking about, Dan,
+ is who do I trust more?
+ Do I trust Coinbase more than I trust the community?
+ I think I trust Coinbase more on internal hacks.
+ I trust the Federation more over regulatory and confiscation
+ risk.
+ There's different--
+ - And I guess the question is, which risks
+ are more of an issue for you?
+ Maybe for you, you've come to the view
+ that that risk is lower for you.
+ But as I say, in parts of the world where we are--
+ and different people have different perspectives on this,
+ but we have a level of freedom and reasonableness
+ to a degree, and there's different views on this,
+ you may form one view.
+ But there are parts of the world,
+ and it's actually the majority of the world,
+ where there is a lack of freedom and a lack of reasonableness.
+ And then you'll come to a very different view,
+ that the risk of confiscation is a clear and present risk.
+ - It's a new option with different trade-offs.
+ And at that point, they still deserve a solution.
+ - Yeah, yeah, I get it.
+ - And then also the risk you mentioned earlier,
+ where there are certain bad actors
+ and they can do certain things.
+ Again, the way to solve that problem for bad actors
+ is to give good actors tools that they
+ can use to empower themselves to fight back
+ or to provide an alternative.
+ Because bad actors use the existing status quo as well
+ to effectively control good actors.
+ We provide a tool to bring that control
+ back into the hands of the communities
+ or organizations that we want to deal with.
+ - Yeah, it definitely makes more sense now.
+ - Yeah.
+ - Do you think there'll always be community-sized federations
+ or do you think you'll get company-sized ones
+ where it might be like an Unchained, River,
+ Swan, and Night Eagle setting up a federation?
+ - I mean, I'm really excited to see
+ what's going to come forward.
+ But when you say company-sized,
+ I think you'll see companies setting up federations
+ for themselves.
+ Because companies have employees,
+ they have expense accounts, they have treasuries, and so on.
+ And right now, they use multiple third parties
+ to charge fees and so on.
+ They could instead bring that in-house,
+ if it's easy enough to manage, which we can show you,
+ they can bring that in-house and manage it themselves
+ and reduce their costs and increase their reporting
+ when they want and the transfers can happen
+ when they want it to happen, et cetera, et cetera,
+ without having to wait for weekends
+ and evenings and so on.
+ - Yeah.
+ I want to see it.
+ - Yeah, let's see it.
+ So the first thing is what you do
+ is you set up a federation.
+ - Cool.
+ - And so--
+ - We can share these videos out.
+ Yeah, yeah, we'll put these videos in the video.
+ - So this is a, so before you,
+ if we go back to the beginning,
+ and so on this screen, before we start,
+ if we pause it, it shows four screens, just to be clear.
+ And if you see, in the show notes,
+ you can see afterwards, you'll see the address,
+ the URL, the address of each one is a different machine.
+ So it's just, we're showing them in one place
+ to see what's happening.
+ And so you can imagine, this is four different people
+ downloaded a piece of software, the FedEvent software,
+ our particular fork of it, FedEOS,
+ but it's, so it has a nice interface,
+ but it's basically the same as the open source protocol.
+ And they would have run this application to load up
+ and it displays this in the web browser of each one.
+ And they're, and imagine that also communicating
+ on something like Signal or WhatsApp or so on
+ to just to talk with each other and just chat,
+ some sort of chat interface.
+ And that's it.
+ So they've all loaded up and it says, let's get started.
+ So you just zoom into one.
+ First one called himself Alpha, second one Beta,
+ second one Charlie, second one Delta,
+ but it could be whatever.
+ - That was it, that was quick.
+ - That was it.
+ - So where does--
+ - And it's gonna get quicker.
+ - Where does it get administered from?
+ - This is the beauty of the protocol.
+ It's a headless protocol.
+ So there is no manager, the system manages itself.
+ Each one, you all download the software,
+ as long as the majority of you are running,
+ then if there's one is a bad actor or one goes offline,
+ let's say, then the system will keep running.
+ It's like the operating of this,
+ the guarding of this is equivalent
+ to guarding a set-top box,
+ i.e. or a Bitcoin node in the sense that if you turn it off,
+ where's the administrator?
+ You turn it on, it connects up,
+ resyncs with the Bitcoin network and carries on going.
+ This does the same.
+ If one of those goes offline,
+ the others will still service the Lightning requests
+ and Bitcoin minting and destruction
+ and EKS transaction requests seamlessly.
+ And any other things, this is extensible.
+ So you can add modules, which as I say,
+ the stability pools, it could service those requests
+ or password managers.
+ If you want to, instead of holding my passwords
+ with Google Drive, why don't I hold it within my community?
+ Or my Nosta password,
+ passwords are gonna become more and more.
+ If I'm using Nosta and I lose my password,
+ my private keys, then that's it.
+ I have lost access to my Nosta.
+ So I wanna be able to back that up.
+ So do I back that up with Google Drive,
+ which is a third party,
+ or do I back it up with a number of trusted first parties?
+ Any thing that I want to be able to take ownership of
+ and not have to, and I don't feel comfortable
+ completely doing it myself,
+ and I don't want to give it to a third party,
+ I could have the FedEvent run.
+ But for the guardians, their job is just to guard this box.
+ They just keep it fed and watered
+ with electricity and internet,
+ and that's all they've got to do.
+ - Love it.
+ Okay, so the next step would be--
+ - So you've set up the federation.
+ We skipped over a bit,
+ 'cause it will display a QR code for you.
+ And that QR code would be, and I'll show you it here,
+ but that QR code would be,
+ actually let me put my phone on to do not stub.
+ That QR code would look like something like this.
+ - Okay. - And it would have
+ displayed that.
+ And so you download the app,
+ and you would just scan that QR code,
+ and that's it, that's the signup process.
+ - That's it. - No email,
+ no phone number. - Love it.
+ - It's faster than signing,
+ the same speed as it takes to share your details
+ between two people on an instant messenger client.
+ So it's even faster than signing up
+ to an instant messenger client.
+ - Okay, so say I sign up to the federation.
+ I'm not a guardian.
+ I sign up and I deposit some Bitcoin with it.
+ I get my Bitcoin representation.
+ Oh, we're going to do it.
+ Okay. - No, you've signed up.
+ I've signed you up already.
+ - Great, so.
+ - You're going to send me a request now.
+ And now your experience is like a lightning wallet.
+ - But currently I don't have any Bitcoin in there.
+ - Yeah, so request.
+ - But rather than request,
+ say I wanted to deposit some Bitcoin in there.
+ Okay. - Yeah.
+ - So I go ahead and I deposit in there
+ and I get my representation, my e-cash,
+ dealt with that, but my representation in there.
+ I lose my phone.
+ - Yes, so this is where we'll show you a video.
+ So actually, if you go to admin,
+ if you click on admin at the bottom.
+ - Admin, yeah.
+ - So you will see two,
+ and there'll be an option called backup.
+ - Yeah, backup your wallet.
+ - And there are two options.
+ So one, just click on one, which is the bottom one,
+ which is the normal one you expect,
+ the 12 words, and you'll be shown 12 words.
+ You record them down and fine.
+ But here's one of the benefits.
+ You're part of a community.
+ You will also wanna be able to do an option.
+ Before we'll go on to an option now,
+ and I'll show it on the screen
+ 'cause it's really good for people to see.
+ - Yeah.
+ - So if we go to,
+ you have the ability to do something called
+ social backup and recovery.
+ - This is interesting.
+ - And let me show you on the screen.
+ - Yeah, I wanna see that. - That's important.
+ - And basically, it effectively allows you to do
+ a backup of your private key.
+ But instead of, if you think about the backup of your keys,
+ you create the key and then you've got it.
+ they go, well, who do I give it to?
+ And so on.
+ And also when I give it to them,
+ how do I know that they don't go off and lose it
+ or run off of it, go to the Bahamas, as you said.
+ And also even if they're completely, I trust them.
+ How do I know that when in 20 years
+ I want to get it recovered, they didn't lose it
+ or the cat ate it or so on,
+ 'cause they haven't been checking it.
+ It needs to be constantly checked.
+ So what we do is we have a way of automating
+ of automatically taking your backup,
+ encrypting it, splitting it up.
+ And then luckily we already have a number
+ of trusted members of the community
+ who are there running software 24/7 in the background
+ that can take a copy, a chunk of your backup
+ and store it for you automatically.
+ And because it's software,
+ it can be constantly checking those backups
+ to make sure that they aren't corrupted or damaged.
+ And the moment one of them is,
+ you can be alerted that second,
+ not when you need it in 10 years time,
+ because the software is doing the checking,
+ not the humans, they're checking that it's fine.
+ So you had to go in, in this example,
+ and you'll click social backup.
+ And then you just say the word FEDI and your name.
+ And then you just confirm it looks like you
+ and it sounds like you.
+ Now in this background, what's happening is
+ it's creating a very long password.
+ That's very hard to guess.
+ It's encrypting your password, your 12 words.
+ It's then breaking it up,
+ let's say your four guardians in that example
+ into four chunks where you need at least three to recover.
+ It's then taking your image
+ and creating a hash of that image.
+ So it's not the actual image,
+ it's like a fingerprint of the image
+ and using that to tag each one of those shards
+ and then sending that hash tagged backup
+ to each one of the guardians.
+ So a lot of words to say,
+ it's just done the best practice backup of your 12 words
+ in two or three seconds.
+ Now you're left with the video
+ 'cause they don't know who they're backing up for.
+ You have that and you're left with the password.
+ It combines that into a file called backup.FEDI.
+ And then you can share it.
+ You can share it to your Google drive.
+ You can share it to your cell phone, WhatsApp.
+ You can share it to multiple friends
+ and you're encouraged to share it in multiple places
+ because to recover that,
+ the person would need to log back into your federation,
+ know which federation is yours.
+ And then if they lost their phone and recovered it,
+ but then at the point of recovery,
+ only at that point, the video is sent to the guardians
+ because they need that video to locate the backup.
+ And then they would check,
+ is the person coming to me the same
+ as the person with the video?
+ - Do you have to refresh it every few years
+ just in case you get a little bit older, grow your hair?
+ - So it's a good practice to do that.
+ And this is actually within the app.
+ A certain extension that we want to add
+ is this concept of a FEDI bot,
+ which again, will be able to give you reminders
+ of certain things that you should do.
+ Also monitor things like your balance
+ is above a certain amount.
+ It will suggest maybe you should consider self custody now,
+ for example, 'cause it makes sense for you.
+ You're ready to take that graduation point, for example.
+ - Like it, okay.
+ So- - But it can still be used
+ to help backup your private keys
+ of your personal custody wallets as well.
+ If you're having trouble finding people to do that to.
+ - This show is brought to you by Wasabi,
+ who I am using to keep my Bitcoin private.
+ Now, Wasabi is the easiest way to send
+ and receive Bitcoin privately.
+ And even for non-technical people like me,
+ it is effortless and provides privacy by default.
+ Now with Wasabi, there is no minimum amount,
+ so you can get started coin joining straight away.
+ And Wasabi users make coin join transactions together
+ with BTC Pay and Trezor users,
+ and BTC Pay server users can make payments in coin join,
+ which saves on fees and is a privacy improvement.
+ Also, Wasabi have just dropped a new feature.
+ Now, Trezor suite users can make coin joins directly
+ on the hardware wallet, which is obviously very cool.
+ Now, if you wanna find out more,
+ please head over to wasabiwallet.io,
+ which is W-A-S-A-B-I-W-A-L-L-E-T.IO.
+ Also today we have BitCasino.
+ Now, BitCasino was established in 2013
+ and is the world's first licensed Bitcoin casino.
+ It is trusted by tens of thousands of players worldwide,
+ and not only do they have cutting edge security,
+ but they offer fast withdrawals
+ and VIP experiences that money can't buy.
+ BitCasino also has over 2,800 games
+ and tournaments to try out.
+ And with 24/7 live chat support,
+ you can always get the help you need.
+ To find out more, please head over to bitcasino.io,
+ the first Bitcoin casino to win an EGR award.
+ That is bitcasino.io, which is B-I-T-C-A-S-I-N-O.IO.
+ And please remember to gamble responsibly.
+ Also today, we have Unchained.
+ Now, if you've been listening to my show for a while,
+ you'll know I'm a big fan of saving Bitcoin
+ for the longterm.
+ I'm a hodler, which is why I'm happy
+ to recommend the Unchained IRA.
+ Their Bitcoin IRA lets you control the keys
+ to your tax advantaged Bitcoin.
+ And if you have a Roth IRA,
+ that means you don't pay capital gains
+ on the price appreciation.
+ Now, unfortunately, most IRA providers
+ require that you give up control to your Bitcoin,
+ but not with Unchained.
+ Controlling your keys with the Unchained IRA
+ protects you from exchange hacks or frozen accounts.
+ And Unchained is an all-in-one solution.
+ They'll help you establish a traditional or Roth IRA,
+ set up your cold storage vault,
+ roll over your existing 401k or IRA.
+ And if you want one-on-one guidance,
+ their concierge team will send you devices
+ and walk you through setting up
+ and securing your keys at your own pace.
+ If you want to set up your IRA today,
+ head over to unchained.com/whatbitcoindid
+ or schedule a complimentary consultation to learn more.
+ That is unchained.com/whatbitcoindid,
+ which is U-N-C-H-A-I-N-E-D.com/whatbitcoindid.
+ And if you want to get $50 off,
+ please use the promo code whatbitcoindid at the checkout.
+ - So you, me, Danny, Papa Smurf over there,
+ we set up a federation.
+ Emma comes in, she creates her app.
+ She deposits her Bitcoin.
+ She does the social proof.
+ Yep, and she's the social backup.
+ That distributes that amongst us four.
+ - And then she needs to recover.
+ - She needs to recover, but night before,
+ night before me and Danny go out for a few drinks,
+ get in a fight, get killed.
+ We're both dead.
+ How does it recover when we're gone?
+ The two people--
+ - They would have to get dead,
+ and then your computers would also have to turn off.
+ The FeddyMint server is a piece of software,
+ it's a set-top box.
+ It's like you dying and your set-top box--
+ - But we're not checking the video against the video
+ to say that was that person.
+ - Yeah.
+ - So in that scenario where we're gone,
+ the two people left cannot recover that person.
+ - In that scenario, yes, yeah.
+ - Okay.
+ - If you both got, if you both,
+ so they would, you would have to have a coincidence
+ of both of you dying and the person
+ at the same day losing their keys, yeah.
+ - Yeah, so we can't travel.
+ - But that's the same, but that's, well,
+ but that's a number of,
+ that's a number of coincidences.
+ - No, no, but on purpose, I'm trying to break it.
+ - But it's the same if you had your backup with,
+ you gave your backup to someone
+ and their house burnt down on the same day you lost your key.
+ It's like, it's the same, that could also happen.
+ Or there was a flood in the vault,
+ with the bank vault at the same day that you lost your key,
+ then you would also have the same problem.
+ - So I'm three of five on mine.
+ So.
+ - Yeah, but it's, you would,
+ if you had three people go at the same day as you.
+ - Yeah, it's just a different risk model.
+ It's three versus two.
+ It's two of four versus three of five.
+ - Three of, well, it's two of,
+ in a case of three or four,
+ but you could also set up five of seven.
+ - Yeah, yeah, yeah.
+ - And set up seven of 10.
+ - Yeah, okay.
+ - So I think the minimum we suggest is three or four.
+ - Yeah.
+ - 'Cause that protects you from one person
+ being a bad actor or losing access for a period of time.
+ Five or seven protects you against two.
+ - Yeah, great.
+ - But yeah.
+ So.
+ - Very cool.
+ - So we created, we backed up.
+ - And if it came to recover,
+ you would, if you check on recovery,
+ what would simply happen would be that you would go in,
+ find the file, download the app again,
+ 'cause you'd lost your phone, it's a new phone.
+ And double click on the file, it will open up the file,
+ recognize it as a .FedE extension,
+ so it knows it's part of FedE.
+ So you'll join the Federation again,
+ again, scanning a QR code.
+ Click recover, find that file,
+ open it up in your file system,
+ and it will load it and it will say,
+ here's a QR code, get three of the,
+ in this example, three of the four guardians to scan it,
+ and you've got your Bitcoin back.
+ So you just have to get them to scan that.
+ They can, if they're not in the same town,
+ you can do it over a WhatsApp call
+ or a Hangouts call or a Zoom.
+ If they're in person, you can do that personally,
+ but they will always see you,
+ and at the point they scan it,
+ only at that point is the video sent,
+ and they will say,
+ "Is this person the same as this video?"
+ - Tyler or Cameron Winklevoss could steal their,
+ each other's Bitcoin.
+ Have you got twin protection?
+ - Twin protection. - Identical.
+ - Well, I guess again, this is the advantage of it being
+ with your friends and family,
+ 'cause friends and family can recognize difference
+ between twins, hopefully.
+ Twins can fall out though.
+ I don't know. - No, but the point,
+ the point is though, that friends and family have,
+ know them well enough to work out who's who.
+ If you've got friends who are twins
+ and you've known them a while, you know,
+ but someone who's on the other side of the world,
+ who's in the West Coast of America
+ in some big tech company,
+ who's underpaid and overworked
+ to try and figure out who it is,
+ versus three or four people
+ who've known you all their life.
+ I'm gonna bet on the three or four people
+ who know you all their life
+ to determine the difference between the two twins.
+ - We've got twins in play for Ralph Bedford,
+ James and Rob Bucket, and I still can't tell them apart.
+ - Well, but give it a few more years.
+ - I can't. - There's always an evil twin.
+ - I keep tweeting out the wrong ones
+ when they score goals and shit.
+ I keep getting it wrong.
+ Okay, I get it. - That's embarrassing.
+ - I get it, so you, no, you, I'm telling you.
+ - It's embarrassing.
+ - Yeah, it is, because these two are identical.
+ Okay, I get it.
+ So what we're really talking about with all of this
+ are just different trust models.
+ Everything is just a different trust model.
+ We've got a trust model, no, we've got a capability
+ and a trust model relating to storing your Bitcoin,
+ whether it's exchange versus single hard wire wallet
+ versus multi-sig versus FedE.
+ It is just another thing, another option.
+ - It's a different trust model, but I think there's a,
+ look, we, it's part of a bigger story though.
+ So ultimately, if you can, you should self-custody.
+ That is the absolute Bitcoin standard.
+ - And you're an encouraging that with this anyway.
+ - I believe that that's the best possible scenario,
+ but being pragmatic, I think you're gonna get
+ to maybe 10% of the people of the world
+ being able to do that.
+ We're about getting the 90% away from complete trust
+ of big tech companies, big companies
+ who don't have your interests at heart
+ and taking that control into the hands of communities.
+ And that is where we see the comparison
+ as opposed to the comparison against the Bitcoin standard,
+ the gold slash Bitcoin standard of self-custody.
+ This is about, and when you're ready,
+ when you've built up enough experience, knowledge
+ and capital, you should self-custody.
+ - I want a federation.
+ - Let's do it.
+ - I think we should have a what Bitcoin did federation.
+ - When would it actually be available?
+ - So we are going to be, well, in May now,
+ we have-
+ - Hold on, are you launching at Miami?
+ - No comment.
+ But we are going to have a,
+ it's actually available already for a number of months,
+ but in closed launch with a number of communities
+ in LATAM, in Africa and other parts of the world.
+ We've just been, we've already been getting feedback
+ and adjusting the product.
+ But in May, we are announcing that we're having
+ what we're calling our silent running launch.
+ 'Cause I like my sci-fi.
+ And this is a launch for the product
+ which you can download and use,
+ but it's targeted at builders
+ because we real powerful here, this is an OS.
+ And imagine your iPhone without a suite of apps
+ or things that you can do to fit your personal requirements.
+ This is a federated OS for communities.
+ Communities around the world will have different needs.
+ If you're a company, you'll have a certain set of needs.
+ In New York, if you're a village in Venezuela,
+ you have a different set of needs.
+ If you're a large family in Nigeria,
+ you have a different set of needs.
+ And so they need a suite of different services
+ to meet those needs.
+ Whether it's community savings and loan schemes
+ or whether it's the stability pools
+ or whether it's password managers
+ or whether it's federated NOSTA relays
+ or whatever it may be.
+ There are many things that could be extended
+ and run on top of this.
+ And so that's what the launch we're focused on.
+ It's not designed for consumers,
+ although if you're an enthusiast,
+ I'm sure there's gonna be a lot of enthusiasts
+ who wanna download the trial.
+ I'm sure that's gonna happen.
+ But we're gonna be focusing on builders.
+ And then later on in the year,
+ we'll do the, once we have a suite of really exciting
+ 30 minute modules, we call them,
+ that are available and ready to rock and roll,
+ that's when you launch.
+ - Could you at the Miami conference,
+ create a federation for the conference
+ that everyone goes and joins,
+ and then they deposit their Bitcoin in
+ and then use that for buying everything
+ while they're at the conference?
+ - That's a great idea.
+ - Could that be done?
+ - That's a great idea.
+ No comment.
+ - What date are we releasing the show?
+ - I think May 12th, if that works.
+ - It's a, you've got some very good ideas.
+ I'll leave it at that.
+ - It makes sense though, doesn't it?
+ - It makes a lot of sense.
+ - Yeah, it makes sense.
+ I would do that.
+ That's what I would do.
+ - Yeah, I think that concept is cool,
+ like the temporary federation.
+ And I think it's quite exciting.
+ Imagine festivals.
+ - Yeah, it's exactly what I was thinking.
+ - Imagine concerts, imagine conferences,
+ imagine all these sort of things.
+ It's as opposed to these apps that you download,
+ never use again and forget about,
+ you can mass orange pill,
+ that'd be really cool idea, great thought.
+ - Just give me a board seat.
+ Okay, cool.
+ Right, what have we not covered?
+ - There's loads of things.
+ - Important things that we've not covered.
+ - So one, let's just take chat.
+ - Yep.
+ - That's the next.
+ So you, in the Feddy app,
+ 'cause this is a home for your money, chat and data.
+ So we have chat within the app.
+ So instead of your chat being hosted
+ by a third party somewhere in the world,
+ in one location, like a signal or a telegram or a WhatsApp,
+ where you don't know for sure what's happening.
+ And even if they're doing everything perfectly correct,
+ there's always a suspicion.
+ You've seen the news around Binance and CZ
+ and the signal information that was shared, for example.
+ Each chat is able to run within the federation.
+ So each community has its own private chat server
+ for the community.
+ And when you're talking to people within your community,
+ direct to that, it's an encrypted conversation.
+ So you know that it's encrypted between the two of you.
+ And you also know it's being served
+ by the community for the community.
+ Now, within the chat though,
+ you are able to, because it's within this community,
+ you're able to make payments while you talk.
+ You can send conversations.
+ You can also send e-cash.
+ You can fling e-cash from one person.
+ to another. So if you see in this example, we are having a conversation with someone
+ and then they send you a request to pay them and you just click pay. So instead of me scanning
+ as QR code, I just click pay and it's just sent eCash directly. And then the other way
+ around, no, I've sent you a bit too much. I click the wallet icon on the left and instead
+ of me sending QR code, I just send them how I want and I can cancel it before they click
+ pay. But if they click pay, it will say pending transfers the eCash directly between the two
+ of us. So when I'm now sending money, if I've got family back in the diaspora who are part
+ of my community and me, instead of me figuring out multiple things, we just all join the
+ same federation. And if I want to send my money home, for example, I would just say,
+ okay, here's your money for the day, pay and it just sent.
+ Or say I'm at a conference, I've got an event on, you're like, do you want to come? If you
+ got a ticket? Yeah, it's like a million sats, boom, here's a million sats, here's your ticket.
+ Yeah, or you join or you pay for the conference and you go and you join and you download this
+ QR code. So again, you just download the app and scan a QR code at the entrance. And that's
+ the signing process. No email, no anything. You can now have different subgroups in chat
+ for different discussions can happen. You can have on the homepage, there's a series
+ of apps being displayed. And each one of those apps is dependent on the, each one of those
+ apps is configurable by community. So this is an example set, we've got things like Bitrefill
+ and Giza and Stackwork and Stack and Use and BTC Maps. But for you, it could be the show
+ guide and it could be the program guide and it could be whatever makes sense for your
+ community. And, and also you can then make payments. And guess what? What happens if
+ I want to go into singal? What happens if your conferences, it's a concert, and there's
+ like 10,000 people and it's just no cell reception or it's underground for part of it. So you
+ lose connection. Can we go into offline sending? So e-cash is a bearer instrument. And this
+ is one of its things. It's, it works the way you normally naturally expected cryptocurrency
+ to work, but it doesn't. After a while you realize that cryptocurrency doesn't work like
+ that. It's a one shared ledger. But when I have e-cash in my phone, I literally have
+ a different file effectively, simplified version, a different file for each coin of cash I have.
+ So if I have no internet, it can recognize that. And we can do this right now. I have
+ no internet, no wifi, no SMS. I can just, instead it will realize, recognize that and
+ it will create, it will only work if you're both in the same federation. But if you were
+ in the same federation already, and I have, and I saw this when I was in El Salvador,
+ I had Bitcoin, but I had no, I had no signal on my SIM card. And there was someone I wanted
+ to buy some pupusas from. I had the money and they were right in front of me and I couldn't
+ pay them because we had no internet. With e-cash, I could still go in offline mode and
+ literally have an animated QR code of the different e-cash notes. And they, as long
+ as they have their camera, I can beam through the sky, through the air effectively without
+ Bluetooth or anything, the payment.
+ That's very cool. How does it work if there's no connection? Like how does it work?
+ So what's happening is that you're not actually sending information off the internet. You're
+ sending it through the QR code. So the QR code, think about it, the tokens in the scenario
+ of the fairgrounds.
+ Yeah.
+ Each one of those is a bearer instrument. Each one of those is cash in a way you consider
+ cash. So when you receive e-cash onto your phone, on your phone is a separate file for
+ every note.
+ So how does that get from your phone to my phone?
+ So if you saw in the video again, that is a QR code is a visual representation of information.
+ Yeah.
+ So-
+ Are we looking at the offline receive now?
+ Yeah. So on the offline send, I was creating an animated QR code.
+ Yeah, I saw that.
+ But on the offline receive, if you look at the bottom, it's showing 60%, 70%, 80%. So
+ if you replay it again, so you can notice at the bottom, there's this sort of a count
+ up of the percentage of the e-cash that you've received. So at the bottom of the screen,
+ you'll see again. And once you start scanning it, at the bottom, it's going 20, 30, 80,
+ 70, 70, 80, 100%.
+ But does my-
+ And what will happen is as this animation is playing, each frame of the animation is
+ the unique code of a different piece of e-cash. Now, even though I have no internet, because
+ I know, we both know the federation we're part of, the federation, the way the e-cash
+ protocol works is every e-cash note issued is stamped by the Federation of Guardians
+ with their public, they use their private key to sign it effectively. They sign each
+ one so that you know that it's, even though I have no internet, I know, because I know
+ what the details of the federation is, I know that if I receive this note, this is a valid
+ note because only the guardians could have signed it. And therefore, even without internet,
+ I can receive it and go, okay, this is valid. I'll accept it.
+ But because there's no connection, when a connection comes back, is there a syncing
+ process?
+ Yes. So there is a syncing process when the connection comes back, but this is where the
+ community aspect works as well. So there's two things. The bearer instrument allows you
+ to send it through as QR code. But then the fact that you have this sort of community
+ trust model means that, for example, you would say, what would happen if someone tries to
+ double spend, send it to two different places? First of all, they'll have to take the code,
+ recompile it and change it and modify it. So you're in this village and you're starting
+ to recompile this application to do something completely different, which is unlikely. But
+ let's say you did do that. You would then have the challenge that upon syncing, that
+ it will be clear that you double spent two different people. And again, you have the
+ risk then of being ostracized by the community. And therefore, from then on, you'll never
+ be able to transact with anyone in the community again for that $2 transaction, which again,
+ if you're doing it to someone on the other side of the world, then that's a real risk.
+ But when you're doing it with people you're transacting with daily, that risk becomes
+ much smaller because the punishment is much higher than the crime. So this is the power
+ of working within communities of trust. That combined with the properties of e-cash allow
+ you to send value in this mechanism in this way.
+ Okay, so my conference ends. Does everyone have to withdraw to close down that temporary
+ federation? And if you don't withdraw and the federation gets closed down, do you lose
+ your Bitcoin?
+ Well, you don't lose it. The federation retains it in that scenario. But so the Bitcoin is
+ not lost, but you would lose access to it. Yes. So if you were doing something like a
+ conference, you would say you would keep it open for one or two weeks afterwards. And
+ you would use that opportunity to say, hey, after the end of this, and you would say at
+ the point of depositing, it's similar as if you go to some music conference, concerts,
+ you get tokens and you say, if you don't use them, then they go back to the organizer.
+ And it's the same. You'd put in, you buy a $50 ticket, say, and you get $20 worth of
+ e-cash to get going immediately as part of that ticket. And you can obviously deposit
+ more, but you make it very clear that by depositing, if you don't withdraw it by this point, two
+ weeks afterwards, it goes. But obviously, you can use that period of the two weeks afterwards
+ to make them aware of other ways. And they can set up a lightning wallet themselves to
+ self-custody, or they could come talk to Feddy and we can help their community set up their
+ own, if they liked what they saw here, the power of this approach. Why don't you set
+ up your own community and we'll help you set it up there. But whether it's us or whether
+ it's Moon or Satoshi or so on, you've just given people mass visibility on the power
+ of Bitcoin and lightning and so on. So you're going to have some percentage of those people,
+ even if they came for a football conference or so on, they just realized this experience
+ is just way better. And that's what we're going for. We're going for just where people
+ having their most enjoyable experience in their life, festivals and so on. That's where
+ you're going to build them because this becomes a much better alternative. One tool where
+ I can have conversation, I can organize, I can talk to other people, I can share connections,
+ people I meet while I'm passing by. I can pay for food and hot dogs and water and drinks
+ and memorabilia. I can also have show guides and so on because of the fact that it's extensible.
+ And then for the next two weeks afterwards, I can be told or suggested ways in which you
+ can continue the experience. Now that you've understood firsthand the power of Bitcoin
+ and lightning.
+ I'm thinking like, we've got our event next Friday. Next year we're going to turn it into
+ a one, maybe two day conference. And I'm already thinking, okay, we would have our federation
+ for the conference. In there, there would be the running order of events. There will
+ be incremental things you want to buy. You want to buy a ticket to the dinner on the
+ Friday call, you can do it within the app. When you go to the merch stand, you can buy
+ stuff. You meet someone, you want to buy something from them, you can tap chat, you can organize
+ little side events.
+ - I'm sure you won't be the first one to do it by then.
+ - No, but that's fine. It'll be proof tested.
+ - Yeah, it'll definitely be proof tested.
+ - That's super cool. So can I put my own fees into the transfers within it?
+ - Technically, there's nothing stopping that with the FedEment protocol, but with the FedE app,
+ no. Structurally, we don't do it for our system.
+ - And that's because you would have issues with regulatory bodies.
+ - I think it makes the experience much simpler for users. And also, at least at this stage,
+ it focuses on who would adopt it. If there's no profit motive, you tend to get people who
+ are doing it for non-profit motive-focused reasons.
+ - Casinos. So when you go to the casino, you have to go to the stand, you have to convert
+ it, and then when you've cashed out, they give you the ticket, you go back and convert
+ it, you could just stay entirely within the app.
+ - I think there's multiple use cases. So that's another very powerful use case.
+ - Okay, how do you guys make money?
+ - So there are multiple ways in which we can make money. For FedE, the core way we plan
+ to make money is the FedE app. That's when people download the app, they don't have to,
+ just like they don't have to use any given Lightning app. But our app is a pay-as-you-use
+ model. So we will charge, whenever you do any form of transaction, we'll charge an additional
+ small amount on top, a few basis points.
+ - Nice.
+ - And obviously we use that to improve the product and service. But the other thing we
+ do, which is core part of this OS, this operation, is the human part of this. So we recently
+ just closed a Series A round.
+ - Congratulations.
+ - Thank you very much for that. And a big part of that is to bring Bitcoin, Lightning
+ adoption global. And obviously we think FedE is a powerful engine for mass Bitcoin adoption
+ and accelerated rate. But what we realize is you need humans on the ground who understand
+ the local context to make that happen. So we'll be over the coming years hiring hundreds
+ of FedE Knights, as we call them, to locate, educate, and inculcate communities and organizations
+ around the world. But we're looking at having, we're effectively the outsource business development
+ arm for the entire Bitcoin ecosystem. So, because as you said, the thing with FedE is
+ it's very powerful, but it's an island without other things. It needs to run on servers.
+ So it'll need umbrellas, start lines, voltages, and so on. It needs to connect to the Lightning
+ network. So it needs to partner with people like Voltage and Ibex, Mercado, and Bolsa
+ Server and all the other companies who provide Lightning LSP services. And then for every
+ given community, they have specific requirements. So integrations with Bitrefill, with StackWork,
+ if you want to earn money and so on. But all of these things are in the Bitcoin and Lightning
+ ecosystem right now, and as a whole already are incredibly powerful. But you want one
+ place to bring it all together, and then one engine to bring that out to the world. And
+ that's what we do. We bring it all together here, and we bring out the world with this
+ workforce of people who make me look, the idea is they're going to make me look like
+ I'm comatose. They're like, they're going to just want to promote and make people aware
+ of what's possible with Bitcoin Lightning, Feddy, Feddy Mint, and the Bitcoin ecosystem.
+ So inherent in our models that we win by ensuring the entire ecosystem wins.
+ It's growing on me.
+ You Feddy-pilled.
+ I think a little bit. Now I can see the use cases. That e-cash thing was a massive...
+ Yeah, this cleared loads up for me too.
+ Yeah, cleared up loads for me. Obi, what do you want to tell people? Where do they go?
+ How do they find out more? What's going to happen now? Where do we go with this? When
+ can I set up a celebration?
+ So yeah, there's lots there. So first of all, you should go, if you find out more about
+ us, you should go to Feddy.xyz. That's the good starting point. And you'll see about
+ the mission, what we're trying to do. About me, I'm always on Twitter at Obi, O-B-I. And
+ you can find out what I'm doing. Where do we go next? We just raised, we are looking
+ to hire. So on our site, you're going to see a number of roles that we're looking to. And
+ we're looking to just find people who are not mercenaries, missionaries. It's really
+ core that this is something that they are really passionate about.
+ And beyond that, you're going to see us a lot at various conferences throughout the
+ year. If you see us come up, talk to us, and we'll figure out ways of partnering with your
+ company if you're in the space and you want us to integrate it within our product, or
+ you want to join the team, or you want to use a service, we're all here for you.
+ Very, very cool. Appreciate coming in, Obi.
+ No problem.
+ I'm excited to see the comments on this. All right, man, listen, best of luck. We're
+ always here for you. We're friends. Anything you need, give us a shout. I look forward
+ to Miami.
+ Thank you very much.
+ All right, come on. Tell me what you think. What do you think of Feddy? What do you think
+ of Feddy Mint? I'm definitely closer than I was last time, but I'm still not 100% convinced.
+ I don't know. Maybe it's just me, but let me know what you think. Drop me an email at
+ hello@whatbitcoindid.com. I spent some time with Kali. I saw his implementation of eCash.
+ Now I spent some time with Obi, and I think I know where they're going with this, but
+ just not there 100% yet. Anyway, listen, let me know what you think. I will see you all
+ soon.
+ [Music]
+ [BLANK_AUDIO]

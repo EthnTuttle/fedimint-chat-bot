@@ -1,0 +1,1871 @@
+ Have you heard the words FEDI or FEDIMINT? You probably have if you've been on
+ Bitcoin Twitter, you've seen these words around. But if you're like me, you haven't
+ taken the time to really understand what this thing is. You hear some words about
+ federations and chami and mint, XYZ thing. Well, I got the perfect person to
+ come on and break down some of these ideas and what they mean. I got Cody Lo
+ on the podcast. He is the head of product and developer support at FEDI. But first,
+ what is up you beautiful people? Welcome back to the Built on Bitcoin podcast
+ where we cover all the innovation happening across the Bitcoin ecosystem.
+ And that means that we treat all the different ecosystem partners as
+ first-class citizens here. Bitcoin L1, Lightning, Rootstock, Stacks, Ordinals,
+ FEDI, whatever it is. I want to talk to the builders doing cool stuff across the
+ ecosystem. So with that said, like I was mentioning, I had Cody Lo on the podcast
+ and we cover a ton of different topics. We cover what is FEDIMINT, which is the
+ protocol. We cover what is FEDI, which is this company that's building
+ applications on top of it. We cover as a new dev, which he is, what's it like
+ currently as a Bitcoin developer in the different pockets of the ecosystem
+ that exist. And if you want to get into the game, how he might do it and where's
+ the good spots to learn the basics. We cover quite a bit about
+ federations, which is core to the FEDIMINT protocol. And for the most part,
+ they get a bad rap. We hear about it with things like Liquid and they have
+ this federated network. But I think you'll come away from this episode having a
+ newfound respect for the design space that exists within federations. So we'll
+ learn about that, things like second and third party trust assumptions. I think
+ you'll like this one. So let me not blabber any further and let's jump right
+ into this episode with Cody Lo, the head of product and developer support at FEDI.
+ Welcome to Built on Bitcoin.
+ Cody, what's up, my man? How are you? Doing fantastic. I'm so excited for this.
+ Me as well. A ton to talk about. We're going to talk a lot about FEDIMINT for
+ sure, but also Bitcoin developments. You came on my radar because I went
+ to the Bitcoin++ event and amazing event. It's my first developer focused
+ event I've been to. Besides that, it was just the main conference and the signal
+ in Austin that weekend was insane. So I guess first of all, just thank you to you,
+ Nifty, whoever put that together. Fantastic job. Yeah, totally. I mean, so
+ Bitcoin++ is run through base 58. So just a little background on me, right, is
+ that I was in the Marine Corps. I was an infantry officer. I finished up active
+ duty about two years ago. And then after that, while I was doing my master's in
+ computer information tech, I started teaching Bitcoin just because I love
+ this stuff. And one of the best ways to learn about something is to
+ teach it to other people. And so I was really teaching through Pomscript, of
+ course. I don't remember if you guys remember that or not. I don't know if they're still around.
+ But for a year and a half or so of doing that, and then just as I
+ kind of went specifically into Bitcoin development, teamed up with Lisa. I was
+ in her first cohort that she did for base 58, where she teaches
+ Bitcoin protocol development. And then for the next year, I was
+ helping with her on that. And so I still try to support her as
+ much as I can for these things. One of the things that she does is she throws these
+ Bitcoin++ conferences. And it is by developers, for developers,
+ focused on the really amazing things happening in Bitcoin. And the
+ reason why she started it was because she was sick of people saying things
+ that things aren't happening in Bitcoin, or everything is happening in all
+ these other ecosystems. And it's like, no, we're going to put the developers front
+ and center who are doing really amazing things. And so, for example, the
+ first Bitcoin++ conference in Austin was where we did the first
+ SimpyMint, which is Fedimint, we'll be talking about that later, is a
+ federated Chameleon cash system on Bitcoin. And because it's got like,
+ it's kind of internal consensus, you can add interesting contracting
+ systems. So like, for example, I know that you're involved on like the
+ stack side of things, is that you could implement Clarity, for example,
+ as like a module. And so the contracting system within the Fedimint
+ that you deploy would be Clarity contracting system. We did
+ Simplicity, what was the first use of Simplicity, which is Blockstream's
+ like new scripting language for Bitcoin. We were able to implement
+ that there. And that's like, one of those amazing things where it's like,
+ you know, we can play with this cool stuff. And it's like, it really only
+ happens in places like Bitcoin++. And so there's gonna be another
+ Bitcoin++ that's in Austin next year, but the upcoming one is going to be
+ October 7, in Berlin, right? And it's gonna be focused on Nix. And so I
+ don't know if you want to go down the Nix rabbit hole, but like, Nix is
+ like, very, very interesting for security conscious Bitcoiners, right?
+ And so it'll be super exciting.
+ Very cool. Very cool. We're quickly opening a can of worms. I have to stop
+ myself from opening. But I want to, I want to touch on the development side
+ of things. Because as you mentioned, I started as a Stacks person, and I've
+ been orange pilling myself over the past two years, and I'm much more
+ orange than I've ever been. And it's only increasing in shade. So something
+ that's very interesting to me when I look at the ecosystem, especially
+ bracketed against Solidity, EVM chains is that you learn once and you get
+ exposure to like five different chains that have some level of traction. In
+ Bitcoin, it's much more fragmented. So you get like the core people that
+ know script. And then I'm not even sure what, you know, Lightning builds on,
+ and I keep hearing Rust is a thing. But then if you go after that, it's like,
+ Rootstock is Solidity, Liquid is whatever they use, and then Stacks is
+ Clarity, and who knows where else is coming. So like, being a Bitcoin dev
+ feels very messy, depending on where you're building. So I'm curious, as
+ someone who's gone through the base 58 course, which is like more protocol
+ stuff, how do you view the landscape of being a Bitcoin dev currently?
+ Yeah, totally. I mean, one of the... So kind of like the thing for Bitcoin,
+ right, is that like, over time, everything collapses into Bitcoin.
+ Right? And so this is sort of the way I think about these things of like, you
+ can be doing whatever development sort of stuff you want, is like,
+ eventually, this will be the global reserve currency payment layer for the
+ entire world, right, of like, you know, AIs using Bitcoin in order to like
+ complete payments between each other, like all those sorts of stuff like
+ that, right. And so eventually, over a long enough time period, everything's
+ going to collapse into Bitcoin, right. And so for all this other stuff, like,
+ it doesn't matter what you're interested in, of like, you know, you
+ could be like a Rust programmer, or a Go programmer, you could be a Solidity
+ programmer, all this kind of stuff. Like one of the things that's really
+ exciting about, like the things that Casey enabled through Ordinals, is
+ that because you can basically use the Bitcoin blockchain as blob space, all
+ of the layer twos that are being developed on all these other chains or
+ whatever, they just need a place to have a data availability layer and for
+ the dispute resolution, right. So like to publish the validity proof, that
+ kind of thing. And so eventually, you begin to put all of those layer two
+ things and all of the Solidity compatible EBMs and all that sort of
+ stuff or whatever, you don't need a token for any of that stuff, right, is
+ you just need Bitcoin. And so over time, like a long enough time, everything
+ collapses into Bitcoin, right. And what's cool about Bitcoin is that they're
+ just getting the tools available now in order to be able to do some of this
+ more out there development, right. So for example, within Fetiment, so just
+ to kind of bracket this, because we haven't covered what Fetiment is
+ before. So Fetiment is something I'm a contributor to, that's an open source
+ protocol, building federated Charmin eCash on Bitcoin, and we'll go through
+ each one of those. Also the head of developer support for Fetty, which is a
+ company building a federated operating system on top of Fetiment and the
+ Bitcoin protocol, right. We'll go into all of those in time. But so for
+ example, one of the things that Fetiment does is that because you're using this,
+ like very small deployable federations, is that it's got this very sensible
+ module system, is that you can add modules or you can add some of the
+ complex cryptography and the smart contracting and all those kinds of
+ stuff, and deploy them at these kind of smaller levels in order to play with
+ these things, right. So like Fetiment, the reference implementation that,
+ like if you're a developer and you'd love to contribute to Fetiment, we do
+ all sorts of really good onboarding, that sort of thing, right. And like
+ everyone's always welcome there, we'll always find work for you, we'll always
+ find stuff to like help you upscale so that you can be a better contributor
+ in the Bitcoin ecosystem, is that Fetiment is written in Rust, but
+ there's like all sorts of fancy cryptography and stuff that we can do
+ that we can't do because if you were going to try to do this on Bitcoin,
+ because you have to change the global consensus of everything, the Bitcoin
+ chain, right. Within the federations, you just have these like medium to
+ large size federations or small federations even, where you can have a
+ distributed consensus and you can add and remove modular components to it,
+ right. So for example, one of the things of the differences between like
+ Fetiment transactions versus Bitcoin transactions is Bitcoin, there's inputs
+ and outputs. And then that's kind of the whole structure for it. The
+ fundamental structure within Fetiment's distributed consensus system is inputs,
+ outputs and a single snore signature. And the reason why is because we're
+ doing something called cross input signature aggregation, which is some
+ fancy cryptography, which we'd love to get into Bitcoin, requires some
+ changes or whatever. But because we're doing these smaller federations, we
+ can play with these more out there cryptography, right. And so like there,
+ we're testing out all of the cross input signature aggregation libraries
+ and the cryptography that's eventually going to get deployed into Bitcoin and
+ Rust, Bitcoin and those sorts of things, right. And so all of these tools are
+ there now, like it took a while, right. But like now we have these modular
+ systems in order for you to like deploy federations, or you could deploy with
+ sidechains, or you could deploy with rollups and publish using the ordinal
+ system, right. It's like for a long time, everyone was like, oh, I can't do
+ this on Bitcoin right now. It's like, yeah, there's a way that you'll be able
+ to, it's like give it a couple years, right. And now those couple years have
+ passed, and all of the tooling is there and all of it's available. And so like,
+ you know, come to the bright orange side of things. So like come build on
+ Bitcoin, right.
+ What? 100% That's super interesting. Okay, before we dive into Fetiment, I'm
+ one more question on the developer side, which is, if you are new, because
+ you've only been there a couple years, so like, that's, you know, big
+ transition, would never have guessed that you weren't a developer for a long
+ time by your passion, but also that your depth of knowledge on site when I saw
+ you. So when it comes to let's say you hear this podcast by the end, you're
+ like, I'm fired up, Cody's, you know, the guy I want to build a Bitcoin. If
+ you're, let's say you're no, if no dev experience, you're at zero or very
+ little, and you've done some HTML stuff, it's base 58, the place you would send
+ people still or where's the best place to start if you want to get involved?
+ So just let me talk about kind of like macro level, and then we'll move down
+ into like very, very specific things, right. And so like, like I said, I was
+ like, I was an infantry officer in Marine Corps, right? It's like, I still
+ do reserves, right? But I was active duty for that one. Like, you know, I was
+ like a rock eater, right? Is that like, but one of the things coming into
+ Bitcoin, where something that makes the Marine Corps really, really special
+ among all the services is that in Marine Corps, there's this culture of
+ every Marine a rifleman, right? Is that everyone knows why they're here. And
+ the reason why they're here is because there's some 18 year old who's going to
+ be jumping into Foxhole, he's got three guys behind him, like if you're a cook,
+ if you're a pilot, if you're a lawyer, if you're a supply guy or anything, the
+ reason why you're here in this organization is to support that guy. And
+ so you have to understand his role. And you have to understand how you can best
+ support him, right. And you eventually end up seeing this as like, like most
+ stark in, for example, like the differences between Navy and Marine
+ pilots in terms of close air support. So close air support is like if you're
+ flying jets or anything like that, or flying helicopters, when you get really,
+ really low to the ground, like really, really close, then the quality of the
+ differences between the Marine versus the Navy pilots is enormous. And the
+ only difference in their entire training is that the Marine pilots, after they
+ graduate Naval Academy, or they go through officer candidate school or
+ whatever, they spend six months at the Marine Corps basic school, where they
+ learn to be a provisional rifle platoon commander. And so they learn how to do
+ the job of the guy that they're going to be supporting. So eventually, when they
+ go off and they're a pilot or anything like that, they know how to speak to
+ that guy, they know how to communicate with him, they know, like his struggles,
+ they know how to, like what he's going through, whatever, they can think
+ through his perspective, right. So coming into Bitcoin development, kind of
+ getting into the Bitcoin scene or whatever, is that like,
+ whatever you can do, try to get into a place where you can play with the dev
+ side of things, right?
+ Because the most important people in this industry are the developers, are
+ the open source contributors, right?
+ And so regardless of what you end up doing, you could be a product manager,
+ you could be like a writer, you could be like a podcaster or anything like that,
+ right?
+ Is that take some time to actually try to do their job and build something
+ on Bitcoin as a developer, right?
+ So that's like sort of macro approach for these things.
+ So like, how did I do that?
+ Right.
+ Is that like, you know, I like, I had the GI Bill so I could go back to school,
+ but also like the thing that I did was I found people in Bitcoin who were trying
+ something new and really supported them for doing that because while someone's
+ trying something new and they don't know whether or not it's going to be
+ successful or whatever, they're really willing to help you help them make it a
+ success, right?
+ So for example, like starting to on the pop course, right?
+ It's like, I took Pomp's first, it was the second cohort that he did for it,
+ right?
+ I took that just in order to meet other Bitcoin people, cause I'd never met
+ anybody for that one.
+ And then I was, while I was doing it, helping the guys who were running it.
+ And at the end of it, they said like, Hey, you seem to know a lot about this stuff.
+ Could you come back and you could teach, right?
+ And that was because it was something new.
+ It was, there was a lot of opportunity there or whatever.
+ Right.
+ And like, I was not a developer by any stretch of the
+ imagination at that point.
+ Right.
+ But like, I was really interested and I could contribute or whatever.
+ So like I did that.
+ Right.
+ And then during that period of like a year and a half of like, this is why it's
+ like, Hey, you teach with these people.
+ We taught like 2000 people or so.
+ Right.
+ And so now I'm at the point where it's basically, there's a ton of people who
+ moved out of the legacy financial industry into Bitcoin, who kind of like came through
+ something there, I got to meet them.
+ Right.
+ And so basically everybody in the industry, I ended up knowing.
+ Right.
+ And so that's like one element of it.
+ I'm like, if you can do something like putting yourself in a position like that,
+ whatever, where it's like, you get to learn a lot and you get to meet a lot of
+ people and you get to kind of do this stuff all the time or whatever, that's one
+ element of it.
+ Right.
+ And also just getting to know the developer side of things as well.
+ Then with Lisa, so Lisa, like absolutely amazing person, like probably the single
+ most important person in like my development as a developer, right.
+ Of that she was a Core Lightning contributor, a Core Lightning contributor
+ at Blockstream, and she was trying this new thing where she really enjoys teaching.
+ And so she started a school or whatever, and like her first class.
+ Right.
+ And so like at the time I was actually on activation, handling the Afghanistan
+ withdrawal, right.
+ For resettling refugees.
+ But so I didn't know whether or not I was going to make it.
+ Right.
+ But I was like, Hey, I basically just put up the money for it.
+ And I was like, I'm just going to figure this out.
+ I'm like, I'm going to figure out a way that I can do this thing.
+ Because I was like, this is an opportunity for me to spend a ton of
+ time with a really good developer.
+ And like, if I blow this out of the park, then maybe she'll like spend more time
+ with me and help me like, and my grow as a developer and those kinds of things.
+ Right.
+ And so when people are trying new things, they're really looking for people who
+ can like help them out, right.
+ And just like take a chance on them and all that kind of stuff.
+ And that's the place where if you kind of put yourself there, you're
+ going to, you're going to do a lot.
+ Right.
+ Cause like after doing that with Lisa, I ended up being a TA for her.
+ I ended up getting to meet a bunch of other Bitcoin developers.
+ Right.
+ Because I'm like going to Bitcoin plus plus and all those kinds of things with
+ her, right.
+ In order to help things out, like that's kind of a way, like as you
+ start doing these things, right.
+ So like sort of three elements of this thing is that you really want to know
+ what it's like to be a developer.
+ And there's tons of ways to do that.
+ It's like, for example, anybody who's listening to the podcast, who wants to
+ come to the Fedmit discord, like we do tons and tons of onboarding, right.
+ Of like, if you're a newbie, if you don't have the experience that you need or
+ whatever, right.
+ That's totally fine.
+ We will help you find other projects.
+ Cause Fedmit sort of touches everything in the Bitcoin ecosystem.
+ That's fun and cool and new.
+ Right.
+ Like we use many script, like we're doing taproot stuff.
+ We're we're doing like more advanced contracting that distribute systems,
+ photography, like all that sort of fun stuff.
+ Right.
+ But there's also a ton of like education aspect for it.
+ Right.
+ And so just please come to Fedmit.
+ Like we'll help, help find you a place where you can like start
+ contributing on the open source side.
+ There's that, that element.
+ And then the second element is putting yourself in a position where you can meet
+ a ton of people and also like learn on the process, right.
+ Just because like, you know, you don't like now I'm at the point where I
+ basically know everybody across the different industries.
+ Right.
+ But when I met them, it was like, they were coming into the industry.
+ Like, I remember one of the first classes that I taught with Bob, right.
+ Of like, I was showing people how a Bitcoin wallet worked and I couldn't
+ understand why my address kept changing.
+ Right.
+ As like, and it was like, Oh, every time I send money, the address changes.
+ Whatever, what happened to it?
+ Like, I didn't understand hierarchical deterministic wallets, right.
+ And the wallet is a collection of addresses, right.
+ Of like, you know, it's like at the time it was just, I was just.
+ Trying to learn as much as I could and like put myself in a position
+ where I could learn stuff.
+ Right.
+ And then the other one is like, there's going to be a bunch of people in this
+ industry who are like trying new things.
+ It's just like, be the first money for that person or like be a beta
+ tester for them or like put yourself in those ones or whatever, because it's
+ very hard to start something new.
+ And people are really, really grateful when you take a chance on them
+ and also get the feedback.
+ Right.
+ So that's like developers coming into the industry, but a three ways, I think
+ are like very productive for you to sort of interact.
+ That's that's perfect.
+ Yeah.
+ It's also interesting that in my own journey, when I try and grok an idea,
+ if I have to teach it, like make a video on it, Oh my God, I spent 10
+ export time trying to break down the concepts in a way that I understand.
+ And now do the hits for me first, before I can get on camera and do that.
+ So I'm sure you accelerated learning, you know, astronomically about having
+ to get in front of cameras and whatnot.
+ Yeah, totally.
+ Wow.
+ Poetically about whatever it is you're teaching.
+ Um, the cohort thing I like to, and you mentioned the Feddy discord.
+ There's also a Twitter and get hubs.
+ If you're trying to find like, yeah, specific ones, there's the
+ Feddy discord, right, where we do a lot of like new contributor onboarding.
+ Like we have dev calls on Tuesdays.
+ We do white paper Wednesdays where we do some of the more like
+ theoretical things of like going, like I just published a tutorial to
+ replet on Shamir secret sharing and distributed key generation, where
+ it's a kind of fancy cryptography, but like we come through it from a
+ very, um, like approachable, uh, manner for that.
+ And then on Thursdays we do deep dives into the Feddy code basis.
+ Right.
+ And so like somebody who's a subject matter expert and has written some of
+ this code, like just goes instead of like coding during that period, they're
+ just improving the documentation, asking, uh, getting asked questions or
+ whatever by people coming on the board or whatever, the very good way to
+ like introduce yourself to those things.
+ In terms of overall Bitcoin protocol development, like base 58 remains the
+ single best, uh, like mechanism for doing that is like Lisa is an unbelievable
+ teacher, right?
+ And she's got a bunch of resources available online.
+ So definitely go through her.
+ And then, um, we're also doing a lot of experimentation on Feddy side.
+ And so we just released Feddy alpha, which is like kind of the first vision
+ of the federated operating system where like it, uh, it's, it starts out right
+ now, it's kind of like a Bitcoin enlightening wallet where we're using
+ this federation model underneath, but it's eventually going to be much,
+ much more as we stand out the federation idea.
+ And we're using mutiny net for that, which is like a hosted test network.
+ And so you're interoperable with mutiny while you're doing this, which is another
+ like really privacy focused lightning wallet.
+ And, um, so you can start playing around with that.
+ You can build, uh, build applications with that one.
+ I need those communities are like extremely, extremely open and like
+ willing to help and like, you know, like we are, we need so many more devs.
+ And there's so many people who are very willing to be patient and spend time
+ and teach you to code and to kind of get you up-skilled right.
+ Oh, just like every big winter developer, like we need more people.
+ So like, please come join.
+ Got it.
+ Okay.
+ And then I guess last question of the last question about developers is, uh,
+ is, so if you do, if you have some gumption, you do want to learn it.
+ Is there money on the side?
+ Cause I think when people hear open source, they hear like, if the, like
+ fight for scraps is kind of like the inherent thought, is that true?
+ Yeah.
+ Um, I mean, you have to take advantage of the opportunities that are available.
+ Right.
+ So for example, like, um, one of the things is that, you know, like when
+ you're first coming into an industry and you don't have a lot of skills, like
+ it's hard to monetize the skills, right.
+ Because you don't have any.
+ Right.
+ And so the way that you monetize that stuff is that you get
+ paid with other things you get paid with.
+ Like, you know, getting to be around some of these best developers in the entire
+ world, right.
+ Is like, you know, like there's nothing better, right.
+ Of like the reason why I was able to onboard so fast to the developer side
+ of things or whatever, is because I surrounded myself with these guys and
+ like, I wasn't getting paid for much of what I was doing for it, but I did that.
+ But it's also like, you know, take advantage of the opportunities you have.
+ Like I'd say right now is that there's more funding than ever in Bitcoin, right.
+ Like open source just raised like 10 million bucks, right.
+ Um, spiral is like giving out grants all the time.
+ Right.
+ But like, in order to kind of like cut your teeth and get sort of a track record
+ and, uh, get some like proof of work and proof of concept behind these things or
+ whatever, like, it's good to just kind of like start contributing to the communities.
+ But there's, and there's all those ways that you can monetize a lot of these things.
+ Right.
+ I mean, like the first off is like, you know, there's very, very poor educational
+ content around a lot of the more technical things.
+ And so as you learn the technical things, learning in public and doing it in
+ reproducible ways where you can have tutorials that you can then deploy, right.
+ Like those are going to be absolutely huge.
+ Right.
+ And people will definitely pay money for those.
+ Um, kind of the other thing for it is that, um, in terms of like monetizing, as
+ you move along with these things, uh, there's like a bunch of different ways
+ you can do it.
+ So for example, like one of the things for AI for all hackathon, I've ever been
+ to be late, we can talk about that later.
+ Um, is that we're going to be doing bounties, uh, bounties for that through
+ replit and also doing Bitcoin bounties.
+ And so for those ones, it's like little snack prizes that you get of like a, Hey,
+ here's like a small thing or whatever.
+ And like, maybe it's a hundred bucks, maybe it's 500 bucks, maybe it's a
+ thousand bucks or whatever it is.
+ Right.
+ And like, you can get basically just like, um, uh, eat those as you're working
+ and whatever, but kind of the way to approach it is just like, when you start
+ working on something as big as this, it's like the, I mean, the feeling like this,
+ like I'm reminded of, um, uh, Patton, Patton speech, right.
+ Or I don't know if you've seen the movie Patton, right.
+ But at the beginning of the speech, he like talks with the third army and he's
+ telling them like, Hey, the thing that I'm giving you, he's actually quoting,
+ um, Henry the fifth, the battle of Ashen core brand band brother speech.
+ When he says this, right.
+ Is that like, the thing that I'm giving you is that 30 years from now, when we
+ look back at this time, you're going to get to say that you fought with the third
+ army, right.
+ And like for us as Bitcoin developers, right.
+ It's like 30 years from now, when we look back on this and like, we brought
+ property rights, like inviolable property rights to the entire world.
+ Right.
+ Like, and your kid is talking to you about this and asking you, Hey, what
+ did you do during that period?
+ Whatever.
+ Like, you can say something like, you know, like I was just
+ making a paycheck or whatever.
+ Right.
+ Or you can say like, Hey, I participated in this.
+ I helped make that happen.
+ I helped build the software that's still being used today.
+ Right.
+ And in a small way of being able to contribute to that thing.
+ And so like in terms of the money thing or whatever, there's more money than
+ there's ever been before, and we're looking for developers and there's more
+ than what people who are willing to give you some experience in order for you to
+ start applying for these grants.
+ Like I literally am looking out for grantees all the time, right.
+ If you're like the various organizations that I work with, like I'm always
+ looking for people to give grants to.
+ And so if you're interested in those things, like, like come on board, we'll
+ help you get some experience so that you can increase your grant application and
+ get you a grant so you can work on a project that maybe that turns into a
+ recurring grant or some sort of job at a big one.
+ Perfect.
+ Love it.
+ I think we're, I think we're converting some people right now with this clip.
+ Okay.
+ Then let's jump in then.
+ We got a lot to discuss with Fetty Mint.
+ I'm going to play the village idiot because I've heard these words before.
+ I know roughly what a federation is.
+ I've heard this Chami and Mint thing a bunch of times, you know, big
+ foreigners I respect like Alex Gladstein said, this is, you know, super pivotal
+ tech that's going to be very important for that population.
+ But besides that, I've done zero deep dives.
+ I barely know the difference between Fetty and Fetty Mint.
+ You've expressed some of it here today.
+ So I'm going to be the left curve guy and we're going to try and keep it middle
+ curve to hit the hardest amount of people.
+ So I guess first question just to delineate most of the time I want to spend on Fetty
+ Mint, which is the underlying protocol, but just to bracket, what is the
+ difference between Fetty and Fetty Mint?
+ Yep.
+ So Fetty Mint is an open source protocol building on top of Bitcoin.
+ It's building a federated Chami and e-cash system on top of Bitcoin.
+ There's no derivative token.
+ There's no anything.
+ It's just like the, there's, it's a federation aspect and there's this
+ Chami and Mint aspect and the problem when, so David Chami invented Mint, which
+ is basically a way of running a bank where the bank is completely blinded to
+ all of its users, the problem with this Chami and Mint system is that you have
+ to trust the Mint, right?
+ And so the federation aspect of it is a way, how do we decentralize
+ that trust slightly, right?
+ So now we're making it in a Byzantine fault tolerant way where, for example,
+ if you have a 3 of 4.
+ Federation, then one of those Federation members can be actively
+ malicious and trying to steal the funds and there's nothing he's able to do.
+ Two of them collaborating together are able to, the protocol won't progress,
+ but they won't be able to steal the funds.
+ You need to get the threshold multisig in order to steal the funds, right?
+ And so this is a way where you can take this Chami and Mint system, which
+ is a way of having cryptographically perfect privacy and combining it where
+ the problem with that is that you have like the single issuer of the Mint
+ and you can federate that Mint, right?
+ So some of the trade-offs for it.
+ So in terms of the differences between FedeMint and Fede, is that FedeMint
+ is this open source protocol building these federated Chami and E-cash
+ Mint system on top of Bitcoin.
+ Fede is a company that's building on top of the FedeMint protocol in order to
+ build what we're calling a federated operating system, and so the FedeAlpha
+ release is kind of the first glimpse of that, but basically you can think about
+ once these federations get deployed and you've got tens of thousands to
+ hundreds of thousands of these different federations and different communities,
+ federations of different sizes, the FedeMint system is built using this
+ module system and so you can attach modules into this, right?
+ And so the modules, for example, you can run like a social recovery scheme, or
+ you can do something like you could have hosted access to AI models or hosted
+ access to data resources and those kinds of things, right?
+ And so Fede is a front-end application that allows you to join multiples of
+ these FedeMints and get access to the underlying resources that they have
+ there of like splitting your funds across them or backing your data up across them.
+ Like the way that we like to say there's a federated operating system is a way
+ for people to take control of their money, their data, and their digital lives.
+ Right?
+ So I think like a good way to kind of think about this is with the
+ most recent ledger recover issue.
+ I don't know how you've been following this, but basically what they added was
+ that, Hey, we're going to do a Shamir secret sharing scheme where the shares
+ are going to get extracted off their device and get it backed up by third
+ party custodians, right?
+ And fundamentally, like, you know, any self-custody scheme, resilience to you
+ having an accident has to have some threshold mechanism in order for your
+ family to recover the funds at the end.
+ Right?
+ So it's a really, really important point before you arrive at federations.
+ There's like a solution to one of these problems.
+ And I'll promise I'll be relating this back into ledger as we talk about this,
+ is that we start from the assumption that like, Hey, Bitcoin is this really
+ powerful tool for taking self custody of your money.
+ Okay.
+ So you do that, you have a single-sig wallet and you like, you are the only
+ guy that knows that thing, you do it properly, you get a cold card, you like
+ pounding the steel plates and all that kind of stuff, right?
+ But the problem becomes like, Hey, what if I like walk outside and
+ there's an accident or whatever, like I fall in a pool and I don't have
+ swim or like, I, you know, there's like an accident in some way or whatever.
+ Right.
+ It's like, my coins are gone.
+ Right.
+ Is that any self-custody solution resilient to you being in an accident
+ implies some sort of recovery mechanism that can be met outside of yourself.
+ Right.
+ And so what a lot of people do is like, Oh, Hey, I'll give my key as a
+ backup to somebody else or whatever.
+ Well, now they own your Bitcoin just as much as you do.
+ Right.
+ Is that this is the way that works.
+ So kind of the gold standard for this is that you want to have some sort of
+ threshold multi-sig mechanism, right?
+ Where it's like my wife, my kids and my lawyer and somebody from my office who
+ I trust is also a Bitcoin or whatever.
+ Right.
+ They hold different pieces of this thing and I'm trusting them while I'm alive,
+ not to collude in order to recover the funds, but after I pass or after I'm in
+ an accident or let's say that I lose my key or something, they can coordinate
+ in order to recover my funds.
+ Right.
+ And so this is kind of the intuition that a lot of people have is that if I take
+ self-custody of my Bitcoin, then what if I'm in an accident and I lose it, or what
+ if I just break my phone or something like that, right, I don't trust myself to
+ be the only custodian of these things.
+ And so currently there's no real good option for this.
+ And what they do is they just give it to a third party, right.
+ Either through like Binance or Coinbase or whatever it is, right.
+ Is that so Fetiment is a model where basically you can use second party custody.
+ Right.
+ The problem with Ledger of extracting the shares and giving them to these third
+ party people or whatever is not that you shouldn't be doing some sort of
+ directional backup, actually, for your key.
+ Right.
+ The problem is who they gave the shares to.
+ Right.
+ People who should be holding onto my shares are like trusted people who I
+ know are not going to try to collude against me, but in the event that I have
+ an accident or something like that, they can collude in order to help my wife
+ recover my funds, for example.
+ Right.
+ And when we're talking about deploying self-custody solutions and like all
+ across like the global South and like Africa and Latin America and those
+ sorts of places, right, is that there's not even the infrastructure in order
+ to get them hardware wallets.
+ Right.
+ Like, you know, they don't have a solution right now.
+ Like most of these crypto adoption metrics that people come is that
+ basically they're just using Binance.
+ Right.
+ Is that we need some sort of scaling solution that is going to allow us to
+ give them some sort of better mechanism than a third party custody system.
+ And so FedEmit, as far as a second party custody system, where you can go to any
+ of these communities, you can set up a federation of trusted community members.
+ Right.
+ And they, all they have to run is like a Bitcoin node and a little bit of
+ soccer on the side of it, and basically just keep it watered with like food and
+ sorry, with energy and hard drive space.
+ Right.
+ And once you have that set up, well, now you have a robust backup mechanism so
+ they can onboard everybody else in their community.
+ Right.
+ And so now when these guys are coming to Bitcoin, they don't have to come through
+ a like Binance or they don't have to come through like the self custody system
+ where they don't trust themselves.
+ And so, you know, the writing down a piece of paper and someone steals a piece
+ of paper or something like that.
+ Right.
+ It's like you get this robust out of the box, really resilient backup
+ solution for social recovery.
+ And then you start from that observation.
+ This is like where FedEmit kind of grows out of is that so FedEmit itself is you
+ deposit into the Federation, some Bitcoin on chain, and you get issued these e-cash
+ notes and the e-cash notes is like cryptographically perfect privacy.
+ Right.
+ So now the problem becomes I'm only interoperable with my mint.
+ Right.
+ This would not be a successful solution except for Lightning is that basically
+ Lightning becomes the light rails between all of these different people.
+ So the experience that I have of using FedE, the application is that I'm
+ just paying Lightning invoices.
+ On the background, what's happening is there's e-cash payments going back and
+ forth and I'm actually paying Lightning gateways, the Lightning gateway receives
+ the e-cash notes and they do the Lightning payment on my behalf or they receive
+ Lightning and they issue e-cash back to me or whatever.
+ Right.
+ The experience that I have is that the Bitcoin is entirely abstracted away.
+ Right.
+ But I get this really good privacy.
+ I get this really good control of my life, my data.
+ Right.
+ And then I can put that within like a second party custody solution.
+ Right.
+ Like, so I hope that kind of covered like sort of the FedEmit
+ protocol layer of these things.
+ Yeah.
+ So I'm going to, I'm going to try and rehash what I heard to make sure that I
+ understand.
+ So I think the first thing you touched on was self custody and most people do
+ single SIG for the most part.
+ I know I do.
+ I have my ledger.
+ I'm not using ledger recover.
+ It's just, if I lose my shit, it's gone.
+ Like it is what it is.
+ And as my bag increases, that becomes more of a risk for me.
+ So there's other need to, you need to diffuse that in some way to, so that if
+ you have an accident, you know, God forbid that that's just not, you know, away.
+ So it can go to your family or you can recover it in some way, which opens up a
+ whole design space is what I'm hearing.
+ So ledger recover is one where you can send it to these different trusted
+ entities, they have to KYC.
+ You, you, you assume they're good at good actors.
+ So, you know, you plug in your email, you get your stuff back.
+ Perfect.
+ Uh, the part I'm, I want to get some clarity on, you mentioned second versus
+ third party.
+ So I've never really heard those terms in that way before.
+ So the way I'm hearing it is second party is, you know, the individual
+ members more clearly.
+ So it's either trusted parties or individuals.
+ And third party is I trust an entity.
+ It's kind of faceless, but I do trust the entity or the brand.
+ Is that the way to think about second versus third party?
+ Yeah, totally.
+ It's a second party is like your local community, right?
+ Of like the reason why I feel comfortable sharding my Bitcoin key between, uh,
+ these different people, these different custodians is because I keep them honest
+ via social pressure.
+ I see them every single day.
+ It's not like they're going to wreck, like my wife is not going to wreck me and
+ run away.
+ Right.
+ Or even if she did, she would have to get the collaboration of my mom and three of
+ my Bitcoin friends who are also part of this like a federation that we're doing.
+ Right.
+ Is that like the thing, keeping these guys honest is social community pressure.
+ Right.
+ And so in certain places, like, uh, you know, like most of the, um, most of the
+ Western world is that this is not as big of a deal in like global South.
+ They have these high trust communities.
+ Right.
+ And so they already do this where basically you already have these community
+ custody models, right.
+ Where you have trusted members of the community who are custodying, we have
+ these people, this is basically fitting into that and giving them access to
+ really, really powerful, inviolable property rights, uh, using Bitcoin, doing
+ the same model.
+ Right.
+ And so what's really cool about this is that why we call it like Fedimint, like
+ Bitcoin, uh, well Feddy and Fedimint can be Bitcoin adoption technology, right.
+ It's because we can show up at any of these different communities all across
+ the little South or anywhere in the world.
+ And we can say, Hey, if we can get like seven of you, right.
+ Who are like already diehard Bitcoiners, you guys run your own nodes.
+ You guys are good security practices and all those kinds of things.
+ We can set up running Fedimints alongside their nodes and then they can run the
+ Federation and now they can onboard everybody else in their community.
+ Right.
+ And so when I'm like orange peeling someone and trying to get them on board,
+ I don't have to send them to Coinbase.
+ I don't have to send them to Binance or whatever.
+ Right.
+ Like I can invite them into my Federation and they immediately get this robust
+ backup solution.
+ And in the event that they, um, pass, they get this really, really, really, um,
+ modular platform where you can, through Fedimint modules, you can extend the
+ protocol in order to do all sorts of other stuff.
+ So like one of the really cool things you can do is imagine each of these
+ Federations, and like we're already working on this, is each of these
+ Federations becomes like a stratum V2 distributed mining pool.
+ Right.
+ And so the payouts go to the Federation and because the Federation receives it
+ on chain, they can issue the e-cash notes after the, uh, they claim you don't
+ have to do the current, that's sort of model for getting paid out of that.
+ You get paid, um, to the on-chain address and then you have to wait a hundred
+ blocks and then you open a lightning channel and then you do the payments
+ over lightning, right, is that because you just deposit directly into the
+ Federation, right, you can issue the e-cash notes directly.
+ Right.
+ And so it's pretty cool as they do these things.
+ And then another thing you can do, for example, is running DeFi pools.
+ And so, uh, FedE, for example, has stability pools and we're going to be
+ using these things like overcollateralized lending within these pools because like
+ these, a lot of these DeFi protocols, they don't really work without like
+ sufficient liquidity, right?
+ And so Federations are kind of a trade-off aspect of this one, that you
+ can get access to a larger liquidity base of your like entire pool in order
+ to not have a lot of slippage while you're doing this trading, right?
+ But the trust assumption of the Federation is both a benefit and a
+ trade-off and a negative, right, of the negative of this is that, oh,
+ hey, this doesn't scale.
+ You can't get this to a Federation to like serve a million users or whatever,
+ because the trust assumptions are associated with it, right?
+ But that also means that, hey, this is a naturally decentralizing force, right?
+ Is that as Federations grow to a sufficient size where it starts to feel
+ like third-party custody as opposed to second-party custody, well now some of
+ those Bitcoiners break off and they start their own Federation, right?
+ And so it's kind of like distributes, it's a Bitcoin adoption technology in
+ the way that we want to distribute the Bitcoin and like the way that we're
+ custodying Bitcoin all across the world, right?
+ So pretty cool.
+ Interesting.
+ Yeah.
+ I can definitely see why now FediBit's been hard to grok because
+ the Federation is so important.
+ And what you do in the Federation is a whole different design space.
+ Make sure I get it is, so FediMint is second-party Federations.
+ Would Liquid be third-party kind of by definition in the way they're doing it?
+ Yeah, that's the way to think about it, right?
+ Is that, you know, Liquid, I think like, I don't know who all the functionaries are.
+ I think like OKCoin is one, Blockstream is one, Wiz from Mempool.space is one.
+ There's a couple of other, whatever.
+ Like, you know, I've met like two of those people, right?
+ And like, they seem like great guys or whatever, but like, you know, if they
+ get subpoenas, then that's like, you know, that's probably my font gone, right?
+ And so what's nice about that, right, is that like, you know, for the second-party
+ custody for these things or whatever, right, it's like social sanctions for these things.
+ And what's also nice about that is that you basically, like, you know, there are
+ models where you can monetize the Federations, right?
+ But like fundamentally out of the box, the way that FediMint works is that, what's
+ called, you're not paying the, you're not paying them, right?
+ Is that the people that you're paying are the lightning gateways for
+ facilitating your payments, is that you're not paying the Federation guardians.
+ The Federation guardians are just acting as basically multi-sit custodians, right?
+ And they're not, they're not getting paid.
+ versus like on the liquid side or whatever, right?
+ Like you're basically paying these guys, right?
+ And like that's the thing that keeps them honest,
+ is that like, hey, this is like a service
+ and we're making money off this thing.
+ And as long as we're making money,
+ then like this is a good thing to continue going.
+ But like maybe the pie gets so big or whatever
+ that they want to run away with the funds
+ or maybe like the government comes after them,
+ something like that, right?
+ But on the FedMe side, right,
+ is that because it's my local community, right?
+ Is like the reason why these guys are running this thing
+ is because in the event that I have an accident or whatever,
+ then they can help my wife recover my funds.
+ In the event that they have an accident,
+ I can help them recover their funds, right?
+ But and also just like a way that we can kind of like
+ pool access to resources.
+ So for example, one of the modules
+ that like I'm currently working on
+ is basically hosted AI access, right?
+ And so federations are gonna,
+ if you just have like one guy,
+ who's got like a graphics card
+ or like a suite of graphics card
+ or a data center or anything like that, right?
+ Is that like the federation can like get access to that
+ through lightning payments, right?
+ And so now it's like, hey,
+ I can give my local community,
+ they can be running a Nostra relay
+ or they could be running like hosted AI on this one
+ where it's like, instead of going all the way
+ to third-party open AI,
+ it's always going to stay here
+ and they have the guarantees that it's going to be like,
+ hey, it's just me running the model, right?
+ So like in the event that like your data leaks
+ or whatever, right?
+ Like you can go down the street and come to my house
+ and like, you know me, right?
+ It's not like, oh, hey, like open AI made a mistake
+ and actually accidentally leaked
+ all of everybody's conversations or whatever
+ and they're doing that for like five days or whatever.
+ And it's just like, oops, sorry, my bad, right?
+ Like I live 7,000 miles away
+ and you have no mechanism for like dealing, right?
+ - This is super, super interesting.
+ So it's something I haven't really thought about.
+ So it's something you said,
+ you know, everyone knows blockchains don't scale.
+ Like they're not meant to by their nature.
+ And you mentioned federations also don't scale,
+ where at some point the federation becomes second party
+ to like third party quasi-ish.
+ And the bigger they get, the more they feel that way.
+ So that's interesting.
+ And the, you know, in Bitcoin, the incentive is economic.
+ So you're trying to, you know, spend electricity,
+ get some Bitcoin, that keeps everyone aligned.
+ This is moving from something economic
+ to something social by its very nature.
+ - Yep.
+ - And obviously, because we're in this space,
+ like incentives are everything.
+ So how do you guys think about,
+ like if you're trying to build a federation
+ or onboard new members to it,
+ what does like governance look like in that kind of thing?
+ And how do you guys do that from like,
+ whether it's top down or bottom up,
+ like how do you think about that?
+ - Yep, so the way that we're building it
+ is basically when you set up
+ one of these federations out of the box, right?
+ You're making it Byzantine fault tolerant.
+ And so like the more technical side of things, right?
+ Is that you want the federation to be three M plus one,
+ and M is the number of malicious people, right?
+ And so you want like a three of four federation.
+ And so one person can be malicious
+ and one person gets compromised or whatever.
+ Like they can't steal everybody else's funds, right?
+ Or if you're like, hey, I don't trust this,
+ I've only one person,
+ I want two people to be able to get compromised
+ and they still can't do anything, whatever.
+ Then you want three M plus one, M equals two.
+ So you'd have seven.
+ So it'd be five of seven, right?
+ Or like, you know, seven of 10 or whatever, right?
+ And so you kind of like scale, sorry.
+ Yeah, seven of 10 or three, right?
+ As you continue to scale this up as you go this one.
+ But at some point you get to a point
+ where it is third-party custody, right?
+ And the moment it gets to third-party custody,
+ well, now that's not something that I trust, right?
+ I don't trust like some random dude
+ who's like part of this like larger diaspora
+ of people or whatever, right?
+ Like maybe I like have like a thing for like marine vets
+ or whatever that I do or whatever, right?
+ And like, initially it's just like me,
+ I like started this federation,
+ I ran out of BA or whatever.
+ And so there's like a bunch of people
+ in my local community and I'm like helping onboard
+ for them to the point of these things.
+ Like the way that I like to think about this
+ in terms of how you do that is just like,
+ absolutely self-custody is critical.
+ And this is like the way that you should be starting
+ with these problems.
+ I'm like, you should absolutely take self-custody to coins.
+ Now start walking down the thought process
+ of what happens if I'm in an accident
+ or what happens if I lose my key
+ or something like this, right?
+ You need some sort of threshold backup solution.
+ And so for you personally, maybe that's your friend,
+ your wife, your parents,
+ and somebody from work or whatever, right?
+ Well, now all of them have this exact same problem, right?
+ And so you can either do like custom role,
+ a threshold multi-sig solution for every single one of them.
+ Or if you guys are all going to be
+ do each other's threshold multi-sig anyway,
+ well, okay, let's formalize this relationship
+ and like we can establish a federation for these things.
+ And then while you're having this,
+ and like now you're running into the problem,
+ okay, well now I have this multi-sig solution,
+ but what am I gonna do on a day-to-day basis?
+ I don't want to go talk to them
+ every single time I wanna pay, right?
+ Well, maybe you want some sort of single-sig claim
+ against that underlying stuff
+ that you're gonna be able to do.
+ What's the accounting system
+ that you wanna use for that one?
+ Well, maybe I wanna use Xiaomi eCash.
+ And the reason why is because in the event
+ that they've recovered my funds,
+ because of the blinded nature of Xiaomi eCash,
+ the only thing that happens is they've recovered my funds.
+ They don't see my entire payment history.
+ But if I do a standard multi-sig wallet,
+ they're gonna recover it, they're gonna see the XPUB,
+ they're gonna see all my prior payments
+ that I've ever done, right?
+ So it's kind of like, absolutely, self-custody
+ is absolutely something everybody should strive for.
+ Start thinking through what happens
+ in the event that you take self-custody.
+ Start thinking through the problem of
+ when we're going to be onboarding
+ these millions and millions of people,
+ the supply chains are not there
+ to get them hardware wallets,
+ and most people don't trust themselves
+ with hardware wallets.
+ What is an intermediate solution and design space
+ that we can explore versus just doing third-party custody,
+ which is the way they seem to be going right now
+ when they get onboarded, right?
+ Got it, got it.
+ Okay, so the way to think about
+ when you might feel safe entering a federation
+ is something like, it's more of a gut check.
+ And it's like, you enter a room and you go,
+ so the threshold is something like 75%, roughly,
+ on average, that would be malicious for it to cross over.
+ That's a rough number.
+ It's greater than two-thirds, right?
+ Got it.
+ And so if I was thinking about it-
+ You need to be honest.
+ Sorry, just to clarify for that one,
+ is that it's the technical one is that 3M plus one,
+ where M is the number of malicious people, right?
+ And so generally speaking,
+ the way to think about that is that
+ you basically need two-thirds to be honest.
+ But if they compromise two-thirds,
+ then they can take the funds.
+ The way that we built Fediment
+ is using this asynchronous distributed system,
+ distributed consensus system, right?
+ Where if one-third is compromised
+ between one-third and two-third,
+ they can't take the funds,
+ but they just can't progress forward in the protocol, right?
+ And so in order to compromise the funds,
+ you need to compromise two-thirds of people, right?
+ Is the way to think about
+ the federation aspect of these things.
+ Okay, that's helpful.
+ Yeah, so then the way to think about it is
+ you guys have built rock-solid cryptography
+ for the things you can build.
+ But the way to think about it is like,
+ I enter a room or I look at the deans list
+ and who's in this federation,
+ I go, "Do I trust giving them my wallet
+ to two-thirds of these people?
+ If no, maybe don't enter it.
+ If yes, cool.
+ And if you're in the middle,
+ maybe get to know them,
+ by yourself in the community."
+ That's kind of the way people should think about Fediment
+ and entering Fediment Federation.
+ Totally, totally.
+ Is that there's going to be tens of thousands
+ of these different federations.
+ And the moment that you have considerations or trade-offs
+ associated with the size of one of them,
+ or that you're not close enough
+ to socially sanction the people
+ who are in that federation,
+ who are the guardians of that federation,
+ it's like absolutely move into self-custody.
+ Then think about what happens in self-custody.
+ So, okay, you move it back
+ to the family federation that you're running,
+ or you move it back to the community federation,
+ or you move it back to the company federation,
+ the nation federation.
+ You kind of move scale, scale, scale,
+ whatever you're comfortable with.
+ One of the cool things about Feddy
+ is that the way that we designed the app
+ is that it's by its nature
+ is that you're going to be crossing
+ between multiple federations.
+ So when you open it up,
+ it kind of looks like Slack channels,
+ of that you've got the different federations
+ that you're a part of.
+ It's just like one or two clicks
+ in order to move money
+ between these different federations.
+ It's all automated as you're doing it.
+ You achieve very good privacy as you're doing it as well.
+ - Got it.
+ Okay.
+ Yeah, that's interesting.
+ Okay, so then something else you mentioned is,
+ it's a modular framework,
+ which don't fully know what that means.
+ So I think of like Legos.
+ So it's like you can attach things in different ways.
+ - Exactly.
+ - And so I guess first question is like,
+ how extensible is this?
+ And then maybe attaching to that is like,
+ does that mean that if there's things built on top,
+ can something lower level be swapped out
+ or like how many interplays that?
+ - That's exactly the way that works.
+ The image you should have in your head is Legos, right?
+ Is that this module system, right?
+ 'Cause the reason why is because when we originally,
+ when Eric was originally writing the system,
+ he wanted to make things just kind of like
+ for him personally, easier to think about.
+ But this kind of evolved
+ into this really robust module system, right?
+ And so the default modules that ship with Fetiment
+ just out of the box are Bitcoin, Lightning and eCash, right?
+ And the reason why is because like unplug all of the modules,
+ what is happening is there's just a distributed
+ consensus system, right?
+ And the distributed consensus system in that,
+ you have to define the items
+ that they can perform consensus over.
+ And the model in Fetiment is that there's just transactions,
+ is that there's inputs, there's outputs
+ and there's a Schnorr signature,
+ which is the cross input signature aggregation
+ of all of the inputs, right?
+ That the whole thing, the whole thing is built
+ on this transaction structure.
+ And so when you're defining a new module,
+ what you're doing is you're defining new inputs,
+ you're defining new outputs,
+ and you're saying, for example,
+ you can have Lightning inputs and Bitcoin outputs.
+ You can have eCash inputs and Bitcoin outputs.
+ You can have Lightning input
+ and Solidity smart contract execution output, right?
+ Of that, because you can define it in this way,
+ you can do whatever you want, right?
+ And so just as an example,
+ there's like a very primitive contract system
+ that comes out of the box with Fetiment or whatever,
+ something that we'd be really excited to see
+ and that probably people in the audience
+ would be able to implement, right?
+ Is like implementing something like Clarity
+ or a more complex contracting system
+ as a Fetiment module, right?
+ And so you basically like hot swap
+ the contracting system out
+ and then put this new one in,
+ and then just out of the box,
+ anything that you deployed on any of these stacks
+ or whatever, right?
+ Like you can bring that onto Bitcoin
+ and like there's no derivatives token in the way
+ and all that kind of stuff, right?
+ So like one of the things that we did,
+ this was last year at Bitcoin Plus Plus,
+ was we did simplicity.
+ And so we called it Simpiment.
+ It's just in general,
+ all great modules end with Ement, right?
+ And so Simpiment is implementing
+ the simplicity smart contracting system
+ within Fetiment.
+ So you unplug the...
+ So what we basically did was,
+ well, we didn't unplug the existing
+ like contracting system,
+ basically added resolution of simplicity contract
+ as this module, right?
+ And so when you say, how extensible is this?
+ Well, simplicity smart contracting system
+ is that basically anything that you can provide
+ a security proof in C4, you can execute.
+ So you can execute arbitrary C code
+ through by the use of Jets, right?
+ And so it's like, how extensible is this thing?
+ Well, you can do whatever you want, right?
+ As long as you can prove
+ that the thing will finish execution before,
+ what's called,
+ and that you don't have any issues, right?
+ But basically that's kind of the idea behind it.
+ And so for clarity, for example,
+ you could just like plug that in as a module
+ and now you've got inputs and you've got outputs
+ and you can define these things in different ways, right?
+ - Interesting, okay.
+ Yeah, I guess I'm gonna take a hard left turn then.
+ And we're breezing up on an hour real quick.
+ So we'll start to close this down,
+ but something you mentioned way earlier
+ is a Chame and Mint, which is blind deposits,
+ I think is what you said.
+ And yeah, so basically the Chame and eCash Mint
+ uses this cryptography primitive
+ called blinded signatures, right?
+ And the thing to keep in your mind
+ is basically this idea of that,
+ when I show up at the Mint with my Bitcoin
+ or whatever that I'm depositing in there, right?
+ I'm going to, well, we don't have to get into this one,
+ but we actually do this in a really cool way
+ where we make it so that when you deposit
+ into the Mint as into the FedMint,
+ it's actually atomic with them giving you the eCash, right?
+ Is that it's not possible for them to claim the deposit
+ that you did unless they give you the eCash, right?
+ Which is pretty cool, right?
+ But basically the image that you should have in mind
+ is that when they're doing this eCash
+ is that I show up with a bunch of eCash notes
+ in envelopes, right?
+ And the only thing I can see about these basically
+ is the amounts associated with these eCash notes, okay?
+ And so they know when I do deposit
+ that they're issuing me eCash notes of a certain amount.
+ And so they push really, really hard on the envelope
+ and they do the signature.
+ And then what I do is I go off on my merry way.
+ What I do, the moment that I turn around
+ is I throw away the envelopes,
+ I cop the eCash notes out
+ and I put those in my wallet, right?
+ So now when I show back up, I have a bunch of e-cash notes,
+ they're not on the envelopes, right?
+ And so anything that the Federation saw was on the envelope
+ and that's thrown away, that they don't see anymore, right?
+ I show back up at the e-cash note
+ and you can see the negative of the signature
+ on the e-cash note, 'cause remember,
+ they pushed really hard through the envelope,
+ so you can see the outline of their signature
+ on this thing, right?
+ So when I show back up at the Mint,
+ all they know is, yes, I did issue this
+ at some point in the past, this is a valid e-cash note,
+ but I don't know which one it was, right?
+ That's kind of the fundamental cryptography primitive
+ behind this, right?
+ Where your anonymity set for everything in the FedEditment
+ becomes all of the other e-cash notes
+ of that denomination ever issued by the Mint, right?
+ So it's like a very, very, very strong privacy protocol,
+ right?
+ And the reason why we'd wanna do this
+ is because when you're talking about local community custody,
+ right, it's very important that when my local community,
+ like for example, I don't really care
+ that some third party in some far off place
+ that I'm never gonna meet is able to see my transactions
+ in many circumstances.
+ I do care if, for example, I'm an activist
+ working in some area that my neighbor,
+ who doesn't like me or whatever,
+ doesn't see my transactions, right?
+ And so this is something where it's not
+ the most important thing, right?
+ Like the most important thing is this community custody
+ thing, but when you talk about the local community,
+ having this element of privacy behind my transactions
+ so that it's like, my neighbor can't look over my shoulder
+ and see what I'm doing, right?
+ 'Cause a neighbor is the guardian, right?
+ It is that you wanna be able to have
+ this better privacy guarantee, right?
+ And so Chami and eCash is a technique for doing this.
+ It's just a blinded accounting system, right?
+ Where the Mint can't, knows,
+ they know that they're not issuing anymore.
+ Well, they're trusting them not to issue anymore,
+ but like this is the Federation aspect of it, right?
+ Is that you're depositing the Mint,
+ they're issuing it out.
+ When you redeem the eCash notes,
+ they can't correlate the input to the output, right?
+ - Okay, that makes sense.
+ Yeah, I can understand the privacy aspect of it.
+ And again, like this is all cryptographically sound,
+ but the basic idea is like, you come in, you go,
+ cool, you came in through the right way,
+ you passed your security, your wallet's good,
+ we give you this money.
+ And then after that, all I know is that,
+ what you toss the envelope is that
+ this did come from this issuing bank.
+ That's all we need to know. - Exactly.
+ - This is legit eCash, so you can spend it
+ in the community as legal attention.
+ - Yep, and the process of spending it
+ is that I tell somebody else about my eCash note, right?
+ They go to the Mint, they redeem it,
+ they get new eCash, right?
+ And now the one that I had previously
+ has been invalidated, right?
+ And so, this is not a very,
+ like the reason why this doesn't take off, right?
+ Before you have Bitcoin,
+ and before you have the Lightning Network,
+ is because you're just stuck within your Mint, right?
+ But because we have the Lightning Gateways, right?
+ Now we can have the experience,
+ and this is a design decision on FedEmit's part,
+ is that the experience that everyone has
+ is they're just paying Lightning invoices, right?
+ Is that we actually hide the eCash behind,
+ like if you're doing an offline payment, you can see it,
+ but generally speaking, the experience is just
+ that you're using Lightning, right?
+ It's just on the back end,
+ there's some fancy cryptography happening
+ that gives you really good privacy, right?
+ - Got it, okay.
+ I've got a few more questions.
+ - Yeah, totally.
+ - Let's see here.
+ So we've talked a lot about the benefits,
+ you know, privacy.
+ What are some of the big downsides,
+ or like limitations to FedEmit's protocol?
+ - Yeah, totally, right?
+ Is that like very upfront about this, right?
+ Is that like there is a trust assumption
+ associated with this that is not,
+ if you're using base chain Bitcoin,
+ or if you're just using Lightning, right?
+ Is that the trust assumption is based on the Federation,
+ right, is that Federation is your trusting,
+ it's like everything else is based off this thing, right?
+ And so this is kind of just like a design space
+ that we find interesting,
+ and that we think should be explored and expanded.
+ It's just because that is the fundamental difference
+ between this and every other protocol, right?
+ Like all the trustless stuff or whatever, right?
+ But if you're willing to make this trust assumption,
+ there's all sorts of benefits that you get from this,
+ like for example, the ability to do social recovery, right?
+ Out of the box, the ability to do something
+ like Xiaomi eCash, like cryptographically perfect privacy
+ out of the box, the ability to be able to do
+ hosted community resources
+ because they're running these federations, right?
+ It's like all of these spaces that you get
+ in terms of doing this trust assumption, right?
+ And so that's just like a very specific one
+ in terms of like all the benefits,
+ all the downsides or whatever,
+ insofar as they are a downside, you do that.
+ But the perspective that we take on this,
+ and the perspective that I think everyone
+ should take on this, right?
+ You arrive back at that trust assumption,
+ the moment that you kind of think through
+ what happens to my single-sig cold storage
+ in the event that something happens to me, right?
+ And because you arrive back at this
+ and you're going to have to do this in some way,
+ it kind of gets a little bit complicated
+ when you think about vaults, right?
+ Because like for vaulting, right?
+ Is that, you know, it kind of gets a little bit
+ more complicated, but just generally speaking, right?
+ Is that this second party design space
+ is trust assumptions that people are willing to explore.
+ And like, I think it'll be very interesting
+ once Ledger Recovery actually continues
+ as what they're doing or whatever.
+ Because like the intuition behind what Ledger
+ is doing there makes sense, right?
+ Which is that there's a lot of people
+ who are afraid to take self-custody of their funds
+ because they don't trust their wife
+ to be able to do the recovery by themself afterward, right?
+ And so the current solution that they have
+ is that they're going to a third party.
+ And the way that we should be comparing these things
+ is on this perspective of like,
+ hey, there's like this centralized custodian third party
+ who's like, you should know privacy,
+ and they see everything or whatever, right?
+ There's full self-sovereign,
+ all these kinds of things or whatever, right?
+ And there's design trade-offs associated with this one.
+ Fedament is what's called,
+ is an interesting set of trade-offs
+ within that design space between the two of those things
+ that we think is going to be able to give a better solution
+ to onboarding billions of people into Bitcoin, right?
+ Like just for example, just like the math behind this
+ is that if we wanted to give everybody
+ in the United States a lightning channel,
+ it would be two years of full blocks, right?
+ Just opening the lightning channels, right?
+ Like none of the ordinal stuff, none of the inscriptions,
+ none of the ZK roll-ups, none of those things or whatever,
+ is like two years of just opening lightning channels, right?
+ The size of the UTXO set,
+ if you wanna scale out to on lightning layer
+ to billions of people or whatever,
+ explodes beyond anything
+ that anybody could reasonably run themselves, right?
+ So at some scaling point or whatever,
+ you need to have some sort of way of doing
+ like a custodial solution around a UTXO
+ where multiple people are splitting up internally
+ the accounting of like that UTXO, right?
+ The thing on chain is like a couple UTXOs or whatever,
+ and that is the combined economic energy
+ of tens or hundreds of people below it, right?
+ That's the scaling solution that gets you
+ to billions of people using Bitcoin, right?
+ And of course, there's other ways you can do it.
+ You can do roll-ups, you can do side chains,
+ other things like that or whatever.
+ Like FedEvent is an interesting design trade-off
+ where it's worth exploring,
+ and it's got this really extensible module system.
+ So for example, if you wanted to do
+ any of those other things
+ that you would do on these other chains,
+ a good place that you could do
+ is first implement an FedEvent.
+ And so you can have that run in the distributed consensus
+ among this smaller group to prove the cryptography,
+ to prove the security,
+ to prove the effectiveness of this thing, right?
+ And then as it scales, as it gets better,
+ 'cause like really, like for a lot of the stuff
+ that we really wanna do in Bitcoin,
+ there's not a real good training ground for it, right?
+ The training grounds right now are like Cignets, right?
+ Or like Liquid.
+ But like now through FedEvent in this module system,
+ you can go take whatever the most advanced cryptography
+ stuff you wanna do,
+ start a federation with you and your other Bitcoiners,
+ kick the tires on it, use real money behind it, right?
+ And let's go and like, as you prove it out,
+ you scale up to larger and larger systems,
+ and eventually that gets software in the Bitcoin, right?
+ - Yeah, I love that.
+ Man, that's a crazy stat.
+ Two years of transactions.
+ And that's not even factoring in cost and fees,
+ which who knows where they'll be.
+ So that's insane.
+ - Yeah.
+ - The federation piece, I can't stop thinking about it now.
+ And it's interesting because you have
+ this second party thing, which is a more social consensus,
+ which is, I like.
+ And then, but when you go one layer up,
+ no Bitcoin layer, if you will, has gotten real traction.
+ And the three main ones,
+ Lightning is top of the heap in my opinion,
+ but then you have Liquid and Rootstock,
+ which do federations in their own way.
+ And then you have Stacks, which is open membership,
+ but you have to hold this token
+ that most people don't wanna hold.
+ So do you think that the FedEmint second party model
+ is fundamentally that much different than the other ones?
+ Or, 'cause I can't get a good pulse on how different,
+ now that you're explaining it well.
+ - It's really like the second party
+ versus third party federations, right?
+ Is that like, for example,
+ I mean, just like off the top of my head,
+ of like, when I use Liquid,
+ the people that I'm trusting are people that I don't know,
+ that don't know me, that don't know my kids,
+ they don't know my family.
+ Like, I like fundamentally,
+ I think that there's like super beneficial
+ in like all sorts of ways or whatever
+ for these things or whatever.
+ But it's just like, kinda think this through
+ of just like the intuition behind Ledger Recover
+ is correct, which is that there's a lot of people
+ who don't feel fully comfortable themselves
+ taking self custody, right?
+ And they want some sort of backup solution.
+ And currently, there is not an interesting design space
+ for how they can do that, right?
+ So even for all of these other things, right?
+ So for example, I deposited Rootstock or whatever, right?
+ And yeah, Rootstock has a federation side of those things.
+ But like, those federation members
+ are not gonna collude together
+ in order to recover my funds, right?
+ It's not like, because it's a third party system, right?
+ And like, for Liquid side,
+ like exact same thing or whatever, right?
+ But like, within the federation context of these things,
+ it's like basically the, what's it called?
+ You can scale this up and you get interesting trade offs
+ of the size of this thing.
+ Like, so for example, if you're running
+ a larger federation across a more distributed set of places
+ that is more resilient to more guardians
+ being compromised or whatever,
+ maybe that's something that if you're
+ like a very privacy focused individual
+ or you're in a government that's like not,
+ like that's not welcome to you in that place or whatever,
+ that's the kind of federation
+ that you'd be interested in joining.
+ But if you're just trying to do like a backup solution
+ for myself, my family, my community or whatever, right?
+ Then like maybe like the guardians
+ are like in my local space.
+ What Fedimate aims to be is just this very modular
+ protocol level in order to allow you
+ to decide to make those trade offs yourselves.
+ And then Fetty is a way of on the front end,
+ have a unified, like we call it a federated operating system
+ of having a unified view of interacting
+ with these different federations.
+ So maybe there's the community one,
+ maybe there's the company one,
+ maybe there's the nation one,
+ maybe there's the local family one or whatever.
+ Maybe there's one that offers like really good AI models
+ that are like they're hosting
+ 'cause they have like a GPU graph,
+ they have like a graphics card farm or whatever, right?
+ And so like my local AI that's running on my phone,
+ once it runs, realizes that it's facing a problem
+ or I've asked it to do something
+ that it can't solve on its own,
+ it has a little bit of e-cash that it can use
+ to make lightning payments in order to purchase access
+ for models through a federation, those kinds of things, right?
+ Is that it's just a very interesting design space.
+ And like you were saying, I'm like,
+ hey, I can't stop thinking about this thing,
+ is that for once you start thinking about it this way,
+ like it really takes over everything.
+ It's like, it's very hard to think about other things.
+ Like everything else is interesting or whatever,
+ but this is like very interesting design space
+ of the possibilities that emerge
+ when you're, because you recognize that people
+ are willing to make these trust assumptions
+ on certain aspects of things.
+ And the moment that they're not able to,
+ absolutely like fork off your own federation,
+ go use some other solution or whatever, right?
+ But like, this is like an interesting design space
+ because we can use it as a technique
+ for onboarding millions and millions and millions of people.
+ Right?
+ Because, yeah.
+ - Got it.
+ Yeah, no.
+ Okay.
+ I guess the last question that we'll try
+ to bring us to a close.
+ If people are here in this, you know, super interested,
+ you guys just launched Study Alpha.
+ Is that the best place?
+ I guess first tell us a little about it,
+ but where's the best place to interact with Feddy
+ kind of at the bleeding edge?
+ Not like I want to build,
+ but I want to like try it out as an end user.
+ - Yeah, well, there's two things specifically, right?
+ And so there's the FedMed module layer,
+ which we spent a lot of time talking about, right?
+ And that's kind of like consensus layer,
+ distributed systems, that kind of thing, right?
+ And so if you're somebody who like writes
+ clarity smart contracts,
+ or if you're writing on like working on taproot
+ or anything like that, right?
+ Like that's kind of like join the FedMed discord,
+ start contributing to the open source protocol
+ for it, we do all sorts of really fun stuff, right?
+ Like all like kind of bleeding edge Bitcoin stuff,
+ like happens at FedMed, right?
+ Like we're using Miniscript, we use taproot,
+ we use cross-input signature aggregation,
+ and like fancy stuff with snore signatures,
+ adapter signatures, all that kind of things.
+ Like all through the FedMed module system,
+ you can do interesting smart contracts
+ and all that kind of stuff, right?
+ Like all this stuff that you might think about like.
+ "Oh, hey, I can't do this on Bitcoin," or whatever,
+ you absolutely can,
+ and the place to test it is in Feddymint, right?
+ And so come to Feddymint, do that sort of thing.
+ If you're a web dev, or some sort of front-end dev,
+ or anything like that,
+ Feddy has this concept of FeddyMods,
+ which is basically WebLN-enabled sites
+ that become interoperable
+ with the Federation Feddymint APIs, right?
+ And so now it's like, "Hey, I'm interacting with websites
+ "that are Lightning-enabled, right?
+ "But I can also do stuff,
+ "like I can use the resources on my Federation
+ "when I'm doing these things, right?"
+ So it's like, "Oh, hey, I got a Lightning invoice,
+ "so I have to log in with Lightning,
+ "or I have to do something like this, right?"
+ But also tying in the APIs that are opened up
+ by the federations that you're connected to, right?
+ There's kinds of FeddyMods,
+ very kind of just like,
+ hey, building front-end applications that use WebLN,
+ but also leveraging the fact
+ that we've got all these Federation resources behind us,
+ right, connected through the Feddy app, right?
+ And so for those ones,
+ all of this kind of stuff generally
+ is that Feddy is gonna be sponsoring a giant hackathon
+ for its remote first for the entire month of July
+ called AI for All.
+ And the thesis behind it is that Bitcoin is a tool
+ for enabling access to bleeding-edge AI stuff
+ to the rest of the world, right?
+ And the reason why is because as a sender on Bitcoin
+ using the Lightning network, right?
+ So if I'm hosting an AI model or anything like that, right,
+ is that I can give access to this for everyone in the world.
+ And you can't do that right now.
+ The reason why is because people will find it,
+ they'll exploit it,
+ what's called, they'll take advantage
+ of all your GPT access.
+ They'll take advantage of the fact
+ that you've got all these graphics cards or whatever.
+ You can't just open it up, right?
+ But with Lightning, we have instant micropayments, right?
+ And as the sender, you achieve perfect privacy.
+ And so, people, I can open up access
+ to like my graphics cards.
+ I can open up access to like my GPT-enabled model,
+ or I can make a website
+ and I can put a GPT chatbot in there or whatever, right?
+ And instead of waking up the next day
+ with a $250,000 bill because somebody figured out
+ I was using GPT-4 and they're just spamming me, right?
+ Is that I could say like,
+ hey, you have to pay per API call that you're doing.
+ And because it's Lightning, it's instant final settlement
+ and the sender achieves perfect privacy.
+ I achieve no information about my user
+ except for the fact that they paid me, right?
+ And so, I'm always profitable
+ the moment that I deploy my AI application.
+ And so, it's really exciting for that one
+ is that all through the month of July
+ is that we're gonna be doing like tons
+ of like replica bounties, hackathon prizes,
+ like bunch of building workshops
+ and all this kind of stuff
+ of using Bitcoin as a tool for democratizing AI access,
+ right?
+ And it's gonna be remote first.
+ There's gonna be like a culminate,
+ that we're gonna have like some in-person events
+ kind of all around the world or whatever.
+ So, just like meet Bitcoin builders
+ and all that kind of stuff, right?
+ So, like keep an eye out for all those things.
+ - Love it.
+ Is the Feddy discord the best place
+ to be pointing towards that?
+ - Feddy is a telegram.
+ Feddy is a telegram.
+ Feddy Mint has a discord.
+ And so, there's a Feddy telegram
+ where we kind of answer questions
+ about the Feddy alpha stuff
+ is that if you just go feddy.xyz/builders,
+ then that's a good place to like start getting,
+ getting started using the Feddy alpha.
+ And so, that's a progressive web app.
+ It's also got an iOS app and a Android app and an APK.
+ And so, like you can use that
+ on whatever system you're working on.
+ It uses the Mutiny SIGNET.
+ And there's gonna be over the next couple of weeks,
+ there's gonna be tons and tons and tons of new support
+ for different tooling and stuff.
+ Like so, for example, Mutiny,
+ which is like a privacy focused lightning wallet
+ uses the Mutiny SIGNET.
+ We use the same SIGNET.
+ And so, you can like pass around payments
+ between those two or whatever.
+ Like on the Mutiny side, if you're like more advanced,
+ you can see like lightning channels,
+ those kinds of things
+ and see how it's like basically passing it back and forth
+ between like the e-cash system
+ and the lightning system.
+ It's very cool.
+ There's gonna be tons and tons of stuff coming out,
+ like yeah, but so that's the place to go.
+ Feddy.xyz/builders.
+ - Love it.
+ Okay, that's all the questions I got.
+ I think you dropped bombs
+ for like an hour straight successfully.
+ Any other closing thoughts of questions I didn't answer
+ or didn't ask?
+ - Yeah, I mean, just like kind of two things for it, right?
+ Is that, so one of the things that I've kind of learned
+ of working on Feddy and FeddyMint, right?
+ Is that there's like an entire world out there
+ who needs access to this stuff.
+ Is that they need Bitcoin.
+ And like the thing that needs to happen right now
+ is people need to help build the tools
+ that is going to democratize access to this stuff, right?
+ And so, like, I mean,
+ I talked about the patent quote earlier, right?
+ Of like, hey, like the thing that I'm offering you
+ is 30 years from now,
+ when you're talking to your grandkids,
+ like you'll get to tell them that I helped bring,
+ like, you know, I helped bring peace to Europe, right?
+ By working with the third army.
+ On the Bitcoin side of things, right?
+ Is that like, we're in this really critical moment
+ right now where things could go one of a couple
+ of different ways.
+ And like 30 years from now,
+ when you're talking about your,
+ when you're talking with your kids,
+ you're talking with your grandkids,
+ and they ask you, what were you doing during this period
+ where we brought property rights
+ to billions of people around the world?
+ You get to say, hey, I helped build the software
+ that did that.
+ I helped build the tools that did that.
+ I helped bring property rights to these people, right?
+ Is like, that's the way to think about this thing.
+ - Yeah.
+ Well, well said.
+ Yeah, the more time I spend, again,
+ it feels like coming up for air in some sense,
+ but the more you get orange pill,
+ the more you're like, I like crypto still.
+ Like there's a lot of value in crypto.
+ I'm not like a Bitcoin maxi per se,
+ but a lot of what they're building is like weird
+ re-hypothecation and like, you know,
+ speculative token things.
+ So there's something about that,
+ what you just said of make enough money to live your life.
+ You know, everyone deserves to be comfortable,
+ but you're building something that's like literally
+ world changing.
+ And still super duper, duper early.
+ And the need for people to have that mindset
+ and just build in one direction, like unified.
+ You're gonna like back on this and be proud of yourself
+ for the fact that you did,
+ like you brought property rights to, you know,
+ a huge population that had no chance before Bitcoin.
+ - Yeah, absolutely.
+ I mean, this is like kind of last word on this one
+ for devs, right?
+ Is that in terms of, like, I know this
+ from the dev perspective,
+ like I was this guy for a little bit, right?
+ Was that you feel like you're doing work
+ by doing things like reading about coding
+ or like going to a conference or whatever,
+ where it's not a hackathon where you're actually coding,
+ but it's like, hey, I'm talking about coding or whatever.
+ Or like reading books, reading books is a big one, right?
+ I like reading coding books and just like kind of doing
+ like fake work for these things is that the thing
+ that you need to be doing and the thing that everybody
+ should be striving to do, right,
+ is that you sit down in front of a computer
+ and you try to build software that are gonna help people,
+ right, is that you build software that either gets reviewed
+ by someone more senior than you,
+ so you can learn through making mistakes,
+ or you build through building something
+ that a user's going to use,
+ and so the user can give you feedback on what you did,
+ right, and like, that's the fastest way.
+ Like it hurts, it's hard.
+ Sometimes you feel like you can't build something
+ that's useful or whatever,
+ but everyone here, everyone is here to help you.
+ It's like, we're kind of like in this ship,
+ we're all rowing the boat toward property rights
+ and freedom, right, and there's like, you know,
+ you can like be there, you can pick up an oar,
+ and you can kind of join in,
+ and everyone's very excited for you,
+ but, or you can kind of like, you know,
+ like take pictures of the boat or something like that.
+ I don't know, I mean like that analogy kind of broke down,
+ right, but it's just like, this is just something that,
+ like the thing that comes to my mind, right,
+ is that just kind of going back to Marine Corps side
+ of things, right, is that there's like,
+ there's this whole like industry of people
+ who kind of like take advantage of Marines, right,
+ and people in the military, where it's like,
+ you know, they, like, let me tell you about one of the,
+ like most egregious ones is that there's guys
+ who like they sell cars or whatever, right,
+ and like they will figure out when the graduating classes
+ of Marines are coming off Parris Island,
+ or like the Hollywood Marines out of San Diego,
+ like they'll figure out when they're graduating,
+ and then they'll position themselves
+ so that they have a specific sale,
+ so for those guys when they're coming out,
+ 'cause they know that they're sitting on a stack of cash,
+ it's the first time they've ever made any money,
+ 'cause they've been stuck on Parris Island
+ for a couple months, right,
+ and so they're sitting on a government paycheck
+ that's been going through or whatever,
+ they basically calculate the amount that like,
+ oh, hey, I'll be able to get 30% of the money
+ that he's got on these things or whatever,
+ and then like the Marines come off,
+ they go buy the hot rod car,
+ they get this giant like car payment
+ that they have to do or whatever,
+ and like totally screws them or whatever, right,
+ and like that's something that's absolutely,
+ you're capable of doing in a free market, right,
+ but it's also kind of distasteful, right,
+ and like do you wanna be that guy,
+ oh, it's like yes, absolutely,
+ like Bitcoin is freedom technology,
+ it's freedom, it's money for your enemies,
+ it's all that sort of thing or whatever, right,
+ it's like 30 years from now,
+ do you wanna be the guy who is like,
+ oh, hey, like I just played with this little toy
+ or whatever, right,
+ or do you wanna be the guy who can say to your grandkids,
+ like, hey, I helped bring property rights
+ to billions of people and build software
+ that everyone else is using,
+ and like everyone in the industry wants you to be that guy,
+ everybody is here to help you,
+ like if you come to the Fedmate Discord,
+ like we do new contributor onboarding all the time,
+ like come to Bitcoin++,
+ come participate in the hackathon or whatever,
+ like all we want is more devs
+ and we are all here to help you, right, so.
+ - Well said, yeah, I'll just double click on that
+ 'cause one of my big passions with this podcast
+ is trying to break down talking to the builders
+ and the reason why I spend half the time
+ talking about the person for the most part
+ and then talking about the project,
+ because I'm trying to humanize the fact
+ that like we're all just people trying to build stuff,
+ it's not, Bitcoin feels unaccessible at some level
+ if you're new, it feels very high and mighty,
+ but you drop so many ways of why it's,
+ the barrier is easier than you think,
+ and two years ago I was working at a grocery store,
+ now I work full time in Bitcoin
+ and it's like I've spent a lot of time
+ doing the mental masturbation of like YouTube videos
+ and tutorials and stuff,
+ versus I've probably spent 200 hours learning the code,
+ I'm still a terrible coder,
+ I spent most of my time doing this
+ and talking to startups,
+ but at first it's really hard to get over the fact
+ that the computer is like, the computer is never wrong,
+ it's your code that's wrong,
+ and at first that's really frustrating,
+ the more you do it, the more it's freeing,
+ where it's like I'm the problem,
+ once I get it right, I can crack it
+ and like the computer is gonna spit out the thing I need,
+ that becomes, as you get more cycles in,
+ it becomes really alluring,
+ so that's just a little preamble or whatever
+ of to pick off back what you said of like,
+ if you're thinking about it,
+ we've dropped some pretty good resources,
+ take advantage of them,
+ and your life could change quicker than you think
+ and you can also help a bunch of people,
+ so yeah, Cody, this has been a fantastic episode,
+ I'm gonna have a billion clips to cut out of this
+ to post online, yeah, thank you so much
+ for coming on to drop knowledge
+ about Bitcoin development,
+ and Fedumit and everything else, appreciate you.
+ - Yeah, totally, absolutely, this has been great, thanks.
+ - Thank you for listening this far into the episode,
+ if you found it enjoyable,
+ please do like, subscribe on whatever platform
+ that you're listening on,
+ YouTube does me a huge favor to like and subscribe,
+ find me on Twitter @JakeBlockChain, show me some love,
+ I reply to every DM,
+ and if you are a Bitcoin builder
+ that is kind of at this forefront of building new use cases,
+ whether it's L1, Lightning, Stacks, Rootstock,
+ Rollups, Ordinals, BRC20, I wanna talk to you,
+ so when I'm not doing this podcast,
+ I am the sourcing partner at the Bitcoin Frontier Fund,
+ where we invest in Bitcoin startups at the earliest stages,
+ give you access to whatever you need,
+ whether it's legal, product, fundraising help,
+ as well as capital, so love to talk to you,
+ you can hit me up, again, find me on Twitter @JakeBlockChain,
+ and shoot me a DM, I'll read everything,
+ love to talk to you guys, all right, peace.
+ (upbeat music)
+ (upbeat music)
+ - Welcome to Built on Bitcoin.
+ ♪ I know that things don't always go your way ♪
+ ♪ But I'll be right here waiting ♪
+ ♪ I've been waiting now ♪
+ ♪ I've been trying to figure out a way to make it out ♪
+ ♪ Make it out 'cause I don't think about ♪
+ ♪ Everything going wrong in my house ♪
+ [Silence]

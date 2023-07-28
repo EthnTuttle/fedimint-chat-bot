@@ -1,0 +1,894 @@
+ Hi and welcome to Stefan Libero podcast, a show about Bitcoin.
+ Today for episode 331, my guest is EL Sirion aka Eric Sirion.
+ We're talking about Minimint and so this is around federated mints.
+ This is actually in some sense it's a advancement of an older idea of Xiaomi and e-cash.
+ So the idea is federated mints and that you could deposit in an IOU and we can talk through
+ the process, deposits, withdrawals, internal transfers and then how lightning comes into
+ it as well.
+ But essentially this is an interesting area of research, it's being actually sponsored
+ by Blockstream.
+ And so we talk about some of the benefits for Bitcoin users from a Bitcoin scaling and
+ privacy point of view as well as the custodial and trust trade-offs as well as where we see
+ this going.
+ This is potentially the future for community custody.
+ This show is brought to you by Swan Bitcoin, the easy way to accumulate and learn about
+ Bitcoin.
+ And now Swan is bringing back gifting.
+ So Swan actually started as GiveBitcoin and later that product had to get taken away and
+ now it's back.
+ We've got the holidays coming up and if you want to gift Bitcoin to your loved ones, swanbitcoin.com/gifts,
+ you can gift Bitcoin and you're giving them, alongside that, you're giving them access
+ to Swan's world-class education and customer service.
+ You create a custom gift, your recipient gets an email, they can claim it in seven days.
+ And so they create their Swan account and convert that USD value into Bitcoin.
+ So that website is swanbitcoin.com/gift.
+ Lend at HodlHodl is a peer-to-peer Bitcoin-backed lending platform where you can lend or borrow
+ stablecoins globally and anonymously using Bitcoin as collateral.
+ And you don't have to use KYC to do this.
+ With Lend at HodlHodl, you no longer need to sell your Bitcoin to get some short-term
+ liquidity.
+ You can borrow stablecoins against your Bitcoin and you still control one out of three keys
+ in the multi-signature escrow throughout the whole deal.
+ Now on the other hand, if you have stablecoins like USDT on Liquid, you can use that to earn
+ some interest by lending out stablecoins and you define the terms and the APR for those
+ deals.
+ So go and sign up.
+ The website is lend.hodlhodl.com.
+ If you want to get started with Bitcoin mining, Compass Mining can help.
+ CompassMining.io is the website.
+ You can go there, you can select an ASIC machine and they've got new ones and also second-hand
+ machines available on the Compass marketplace.
+ And so then you select a hosting facility where your machine is going to be operated.
+ There are mining facilities all in different countries and you can select the mining pool
+ that you point your hash rate towards and you're receiving Bitcoin.
+ Now you're paying hosting, but this is an easy way to get access to power rates that
+ otherwise wouldn't be feasible for most people in residential power rates.
+ Now Compass offers a lot of content as well.
+ They've got podcasts and blogs and a newsletter also.
+ So go and check them out.
+ It's CompassMining.io.
+ On to the show with Eric.
+ Eric, welcome to the show.
+ Hello.
+ Yeah, happy to be on.
+ Nice to meet you.
+ Yeah, so Eric, it was great to read about your proposal and read about what's going
+ on with Miniment and all this stuff.
+ And I think it's definitely a topic that SLP listeners will be interested to hear about
+ ideas related to this privacy, scalability, all sorts of things.
+ So do you want to give us a little bit of your background, as much as you're willing
+ to share without doxing, of course?
+ Yeah, sure.
+ So my background is in computer science and especially in distributed systems and cryptography.
+ So that naturally led me to explore different systems like Liquid on Bitcoin and federations,
+ Byzantine Fault Tolerance.
+ And at some point I had this idea for Xiaomi and eCash and building it on Bitcoin.
+ That's why we're here today.
+ Excellent.
+ And so for listeners who are not familiar, what is Xiaomi and eCash?
+ Yeah, most simply explained, I think it's a way to exchange some asset that has value,
+ for example, Bitcoin for an IOU token.
+ And that IOU token has this nice property that is fully anonymous.
+ Like you engage in a protocol with the, let's call it mint, because we can say it's like
+ a minting process when these IOU tokens are created and you send the mint some amount
+ of money and in return you get IOU tokens and later on when you want to spend them,
+ the mint can't recognize during which issuing operation they were actually created.
+ So you're fully anonymous, which is great.
+ Right.
+ And so listeners who are maybe new to Bitcoin, you might recognize that Xiaomi and eCash
+ and this whole idea by David Chalm is arguably like a predecessor idea to Bitcoin.
+ It's been around for a while before Bitcoin.
+ Obviously there's certain distinctions between this idea of like a IOU token, because obviously
+ in Bitcoin, we're also all about this idea of not your keys, not your coins, don't trust
+ IOUs, etc.
+ But why would we even look at these IOUs?
+ What are the benefits of this kind of system and the trade-offs versus literally just hodling
+ Bitcoin?
+ Yeah, that's a really interesting question because like Xiaomi and eCash has been around
+ since the early 80s, but it never really caught on.
+ And my theory for why is that you always had the centralized entity, the mint, which controlled
+ all the money and thus could easily either exit scam the users or could be taken down
+ by a hostile government.
+ And they tend to be hostile against like anything that has to do with anonymity and privacy.
+ So it's no wonder that we don't see big Xiaomi and mints today.
+ So but what they didn't have back then was a way to hold an asset in a distributed manner.
+ And we have that today, like with Bitcoin, you can hold value in a multi-sig wallet.
+ And that means, for example, if you have a two or three multi-sig wallet, that only if
+ two or three people cooperate, they can actually spend the Bitcoin.
+ And that's that made it really interesting to revisit the concept of Xiaomi and eCash,
+ because now we don't need to have the centralized entity, but could still get the privacy properties
+ from the Xiaomi and eCash protocol.
+ And in a way we do this is the backing funds are now held in a multi-sig wallet, while
+ also the issuing operation of these tokens can be distributed using fancy cryptography.
+ We probably don't need to get into this here, but essentially, you're taking the Xiaomi
+ mint and you split it up into multiple parts.
+ And now a certain amount of these parts can become malicious, actively malicious without
+ the whole being badly influenced.
+ Right.
+ So essentially it offers different characteristics.
+ And now with Bitcoin and multi-signature technology, allowing us to have multiple people who are
+ signing a transaction where we're sort of taking that idea even further.
+ So it's kind of like you've got Bitcoin where typically people are thinking of like, "Oh,
+ I've got my coins in my hardware wallet or in my, you know, whatever."
+ Then you might have Liquid as an example, which is a federation and people peg in and
+ peg out.
+ And so it's a side chain.
+ And then taking it even further is this idea of the federated mint.
+ And so that's what you're explaining here.
+ So could you tell us a little bit about this idea of a federated mint?
+ Like how would it work?
+ Who would sign up to be a member?
+ How would you use it?
+ Yeah, like the main benefits, as we already touched on, one, privacy.
+ That's what I already mentioned.
+ And also scalability to some degree, because mints also allow you to do internal transactions
+ with these e-cash tokens.
+ And that's the second big reason why we might want them.
+ And so to the question, who would potentially be users?
+ I guess like most people actually that want to use Bitcoin in some way.
+ And why?
+ Because like the biggest problem, one of the biggest problem Bitcoin has today is scalability.
+ And we can solve this to some degree with Lightning.
+ But like Lightning is really cumbersome to run from an end-user's point of view.
+ And so even today, we see many people using custodial solutions.
+ And like these people that today use custodial solutions, these are my primary target audience.
+ Like of course, everyone else who wants some privacy can use a federated e-cash too.
+ But the primary audience are users of fully custodial services today, because for them,
+ it's a clear improvement over the state of affairs right now.
+ And who would run these federations?
+ Like I can only theorize about that.
+ But for example, I can imagine like your local community, if you're living in a village in
+ El Salvador, probably has some technical people and they can be the federation members while
+ the others are only users.
+ And we are already seeing this with Galoy and Bitcoin Beach Wallet.
+ They have a very similar approach, a bit more manual and without the privacy properties,
+ but essentially they're running the same model there.
+ And it works and it's great.
+ And what I want to see is many of these federations distributed around the world, and you just
+ choose which federation you trust, you want to trust, because you might already have an
+ existing trust relationship, especially in your local community.
+ It's not a big deal to maybe trust some of your neighbors, like you're trusting them
+ anyway.
+ And since no single one of them has full control over your funds, there's also not so much
+ risk that they just run away one day because of some long tail event, like some Black Swan
+ event, because they would still need to convince others to defect with them.
+ I see.
+ And so just for listeners who, just so everyone can follow along, you might be interested
+ in the earlier episode I did with the Bitcoin Beach guys, but a quick high level is this
+ idea is it is a custodial Lightning wallet, and people can onboard to the Bitcoin Beach
+ wallet.
+ It's a custodial wallet and they can send and receive Lightning and it's interoperable
+ with the broader Lightning network.
+ But in the background, they also have on-chain storage and that is done with a multi-signature.
+ So listeners could think of this federated mint or mini-mint idea as sort of like a competitor
+ idea to that, but in a similar way that theoretically there could be lots of these mints around
+ the world.
+ People could be trading in an IOU way, but that could arguably be a little bit better,
+ maybe a little bit more private, maybe a little bit more scalable.
+ And the idea, as I'm understanding from you, is that it could still be interoperable with
+ other mints around the world and you could sort of swap in and out of mints and into
+ on-chain or into Lightning, but potentially.
+ Yeah, like that's a central part of my more recent research into this idea.
+ Like initially, I was just thinking about the federated e-cash part and like how to
+ build it on Bitcoin using on-chain, like primitives.
+ But the more I thought about it, the more it became clear to me that if we have to mint
+ only able to interact with on-chain Bitcoin, then it will be a big centralizing force because
+ people couldn't easily switch between different mints.
+ And if they would want to, then that either have to be some trust relationship, which
+ is not good because that just becomes like this old banking network where banks trust
+ each other and settle their payments at the end of the day.
+ We don't want to trust Bitcoiners.
+ So biggest improvement after that point was integrating Lightning.
+ And with the help of some people, some other developers, I figured out how to integrate
+ both incoming and outgoing Lightning transactions with federated e-cash.
+ And that essentially makes it into a supercharged Lightning wallet.
+ Like now you have a fully anonymous Lightning wallet that can interact with any other Lightning
+ node like through invoices and the other Lightning node on the other end might be another mint,
+ might not be another mint.
+ You don't even have to know.
+ So it forms this network of federations included in the bigger Lightning network, which I think
+ is quite beautiful.
+ Right.
+ Yeah, that's really interesting.
+ So we'll get into some more around that later.
+ I think it'd be good to just talk through some of the high level ideas like deposit,
+ withdraw, internal transactions.
+ If you could tell us a little bit, what does it look like?
+ So, okay, as an example, I bring my, I don't know, 10 million sats and I want to deposit
+ them into the mint.
+ What does that look like?
+ What's going on under the hood when I deposit my 10 million sats?
+ Right.
+ Let's assume for a moment that you have on-chain Bitcoin and want to deposit these into the
+ mint.
+ Then what you do is much like with Liquid.
+ People might not be familiar with this, so I will explain it for a moment.
+ You generate yourself an address, which you know is related to the federations public
+ keys in a certain way.
+ We call the operation done that key tweaking, like you add some secret value to public key
+ and that gives you a new public key.
+ And you can do this to all the federations public keys and then generate the multisig
+ address that way, because you know the public descriptor of the federation.
+ And then you send your satoshis, your 10 million satoshis to this generated address.
+ Now, the mint can't yet do anything with these coins because it doesn't even know it owns
+ them.
+ So in the next step, what you do is you show the mint the secret value used for tweaking.
+ And by doing so, you also verify yourself that it was actually you who sent these funds
+ there because no one else could have known the secret tweaking value, which led to this
+ address and the secret tweaking value is also needed to even spend these coins.
+ So by giving it to the mint, you transfer the ownership in a sense.
+ And in return, the mint will issue you a certain amount of these e-cash tokens.
+ Because one thing that really needs to be mentioned here, to be anonymous, these e-cash
+ tokens need to have a common denomination.
+ And that might be like one satoshi.
+ And like in a really naive model, you would now get 10 million of these e-cash tokens.
+ But that wouldn't be very efficient.
+ So in the more like engineered version of this, you would get instead like one e-cash
+ token that is worth 10 million sets or like 10 e-cash tokens that are worth 1 million
+ sets, depending on how you want to manage your e-cash tokens.
+ That's up to the user.
+ And you would engage in this interactive issuing process essentially.
+ And once you have the e-cash tokens, the mint can't tell anymore in exchange for which Bitcoin
+ transactions these were initially issued.
+ And you can do whatever you want.
+ Like you can send them to another user, like physically send the data to another user,
+ and then the user can go to the mint and exchange them for new e-cash tokens.
+ That would be like a transaction kind of, because by giving the e-cash token back to
+ the mint, you validate if it was already spent.
+ So you really need to do this to avoid double spends.
+ And the user who received your tokens then gets fresh tokens.
+ You don't know anything about them.
+ The mint doesn't know anything about them.
+ So it's fully anonymous again.
+ Or what you could also do is use some of the tokens to generate new on-chain outputs by
+ telling the mint, please give me a 1 million set on-chain output to this address.
+ And I give you this 1 million Satoshi e-cash token.
+ Or also give the mint some Lightning invoice and tell them, please pay this for me.
+ And I will give you the equivalent amount of e-cash tokens in exchange.
+ So there are a lot of options you have to interact with the mint.
+ Right.
+ And so we could think of it like, so those listeners who are used to Lightning, they could
+ sort of in a loose sense, think of it like a swap server, kind of.
+ Like you can swap in Bitcoin on-chain and swap it out to Lightning.
+ Yeah, pretty much.
+ Sort of, in a weird way.
+ And so essentially we are potentially getting more privacy for the user who, I guess presumably,
+ they might connect over Tor or some kind of anonymization layer or network.
+ And so then the idea is this federated mint doesn't know who I am, right?
+ For all intents and purposes, I'm just this other person on the other side of the internet.
+ I didn't have to do KYC, know your customer rules.
+ I didn't have to provide my ID.
+ And yet I can peg in some Bitcoin into this system and transact around inside that system
+ in the private e-cash tokens.
+ And then when I need to, pay out to a Lightning invoice or swap it out to a Bitcoin on-chain
+ address, correct?
+ Exactly.
+ And the beauty of the system is that really there aren't any accounts, like at least in
+ the pure e-cash version.
+ Every time you connect to the mint, you could do it using a different Tor circuit.
+ Like at least in the final version, it will be the way you do it.
+ Like currently in my implementation, it isn't the way yet.
+ But in the final version, you should use a different Tor circuit every time.
+ So you can't be correlated.
+ Like if you do multiple operations after each other, then the mint won't be any wiser who
+ did this.
+ Because the e-cash tokens are fully anonymous.
+ You have an anonymity set of every e-cash token ever issued of the same denomination.
+ Like if you imagine Alice, Bob and Carol getting like each one e-cash token issued and then
+ someone spends an e-cash token, then the mint can't tell if it's Alice, Bob or Carol.
+ Just not possible to tell.
+ I see.
+ Yeah.
+ So it gives you a very high amount of anonymity.
+ And especially with Lightning, like all the attacks on Lightning privacy, essentially that
+ you surveil channels and that you correlate like payments to node IDs.
+ But in this way, like multiple users are using the same Lightning node.
+ So it gives you the entire federation user base as the anonymity set, which is quite
+ a nice improvement in my opinion, because neither the mint can tell anything.
+ Like they only see someone who's spending e-cash tokens to pay a Lightning invoice.
+ Like they can maybe learn something from Lightning invoice, but you can strip it from the description
+ and some of the metadata, you can just take it out of there because it's not needed.
+ Like the only thing they really learn is to whom you pay and even that can be solved eventually.
+ Like I remember you had Bastian Tettinier on your podcast and you discussed some ways
+ to do this, like to even hide the recipient of a payment.
+ And once this lands for Lightning, then such a federated e-cash mint would be the ultimate
+ private Lightning wallet.
+ Yeah, really fascinating to think about.
+ And so as an example, let's say we've got this network of, I don't know how many tens,
+ thousands of mints out there.
+ Tell me if this idea makes any sense.
+ Like let's say as an example, I put in my 10 million SATs, I received my 10, 1 million
+ SAT e-cash tokens.
+ Would it make sense to ever try to swap across to different federated mints?
+ Or is it more just like I am placing a little bit more trust into this one particular mint
+ who I got those IOU tokens from?
+ I actually did some research on that because there was a discussion on Twitter some time
+ ago.
+ If it's better to, let's say you have a mint with four participants, a federation with
+ four participants, and would it be better to evenly split your funds over these four
+ participants individually or to form a federation and put all your funds into the federation?
+ And actually the answer depends on with which probability you assume any single participant
+ to defect, like assuming they're independent actors and are not correlated in any way.
+ And as long as your expectation is like below 20% defection rate, you should really just
+ leave it in one big federation.
+ That depends a little bit on federation size and some other factors, but generally the
+ federation is safer.
+ The main drawback I'd say is that the larger you make the federation, the slower it becomes.
+ Like all the BFT consensus algorithms, they scale badly with the size of the federation.
+ So eventually you want to set a limit to the federation size.
+ And so maybe for some people it makes sense to diversify over multiple federations, but
+ then again, that makes payments harder because at least currently I'm planning to implement
+ payments in a way that you can only use funds from one federation for a lightning payment,
+ let's say.
+ So you'd have to switch back to one federation before making a big payment of all your funds
+ going somewhere else.
+ So it's a trade-off, but generally I imagine in the future when there are multiple of these
+ federations, they all speak an interoperable protocol.
+ So if you have a client that could totally just support multiple federations and you
+ could have funds in multiple federations, it just makes engineering a bit more expensive.
+ harder and maybe your X a little bit less easy.
+ Okay, and so as an example for that user with presumably they have some kind of
+ wallet that manages their e-cash tokens and they I guess would that wallet now
+ have to manage balances across multiple federated mints as an example or is it
+ more like you maybe the model might be more like an exchange or you let's say a
+ Bitcoin beach or some other town or some area who wants to set it up everyone
+ just has a wallet and that wallet just connects only to that one federated mint
+ for lightning payments Bitcoin payments you name it I think in practice it will
+ be like that that you only have one mint you call your home mint and that's where
+ you keep all your funds and like if someone from another mint wants to pay
+ you then you can just generate a lightning invoice and like your local
+ mint generates this lightning invoice and will give you the funds after it's
+ paid there are some tricks to do this and so it doesn't really make sense for
+ most users in my opinion to hold funds on multiple mints maybe if they're in
+ different communities might make a little bit of sense because like if
+ you're paying purely internally you cut out the lightning part so it gets a
+ little bit faster but in the end I think for most users it's easiest also from a
+ mental model perspective yet you need to make this understandable to users to
+ have good UX that in the end you just choose one mint one federation you trust
+ and then you use them and don't care about anything else right and so yes I
+ think really it's sort of similar to how if you think how the Bitcoin beach
+ wallet works when they create a lightning invoice any other lightning
+ wallet can just pay that invoice and so it's a similar kind of idea that this
+ mint is its own it's each of these mints are around there and your wallet would
+ connect to that mint as an example so we spoke a little bit about deposit with
+ but we've spoken a little bit about withdrawing so I guess you're spending
+ out of the mint you're kind of withdrawing your e-cash tokens in that
+ sense or you're paying out a lightning invoice and then internal transactions
+ is there obviously that would be kind of the easiest of the category because you
+ would just be paying internally to some other person who's also a part of your
+ mint right yeah like I already explained how you could just give these e-cash
+ tokens to someone else that would be the simplest internal transaction I say yeah
+ and they can go to the mint and request newly issued tokens in exchange for
+ burning the old ones and that would give them like full access to their newly
+ received coins because now they know they ran double spend but in practice I
+ don't expect this to happen that much because it's a new X problem again so if
+ you now have to decide do I want to generate like an internal invoice or an
+ external invoice that doesn't really worked as well because then people need
+ to know are we on the same mint and what kind of transaction very practical to do
+ that yeah exactly like it's the same problem Shivo has currently in El
+ Salvador like you never really know if the one who is get generating your
+ invoice are they generating Shivo invoice or lightning invoice so it's a
+ big mess and you really want to avoid this so instead what I'd be doing is
+ even if two people are on the same Federation you can still generate an
+ invoice but the Federation just recognizes internally yeah we don't
+ really have to pay it or lightning because we own both sides of the
+ equation and we can just settle it internally so that's no big deal yeah I
+ see I see you okay and so I guess that's the other question as people are using
+ this kind of idea maybe I mean there's different ways it could work but maybe
+ one way is people might have most of their coin on say their hardware wallet
+ or their multi signature set up and then maybe the amount that they keep inside
+ the mint is more like the day-to-day spending amount is that potentially one
+ way you're seeing it so that like they wouldn't be risking all their funds
+ they're just risking a small portion is that how you're seeing it or do you see
+ it another way yeah in the beginning definitely I mean there are different
+ use cases for this technology like the one you're mentioning is Bitcoin users
+ today that might even be able to run their own lightning node financially and
+ technically they might want some privacy because lightning isn't the end-all be-all
+ for Bitcoin privacy so that would still be an improvement and if you only
+ risk some day-to-day spending funds that's definitely okay with Federation
+ like it would probably even be okay in like a single mint like a single segment
+ but like down the road what I imagine is that people might actually keep their
+ entire network like especially in poor countries where the entire network might
+ be a few hundred dollars might keep it all in such a Federation and that's the
+ market where I think it will have the most positive impact because that's a
+ market that is traditionally underserved because it doesn't make sense for banks
+ to be there like say El Salvador most people don't even have a bank account I
+ think I read somewhere that like more people have Chivo wallet than a bank
+ account which is amazing like after a few months so in these markets people
+ might not be able to actually have on-chain Bitcoin and that's where it
+ actually makes sense to have this Federation to have all this complication
+ from distributed protocols and all the stuff because if you have all your life
+ savings in such a such a protocol then truly needs to be secure and you can
+ only achieve this via distribution via like having multiple parties that run it
+ and so down the road in these communities I think there might be
+ people that only rely on such federations to make the payments to save
+ and you know there are some interesting ideas about this we can maybe discuss
+ later yeah okay and so for like to be clear again we the users of this mint
+ are essentially trusting the operators of that mean to not run away with the
+ money right like that's the IOU part like they could run away with the actual
+ on-chain funds the actual Bitcoin right but that's but the trade-off here is
+ essentially that these are people who might have otherwise been custodial with
+ an exchange or custodial just like never or only having paper Bitcoin in the
+ sense of having let's say GBTC or you know one of those like paper synthetic
+ exposure to Bitcoin as opposed to having some way to actually pull it out and
+ claim it on chain or into a lightning wallet or into something yeah definitely
+ like the people I was talking about that might have all their money in the
+ Federation they would never really have a chance to go on chain like they would
+ be on a custodial solution either way and the big benefit of Federation is
+ that even if like let's say we have a for four member Federation then one may
+ be a malicious and it all keeps working like you can still make payments still
+ works like if two are malicious then the operation it's not operational anymore
+ so you can't make payments anymore and they might try to extort you but they
+ still can steal funds that's the big part and only if three or four people go
+ malicious then they could actually take the funds which in my opinion is much
+ better chance of keeping your funds than on most exchanges right especially if
+ these people are someone you kind of know like they have trust of the
+ community and they would burn a lot of social capital and it might make it not
+ worth it to cooperate and just take all the money right yeah especially if these
+ means don't get too big like the idea is behind having many of these and having
+ them into operable that none becomes too big to fail like they should all stay
+ rather small and like in their community so that we never have systemic risks to
+ Bitcoin I say yeah and in fairness there are a lot of exchange users who just
+ leave it and trust the exchange and obviously in years gone by there have
+ been exchanges who have been very lax about their security and have been
+ operating with say a single signature setup where maybe the CEO of the company
+ or one person could just steal all the Bitcoin so this is obviously a this is
+ like quite a quite a strict improvement on that so that's an interesting idea
+ now we were talking about fee savings and scalability I guess maybe this is a
+ little bit of a how long is a piece of string question but could you outline
+ for people how they should think about the fee saving or scalability win here
+ like on a purely technical level the first saving comes from multiple people
+ sharing one lightning node and that's something that could also be achieved
+ using like what was it called a channel factories where multiple people share
+ utix oath and like shared set of channels but channel factories are still
+ very theoretical right now and also will require people to be online all the time
+ and like that's in my opinion not quite suitable for the demographic I'm
+ targeting and so the big benefit here is that let's say you have 100 or 1000
+ people in your local community and instead of everyone managing their own
+ lightning node which means at least opening one channel and eventually
+ closing it now you maybe have one note that has 10 channels and that reduces
+ the amount of on-chain transactions by 10 to 100 X in that scenario apart from
+ that of course you also hold some on-chain utix oath as the backing funds
+ of the Federation but I think their movement will be negligible compared to
+ like rebalancing lightning channels which would probably be a much more
+ common scenario and so it's definitely a big improvement in scalability and also
+ when you're not using lightning especially in the local community
+ context if everyone is on the same mint then you can essentially make in
+ definitely many transactions like as many as you want as long as the
+ computers running the Federation members servers as long as they're fast enough
+ to process all the requests yeah and that's the only limiting factor and that
+ could be hundreds of transactions per second yeah I say and so potentially
+ that could be huge huge fee savings and because many let's say hundreds or
+ of users could all be operating off of one Mint, and all of their payments and receiving
+ information is being essentially bundled into this entity, as opposed to each of those people
+ opening their own Lightning channels, doing their own everything. Of course there's certain
+ trade-offs around this, but as we mentioned earlier, these are the people who might not
+ have been custodial users anyway. And so, also one other thing you mentioned, the idea
+ of channel factories, also known as multi-party channels, and so that would require any prev-out,
+ which is another potential future soft fork upgrade, and so Christian Decker and AJ Towns
+ and people like that are working on that kind of idea, or have written about it. Are there
+ any changes to Bitcoin required for this mini-Mint idea?
+ Not really, there never was any necessity, but now with Taproot we actually have an upgrade
+ path where we can take the federated on-chain wallet and make the transactions much smaller,
+ because now instead of needing this, let's say we have a three out of four federation,
+ then right now we need to include three signatures and four public keys with each transaction,
+ and instead what we can do now is bundle them all together into one Schnorr public key,
+ one Schnorr signature, using some special signature protocol like Frost, and now we
+ have much smaller transactions that are also indistinguishable from any other Taproot transaction,
+ which is great.
+ I see, yeah, and so for listeners who are unfamiliar with that one, go and check out
+ the earlier episode 200 with Christian Decker, or perhaps the earlier episode, the panel
+ discussion from TabConf about Bitcoin on-chain scaling. And so Eric, the other question I've
+ got for you is, what's required for the federation runners, like the Uncle Jims of this federation,
+ what kind of work are they doing in this? Is it essentially they're helping manage
+ a multi-sig of the on-chain outputs, and then potentially also helping manage the Lightning
+ node that's, I guess, attached to this mini-Mint, is that the idea?
+ Yeah, we haven't been talking about the actual way to integrate Lightning with this all that
+ much yet. So there is a distinction to be made between the federation, the federation
+ proper, which holds all the funds and is secure, and out of M multi-sig, and there's also an
+ external entity, which I call the Lightning gateway, which actually makes all the Lightning
+ transactions. And the federation merely incentivizes this Lightning gateway to do the transactions
+ the user wants. So for the actual federation members, all they have to do is run some software
+ that is configured in a certain way that all the nodes connect to each other, and you run
+ it and forget about it more or less. That's at least the idea.
+ Then the Lightning gateway, it's a little bit more complicated. That actually needs
+ active management, because it's a Lightning node, you need to balance channels and open
+ new ones, close old ones. There you really need someone technical. For the federation
+ members, you can actually say, as long as someone can install a piece of software and
+ keep a computer running consistently and in a secure enough manner, then they can do it.
+ With the Lightning node, it's more complicated. You need an expert.
+ Back to the show in a moment. Unchained Capital are making it easy to set up your Bitcoin
+ multi-signature security with collaborative custody. So you hold two hardware vaults and
+ they hold one key and you obviously keep your keys in different locations. Now, if you bring
+ two hardware vaults to unchained.com, you can sign up and do this for free. Otherwise,
+ if you are interested to get some more handholding, they've got a concierge onboarding program,
+ which is very popular. You can purchase the program, they will ship you two hardware wallets,
+ you'll have a video call to get set up, and they will then deposit $1,000 of Bitcoin in
+ your vault.
+ With Bitcoin security, it's important to remove single points of failure. And so this can
+ give you some more peace of mind in your Bitcoin security and hodling. So go to unchained.com,
+ select the concierge onboarding program and use the code "levera" for a discount there.
+ When it comes to Bitcoin hardware security, coinkite.com is the place to go. They offer
+ the cold card. So the cold card is a Bitcoin hardware wallet. You can generate the keys,
+ store the private keys and sign messages using those private keys. Now, if you are new, you
+ can directly plug that wallet into the computer using laptops like Spectre Desktop, Sparrow
+ and Electrum. Otherwise, if you are intermediate or advanced, you can use a micro SD card to
+ move that information back and forth, whether that is the wallet XPUB or it is a transaction
+ that you're moving back and forth.
+ Cold card offers all sorts of features like a Jura pin, brick me pin, seed XOR, you can
+ run passphrases on it. It's got an address explorer, all sorts of other features, and
+ it's just an excellent all round tool that you can use as part of your Bitcoin security
+ setup. So go to coinkite.com and order your gear there using the code "levera" for a discount.
+ And finally, Brains. Brains are a Bitcoin mining company through and through. They have
+ unique and cutting edge projects such as Brains OS Plus, which is firmware for your ASIC.
+ So go and check the website out and see whether they support your ASIC machine. You might
+ be able to use the auto tuning feature to get more bang for your buck. They also operate
+ Slush Pool, which was the first mining pool. They've mined over 1.25 million Bitcoins.
+ They offer a range of features like the ability to change how your payouts work. They've got
+ dark mode. If you're operating Brains OS Plus firmware, you actually get 0% pool fee. So
+ that's also a cool feature. Brains are also the creators and driving adoption of Strata
+ V2, the next generation pooled mining protocol. So make sure you go and check them out. The
+ website for that is brains.com. That's brains with two I's.
+ Back to the discussion with Eric. Right. So essentially, they would need a routing
+ node operator to do that role. Of course, they can use tooling like the likes of ThunderHub
+ and AMBOSS and Lightning Terminal and RTO and so on. But they would need to know how
+ to operate the nuts and bolts of that. And then from a privacy point of view, let's explore
+ that a little bit. So currently, people who want to be private in Bitcoin today, it generally
+ requires the use of various or multiple privacy techniques. You might be using, say, CoinJoin
+ to mask your on-chain footprint. You might be using Tor to anonymize or mask your internet,
+ your IP footprint. So with the Minimint idea, the privacy aspect mostly comes down to the
+ anonymity set of the different amounts. So let's say you've got a 1 million SAT IOU token
+ or eCash token and a 10 million SAT. I mean, I guess that's similar to how, let's say,
+ in some of the CoinJoin implementations, they have set fixed amounts like 1 million SATs,
+ 5 million SATs, 50 million SATs. It's kind of similar in that sense because they're creating
+ an anonymity set that whoever was paying out could have been any one of those people, right?
+ Yeah, exactly. It's the same problem they're trying to solve with this. And I think for
+ Minimint, it won't be a big deal because as long as most people are in the same range
+ of network, let's say, then they should have a similar distribution among their different
+ denomination eCash tokens. What could be problematic if you have one really rich guy in your local
+ community and everyone knows he's rich and no one else has nearly as much capital as
+ he has, then he might be the only one who keeps like 10 million SAT eCash tokens around.
+ Like, he's the only one who gets issued these. And that would be a problem because you could
+ definitely identify his transactions because only he would spend these high-value eCash
+ tokens or receive these high-value eCash tokens. And so if you have a huge disparity in network,
+ then it might make sense for the richer people to keep more of the lower denomination tokens.
+ But in practice, why would you do this? If you have enough money, then please take some
+ money out of the Federation. You can store it in an on-chain UTXO, especially if you
+ have 10 million or 100 million Satoshi, then that will probably be always worth having
+ an on-chain UTXO. For smaller amounts, maybe not, we don't know. But for such huge amounts,
+ I think 100 million, should it be like 0.1 Bitcoin? I don't know exactly, but it sounds
+ like it.
+ Yeah.
+ So you probably want to have this as a UTXO owned in your hardware wallet or even your
+ own multisig setup, something like that.
+ Yeah, I see.
+ So I don't see the big problem.
+ Yeah. So essentially, the idea is there would be a big enough number of people all using
+ the eCash tokens and of the similar amounts, right? The 1 million Satoshi or whatever amount
+ or 100,000 Satoshi or however much. And whenever they are making payments or swapping out,
+ it's all kind of mixed around and balanced around because of that. And so then privacy
+ then is helped and protected a little bit because now you're not trusting one central
+ entity not to dox those individuals. And presumably in this idea, these individuals could have
+ signed up for that mint without KYC.
+ So that's the other interesting part that they could operate the mint without that.
+ And I mean, maybe as another example, let's imagine some of the Bitcoin exchanges of today,
+ they might be able to provide a privacy benefit to their users because they could have had
+ to maybe KYC that user on the way in on the website. But actually, if they could provide
+ them a mini mint way to spend, then they're kind of spending still in a private way.
+ That's an interesting idea.
+ So it depends if the regulators would be okay with that or the compliance team would be
+ okay with that. They might not.
+ I had to talk with some people interested in issuing security using the same e-cash
+ technique. And the other idea was you KYC essentially on every year, like when you enter
+ the system or when you exit the system. But what you do in between.
+ Nobody really cares. That's one way to look at it.
+ Yeah, and that kind of reminds me of stable coins, even like Tether today, or even like liquid assets.
+ Kind of a similar idea there, right? Is it Stoker, the liquid one?
+ Yeah, the STO, the security tokens offering stuff.
+ There you always have a cosigner that knows your identity.
+ I see, yeah.
+ So your trading partner doesn't need to know, but there's some entity where you have carrier seed.
+ Not a big fan of carrier seed in general.
+ Fair enough.
+ I still hope someone will build a no carrier seed STO tool.
+ Maybe we will actually see some of these federations incorporating as autonomous organizations, like actual Bitcoin DAOs.
+ Right, like a true anarcho-capitalist lightning.
+ Yeah, exactly.
+ IOU, eCash, bank all merged into one and people can get some more privacy by being a member or a customer of this.
+ That kind of thing. That's an idea there.
+ Nobody has to be identified because it's just software.
+ I'm providing the software and if some Twitter nooms come together and run such an eCash federation, who is to stop them?
+ Run it behind Tor and like, okay, good luck big brother.
+ Right, and I think that's the other aspect as well because with Bitcoin and privacy, we have to think about it holistically, right?
+ Because it's like, how did you acquire those coins and how did you spend those coins?
+ Because if you had to KYC to get those coins in the first place, well, that's already a big part of the battle being lost right there on the get-go.
+ So I guess the idea potentially, like let's say in the future, I mean this might be years off before this idea even comes to fruition, but it might be that people want to acquire some of their first SATs by getting these tokens.
+ Like maybe in the future there's peer-to-peer markets and as an example, you Eric want to get started with Bitcoin and I've got my, whatever, my 100,000 SAT eCash token and you pay me whatever the fiat value of that is in cash and I sell you this token.
+ And that's your onboarding, that's your no KYC onboarding.
+ Yeah, exactly. And like one interesting fact here, you don't have the problem of incoming capacity you have with Lightning.
+ Like with Lightning, you would need to open a channel first to receive these funds from you.
+ But with Federated eCash and Lightning integration, you have this one Lightning node someone else is running and presumably they will always keep enough incoming capacity so they can actually collect the fees from allowing you to receive and send funds.
+ So you can actually go to someone who sells Lightning Bitcoin for cash or whatever or gold coins and then just receive via Lightning and get eCash tokens in the end.
+ Yeah, I see.
+ I think that will be a really smooth onboarding experience because it has low fees, like Lightning has super low fees.
+ Like all my Lightning transactions are between 0.1 and 0.2% in fees and then maybe at 0.2% in fees from the Federation or whoever is operating this.
+ But now we can physically buy Bitcoin without any on-chain fees and I think that will be a nice peer-to-peer future.
+ Yeah, so to be clear though, that would require a network effect to be built up around this, right?
+ So as an example, there's nothing stopping people doing this even now with say Liquid BTC, right?
+ They could be trading LBTC for cash but it's not like that there's very liquid and big markets for that today.
+ But the hope, I guess, the hope is that people could use these mini-mint ideas as a way to potentially onboard into the network in a private way and then later when they want to, they can withdraw those coins out into their...
+ Let's say they've accumulated a large enough balance of eCash tokens, they can now withdraw that out to their hardware wallet or their multi-seek on-chain, take it back on-chain and have only the spending amount inside the mint, let's say.
+ And I'd say there's not even the big bootstrapping problem that Liquid is facing because if you integrate Lightning from the beginning, then everyone who supports Lightning supports your solution, in that case, federated eCash.
+ So in that sense, you can piggyback the Lightning network effect because anyone who can already take a Lightning payment can now receive a payment from the mint.
+ Yeah, and everyone who can pay Lightning invoices can suddenly sell me Bitcoin without opening a channel to me.
+ That's the biggest problem today and it's solved in different ways.
+ I had a great conversation with Fiat Jeff and Anton, I think, about hosted channels some weeks ago.
+ That's another solution, more centralized than federated eCash, but we need to solve the onboarding problem with Lightning because currently, whenever I want to sell Bitcoin to someone physically, it's always on-chain because there's no good way for them, if they have a Lightning wallet, to just receive.
+ Either it's fully custodial right now or we need to open a channel first.
+ That's the Phoenix solution, which is also expensive and we're just doing an on-chain transaction in the end.
+ There's no way around on-chain, but with these federations, you have trade-off and new trade-off.
+ It's still custodial in a sense, but trust minimized and you can receive funds easily.
+ One other thing is just thinking through, and maybe this is coming back to the Lightning Gateway idea, just thinking through the balance.
+ Let's say you and me and two other people are setting up a mini-mint and we have to balance the hot wallet with the cold.
+ We've got our Lightning Gateway funds and we've got our cold storage.
+ How do we manage that balance between them?
+ Because isn't it also possible then that if the... maybe there's some fancy cryptography thing or something here, but how is it that the users know that we aren't just going fraudulent with the money and running a Lightning node that looks like it makes payments or makes some payments, but actually we've taken some of the Bitcoin for ourselves?
+ That's a really good point.
+ There's a reason that the Lightning Gateway is an independent operator.
+ They have to come up with additional capital.
+ Whatever's in Lightning Node does not count towards the backing capital of the Federation.
+ They are an independent economic actor.
+ Whenever they receive a payment for a user and then tell the Federation, "Oh, we just received some money for the user," then the Lightning Gateway actually has to give e-cash tokens to the Federation so the Federation can pay the user.
+ The other way around, if the user wants the Lightning Gateway to pay some invoice, then they have to send these e-cash tokens to Lightning Gateway.
+ The Lightning Gateway will have some float of e-cash and can exchange it for on-chain Bitcoin if they need to.
+ If all the transactions are outgoing, then eventually they will have a lot of e-cash and no funds in their channels.
+ They just withdraw some Bitcoin from the Federation and open a new channel.
+ That's their business decision to make when to do this and how often to do this.
+ I see. Gotcha.
+ Their job is essentially to manage the availability, the liquidity of the Lightning aspect.
+ I guess what you're saying is they would be a different person.
+ Let's say it's you, me, and two other people who are running the on-chain aspect of it, the Federated Mint, and some other fifth person is the one running the Lightning Gateway.
+ Is that the model?
+ It could be that way or it could be one of us.
+ The beauty of this is the Lightning Gateway isn't really trusted except for uptime.
+ All they have to guarantee is that there are funds in the channels to go in both directions and that they are well-connected and always operational.
+ But they can steal funds.
+ That would also be a competitive aspect.
+ As an example, let's say there's some mini-mint and the guy running the Lightning Node there is a doofus.
+ He has no idea and his channels aren't balanced.
+ He doesn't have high uptime.
+ Then the users are getting a bad experience.
+ They're like, "This mint sucks. I'm going to go over to Eric's mint because it's better than Stefan's mint."
+ Because Stefan's mint can't manage the Lightning Node.
+ You actually wouldn't have to switch the mint.
+ If I was such a great Lightning Node operator, which I ain't.
+ It's fucking hard.
+ But if I was, then I could just connect to the same federation and provide a different Lightning Gateway.
+ If people notice that I'm providing a much better service, then they can just use me.
+ Whenever you do a Lightning payment, what you do internally is you create a smart contract.
+ The smart contract says, "If someone can present the federation with a pre-image to a certain hash, then they can take the money out of the contract."
+ They also require a signature with a public key.
+ The public key essentially identifies the Lightning Gateway.
+ You can't have two Lightning Gateways.
+ One of them also operates a node in front of the other one.
+ It sees the pre-image to some hash earlier and then can claim some contract.
+ But you're also binded to the Lightning Gateway that you expect to receive the invoice.
+ You can have multiple of these Lightning Gateways.
+ The short version is each federation could have multiple Lightning Gateways.
+ It could even be permissionless.
+ We could maybe think of the Lightning Gateways similar to how we think of LSPs, Lightning Service Providers, today.
+ Exactly. That's a pretty good point.
+ The only limitation is that the Lightning Gateway has to trust the federation as well.
+ As a Lightning Gateway, you don't want to connect to all federations that somehow pop up and just provide you services.
+ Because you have to hold the e-cash tokens and you have this counterparty risk.
+ I see.
+ If you know some federation and trust them enough and think it's profitable, then you can just connect to them.
+ Announce that you provide your services there and people can choose to use you.
+ I see. In some ways, the federation runners have to trust a little bit the Lightning Gateway guy.
+ And the Lightning Gateway guy also needs to put a little bit of trust in the federation guys.
+ Because each could run off with the other guy's money.
+ I wouldn't say that the federation has to trust the Lightning Gateway.
+ way. They don't. The users have to...
+ some to some degree because they trust them to actually make the payment
+ because otherwise it just times out and the user can take their money back,
+ but they didn't make the payment and it's just annoying.
+ But after your Lightning Gateway does this to you once, then you
+ probably switch to another one.
+ So that's not a good business practice because you don't make any money
+ using these failed payments.
+ So you better be operational.
+ Yeah.
+ Right.
+ Interesting.
+ So the only trust relationship is the Lightning Gateway trusts the Federation
+ because they hold collateral inside the Federation necessarily because they
+ accept e-cash tokens in exchange for Lightning payments.
+ So there is some trust in that direction.
+ Users also trust the Federation, but the Federation has to trust no one else.
+ Yeah.
+ Interesting.
+ That's a good point.
+ Yeah.
+ And because they're holding the keys, right?
+ They're holding the coins.
+ Yeah.
+ So, so at the end of the day, they are the, they're the ones running the
+ service, right?
+ Um, well also the Lightning Node guy, but yeah.
+ Um, and then, so how does, how does all this stuff.
+ Have you thought about things like, you know, DOS attacks, like, uh, what
+ kind of things are there around that?
+ Like would a mini mint have to deal with that kind of thing?
+ Like could people try to, I don't know, turn up and just flood the server with requests?
+ Definitely.
+ Like that's actually a big problem because the cryptography used to generate
+ these threshold signed blind e-cash tokens, that's really slow.
+ Like the verification of one of these tokens takes about four milliseconds.
+ And that's a lot of time in CPU, uh, time scales.
+ So with only like, uh, like a few requests per second, a few hundred
+ requests per second, you could totally, uh, uh, make the mint inoperable.
+ Totally DOS it.
+ So you need to have some way to limit this, but I haven't really invested too
+ much energy into fixing this problem.
+ Because right now I imagine use of such federations to be a community internal.
+ And that also means that you can restrict access.
+ Like for example, you have a few people that want to cooperate and use such a
+ federated mint, they all know the same password to it.
+ Like they can all just share the same password that doesn't
+ change anything in anonymity.
+ Like if they're all using the same, then you can distinguish them, but you still
+ limit the availability to outsiders.
+ So pure queuing attacks, uh, pretty much, uh, ruled out that way because like.
+ Inside your community that might not be an asshole that tries to just take down
+ your federation because they would hurt themselves and it doesn't make any sense.
+ Yeah.
+ Later on, we might want to implement some anti-DOS measures.
+ And what about on-chain fees?
+ Like who pays them in this, in the model?
+ Like, I guess if I'm depositing SATs into the, I guess I'm paying the
+ on-chain fees for that, but then every time there's a withdrawal, I guess.
+ The mini mint operators are running, are paying for that, right?
+ Yeah.
+ Like generally fees inside of federation, uh, uh, to the federation itself, like
+ they can decide to charge whatever fees they want.
+ So for example, when it comes to on-chain transactions, then you could have a
+ policy that the federation periodically votes on how much, um, withdrawal
+ request costs the user, and they have to manage it in a way that they
+ don't lose money on the withdrawals.
+ So they could always set up like 50% over what they're effectively paying
+ on-chain, so they make a little bit of profit, uh, but still allow people to
+ make rather cheap, uh, on-chain withdrawals.
+ Right.
+ Yeah.
+ And so then the idea could be, I mean, hypothetically people could get together
+ and say, Hey, let's run a mini mint and it'll be a profitable venture.
+ Let's run this as like a business to give privacy and scalability for our users.
+ Yeah, you could probably try to do this.
+ I'm not sure if it will be successful because you'd need a really large user
+ base for this to make sense because users don't like fees.
+ So if you charge too much, then they will probably leave for someone else.
+ And generally it's such big federations with a lot of users, like you'd probably
+ need a few million users to make this profitable if you have full-time people
+ on staff, um, that isn't my ideal future that I want to build.
+ So initially there will not be a support for bigger federations, really like
+ that's not something I optimize for.
+ So you see this as more like a community hosted node, hosted mini mint idea?
+ Definitely initially, like ideally it will stay that way, but I also know that
+ market forces tend to prefer like, uh, bigger organizations because they can
+ provide potentially better support or just more development power into
+ a user experience and all this stuff.
+ So maybe we will see a bigger federations one day.
+ And one thing that was already suggested to me and in a thread about Signal,
+ like Signal and Shitcoin, why not do it with a federated e-cash system?
+ Like that would be pretty cool.
+ And I kind of agree, but then again, like Signal has this philosophy of
+ not allowing, um, different operators.
+ Like you can't have run your own Signal server and still connect to other Signal
+ users, so they probably wouldn't allow this concept where you connect to
+ whatever federation you want, but they would want to run their own.
+ So that would make it rather centralized.
+ Maybe we'll do this one day, attempt this one day.
+ Maybe not.
+ Uh, I don't know.
+ That might be a net positive for Signal users in the end because then they
+ don't have to use some Shitcoin.
+ Uh, but ideally I wouldn't want to see a federations larger than maybe a 10,000 users.
+ Yeah.
+ And so what we've been talking about has been, obviously this is very early stage,
+ right?
+ This is all like a theoretical thing.
+ When do you think this kind of idea would actually start in like a basic way and,
+ you know, what, what's needed to get there, right?
+ Do you need like community support or what, what are you, what are you looking
+ for here right now it's still under heavy development.
+ Uh, so generally people who like to develop software and Rust and like
+ Bitcoin and Lightning, uh, please check out a Minimint that's github.com/fedimint/minimint.
+ You'll probably also put it in the show notes, I guess.
+ So, yeah.
+ And currently my plan is to have some sort of a closed prototype running end of next
+ year, like hopefully in October, because then there's the next Hacker's Congress
+ Parallelny Polis in Prague.
+ And like last year, I already bought a coffee with a really hacky setup and a
+ fake, um, like a rack test and the Lightning integration where the Lightning
+ node was running on mainnet and Lightning node was paid using rack test tokens and
+ then paying a mainnet Lightning invoice.
+ So it was super hacky setup, but it worked and it was pretty amazing to see the first
+ transaction go through for a real product.
+ But next time, ideally I want to do it, uh, for real and have a running Federation
+ that a few people can connect to.
+ And then maybe in two or three years, we will see the first like mainstream
+ applications of this technology.
+ But till then, a lot of facts have to be figured out, like UX has to be completely
+ reinvented because it's just such a different approach having these e-cash
+ tokens to other versions of how to interact with Bitcoin.
+ And that needs to be a lot of research.
+ Yeah, but potentially quite a promising idea in terms of scalability, because long
+ term we know like projecting out who knows, 10, 15, 20 years out, we know not
+ every person on earth can have a UTXO that's just going to blow out the UTXO set
+ in Bitcoin.
+ So we need ideas that relate to people being able to share coins and ideally have
+ other trade-offs around how they do that.
+ So this is one idea.
+ Obviously the multi-party channels is another one and there are other, a few
+ other ideas out there, but it's an interesting one from a longer term
+ perspective, at least that's how I'm seeing it.
+ So any thoughts, any final thoughts there for the listeners?
+ Why should they look into this?
+ It's a really amazing opportunity that we have to both give you the scalability and
+ at the same time make privacy the most user-friendly option.
+ And that's, I think what is needed because you will never get people to seek out
+ privacy for privacy sake.
+ But if we build this new scaling technology for Bitcoin, which will be relevant in
+ the next like five to 10 years to include privacy by default, we might win this
+ privacy battle and we might get most people to use private means of transaction
+ instead of banks and Kerosene surveillance.
+ Yeah, that's a really good way to put it because what matters is by default.
+ And if people can default use this, it's easy and it's more private, then that's
+ a pretty big win.
+ Yeah.
+ And it's cheaper.
+ Right.
+ That's what will bring users in, in the end.
+ Like it's easy and it's cheap and that it's private.
+ It's a nice side effect.
+ Fantastic.
+ And that's how we win.
+ Yeah, that's how we win.
+ Thank you.
+ So, Eric, where can people find you online?
+ Obviously there's a GitHub link and anywhere else you'd like people to find
+ you?
+ Mostly twitter.com/ericzerian.
+ You'll probably put a link for that in there too.
+ And I also on fedimin.org, I have some more resources about the general concept
+ of Federated German e-cash and also a link to a Telegram group.
+ You might link to it too.
+ Like I saw you joined yesterday.
+ So that is a great place if you're interested in the concept, but didn't
+ understand something, then just come there, go there, ask about it.
+ And like I'm there.
+ Max Hillbrand is there.
+ He is also quite excited and was one of my earliest supporters.
+ And yeah, someone of us will answer your questions.
+ Fantastic.
+ Well, I'm looking forward to seeing the idea coming to fruition and thanks for
+ joining me, Eric.
+ Yes.
+ Thank you very much for having me on.
+ Was a blast.
+ Then see you again.
+ See you in the Citadels.
+ See you in the Citadels.
+ Get the show notes at stefanlevera.com.
+ If you're enjoying the show, make sure you leave a review and you share the show
+ with your family and friends.
+ Thanks for listening.
+ And I'll see you in the Citadels.
+ Bye.
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ [BLANK_AUDIO]
