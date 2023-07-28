@@ -645,7 +645,7 @@
  So we're not the only one.
  There are other people working on making Bitcoin custody, privacy preserving, and something
  that's viable, easy enough and viable for people to come off of exchanges and use.
- But I focus on Fedi and I know that Fedi and Fedi Mint by itself is good enough.
+ But I focus on Fedi and I know that Fedi and Fedimint by itself is good enough.
  So now that I know it's already good enough to get billions of people off, then the custody
  problem has been solved.
  We may be one of many people who solve it, but we only need one to solve it.
@@ -767,7 +767,7 @@
  Oh, real quick. Could you let my audience know where they could find out more about
  you or your work?
  Absolutely. So me on Twitter, I am @Obi, @Obi. I've been on Twitter for a long time,
- so I have a three letter Twitter. And Fedi is Fedi.XYZ. And Fedi Mint, which is the
+ so I have a three letter Twitter. And Fedi is Fedi.XYZ. And Fedimint, which is the
  protocol that Fedi is based upon, is FediMint.org.
  Wonderful. Thank you again, Obi.
  [MUSIC]

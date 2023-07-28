@@ -107,24 +107,24 @@
  you just need Bitcoin. And so over time, like a long enough time, everything
  collapses into Bitcoin, right. And what's cool about Bitcoin is that they're
  just getting the tools available now in order to be able to do some of this
- more out there development, right. So for example, within Fetiment, so just
- to kind of bracket this, because we haven't covered what Fetiment is
- before. So Fetiment is something I'm a contributor to, that's an open source
+ more out there development, right. So for example, within Fediment, so just
+ to kind of bracket this, because we haven't covered what Fediment is
+ before. So Fediment is something I'm a contributor to, that's an open source
  protocol, building federated Charmin eCash on Bitcoin, and we'll go through
- each one of those. Also the head of developer support for Fetty, which is a
- company building a federated operating system on top of Fetiment and the
+ each one of those. Also the head of developer support for Fedi, which is a
+ company building a federated operating system on top of Fediment and the
  Bitcoin protocol, right. We'll go into all of those in time. But so for
- example, one of the things that Fetiment does is that because you're using this,
+ example, one of the things that Fediment does is that because you're using this,
  like very small deployable federations, is that it's got this very sensible
  module system, is that you can add modules or you can add some of the
  complex cryptography and the smart contracting and all those kinds of
  stuff, and deploy them at these kind of smaller levels in order to play with
- these things, right. So like Fetiment, the reference implementation that,
- like if you're a developer and you'd love to contribute to Fetiment, we do
+ these things, right. So like Fediment, the reference implementation that,
+ like if you're a developer and you'd love to contribute to Fediment, we do
  all sorts of really good onboarding, that sort of thing, right. And like
  everyone's always welcome there, we'll always find work for you, we'll always
  find stuff to like help you upscale so that you can be a better contributor
- in the Bitcoin ecosystem, is that Fetiment is written in Rust, but
+ in the Bitcoin ecosystem, is that Fediment is written in Rust, but
  there's like all sorts of fancy cryptography and stuff that we can do
  that we can't do because if you were going to try to do this on Bitcoin,
  because you have to change the global consensus of everything, the Bitcoin
@@ -132,9 +132,9 @@
  large size federations or small federations even, where you can have a
  distributed consensus and you can add and remove modular components to it,
  right. So for example, one of the things of the differences between like
- Fetiment transactions versus Bitcoin transactions is Bitcoin, there's inputs
+ Fediment transactions versus Bitcoin transactions is Bitcoin, there's inputs
  and outputs. And then that's kind of the whole structure for it. The
- fundamental structure within Fetiment's distributed consensus system is inputs,
+ fundamental structure within Fediment's distributed consensus system is inputs,
  outputs and a single snore signature. And the reason why is because we're
  doing something called cross input signature aggregation, which is some
  fancy cryptography, which we'd love to get into Bitcoin, requires some
@@ -152,7 +152,7 @@
  passed, and all of the tooling is there and all of it's available. And so like,
  you know, come to the bright orange side of things. So like come build on
  Bitcoin, right.
- What? 100% That's super interesting. Okay, before we dive into Fetiment, I'm
+ What? 100% That's super interesting. Okay, before we dive into Fediment, I'm
  one more question on the developer side, which is, if you are new, because
  you've only been there a couple years, so like, that's, you know, big
  transition, would never have guessed that you weren't a developer for a long
@@ -336,17 +336,17 @@
  Yeah, totally.
  Wow.
  Poetically about whatever it is you're teaching.
- Um, the cohort thing I like to, and you mentioned the Feddy discord.
+ Um, the cohort thing I like to, and you mentioned the Fedi discord.
  There's also a Twitter and get hubs.
  If you're trying to find like, yeah, specific ones, there's the
- Feddy discord, right, where we do a lot of like new contributor onboarding.
+ Fedi discord, right, where we do a lot of like new contributor onboarding.
  Like we have dev calls on Tuesdays.
  We do white paper Wednesdays where we do some of the more like
  theoretical things of like going, like I just published a tutorial to
  replet on Shamir secret sharing and distributed key generation, where
  it's a kind of fancy cryptography, but like we come through it from a
  very, um, like approachable, uh, manner for that.
- And then on Thursdays we do deep dives into the Feddy code basis.
+ And then on Thursdays we do deep dives into the Fedi code basis.
  Right.
  And so like somebody who's a subject matter expert and has written some of
  this code, like just goes instead of like coding during that period, they're
@@ -358,8 +358,8 @@
  teacher, right?
  And she's got a bunch of resources available online.
  So definitely go through her.
- And then, um, we're also doing a lot of experimentation on Feddy side.
- And so we just released Feddy alpha, which is like kind of the first vision
+ And then, um, we're also doing a lot of experimentation on Fedi side.
+ And so we just released Fedi alpha, which is like kind of the first vision
  of the federated operating system where like it, uh, it's, it starts out right
  now, it's kind of like a Bitcoin enlightening wallet where we're using
  this federation model underneath, but it's eventually going to be much,
@@ -470,22 +470,22 @@
  I think we're, I think we're converting some people right now with this clip.
  Okay.
  Then let's jump in then.
- We got a lot to discuss with Fetty Mint.
+ We got a lot to discuss with Fedimint.
  I'm going to play the village idiot because I've heard these words before.
  I know roughly what a federation is.
  I've heard this Chami and Mint thing a bunch of times, you know, big
  foreigners I respect like Alex Gladstein said, this is, you know, super pivotal
  tech that's going to be very important for that population.
  But besides that, I've done zero deep dives.
- I barely know the difference between Fetty and Fetty Mint.
+ I barely know the difference between Fedi and Fedimint.
  You've expressed some of it here today.
  So I'm going to be the left curve guy and we're going to try and keep it middle
  curve to hit the hardest amount of people.
- So I guess first question just to delineate most of the time I want to spend on Fetty
+ So I guess first question just to delineate most of the time I want to spend on Fedi
  Mint, which is the underlying protocol, but just to bracket, what is the
- difference between Fetty and Fetty Mint?
+ difference between Fedi and Fedimint?
  Yep.
- So Fetty Mint is an open source protocol building on top of Bitcoin.
+ So Fedimint is an open source protocol building on top of Bitcoin.
  It's building a federated Chami and e-cash system on top of Bitcoin.
  There's no derivative token.
  There's no anything.
@@ -577,7 +577,7 @@
  And so currently there's no real good option for this.
  And what they do is they just give it to a third party, right.
  Either through like Binance or Coinbase or whatever it is, right.
- Is that so Fetiment is a model where basically you can use second party custody.
+ Is that so Fediment is a model where basically you can use second party custody.
  Right.
  The problem with Ledger of extracting the shares and giving them to these third
  party people or whatever is not that you shouldn't be doing some sort of
@@ -699,7 +699,7 @@
  the same model.
  Right.
  And so what's really cool about this is that why we call it like Fedimint, like
- Bitcoin, uh, well Feddy and Fedimint can be Bitcoin adoption technology, right.
+ Bitcoin, uh, well Fedi and Fedimint can be Bitcoin adoption technology, right.
  It's because we can show up at any of these different communities all across
  the little South or anywhere in the world.
  And we can say, Hey, if we can get like seven of you, right.
@@ -1009,7 +1009,7 @@
  the nation federation.
  You kind of move scale, scale, scale,
  whatever you're comfortable with.
- One of the cool things about Feddy
+ One of the cool things about Fedi
  is that the way that we designed the app
  is that it's by its nature
  is that you're going to be crossing
@@ -1047,7 +1047,7 @@
  for him personally, easier to think about.
  But this kind of evolved
  into this really robust module system, right?
- And so the default modules that ship with Fetiment
+ And so the default modules that ship with Fediment
  just out of the box are Bitcoin, Lightning and eCash, right?
  And the reason why is because like unplug all of the modules,
  what is happening is there's just a distributed
@@ -1055,7 +1055,7 @@
  And the distributed consensus system in that,
  you have to define the items
  that they can perform consensus over.
- And the model in Fetiment is that there's just transactions,
+ And the model in Fediment is that there's just transactions,
  is that there's inputs, there's outputs
  and there's a Schnorr signature,
  which is the cross input signature aggregation
@@ -1074,13 +1074,13 @@
  you can do whatever you want, right?
  And so just as an example,
  there's like a very primitive contract system
- that comes out of the box with Fetiment or whatever,
+ that comes out of the box with Fediment or whatever,
  something that we'd be really excited to see
  and that probably people in the audience
  would be able to implement, right?
  Is like implementing something like Clarity
  or a more complex contracting system
- as a Fetiment module, right?
+ as a Fediment module, right?
  And so you basically like hot swap
  the contracting system out
  and then put this new one in,
@@ -1098,7 +1098,7 @@
  all great modules end with Ement, right?
  And so Simpiment is implementing
  the simplicity smart contracting system
- within Fetiment.
+ within Fediment.
  So you unplug the...
  So what we basically did was,
  well, we didn't unplug the existing
@@ -1450,7 +1450,7 @@
  What Fedimate aims to be is just this very modular
  protocol level in order to allow you
  to decide to make those trade offs yourselves.
- And then Fetty is a way of on the front end,
+ And then Fedi is a way of on the front end,
  have a unified, like we call it a federated operating system
  of having a unified view of interacting
  with these different federations.
@@ -1498,7 +1498,7 @@
  you guys just launched Study Alpha.
  Is that the best place?
  I guess first tell us a little about it,
- but where's the best place to interact with Feddy
+ but where's the best place to interact with Fedi
  kind of at the bleeding edge?
  Not like I want to build,
  but I want to like try it out as an end user.
@@ -1526,14 +1526,14 @@
  Like all this stuff that you might think about like.
  "Oh, hey, I can't do this on Bitcoin," or whatever,
  you absolutely can,
- and the place to test it is in Feddymint, right?
- And so come to Feddymint, do that sort of thing.
+ and the place to test it is in Fedimint, right?
+ And so come to Fedimint, do that sort of thing.
  If you're a web dev, or some sort of front-end dev,
  or anything like that,
- Feddy has this concept of FeddyMods,
+ Fedi has this concept of FediMods,
  which is basically WebLN-enabled sites
  that become interoperable
- with the Federation Feddymint APIs, right?
+ with the Federation Fedimint APIs, right?
  And so now it's like, "Hey, I'm interacting with websites
  "that are Lightning-enabled, right?
  "But I can also do stuff,
@@ -1544,15 +1544,15 @@
  "or I have to do something like this, right?"
  But also tying in the APIs that are opened up
  by the federations that you're connected to, right?
- There's kinds of FeddyMods,
+ There's kinds of FediMods,
  very kind of just like,
  hey, building front-end applications that use WebLN,
  but also leveraging the fact
  that we've got all these Federation resources behind us,
- right, connected through the Feddy app, right?
+ right, connected through the Fedi app, right?
  And so for those ones,
  all of this kind of stuff generally
- is that Feddy is gonna be sponsoring a giant hackathon
+ is that Fedi is gonna be sponsoring a giant hackathon
  for its remote first for the entire month of July
  called AI for All.
  And the thesis behind it is that Bitcoin is a tool
@@ -1604,17 +1604,17 @@
  and all that kind of stuff, right?
  So, like keep an eye out for all those things.
  - Love it.
- Is the Feddy discord the best place
+ Is the Fedi discord the best place
  to be pointing towards that?
- - Feddy is a telegram.
- Feddy is a telegram.
- Feddy Mint has a discord.
- And so, there's a Feddy telegram
+ - Fedi is a telegram.
+ Fedi is a telegram.
+ Fedimint has a discord.
+ And so, there's a Fedi telegram
  where we kind of answer questions
- about the Feddy alpha stuff
- is that if you just go feddy.xyz/builders,
+ about the Fedi alpha stuff
+ is that if you just go Fedi.xyz/builders,
  then that's a good place to like start getting,
- getting started using the Feddy alpha.
+ getting started using the Fedi alpha.
  And so, that's a progressive web app.
  It's also got an iOS app and a Android app and an APK.
  And so, like you can use that
@@ -1638,7 +1638,7 @@
  It's very cool.
  There's gonna be tons and tons of stuff coming out,
  like yeah, but so that's the place to go.
- Feddy.xyz/builders.
+ Fedi.xyz/builders.
  - Love it.
  Okay, that's all the questions I got.
  I think you dropped bombs
@@ -1647,7 +1647,7 @@
  or didn't ask?
  - Yeah, I mean, just like kind of two things for it, right?
  Is that, so one of the things that I've kind of learned
- of working on Feddy and FeddyMint, right?
+ of working on Fedi and FediMint, right?
  Is that there's like an entire world out there
  who needs access to this stuff.
  Is that they need Bitcoin.

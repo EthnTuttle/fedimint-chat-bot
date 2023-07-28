@@ -802,7 +802,7 @@
  Do you need like community support or what, what are you, what are you looking
  for here right now it's still under heavy development.
  Uh, so generally people who like to develop software and Rust and like
- Bitcoin and Lightning, uh, please check out a Minimint that's github.com/fedimint/minimint.
+ Bitcoin and Lightning, uh, please check out a Minimint that's github.com/Fedimint/minimint.
  You'll probably also put it in the show notes, I guess.
  So, yeah.
  And currently my plan is to have some sort of a closed prototype running end of next

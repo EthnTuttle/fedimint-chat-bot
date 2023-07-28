@@ -532,12 +532,12 @@
  architected, quite interestingly, is that the
  people who are doing the settlement aren't the Fedi
  Mintz themselves or users, but they are a number of Lightning
- service providers, because because a Fedi Mintz can
+ service providers, because because a Fedimintz can
  connect to a Lightning service provider, without having to
  trust the Lightning service provider, therefore, and
  without having to lock up balance with the Lightning
  service provider, therefore, we can connect to multiple and
- whoever offers the best price, we can we can use a Fedi Mint
+ whoever offers the best price, we can we can use a Fedimint
  Federation can use. It also means you're more reliable in
  terms of your your experience, because if one Lightning service
  providers channels are, are exhausted, you can instantly
@@ -551,7 +551,7 @@
  for a Federation.
  So in terms of the practical reality of using a system like
  this, comparing it to first or third party custody, you know,
- how would you say Fedi Mints outperforms, I guess,
+ how would you say Fedimints outperforms, I guess,
  especially relative to just first party DIY custody?
  Well, first of all, from a pure security point of view, if you
  perform first party custody, and you do it correctly, then that
@@ -714,7 +714,7 @@
  decentralizing a payment, we're decentralizing custody. So what
  do what do financial institutions do? So that and
  beyond that, it is also this educational piece, which we have
- three key parts of our strategy. Fedi is, is fedimintis this
+ three key parts of our strategy. Fedi is, is Fedimintis this
  incredible technology, Fedi is free things. I call it code,
  coaching, and collaboration. And so and it's a one third, one
  third, one third. And I think that strategy is probably I

@@ -490,7 +490,7 @@
  So, I think this is a good place for us to start exploring the two implementations of
  EECash that actually have users and are sort of like playing around.
  So Kali, why don't you start explaining to us what Cashew is and then maybe we have Eric
- explaining what Fedi is or Fedi Mint.
+ explaining what Fedi is or Fedimint.
  And then we sort of like can discuss some of the tradeoffs and some of the differences.
  That could be a good sort of like launching point for people to understand this a little
  bit better.
@@ -611,12 +611,12 @@
  They have nothing to hide.
  Yeah, right.
  Exactly.
- And so something like Cashew or FettyMint is a strict upgrade for that system.
+ And so something like Cashew or FediMint is a strict upgrade for that system.
  And if you think about other things like I use Stacker News to like upvote posts or I
  use the Fountain Podcast app, it would be better if even though that's a custodial system,
  if I had some privacy about what things I'm exchanging my stats for or who I'm sending
  money to in those systems.
- So I think a lot of people look at something like Cashew or FettyMint and say, "Oh, I'll
+ So I think a lot of people look at something like Cashew or FediMint and say, "Oh, I'll
  keep my Bitcoin in Bitcoin.
  Thank you very much."
  And this isn't a replacement for Lightning.
@@ -633,12 +633,12 @@
  You get what people think is acceptable.
  And yeah, so integrating some sort of ecosystem there would be really powerful.
  So let's get a little bit more in there.
- Like how does FettyMint actually work and how are you, you mentioned that you guys are
+ Like how does FediMint actually work and how are you, you mentioned that you guys are
  going to use a base layer somehow and it is federated.
  So like, why don't you explain to us a little bit of like how you actually accomplishing
  these things technically?
  Yes.
- So basically what FettyMint Federation is, it's a group of people that run consensus
+ So basically what FediMint Federation is, it's a group of people that run consensus
  algorithm between each other.
  It's a lot like Bitcoin, but it's since we only have a limited set of people that participate,
  we can use like not proof of work, but some other Byzantine fault tolerance algorithms.
@@ -699,7 +699,7 @@
  distributed computing. You know, people should go and read it. But it's important that, you know,
  your system can deal with just intermittent network issues as well as active attempts to
  double spend the way that Bitcoin handles that is through proof of work and Nakamoto consensus.
- But since something like Fetimint has a different operational footprint, they have to handle it
+ But since something like Fedimint has a different operational footprint, they have to handle it
  differently and they can make different tradeoffs. And right now they're using a algorithm called
  Honeybadger BFT to do that. So just sort of like simplifying this, like the way you're finding,
  the way you're proving that it was not double spent essentially is by bundling in a deterministic
@@ -799,7 +799,7 @@
  Would there be any advantage really of doing MPC for the blinding factor?
  No, not really.
  I mean, maybe in the future, like one thing we haven't gone into really yet is like the biggest
- problem I have for FeddyMint right now and that Kalle probably has with Casio is that we need
+ problem I have for FediMint right now and that Kalle probably has with Casio is that we need
  different denominations for e-cash notes. We could have like e-cash notes that are always worth like
  one Satoshi and that would scale horribly because suddenly you'd need like millions of e-cash notes
  just to pay like a few millibit coin. Megabytes of e-cash notes.
@@ -905,14 +905,14 @@
  even easier time setting it up. Currently, it's still under heavy development. So it doesn't make
  as much sense to do that yet. But we already have a really convenient web interface. And
  yeah, it's really just five minutes setting it up. Like over the last month, I did a bunch
- of workshops showing people how to set up Fetimint. And yeah, it's after a while I got into
+ of workshops showing people how to set up Fedimint. And yeah, it's after a while I got into
  like a habit where I could do it in like five minutes, essentially, and then you have a federation
  running. And regarding your comments about Liquid, like I have huge respect for the people who build
  it because they were first movers. Like, they had to essentially find out a lot of things for the
- first time. And Fetimint has profited enormously from these learnings. So for example, the HSMs,
+ first time. And Fedimint has profited enormously from these learnings. So for example, the HSMs,
  they are really good for like some really long tail events, like for some really complicated
  hacks that someone could try to pull off, but they also make it really hard to iterate on the code.
- Like it makes it so much harder to upgrade the system that uses HSMs. So for Fetimint,
+ Like it makes it so much harder to upgrade the system that uses HSMs. So for Fedimint,
  for now, we're saying like, no, we don't do HSMs. Like we keep it simple. And we want to iterate,
  we want to get people to play with it rather than
  building like the perfect thing that's maybe ready in 10 years.
@@ -978,7 +978,7 @@
  It means they can run a shitty digital ocean VPS
  where my signing is done on a certain threshold that policy that I put there.
  I don't know if this is still the case, but like a year ago,
- the bootstrapping script that came with Fetamint would run,
+ the bootstrapping script that came with Fedimint would run,
  I think it was four nodes and then one of them was like actively crappy.
  And it would like that was a way of exercising the.
  So it was a Windows machine?
@@ -997,7 +997,7 @@
  Like anyone should be able to run the servers.
  But then in terms of switching costs, that's going to be a front end problem
  to solve. There's going to be many different front ends.
- One of the front ends is being maintained and shipped by Feddy
+ One of the front ends is being maintained and shipped by Fedi
  Eric's company, right?
  Which is going to be but there'll be many different front ends.
  But what's kind of cool about how they're looking at it is this idea of easily
@@ -1010,7 +1010,7 @@
  spending cash or one is for larger savings or something like that.
  Would you say that would be similar to like how Cashew does with LNBits?
  You just kind of go there, you just add an IP, click and boom.
- Just to clarify, I co-founded Feddy with Obi and Justin Moon.
+ Just to clarify, I co-founded Fedi with Obi and Justin Moon.
  But day to day, I'm mostly staying on the Fediment side as a lead maintainer
  there and try to stay out of the commercial side to be as impartial as
  possible, because we want to see multiple implementations, multiple front ends for
@@ -1429,7 +1429,7 @@
  And have something that maybe has less velocity, but more accountability.
  That could be interesting.
  Also one comment to the idea of the multi-sig.
- I think if you go all the way, then eventually you end up at FeddyMint actually.
+ I think if you go all the way, then eventually you end up at FediMint actually.
  Because what we are doing is we have all the money in the multi-sig and we also threshold
  issuing these e-cash nodes because that's still the weak point in, I think, the single-sig
  e-cash, but multi-sig Bitcoin scheme.
@@ -1445,7 +1445,7 @@
  And during that time, if they generate like a lot of outflow, you couldn't really determine
  if that outflow is natural from users or if the mint has gone bad.
  So could you redeem to Bayes Layer instead of redeeming to Lightning?
- Yeah, I think, I mean, as Eric said, I think that is how FeddyMint basically works.
+ Yeah, I think, I mean, as Eric said, I think that is how FediMint basically works.
  It is primarily the funds are stored in a multi-sig, but the Lightning functionality
  is another participant in the network that does a swap into the Lightning network.
  Because Lightning is multi-sig, so that's the part that I was missing there.
@@ -1461,14 +1461,14 @@
  All they can do is at worst, they can dust the user, like they can not provide their
  service, but they cannot take the money.
  Like it's all atomic, atomically linked by the pre-image that's travels through Lightning
- network and their spot contracts being executed in FeddyMint.
- So that's how we couple the single-sig Lightning node to the multi-sig FeddyMint.
+ network and their spot contracts being executed in FediMint.
+ So that's how we couple the single-sig Lightning node to the multi-sig FediMint.
  But I want to get back to your point where you said that the Mint can basically, you
  know, between these attestation periods, which are, you know, these key epochs, when you
  roll over funds from one key to another, that inside these epochs, everything could go wrong.
  And I mean, not everything quite, there is still a limit, I guess, because it depends
  on how often you release these reports, for example.
- But you're right in a sense, but I don't think that it's actually an issue because for FeddyMint,
+ But you're right in a sense, but I don't think that it's actually an issue because for FediMint,
  it makes sense because you're focusing on community custody, where the chance of being
  stolen maybe is the primary problem that you need to solve basically.
  But I think for a large custodian, for example, or a bank, I think the problem is more the
@@ -1481,7 +1481,7 @@
  So I'm extremely fascinated of the solution or just the possibility because I myself,
  I don't know of any other system where you can actually audit the liabilities basically
  publicly.
- I mean, even if it's not applicable to Cashew or FeddyMint or whatever, if the scheme alone
+ I mean, even if it's not applicable to Cashew or FediMint or whatever, if the scheme alone
  is interesting by itself, because show me a bank where you can audit their liabilities
  or an exchange.
  I mean, all of the exchange releases.
@@ -1514,7 +1514,7 @@
  So guys, there's just one more thing that I wanted to get it in.
  I mean, maybe we get into some other things, but like this one, I definitely wanted to
  get in before the two hour mark, which is something that kind of caught my attention
- like extra to Fetiment, which was Fetipools.
+ like extra to Fediment, which was Fedipools.
  Do you guys want to like touch a little bit on that?
  It's like, it's a super interesting idea.
  And that kind of like got my brain spinning a little bit for like, oh, holy shit.
@@ -1523,11 +1523,11 @@
  There's all these other interesting sort of programmatic things that you can do that
  can start solving like some real problems that we have, like how do pools pay small,
  tiny amounts of Bitcoin to their miners in a more private way.
- So anyway, so like who wants to sort of like explain what Fetipool is and why that's even
- possible to do with Fetiment?
+ So anyway, so like who wants to sort of like explain what Fedipool is and why that's even
+ possible to do with Fediment?
  Yeah, so maybe I should start and then Odell can correct me if I'm misrepresenting anything
  anywhere.
- But like to my understanding, Fetipool as a concept solves like a different dimension
+ But like to my understanding, Fedipool as a concept solves like a different dimension
  of the mining pool problem.
  Like there's already a stratum v2, which solves the block construction, the block template
  construction problem that we decentralized that again, so that miners themselves can
@@ -1539,25 +1539,25 @@
  And then like there's the second axis where we want to improve that miners cannot be cheated
  out of the money because like pools have to take custody of the block reward and then
  split it up.
- And that's what Fetipool, in my opinion, solves.
+ And that's what Fedipool, in my opinion, solves.
  Yes.
  So I mean, if I was going to just from a high level here and I might as well while I'm speaking
  now to say that I'm dropping in five minutes and this has been a fantastic conversation.
- Unfortunately, I have to leave early is the cool part about Fetimints is it mitigates
+ Unfortunately, I have to leave early is the cool part about Fedimints is it mitigates
  and reduces a lot of the risks we see with custodial wallets.
  And once you start to talk about custodial wallets, where do we see issues with custodial
  wallets and central points of failure in Bitcoin?
  We see it on exchanges.
  We see it on custodial wallets like Wallet of Satoshi.
- Those are obvious areas of target for Fetimints to improve that trust dynamic.
+ Those are obvious areas of target for Fedimints to improve that trust dynamic.
  And then of course, we also see it with mining pools.
  Mining pools operate custodial wallets for their miners, the individual miners that connect
  to mining pools.
  There's a lot of trust there with the mining pool operators.
  Now Stratum V2 is an extremely promising protocol improvement.
- Fetipools is complementary to Stratum V2.
+ Fedipools is complementary to Stratum V2.
  So what we'd like to see, or at least what I would like to see personally, is essentially
- a Fetipool implementation that also includes Stratum V2 and the benefits that come with
+ a Fedipool implementation that also includes Stratum V2 and the benefits that come with
  Stratum V2.
  But instead of having a single SIG custodial wallet that we see with mining pools currently,
  you would have a multi-SIG federated wallet that also comes with the Chami and eCash privacy
@@ -1567,17 +1567,17 @@
  block, Stratum V2 kind of tries to flip that on the head and allow individual miners to
  run their own nodes and propose which transactions are going to be included in a block to try
  and reduce that censorship risk.
- Fetipool, you could actually – but the big complaint that we see there is most miners
+ Fedipool, you could actually – but the big complaint that we see there is most miners
  are not going to run their own nodes.
  They're not going to be well-connected nodes.
  They're not going to be constructing their own blocks.
  There's a lot of friction there.
- In a Fetipool, we could have a kind of hybrid model where the people that are running the
+ In a Fedipool, we could have a kind of hybrid model where the people that are running the
  federation servers, let's say it's seven individual miners, right, and the quorum is
  a five of seven or something like that.
  Those seven individual miners that are running the federation servers could also be doing
  the job negotiation and choosing which transactions are included in a block.
- So then the smaller miners that are part of that Fetipool, instead of imagining all the
+ So then the smaller miners that are part of that Fedipool, instead of imagining all the
  smaller miners all running their own nodes and doing this job negotiation and the latency
  that gets included with that whole process and whatnot, they could just kind of delegate
  who they want to do the transaction selection to those federation members.
@@ -1592,14 +1592,14 @@
  Does that make sense?
  That was great.
  Yeah.
- And I just want to add, we shouldn't stop at Fetipools.
+ And I just want to add, we shouldn't stop at Fedipools.
  There are so many other applications that we could federate.
  And as Matt mentioned, everything essentially that takes custody of your Bitcoin and then
- allows you to do something smarter with it, that can be implemented as the Fetiment module.
+ allows you to do something smarter with it, that can be implemented as the Fediment module.
  And if there are hackers out there that are listening, please come and build modules.
  It would be awesome.
  And we just finished a big materialization effort.
- And now it's much, much easier to just implement your own applications on Fetiment.
+ And now it's much, much easier to just implement your own applications on Fediment.
  Very cool, guys.
  Now I have to drop.
  This conversation was great.
@@ -1607,7 +1607,7 @@
  Cheers.
  Cheers.
  Any final thoughts, Matt?
- I did a full write up on Fetipool on my blog, discretelog.com.
+ I did a full write up on Fedipool on my blog, discretelog.com.
  Check it out.
  Awesome.
  That was great.
@@ -1627,7 +1627,7 @@
  I think Kalle, he's doing like hand raising there like there's no tomorrow.
  So Kalle, go for it.
  I think what's also an interesting point is to talk about scriptable e-cash, because I
- think that it also goes into direction of what I tried to say before, why I think Fetiment
+ think that it also goes into direction of what I tried to say before, why I think Fediment
  is a killer of liquid.
  It's not a killer.
  I love liquid.
@@ -1640,7 +1640,7 @@
  So how do you achieve something similar with e-cash?
  It turns out that in the very beginning when I tried to explain how it works, I said that
  at least that's how it works in Cashew.
- I imagine it's similar in Fetiment, but please correct me there as well, is in the beginning
+ I imagine it's similar in Fediment, but please correct me there as well, is in the beginning
  I said you generate the secret, and then you blind the secret, and you send it to the mint,
  and then the mint signs the secret.
  Now what if that secret is not just a random number, but it's actually a, for example,
@@ -1687,7 +1687,7 @@
  on a blockchain, but without anyone having to run
  every script, basically.
  You just have this one server or a federation
- in the case of FeddyMint that needs to execute the script
+ in the case of FediMint that needs to execute the script
  and says, yep, this is okay.
  I can honor this eCache transaction.
  - Yeah.
@@ -1709,7 +1709,7 @@
  one shit coin against another shit coin, for example,
  but atomically using eCache, could be.
  - Yeah, so it actually, to some degree,
- it works really similarly in FeddyMint.
+ it works really similarly in FediMint.
  Like we don't randomly generate our nonces
  because the federated model, it's actually necessary
  to have a key in there that can sign the transaction.
@@ -1909,9 +1909,9 @@
  - So you need some kind of proof of work
  or something to get rid of fake identities.
  - So where, like aside from just sending like Cashew
- or Fetty Mintz, I mean, is there a name yet
+ or Fedimintz, I mean, is there a name yet
  for your unit of account, at least for the,
- on the Fetty Mintz side for like how to describe it?
+ on the Fedimintz side for like how to describe it?
  I know people would just choose whatever they want, but.
  - I think there shouldn't be actually.
  I think maybe FMPTC,
@@ -1922,10 +1922,10 @@
  Like maybe it makes sense for such push payments,
  but the problem is you lose your compatibility
  with the rest of the Bitcoin ecosystem.
- Ideally, what I imagine for Fetty Mintz
+ Ideally, what I imagine for Fedimintz
  is that all interactions will be violating invoices.
  That way it doesn't matter if the other side
- is on a Fetty Mintz, on Cashew,
+ is on a Fedimintz, on Cashew,
  or on something completely different.
  And like we avoid this monoculture essentially.
  Like otherwise what happens if like one of these projects
@@ -2103,10 +2103,10 @@
  Any final thoughts?
  Rindell.
  - I'd say people should go and play with these systems.
- Like the Fetimint repo is really well-documented
+ Like the Fedimint repo is really well-documented
  and like it's gotten a lot more organized
  in the last like year or so.
- So like go check out Fetimint and also play with Cashew.
+ So like go check out Fedimint and also play with Cashew.
  Like I think three of the mints on the EllenBits test server
  were just from like me messing around.
  And you know, you can take 10 cents worth of lightning
@@ -2122,7 +2122,7 @@
  I mean, I know there are people
  who want to get started building on Bitcoin
  and whatever project interests you,
- if it's Fetimint, if it's Cashew,
+ if it's Fedimint, if it's Cashew,
  if it's another Bitcoin-based project,
  like independent of what we have just talked about today,
  we need more Bitcoiners.
@@ -2143,10 +2143,10 @@
  but that's the last thing I'll say.
  - Thank you.
  Eric, any final thoughts?
- - Yeah, so if people want to learn more about Fetimint,
- visit fetimint.org.
+ - Yeah, so if people want to learn more about Fedimint,
+ visit Fedimint.org.
  We have some great explainers there
- or look it up on github.com/fetimint/fetimint.
+ or look it up on github.com/Fedimint/Fedimint.
  I think we went into a lot of interesting topics today.
  So thanks for having me
  and yeah, looking forward to working together with everyone,
@@ -2157,7 +2157,7 @@
  So yeah.
  - Well, thank you guys.
  And I think any mobile dev out there,
- please, somebody, please make a Cashew Fetty,
+ please, somebody, please make a Cashew Fedi,
  like an e-cash wallet that has proper integrations
  with Lightning as an actual app.
  Because I think what's missing right now

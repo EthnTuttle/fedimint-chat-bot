@@ -13,8 +13,8 @@
  Anyway, welcome to the What Bitcoin Did podcast, which is brought to you by Iris Energy, the
  largest NASDAQ listed Bitcoin miner using 100% renewable energy.
  I'm your host Peter McCormack.
- And today I've got Obi back on to talk everything Feddy and Feddy Mint.
- Now listen, Feddy Mint is something I've struggled to get my head around.
+ And today I've got Obi back on to talk everything Fedi and Fedimint.
+ Now listen, Fedimint is something I've struggled to get my head around.
  I've had Obi on the show before to explain it to me and recently we had Callion who went
  through his implementation of e-cash.
  But I still struggle to get my head around it.
@@ -147,7 +147,7 @@
  Like I'll put everything into it or a lack of work, but we'll see, man.
  Anyway, listen, we're not here to talk about me.
  We're here to talk about you.
- Talk about Feddy Min.
+ Talk about Fedi Min.
  Okay.
  A lot of this, we're going to rehash what we did last time, but that's okay.
  Certain things need revisiting.
@@ -158,12 +158,12 @@
  We're going to revisit them.
  I know it must be fucking boring for you to do it, but let's do it because I know some
  listeners have the same questions.
- But TL;DR, explain to people what Feddy and Feddy Mint is because there's two separate
+ But TL;DR, explain to people what Fedi and Fedimint is because there's two separate
  components.
  Explain the mission.
- The mission, what Feddy is, and what Feddy Mint is.
+ The mission, what Fedi is, and what Fedimint is.
  I'll start with the mission because that derives everything else.
- The mission for Feddy is to empower communities everywhere.
+ The mission for Fedi is to empower communities everywhere.
  The way we see it is that we want to find a way for communities to be able to take control
  of their resources, including their money and their data, so that they can effectively
  take control back from big tech and so on, and bring it back into the hands of the community.
@@ -172,8 +172,8 @@
  of places eventually around the world, we can help level up humanity.
  That's the mission.
  How do we do that?
- Well, first of all, you start with Feddy as a company.
- Feddy is the first manufacturer or builder of a federated OS.
+ Well, first of all, you start with Fedi as a company.
+ Fedi is the first manufacturer or builder of a federated OS.
  We don't think this exists, so this is a new category or thing.
  You can think of it like an iOS for your mobile phone.
  It's the thing that makes your mobile phone work, and it manages your personal life, or
@@ -212,7 +212,7 @@
  data for your community and for Bitcoin.
  There's a lot there.
  - Yeah, no, there is.
- So Feddy Mint is the protocol, Feddy is a company.
+ So Fedimint is the protocol, Fedi is a company.
  Could other people create their own companies and compete with you and create products?
  - Yeah, absolutely.
  And we hope to see that happens.
@@ -230,10 +230,10 @@
  - Or Bitcoin, when you're ready.
  - We're ready.
  I literally just-
- - You ready for Feddy?
+ - You ready for Fedi?
  - I was like, hold on, should we have a Bedford Federation?
  What can we do with this?
- - Yeah, are you ready for Feddy?
+ - Yeah, are you ready for Fedi?
  Then we're ready for you.
  - All right, well, listen, go on, go on, go on, you finish.
  - But it's also beyond that.
@@ -268,7 +268,7 @@
  Now what can be done with that is we can set up a federation for that community of different
  farmers, farmers cooperatives and farmers.
  People can then send capital directly to the different farmers.
- Farmers can use the Feddy app because the Feddy app includes chat and communication
+ Farmers can use the Fedi app because the Fedi app includes chat and communication
  to organize with each other, one, like a group per cooperative, send value directly within
  this federation when it's ready to, when they're ready to make a bulk order and then organize
  for that bulk order and then pay the suppliers in bulk.
@@ -336,7 +336,7 @@
  And then when it comes time to pay,
  they would send the value needed to make a payment.
  So they would use it to organize,
- the Feddy app to organize and to handle payments.
+ the Fedi app to organize and to handle payments.
  - Okay, so you, me and Danny,
  we're all different cooperatives.
  We, somebody on behalf of us is negotiating the rates
@@ -1174,7 +1174,7 @@
  and Bitcoin.
  It's still sats, but there are different trade-offs
  and trust assumptions being made.
- And the same happens again when you go to a Fedi Mint.
+ And the same happens again when you go to a Fedimint.
  I'm cool with that.
  OK, now we need to see it.
  OK.
@@ -1196,7 +1196,7 @@
  Bedford the town.
  We set one up in the town.
  So Rail Bedford.
- Rail Bedford wants to set up its own Fedi Mint.
+ Rail Bedford wants to set up its own Fedimint.
  And you've got these people.
  You work together.
  You trust each other.
@@ -1757,7 +1757,7 @@
  The two people--
  - They would have to get dead,
  and then your computers would also have to turn off.
- The FeddyMint server is a piece of software,
+ The FediMint server is a piece of software,
  it's a set-top box.
  It's like you dying and your set-top box--
  - But we're not checking the video against the video
@@ -1984,7 +1984,7 @@
  - So one, let's just take chat.
  - Yep.
  - That's the next.
- So you, in the Feddy app,
+ So you, in the Fedi app,
  'cause this is a home for your money, chat and data.
  So we have chat within the app.
  So instead of your chat being hosted
@@ -2109,7 +2109,7 @@
  more, but you make it very clear that by depositing, if you don't withdraw it by this point, two
  weeks afterwards, it goes. But obviously, you can use that period of the two weeks afterwards
  to make them aware of other ways. And they can set up a lightning wallet themselves to
- self-custody, or they could come talk to Feddy and we can help their community set up their
+ self-custody, or they could come talk to Fedi and we can help their community set up their
  own, if they liked what they saw here, the power of this approach. Why don't you set
  up your own community and we'll help you set it up there. But whether it's us or whether
  it's Moon or Satoshi or so on, you've just given people mass visibility on the power
@@ -2174,17 +2174,17 @@
  that's what we do. We bring it all together here, and we bring out the world with this
  workforce of people who make me look, the idea is they're going to make me look like
  I'm comatose. They're like, they're going to just want to promote and make people aware
- of what's possible with Bitcoin Lightning, Feddy, Feddy Mint, and the Bitcoin ecosystem.
+ of what's possible with Bitcoin Lightning, Fedi, Fedimint, and the Bitcoin ecosystem.
  So inherent in our models that we win by ensuring the entire ecosystem wins.
  It's growing on me.
- You Feddy-pilled.
+ You Fedi-pilled.
  I think a little bit. Now I can see the use cases. That e-cash thing was a massive...
  Yeah, this cleared loads up for me too.
  Yeah, cleared up loads for me. Obi, what do you want to tell people? Where do they go?
  How do they find out more? What's going to happen now? Where do we go with this? When
  can I set up a celebration?
  So yeah, there's lots there. So first of all, you should go, if you find out more about
- us, you should go to Feddy.xyz. That's the good starting point. And you'll see about
+ us, you should go to Fedi.xyz. That's the good starting point. And you'll see about
  the mission, what we're trying to do. About me, I'm always on Twitter at Obi, O-B-I. And
  you can find out what I'm doing. Where do we go next? We just raised, we are looking
  to hire. So on our site, you're going to see a number of roles that we're looking to. And
@@ -2200,8 +2200,8 @@
  always here for you. We're friends. Anything you need, give us a shout. I look forward
  to Miami.
  Thank you very much.
- All right, come on. Tell me what you think. What do you think of Feddy? What do you think
- of Feddy Mint? I'm definitely closer than I was last time, but I'm still not 100% convinced.
+ All right, come on. Tell me what you think. What do you think of Fedi? What do you think
+ of Fedimint? I'm definitely closer than I was last time, but I'm still not 100% convinced.
  I don't know. Maybe it's just me, but let me know what you think. Drop me an email at
  hello@whatbitcoindid.com. I spent some time with Kali. I saw his implementation of eCash.
  Now I spent some time with Obi, and I think I know where they're going with this, but

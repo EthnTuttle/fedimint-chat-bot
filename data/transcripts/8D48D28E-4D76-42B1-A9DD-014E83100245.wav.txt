@@ -54,17 +54,17 @@
  - Glad to have you here.
  As we were just saying offline,
  I think we left off last time
- just getting into the conversation about Fedi Mint.
+ just getting into the conversation about Fedimint.
  And as I have here in my notes,
- Fedi Mint is a privacy-preserving custody system,
+ Fedimint is a privacy-preserving custody system,
  which is a federated system of guardians.
  And I have MultiSig plus ShowMeInE-Cash
  plus Lightning Network.
- Can you help us understand exactly what Fedi Mint is
+ Can you help us understand exactly what Fedimint is
  and what it is comprised of?
  - Okay, well, I'll answer that in different layers.
  So first of all, at the sort of most philosophical layer,
- Fedi Mint is the missing piece
+ Fedimint is the missing piece
  of the Bitcoin open-source ecosystem.
  It's the thing that completes it.
  It's Jerry Maguire's René Zellweger, effectively.
@@ -76,32 +76,32 @@
  and allows you to send it around
  from person to person at lightning speed
  at low cost with enhanced privacy.
- But the missing piece and what Fedi Mint provides you
+ But the missing piece and what Fedimint provides you
  is a way of custodying that Bitcoin
  with enhanced security, incredible privacy,
  and also extensibility,
  something that we haven't talked about much,
- but is actually a core part of Fedi Mint as well.
+ but is actually a core part of Fedimint as well.
  So it can be extended with extra federated finance features.
  Think of it as Fedi Fi as well.
  So when you add those together,
  and it works very well with Lightning,
  and in fact, it improves with Lightning,
- and Lightning works very well with Fedi Mint.
- In fact, Fedi Mint can help scale Lightning.
+ and Lightning works very well with Fedimint.
+ In fact, Fedimint can help scale Lightning.
  So they work very, very well with each other.
  So when you add it all together,
  you have a way of holding your money at rest with privacy,
  spending it with enhanced privacy through Lightning,
- extending features and functionality through Fedi Mint,
+ extending features and functionality through Fedimint,
  sending the money around at low costs
  through Lightning as well,
  and all backed by and working closely
  with Bitcoin at the base.
  So that's it in terms of where it fits
  within the Bitcoin ecosystem.
- And if we look into Fedi Mint itself, how does it do this?
- Fedi Mint is a form of federated application server.
+ And if we look into Fedimint itself, how does it do this?
+ Fedimint is a form of federated application server.
  So it can take any application
  that would normally only run by a single person
  or a single process, but then split it up
@@ -867,25 +867,25 @@
  Because just like the user experience of using the app is very similar to the user experience
  of something like, at least with the Fedi app, each Fedi Min Aware wallet will implement
  their user experience differently.
- They're not the only, Fedi doesn't make the only Fedi Mint wallet.
+ They're not the only, Fedi doesn't make the only Fedimint wallet.
  There are at least two others I'm aware of.
  And we expect, just like there are multiple Lightning wallets, there'll be multiple Fedi
  Mint wallets because it's an open source protocol.
  But with our ones, the experience is very much like Slack.
  So you can be part of, or Discord, multiple Slacks, you can be part of multiple Fedi
  Mints.
- And you can imagine a family Fedi Mint where you might store more money and a close friend's
- Fedi Mint, but also your work Fedi Mint.
+ And you can imagine a family Fedimint where you might store more money and a close friend's
+ Fedimint, but also your work Fedimint.
  Instead of paying your employees and everybody has to figure out their own federation, you
  could do that.
- Some Bitcoin exchanges in Africa are considering creating Fedi Mints in conjunction where
+ Some Bitcoin exchanges in Africa are considering creating Fedimints in conjunction where
  they have one of the guardians, but then a consortium of other respected institutions
  within the community are the other guardians.
  And so this becomes an inexpensive way of allowing their customers to self custody without
  telling them to buy hardware wallets, et cetera, which could be relatively expensive for their
  target customers.
  And then if you go to a larger level, we're seeing potentially the idea of cities or small
- towns setting up Fedi Mints or even groups, for example, charities and human rights, defender
+ towns setting up Fedimints or even groups, for example, charities and human rights, defender
  groups and NGOs and activist groups who are supporting whole movements.
  Again, these people have had a history of not taking money from their customers, from
  their users, but actually working hard and risking their lives to generate money and
@@ -992,7 +992,7 @@
  So again, in Hackers Congress in Prague, 2022, we were sponsors of that event, because as
  an homage to where we first met the year before in 2021, in Hackers Congress, the founders
  of the company.
- And we created the first Fedi Mint, temporary Fedi Mint network there.
+ And we created the first Fedimint, temporary Fedimint network there.
  And people who came to the event could sign up, download, not the Fedi app, it was a
  competing app.
  But we actually helped support the competing app, because we want as much competition of

@@ -501,13 +501,13 @@
  and have unique features that sell people on it.
  And then they get that default privacy.
  And I think that's oftentimes the best approach with privacy tools.
- And that's one of the things that does get me excited about fedimints
+ And that's one of the things that does get me excited about Fedimints
  because people don't have to care about privacy.
  If they use it, they gain strong privacy.
  Yeah.
  It's funny that you bring that up because, sorry, Eric.
  It's funny that you bring that up because oftentimes
- when I describe why I'm excited about fedimints,
+ when I describe why I'm excited about Fedimints,
  I explain it as Signal for Bitcoin.
  And why do I say that?
  I say that because if you ask privacy purists,
@@ -899,7 +899,7 @@
  And I hope you'll take a moment after the episode
  to learn more in the show notes or at optoutpod.com/sponsors.
  And one thing we haven't touched on yet
- that I want to get into for how fedimint actually works
+ that I want to get into for how Fedimint actually works
  is you've briefly mentioned, Eric, that it provides strong privacy to people
  even though it's custodial.
  Do you mind giving us just a quick overview of how that works?

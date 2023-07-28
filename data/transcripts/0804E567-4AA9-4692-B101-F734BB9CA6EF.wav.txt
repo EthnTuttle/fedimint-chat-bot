@@ -8,7 +8,7 @@
  along to the user. The way we sometimes talk about it at Fedi, right, is that we're like bringing
  like some of the oldest technology, which is like community, right, with like some of this newer
  freedom-focused technology, right? And so there's this interesting design space between first-party
- custody and third-party custody of what we call second-party custody. Fedi Mint, the protocol,
+ custody and third-party custody of what we call second-party custody. Fedimint, the protocol,
  becomes a way of, starts with custodying Bitcoin in a way to scale Bitcoin, where it's very privacy
  focused and it's interoperable with Lightning, right? And then you recognize through the module
  system that you can have it do other things, right? You can make the federation a password
@@ -1389,14 +1389,14 @@
  Right.
  Hmm.
  Interesting.
- Now, I want to also touch on you mentioned Fedi Mint, the protocol and Fedi, the company.
- And you mentioned there's a couple of other developers building on Fedi Mint.
+ Now, I want to also touch on you mentioned Fedimint, the protocol and Fedi, the company.
+ And you mentioned there's a couple of other developers building on Fedimint.
  Can you highlight some of the experiences and ideas that people are building outside
- of Fedi, but on Fedi Mint?
+ of Fedi, but on Fedimint?
  Yeah, sure.
- So like within like the Fedi Mint development system.
+ So like within like the Fedimint development system.
  Right.
- And so within Fedi Mint, like we've been kind of moving toward like kind of formalizing
+ And so within Fedimint, like we've been kind of moving toward like kind of formalizing
  like the development process for it.
  And so it used to be kind of hard to set up these federations and all these kinds of things.
  Right.
@@ -1406,12 +1406,12 @@
  start.
  So it's all written in Rust.
  Right.
- And so you can basically start Fedi Mint daemon with default modules and then you just
+ And so you can basically start Fedimint daemon with default modules and then you just
  add your own module below it.
  Right.
  And so there were a couple of cool hackathon projects.
  Right.
- And so this was like Fedi Mint had a hackathon a little while ago.
+ And so this was like Fedimint had a hackathon a little while ago.
  One of the things that they worked on was stability pools.
  Right.
  And so stability pools is basically a way you think about it as like, because you're

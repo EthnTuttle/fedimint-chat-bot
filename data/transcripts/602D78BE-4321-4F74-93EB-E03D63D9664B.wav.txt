@@ -4,9 +4,9 @@
  guys? Good to see you. Good to see you. We also have from France, our friend, Michelle
  from Nautil. What's going on, buddy? Hey, guys, what's up? And very happy to introduce
  our special guest today, Obi Nosu. He is from Fedi and working very hard to bring the good
- Fedi Mint protocol to the people. I had the good fortune of meeting him in Bedford last
+ Fedimint protocol to the people. I had the good fortune of meeting him in Bedford last
  month and we figured it definitely would be good to get him on the show and talk Fedi
- and Fedi Mint. So, Obi, thanks a lot for joining and welcome. Thank you very much from
+ and Fedimint. So, Obi, thanks a lot for joining and welcome. Thank you very much from
  Benfica winning Lisbon. Yes, should have said that. So it's great. Got a good European American
  contingency here. Representation from the global south as well. Yeah, just quickly with
  you, Obi, your story. You started CoinFloor long ago, if I recall. How did you first get
@@ -890,7 +890,7 @@
  And that covers the overheads of the company
  and allows us to reinvest,
  reinvest in the open source ecosystem,
- reinvest in building, not just on Fedi Mint,
+ reinvest in building, not just on Fedimint,
  but also on Lightning and on Bitcoin,
  'cause we're in aligned and it's an aligned revenue model
  because it doesn't really matter to us
@@ -1030,7 +1030,7 @@
  By the end of this year or before the end of this year,
  we want to roll out a full production version,
  ideally with a marketplace of, or not a marketplace,
- but a universe of Fedi Mint modules and so on
+ but a universe of Fedimint modules and so on
  that support various things.
  If it's integrating with SAP,
  'cause if the companies or Sage on one side

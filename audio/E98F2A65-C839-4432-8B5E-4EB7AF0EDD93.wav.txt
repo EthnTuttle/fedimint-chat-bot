@@ -8,7 +8,7 @@
  I'm your host Peter McCormack and today I've got an awesome interview with Obi Nwosu, the
  co-founder of FediMint and board member for Jack Dorsey and Jay-Z's B-Trust organization.
  Now I first met Obi a couple of years ago when he was the CEO of the UK exchange Coinfloor,
- but that seems like a lifetime ago now because since then he left Coinfloor and co-founded
+ but that seems like a liFedime ago now because since then he left Coinfloor and co-founded
  one of the most talked about projects in Bitcoin.
  Anita Posh first made me aware of FediMint when I spoke to her in November last year
  and Matt O'Dell has talked to me a lot about the privacy implications so I knew I had to
@@ -173,7 +173,7 @@
  Yeah.
  That feels...
  It was only...
- It was less than two years ago, but it feels like a lifetime ago.
+ It was less than two years ago, but it feels like a liFedime ago.
  Now you're running the hottest startup in Bitcoin.
  Everyone's talking about it.
  We had an incredible launch and we're really humbled by the reception.
@@ -297,7 +297,7 @@
  from exchange, the big one, something that Matt O'Dell will smash me on the head and
  talk about, and there's issues with KYC, AML.
  And I know you're solving a custody solution.
- But will people be able to accumulate Bitcoin within a chow mein mint and avoid exchanges
+ But will people be able to accumulate Bitcoin within a Chaumian mint and avoid exchanges
  totally?
  So I think the short answer is yes.
  What we are trying to do, to your previous question, is think about this solution holistically.
@@ -320,7 +320,7 @@
  And you obviously, I don't know, have you done any dev work or are you still scoping the dev work?
  Oh, we've done a lot of dev work.
  But it's not available yet, you can't create one, right?
- It will be available very soon. So we're hoping to have a Cygnet version of the Fetty Mint software.
+ It will be available very soon. So we're hoping to have a Cygnet version of the Fedimint software.
  The aim is in August.
  And do you have a test town you're going to be placing this in, a test scenario you're working on?
  So we have multiple potential test towns or cities or countries.
@@ -330,28 +330,28 @@
  But we have a series of criteria. So we're doing a couple of things. One,
  we're going to be rolling out the software.
  There's two different things.
- So there's this open source project, Fetty Mint,
+ So there's this open source project, Fedimint,
  which we are working very hard to maintain its open source nature
  because we want it to be a protocol that everybody uses.
  We have a number of incredible donors and sponsors,
  providing donor and sponsorship for that.
- And then we have the commercial company, Fetty, which is working on a wallet,
- which will be likely the first wallet to implement the Fetty Mint protocol.
- So the timelines for those, they're obviously dependent because you can't roll out Fetty
- before Fetty Mint.
- So the Fetty Mint timelines, we're aiming for the end of this, before the end of this year,
+ And then we have the commercial company, Fedi, which is working on a wallet,
+ which will be likely the first wallet to implement the Fedimint protocol.
+ So the timelines for those, they're obviously dependent because you can't roll out Fedi
+ before Fedimint.
+ So the Fedimint timelines, we're aiming for the end of this, before the end of this year,
  ideally within the next couple of months,
  to announce a version to be used by hackers, enthusiasts, and so on.
  So we can start kicking the tires and anyone can download that.
  What's the relationship between the two? Are they essentially two separate entities?
  They're two separate things. So it wasn't until a few months ago
- that we really started looking at FedEye or Fetty.
+ that we really started looking at FedEye or Fedi.
  You could call it FedEye because it sounds like Jedi.
  Sounds like the Fed.
  Oh, well, some people say that, but that's just coincidence.
  My Fed. Like be your own Fed.
  You can be your own Fed, yeah.
- So Fetty Mint has been worked on as an open source protocol.
+ So Fedimint has been worked on as an open source protocol.
  It is the actual decentralized custody system.
  It's run by members of your community, trusted members of the community.
  So each person will run a server and they work together to run,
@@ -448,7 +448,7 @@
  So if they prioritize social capital very highly,
  I honor standing in the community and so on,
  that will probably be a good, good starting point.
- And over your lifetime of being in the community,
+ And over your liFedime of being in the community,
  so you're going to have an idea of people who just,
  you know, the track record of just being, you know,
  knights, almost like honorable, you know, trustworthy, reliable, etc, etc.
@@ -675,7 +675,7 @@
  I'm thinking in like UX. I'm going back to my UX days thinking in UX like I've I've
  Say Danny's created and I won't want to get some of this
  This Bitcoin within this
- Chow mein mint do I say do I speak to Danny or is there just a public address I go to and I send
+ Chaumian mint do I say do I speak to Danny or is there just a public address I go to and I send
  The the the Bitcoin to it and I get this other
  token representation back so
  So you want to receive some in the example you want to receive some Bitcoin or no
@@ -697,9 +697,9 @@
  When they when they have set this up all of them will
  from there the interface of an order will be given the address the location of the
  Federation but this that's now being created and it will probably also show in a form of a QR code as well
- So they then download a Feddy mint aware wallets Feddy will will be the first but we're hoping there'll be others and we're expecting
+ So they then download a Fedimint aware wallets Fedi will will be the first but we're hoping there'll be others and we're expecting
  The others will come just like there are multiple lightning wallets and so on or existing what is can be in integrated functionality as well
- So they download and say Feddy
+ So they download and say Fedi
  and
  The the guardians themselves and will scan the QR code that was displayed on there the device
  Which is the location of the Federation and that's it there
@@ -745,7 +745,7 @@
  It's it's a different thing
  Because the bitcoins held in a multi-sig it's it's it conceptually it's similar
  but instead of one liquid network used by everybody those hundreds of thousands potentially of
- Feddymints used by different communities and to send between them
+ Fedimints used by different communities and to send between them
  Your you're not penalized by that because the send between them you use the lightning network
  And so it still just takes a second to send between them or to send out to something. That's not in within the Federation
  So you could if Danny's in one Federation, I'm in another I can still send in my Bitcoin from my Federation to his
@@ -1001,7 +1001,7 @@
  But having run an exchange for eight years-- and it was the first exchange we regulated
  in Gibraltar-- and spent a lot of time with a lot of regulatory advisors and so on and
  so forth, you become aware of certain exemptions which exist around regulation.
- And one of the things that became clear with FeddyMint and federations was that it all
+ And one of the things that became clear with FediMint and federations was that it all
  already naturally fits within certain exemptions.
  And so why not try and make people aware of some of these and fit in as many as possible?
  So some of the exemptions or cases around, for example, Bitcoin nodes operations, because

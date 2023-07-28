@@ -25,20 +25,20 @@
  But it's good to have you, Eric.
  Yeah, thanks. Thanks for having me on.
  So what is your role in the fedi project?
- Right. Like, first of all, the open source project is fedi Mint.
+ Right. Like, first of all, the open source project is Fedimint.
  And I started it about one and a half years ago as a pure open source project, researching federated Charmian E-cash.
  And then about one year ago, I met Obi, and he became my biggest supporter.
- He couldn't stop speaking about fedi Mint to all kinds of people.
+ He couldn't stop speaking about Fedimint to all kinds of people.
  He expanded my reach by a factor of 100, I guess, or even more.
  I don't know.
  Yeah, so over time, we came up with the idea, I think, after the Freedom Forum, it was, for you,
- to found a company to accelerate our progress with fedi Mint.
+ to found a company to accelerate our progress with Fedimint.
  And we founded a company, fedi, to which I'm both a co-founder and an advisor day to day.
- I'm still mostly working on the open source fedi Mint project as the maintainer and advising fedi
+ I'm still mostly working on the open source Fedimint project as the maintainer and advising fedi
  so we can build the best app that we could possibly build.
  Right. You've answered the follow-up question, which I was about to ask you, which is really great.
  You foreshadowed everything.
- So to people listening who don't know what a fedi Mint is, what is this about?
+ So to people listening who don't know what a Fedimint is, what is this about?
  What is a Charmian Mint, and why does it make sense for scaling Bitcoin?
  Right. Like federated Charmian e-cash mints solve a lot of problems.
  They can solve a lot of different problems for different people.

@@ -113,9 +113,9 @@
  Bitcoin. I was like, I have to learn to code. I have to become a developer. And that was about
  like two and a half years ago. So then finish up active duty time, start going back to school,
  start getting gigs, working on Bitcoin stuff. Right. And then as I kind of become more than
- the development track now, I'm at Feddy doing I'm the head of developer and product support for
- Feddy. Right. So we can talk about Feddy at the end for this stuff. But I think this.
- No, I'm fascinated by what's going on with Feddy. I mean, I know this isn't like a Bitcoin podcast,
+ the development track now, I'm at Fedi doing I'm the head of developer and product support for
+ Fedi. Right. So we can talk about Fedi at the end for this stuff. But I think this.
+ No, I'm fascinated by what's going on with Fedi. I mean, I know this isn't like a Bitcoin podcast,
  but it's hard not to talk about it. There's AI going on. Yeah. Nice. Nice. Yeah. So.
  So I start getting into AI stuff because the way that I learned how to code was,
  again, on these Nipper computers, it's a Windows computer. Right. And so I don't know
@@ -883,11 +883,11 @@
  How do you solve the connection problem to use something like hyper core?
  Couple different ways you can do it and just using the so basically there's like two levels to that right so it's like how do you
  Get like the federated aspect of it right and like what I like I've been working on for a while
- And that I think is the best solution for this is Fetty mint right so Fetty mint the protocol of you know
+ And that I think is the best solution for this is Fedimint right so Fedimint the protocol of you know
  There's like three default modules that come with it
  So it's got a module system right where basically let's say that Bitcoin transactions have like inputs and outputs
- Fetty mint yeah actions have inputs and outputs and you can add modular functionality to it
- Such that the inputs do different things and the outputs do different things right so the default modules of Fetty mint are e cash lightning
+ Fedimint yeah actions have inputs and outputs and you can add modular functionality to it
+ Such that the inputs do different things and the outputs do different things right so the default modules of Fedimint are e cash lightning
  Bitcoin right yeah
  and so you can have a peg in for example is an input of Bitcoin and an output of e cash a
  Normal lightning transfer for example right is that you know the input is e cash the output is execution of?
@@ -899,13 +899,13 @@
  Federation is hosting on behalf of the community right and
  So in terms of like the orchestration that you're talking about in terms of your GPU with everybody else's right like this is already something
  That people are people are working on in terms of like federated training federated model hosting those kinds of things right is
- That like the stuff that I started on and I hope people really continue with right is like using the Fetty mint
+ That like the stuff that I started on and I hope people really continue with right is like using the Fedimint
  Which is already doing custody of Bitcoin to do custody of other data
  Right to do like stuff like password management API key management those kinds of things so like on behalf of the community you can run those
  Gated oh shit you everybody's got a seed
- Yeah, right yeah, because that's the kind of thing so like maybe let's switch over to Fetty mint for a little bit right and so yeah
- Yeah, let's stop down that rabbit hole Fetty mint is like the open source protocol
- Which is chameleon ecash on Bitcoin is what it started off as right so Eric Syrian when he first came up with Fetty mint
+ Yeah, right yeah, because that's the kind of thing so like maybe let's switch over to Fedimint for a little bit right and so yeah
+ Yeah, let's stop down that rabbit hole Fedimint is like the open source protocol
+ Which is chameleon ecash on Bitcoin is what it started off as right so Eric Syrian when he first came up with Fedimint
  Is that he saw liquid and he said this doesn't necessarily need a blockchain
  And there's this cool like blinded signatures technology that you can use in order to do ecash
  But the problem with ecash is that you have to trust the mint so let's federate the mint right yeah
@@ -916,8 +916,8 @@
  And so if you're gonna be doing password managers
  You can do API key management is what I'm working on right in terms of like being able to gate access to GPUs and those
  Kinds of things right and so what starts off as just this community custody protocol
- Becomes this whole mechanism for running any sort of federated application right is like what Fetty mint is kind of evolved into through this module system
- Right and so easy when you first start with Fetty mint right so like what I don't know
+ Becomes this whole mechanism for running any sort of federated application right is like what Fedimint is kind of evolved into through this module system
+ Right and so easy when you first start with Fedimint right so like what I don't know
  I like how like stop me if I'm going too deep down the Bitcoin side of things because I know this is like AI on
  Chain focus right, but yeah, I've back at like the AI on the Federation side or whatever when you start with this assumptions, right?
  So currently within Bitcoin. There's like third-party custody basically and first-party custody, right?
@@ -959,7 +959,7 @@
  Yeah, it's funny. You ended up like accidentally solving a
  Number of other really important problems. I guess it's so much
  Bitcoin adoption
- Custody in Bitcoin right? Yeah, is that Fetty and Fetty Mint do for custody what lightning did for payments?
+ Custody in Bitcoin right? Yeah, is that Fedi and Fedimint do for custody what lightning did for payments?
  Yeah, right is that there's this kind of like dichotomy between like first party custody second the third party custody
  there's this whole environment in the middle this design space of
  Second party custody and the same thing when it's applies to AI models, right of that

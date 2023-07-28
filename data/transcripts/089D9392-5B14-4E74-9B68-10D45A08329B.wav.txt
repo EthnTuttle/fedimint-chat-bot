@@ -79,7 +79,7 @@
  in a way that makes it robust and commonplace when interacting with the network.
  And in my opinion, the promise of Bitcoin fulfilling the mission to separate money and
  state relies on such a solution.
- Hopefully fedimintis that solution.
+ Hopefully Fedimintis that solution.
  Time will tell.
  Just another example of why open networks win.
  Open source everything.

@@ -276,14 +276,14 @@
  think just as a business model it probably just wasn't gonna work even if
  even if it hadn't been that digi cash the company I think digi cash was the
  name of the company was uh it seems like it was poorly run if you dig into the
- history of it but nonetheless back to fedimint so this is and this whole this
+ history of it but nonetheless back to Fedimint so this is and this whole this
  whole thing is very much aligned with an idea I've talked about a lot is
  hyperlocalization and this is this is very common in Bitcoin you know Marty
  Bent had a great episode with crap they did this on TFTC I can't remember the
  guy who wrote the book about like the hyper localization of America and kind
  of like laid out this potential future path to look more localized communities
  but this is like such a great example and that's also why okay let's go back
- to the original complaints about fedimint because I think the framing of
+ to the original complaints about Fedimint because I think the framing of
  what we are comparing this to is the important thing is the important way to
  think about this is you know a a lot of the complaints and 100% valid the fact
  that it is an IOU it is 100% an IOU so the Federation I mean it's trust
@@ -487,7 +487,7 @@
  How do we obsolete the stupid entirely dependent the entirely not fault-tolerant centralized
  one hacker can come in and take everybody's funds on Coinbase model.
  How do we obsolete that because if I if I think that if we don't do that
- if we don't find a way to improve that which is why I think fedimint is actually a huge huge net positive
+ if we don't find a way to improve that which is why I think Fedimint is actually a huge huge net positive
  is that we just still end up with 80% of people entirely custodial
  who never hold their own keys and never even get a touch of it.
  And this is this is an interesting middle of the road.
@@ -497,7 +497,7 @@
  I think any and every mechanism we can develop for better privacy on Bitcoin is a huge win.
  And this is also one of those things that allows the tech savvy the the quarter the ones that are most likely
  to run a Federation to basically run this system for a community is that when you can plug this thing into lightning
- so that this wallet can literally just fulfill any Bitcoin, fedimint or lightning invoice
+ so that this wallet can literally just fulfill any Bitcoin, Fedimint or lightning invoice
  that it just works seamlessly between all of these.
  But it's also the kind of thing that would justify that would make you know,
  $50 on-chain fees to make changes to the Federation justifiable not a problem.

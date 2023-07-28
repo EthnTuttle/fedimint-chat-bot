@@ -2,7 +2,7 @@
  *thud*
  Sup freaks, it's your boy Marty here to introduce this rip of TFTC
  Sat down with Obi
- From the Fetty Team
+ From the Fedi Team
  What'd you think, Logan? Do you have any thoughts?
  Very nice voice, voice of God
  There's nothing, nothing like a nice
@@ -328,7 +328,7 @@
  and are killers in their own verticals
  and their own expertise.
  And it seems like he's found that team
- with Fetty, with you, Eric, Skyler,
+ with Fedi, with you, Eric, Skyler,
  knowing many different members of the founding team.
  It's really been cool to watch from afar
  or relatively close actually, you guys come together.
@@ -465,11 +465,11 @@
  and we'll work on it until we make it happen.
  - Yeah, and I think this is a good point
  for anybody who might be new to the show, new to Bitcoin,
- who may not understand the concept of a Fetiment,
+ who may not understand the concept of a Fediment,
  how it fits into Bitcoin and the stacks,
  the layers above it,
- how the Fetiment as the open source protocol works
- and then what you guys are trying to do at Fetty.
+ how the Fediment as the open source protocol works
+ and then what you guys are trying to do at Fedi.
  - Okay, that's a good question.
  And it's been something that a few people
  have been unclear on and we're gonna make that clearer.
@@ -484,7 +484,7 @@
  it will make a lot more sense.
  So we're focusing really hard to give something
  that people have in their hand.
- And Fetty, the aim is for it to be in people's hands
+ And Fedi, the aim is for it to be in people's hands
  this month in May.
  So a version focused on developers,
  but I'm sure enthusiasts will download it.
@@ -493,8 +493,8 @@
  and it'd be reckless to use it,
  but people went off and did that.
  I'm sure that will happen, but it's focused with builders.
- But let's start with Fetty
- and then how Fetiment relates to that
+ But let's start with Fedi
+ and then how Fediment relates to that
  and Bitcoin and Lightning and so on.
  'Cause the narrative before has been Bitcoin and Lightning
  and working this way,
@@ -746,12 +746,12 @@
  and password manager,
  but what are some of like the financial applications
  that you see coming in the idea space
- around Fetty and FettyMints particularly
+ around Fedi and FediMints particularly
  that people aren't aware of?
  Obviously you guys had that hackathon,
  the stable pool came out of that,
  a bunch of other cool stuff came out of that.
- But again, I think people think of FettyMints
+ But again, I think people think of FediMints
  and they think of instant private transactions
  within these mints and across these mints
  as the main use case, but it seems like there's.
@@ -767,7 +767,7 @@
  these will be very useful things,
  but the real killer app where people
  are gonna be falling over themselves
- to set up FettyMints to install
+ to set up FediMints to install
  are gonna be things that we just can't imagine.
  That's the nature.
  If you look at Windows, or if you look at DOS,
@@ -862,7 +862,7 @@
  building apps, two hours or less,
  you should be able to start building apps for it.
  And then just leave it to the...
- And also the other thing about Feddy as well,
+ And also the other thing about Fedi as well,
  that's missing.
  If you look at the Bitcoin stack,
  the sort of grassroots Bitcoin stack,
@@ -882,17 +882,17 @@
  And that represents much of the web.
  So Nostar provides you a decentralized
  censorship resistant way of discovery.
- And then Feddy Mint allows you to add functional extension.
+ And then Fedimint allows you to add functional extension.
  It's your scaling layer for functionality and so on.
  The other thing that we need is the last piece
  is a way for making people know around the world
  that this stuff all exists.
- And that's another big part of Feddy,
+ And that's another big part of Fedi,
  which is over the next two years,
  we plan and that's where a big part of what we raise,
- we plan to hire hundreds of Feddy or Feddy masters,
- Feddy Knights, there's a slight failing there,
- and Feddy ambassadors.
+ we plan to hire hundreds of Fedi or Fedi masters,
+ Fedi Knights, there's a slight failing there,
+ and Fedi ambassadors.
  And I always say to locate, educate
  and inculcate communities around the world,
  North, South, East, West,
@@ -911,7 +911,7 @@
  super passionate about Bitcoin,
  super passionate understanding the system,
  but also passionate about their local area.
- And so if you have the Feddy app
+ And so if you have the Fedi app
  and you want to understand more what you can do with it
  or how to set it up or so on,
  there will be someone local who can meet up with you,
@@ -920,9 +920,9 @@
  So we'll have online resources for education, which is great,
  but we will have people on the ground as well.
  And they will be educating people about Bitcoin,
- about Lightning, about Nostra, about FeddyMint
+ about Lightning, about Nostra, about FediMint
  and the entire Bitcoin ecosystem.
- It's 'cause the crazy thing about FeddyMint
+ It's 'cause the crazy thing about FediMint
  and federations is think of it as an operating system.
  Imagine operating system without a computer to run on
  or without a network connection
@@ -1193,7 +1193,7 @@
  which is right or correct for that community,
  all in one place.
  The idea of setting up a federation for that community
- and people using Feddy as a way to connect to that federation
+ and people using Fedi as a way to connect to that federation
  and other federations that might make sense
  for different users, 'cause they can pick and choose.
  It seems like a very logical step.
@@ -1207,20 +1207,20 @@
  It's a useful word when-
  - I'll say it proudly.
  There's potential synergies that could come out.
- We were talking about Feddy pools yesterday too.
+ We were talking about Fedi pools yesterday too.
  And you think of the mining infrastructure
  in this part of the world gets to a point
  where it's significantly robust
  and you have multiple different operators
  who have the ability to set up a federation
- and create a Feddy pool.
+ and create a Fedi pool.
  And then maybe their employees are getting paid out Bitcoin
- straight to a federation via Feddy or something like that.
+ straight to a federation via Fedi or something like that.
  You can see an ecosystem developing
  around the mining community.
  Like, all right, we don't want to point
  to Binance pool anymore.
- Let's create our own Feddy pool.
+ Let's create our own Fedi pool.
  We have enough hash rate.
  - Yeah, the ability to take control.
  And in this case, it will be Bitcoin miners.
@@ -1481,8 +1481,8 @@
  in terms of the extensibility.
  And then last year as well, we saw,
  although it'd been in the background,
- being worked on the same for Feddy,
- for Feddy, it'd been working for three years,
+ being worked on the same for Fedi,
+ for Fedi, it'd been working for three years,
  but it was just in the background
  getting to a level of technical maturity.
  Same for Nostar.
@@ -1508,10 +1508,10 @@
  from OpenSats as well.
  We've got significant funding
  for Lightning related projects.
- We have funding for FeddyMint.
+ We have funding for FediMint.
  If I have my way, there'll be significantly more.
  And so you're gonna see the fruits of all of this
- on Nostar, on Lightning, on FeddyMint
+ on Nostar, on Lightning, on FediMint
  as for over the coming months.
  And I'm really excited to see tons of entrepreneurs
  coming out, building on all these platforms.
@@ -1558,7 +1558,7 @@
  can now be replicated with those elements.
  - Yeah, it's-- - Everything.
  - Just when you think about like opening up,
- like the ability for people to build on Fetiments too.
+ like the ability for people to build on Fediments too.
  - Yeah.
  - And like looking at what just happened on Nostr,
  like if that's replicated there,
@@ -1638,7 +1638,7 @@
  And we hadn't even thought about making it
  a commercial entity, but you're saying,
  well, it doesn't matter.
- We'll still sort of just donate money to Fetty Mint
+ We'll still sort of just donate money to Fedimint
  and just as a gift and just keep working on it.
  You said exactly the same, effectively the same thing,
  keep crushing it, keep working on it.
@@ -1651,8 +1651,8 @@
  to get to where we got now and really appreciate that.
  - Well, no need to thank me.
  All thanks goes to you, Eric Justin,
- everybody else working on Fetty
- and then Fetty Mint, the open source protocol.
+ everybody else working on Fedi
+ and then Fedimint, the open source protocol.
  'Cause I remember when Eric dropped the mailing list email
  in like July of last year, I was like, holy crap,
  this is gonna be massive.
