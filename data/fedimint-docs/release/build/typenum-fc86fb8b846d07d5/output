@@ -1,3 +1,0 @@
-cargo:rerun-if-changed=build/main.rs
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/typenum-fc86fb8b846d07d5/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/build/typenum-fc86fb8b846d07d5/out/op.rs

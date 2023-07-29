@@ -1,9 +1,0 @@
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/anstyle_parse-5230d691a76dba8a.rmeta: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/params.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/mod.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/definitions.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/table.rs
-
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/anstyle_parse-5230d691a76dba8a.d: /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/params.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/mod.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/definitions.rs /Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/table.rs
-
-/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/lib.rs:
-/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/params.rs:
-/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/mod.rs:
-/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/definitions.rs:
-/Users/ethantuttle/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.0/src/state/table.rs:

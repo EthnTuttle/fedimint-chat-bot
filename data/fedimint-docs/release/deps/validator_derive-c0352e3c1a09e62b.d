@@ -1,9 +1,0 @@
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/libvalidator_derive-c0352e3c1a09e62b.dylib: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/asserts.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lit.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/quoting.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/validation.rs
-
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/validator_derive-c0352e3c1a09e62b.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/asserts.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lit.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/quoting.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/validation.rs
-
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lib.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/asserts.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/lit.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/quoting.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/validator_derive-0.16.0/src/validation.rs:

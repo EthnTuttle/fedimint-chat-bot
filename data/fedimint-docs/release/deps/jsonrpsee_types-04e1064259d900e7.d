@@ -1,9 +1,0 @@
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/jsonrpsee_types-04e1064259d900e7.rmeta: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/params.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/request.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/response.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/error.rs
-
-/Users/ethantuttle/code/fedimint/../fedimint-chat-bot/data/fedimint-docs/release/deps/jsonrpsee_types-04e1064259d900e7.d: /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/lib.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/params.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/request.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/response.rs /Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/error.rs
-
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/lib.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/params.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/request.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/response.rs:
-/Users/ethantuttle/.cargo/registry/src/github.com-1ecc6299db9ec823/jsonrpsee-types-0.16.2/src/error.rs:

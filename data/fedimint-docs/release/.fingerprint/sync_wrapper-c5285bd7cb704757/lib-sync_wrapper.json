@@ -1,1 +1,0 @@
-{"rustc":14761717600677434182,"features":"[]","target":18177416208476397739,"profile":9558588430697993077,"path":5008274132280903209,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/sync_wrapper-c5285bd7cb704757/dep-lib-sync_wrapper"}}],"rustflags":["--cfg","tokio_unstable"],"metadata":1356185930358091214,"config":2202906307356721367,"compile_kind":0}
