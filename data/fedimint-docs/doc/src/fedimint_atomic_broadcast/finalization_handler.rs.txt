@@ -1,0 +1,44 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_atomic_broadcast/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+
+
+use crate::data_provider::UnitData;
+
+pub struct FinalizationHandler {
+    sender: async_channel::Sender<UnitData>,
+}
+
+impl FinalizationHandler {
+    pub fn new(sender: async_channel::Sender<UnitData>) -> Self {
+        Self { sender }
+    }
+}
+
+impl aleph_bft::FinalizationHandler<UnitData> for FinalizationHandler {
+    fn data_finalized(&mut self, unit_data: UnitData) {
+        // the channel is unbounded - dropping unit data does not risk inconsitent state
+        self.sender.try_send(unit_data).ok();
+    }
+}
+
+

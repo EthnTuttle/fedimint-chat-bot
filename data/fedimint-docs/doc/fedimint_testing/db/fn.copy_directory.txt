@@ -1,0 +1,28 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+IN FEDIMINT_TESTING::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_TESTING [../index.html]::DB [index.html]::COPY_DIRECTORYCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/db.rs.html#119-135] · [−]
+
+pub fn copy_directory(src: &Pathhttps://doc.rust-lang.org/1.67.0/std/path/struct.Path.html, dst: &Pathhttps://doc.rust-lang.org/1.67.0/std/path/struct.Path.html) -> Resulthttps://doc.rust-lang.org/1.67.0/std/io/error/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>
+
+Expand description
+
+Helper function that recursively copies all of the contents from src to dst.
+

@@ -1,0 +1,35 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IN FEDIMINT_CORE::TRANSACTION [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_CORE [../index.html]::TRANSACTION [index.html]::AGG_KEYSCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/transaction.rs.html#97-99] · [−]
+
+pub fn agg_keys(keys: &[XOnlyPublicKey]) -> XOnlyPublicKey
+
+Expand description
+
+Aggregate a stream of public keys.
+
+Be aware that the order of the keys matters for the aggregation result.
+
+
+PANICS
+
+ * If the keys iterator does not yield any keys
+

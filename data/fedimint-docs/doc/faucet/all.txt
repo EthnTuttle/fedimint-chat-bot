@@ -1,0 +1,33 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../faucet/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../faucet/index.html
+
+
+CRATE FAUCET
+
+ * Structs
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+LIST OF ALL ITEMS
+
+
+STRUCTS
+
+ * Cmd [struct.Cmd.html]
+ * Faucet [struct.Faucet.html]
+
+
+FUNCTIONS
+
+ * main [fn.main.html]
+

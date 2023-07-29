@@ -1,0 +1,69 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+MODULE SM
+
+ * Modules
+ * Structs
+ * Traits
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CLIENT [../index.html]::SMCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client/sm/mod.rs.html#1-110] · [−]
+Expand description
+
+Client state machine interfaces and executor implementation
+
+
+MODULES
+
+util [util/index.html]
+
+
+STRUCTS
+
+ActiveState [struct.ActiveState.html]
+ClientSMDatabaseTransaction [struct.ClientSMDatabaseTransaction.html]
+A transaction that acts as isolated for module code but can be accessed as a normal transaction in this crate.
+DynContext [struct.DynContext.html]
+A shared context for a module client state machine
+DynState [struct.DynState.html]
+A type-erased state of a state machine belonging to a module instance, see State [trait.State.html]
+Executor [struct.Executor.html]
+Executor that drives forward state machines under its management.
+ExecutorBuilder [struct.ExecutorBuilder.html]
+Builder to which module clients can be attached and used to build an Executor [struct.Executor.html] supporting these.
+InactiveState [struct.InactiveState.html]
+ModuleNotifier [struct.ModuleNotifier.html]
+State transition notifier for a specific module instance that can only subscribe to transitions belonging to that module
+Notifier [struct.Notifier.html]
+State transition notifier owned by the modularized client used to inform modules of state transitions.
+OperationId [struct.OperationId.html]
+Unique identifier for one semantic, correlatable operation.
+OperationState [struct.OperationState.html]
+StateTransition [struct.StateTransition.html]
+Represents one or multiple possible state transitions triggered in a common way
+
+
+TRAITS
+
+Context [trait.Context.html]
+Additional data made available to state machines of a module (e.g. API clients)
+GlobalContext [trait.GlobalContext.html]
+Context given to all state machines
+IState [trait.IState.html]
+Object-safe version of State [trait.State.html]
+State [trait.State.html]
+Implementors act as state machines that can be executed

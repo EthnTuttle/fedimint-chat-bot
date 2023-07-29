@@ -1,0 +1,23 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+IN DEVIMINT::VARS [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION DEVIMINT [../index.html]::VARS [index.html]::UTF8Copy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/devimint/vars.rs.html#78-80] · [−]
+
+pub fn utf8(path: &Pathhttps://doc.rust-lang.org/1.67.0/std/path/struct.Path.html) -> &strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html
+

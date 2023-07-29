@@ -1,0 +1,97 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+ABBREVIATEDDEBUG
+
+
+REQUIRED METHODS
+
+ * abbreviated_fmt
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * &[Value]
+ * Value
+ * [u8; N]
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::FMT_UTILS [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../index.html]::FMT_UTILS [index.html]::ABBREVIATEDDEBUGCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait AbbreviatedDebug {
+    fn abbreviated_fmt(&self, f: &mut Formatterhttps://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html<'_>) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html, Errorhttps://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html>;
+}
+
+Expand description
+
+Something that can be debug-formatted in an abbreviated way
+
+
+REQUIRED METHODS§
+
+FN ABBREVIATED_FMT(&SELF, F: &MUT FORMATTER [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html]>
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL ABBREVIATEDDEBUG [trait.AbbreviatedDebug.html] FOR &[VALUE
+[https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html]]
+
+§
+
+FN ABBREVIATED_FMT(&SELF, F: &MUT FORMATTER [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html]>
+
+§
+
+
+IMPL ABBREVIATEDDEBUG [trait.AbbreviatedDebug.html] FOR VALUE [https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html]
+
+§
+
+FN ABBREVIATED_FMT(&SELF, F: &MUT FORMATTER [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html]>
+
+§
+
+
+IMPL<CONST N: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]> ABBREVIATEDDEBUG [trait.AbbreviatedDebug.html]
+FOR [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; N [https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+FN ABBREVIATED_FMT(&SELF, F: &MUT FORMATTER [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html]>
+
+
+IMPLEMENTORS§
+
+

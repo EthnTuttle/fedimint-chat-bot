@@ -1,0 +1,119 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_wallet_client/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_wallet_client/index.html
+
+
+CONTRACT
+
+
+REQUIRED METHODS
+
+ * encode
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * PublicKey
+ * Vec<u8, Global>
+ * XOnlyPublicKey
+ * [u8; 32]
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_WALLET_CLIENT::TWEAKABLE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_WALLET_CLIENT [../index.html]::TWEAKABLE [index.html]::CONTRACTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait Contract {
+    fn encode<W>(&self, writer: &mut https://doc.rust-lang.org/1.67.0/std/primitive.reference.htmlW) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html, Errorhttps://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html>
+    where
+        W: Writehttps://doc.rust-lang.org/1.67.0/std/io/trait.Write.html;
+}
+
+Expand description
+
+An object that can be used as a Ricardian contract to tweak a key
+
+
+REQUIRED METHODS§
+
+FN ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+Serialize the contract in a deterministic way to be used as a tweak
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL CONTRACT [trait.Contract.html] FOR PUBLICKEY
+
+§
+
+FN ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL CONTRACT [trait.Contract.html] FOR VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL CONTRACT [trait.Contract.html] FOR [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 32
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+FN ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL CONTRACT [trait.Contract.html] FOR XONLYPUBLICKEY
+
+§
+
+FN ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+
+IMPLEMENTORS§
+
+

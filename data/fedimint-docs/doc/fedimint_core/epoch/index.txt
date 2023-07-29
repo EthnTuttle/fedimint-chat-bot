@@ -1,0 +1,62 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+MODULE EPOCH
+
+ * Structs
+ * Enums
+ * Traits
+ * Functions
+ * Type Definitions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CORE [../index.html]::EPOCHCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/epoch.rs.html#1-431] · [−]
+
+
+STRUCTS
+
+ConsensusUpgrade [struct.ConsensusUpgrade.html]
+May eventually contains consensus info about the upgrade
+EpochOutcome [struct.EpochOutcome.html]
+SerdeSignature [struct.SerdeSignature.html]
+SerdeSignatureShare [struct.SerdeSignatureShare.html]
+SignedEpochOutcome [struct.SignedEpochOutcome.html]
+UnzipConsensusItem [struct.UnzipConsensusItem.html]
+
+
+ENUMS
+
+ConsensusItem [enum.ConsensusItem.html]
+All the items that may be produced during a consensus epoch
+EpochVerifyError [enum.EpochVerifyError.html]
+
+
+TRAITS
+
+IterUnzipConsensusItem [trait.IterUnzipConsensusItem.html]
+
+
+FUNCTIONS
+
+combine_sigs [fn.combine_sigs.html]
+Combines signature shares from peers, ignoring bad signatures to avoid a DoS attack. If not enough valid shares, returns the peers
+that were valid.
+
+
+TYPE DEFINITIONS
+
+SerdeConsensusItem [type.SerdeConsensusItem.html]
+SerdeEpochHistory [type.SerdeEpochHistory.html]

@@ -1,0 +1,23 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimintd/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimintd/index.html
+
+
+IN FEDIMINTD [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+FUNCTION FEDIMINTD [index.html]::DEFAULT_ESPLORA_SERVERCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimintd/lib.rs.html#73-89] · [−]
+
+pub fn default_esplora_server(network: Network) -> BitcoinRpcConfig../fedimint_core/bitcoinrpc/struct.BitcoinRpcConfig.html
+

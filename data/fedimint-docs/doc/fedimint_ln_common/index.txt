@@ -1,0 +1,87 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_ln_common/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_ln_common/index.html
+
+
+CRATE FEDIMINT_LN_COMMON
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Modules
+ * Structs
+ * Enums
+ * Constants
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_LN_COMMONCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_ln_common/lib.rs.html#1-437] · [−]
+Expand description
+
+
+LIGHTNING MODULE
+
+This module allows to atomically and trustlessly (in the federated trust model) interact with the Lightning network through a
+Lightning gateway.
+
+
+ATTENTION: ONLY ONE OPERATION PER CONTRACT AND ROUND
+
+If this module is active the consensus’ conflict filter must ensure that at most one operation (spend, funding) happens per
+contract per round
+
+
+MODULES
+
+api [api/index.html]
+config [config/index.html]
+contracts [contracts/index.html]
+db [db/index.html]
+incoming [incoming/index.html]
+Incoming State Machine
+route_hints [route_hints/index.html]
+Hack to get a route hint that implements serde traits.
+serde_routing_fees [serde_routing_fees/index.html]
+
+
+STRUCTS
+
+ContractAccount [struct.ContractAccount.html]
+ContractOutput [struct.ContractOutput.html]
+LightningClientContext [struct.LightningClientContext.html]
+LightningCommonGen [struct.LightningCommonGen.html]
+LightningGateway [struct.LightningGateway.html]
+Information a gateway registers with a fed
+LightningInput [struct.LightningInput.html]
+LightningModuleTypes [struct.LightningModuleTypes.html]
+
+
+ENUMS
+
+LightningConsensusItem [enum.LightningConsensusItem.html]
+LightningError [enum.LightningError.html]
+LightningOutput [enum.LightningOutput.html]
+Represents an output of the Lightning module.
+LightningOutputOutcome [enum.LightningOutputOutcome.html]
+
+
+CONSTANTS
+
+KIND [constant.KIND.html]
+
+
+FUNCTIONS
+
+create_incoming_contract_output [fn.create_incoming_contract_output.html]
+ln_operation [fn.ln_operation.html]

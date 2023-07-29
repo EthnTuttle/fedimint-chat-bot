@@ -1,0 +1,73 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+ISUPPORTEDDKGMESSAGE
+
+
+REQUIRED METHODS
+
+ * from_msg
+ * to_msg
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::CONFIG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::CONFIG [index.html]::ISUPPORTEDDKGMESSAGECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/config.rs.html#691-694] · [−]
+
+pub trait ISupportedDkgMessage: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html + Serializehttps://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html + DeserializeOwnedhttps://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html {
+    fn to_msg(self) -> SupportedDkgMessageenum.SupportedDkgMessage.html;
+    fn from_msg(msg: SupportedDkgMessageenum.SupportedDkgMessage.html) -> Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Self>;
+}
+
+Expand description
+
+Supported (by Fedimint’s code) DkgMessage<T> types
+
+Since DkgMessage is an open-set, yet we only use a subset of it, we can make a subset-trait to convert it to an enum that we it’s
+easier to handle.
+
+Candidate for refactoring after modularization effort is complete.
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/config.rs.html#692]
+
+FN TO_MSG(SELF) -> SUPPORTEDDKGMESSAGE [enum.SupportedDkgMessage.html]
+
+source [../../src/fedimint_core/config.rs.html#693]
+
+FN FROM_MSG(MSG: SUPPORTEDDKGMESSAGE [enum.SupportedDkgMessage.html]) -> RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<SELF>
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/config.rs.html#703-714]§
+
+
+IMPL ISUPPORTEDDKGMESSAGE [trait.ISupportedDkgMessage.html] FOR DKGMESSAGE [enum.DkgMessage.html]<G1PROJECTIVE>
+
+source [../../src/fedimint_core/config.rs.html#716-727]§
+
+
+IMPL ISUPPORTEDDKGMESSAGE [trait.ISupportedDkgMessage.html] FOR DKGMESSAGE [enum.DkgMessage.html]<G2PROJECTIVE>
+

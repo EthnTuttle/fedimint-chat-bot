@@ -1,0 +1,98 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_wallet_client/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+
+
+use bitcoin::Address;
+use fedimint_core::api::{FederationApiExt, FederationResult, IModuleFederationApi};
+use fedimint_core::module::ApiRequestErased;
+use fedimint_core::query::EventuallyConsistent;
+use fedimint_core::task::{MaybeSend, MaybeSync};
+use fedimint_core::{apply, async_trait_maybe_send, NumPeers};
+use fedimint_wallet_common::PegOutFees;
+
+#[apply(async_trait_maybe_send!)]
+pub trait WalletFederationApi {
+    async fn fetch_consensus_block_height(&self) -> FederationResult<u64>;
+    async fn fetch_peg_out_fees(
+        &self,
+        address: &Address,
+        amount: bitcoin::Amount,
+    ) -> FederationResult<Option<PegOutFees>>;
+}
+
+#[apply(async_trait_maybe_send!)]
+impl<T: ?Sized> WalletFederationApi for T
+where
+    T: IModuleFederationApi + MaybeSend + MaybeSync + 'static,
+{
+    async fn fetch_consensus_block_height(&self) -> FederationResult<u64> {
+        self.request_with_strategy(
+            EventuallyConsistent::new(self.all_members().one_honest()),
+            "block_height".to_string(),
+            ApiRequestErased::default(),
+        )
+        .await
+    }
+
+    async fn fetch_peg_out_fees(
+        &self,
+        address: &Address,
+        amount: bitcoin::Amount,
+    ) -> FederationResult<Option<PegOutFees>> {
+        self.request_with_strategy(
+            EventuallyConsistent::new(self.all_members().threshold()),
+            "peg_out_fees".to_string(),
+            ApiRequestErased::new((address, amount.to_sat())),
+        )
+        .await
+    }
+}
+
+

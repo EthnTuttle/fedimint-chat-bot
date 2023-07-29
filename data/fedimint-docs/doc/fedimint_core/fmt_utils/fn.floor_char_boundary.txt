@@ -1,0 +1,24 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IN FEDIMINT_CORE::FMT_UTILS [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_CORE [../index.html]::FMT_UTILS [index.html]::FLOOR_CHAR_BOUNDARYCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/fmt_utils.rs.html#48-67] · [−]
+
+pub fn floor_char_boundary(s: &strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html, index: usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html
+

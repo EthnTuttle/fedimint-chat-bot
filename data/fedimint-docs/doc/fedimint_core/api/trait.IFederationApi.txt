@@ -1,0 +1,105 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IFEDERATIONAPI
+
+
+REQUIRED METHODS
+
+ * all_members
+ * request_raw
+ * with_module
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::API [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::API [index.html]::IFEDERATIONAPICopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/api.rs.html#146-165] · [−]
+
+pub trait IFederationApi: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + MaybeSend../task/trait.MaybeSend.html + MaybeSync../task/trait.MaybeSync.html {
+    fn all_members(&self) -> &BTreeSethttps://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html<PeerId../struct.PeerId.html>;
+    fn with_module(&self, id: ModuleInstanceId../core/type.ModuleInstanceId.html) -> DynModuleApistruct.DynModuleApi.html;
+    fn request_raw<'life0, 'life1, 'life2, 'async_trait>(
+        &'life0 self,
+        peer_id: PeerId../struct.PeerId.html,
+        method: &'life1 strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html,
+        params: &'life2 [Valuehttps://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Valuehttps://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html, Error>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait,
+        'life2: 'async_trait;
+}
+
+Expand description
+
+An API (module or global) that can query a federation
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/api.rs.html#154]
+
+FN ALL_MEMBERS(&SELF) -> &BTREESET [https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<PEERID
+[../struct.PeerId.html]>
+
+List of all federation members for the purpose of iterating each member in the federation.
+
+The underlying implementation is responsible for knowing how many and PeerIds of each. The caller of this interface most probably
+have some idea as well, but passing this set across every API call to the federation would be inconvenient.
+
+source [../../src/fedimint_core/api.rs.html#156]
+
+FN WITH_MODULE(&SELF, ID: MODULEINSTANCEID [../core/type.ModuleInstanceId.html]) -> DYNMODULEAPI [struct.DynModuleApi.html]
+
+source [../../src/fedimint_core/api.rs.html#159-164]
+
+FN REQUEST_RAW<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    PEER_ID: PEERID [../struct.PeerId.html],
+    METHOD: &'LIFE1 STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html],
+    PARAMS: &'LIFE2 [VALUE [https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VALUE
+[https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html], ERROR>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+
+Make request to a specific federation member by peer_id
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/api.rs.html#775-807]§
+
+
+IMPL<C: JSONRPCCLIENT [trait.JsonRpcClient.html] + DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + 'STATIC>
+IFEDERATIONAPI [trait.IFederationApi.html] FOR WSFEDERATIONAPI [struct.WsFederationApi.html]<C>
+
+Implementation of API calls over websockets
+
+Can function as either the global or module API
+

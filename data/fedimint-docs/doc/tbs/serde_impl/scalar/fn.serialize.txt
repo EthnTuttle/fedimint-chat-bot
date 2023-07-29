@@ -1,0 +1,24 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../tbs/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../tbs/index.html
+
+
+IN TBS::SERDE_IMPL::SCALAR [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+FUNCTION TBS [../../index.html]::SERDE_IMPL [../index.html]::SCALAR [index.html]::SERIALIZECopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/tbs/serde_impl/scalar.rs.html#6-13] · [−]
+
+pub fn serialize<S: Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html>(x: &Scalar../../struct.Scalar.html, s: S) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<S::Okhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok, S::Errorhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error>
+

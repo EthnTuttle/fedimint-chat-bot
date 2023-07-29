@@ -1,0 +1,138 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../fedimint_client/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+
+
+use std::sync::Arc;
+
+use fedimint_core::task::{MaybeSend, MaybeSync};
+
+use crate::sm::StateTransition;
+
+pub trait MapStateTransitions {
+    type State: MaybeSend + MaybeSync + 'static;
+
+    fn map<D, W, U>(self, wrap: W, unwrap: U) -> Vec<StateTransition<D>>
+    where
+        D: MaybeSend + MaybeSync + 'static,
+        W: Fn(Self::State) -> D + Clone + MaybeSend + MaybeSync + 'static,
+        U: Fn(D) -> Self::State + Clone + MaybeSend + MaybeSync + 'static;
+}
+
+impl<S> MapStateTransitions for Vec<StateTransition<S>>
+where
+    S: MaybeSend + MaybeSync + 'static,
+{
+    type State = S;
+
+    fn map<D, W, U>(self, wrap: W, unwrap: U) -> Vec<StateTransition<D>>
+    where
+        D: MaybeSend + MaybeSync + 'static,
+        W: Fn(Self::State) -> D + Clone + MaybeSend + MaybeSync + 'static,
+        U: Fn(D) -> Self::State + Clone + MaybeSend + MaybeSync + 'static,
+    {
+        self.into_iter()
+            .map(
+                |StateTransition {
+                     trigger,
+                     transition,
+                 }| {
+                    let wrap = wrap.clone();
+                    let unwrap = unwrap.clone();
+                    StateTransition {
+                        trigger,
+                        transition: Arc::new(move |dbtx, value, state| {
+                            let wrap = wrap.clone();
+                            let unwrap = unwrap.clone();
+                            let transition = transition.clone();
+                            Box::pin(
+                                async move { wrap(transition(dbtx, value, unwrap(state)).await) },
+                            )
+                        }),
+                    }
+                },
+            )
+            .collect()
+    }
+}
+
+#[macro_export]
+macro_rules! sm_enum_variant_translation {
+    ($sm:expr, $enum_variant:path) => {
+        $sm.map(
+            |sm| $enum_variant(sm),
+            |sm| match sm {
+                $enum_variant(sm) => sm,
+                _ => panic!("Incorrectly dispatched state"),
+            },
+        )
+    };
+}
+
+

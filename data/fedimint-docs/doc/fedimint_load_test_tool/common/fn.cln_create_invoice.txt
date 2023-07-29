@@ -1,0 +1,24 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_load_test_tool/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_load_test_tool/index.html
+
+
+IN FEDIMINT_LOAD_TEST_TOOL::COMMON [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_LOAD_TEST_TOOL [../index.html]::COMMON [index.html]::CLN_CREATE_INVOICECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_load_test_tool/common.rs.html#211-222] · [−]
+
+pub async fn cln_create_invoice(amount: Amount../../fedimint_core/struct.Amount.html) -> Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<(Invoice, Stringhttps://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html)>
+

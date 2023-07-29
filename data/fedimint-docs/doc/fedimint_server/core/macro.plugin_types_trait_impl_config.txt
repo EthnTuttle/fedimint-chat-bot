@@ -1,0 +1,30 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+IN FEDIMINT_SERVER::CORE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MACRO FEDIMINT_SERVER [../index.html]::CORE [index.html]::PLUGIN_TYPES_TRAIT_IMPL_CONFIGCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+macro_rules! plugin_types_trait_impl_config {
+    ($common_gen:ty, $gen:ty, $gen_local:ty, $gen_consensus:ty, $cfg:ty, $cfg_local:ty, $cfg_private:ty, $cfg_consensus:ty, $cfg_client:ty) => { ... };
+}
+
+Expand description
+
+Implements the necessary traits for all configuration related types of a FederationServer module.
+

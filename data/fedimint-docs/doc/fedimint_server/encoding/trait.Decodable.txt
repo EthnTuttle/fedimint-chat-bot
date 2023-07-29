@@ -1,0 +1,1102 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+DECODABLE
+
+
+REQUIRED METHODS
+
+ * consensus_decode
+
+
+PROVIDED METHODS
+
+ * consensus_decode_hex
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * ()
+ * (T1, T2)
+ * (T1, T2, T3)
+ * (T1, T2, T3, T4)
+ * Address
+ * AggregatePublicKey
+ * Amount
+ * BTreeMap<K, V, Global>
+ * BTreeSet<K, Global>
+ * BlindedMessage
+ * BlindedSignature
+ * BlindedSignatureShare
+ * BlindingKey
+ * BlockHash
+ * BlockHeader
+ * Box<T, Global>
+ * Cow<'static, str>
+ * Descriptor<K>
+ * Duration
+ * Hash
+ * Invoice
+ * Network
+ * Option<T>
+ * OutPoint
+ * PartialMerkleTree
+ * PartiallySignedTransaction
+ * PublicKey
+ * PublicKey
+ * PublicKeySet
+ * PublicKeyShare
+ * RoutingFees
+ * Script
+ * Signature
+ * Signature
+ * Signature
+ * String
+ * SystemTime
+ * Transaction
+ * Txid
+ * Url
+ * Vec<T, Global>
+ * XOnlyPublicKey
+ * [T; SIZE]
+ * bool
+ * u16
+ * u32
+ * u64
+ * u8
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::ENCODING [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../index.html]::ENCODING [index.html]::DECODABLECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait Decodable: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html {
+    fn consensus_decode<R>(
+        r: &mut https://doc.rust-lang.org/1.67.0/std/primitive.reference.htmlR,
+        _modules: &ModuleRegistry../module/registry/struct.ModuleRegistry.html<Decoder../core/struct.Decoder.html>
+    ) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Self, DecodeErrorstruct.DecodeError.html>
+    where
+        R: Readhttps://doc.rust-lang.org/1.67.0/std/io/trait.Read.html;
+
+    fn consensus_decode_hex(
+        hex: &strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html,
+        modules: &ModuleRegistry../module/registry/struct.ModuleRegistry.html<Decoder../core/struct.Decoder.html>
+    ) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Self, DecodeErrorstruct.DecodeError.html> { ... }
+}
+
+Expand description
+
+Data which can be encoded in a consensus-consistent way
+
+
+REQUIRED METHODS§
+
+FN CONSENSUS_DECODE<R>(
+    R: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, DECODEERROR [struct.DecodeError.html]>WHERE
+    R: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+Decode an object with a well-defined format
+
+
+PROVIDED METHODS§
+
+FN CONSENSUS_DECODE_HEX(
+    HEX: &STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html],
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, DECODEERROR [struct.DecodeError.html]>
+
+Decode an object from hex
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR INVOICE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<INVOICE, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR XONLYPUBLICKEY
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<XONLYPUBLICKEY, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR URL [https://docs.rs/url/2.3.1/url/struct.Url.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<URL [https://docs.rs/url/2.3.1/url/struct.Url.html],
+DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR OUTPOINT
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<OUTPOINT, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PARTIALMERKLETREE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PARTIALMERKLETREE, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR TXID
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<TXID, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PARTIALLYSIGNEDTRANSACTION
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PARTIALLYSIGNEDTRANSACTION, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<STRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SCRIPT
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SCRIPT, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR NETWORK
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<NETWORK, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR AGGREGATEPUBLICKEY
+
+§
+
+FN CONSENSUS_DECODE<R>(
+    R: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<AGGREGATEPUBLICKEY, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    R: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<K, V> DECODABLE [trait.Decodable.html] FOR BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<K, V, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    K: DECODABLE [trait.Decodable.html] + ORD [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Ord.html],
+    V: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<K, V, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLINDEDSIGNATURESHARE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLINDEDSIGNATURESHARE, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PUBLICKEYSHARE
+
+§
+
+FN CONSENSUS_DECODE<R>(
+    R: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PUBLICKEYSHARE, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    R: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR () [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    _D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PUBLICKEY
+
+§
+
+FN CONSENSUS_DECODE<R>(
+    R: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PUBLICKEY, DECODEERROR [struct.DecodeError.html]>WHERE
+    R: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLINDEDSIGNATURE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLINDEDSIGNATURE, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SIGNATURE, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SYSTEMTIME [https://doc.rust-lang.org/1.67.0/std/time/struct.SystemTime.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SYSTEMTIME
+[https://doc.rust-lang.org/1.67.0/std/time/struct.SystemTime.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SIGNATURE, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<K> DECODABLE [trait.Decodable.html] FOR DESCRIPTOR<K>WHERE
+    DESCRIPTOR<K>: FROMSTR [https://doc.rust-lang.org/1.67.0/core/str/traits/trait.FromStr.html],
+    <DESCRIPTOR<K> AS FROMSTR [https://doc.rust-lang.org/1.67.0/core/str/traits/trait.FromStr.html]>::ERR
+[https://doc.rust-lang.org/1.67.0/core/str/traits/trait.FromStr.html#associatedtype.Err]: 'STATIC + TOSTRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/trait.ToString.html] + ERROR
+[https://doc.rust-lang.org/1.67.0/core/error/trait.Error.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+    K: MINISCRIPTKEY,
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<DESCRIPTOR<K>, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR ADDRESS
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<ADDRESS, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T> DECODABLE [trait.Decodable.html] FOR BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    T: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T1, T2, T3> DECODABLE [trait.Decodable.html] FOR (T1, T2, T3)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: DECODABLE [trait.Decodable.html],
+    T2: DECODABLE [trait.Decodable.html],
+    T3: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<(T1, T2, T3)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLINDINGKEY
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLINDINGKEY, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SIGNATURE, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DURATION [https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<DURATION
+[https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T> DECODABLE [trait.Decodable.html] FOR VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    T: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<K> DECODABLE [trait.Decodable.html] FOR BTREESET
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<K, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    K: DECODABLE [trait.Decodable.html] + ORD [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Ord.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BTREESET
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<K, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR COW [https://doc.rust-lang.org/1.67.0/alloc/borrow/enum.Cow.html]<'STATIC, STR
+[https://doc.rust-lang.org/1.67.0/std/primitive.str.html]>
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<COW
+[https://doc.rust-lang.org/1.67.0/alloc/borrow/enum.Cow.html]<'STATIC, STR
+[https://doc.rust-lang.org/1.67.0/std/primitive.str.html]>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T1, T2> DECODABLE [trait.Decodable.html] FOR (T1, T2) [https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: DECODABLE [trait.Decodable.html],
+    T2: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<(T1, T2)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PUBLICKEYSET
+
+§
+
+FN CONSENSUS_DECODE<R>(
+    R: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PUBLICKEYSET, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    R: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLINDEDMESSAGE
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLINDEDMESSAGE, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T1, T2, T3, T4> DECODABLE [trait.Decodable.html] FOR (T1, T2, T3, T4)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: DECODABLE [trait.Decodable.html],
+    T2: DECODABLE [trait.Decodable.html],
+    T3: DECODABLE [trait.Decodable.html],
+    T4: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<(T1, T2, T3, T4)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR U32 [https://doc.rust-lang.org/1.67.0/std/primitive.u32.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U32
+[https://doc.rust-lang.org/1.67.0/std/primitive.u32.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR AMOUNT
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<AMOUNT, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLOCKHASH
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLOCKHASH, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T, CONST SIZE: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]> DECODABLE [trait.Decodable.html] FOR [T;
+SIZE] [https://doc.rust-lang.org/1.67.0/std/primitive.array.html]WHERE
+    T: DECODABLE [trait.Decodable.html] + DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + DEFAULT
+[https://doc.rust-lang.org/1.67.0/core/default/trait.Default.html] + COPY
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Copy.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<[T; SIZE]
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html], DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR ROUTINGFEES
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<ROUTINGFEES, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BLOCKHEADER
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<BLOCKHEADER, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL<T> DECODABLE [trait.Decodable.html] FOR OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<T>WHERE
+    T: DECODABLE [trait.Decodable.html],
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<OPTION
+[https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<T>, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR TRANSACTION
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    _MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<TRANSACTION, DECODEERROR
+[struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR HASH
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<HASH, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PUBLICKEY
+
+§
+
+FN CONSENSUS_DECODE<D>(
+    D: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]D,
+    MODULES: &MODULEREGISTRY [../module/registry/struct.ModuleRegistry.html]<DECODER [../core/struct.Decoder.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<PUBLICKEY, DECODEERROR [struct.DecodeError.html]>WHERE
+    D: READ [https://doc.rust-lang.org/1.67.0/std/io/trait.Read.html],
+
+
+IMPLEMENTORS§
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CONSENSUSDECISION [../enum.ConsensusDecision.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CONSENSUSITEM [../epoch/enum.ConsensusItem.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR APIVERSIONSET [../api/struct.ApiVersionSet.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGDOWNLOADTOKEN [../api/struct.ClientConfigDownloadToken.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTBACKUPKEY [../backup/struct.ClientBackupKey.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTBACKUPKEYPREFIX [../backup/struct.ClientBackupKeyPrefix.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTBACKUPSNAPSHOT [../backup/struct.ClientBackupSnapshot.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BITCOINRPCCONFIG [../bitcoinrpc/struct.BitcoinRpcConfig.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIG [../config/struct.ClientConfig.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTMODULECONFIG [../config/struct.ClientModuleConfig.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR FEDERATIONID [../config/struct.FederationId.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PEERURL [../config/struct.PeerUrl.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SERVERMODULECONSENSUSCONFIG [../config/struct.ServerModuleConsensusConfig.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BACKUPREQUEST [../core/backup/struct.BackupRequest.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DYNCLIENTCONFIG [../core/struct.DynClientConfig.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DYNINPUT [../core/struct.DynInput.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DYNMODULECONSENSUSITEM [../core/struct.DynModuleConsensusItem.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DYNOUTPUT [../core/struct.DynOutput.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DYNOUTPUTOUTCOME [../core/struct.DynOutputOutcome.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR KEYPAIR [../core/struct.KeyPair.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR MODULEKIND [../core/struct.ModuleKind.html]
+
+source [../../src/fedimint_server/db.rs.html#34]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR ACCEPTEDTRANSACTIONKEY [../db/struct.AcceptedTransactionKey.html]
+
+source [../../src/fedimint_server/db.rs.html#37]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR ACCEPTEDTRANSACTIONKEYPREFIX [../db/struct.AcceptedTransactionKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#112]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGDOWNLOADKEY [../db/struct.ClientConfigDownloadKey.html]
+
+source [../../src/fedimint_server/db.rs.html#109]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGDOWNLOADKEYPREFIX [../db/struct.ClientConfigDownloadKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#73]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGSIGNATUREKEY [../db/struct.ClientConfigSignatureKey.html]
+
+source [../../src/fedimint_server/db.rs.html#83]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGSIGNATURESHAREKEY [../db/struct.ClientConfigSignatureShareKey.html]
+
+source [../../src/fedimint_server/db.rs.html#86]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CLIENTCONFIGSIGNATURESHAREPREFIX [../db/struct.ClientConfigSignatureSharePrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#100]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CONSENSUSUPGRADEKEY [../db/struct.ConsensusUpgradeKey.html]
+
+source [../../src/fedimint_server/db.rs.html#51]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR EPOCHHISTORYKEY [../db/struct.EpochHistoryKey.html]
+
+source [../../src/fedimint_server/db.rs.html#54]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR EPOCHHISTORYKEYPREFIX [../db/struct.EpochHistoryKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#64]§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR LASTEPOCHKEY [../db/struct.LastEpochKey.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CONSENSUSUPGRADE [../epoch/struct.ConsensusUpgrade.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR EPOCHOUTCOME [../epoch/struct.EpochOutcome.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SERDESIGNATURE [../epoch/struct.SerdeSignature.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SERDESIGNATURESHARE [../epoch/struct.SerdeSignatureShare.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR SIGNEDEPOCHOUTCOME [../epoch/struct.SignedEpochOutcome.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR APIVERSION [../module/struct.ApiVersion.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR CORECONSENSUSVERSION [../module/struct.CoreConsensusVersion.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR MODULECONSENSUSVERSION [../module/struct.ModuleConsensusVersion.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR FEDIMINT_SERVER::AMOUNT [../struct.Amount.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR FEERATE [../struct.Feerate.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR FEDIMINT_SERVER::OUTPOINT [../struct.OutPoint.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR PEERID [../struct.PeerId.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR TRANSACTIONID [../struct.TransactionId.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR FEDIMINT_SERVER::TRANSACTION::TRANSACTION [../transaction/struct.Transaction.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR TXOUTPROOF [../txoproof/struct.TxOutProof.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR BIGSIZE [struct.BigSize.html]
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DATABASEVERSION
+
+§
+
+
+IMPL DECODABLE [trait.Decodable.html] FOR DATABASEVERSIONKEY
+
+§
+
+
+IMPL<C> DECODABLE [trait.Decodable.html] FOR TIERED [../struct.Tiered.html]<C>WHERE
+    C: DECODABLE [trait.Decodable.html],
+
+§
+
+
+IMPL<C> DECODABLE [trait.Decodable.html] FOR TIEREDMULTI [../struct.TieredMulti.html]<C>WHERE
+    C: DECODABLE [trait.Decodable.html],
+
+§
+
+
+IMPL<T> DECODABLE [trait.Decodable.html] FOR DYNRAWFALLBACK [enum.DynRawFallback.html]<T>WHERE
+    T: 'STATIC + DECODABLE [trait.Decodable.html],
+

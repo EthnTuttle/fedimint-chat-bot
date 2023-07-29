@@ -1,0 +1,66 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_core/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+
+
+use std::time::SystemTime;
+
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::{impl_db_lookup, impl_db_record};
+use serde::{Deserialize, Serialize};
+
+use crate::db::DbKeyPrefix;
+
+/// Key used to store user's ecash backups
+#[derive(Debug, Clone, Copy, Encodable, Decodable, Serialize)]
+pub struct ClientBackupKey(pub secp256k1_zkp::XOnlyPublicKey);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct ClientBackupKeyPrefix;
+
+impl_db_record!(
+    key = ClientBackupKey,
+    value = ClientBackupSnapshot,
+    db_prefix = DbKeyPrefix::ClientBackup,
+);
+impl_db_lookup!(key = ClientBackupKey, query_prefix = ClientBackupKeyPrefix);
+
+/// User's backup, received at certain time, containing encrypted payload
+#[derive(Debug, Clone, PartialEq, Eq, Encodable, Decodable, Serialize, Deserialize)]
+pub struct ClientBackupSnapshot {
+    pub timestamp: SystemTime,
+    #[serde(with = "fedimint_core::hex::serde")]
+    pub data: Vec<u8>,
+}
+
+

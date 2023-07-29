@@ -1,0 +1,132 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+QUERYSTRATEGY
+
+
+REQUIRED METHODS
+
+ * process
+
+
+PROVIDED METHODS
+
+ * request_timeout
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::QUERY [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::QUERY [index.html]::QUERYSTRATEGYCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/query.rs.html#542-548] · [−]
+
+pub trait QueryStrategy<IR, OR = IR> {
+    fn process(
+        &mut self,
+        peer_id: PeerId../struct.PeerId.html,
+        response: MemberResult../api/type.MemberResult.html<IR>
+    ) -> QueryStepenum.QueryStep.html<OR>;
+
+    fn request_timeout(&self) -> Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<Durationhttps://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html> { ... }
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/query.rs.html#547]
+
+FN PROCESS(
+    &MUT SELF,
+    PEER_ID: PEERID [../struct.PeerId.html],
+    RESPONSE: MEMBERRESULT [../api/type.MemberResult.html]<IR>
+) -> QUERYSTEP [enum.QueryStep.html]<OR>
+
+
+PROVIDED METHODS§
+
+source [../../src/fedimint_core/query.rs.html#544-546]
+
+FN REQUEST_TIMEOUT(&SELF) -> OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<DURATION
+[https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html]>
+
+Should requests for this strategy have specific timeouts?
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/query.rs.html#509-540]§
+
+
+IMPL QUERYSTRATEGY [trait.QueryStrategy.html]<SUPPORTEDAPIVERSIONSSUMMARY
+[../module/version/struct.SupportedApiVersionsSummary.html], APIVERSIONSET [../api/struct.ApiVersionSet.html]> FOR
+DISCOVERAPIVERSIONSET [struct.DiscoverApiVersionSet.html]
+
+source [../../src/fedimint_core/query.rs.html#280-306]§
+
+
+IMPL<R> QUERYSTRATEGY [trait.QueryStrategy.html]<R, BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<PEERID [../struct.PeerId.html], R, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>> FOR ALLORDEADLINE [struct.AllOrDeadline.html]<R>
+
+source [../../src/fedimint_core/query.rs.html#20-27]§
+
+
+IMPL<R> QUERYSTRATEGY [trait.QueryStrategy.html]<R, R> FOR TRUSTALLPEERS [struct.TrustAllPeers.html]
+
+source [../../src/fedimint_core/query.rs.html#223-261]§
+
+
+IMPL<R: EQ [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] + CLONE
+[https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] + DEBUG
+[https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html]> QUERYSTRATEGY [trait.QueryStrategy.html]<R, R> FOR CURRENTCONSENSUS
+[struct.CurrentConsensus.html]<R>
+
+source [../../src/fedimint_core/query.rs.html#186-199]§
+
+
+IMPL<R: EQ [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] + CLONE
+[https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] + DEBUG
+[https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html]> QUERYSTRATEGY [trait.QueryStrategy.html]<R, R> FOR
+EVENTUALLYCONSISTENT [struct.EventuallyConsistent.html]<R>
+
+source [../../src/fedimint_core/query.rs.html#97-118]§
+
+
+IMPL<R: DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + EQ
+[https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html]>
+QUERYSTRATEGY [trait.QueryStrategy.html]<VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<R, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<R, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>> FOR UNIONRESPONSES [struct.UnionResponses.html]<R>
+
+source [../../src/fedimint_core/query.rs.html#142-164]§
+
+
+IMPL<R: DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + EQ
+[https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html]>
+QUERYSTRATEGY [trait.QueryStrategy.html]<R, VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<R, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>> FOR UNIONRESPONSESSINGLE [struct.UnionResponsesSingle.html]<R>
+
+source [../../src/fedimint_core/query.rs.html#57-76]§
+
+
+IMPL<R: DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + EQ
+[https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html]>
+QUERYSTRATEGY [trait.QueryStrategy.html]<R, R> FOR VERIFIABLERESPONSE [struct.VerifiableResponse.html]<R>
+

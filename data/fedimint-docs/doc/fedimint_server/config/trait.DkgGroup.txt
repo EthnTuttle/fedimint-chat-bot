@@ -1,0 +1,44 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+DKGGROUP
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::CONFIG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../index.html]::CONFIG [index.html]::DKGGROUPCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait DkgGroup: Group<Output = Self> + Mulhttps://doc.rust-lang.org/1.67.0/core/ops/arith/trait.Mul.html<Scalar> + Curve + GroupEncoding + SGrouptrait.SGroup.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html { }
+
+Expand description
+
+Defines a group (e.g. G1 or G2) that we can generate keys for
+
+
+IMPLEMENTORS§
+
+§
+
+
+IMPL<T> DKGGROUP [trait.DkgGroup.html] FOR TWHERE
+    T: GROUP<OUTPUT = T> + MUL [https://doc.rust-lang.org/1.67.0/core/ops/arith/trait.Mul.html]<SCALAR> + CURVE + GROUPENCODING +
+SGROUP [trait.SGroup.html] + UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html],
+

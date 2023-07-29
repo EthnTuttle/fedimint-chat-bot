@@ -1,0 +1,166 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_server/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_server/index.html
+
+
+CRATE FEDIMINT_SERVER
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Modules
+ * Macros
+ * Structs
+ * Enums
+ * Traits
+ * Functions
+ * Type Definitions
+ * Attribute Macros
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_SERVERCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_server/lib.rs.html#1-305] · [−]
+
+
+MODULES
+
+admin_client [admin_client/index.html]
+api [api/index.html]
+backup [backup/index.html]
+bitcoinrpc [bitcoinrpc/index.html]
+cancellable [cancellable/index.html]
+config [config/index.html]
+Fedimint toplevel config
+consensus [consensus/index.html]
+The actual implementation of consensus
+core [core/index.html]
+Fedimint Core API (common) module interface
+db [db/index.html]
+Provides interfaces for ACID-compliant data store backends
+encoding [encoding/index.html]
+This module defines a binary encoding interface which is more suitable for consensus critical encoding than e.g. bincode. Over
+time all structs that need to be encoded to binary will be migrated to this interface.
+epoch [epoch/index.html]
+fmt_utils [fmt_utils/index.html]
+hex [hex/index.html]
+macros [macros/index.html]
+module [module/index.html]
+multiplexed [multiplexed/index.html]
+Implementation of multiplexed peer connections
+net [net/index.html]
+Networking for mint-to-mint and client-to-mint communiccation
+outcome [outcome/index.html]
+query [query/index.html]
+task [task/index.html]
+tiered [tiered/index.html]
+tiered_multi [tiered_multi/index.html]
+time [time/index.html]
+timing [timing/index.html]
+transaction [transaction/index.html]
+txoproof [txoproof/index.html]
+util [util/index.html]
+
+
+MACROS
+
+__api_endpoint [macro.__api_endpoint.html]
+Example
+_dyn_newtype_define_inner [macro._dyn_newtype_define_inner.html]
+_dyn_newtype_define_with_instance_id_inner [macro._dyn_newtype_define_with_instance_id_inner.html]
+_dyn_newtype_impl_deref_mut [macro._dyn_newtype_impl_deref_mut.html]
+async_trait_maybe_send [macro.async_trait_maybe_send.html]
+async trait that use MaybeSend
+dyn_newtype_define [macro.dyn_newtype_define.html]
+Define “dyn newtype” (a newtype over dyn Trait)
+dyn_newtype_define_with_instance_id [macro.dyn_newtype_define_with_instance_id.html]
+dyn_newtype_impl_dyn_clone_passhthrough [macro.dyn_newtype_impl_dyn_clone_passhthrough.html]
+Implement Clone on a “dyn newtype”
+dyn_newtype_impl_dyn_clone_passhthrough_with_instance_id [macro.dyn_newtype_impl_dyn_clone_passhthrough_with_instance_id.html]
+impl_db_lookup [macro.impl_db_lookup.html]
+impl_db_record [macro.impl_db_record.html]
+This is a helper macro that generates the implementations of DatabaseRecord necessary for reading/writing to the database and
+fetching by prefix.
+maybe_add_send [macro.maybe_add_send.html]
+MaybeSync can not be used in dyn $Trait + MaybeSend
+maybe_add_send_sync [macro.maybe_add_send_sync.html]
+See maybe_add_send
+module_dyn_newtype_impl_encode_decode [macro.module_dyn_newtype_impl_encode_decode.html]
+Implement Encodable and Decodable for a “module dyn newtype”
+module_plugin_trait_define [macro.module_plugin_trait_define.html]
+Define a “plugin” trait
+newtype_impl_eq_passthrough_with_instance_id [macro.newtype_impl_eq_passthrough_with_instance_id.html]
+plugin_types_trait_impl_common [macro.plugin_types_trait_impl_common.html]
+Implements the necessary traits for all associated types of a FederationServer module.
+plugin_types_trait_impl_config [macro.plugin_types_trait_impl_config.html]
+Implements the necessary traits for all configuration related types of a FederationServer module.
+push_db_key_items [macro.push_db_key_items.html]
+push_db_pair_items [macro.push_db_pair_items.html]
+push_db_pair_items_no_serde [macro.push_db_pair_items_no_serde.html]
+
+
+STRUCTS
+
+Amount [struct.Amount.html]
+Represents an amount of BTC inside the system. The base denomination is milli satoshi for now, this is also why the amount type
+from rust-bitcoin isn’t used instead.
+FedimintApiHandler [struct.FedimintApiHandler.html]
+FedimintServer [struct.FedimintServer.html]
+Main server for running Fedimint consensus and APIs
+Feerate [struct.Feerate.html]
+OutPoint [struct.OutPoint.html]
+OutPoint represents a globally unique output in a transaction
+PeerId [struct.PeerId.html]
+Tiered [struct.Tiered.html]
+TieredMulti [struct.TieredMulti.html]
+Represents notes of different denominations.
+TieredMultiZip [struct.TieredMultiZip.html]
+TieredSummary [struct.TieredSummary.html]
+TransactionId [struct.TransactionId.html]
+A transaction id for peg-ins, peg-outs and reissuances
+
+
+ENUMS
+
+ConsensusDecision [enum.ConsensusDecision.html]
+CoreError [enum.CoreError.html]
+ParseAmountError [enum.ParseAmountError.html]
+
+
+TRAITS
+
+BitcoinHash [trait.BitcoinHash.html]
+Trait which applies to hashes of all types.
+HasApiContext [trait.HasApiContext.html]
+Has the context necessary for serving API endpoints
+NumPeers [trait.NumPeers.html]
+for consensus-related calculations given the number of peers
+ServerModule [trait.ServerModule.html]
+
+
+FUNCTIONS
+
+check_auth [fn.check_auth.html]
+msats [fn.msats.html]
+Shorthand for Amount::from_msats [struct.Amount.html#method.from_msats]
+sats [fn.sats.html]
+Shorthand for Amount::from_sats [struct.Amount.html#method.from_sats]
+
+
+TYPE DEFINITIONS
+
+ApiResult [type.ApiResult.html]
+
+
+ATTRIBUTE MACROS
+
+apply [attr.apply.html]

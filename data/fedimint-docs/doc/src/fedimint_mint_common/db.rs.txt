@@ -1,0 +1,280 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_mint_common/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+
+
+use std::time::SystemTime;
+
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::{impl_db_lookup, impl_db_record, Amount, OutPoint, PeerId};
+use serde::{Deserialize, Serialize};
+use strum_macros::EnumIter;
+
+use crate::{MintOutputBlindSignatures, MintOutputSignatureShare, Nonce};
+
+#[repr(u8)]
+#[derive(Clone, EnumIter, Debug)]
+pub enum DbKeyPrefix {
+    NoteNonce = 0x10,
+    ProposedPartialSig = 0x11,
+    ReceivedPartialSig = 0x12,
+    OutputOutcome = 0x13,
+    MintAuditItem = 0x14,
+    EcashBackup = 0x15,
+}
+
+impl std::fmt::Display for DbKeyPrefix {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "{self:?}")
+    }
+}
+
+#[derive(Debug, Clone, Encodable, Decodable, Eq, PartialEq, Hash, Serialize)]
+pub struct NonceKey(pub Nonce);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct NonceKeyPrefix;
+
+impl_db_record!(
+    key = NonceKey,
+    value = (),
+    db_prefix = DbKeyPrefix::NoteNonce,
+);
+impl_db_lookup!(key = NonceKey, query_prefix = NonceKeyPrefix);
+
+#[derive(Debug, Encodable, Decodable, Serialize)]
+pub struct ProposedPartialSignatureKey(pub OutPoint);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct ProposedPartialSignaturesKeyPrefix;
+
+impl_db_record!(
+    key = ProposedPartialSignatureKey,
+    value = MintOutputSignatureShare,
+    db_prefix = DbKeyPrefix::ProposedPartialSig,
+);
+impl_db_lookup!(
+    key = ProposedPartialSignatureKey,
+    query_prefix = ProposedPartialSignaturesKeyPrefix
+);
+
+#[derive(Debug, Encodable, Decodable, Serialize)]
+pub struct ReceivedPartialSignatureKey(pub OutPoint, pub PeerId);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct ReceivedPartialSignaturesKeyPrefix;
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct ReceivedPartialSignatureKeyOutputPrefix(pub OutPoint);
+
+impl_db_record!(
+    key = ReceivedPartialSignatureKey,
+    value = MintOutputSignatureShare,
+    db_prefix = DbKeyPrefix::ReceivedPartialSig,
+);
+impl_db_lookup!(
+    key = ReceivedPartialSignatureKey,
+    query_prefix = ReceivedPartialSignaturesKeyPrefix,
+    query_prefix = ReceivedPartialSignatureKeyOutputPrefix
+);
+
+/// Transaction id and output index identifying an output outcome
+#[derive(Debug, Clone, Copy, Encodable, Decodable, Serialize)]
+pub struct OutputOutcomeKey(pub OutPoint);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct OutputOutcomeKeyPrefix;
+
+impl_db_record!(
+    key = OutputOutcomeKey,
+    value = MintOutputBlindSignatures,
+    db_prefix = DbKeyPrefix::OutputOutcome,
+);
+impl_db_lookup!(
+    key = OutputOutcomeKey,
+    query_prefix = OutputOutcomeKeyPrefix
+);
+
+/// Represents the amounts of issued (signed) and redeemed (verified) notes for
+/// auditing
+#[derive(Debug, Clone, Encodable, Decodable, Serialize)]
+pub enum MintAuditItemKey {
+    Issuance(OutPoint),
+    IssuanceTotal,
+    Redemption(NonceKey),
+    RedemptionTotal,
+}
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct MintAuditItemKeyPrefix;
+
+impl_db_record!(
+    key = MintAuditItemKey,
+    value = Amount,
+    db_prefix = DbKeyPrefix::MintAuditItem,
+);
+impl_db_lookup!(
+    key = MintAuditItemKey,
+    query_prefix = MintAuditItemKeyPrefix
+);
+
+/// Key used to store user's ecash backups
+#[derive(Debug, Clone, Copy, Encodable, Decodable, Serialize)]
+pub struct EcashBackupKey(pub secp256k1_zkp::XOnlyPublicKey);
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct EcashBackupKeyPrefix;
+
+impl_db_record!(
+    key = EcashBackupKey,
+    value = ECashUserBackupSnapshot,
+    db_prefix = DbKeyPrefix::EcashBackup,
+);
+impl_db_lookup!(key = EcashBackupKey, query_prefix = EcashBackupKeyPrefix);
+
+/// User's backup, received at certain time, containing encrypted payload
+#[derive(Debug, Clone, PartialEq, Eq, Encodable, Decodable, Serialize, Deserialize)]
+pub struct ECashUserBackupSnapshot {
+    pub timestamp: SystemTime,
+    #[serde(with = "fedimint_core::hex::serde")]
+    pub data: Vec<u8>,
+}
+
+

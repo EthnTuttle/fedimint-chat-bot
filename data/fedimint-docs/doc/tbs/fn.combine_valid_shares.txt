@@ -1,0 +1,41 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+IN TBS [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+FUNCTION TBS [index.html]::COMBINE_VALID_SHARESCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/tbs/lib.rs.html#187-211] · [−]
+
+pub fn combine_valid_shares<I>(
+    sig_shares: I,
+    threshold: usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html
+) -> BlindedSignaturestruct.BlindedSignature.htmlwhere
+    I: IntoIteratorhttps://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.IntoIterator.html<Item = (usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html, BlindedSignatureSharestruct.BlindedSignatureShare.html)>,
+    I::IntoIterhttps://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter: Clonehttps://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html + ExactSizeIteratorhttps://doc.rust-lang.org/1.67.0/core/iter/traits/exact_size/trait.ExactSizeIterator.html,
+
+Expand description
+
+Combines a sufficient amount of valid blinded signature shares to a blinded signature. The responsibility of verifying the
+supplied shares lies with the caller.
+
+ * sig_shares: an iterator yielding pairs of key indices and signature shares from said key
+ * threshold: number of shares needed to combine a signature
+
+
+PANICS
+
+If the amount of shares supplied is less than the necessary amount
+

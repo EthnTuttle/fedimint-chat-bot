@@ -1,0 +1,28 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../tbs/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../tbs/index.html
+
+
+MODULE G1
+
+ * Functions
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+MODULE TBS [../../index.html]::SERDE_IMPL [../index.html]::G1Copy item path [../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/tbs/serde_impl/mod.rs.html#44] · [−]
+
+
+FUNCTIONS
+
+deserialize [fn.deserialize.html]
+serialize [fn.serialize.html]

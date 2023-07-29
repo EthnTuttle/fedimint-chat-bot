@@ -1,0 +1,306 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+AAD
+
+
+METHODS
+
+ * empty
+ * from
+
+
+TRAIT IMPLEMENTATIONS
+
+ * AsRef<[u8]>
+
+
+AUTO TRAIT IMPLEMENTATIONS
+
+ * RefUnwindSafe
+ * Send
+ * Sync
+ * Unpin
+ * UnwindSafe
+
+
+BLANKET IMPLEMENTATIONS
+
+ * Any
+ * Borrow<T>
+ * BorrowMut<T>
+ * From<T>
+ * Into<U>
+ * Same<T>
+ * ToHex
+ * TryFrom<U>
+ * TryInto<U>
+ * VZip<V>
+
+
+IN FEDIMINT_AEAD [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+STRUCT FEDIMINT_AEAD [index.html]::AADCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#360] · [−]
+
+pub struct Aad<A>(_)
+where
+    A: AsRefhttps://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html<[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>;
+
+Expand description
+
+The additionally authenticated data (AAD) for an opening or sealing operation. This data is authenticated but is not encrypted.
+
+The type A could be a byte slice &[u8], a byte array [u8; N] for some constant N, Vec<u8>, etc.
+
+
+IMPLEMENTATIONS§
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#362]§
+
+
+IMPL<A> AAD [struct.Aad.html]<A>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#365]
+
+PUB FN FROM(AAD: A) -> AAD [struct.Aad.html]<A>
+
+Construct the Aad from the given bytes.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#379]§
+
+
+IMPL AAD [struct.Aad.html]<[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 0
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]>
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#381]
+
+PUB FN EMPTY() -> AAD [struct.Aad.html]<[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 0
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]>
+
+Construct an empty Aad.
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#370]§
+
+
+IMPL<A> ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]> FOR AAD [struct.Aad.html]<A>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#374]§
+
+FN AS_REF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html#tymethod.as_ref](&SELF) -> &[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]] Ⓘ
+
+Converts this type into a shared reference of the (usually inferred) input type.
+
+
+AUTO TRAIT IMPLEMENTATIONS§
+
+§
+
+
+IMPL<A> REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html] FOR AAD
+[struct.Aad.html]<A>WHERE
+    A: REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html],
+
+§
+
+
+IMPL<A> SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] FOR AAD [struct.Aad.html]<A>WHERE
+    A: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<A> SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] FOR AAD [struct.Aad.html]<A>WHERE
+    A: SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+§
+
+
+IMPL<A> UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] FOR AAD [struct.Aad.html]<A>WHERE
+    A: UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html],
+
+§
+
+
+IMPL<A> UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html] FOR AAD
+[struct.Aad.html]<A>WHERE
+    A: UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html],
+
+
+BLANKET IMPLEMENTATIONS§
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#200]§
+
+
+IMPL<T> ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] FOR TWHERE
+    T: 'STATIC + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#201]§
+
+FN TYPE_ID [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id](&SELF) -> TYPEID
+[https://doc.rust-lang.org/1.67.0/core/any/struct.TypeId.html]
+
+Gets the TypeId of self. Read more [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#211]§
+
+
+IMPL<T> BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#213]§
+
+FN BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow](&SELF) -> &
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Immutably borrows from an owned value. Read more [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#220]§
+
+
+IMPL<T> BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#221]§
+
+FN BORROW_MUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut](&MUT SELF) -> &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Mutably borrows from an owned value. Read more
+[https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#733]§
+
+
+IMPL<T> FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T> FOR T
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#736]§
+
+FN FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html#tymethod.from](T: T) -> T
+
+Returns the argument unchanged.
+
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#717]§
+
+
+IMPL<T, U> INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<U> FOR TWHERE
+    U: FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>,
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#725]§
+
+FN INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html#tymethod.into](SELF) -> U
+
+Calls U::from(self).
+
+That is, this conversion is whatever the implementation of From [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>
+for U chooses to do.
+
+source [https://docs.rs/typenum/1.16.0/src/typenum/type_operators.rs.html#34]§
+
+
+IMPL<T> SAME [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html]<T> FOR T
+
+§
+
+TYPE OUTPUT [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html#associatedtype.Output] = T
+
+Should always be Self
+source [https://docs.rs/hex/0.4.3/src/hex/lib.rs.html#137]§
+
+
+IMPL<T> TOHEX [https://docs.rs/hex/0.4.3/hex/trait.ToHex.html] FOR TWHERE
+    T: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+source [https://docs.rs/hex/0.4.3/src/hex/lib.rs.html#138]§
+
+FN ENCODE_HEX [https://docs.rs/hex/0.4.3/hex/trait.ToHex.html#tymethod.encode_hex]<U>(&SELF) -> UWHERE
+    U: FROMITERATOR [https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.FromIterator.html]<CHAR
+[https://doc.rust-lang.org/1.67.0/std/primitive.char.html]>,
+
+Encode the hex strict representing self into the result. Lower case letters are used (e.g. f9b4ca) Read more
+[https://docs.rs/hex/0.4.3/hex/trait.ToHex.html#tymethod.encode_hex]
+source [https://docs.rs/hex/0.4.3/src/hex/lib.rs.html#142]§
+
+FN ENCODE_HEX_UPPER [https://docs.rs/hex/0.4.3/hex/trait.ToHex.html#tymethod.encode_hex_upper]<U>(&SELF) -> UWHERE
+    U: FROMITERATOR [https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.FromIterator.html]<CHAR
+[https://doc.rust-lang.org/1.67.0/std/primitive.char.html]>,
+
+Encode the hex strict representing self into the result. Upper case letters are used (e.g. F9B4CA) Read more
+[https://docs.rs/hex/0.4.3/hex/trait.ToHex.html#tymethod.encode_hex_upper]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#775]§
+
+
+IMPL<T, U> TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U> FOR TWHERE
+    U: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error] = INFALLIBLE
+[https://doc.rust-lang.org/1.67.0/core/convert/enum.Infallible.html]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#781]§
+
+FN TRY_FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#tymethod.try_from](VALUE: U) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, <T AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#760]§
+
+
+IMPL<T, U> TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<U> FOR TWHERE
+    U: TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error] = <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#766]§
+
+FN TRY_INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#tymethod.try_into](SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U, <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+§
+
+
+IMPL<V, T> VZIP<V> FOR TWHERE
+    V: MULTILANE<T>,
+
+§
+
+FN VZIP(SELF) -> V
+

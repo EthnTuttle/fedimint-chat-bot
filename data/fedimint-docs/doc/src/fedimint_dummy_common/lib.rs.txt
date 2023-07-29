@@ -1,0 +1,256 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_dummy_common/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+
+
+use std::fmt;
+
+use config::DummyClientConfig;
+use fedimint_core::core::{Decoder, ModuleInstanceId, ModuleKind};
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::epoch::SerdeSignatureShare;
+use fedimint_core::module::{CommonModuleGen, ModuleCommon, ModuleConsensusVersion};
+use fedimint_core::{plugin_types_trait_impl_common, Amount};
+use secp256k1::{KeyPair, Secp256k1, XOnlyPublicKey};
+use serde::{Deserialize, Serialize};
+use thiserror::Error;
+
+// Common contains types shared by both the client and server
+
+// The client and server configuration
+pub mod config;
+
+/// Unique name for this module
+pub const KIND: ModuleKind = ModuleKind::from_static_str("dummy");
+
+/// Modules are non-compatible with older versions
+pub const CONSENSUS_VERSION: ModuleConsensusVersion = ModuleConsensusVersion(0);
+
+/// Non-transaction items that will be submitted to consensus
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Serialize, Deserialize, Encodable, Decodable)]
+pub enum DummyConsensusItem {
+    /// User's message sign request signed by a single peer
+    Sign(String, SerdeSignatureShare),
+}
+
+/// Input for a fedimint transaction
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Deserialize, Serialize, Encodable, Decodable)]
+pub struct DummyInput {
+    pub amount: Amount,
+    /// Associate the input with a user's pubkey
+    pub account: XOnlyPublicKey,
+}
+
+/// Output for a fedimint transaction
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Deserialize, Serialize, Encodable, Decodable)]
+pub struct DummyOutput {
+    pub amount: Amount,
+    /// Associate the output with a user's pubkey
+    pub account: XOnlyPublicKey,
+}
+
+/// Information needed by a client to update output funds
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Deserialize, Serialize, Encodable, Decodable)]
+pub struct DummyOutputOutcome(pub Amount, pub XOnlyPublicKey);
+
+/// Errors that might be returned by the server
+// TODO: Move to server lib?
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Error)]
+pub enum DummyError {
+    #[error("Not enough funds")]
+    NotEnoughFunds,
+}
+
+/// Contains the types defined above
+pub struct DummyModuleTypes;
+
+// Wire together the types for this module
+plugin_types_trait_impl_common!(
+    DummyModuleTypes,
+    DummyClientConfig,
+    DummyInput,
+    DummyOutput,
+    DummyOutputOutcome,
+    DummyConsensusItem
+);
+
+#[derive(Debug)]
+pub struct DummyCommonGen;
+
+impl CommonModuleGen for DummyCommonGen {
+    const CONSENSUS_VERSION: ModuleConsensusVersion = CONSENSUS_VERSION;
+    const KIND: ModuleKind = KIND;
+
+    type ClientConfig = DummyClientConfig;
+
+    fn decoder() -> Decoder {
+        DummyModuleTypes::decoder_builder().build()
+    }
+}
+
+impl fmt::Display for DummyClientConfig {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "DummyClientConfig")
+    }
+}
+impl fmt::Display for DummyInput {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "DummyInput {}", self.amount)
+    }
+}
+
+impl fmt::Display for DummyOutput {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "DummyOutput {}", self.amount)
+    }
+}
+
+impl fmt::Display for DummyOutputOutcome {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "DummyOutputOutcome")
+    }
+}
+
+impl fmt::Display for DummyConsensusItem {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "DummyConsensusItem")
+    }
+}
+
+/// A special key that creates assets for a test/example
+const FED_SECRET_PHRASE: &str = "Money printer go brrr...........";
+
+pub fn fed_public_key() -> XOnlyPublicKey {
+    fed_key_pair().x_only_public_key().0
+}
+
+pub fn fed_key_pair() -> KeyPair {
+    KeyPair::from_seckey_slice(&Secp256k1::new(), FED_SECRET_PHRASE.as_bytes()).expect("32 bytes")
+}
+
+

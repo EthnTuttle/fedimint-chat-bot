@@ -1,0 +1,37 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+MODULE NET
+
+ * Modules
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_SERVER [../index.html]::NETCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_server/net/mod.rs.html#1-5] · [−]
+Expand description
+
+Networking for mint-to-mint and client-to-mint communiccation
+
+
+MODULES
+
+api [api/index.html]
+Implements the client API through which users interact with the federation
+connect [connect/index.html]
+Provides an abstract network connection interface and multiple implementations
+framed [framed/index.html]
+Adapter that implements a message based protocol on top of a stream based one
+peers [peers/index.html]
+Implements a connection manager for communication with other federation members

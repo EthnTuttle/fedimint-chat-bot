@@ -1,0 +1,43 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../gatewayd/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../gatewayd/index.html
+
+
+CRATE GATEWAYD
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Structs
+ * Constants
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE GATEWAYDCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/gatewayd/gatewayd.rs.html#1-137] · [−]
+
+
+STRUCTS
+
+GatewayOpts [struct.GatewayOpts.html]
+
+
+CONSTANTS
+
+DB_FILE [constant.DB_FILE.html] 🔒
+
+
+FUNCTIONS
+
+main [fn.main.html] 🔒
+Fedimint Gateway Binary

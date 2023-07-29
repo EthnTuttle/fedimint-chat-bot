@@ -1,0 +1,27 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_load_test_tool/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_load_test_tool/index.html
+
+
+IN FEDIMINT_LOAD_TEST_TOOL [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+FUNCTION FEDIMINT_LOAD_TEST_TOOL [index.html]::TEST_DOWNLOAD_CONFIGCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_load_test_tool/main.rs.html#485-511] · [−]
+
+pub(crate) async fn test_download_config(
+    connect: &strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html,
+    users: u16https://doc.rust-lang.org/1.67.0/std/primitive.u16.html,
+    event_sender: UnboundedSender<MetricEventstruct.MetricEvent.html>
+) -> Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<BoxFuture../fedimint_core/util/type.BoxFuture.html<'static, Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>>>>
+

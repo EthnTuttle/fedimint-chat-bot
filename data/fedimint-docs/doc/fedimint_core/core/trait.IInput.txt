@@ -1,0 +1,81 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IINPUT
+
+
+REQUIRED METHODS
+
+ * as_any
+ * clone
+ * dyn_hash
+ * erased_eq_no_instance_id
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::CORE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::CORE [index.html]::IINPUTCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/core.rs.html#510-515] · [−]
+
+pub trait IInput: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + Displayhttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html + DynEncodable../encoding/trait.DynEncodable.html {
+    fn as_any(&self) -> &(dyn Anyhttps://doc.rust-lang.org/1.67.0/core/any/trait.Any.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html);
+    fn clone(&self, instance_id: ModuleInstanceIdtype.ModuleInstanceId.html) -> DynInputstruct.DynInput.html;
+    fn dyn_hash(&self) -> u64https://doc.rust-lang.org/1.67.0/std/primitive.u64.html;
+    fn erased_eq_no_instance_id(&self, other: &DynInputstruct.DynInput.html) -> boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html;
+}
+
+Expand description
+
+Something that can be an DynInput [struct.DynInput.html] in a Transaction [../transaction/struct.Transaction.html]
+
+General purpose code should use DynInput [struct.DynInput.html] instead
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/core.rs.html#511]
+
+FN AS_ANY(&SELF) -> &(DYN ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html])
+
+source [../../src/fedimint_core/core.rs.html#512]
+
+FN CLONE(&SELF, INSTANCE_ID: MODULEINSTANCEID [type.ModuleInstanceId.html]) -> DYNINPUT [struct.DynInput.html]
+
+source [../../src/fedimint_core/core.rs.html#513]
+
+FN DYN_HASH(&SELF) -> U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+
+source [../../src/fedimint_core/core.rs.html#514]
+
+FN ERASED_EQ_NO_INSTANCE_ID(&SELF, OTHER: &DYNINPUT [struct.DynInput.html]) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/core.rs.html#517-523]§
+
+
+IMPL<T> IINPUT [trait.IInput.html] FOR TWHERE
+    T: INPUT [trait.Input.html] + DYNENCODABLE [../encoding/trait.DynEncodable.html] + 'STATIC + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+

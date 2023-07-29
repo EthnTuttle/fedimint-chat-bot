@@ -1,0 +1,108 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+MODULE MODULE
+
+ * Modules
+ * Macros
+ * Structs
+ * Enums
+ * Traits
+ * Type Definitions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_SERVER [../index.html]::MODULECopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+
+MODULES
+
+audit [audit/index.html]
+registry [registry/index.html]
+version [version/index.html]
+Fedimint consensus and API versioning.
+
+
+MACROS
+
+__api_endpoint [macro.__api_endpoint.html]
+Example
+api_endpoint [macro.api_endpoint.html]
+Example
+
+
+STRUCTS
+
+ApiAuth [struct.ApiAuth.html]
+Authentication uses the hashed user password in PHC format
+ApiEndpoint [struct.ApiEndpoint.html]
+Definition of an API endpoint defined by a module M.
+ApiEndpointContext [struct.ApiEndpointContext.html]
+State made available to all API endpoints for handling a request
+ApiError [struct.ApiError.html]
+ApiRequest [struct.ApiRequest.html]
+All requests from client to server contain these fields
+ApiVersion [struct.ApiVersion.html]
+Api version supported by a core server or a client/server module at a given ModuleConsensusVersion
+[struct.ModuleConsensusVersion.html].
+CoreConsensusVersion [struct.CoreConsensusVersion.html]
+Consensus version of a core server
+DynCommonModuleGen [struct.DynCommonModuleGen.html]
+DynServerModuleGen [struct.DynServerModuleGen.html]
+InputMeta [struct.InputMeta.html]
+ModuleConsensusVersion [struct.ModuleConsensusVersion.html]
+Consensus version of a specific module instance
+MultiApiVersion [struct.MultiApiVersion.html]
+Multiple, disjoint, minimum required or maximum supported, ApiVersion [struct.ApiVersion.html]s.
+MultiApiVersionIter [struct.MultiApiVersionIter.html]
+PeerHandle [struct.PeerHandle.html]
+A handle passed to ServerModuleGen::distributed_gen [trait.ServerModuleGen.html#tymethod.distributed_gen]
+SerdeModuleEncoding [struct.SerdeModuleEncoding.html]
+Creates a struct that can be used to make our module-decodable structs interact with serde-based APIs (HBBFT, jsonrpsee). It
+creates a wrapper that holds the data as serialized
+SupportedApiVersionsSummary [struct.SupportedApiVersionsSummary.html]
+SupportedCoreApiVersions [struct.SupportedCoreApiVersions.html]
+SupportedModuleApiVersions [struct.SupportedModuleApiVersions.html]
+TransactionItemAmount [struct.TransactionItemAmount.html]
+Information about the amount represented by an input or output.
+
+
+ENUMS
+
+ConsensusProposal [enum.ConsensusProposal.html]
+ModuleError [enum.ModuleError.html]
+
+
+TRAITS
+
+CommonModuleGen [trait.CommonModuleGen.html]
+ExtendsCommonModuleGen [trait.ExtendsCommonModuleGen.html]
+IDynCommonModuleGen [trait.IDynCommonModuleGen.html]
+Operations common to Server and Client side module gen dyn newtypes
+IServerModuleGen [trait.IServerModuleGen.html]
+Interface for Module Generation
+IntoModuleError [trait.IntoModuleError.html]
+Extension trait with a function to map Results used by modules to ModuleError
+ModuleCommon [trait.ModuleCommon.html]
+Module associated types required by both client and server
+ServerModule [trait.ServerModule.html]
+ServerModuleGen [trait.ServerModuleGen.html]
+Module Generation trait with associated types
+TypedApiEndpoint [trait.TypedApiEndpoint.html]
+
+
+TYPE DEFINITIONS
+
+ApiRequestErased [type.ApiRequestErased.html]

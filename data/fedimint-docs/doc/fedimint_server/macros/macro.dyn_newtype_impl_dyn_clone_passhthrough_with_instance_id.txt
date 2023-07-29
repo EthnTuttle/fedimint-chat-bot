@@ -1,0 +1,26 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+IN FEDIMINT_SERVER::MACROS [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MACRO FEDIMINT_SERVER [../index.html]::MACROS [index.html]::DYN_NEWTYPE_IMPL_DYN_CLONE_PASSHTHROUGH_WITH_INSTANCE_IDCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+macro_rules! dyn_newtype_impl_dyn_clone_passhthrough_with_instance_id {
+    ($name:ident) => { ... };
+}
+

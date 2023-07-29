@@ -1,0 +1,35 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+MODULE API
+
+ * Modules
+ * Traits
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CLIENT_LEGACY [../index.html]::APICopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client_legacy/api.rs.html#1-175] · [−]
+
+
+MODULES
+
+fake [fake/index.html]
+
+
+TRAITS
+
+LnFederationApi [trait.LnFederationApi.html]
+MintFederationApi [trait.MintFederationApi.html]
+WalletFederationApi [trait.WalletFederationApi.html]

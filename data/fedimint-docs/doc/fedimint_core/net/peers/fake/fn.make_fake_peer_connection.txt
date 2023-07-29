@@ -1,0 +1,36 @@
+☰
+logo [../../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../../fedimint_core/index.html
+
+
+
+
+logo [../../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../../fedimint_core/index.html
+
+
+IN FEDIMINT_CORE::NET::PEERS::FAKE [index.html]
+
+? [../../../../help.html]
+Change settings [../../../../static.files/wheel-5ec35bf9ca753509.svg]../../../../settings.html
+
+
+FUNCTION FEDIMINT_CORE [../../../index.html]::NET [../../index.html]::PEERS [../index.html]::FAKE [index.html]::
+MAKE_FAKE_PEER_CONNECTIONCopy item path [../../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../../src/fedimint_core/net/peers/fake.rs.html#58-86] · [−]
+
+pub fn make_fake_peer_connection<Msg>(
+    peer1: PeerId../../../struct.PeerId.html,
+    peer2: PeerId../../../struct.PeerId.html,
+    buf_size: usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html,
+    task_handle: TaskHandle../../../task/struct.TaskHandle.html
+) -> (PeerConnections../struct.PeerConnections.html<Msg>, PeerConnections../struct.PeerConnections.html<Msg>)where
+    Msg: Serializehttps://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html + DeserializeOwnedhttps://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'static,
+
+Expand description
+
+Create a fake link between peer1 and peer2 for test purposes
+
+buf_size controls the size of the tokio::mpsc::channel used under the hood (both ways).
+

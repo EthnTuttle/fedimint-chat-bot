@@ -1,0 +1,54 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_wallet_common/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_wallet_common/index.html
+
+
+ITERUNZIPWALLETCONSENSUSITEM
+
+
+REQUIRED METHODS
+
+ * unzip_wallet_consensus_item
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_WALLET_COMMON [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT FEDIMINT_WALLET_COMMON [index.html]::ITERUNZIPWALLETCONSENSUSITEMCopy item path
+[../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_wallet_common/lib.rs.html#38] · [−]
+
+pub trait IterUnzipWalletConsensusItem {
+    fn unzip_wallet_consensus_item(self) -> UnzipWalletConsensusItemstruct.UnzipWalletConsensusItem.html;
+}
+
+
+REQUIRED METHODS§
+
+source [../src/fedimint_wallet_common/lib.rs.html#38]
+
+FN UNZIP_WALLET_CONSENSUS_ITEM(SELF) -> UNZIPWALLETCONSENSUSITEM [struct.UnzipWalletConsensusItem.html]
+
+
+IMPLEMENTORS§
+
+source [../src/fedimint_wallet_common/lib.rs.html#38]§
+
+
+IMPL<I> ITERUNZIPWALLETCONSENSUSITEM [trait.IterUnzipWalletConsensusItem.html] FOR IWHERE
+    I: ITERATOR [https://doc.rust-lang.org/1.67.0/core/iter/traits/iterator/trait.Iterator.html]<ITEM = (PEERID,
+WALLETCONSENSUSITEM [enum.WalletConsensusItem.html])>,
+

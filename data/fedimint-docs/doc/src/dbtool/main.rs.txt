@@ -1,0 +1,286 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../dbtool/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+
+
+#![allow(where_clauses_object_safety)] // https://github.com/dtolnay/async-trait/issues/228
+use std::path::PathBuf;
+
+use anyhow::Result;
+use bitcoin_hashes::hex::ToHex;
+use bytes::Bytes;
+use clap::{Parser, Subcommand};
+use fedimint_core::db::IDatabase;
+use fedimint_logging::TracingSetup;
+use futures::StreamExt;
+
+use crate::dump::DatabaseDump;
+
+mod dump;
+
+#[derive(Debug, Clone, Parser)]
+struct Options {
+    #[clap(long)]
+    database: String,
+    #[command(subcommand)]
+    command: DbCommand,
+}
+
+/// Tool to inspect and manipulate rocksdb databases. All binary arguments
+/// (keys, values) have to be hex encoded.
+#[derive(Debug, Clone, Subcommand)]
+enum DbCommand {
+    /// List all key-value pairs where the key begins with `prefix`
+    List {
+        #[arg(long, value_parser = hex_parser)]
+        prefix: Bytes,
+    },
+    /// Write a key-value pair to the database, overwriting the previous value
+    /// if present
+    Write {
+        #[arg(long, value_parser = hex_parser)]
+        key: Bytes,
+        #[arg(long, value_parser = hex_parser)]
+        value: Bytes,
+    },
+    /// Delete a single entry from the database identified by `key`
+    Delete {
+        #[arg(long, value_parser = hex_parser)]
+        key: Bytes,
+    },
+    /// Dump a subset of the specified database and serialize the retrieved data
+    /// to JSON. Module and prefix are used to specify which subset of the
+    /// database to dump. Password is used to decrypt the server's
+    /// configuration file. If dumping the client database, the password can
+    /// be an arbitrary string.
+    Dump {
+        #[clap(long)]
+        cfg_dir: PathBuf,
+        #[arg(long, env = "FM_PASSWORD")]
+        password: String,
+        #[arg(long, required = false)]
+        modules: Option<String>,
+        #[arg(long, required = false)]
+        prefixes: Option<String>,
+    },
+}
+
+fn hex_parser(hex: &str) -> Result<Bytes> {
+    let bytes: Vec<u8> = bitcoin_hashes::hex::FromHex::from_hex(hex)?;
+    Ok(bytes.into())
+}
+
+fn print_kv(key: &[u8], value: &[u8]) {
+    println!("{} {}", key.to_hex(), value.to_hex());
+}
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    TracingSetup::default().init()?;
+    let options: Options = Options::parse();
+
+    match options.command {
+        DbCommand::List { prefix } => {
+            let rocksdb: Box<dyn IDatabase> =
+                Box::new(fedimint_rocksdb::RocksDb::open(&options.database).unwrap());
+            let mut dbtx = rocksdb.begin_transaction().await;
+            let prefix_iter = dbtx
+                .raw_find_by_prefix(&prefix)
+                .await?
+                .collect::<Vec<_>>()
+                .await;
+            for (key, value) in prefix_iter {
+                print_kv(&key, &value);
+            }
+            dbtx.commit_tx().await.expect("Error committing to RocksDb");
+        }
+        DbCommand::Write { key, value } => {
+            let rocksdb: Box<dyn IDatabase> =
+                Box::new(fedimint_rocksdb::RocksDb::open(&options.database).unwrap());
+            let mut dbtx = rocksdb.begin_transaction().await;
+            dbtx.raw_insert_bytes(&key, &value)
+                .await
+                .expect("Error inserting entry into RocksDb");
+            dbtx.commit_tx().await.expect("Error committing to RocksDb");
+        }
+        DbCommand::Delete { key } => {
+            let rocksdb: Box<dyn IDatabase> =
+                Box::new(fedimint_rocksdb::RocksDb::open(&options.database).unwrap());
+            let mut dbtx = rocksdb.begin_transaction().await;
+            dbtx.raw_remove_entry(&key)
+                .await
+                .expect("Error removing entry from RocksDb");
+            dbtx.commit_tx().await.expect("Error committing to RocksDb");
+        }
+        DbCommand::Dump {
+            cfg_dir,
+            modules,
+            prefixes,
+            password,
+        } => {
+            let modules = match modules {
+                Some(mods) => mods
+                    .split(',')
+                    .map(|s| s.to_string().to_lowercase())
+                    .collect::<Vec<String>>(),
+                None => Vec::new(),
+            };
+
+            let prefix_names = match prefixes {
+                Some(db_prefixes) => db_prefixes
+                    .split(',')
+                    .map(|s| s.to_string().to_lowercase())
+                    .collect::<Vec<String>>(),
+                None => Vec::new(),
+            };
+
+            let mut dbdump =
+                DatabaseDump::new(cfg_dir, options.database, password, modules, prefix_names);
+            dbdump.dump_database().await;
+        }
+    }
+
+    Ok(())
+}
+
+

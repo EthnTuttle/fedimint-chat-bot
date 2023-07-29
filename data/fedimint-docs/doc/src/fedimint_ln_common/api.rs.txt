@@ -1,0 +1,242 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_ln_common/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+
+
+use bitcoin_hashes::sha256::Hash as Sha256Hash;
+use fedimint_core::api::{FederationApiExt, FederationResult, IModuleFederationApi};
+use fedimint_core::module::ApiRequestErased;
+use fedimint_core::query::{CurrentConsensus, UnionResponses};
+use fedimint_core::task::{MaybeSend, MaybeSync};
+use fedimint_core::{apply, async_trait_maybe_send, NumPeers};
+
+use crate::contracts::incoming::{IncomingContractAccount, IncomingContractOffer};
+use crate::contracts::outgoing::OutgoingContractAccount;
+use crate::contracts::{ContractId, FundedContract};
+use crate::{ContractAccount, LightningGateway};
+
+#[apply(async_trait_maybe_send!)]
+pub trait LnFederationApi {
+    async fn fetch_consensus_block_height(&self) -> FederationResult<Option<u64>>;
+    async fn fetch_contract(&self, contract: ContractId) -> FederationResult<ContractAccount>;
+    async fn fetch_offer(
+        &self,
+        payment_hash: Sha256Hash,
+    ) -> FederationResult<IncomingContractOffer>;
+    async fn fetch_gateways(&self) -> FederationResult<Vec<LightningGateway>>;
+    async fn register_gateway(&self, gateway: &LightningGateway) -> FederationResult<()>;
+    async fn offer_exists(&self, payment_hash: Sha256Hash) -> FederationResult<bool>;
+
+    async fn get_incoming_contract(
+        &self,
+        id: ContractId,
+    ) -> anyhow::Result<IncomingContractAccount>;
+
+    async fn get_outgoing_contract(
+        &self,
+        id: ContractId,
+    ) -> anyhow::Result<OutgoingContractAccount>;
+}
+
+#[apply(async_trait_maybe_send!)]
+impl<T: ?Sized> LnFederationApi for T
+where
+    T: IModuleFederationApi + MaybeSend + MaybeSync + 'static,
+{
+    async fn fetch_consensus_block_height(&self) -> FederationResult<Option<u64>> {
+        self.request_current_consensus("block_height".to_string(), ApiRequestErased::default())
+            .await
+    }
+
+    async fn fetch_contract(&self, contract: ContractId) -> FederationResult<ContractAccount> {
+        self.request_current_consensus("wait_account".to_string(), ApiRequestErased::new(contract))
+            .await
+    }
+
+    async fn fetch_offer(
+        &self,
+        payment_hash: Sha256Hash,
+    ) -> FederationResult<IncomingContractOffer> {
+        self.request_current_consensus(
+            "wait_offer".to_string(),
+            ApiRequestErased::new(payment_hash),
+        )
+        .await
+    }
+
+    async fn fetch_gateways(&self) -> FederationResult<Vec<LightningGateway>> {
+        self.request_with_strategy(
+            UnionResponses::new(self.all_members().threshold()),
+            "list_gateways".to_string(),
+            ApiRequestErased::default(),
+        )
+        .await
+    }
+
+    async fn register_gateway(&self, gateway: &LightningGateway) -> FederationResult<()> {
+        self.request_with_strategy(
+            CurrentConsensus::new(self.all_members().threshold()),
+            "register_gateway".to_string(),
+            ApiRequestErased::new(gateway),
+        )
+        .await
+    }
+
+    async fn offer_exists(&self, payment_hash: Sha256Hash) -> FederationResult<bool> {
+        Ok(self
+            .request_current_consensus::<Option<IncomingContractOffer>>(
+                "offer".to_string(),
+                ApiRequestErased::new(payment_hash),
+            )
+            .await?
+            .is_some())
+    }
+
+    async fn get_incoming_contract(
+        &self,
+        id: ContractId,
+    ) -> anyhow::Result<IncomingContractAccount> {
+        let account = self.fetch_contract(id).await?;
+        match account.contract {
+            FundedContract::Incoming(c) => Ok(IncomingContractAccount {
+                amount: account.amount,
+                contract: c.contract,
+            }),
+            _ => Err(anyhow::anyhow!("WrongAccountType")),
+        }
+    }
+
+    async fn get_outgoing_contract(
+        &self,
+        id: ContractId,
+    ) -> anyhow::Result<OutgoingContractAccount> {
+        let account = self.fetch_contract(id).await?;
+        match account.contract {
+            FundedContract::Outgoing(c) => Ok(OutgoingContractAccount {
+                amount: account.amount,
+                contract: c,
+            }),
+            _ => Err(anyhow::anyhow!("WrongAccountType")),
+        }
+    }
+}
+
+

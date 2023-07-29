@@ -1,0 +1,74 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_metrics/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_metrics/index.html
+
+
+CRATE FEDIMINT_METRICS
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Re-exports
+ * Macros
+ * Structs
+ * Traits
+ * Functions
+ * Type Definitions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_METRICSCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_metrics/lib.rs.html#1-63] · [−]
+
+
+RE-EXPORTS
+
+pub use prometheus;
+
+
+MACROS
+
+histogram_opts [macro.histogram_opts.html]
+Create a [HistogramOpts][crate::HistogramOpts].
+lazy_static [macro.lazy_static.html]
+opts [macro.opts.html]
+Create an [Opts][crate::Opts].
+register_histogram [macro.register_histogram.html]
+Create a Histogram [struct.Histogram.html] and registers to default registry.
+register_int_counter [macro.register_int_counter.html]
+Create an IntCounter [type.IntCounter.html] and registers to default registry.
+
+
+STRUCTS
+
+Histogram [struct.Histogram.html]
+A [Metric] counts individual observations from an event or sample stream in configurable buckets. Similar to a Summary
+[crate::proto::Summary], it also provides a sum of observations and an observation count.
+TextEncoder [struct.TextEncoder.html]
+An implementation of an Encoder [trait.Encoder.html] that converts a [MetricFamily] proto message into text format.
+
+
+TRAITS
+
+Encoder [trait.Encoder.html]
+An interface for encoding metric families into an underlying wire protocol.
+
+
+FUNCTIONS
+
+run_api_server [fn.run_api_server.html]
+
+
+TYPE DEFINITIONS
+
+IntCounter [type.IntCounter.html]
+The integer version of [Counter]. Provides better performance if metric values are all positive integers (natural numbers).

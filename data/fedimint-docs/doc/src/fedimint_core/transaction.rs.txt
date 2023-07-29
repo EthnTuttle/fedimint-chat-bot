@@ -1,0 +1,370 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_core/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+
+
+use bitcoin::hashes::Hash as BitcoinHash;
+use bitcoin::XOnlyPublicKey;
+use bitcoin_hashes::hex::ToHex;
+use fedimint_core::core::{DynInput, DynOutput};
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::module::SerdeModuleEncoding;
+use fedimint_core::{Amount, TransactionId};
+use rand::Rng;
+use secp256k1_zkp::{schnorr, Secp256k1, Signing, Verification};
+use thiserror::Error;
+
+/// An atomic value transfer operation within the Fedimint system and consensus
+///
+/// The mint enforces that the total value of the outputs equals the total value
+/// of the inputs, to prevent creating funds out of thin air. In some cases, the
+/// value of the inputs and outputs can both be 0 e.g. when creating an offer to
+/// a Lightning Gateway.
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Encodable, Decodable)]
+pub struct Transaction {
+    /// [`DynInput`]s consumed by the transaction
+    pub inputs: Vec<DynInput>,
+    /// [`DynOutput`]s created as a result of the transaction
+    pub outputs: Vec<DynOutput>,
+    /// Aggregated MuSig2 signature over all the public keys of the inputs
+    pub signature: Option<schnorr::Signature>,
+}
+
+pub type SerdeTransaction = SerdeModuleEncoding<Transaction>;
+
+impl Transaction {
+    /// Hash of the transaction (excluding the signature).
+    ///
+    /// Transaction signature commits to this hash.
+    /// To generate it without already having a signature use
+    /// [`Self::tx_hash_from_parts`].
+    pub fn tx_hash(&self) -> TransactionId {
+        Self::tx_hash_from_parts(&self.inputs, &self.outputs)
+    }
+
+    /// Generate the transaction hash.
+    pub fn tx_hash_from_parts(inputs: &[DynInput], outputs: &[DynOutput]) -> TransactionId {
+        let mut engine = TransactionId::engine();
+        inputs
+            .consensus_encode(&mut engine)
+            .expect("write to hash engine can't fail");
+        outputs
+            .consensus_encode(&mut engine)
+            .expect("write to hash engine can't fail");
+        TransactionId::from_engine(engine)
+    }
+
+    /// Validate the aggregated Schnorr Signature signed over the `tx_hash`
+    pub fn validate_signature(
+        &self,
+        keys: impl Iterator<Item = XOnlyPublicKey>,
+    ) -> Result<(), TransactionError> {
+        let keys = keys.collect::<Vec<_>>();
+
+        // If there are no keys from inputs there are no inputs to protect from
+        // re-binding. This behavior is useful for non-monetary transactions
+        // that just announce something, like LN incoming contract offers.
+        if keys.is_empty() {
+            return Ok(());
+        }
+
+        // Unless keys were empty we require a signature
+        let signature = self
+            .signature
+            .as_ref()
+            .ok_or(TransactionError::MissingSignature)?;
+
+        let agg_pub_key = agg_keys(&keys);
+        let msg =
+            secp256k1_zkp::Message::from_slice(&self.tx_hash()[..]).expect("hash has right length");
+
+        if secp256k1_zkp::global::SECP256K1
+            .verify_schnorr(signature, &msg, &agg_pub_key)
+            .is_ok()
+        {
+            Ok(())
+        } else {
+            Err(TransactionError::InvalidSignature {
+                tx: self.consensus_encode_to_hex().expect("Can't fail"),
+                hash: self.tx_hash().to_hex(),
+                sig: signature.consensus_encode_to_hex().expect("Can't fail"),
+                key: agg_pub_key.consensus_encode_to_hex().expect("Can't fail"),
+            })
+        }
+    }
+}
+
+/// Aggregate a stream of public keys.
+///
+/// Be aware that the order of the keys matters for the aggregation result.
+/// # Panics
+/// * If the `keys` iterator does not yield any keys
+pub fn agg_keys(keys: &[XOnlyPublicKey]) -> XOnlyPublicKey {
+    new_pre_session(keys, secp256k1_zkp::SECP256K1).agg_pk()
+}
+
+/// Precompute a combined public key and the hash of the given public keys for
+/// Musig2.
+fn new_pre_session<C>(
+    keys: &[XOnlyPublicKey],
+    ctx: &Secp256k1<C>,
+) -> secp256k1_zkp::MusigKeyAggCache
+where
+    C: Signing + Verification,
+{
+    assert!(
+        !keys.is_empty(),
+        "Must supply more than 0 keys for aggregation"
+    );
+    secp256k1_zkp::MusigKeyAggCache::new(ctx, keys)
+}
+
+/// Create an aggregated signature over the `msg`
+pub fn agg_sign<R, C, M>(
+    keys: &[bitcoin::KeyPair],
+    msg: M,
+    ctx: &Secp256k1<C>,
+    mut rng: R,
+) -> schnorr::Signature
+where
+    R: rand::RngCore + rand::CryptoRng,
+    C: Signing + Verification,
+    M: Into<secp256k1_zkp::Message>,
+{
+    let msg = msg.into();
+    let pub_keys = keys
+        .iter()
+        .map(|key| key.x_only_public_key().0)
+        .collect::<Vec<_>>();
+    let pre_session = new_pre_session(&pub_keys, ctx);
+
+    let session_id: [u8; 32] = rng.gen();
+    let (sec_nonces, pub_nonces): (Vec<_>, Vec<_>) = keys
+        .iter()
+        .map(|key| {
+            // FIXME: upstream
+            pre_session
+                .nonce_gen(ctx, session_id, key.into(), msg, None)
+                .expect("should not fail for valid inputs (ensured by type system)")
+        })
+        .unzip();
+
+    let agg_nonce = secp256k1_zkp::MusigAggNonce::new(ctx, &pub_nonces);
+
+    let session = secp256k1_zkp::MusigSession::new(ctx, &pre_session, agg_nonce, msg, None);
+
+    let partial_sigs = sec_nonces
+        .into_iter()
+        .zip(keys.iter())
+        .map(|(mut nonce, key)| {
+            session
+                .partial_sign(ctx, &mut nonce, key, &pre_session)
+                .expect("Should not fail for cooperative protocol runs")
+        })
+        .collect::<Vec<_>>();
+
+    session.partial_sig_agg(&partial_sigs)
+}
+
+#[derive(Debug, Error)]
+pub enum TransactionError {
+    #[error("The transaction is unbalanced (in={inputs}, out={outputs}, fee={fee})")]
+    UnbalancedTransaction {
+        inputs: Amount,
+        outputs: Amount,
+        fee: Amount,
+    },
+    #[error("The transaction's signature is invalid: tx={tx}, hash={hash}, sig={sig}, key={key}")]
+    InvalidSignature {
+        tx: String,
+        hash: String,
+        sig: String,
+        key: String,
+    },
+    #[error("The transaction did not have a signature although there were inputs to be signed")]
+    MissingSignature,
+}
+
+

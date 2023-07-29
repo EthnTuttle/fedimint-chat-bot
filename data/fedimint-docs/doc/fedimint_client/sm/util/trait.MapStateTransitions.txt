@@ -1,0 +1,105 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_client/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_client/index.html
+
+
+MAPSTATETRANSITIONS
+
+
+REQUIRED ASSOCIATED TYPES
+
+ * State
+
+
+REQUIRED METHODS
+
+ * map
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * Vec<StateTransition<S>>
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CLIENT::SM::UTIL [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_CLIENT [../../index.html]::SM [../index.html]::UTIL [index.html]::MAPSTATETRANSITIONSCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_client/sm/util.rs.html#7-15] · [−]
+
+pub trait MapStateTransitions {
+    type State: MaybeSend + MaybeSync + 'static;
+
+    fn map<D, W, U>(self, wrap: W, unwrap: U) -> Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<StateTransition../struct.StateTransition.html<D>> ⓘ
+    where
+        D: MaybeSend + MaybeSync + 'static,
+        W: Fnhttps://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html(Self::Statetrait.MapStateTransitions.html#associatedtype.State) -> D + Clonehttps://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html + MaybeSend + MaybeSync + 'static,
+        U: Fnhttps://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html(D) -> Self::Statetrait.MapStateTransitions.html#associatedtype.State + Clonehttps://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html + MaybeSend + MaybeSync + 'static;
+}
+
+
+REQUIRED ASSOCIATED TYPES§
+
+source [../../../src/fedimint_client/sm/util.rs.html#8]
+
+TYPE STATE: MAYBESEND + MAYBESYNC + 'STATIC
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_client/sm/util.rs.html#10-14]
+
+FN MAP<D, W, U>(SELF, WRAP: W, UNWRAP: U) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<STATETRANSITION
+[../struct.StateTransition.html]<D>> ⒾWHERE
+    D: MAYBESEND + MAYBESYNC + 'STATIC,
+    W: FN [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html](SELF::STATE
+[trait.MapStateTransitions.html#associatedtype.State]) -> D + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html]
++ MAYBESEND + MAYBESYNC + 'STATIC,
+    U: FN [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html](D) -> SELF::STATE
+[trait.MapStateTransitions.html#associatedtype.State] + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] +
+MAYBESEND + MAYBESYNC + 'STATIC,
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../../src/fedimint_client/sm/util.rs.html#17-52]§
+
+
+IMPL<S> MAPSTATETRANSITIONS [trait.MapStateTransitions.html] FOR VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<STATETRANSITION [../struct.StateTransition.html]<S>>WHERE
+    S: MAYBESEND + MAYBESYNC + 'STATIC,
+
+§
+
+TYPE STATE = S
+
+source [../../../src/fedimint_client/sm/util.rs.html#23-51]§
+
+FN MAP<D, W, U>(SELF, WRAP: W, UNWRAP: U) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<STATETRANSITION
+[../struct.StateTransition.html]<D>> ⒾWHERE
+    D: MAYBESEND + MAYBESYNC + 'STATIC,
+    W: FN [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html](SELF::STATE
+[trait.MapStateTransitions.html#associatedtype.State]) -> D + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html]
++ MAYBESEND + MAYBESYNC + 'STATIC,
+    U: FN [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html](D) -> SELF::STATE
+[trait.MapStateTransitions.html#associatedtype.State] + CLONE [https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] +
+MAYBESEND + MAYBESYNC + 'STATIC,
+
+
+IMPLEMENTORS§
+
+

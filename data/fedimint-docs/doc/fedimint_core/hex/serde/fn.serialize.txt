@@ -1,0 +1,29 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+IN FEDIMINT_CORE::HEX::SERDE [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+FUNCTION FEDIMINT_CORE [../../index.html]::HEX [../index.html]::SERDE [index.html]::SERIALIZECopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_core/hex/serde.rs.html#8-14] · [−]
+
+pub fn serialize<S>(data: &[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], serializer: S) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<S::Okhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok, S::Errorhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error>where
+    S: Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html,
+
+Expand description
+
+Serialize a &[u8] to a hex String
+

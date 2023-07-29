@@ -1,0 +1,153 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+IPEERCONNECTIONS
+
+
+REQUIRED METHODS
+
+ * ban_peer
+ * receive
+ * send
+
+
+PROVIDED METHODS
+
+ * into_dyn
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::NET::PEERS [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../../index.html]::NET [../index.html]::PEERS [index.html]::IPEERCONNECTIONSCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_core/net/peers.rs.html#45-68] · [−]
+
+pub trait IPeerConnections<Msg>where
+    Msg: Serializehttps://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html + DeserializeOwnedhttps://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html,{
+    fn send<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        peers: &'life1 [PeerId../../struct.PeerId.html],
+        msg: Msg
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Cancellable../../cancellable/type.Cancellable.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn receive<'life0, 'async_trait>(
+        &'life0 mut self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Cancellable../../cancellable/type.Cancellable.html<(PeerId../../struct.PeerId.html, Msg)>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn ban_peer<'life0, 'async_trait>(
+        &'life0 mut self,
+        peer: PeerId../../struct.PeerId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = ()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+
+    fn into_dyn(self) -> PeerConnectionsstruct.PeerConnections.html<Msg>
+    where
+        Self: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + 'static,
+    { ... }
+}
+
+Expand description
+
+Connection manager that tries to keep connections open to all peers
+
+Production implementations of this trait have to ensure that:
+
+ * Connections to peers are authenticated and encrypted
+ * Messages are received exactly once and in the order they were sent
+ * Connections are reopened when closed
+ * Messages are cached in case of short-lived network interruptions and resent on reconnect, this avoids the need to rejoin the
+   consensus, which is more tricky.
+
+In case of longer term interruptions the message cache has to be dropped to avoid DoS attacks. The thus disconnected peer will
+need to rejoin the consensus at a later time.
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_core/net/peers.rs.html#53]
+
+FN SEND<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    PEERS: &'LIFE1 [PEERID [../../struct.PeerId.html]],
+    MSG: MSG
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CANCELLABLE
+[../../cancellable/type.Cancellable.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Send a message to a specific peer.
+
+The message is sent immediately and cached if the peer is reachable and only cached otherwise.
+
+source [../../../src/fedimint_core/net/peers.rs.html#56]
+
+FN RECEIVE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CANCELLABLE
+[../../cancellable/type.Cancellable.html]<(PEERID [../../struct.PeerId.html], MSG)>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Await receipt of a message from any connected peer.
+
+source [../../../src/fedimint_core/net/peers.rs.html#59]
+
+FN BAN_PEER<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    PEER: PEERID [../../struct.PeerId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = ()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html]
++ 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Removes a peer connection in case of misbehavior
+
+
+PROVIDED METHODS§
+
+source [../../../src/fedimint_core/net/peers.rs.html#62-67]
+
+FN INTO_DYN(SELF) -> PEERCONNECTIONS [struct.PeerConnections.html]<MSG>WHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] + 'STATIC,
+
+Converts the struct to a PeerConnection trait object
+
+
+IMPLEMENTORS§
+
+

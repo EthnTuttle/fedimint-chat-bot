@@ -1,0 +1,55 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+GLOBALCONTEXT
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * ()
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CLIENT::SM [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CLIENT [../index.html]::SM [index.html]::GLOBALCONTEXTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client/sm/mod.rs.html#24] · [−]
+
+pub trait GlobalContext: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + Clonehttps://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html + MaybeSync + MaybeSend + 'static { }
+
+Expand description
+
+Context given to all state machines
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/fedimint_client/sm/mod.rs.html#26]§
+
+
+IMPL GLOBALCONTEXT [trait.GlobalContext.html] FOR () [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_client/lib.rs.html#336]§
+
+
+IMPL GLOBALCONTEXT [trait.GlobalContext.html] FOR DYNGLOBALCLIENTCONTEXT [../struct.DynGlobalClientContext.html]
+

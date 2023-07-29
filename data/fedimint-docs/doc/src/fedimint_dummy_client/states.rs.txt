@@ -1,0 +1,262 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_dummy_client/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+
+
+use std::time::Duration;
+
+use fedimint_client::sm::{DynState, OperationId, State, StateTransition};
+use fedimint_client::transaction::TxSubmissionError;
+use fedimint_client::DynGlobalClientContext;
+use fedimint_core::api::GlobalFederationApi;
+use fedimint_core::core::{Decoder, IntoDynInstance, ModuleInstanceId};
+use fedimint_core::db::ModuleDatabaseTransaction;
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::{Amount, OutPoint, TransactionId};
+use fedimint_dummy_common::DummyOutputOutcome;
+use serde::{Deserialize, Serialize};
+use thiserror::Error;
+
+use crate::db::DummyClientFundsKeyV0;
+use crate::{get_funds, DummyClientContext};
+
+/// Tracks a transaction
+#[derive(Debug, Clone, Eq, PartialEq, Decodable, Encodable)]
+pub enum DummyStateMachine {
+    Input(Amount, TransactionId, OperationId),
+    Output(Amount, TransactionId, OperationId),
+    InputDone(OperationId),
+    OutputDone(Amount, OperationId),
+    Refund(OperationId),
+}
+
+impl State for DummyStateMachine {
+    type ModuleContext = DummyClientContext;
+    type GlobalContext = DynGlobalClientContext;
+
+    fn transitions(
+        &self,
+        context: &Self::ModuleContext,
+        global_context: &Self::GlobalContext,
+    ) -> Vec<StateTransition<Self>> {
+        match self.clone() {
+            DummyStateMachine::Input(amount, txid, id) => vec![StateTransition::new(
+                await_tx_accepted(global_context.clone(), id, txid),
+                move |dbtx, res, _state: Self| match res {
+                    // accepted, we are done
+                    Ok(_) => Box::pin(async move { DummyStateMachine::InputDone(id) }),
+                    // tx rejected, we refund ourselves
+                    Err(_) => Box::pin(async move {
+                        add_funds(amount, dbtx.module_tx()).await;
+                        DummyStateMachine::Refund(id)
+                    }),
+                },
+            )],
+            DummyStateMachine::Output(amount, txid, id) => vec![StateTransition::new(
+                await_dummy_output_outcome(
+                    global_context.clone(),
+                    OutPoint { txid, out_idx: 0 },
+                    context.dummy_decoder.clone(),
+                ),
+                move |dbtx, res, _state: Self| match res {
+                    // output accepted, add funds
+                    Ok(_) => Box::pin(async move {
+                        add_funds(amount, dbtx.module_tx()).await;
+                        DummyStateMachine::OutputDone(amount, id)
+                    }),
+                    // output rejected, do not add funds
+                    Err(_) => Box::pin(async move { DummyStateMachine::Refund(id) }),
+                },
+            )],
+            DummyStateMachine::InputDone(_) => vec![],
+            DummyStateMachine::OutputDone(_, _) => vec![],
+            DummyStateMachine::Refund(_) => vec![],
+        }
+    }
+
+    fn operation_id(&self) -> OperationId {
+        match self {
+            DummyStateMachine::Input(_, _, id) => *id,
+            DummyStateMachine::Output(_, _, id) => *id,
+            DummyStateMachine::InputDone(id) => *id,
+            DummyStateMachine::OutputDone(_, id) => *id,
+            DummyStateMachine::Refund(id) => *id,
+        }
+    }
+}
+
+async fn add_funds(amount: Amount, mut dbtx: ModuleDatabaseTransaction<'_>) {
+    let funds = get_funds(&mut dbtx).await + amount;
+    dbtx.insert_entry(&DummyClientFundsKeyV0, &funds).await;
+}
+
+// TODO: Boiler-plate, should return OutputOutcome
+async fn await_tx_accepted(
+    context: DynGlobalClientContext,
+    id: OperationId,
+    txid: TransactionId,
+) -> Result<(), TxSubmissionError> {
+    context.await_tx_accepted(id, txid).await
+}
+
+async fn await_dummy_output_outcome(
+    global_context: DynGlobalClientContext,
+    outpoint: OutPoint,
+    module_decoder: Decoder,
+) -> Result<(), DummyError> {
+    global_context
+        .api()
+        .await_output_outcome::<DummyOutputOutcome>(
+            outpoint,
+            Duration::from_millis(i32::MAX as u64),
+            &module_decoder,
+        )
+        .await
+        .map_err(|_| DummyError::DummyInternalError)?;
+    Ok(())
+}
+
+// TODO: Boiler-plate
+impl IntoDynInstance for DummyStateMachine {
+    type DynType = DynState<DynGlobalClientContext>;
+
+    fn into_dyn(self, instance_id: ModuleInstanceId) -> Self::DynType {
+        DynState::from_typed(instance_id, self)
+    }
+}
+
+#[derive(Error, Debug, Serialize, Deserialize, Encodable, Decodable, Clone, Eq, PartialEq)]
+pub enum DummyError {
+    #[error("Dummy module had an internal error")]
+    DummyInternalError,
+}
+
+

@@ -1,0 +1,97 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+FRAMEDTRANSPORT
+
+
+REQUIRED METHODS
+
+ * borrow_split
+
+
+PROVIDED METHODS
+
+ * into_dyn
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::NET::FRAMED [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../../index.html]::NET [../index.html]::FRAMED [index.html]::FRAMEDTRANSPORTCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_server/net/framed.rs.html#23-41] · [−]
+
+pub trait FramedTransport<T>: Sink<T, Error = Errorhttps://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html> + Stream<Item = Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<T, Errorhttps://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html>> {
+    fn borrow_split(
+        &mut self
+    ) -> (&mut (dyn Sink<T, Error = Errorhttps://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html), &mut (dyn Stream<Item = Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<T, Errorhttps://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html));
+
+    fn into_dyn(self) -> AnyFramedTransporttype.AnyFramedTransport.html<T>
+    where
+        Self: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + 'static,
+    { ... }
+}
+
+Expand description
+
+A bidirectional framed transport adapter that can be split into its read and write half
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_server/net/framed.rs.html#27-32]
+
+FN BORROW_SPLIT(
+    &MUT SELF
+) -> (&MUT (DYN SINK<T, ERROR = ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html]), &MUT (DYN STREAM<ITEM = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html]))
+
+Split the framed transport into read and write half
+
+
+PROVIDED METHODS§
+
+source [../../../src/fedimint_server/net/framed.rs.html#35-40]
+
+FN INTO_DYN(SELF) -> ANYFRAMEDTRANSPORT [type.AnyFramedTransport.html]<T>WHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] + 'STATIC,
+
+Transforms concrete FramedTransport object into an owned trait object
+
+
+IMPLEMENTORS§
+
+source [../../../src/fedimint_server/net/framed.rs.html#157-172]§
+
+
+IMPL<T, WH, RH> FRAMEDTRANSPORT [trait.FramedTransport.html]<T> FOR BIDIFRAMED [struct.BidiFramed.html]<T, WH, RH>WHERE
+    T: DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] + SERIALIZE
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html] + DESERIALIZEOWNED
+[https://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+    WH: ASYNCWRITE + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html],
+    RH: ASYNCREAD + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html],
+

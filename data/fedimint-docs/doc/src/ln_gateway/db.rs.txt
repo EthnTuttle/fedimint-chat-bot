@@ -1,0 +1,122 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../ln_gateway/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+
+
+use fedimint_core::config::{ClientConfig, FederationId};
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::{impl_db_lookup, impl_db_record};
+use fedimint_ln_common::LightningGateway;
+use lightning::routing::gossip::RoutingFees;
+
+#[repr(u8)]
+#[derive(Clone, Debug)]
+pub enum DbKeyPrefix {
+    FederationConfig = 0x04,
+    FederationRegistration = 0x05,
+    GatewayPublicKey = 0x06,
+}
+
+#[derive(Debug, Clone, Encodable, Decodable, Eq, PartialEq, Hash, Ord, PartialOrd)]
+pub struct FederationIdKey {
+    pub id: FederationId,
+}
+
+#[derive(Debug, Encodable, Decodable)]
+pub struct FederationIdKeyPrefix;
+
+#[derive(Debug, Clone, Eq, PartialEq, Encodable, Decodable)]
+pub struct FederationConfig {
+    pub mint_channel_id: u64,
+    pub timelock_delta: u64,
+    pub fees: RoutingFees,
+    pub config: ClientConfig,
+}
+
+impl_db_record!(
+    key = FederationIdKey,
+    value = FederationConfig,
+    db_prefix = DbKeyPrefix::FederationConfig,
+);
+
+impl_db_lookup!(key = FederationIdKey, query_prefix = FederationIdKeyPrefix);
+
+#[derive(Debug, Clone, Encodable, Decodable, Eq, PartialEq, Hash)]
+pub struct FederationRegistrationKey {
+    pub id: FederationId,
+}
+
+impl_db_record!(
+    key = FederationRegistrationKey,
+    value = LightningGateway,
+    db_prefix = DbKeyPrefix::FederationRegistration,
+);
+
+#[derive(Debug, Clone, Eq, PartialEq, Encodable, Decodable)]
+pub struct GatewayPublicKey;
+
+impl_db_record!(
+    key = GatewayPublicKey,
+    value = secp256k1::KeyPair,
+    db_prefix = DbKeyPrefix::GatewayPublicKey,
+);
+
+

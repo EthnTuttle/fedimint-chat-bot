@@ -1,0 +1,81 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+APIREQUESTERASED
+
+
+METHODS
+
+ * new
+ * to_json
+ * to_typed
+ * with_auth
+
+
+TRAIT IMPLEMENTATIONS
+
+ * Default
+
+
+IN FEDIMINT_CORE::MODULE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TYPE DEFINITION FEDIMINT_CORE [../index.html]::MODULE [index.html]::APIREQUESTERASEDCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/module/mod.rs.html#74] · [−]
+
+pub type ApiRequestErased = ApiRequeststruct.ApiRequest.html<JsonValuehttps://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html>;
+
+
+IMPLEMENTATIONS§
+
+source [../../src/fedimint_core/module/mod.rs.html#85-113]§
+
+
+IMPL APIREQUESTERASED [type.ApiRequestErased.html]
+
+source [../../src/fedimint_core/module/mod.rs.html#86-92]
+
+PUB FN NEW<T: SERIALIZE [https://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html]>(PARAMS: T) -> APIREQUESTERASED
+[type.ApiRequestErased.html]
+
+source [../../src/fedimint_core/module/mod.rs.html#94-96]
+
+PUB FN TO_JSON(&SELF) -> JSONVALUE [https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html]
+
+source [../../src/fedimint_core/module/mod.rs.html#98-103]
+
+PUB FN WITH_AUTH(SELF, AUTH: APIAUTH [struct.ApiAuth.html]) -> SELF
+
+source [../../src/fedimint_core/module/mod.rs.html#105-112]
+
+PUB FN TO_TYPED<T: DESERIALIZEOWNED [https://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html]>(SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<APIREQUEST [struct.ApiRequest.html]<T>, ERROR
+[https://docs.rs/serde_json/1.0.96/serde_json/error/struct.Error.html]>
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [../../src/fedimint_core/module/mod.rs.html#76-83]§
+
+
+IMPL DEFAULT [https://doc.rust-lang.org/1.67.0/core/default/trait.Default.html] FOR APIREQUESTERASED [type.ApiRequestErased.html]
+
+source [../../src/fedimint_core/module/mod.rs.html#77-82]§
+
+FN DEFAULT [https://doc.rust-lang.org/1.67.0/core/default/trait.Default.html#tymethod.default]() -> SELF
+
+Returns the “default value” for a type. Read more
+[https://doc.rust-lang.org/1.67.0/core/default/trait.Default.html#tymethod.default]

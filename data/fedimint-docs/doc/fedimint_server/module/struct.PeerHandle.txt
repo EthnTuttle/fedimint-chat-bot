@@ -1,0 +1,711 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+PEERHANDLE
+
+
+METHODS
+
+ * new
+ * peer_ids
+
+
+TRAIT IMPLEMENTATIONS
+
+ * PeerHandleOps
+
+
+AUTO TRAIT IMPLEMENTATIONS
+
+ * !RefUnwindSafe
+ * Send
+ * Sync
+ * Unpin
+ * !UnwindSafe
+
+
+BLANKET IMPLEMENTATIONS
+
+ * Any
+ * Borrow<T>
+ * BorrowMut<T>
+ * Conv
+ * FmtForward
+ * From<T>
+ * FutureExt
+ * Instrument
+ * Into<U>
+ * IntoRequest<T>
+ * MaybeSend
+ * MaybeSend
+ * MaybeSync
+ * Pipe
+ * Same<T>
+ * Tap
+ * TryConv
+ * TryFrom<U>
+ * TryInto<U>
+ * VZip<V>
+ * WithSubscriber
+
+
+IN FEDIMINT_SERVER::MODULE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+STRUCT FEDIMINT_SERVER [../index.html]::MODULE [index.html]::PEERHANDLECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+#[non_exhaustive]pub struct PeerHandle<'a> { /* private fields */ }
+
+Expand description
+
+A handle passed to ServerModuleGen::distributed_gen [trait.ServerModuleGen.html#tymethod.distributed_gen]
+
+This struct encapsulates dkg data that the module should not have a direct access to, and implements higher level dkg operations
+available to the module to complete its distributed initialization inside the federation.
+
+
+IMPLEMENTATIONS§
+
+§
+
+
+IMPL<'A> PEERHANDLE [struct.PeerHandle.html]<'A>
+
+PUB FN NEW(
+    CONNECTIONS: &'A MUXPEERCONNECTIONS<(U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html], STRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html]), DKGPEERMSG [../config/enum.DkgPeerMsg.html]>,
+    MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    OUR_ID: PEERID [../struct.PeerId.html],
+    PEERS: VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<PEERID [../struct.PeerId.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+) -> PEERHANDLE [struct.PeerHandle.html]<'A>
+
+PUB FN PEER_IDS(&SELF) -> &[PEERID [../struct.PeerId.html]]
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [../../src/fedimint_server/config/distributedgen.rs.html#512-565]§
+
+
+IMPL<'A> PEERHANDLEOPS [../config/distributedgen/trait.PeerHandleOps.html] FOR PEERHANDLE [struct.PeerHandle.html]<'A>
+
+source [../../src/fedimint_server/config/distributedgen.rs.html#513-519]§
+
+FN RUN_DKG_G1 [../config/distributedgen/trait.PeerHandleOps.html#tymethod.run_dkg_g1]<'LIFE0, 'ASYNC_TRAIT, T>(
+    &'LIFE0 SELF,
+    V: T
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = DKGRESULT [../config/type.DkgResult.html]<HASHMAP
+[https://doc.rust-lang.org/1.67.0/std/collections/hash/map/struct.HashMap.html]<T, DKGKEYS
+[../config/distributedgen/struct.DkgKeys.html]<G1PROJECTIVE>>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    T: SERIALIZE [https://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html] + DESERIALIZEOWNED
+[https://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + CLONE
+[https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] + EQ [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] +
+HASH [https://doc.rust-lang.org/1.67.0/core/hash/trait.Hash.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] + 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_server/config/distributedgen.rs.html#521-528]§
+
+FN RUN_DKG_MULTI_G2 [../config/distributedgen/trait.PeerHandleOps.html#tymethod.run_dkg_multi_g2]<'LIFE0, 'ASYNC_TRAIT, T>(
+    &'LIFE0 SELF,
+    V: VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<T>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = DKGRESULT [../config/type.DkgResult.html]<HASHMAP
+[https://doc.rust-lang.org/1.67.0/std/collections/hash/map/struct.HashMap.html]<T, DKGKEYS
+[../config/distributedgen/struct.DkgKeys.html]<G2PROJECTIVE>>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    T: SERIALIZE [https://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html] + DESERIALIZEOWNED
+[https://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + CLONE
+[https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] + EQ [https://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html] +
+HASH [https://doc.rust-lang.org/1.67.0/core/hash/trait.Hash.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] + 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_server/config/distributedgen.rs.html#530-564]§
+
+FN EXCHANGE_PUBKEYS [../config/distributedgen/trait.PeerHandleOps.html#tymethod.exchange_pubkeys]<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DKG_KEY: STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html],
+    KEY: PUBLICKEY
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = DKGRESULT
+[../config/type.DkgResult.html]<BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<PEERID [../struct.PeerId.html], PUBLICKEY>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+
+AUTO TRAIT IMPLEMENTATIONS§
+
+§
+
+
+IMPL<'A> !REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html] FOR PEERHANDLE
+[struct.PeerHandle.html]<'A>
+
+§
+
+
+IMPL<'A> SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] FOR PEERHANDLE [struct.PeerHandle.html]<'A>
+
+§
+
+
+IMPL<'A> SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] FOR PEERHANDLE [struct.PeerHandle.html]<'A>
+
+§
+
+
+IMPL<'A> UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] FOR PEERHANDLE [struct.PeerHandle.html]<'A>
+
+§
+
+
+IMPL<'A> !UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html] FOR PEERHANDLE
+[struct.PeerHandle.html]<'A>
+
+
+BLANKET IMPLEMENTATIONS§
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#200]§
+
+
+IMPL<T> ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] FOR TWHERE
+    T: 'STATIC + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#201]§
+
+FN TYPE_ID [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id](&SELF) -> TYPEID
+[https://doc.rust-lang.org/1.67.0/core/any/struct.TypeId.html]
+
+Gets the TypeId of self. Read more [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#211]§
+
+
+IMPL<T> BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#213]§
+
+FN BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow](&SELF) -> &
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Immutably borrows from an owned value. Read more [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#220]§
+
+
+IMPL<T> BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#221]§
+
+FN BORROW_MUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut](&MUT SELF) -> &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Mutably borrows from an owned value. Read more
+[https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut]
+§
+
+
+IMPL<T> CONV FOR T
+
+§
+
+FN CONV<T>(SELF) -> TWHERE
+    SELF: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+Converts self into T using Into<T>. Read more
+§
+
+
+IMPL<T> FMTFORWARD FOR T
+
+§
+
+FN FMT_BINARY(SELF) -> FMTBINARY<SELF>WHERE
+    SELF: BINARY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Binary.html],
+
+Causes self to use its Binary implementation when Debug-formatted.
+§
+
+FN FMT_DISPLAY(SELF) -> FMTDISPLAY<SELF>WHERE
+    SELF: DISPLAY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html],
+
+Causes self to use its Display implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_EXP(SELF) -> FMTLOWEREXP<SELF>WHERE
+    SELF: LOWEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerExp.html],
+
+Causes self to use its LowerExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_HEX(SELF) -> FMTLOWERHEX<SELF>WHERE
+    SELF: LOWERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerHex.html],
+
+Causes self to use its LowerHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_OCTAL(SELF) -> FMTOCTAL<SELF>WHERE
+    SELF: OCTAL [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Octal.html],
+
+Causes self to use its Octal implementation when Debug-formatted.
+§
+
+FN FMT_POINTER(SELF) -> FMTPOINTER<SELF>WHERE
+    SELF: POINTER [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Pointer.html],
+
+Causes self to use its Pointer implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_EXP(SELF) -> FMTUPPEREXP<SELF>WHERE
+    SELF: UPPEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperExp.html],
+
+Causes self to use its UpperExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_HEX(SELF) -> FMTUPPERHEX<SELF>WHERE
+    SELF: UPPERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperHex.html],
+
+Causes self to use its UpperHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_LIST(SELF) -> FMTLIST<SELF>WHERE
+    &'A [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF: FOR<'A> INTOITERATOR
+[https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.IntoIterator.html],
+
+Formats each item in a sequence. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#733]§
+
+
+IMPL<T> FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T> FOR T
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#736]§
+
+FN FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html#tymethod.from](T: T) -> T
+
+Returns the argument unchanged.
+
+§
+
+
+IMPL<T> FUTUREEXT FOR T
+
+§
+
+FN WITH_CONTEXT(SELF, OTEL_CX: CONTEXT) -> WITHCONTEXT<SELF>
+
+Attaches the provided Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+§
+
+FN WITH_CURRENT_CONTEXT(SELF) -> WITHCONTEXT<SELF>
+
+Attaches the current Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#276]§
+
+
+IMPL<T> INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#82]§
+
+FN INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument](SELF, SPAN: SPAN
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html]) -> INSTRUMENTED
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the provided Span [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an
+Instrumented wrapper. Read more [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#121]§
+
+FN IN_CURRENT_SPAN [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span](SELF) ->
+INSTRUMENTED [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the current [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html#method.current] Span
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an Instrumented wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#717]§
+
+
+IMPL<T, U> INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<U> FOR TWHERE
+    U: FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>,
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#725]§
+
+FN INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html#tymethod.into](SELF) -> U
+
+Calls U::from(self).
+
+That is, this conversion is whatever the implementation of From [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>
+for U chooses to do.
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#384]§
+
+
+IMPL<T> INTOREQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html]<T> FOR T
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#385]§
+
+FN INTO_REQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html#tymethod.into_request](SELF) -> REQUEST
+[https://docs.rs/tonic/0.9.2/tonic/request/struct.Request.html]<T>
+
+Wrap the input message T in a tonic::Request
+§
+
+
+IMPL<T> PIPE FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+§
+
+FN PIPE<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](SELF) -> R) -> RWHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Pipes by value. This is generally the method you want to use. Read more
+§
+
+FN PIPE_REF<'A, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_REF_MUT<'A, R>(&'A MUT SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Mutably borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_BORROW<'A, B, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R) -> RWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.borrow() into the pipe function. Read more
+§
+
+FN PIPE_BORROW_MUT<'A, B, R>(
+    &'A MUT SELF,
+    FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R
+) -> RWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.borrow_mut() into the pipe function. Read more
+§
+
+FN PIPE_AS_REF<'A, U, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.as_ref() into the pipe function.
+§
+
+FN PIPE_AS_MUT<'A, U, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.as_mut() into the pipe function. Read more
+§
+
+FN PIPE_DEREF<'A, T, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.deref() into the pipe function.
+§
+
+FN PIPE_DEREF_MUT<'A, T, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.deref_mut() into the pipe function. Read more
+source [https://docs.rs/typenum/1.16.0/src/typenum/type_operators.rs.html#34]§
+
+
+IMPL<T> SAME [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html]<T> FOR T
+
+§
+
+TYPE OUTPUT [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html#associatedtype.Output] = T
+
+Should always be Self
+§
+
+
+IMPL<T> TAP FOR T
+
+§
+
+FN TAP(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Immutable access to a value. Read more
+§
+
+FN TAP_MUT(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Mutable access to a value. Read more
+§
+
+FN TAP_BORROW<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Borrow<B> of a value. Read more
+§
+
+FN TAP_BORROW_MUT<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the BorrowMut<B> of a value. Read more
+§
+
+FN TAP_REF<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the AsRef<R> view of a value. Read more
+§
+
+FN TAP_REF_MUT<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the AsMut<R> view of a value. Read more
+§
+
+FN TAP_DEREF<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DEREF_MUT<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap() only in debug builds, and is erased in release builds.
+§
+
+FN TAP_MUT_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_MUT_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_MUT_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_MUT_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+
+IMPL<T> TRYCONV FOR T
+
+§
+
+FN TRY_CONV<T>(SELF) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, SELF::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error]>WHERE
+    SELF: TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<T>,
+
+Attempts to convert self into T using TryInto<T>. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#775]§
+
+
+IMPL<T, U> TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U> FOR TWHERE
+    U: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error] = INFALLIBLE
+[https://doc.rust-lang.org/1.67.0/core/convert/enum.Infallible.html]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#781]§
+
+FN TRY_FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#tymethod.try_from](VALUE: U) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, <T AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#760]§
+
+
+IMPL<T, U> TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<U> FOR TWHERE
+    U: TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error] = <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#766]§
+
+FN TRY_INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#tymethod.try_into](SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U, <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+§
+
+
+IMPL<V, T> VZIP<V> FOR TWHERE
+    V: MULTILANE<T>,
+
+§
+
+FN VZIP(SELF) -> V
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#334]§
+
+
+IMPL<T> WITHSUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#169-171]§
+
+FN WITH_SUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]<S>(SELF,
+SUBSCRIBER: S) -> WITHDISPATCH [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>WHERE
+    S: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<DISPATCH
+[https://docs.rs/tracing-core/0.1.22/tracing_core/dispatcher/struct.Dispatch.html]>,
+
+Attaches the provided Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type,
+returning a WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#221]§
+
+FN WITH_CURRENT_SUBSCRIBER
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber](SELF) -> WITHDISPATCH
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>
+
+Attaches the current default [https://docs.rs/tracing/0.1.37/tracing/dispatcher/index.html#setting-the-default-subscriber]
+Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type, returning a
+WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber]
+§
+
+
+IMPL<T> MAYBESEND [../task/trait.MaybeSend.html] FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<T> MAYBESEND FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<T> MAYBESYNC [../task/trait.MaybeSync.html] FOR TWHERE
+    T: SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+

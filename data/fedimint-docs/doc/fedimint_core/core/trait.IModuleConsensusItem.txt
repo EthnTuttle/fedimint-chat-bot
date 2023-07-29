@@ -1,0 +1,80 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IMODULECONSENSUSITEM
+
+
+REQUIRED METHODS
+
+ * as_any
+ * clone
+ * dyn_hash
+ * erased_eq_no_instance_id
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::CORE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::CORE [index.html]::IMODULECONSENSUSITEMCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/core.rs.html#596-602] · [−]
+
+pub trait IModuleConsensusItem: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + Displayhttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html + DynEncodable../encoding/trait.DynEncodable.html {
+    fn as_any(&self) -> &(dyn Anyhttps://doc.rust-lang.org/1.67.0/core/any/trait.Any.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html);
+    fn clone(
+        &self,
+        module_instance_id: ModuleInstanceIdtype.ModuleInstanceId.html
+    ) -> DynModuleConsensusItemstruct.DynModuleConsensusItem.html;
+    fn dyn_hash(&self) -> u64https://doc.rust-lang.org/1.67.0/std/primitive.u64.html;
+    fn erased_eq_no_instance_id(&self, other: &DynModuleConsensusItemstruct.DynModuleConsensusItem.html) -> boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/core.rs.html#597]
+
+FN AS_ANY(&SELF) -> &(DYN ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html])
+
+source [../../src/fedimint_core/core.rs.html#598]
+
+FN CLONE(&SELF, MODULE_INSTANCE_ID: MODULEINSTANCEID [type.ModuleInstanceId.html]) -> DYNMODULECONSENSUSITEM
+[struct.DynModuleConsensusItem.html]
+
+source [../../src/fedimint_core/core.rs.html#599]
+
+FN DYN_HASH(&SELF) -> U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+
+source [../../src/fedimint_core/core.rs.html#601]
+
+FN ERASED_EQ_NO_INSTANCE_ID(&SELF, OTHER: &DYNMODULECONSENSUSITEM [struct.DynModuleConsensusItem.html]) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/core.rs.html#608-614]§
+
+
+IMPL<T> IMODULECONSENSUSITEM [trait.IModuleConsensusItem.html] FOR TWHERE
+    T: MODULECONSENSUSITEM [trait.ModuleConsensusItem.html] + DYNENCODABLE [../encoding/trait.DynEncodable.html] + 'STATIC + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+

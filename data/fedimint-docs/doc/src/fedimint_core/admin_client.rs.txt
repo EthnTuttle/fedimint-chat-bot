@@ -1,0 +1,612 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_core/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+
+
+use std::collections::BTreeMap;
+use std::fmt::Debug;
+
+use bitcoin_hashes::sha256;
+use fedimint_core::task::MaybeSend;
+use serde::{Deserialize, Serialize};
+use threshold_crypto::PublicKey;
+use tokio_rustls::rustls;
+use url::Url;
+
+use crate::api::{
+    DynGlobalApi, FederationApiExt, FederationResult, GlobalFederationApi, ServerStatus,
+    StatusResponse, WsFederationApi,
+};
+use crate::config::ServerModuleGenParamsRegistry;
+use crate::epoch::{SerdeEpochHistory, SignedEpochOutcome};
+use crate::module::registry::ModuleDecoderRegistry;
+use crate::module::{ApiAuth, ApiRequestErased};
+use crate::PeerId;
+
+/// For a guardian to communicate with their server
+// TODO: Maybe should have it's own CLI client so it doesn't need to be in core
+pub struct WsAdminClient {
+    inner: DynGlobalApi,
+}
+
+impl WsAdminClient {
+    pub fn new(url: Url, our_id: PeerId) -> Self {
+        Self {
+            inner: WsFederationApi::new(vec![(our_id, url)]).into(),
+        }
+    }
+
+    /// Sets the password used to decrypt the configs and authenticate
+    ///
+    /// Must be called first before any other calls to the API
+    pub async fn set_password(&self, auth: ApiAuth) -> FederationResult<()> {
+        self.request_auth("set_password", ApiRequestErased::default().with_auth(auth))
+            .await
+    }
+
+    /// During config gen, sets the server connection containing our endpoints
+    ///
+    /// Optionally sends our server info to the config gen leader using
+    /// `add_config_gen_peer`
+    pub async fn set_config_gen_connections(
+        &self,
+        info: ConfigGenConnectionsRequest,
+        auth: ApiAuth,
+    ) -> FederationResult<()> {
+        self.request_auth(
+            "set_config_gen_connections",
+            ApiRequestErased::new(info).with_auth(auth),
+        )
+        .await
+    }
+
+    /// During config gen, used for an API-to-API call that adds a peer's server
+    /// connection info to the leader.
+    ///
+    /// Note this call will fail until the leader has their API running and has
+    /// `set_server_connections` so clients should retry.
+    ///
+    /// This call is not authenticated because it's guardian-to-guardian
+    pub async fn add_config_gen_peer(&self, peer: PeerServerParams) -> FederationResult<()> {
+        self.request("add_config_gen_peer", ApiRequestErased::new(peer))
+            .await
+    }
+
+    /// During config gen, gets all the server connections we've received from
+    /// peers using `add_config_gen_peer`
+    ///
+    /// Could be called on the leader, so it's not authenticated
+    pub async fn get_config_gen_peers(&self) -> FederationResult<Vec<PeerServerParams>> {
+        self.request("get_config_gen_peers", ApiRequestErased::default())
+            .await
+    }
+
+    /// Sends a signal to consensus that we are ready to shutdown the federation
+    /// and upgrade
+    pub async fn signal_upgrade(&self, auth: ApiAuth) -> FederationResult<()> {
+        self.request_auth("upgrade", ApiRequestErased::default().with_auth(auth))
+            .await
+    }
+
+    /// Sends a signal to consensus that we want to force running an epoch
+    /// outcome
+    pub async fn force_process_epoch(
+        &self,
+        outcome: SerdeEpochHistory,
+        auth: ApiAuth,
+    ) -> FederationResult<()> {
+        self.request_auth(
+            "process_outcome",
+            ApiRequestErased::new(outcome).with_auth(auth),
+        )
+        .await
+    }
+
+    /// Delegates to `fetch_epoch_history`
+    pub async fn fetch_last_epoch_history(
+        &self,
+        epoch_pk: PublicKey,
+        decoders: &ModuleDecoderRegistry,
+    ) -> FederationResult<SignedEpochOutcome> {
+        let epoch = self.inner.fetch_epoch_count().await? - 1;
+        self.inner
+            .fetch_epoch_history(epoch, epoch_pk, decoders)
+            .await
+    }
+
+    /// Gets the default config gen params which can be configured by the
+    /// leader, gives them a template to modify
+    pub async fn get_default_config_gen_params(
+        &self,
+        auth: ApiAuth,
+    ) -> FederationResult<ConfigGenParamsRequest> {
+        self.request_auth(
+            "get_default_config_gen_params",
+            ApiRequestErased::default().with_auth(auth),
+        )
+        .await
+    }
+
+    /// Leader sets the consensus params, everyone sets the local params
+    ///
+    /// After calling this `ConfigGenParams` can be created for DKG
+    pub async fn set_config_gen_params(
+        &self,
+        requested: ConfigGenParamsRequest,
+        auth: ApiAuth,
+    ) -> FederationResult<()> {
+        self.request_auth(
+            "set_config_gen_params",
+            ApiRequestErased::new(requested).with_auth(auth),
+        )
+        .await
+    }
+
+    /// Returns the consensus config gen params, followers will delegate this
+    /// call to the leader.  Once this endpoint returns successfully we can run
+    /// DKG.
+    pub async fn get_consensus_config_gen_params(
+        &self,
+    ) -> FederationResult<ConfigGenParamsResponse> {
+        self.request(
+            "get_consensus_config_gen_params",
+            ApiRequestErased::default(),
+        )
+        .await
+    }
+
+    /// Runs DKG, can only be called once after configs have been generated in
+    /// `get_consensus_config_gen_params`.  If DKG fails this returns a 500
+    /// error and config gen must be restarted.
+    pub async fn run_dkg(&self, auth: ApiAuth) -> FederationResult<()> {
+        self.request_auth("run_dkg", ApiRequestErased::default().with_auth(auth))
+            .await
+    }
+
+    /// After DKG, returns the hash of the consensus config tweaked with our id.
+    /// We need to share this with all other peers to complete verification.
+    pub async fn get_verify_config_hash(
+        &self,
+        auth: ApiAuth,
+    ) -> FederationResult<BTreeMap<PeerId, sha256::Hash>> {
+        self.request_auth(
+            "get_verify_config_hash",
+            ApiRequestErased::default().with_auth(auth),
+        )
+        .await
+    }
+
+    /// Reads the configs from the disk, starts the consensus server, and shuts
+    /// down the config gen API to start the Fedimint API
+    ///
+    /// Clients may receive an error due to forced shutdown, should call the
+    /// `server_status` to see if consensus has started.
+    pub async fn start_consensus(&self, auth: ApiAuth) -> FederationResult<()> {
+        self.request_auth(
+            "start_consensus",
+            ApiRequestErased::default().with_auth(auth),
+        )
+        .await
+    }
+
+    /// Returns the status of the server
+    pub async fn status(&self) -> FederationResult<StatusResponse> {
+        self.request("status", ApiRequestErased::default()).await
+    }
+
+    /// Check auth credentials
+    pub async fn auth(&self, auth: ApiAuth) -> FederationResult<()> {
+        self.request_auth("auth", ApiRequestErased::default().with_auth(auth))
+            .await
+    }
+
+    async fn request_auth<Ret>(
+        &self,
+        method: &str,
+        params: ApiRequestErased,
+    ) -> FederationResult<Ret>
+    where
+        Ret: serde::de::DeserializeOwned + Eq + Debug + Clone + MaybeSend,
+    {
+        self.inner
+            .request_current_consensus(method.to_owned(), params)
+            .await
+    }
+
+    async fn request<Ret>(&self, method: &str, params: ApiRequestErased) -> FederationResult<Ret>
+    where
+        Ret: serde::de::DeserializeOwned + Eq + Debug + Clone + MaybeSend,
+    {
+        self.inner
+            .request_current_consensus(method.to_owned(), params)
+            .await
+    }
+}
+
+/// Sent by admin user to the API
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ConfigGenConnectionsRequest {
+    /// Our guardian name
+    pub our_name: String,
+    /// Url of "leader" guardian to send our connection info to
+    /// Will be `None` if we are the leader
+    pub leader_api_url: Option<Url>,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize, Eq, PartialEq)]
+/// Connection information sent between peers in order to start config gen
+pub struct PeerServerParams {
+    /// TLS cert is necessary for P2P auth during DKG and  consensus
+    #[serde(with = "serde_tls_cert")]
+    pub cert: rustls::Certificate,
+    /// P2P is the network for running DKG and consensus
+    pub p2p_url: Url,
+    /// API for secure websocket requests
+    pub api_url: Url,
+    /// Name of the peer, used in TLS auth
+    pub name: String,
+    /// Status of the peer if known
+    pub status: Option<ServerStatus>,
+}
+
+/// The config gen params that need to be in consensus, sent by the config gen
+/// leader to all the other guardians
+#[derive(Debug, Clone, Serialize, Deserialize, Eq, PartialEq)]
+pub struct ConfigGenParamsConsensus {
+    /// Endpoints of all servers
+    pub peers: BTreeMap<PeerId, PeerServerParams>,
+    /// Guardian-defined key-value pairs that will be passed to the client
+    pub meta: BTreeMap<String, String>,
+    /// Config gen params (also contains local params from us)
+    pub modules: ServerModuleGenParamsRegistry,
+}
+
+/// The config gen params response which includes our peer id
+#[derive(Debug, Clone, Serialize, Deserialize, Eq, PartialEq)]
+pub struct ConfigGenParamsResponse {
+    /// The same for all peers
+    pub consensus: ConfigGenParamsConsensus,
+    /// Our id (might change if new peers join)
+    pub our_current_id: PeerId,
+}
+
+/// Config gen params that can be configured from the UI
+#[derive(Debug, Clone, Default, Serialize, Deserialize, Eq, PartialEq)]
+pub struct ConfigGenParamsRequest {
+    /// Guardian-defined key-value pairs that will be passed to the client
+    pub meta: BTreeMap<String, String>,
+    /// Set the params (if leader) or just the local params (if follower)
+    pub modules: ServerModuleGenParamsRegistry,
+}
+
+mod serde_tls_cert {
+    use std::borrow::Cow;
+
+    use bitcoin_hashes::hex::{FromHex, ToHex};
+    use serde::de::Error;
+    use serde::{Deserialize, Deserializer, Serializer};
+    use tokio_rustls::rustls;
+
+    pub fn serialize<S>(certs: &rustls::Certificate, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let hex_str = certs.0.to_hex();
+        serializer.serialize_str(&hex_str)
+    }
+
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<rustls::Certificate, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let value: Cow<str> = Deserialize::deserialize(deserializer)?;
+        Ok(rustls::Certificate(
+            Vec::from_hex(&value).map_err(D::Error::custom)?,
+        ))
+    }
+}
+
+

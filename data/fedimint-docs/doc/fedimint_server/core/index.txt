@@ -1,0 +1,115 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+MODULE CORE
+
+ * Modules
+ * Macros
+ * Structs
+ * Enums
+ * Constants
+ * Traits
+ * Type Definitions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_SERVER [../index.html]::CORECopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+Expand description
+
+Fedimint Core API (common) module interface
+
+Fedimint supports externally implemented modules.
+
+This (Rust) module defines common interoperability types and functionality that is used on both client and sever side.
+
+
+MODULES
+
+backup [backup/index.html]
+client [client/index.html]
+server [server/index.html]
+Fedimint Core Server module interface
+
+
+MACROS
+
+module_dyn_newtype_impl_encode_decode [macro.module_dyn_newtype_impl_encode_decode.html]
+Implement Encodable and Decodable for a “module dyn newtype”
+module_plugin_trait_define [macro.module_plugin_trait_define.html]
+Define a “plugin” trait
+newtype_impl_eq_passthrough_with_instance_id [macro.newtype_impl_eq_passthrough_with_instance_id.html]
+plugin_types_trait_impl_common [macro.plugin_types_trait_impl_common.html]
+Implements the necessary traits for all associated types of a FederationServer module.
+plugin_types_trait_impl_config [macro.plugin_types_trait_impl_config.html]
+Implements the necessary traits for all configuration related types of a FederationServer module.
+
+
+STRUCTS
+
+Decoder [struct.Decoder.html]
+Decoder for module associated types
+DecoderBuilder [struct.DecoderBuilder.html]
+DynClientConfig [struct.DynClientConfig.html]
+An owned, immutable input to a Transaction [../transaction/struct.Transaction.html]
+DynInput [struct.DynInput.html]
+An owned, immutable input to a Transaction [../transaction/struct.Transaction.html]
+DynModuleConsensusItem [struct.DynModuleConsensusItem.html]
+An owned, immutable output of a Transaction [../transaction/struct.Transaction.html] before it was finalized
+DynOutput [struct.DynOutput.html]
+An owned, immutable output of a Transaction [../transaction/struct.Transaction.html]
+DynOutputOutcome [struct.DynOutputOutcome.html]
+An owned, immutable output of a Transaction [../transaction/struct.Transaction.html] before it was finalized
+KeyPair [struct.KeyPair.html]
+Opaque data structure that holds a keypair consisting of a secret and a public key.
+ModuleKind [struct.ModuleKind.html]
+A type of a module
+
+
+ENUMS
+
+FinalizationError [enum.FinalizationError.html]
+
+
+CONSTANTS
+
+LEGACY_HARDCODED_INSTANCE_ID_LN [constant.LEGACY_HARDCODED_INSTANCE_ID_LN.html]
+LEGACY_HARDCODED_INSTANCE_ID_MINT [constant.LEGACY_HARDCODED_INSTANCE_ID_MINT.html]
+LEGACY_HARDCODED_INSTANCE_ID_WALLET [constant.LEGACY_HARDCODED_INSTANCE_ID_WALLET.html]
+MODULE_INSTANCE_ID_GLOBAL [constant.MODULE_INSTANCE_ID_GLOBAL.html]
+Special IDs we use for global dkg
+
+
+TRAITS
+
+ClientConfig [trait.ClientConfig.html]
+IClientConfig [trait.IClientConfig.html]
+IInput [trait.IInput.html]
+Something that can be an DynInput [struct.DynInput.html] in a Transaction [../transaction/struct.Transaction.html]
+IModuleConsensusItem [trait.IModuleConsensusItem.html]
+IOutput [trait.IOutput.html]
+Something that can be an DynOutput [struct.DynOutput.html] in a Transaction [../transaction/struct.Transaction.html]
+IOutputOutcome [trait.IOutputOutcome.html]
+Input [trait.Input.html]
+IntoDynInstance [trait.IntoDynInstance.html]
+A type that has a Dyn*, type erased version of itself
+ModuleConsensusItem [trait.ModuleConsensusItem.html]
+Output [trait.Output.html]
+OutputOutcome [trait.OutputOutcome.html]
+
+
+TYPE DEFINITIONS
+
+ModuleInstanceId [type.ModuleInstanceId.html]
+Module instance ID

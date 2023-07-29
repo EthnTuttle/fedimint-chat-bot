@@ -1,0 +1,65 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+IDATABASE
+
+
+REQUIRED METHODS
+
+ * begin_transaction
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::DB [index.html]::IDATABASECopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/db/mod.rs.html#87-89] · [−]
+
+pub trait IDatabase: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + MaybeSend../task/trait.MaybeSend.html + MaybeSync../task/trait.MaybeSync.html + 'static {
+    fn begin_transaction<'a, 'async_trait>(
+        &'a self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn ISingleUseDatabaseTransactiontrait.ISingleUseDatabaseTransaction.html<'a>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'a: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/db/mod.rs.html#88]
+
+FN BEGIN_TRANSACTION<'A, 'ASYNC_TRAIT>(
+    &'A SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN ISINGLEUSEDATABASETRANSACTION
+[trait.ISingleUseDatabaseTransaction.html]<'A>>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'A: 'ASYNC_TRAIT,
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/db/mem_impl.rs.html#66-82]§
+
+
+IMPL IDATABASE [trait.IDatabase.html] FOR MEMDATABASE [mem_impl/struct.MemDatabase.html]
+

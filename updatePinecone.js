@@ -15,7 +15,7 @@ export const updatePinecone = async (client, indexName, docs) => {
         console.log("Splitting into chunks...")
         const chunks = await textSplitter.createDocuments([text]);
         console.log(`Text split into ${chunks.length} chunks`)
-        console.log(`Calling OpenAI's Embedding endpoint documnets with ${chunks.length} text chunks...`);
+        console.log(`Calling OpenAI's Embedding endpoint documents with ${chunks.length} text chunks...`);
         const embeddingArrays = await new OpenAIEmbeddings().embedDocuments(
             chunks.map((chunk) => chunk.pageContent.replace(/\n/g, " "))
         );

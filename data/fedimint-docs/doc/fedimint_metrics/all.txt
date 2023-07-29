@@ -1,0 +1,55 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_metrics/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_metrics/index.html
+
+
+CRATE FEDIMINT_METRICS
+
+ * Macros
+ * Structs
+ * Traits
+ * Functions
+ * Type Definitions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+LIST OF ALL ITEMS
+
+
+STRUCTS
+
+ * Histogram [struct.Histogram.html]
+ * TextEncoder [struct.TextEncoder.html]
+
+
+TRAITS
+
+ * Encoder [trait.Encoder.html]
+
+
+MACROS
+
+ * histogram_opts [macro.histogram_opts.html]
+ * lazy_static [macro.lazy_static.html]
+ * opts [macro.opts.html]
+ * register_histogram [macro.register_histogram.html]
+ * register_int_counter [macro.register_int_counter.html]
+
+
+FUNCTIONS
+
+ * run_api_server [fn.run_api_server.html]
+
+
+TYPE DEFINITIONS
+
+ * IntCounter [type.IntCounter.html]
+

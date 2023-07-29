@@ -1,0 +1,30 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_cli/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_cli/index.html
+
+
+CRATE FEDIMINT_CLI
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_CLICopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_cli/main.rs.html#1-7] · [−]
+
+
+FUNCTIONS
+
+main [fn.main.html] 🔒

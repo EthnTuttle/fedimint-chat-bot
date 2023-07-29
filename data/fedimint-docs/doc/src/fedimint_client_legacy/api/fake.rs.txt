@@ -1,0 +1,282 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../fedimint_client_legacy/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+
+
+use std::collections::{BTreeMap, BTreeSet};
+use std::fmt;
+use std::pin::Pin;
+use std::sync::Arc;
+
+use async_trait::async_trait;
+use fedimint_core::api::{DynModuleApi, IFederationApi, IGlobalFederationApi, JsonRpcResult};
+use fedimint_core::core::ModuleInstanceId;
+use fedimint_core::module::ApiRequest;
+use fedimint_core::PeerId;
+use futures::Future;
+use jsonrpsee_types::error::INVALID_PARAMS_CODE;
+use jsonrpsee_types::ErrorObjectOwned;
+use serde;
+use serde::Serialize;
+use serde_json::Value;
+use tracing::{info, warn};
+
+#[allow(clippy::type_complexity)]
+type Handler<State> = Pin<
+    Box<
+        dyn Fn(
+                Arc<State>,
+                Vec<Value>,
+            )
+                -> Pin<Box<dyn Future<Output = jsonrpsee_core::RpcResult<serde_json::Value>> + Send>>
+            + Send
+            + Sync,
+    >,
+>;
+
+/// A fake [`super::IFederationApi`] builder
+///
+/// This struct allows easily stubbing responses to given API calls,
+/// by listing a list of handlers for methods that are expected to be.
+pub struct FederationApiFaker<State> {
+    state: Arc<State>,
+    members: BTreeSet<PeerId>,
+    handlers: BTreeMap<String, Handler<State>>,
+}
+
+impl<State> fmt::Debug for FederationApiFaker<State> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("FederationApiFaker")
+    }
+}
+
+impl<State> FederationApiFaker<State>
+where
+    State: fmt::Debug,
+{
+    pub fn new(state: Arc<State>, members: BTreeSet<PeerId>) -> Self {
+        Self {
+            state,
+            members,
+            handlers: BTreeMap::default(),
+        }
+    }
+
+    /// Add a handler `f` to a `method ` call
+    pub fn with<F, Fut, Param, Ret>(mut self, method: impl Into<String>, f: F) -> Self
+    where
+        State: Send + Sync + 'static,
+        F: Fn(Arc<State>, Param) -> Fut + Send + Sync + 'static + Copy,
+        Fut: Future<Output = jsonrpsee_core::RpcResult<Ret>> + std::marker::Send + 'static,
+        Param: serde::de::DeserializeOwned + Send + Sync,
+        Ret: Serialize,
+    {
+        self.handlers.insert(
+            method.into(),
+            Box::pin(move |state, params| {
+                Box::pin(async move {
+                    if params.len() != 1 {
+                        return Err(ErrorObjectOwned::owned(
+                            INVALID_PARAMS_CODE,
+                            "wrong number of arguments".to_string(),
+                            None::<()>,
+                        ));
+                    }
+
+                    let request: ApiRequest<Param> = serde_json::from_value(
+                        params.first().expect("just checked the len").clone(),
+                    )
+                    .expect("parses");
+                    let ret = f(state, request.params).await?;
+                    let ret = serde_json::to_value(ret)
+                        .expect("Serialization of the return value must not fail");
+
+                    Ok(ret)
+                })
+            }),
+        );
+        self
+    }
+}
+
+impl<S: fmt::Debug + Send + Sync> IGlobalFederationApi for FederationApiFaker<S> {}
+
+#[cfg_attr(target_family = "wasm", async_trait(? Send))]
+#[cfg_attr(not(target_family = "wasm"), async_trait)]
+impl<State> IFederationApi for FederationApiFaker<State>
+where
+    State: fmt::Debug + Send + Sync,
+{
+    fn all_members(&self) -> &BTreeSet<PeerId> {
+        &self.members
+    }
+
+    fn with_module(&self, _id: ModuleInstanceId) -> DynModuleApi {
+        unimplemented!()
+    }
+
+    async fn request_raw(
+        &self,
+        _peer_id: PeerId,
+        method: &str,
+        params: &[Value],
+    ) -> JsonRpcResult<Value> {
+        if let Some(handler) = self.handlers.get(method) {
+            info!(
+                method,
+                params = serde_json::to_string(&params).expect("serialization not to fail"),
+                "Faker is handling an API call"
+            );
+            handler(self.state.clone(), params.to_owned())
+                .await
+                .map_err(jsonrpsee_core::Error::Call)
+        } else {
+            warn!(
+                method,
+                params = serde_json::to_string(&params).expect("serialization not to fail"),
+                "Faker has no handler for the API call"
+            );
+            Err(jsonrpsee_core::Error::MethodNotFound(method.into()))
+        }
+    }
+}
+
+

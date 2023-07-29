@@ -1,0 +1,29 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../tbs/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../tbs/index.html
+
+
+MODULE SERDE_IMPL
+
+ * Modules
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE TBS [../index.html]::SERDE_IMPLCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/tbs/serde_impl/mod.rs.html#1-50] · [−]
+
+
+MODULES
+
+g1 [g1/index.html]
+g2 [g2/index.html]
+scalar [scalar/index.html]

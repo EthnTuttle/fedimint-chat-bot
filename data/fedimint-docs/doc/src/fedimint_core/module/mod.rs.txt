@@ -1,0 +1,2008 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../fedimint_core/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958
+959
+960
+961
+962
+963
+964
+965
+966
+967
+968
+969
+970
+971
+972
+973
+974
+975
+976
+977
+978
+979
+980
+981
+982
+983
+984
+985
+986
+987
+988
+989
+990
+991
+992
+993
+994
+995
+996
+997
+998
+999
+1000
+
+
+pub mod audit;
+pub mod registry;
+pub mod version;
+
+use std::collections::BTreeMap;
+use std::fmt::Debug;
+use std::io::Read;
+use std::marker::PhantomData;
+use std::pin::Pin;
+use std::sync::Arc;
+
+use futures::Future;
+use jsonrpsee_core::JsonValue;
+use secp256k1_zkp::XOnlyPublicKey;
+use serde::{Deserialize, Serialize};
+use thiserror::Error;
+use tracing::instrument;
+
+pub use self::version::*;
+use crate::config::{
+    ClientModuleConfig, ConfigGenModuleParams, DkgPeerMsg, ModuleGenParams, ServerModuleConfig,
+    ServerModuleConsensusConfig,
+};
+use crate::core::{
+    ClientConfig, Decoder, DecoderBuilder, Input, ModuleConsensusItem, ModuleInstanceId,
+    ModuleKind, Output, OutputOutcome,
+};
+use crate::db::{
+    Database, DatabaseKey, DatabaseKeyWithNotify, DatabaseRecord, DatabaseTransaction,
+    DatabaseVersion, MigrationMap, ModuleDatabaseTransaction,
+};
+use crate::encoding::{Decodable, DecodeError, Encodable};
+use crate::module::audit::Audit;
+use crate::net::peers::MuxPeerConnections;
+use crate::server::{DynServerModule, VerificationCache};
+use crate::task::{MaybeSend, TaskGroup};
+use crate::{
+    apply, async_trait_maybe_send, dyn_newtype_define, maybe_add_send, maybe_add_send_sync, Amount,
+    ConsensusDecision, OutPoint, PeerId,
+};
+
+pub struct InputMeta {
+    pub amount: TransactionItemAmount,
+    pub pub_keys: Vec<XOnlyPublicKey>,
+}
+
+/// Information about the amount represented by an input or output.
+///
+/// * For **inputs** the amount is funding the transaction while the fee is
+///   consuming funding
+/// * For **outputs** the amount and the fee consume funding
+#[derive(Debug, Clone, Copy, Eq, PartialEq, Hash)]
+pub struct TransactionItemAmount {
+    pub amount: Amount,
+    pub fee: Amount,
+}
+
+impl TransactionItemAmount {
+    pub const ZERO: TransactionItemAmount = TransactionItemAmount {
+        amount: Amount::ZERO,
+        fee: Amount::ZERO,
+    };
+}
+
+/// All requests from client to server contain these fields
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ApiRequest<T> {
+    /// Hashed user password if the API requires authentication
+    pub auth: Option<ApiAuth>,
+    /// Parameters required by the API
+    pub params: T,
+}
+
+pub type ApiRequestErased = ApiRequest<JsonValue>;
+
+impl Default for ApiRequestErased {
+    fn default() -> Self {
+        Self {
+            auth: None,
+            params: JsonValue::Null,
+        }
+    }
+}
+
+impl ApiRequestErased {
+    pub fn new<T: Serialize>(params: T) -> ApiRequestErased {
+        Self {
+            auth: None,
+            params: serde_json::to_value(params)
+                .expect("parameter serialization error - this should not happen"),
+        }
+    }
+
+    pub fn to_json(&self) -> JsonValue {
+        serde_json::to_value(self).expect("parameter serialization error - this should not happen")
+    }
+
+    pub fn with_auth(self, auth: ApiAuth) -> Self {
+        Self {
+            auth: Some(auth),
+            params: self.params,
+        }
+    }
+
+    pub fn to_typed<T: serde::de::DeserializeOwned>(
+        self,
+    ) -> Result<ApiRequest<T>, serde_json::Error> {
+        Ok(ApiRequest {
+            auth: self.auth,
+            params: serde_json::from_value::<T>(self.params)?,
+        })
+    }
+}
+
+/// Authentication uses the hashed user password in PHC format
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct ApiAuth(pub String);
+
+#[derive(Debug, Clone)]
+pub struct ApiError {
+    pub code: i32,
+    pub message: String,
+}
+
+impl ApiError {
+    pub fn new(code: i32, message: String) -> Self {
+        Self { code, message }
+    }
+
+    pub fn not_found(message: String) -> Self {
+        Self::new(404, message)
+    }
+
+    pub fn bad_request(message: String) -> Self {
+        Self::new(400, message)
+    }
+
+    pub fn unauthorized() -> Self {
+        Self::new(401, "Invalid authorization".to_string())
+    }
+
+    pub fn server_error(message: String) -> Self {
+        Self::new(500, message)
+    }
+}
+
+/// State made available to all API endpoints for handling a request
+pub struct ApiEndpointContext<'a> {
+    db: Database,
+    dbtx: DatabaseTransaction<'a>,
+    has_auth: bool,
+    request_auth: Option<ApiAuth>,
+}
+
+impl<'a> ApiEndpointContext<'a> {
+    /// `db` and `dbtx` should be isolated.
+    pub fn new(
+        db: Database,
+        dbtx: DatabaseTransaction<'a>,
+        has_auth: bool,
+        request_auth: Option<ApiAuth>,
+    ) -> Self {
+        Self {
+            db,
+            dbtx,
+            has_auth,
+            request_auth,
+        }
+    }
+
+    /// Database tx handle, will be committed
+    pub fn dbtx(&mut self) -> ModuleDatabaseTransaction<'_> {
+        // dbtx is already isolated.
+        self.dbtx.get_isolated()
+    }
+
+    /// Returns the auth set on the request (regardless of whether it was
+    /// correct)
+    pub fn request_auth(&self) -> Option<ApiAuth> {
+        self.request_auth.clone()
+    }
+
+    /// Whether the request was authenticated as the guardian who controls this
+    /// fedimint server
+    pub fn has_auth(&self) -> bool {
+        self.has_auth
+    }
+
+    /// Waits for key to be present in database.
+    pub fn wait_key_exists<K>(&self, key: K) -> impl Future<Output = K::Value>
+    where
+        K: DatabaseKey + DatabaseRecord + DatabaseKeyWithNotify,
+    {
+        let db = self.db.clone();
+        // self contains dbtx which is !Send
+        // try removing this and see the error.
+        async move { db.wait_key_exists(&key).await }
+    }
+
+    /// Waits for key to have a value that matches.
+    pub fn wait_value_matches<K>(
+        &self,
+        key: K,
+        matcher: impl Fn(&K::Value) -> bool + Copy,
+    ) -> impl Future<Output = K::Value>
+    where
+        K: DatabaseKey + DatabaseRecord + DatabaseKeyWithNotify,
+    {
+        let db = self.db.clone();
+        async move { db.wait_key_check(&key, |v| v.filter(matcher)).await.0 }
+    }
+
+    /// Attempts to commit the dbtx or returns an ApiError
+    pub async fn commit_tx_result(self) -> Result<(), ApiError> {
+        self.dbtx.commit_tx_result().await.map_err(|_err| {
+            tracing::warn!(
+                target: fedimint_logging::LOG_NET_API,
+                "API server error when writing to database: {:?}",
+                _err
+            );
+            ApiError {
+                code: 500,
+                message: "API server error when writing to database".to_string(),
+            }
+        })
+    }
+}
+
+#[apply(async_trait_maybe_send!)]
+pub trait TypedApiEndpoint {
+    type State: Sync;
+
+    /// example: /transaction
+    const PATH: &'static str;
+
+    type Param: serde::de::DeserializeOwned + Send;
+    type Response: serde::Serialize;
+
+    async fn handle<'a, 'b>(
+        state: &'a Self::State,
+        context: &'a mut ApiEndpointContext<'b>,
+        request: Self::Param,
+    ) -> Result<Self::Response, ApiError>;
+}
+
+#[doc(hidden)]
+pub mod __reexports {
+    pub use serde_json;
+}
+
+/// # Example
+///
+/// ```rust
+/// # use fedimint_core::module::{api_endpoint, ApiEndpoint, registry::ModuleInstanceId};
+/// struct State;
+///
+/// let _: ApiEndpoint<State> = api_endpoint! {
+///     "/foobar",
+///     async |state: &State, _dbtx, params: ()| -> i32 {
+///         Ok(0)
+///     }
+/// };
+/// ```
+#[macro_export]
+macro_rules! __api_endpoint {
+    (
+        $path:expr,
+        async |$state:ident: &$state_ty:ty, $context:ident, $param:ident: $param_ty:ty| -> $resp_ty:ty $body:block
+    ) => {{
+        struct Endpoint;
+
+        #[$crate::apply($crate::async_trait_maybe_send!)]
+        impl $crate::module::TypedApiEndpoint for Endpoint {
+            const PATH: &'static str = $path;
+            type State = $state_ty;
+            type Param = $param_ty;
+            type Response = $resp_ty;
+
+            async fn handle<'a, 'b>(
+                $state: &'a Self::State,
+                $context: &'a mut $crate::module::ApiEndpointContext<'b>,
+                $param: Self::Param,
+            ) -> ::std::result::Result<Self::Response, $crate::module::ApiError> {
+                $body
+            }
+        }
+
+        $crate::module::ApiEndpoint::from_typed::<Endpoint>()
+    }};
+}
+
+pub use __api_endpoint as api_endpoint;
+use fedimint_core::config::DkgResult;
+
+use self::registry::ModuleDecoderRegistry;
+
+type HandlerFnReturn<'a> =
+    Pin<Box<maybe_add_send!(dyn Future<Output = Result<serde_json::Value, ApiError>> + 'a)>>;
+type HandlerFn<M> = Box<
+    maybe_add_send_sync!(
+        dyn for<'a> Fn(&'a M, ApiEndpointContext<'a>, ApiRequestErased) -> HandlerFnReturn<'a>
+    ),
+>;
+
+/// Definition of an API endpoint defined by a module `M`.
+pub struct ApiEndpoint<M> {
+    /// Path under which the API endpoint can be reached. It should start with a
+    /// `/` e.g. `/transaction`. E.g. this API endpoint would be reachable
+    /// under `module_module_instance_id_transaction` depending on the
+    /// module name returned by `[FedertionModule::api_base_name]`.
+    pub path: &'static str,
+    /// Handler for the API call that takes the following arguments:
+    ///   * Reference to the module which defined it
+    ///   * Request parameters parsed into JSON `[Value](serde_json::Value)`
+    pub handler: HandlerFn<M>,
+}
+
+// <()> is used to avoid specify state.
+impl ApiEndpoint<()> {
+    pub fn from_typed<E: TypedApiEndpoint>() -> ApiEndpoint<E::State>
+    where
+        <E as TypedApiEndpoint>::Response: MaybeSend,
+        E::Param: Debug,
+        E::Response: Debug,
+    {
+        #[instrument(
+            target = "fedimint_server::request",
+            level = "trace",
+            skip_all,
+            fields(method = E::PATH),
+            ret,
+        )]
+        async fn handle_request<'a, 'b, E>(
+            state: &'a E::State,
+            context: &'a mut ApiEndpointContext<'b>,
+            request: ApiRequest<E::Param>,
+        ) -> Result<E::Response, ApiError>
+        where
+            E: TypedApiEndpoint,
+            E::Param: Debug,
+            E::Response: Debug,
+        {
+            tracing::trace!(target: "fedimint_server::request", ?request, "received request");
+            let result = E::handle(state, context, request.params).await;
+            if let Err(error) = &result {
+                tracing::trace!(target: "fedimint_server::request", ?error, "error");
+            }
+            result
+        }
+
+        ApiEndpoint {
+            path: E::PATH,
+            handler: Box::new(|m, mut context, request| {
+                Box::pin(async move {
+                    let request = request
+                        .to_typed()
+                        .map_err(|e| ApiError::bad_request(e.to_string()))?;
+
+                    let ret = handle_request::<E>(m, &mut context, request).await?;
+
+                    context.commit_tx_result().await?;
+
+                    Ok(serde_json::to_value(ret).expect("encoding error"))
+                })
+            }),
+        }
+    }
+}
+
+#[derive(Error, Debug)]
+pub enum ModuleError {
+    #[error(transparent)]
+    Other(#[from] anyhow::Error),
+}
+
+/// Extension trait with a function to map `Result`s used by modules to
+/// `ModuleError`
+///
+/// Currently each module defined it's own `enum XyzError { ... }` and is not
+/// using `anyhow::Error`. For `?` to work seamlessly two conversion would have
+/// to be made: `enum-Error -> anyhow::Error -> enum-Error`, while `Into`/`From`
+/// can only do one.
+///
+/// To avoid the boilerplate, this trait defines an easy conversion method.
+pub trait IntoModuleError {
+    type Target;
+    fn into_module_error_other(self) -> Self::Target;
+}
+
+impl<O, E> IntoModuleError for Result<O, E>
+where
+    E: std::error::Error + Send + Sync + 'static,
+{
+    type Target = Result<O, ModuleError>;
+
+    fn into_module_error_other(self) -> Self::Target {
+        self.map_err(|e| ModuleError::Other(e.into()))
+    }
+}
+
+/// Operations common to Server and Client side module gen dyn newtypes
+///
+/// Due to conflict of `impl Trait for T` for both `ServerModuleGen` and
+/// `ClientModuleGen`, we can't really have a `ICommonModuleGen`, so to unify
+/// them in `ModuleGenRegistry` we move the common functionality to be an
+/// interface over their dyn newtype wrappers. A bit weird, but works.
+pub trait IDynCommonModuleGen: Debug {
+    fn decoder(&self) -> Decoder;
+
+    fn module_kind(&self) -> ModuleKind;
+
+    fn to_dyn_common(&self) -> DynCommonModuleGen;
+}
+
+pub trait ExtendsCommonModuleGen: Debug + Clone + Send + Sync + 'static {
+    type Common: CommonModuleGen;
+}
+
+impl<T> IDynCommonModuleGen for T
+where
+    T: ExtendsCommonModuleGen,
+{
+    fn decoder(&self) -> Decoder {
+        T::Common::decoder()
+    }
+
+    fn module_kind(&self) -> ModuleKind {
+        T::Common::KIND
+    }
+
+    fn to_dyn_common(&self) -> DynCommonModuleGen {
+        DynCommonModuleGen::from_inner(Arc::new(self.clone()))
+    }
+}
+
+/// Interface for Module Generation
+///
+/// This trait contains the methods responsible for the module's
+/// - initialization
+/// - config generation
+/// - config validation
+///
+/// Once the module configuration is ready, the module can be instantiated via
+/// `[Self::init]`.
+#[apply(async_trait_maybe_send!)]
+pub trait IServerModuleGen: IDynCommonModuleGen {
+    fn as_common(&self) -> &(dyn IDynCommonModuleGen + Send + Sync + 'static);
+
+    fn supported_api_versions(&self) -> SupportedModuleApiVersions;
+
+    fn database_version(&self) -> DatabaseVersion;
+
+    /// Initialize the [`DynServerModule`] instance from its config
+    async fn init(
+        &self,
+        cfg: ServerModuleConfig,
+        db: Database,
+        task_group: &mut TaskGroup,
+    ) -> anyhow::Result<DynServerModule>;
+
+    /// Retrieves the `MigrationMap` from the module to be applied to the
+    /// database before the module is initialized. The `MigrationMap` is
+    /// indexed on the from version.
+    fn get_database_migrations(&self) -> MigrationMap;
+
+    fn validate_params(&self, params: &ConfigGenModuleParams) -> anyhow::Result<()>;
+
+    fn trusted_dealer_gen(
+        &self,
+        peers: &[PeerId],
+        params: &ConfigGenModuleParams,
+    ) -> BTreeMap<PeerId, ServerModuleConfig>;
+
+    async fn distributed_gen(
+        &self,
+        peers: &PeerHandle,
+        params: &ConfigGenModuleParams,
+    ) -> DkgResult<ServerModuleConfig>;
+
+    fn validate_config(&self, identity: &PeerId, config: ServerModuleConfig) -> anyhow::Result<()>;
+
+    fn get_client_config(
+        &self,
+        module_instance_id: ModuleInstanceId,
+        config: &ServerModuleConsensusConfig,
+    ) -> anyhow::Result<ClientModuleConfig>;
+
+    async fn dump_database(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        prefix_names: Vec<String>,
+    ) -> Box<dyn Iterator<Item = (String, Box<dyn erased_serde::Serialize + Send>)> + '_>;
+}
+
+dyn_newtype_define!(
+    #[derive(Clone)]
+    pub DynCommonModuleGen(Arc<IDynCommonModuleGen>)
+);
+
+impl AsRef<maybe_add_send_sync!(dyn IDynCommonModuleGen + 'static)> for DynCommonModuleGen {
+    fn as_ref(&self) -> &(maybe_add_send_sync!(dyn IDynCommonModuleGen + 'static)) {
+        self.inner.as_ref()
+    }
+}
+
+impl DynCommonModuleGen {
+    pub fn from_inner(inner: Arc<maybe_add_send_sync!(dyn IDynCommonModuleGen + 'static)>) -> Self {
+        DynCommonModuleGen { inner }
+    }
+}
+
+dyn_newtype_define!(
+    #[derive(Clone)]
+    pub DynServerModuleGen(Arc<IServerModuleGen>)
+);
+
+impl AsRef<dyn IDynCommonModuleGen + Send + Sync + 'static> for DynServerModuleGen {
+    fn as_ref(&self) -> &(dyn IDynCommonModuleGen + Send + Sync + 'static) {
+        self.inner.as_common()
+    }
+}
+pub trait CommonModuleGen: Debug + Sized {
+    const CONSENSUS_VERSION: ModuleConsensusVersion;
+    const KIND: ModuleKind;
+
+    type ClientConfig: ClientConfig;
+
+    fn decoder() -> Decoder;
+}
+
+/// Module Generation trait with associated types
+///
+/// Needs to be implemented by module generation type
+///
+/// For examples, take a look at one of the `MintConfigGenerator`,
+/// `WalletConfigGenerator`, or `LightningConfigGenerator` structs.
+#[apply(async_trait_maybe_send!)]
+pub trait ServerModuleGen: ExtendsCommonModuleGen + Sized {
+    type Params: ModuleGenParams;
+
+    /// This represents the module's database version that the current code is
+    /// compatible with. It is important to increment this value whenever a
+    /// key or a value that is persisted to the database within the module
+    /// changes. It is also important to add the corresponding
+    /// migration function in `get_database_migrations` which should define how
+    /// to move from the previous database version to the current version.
+    const DATABASE_VERSION: DatabaseVersion;
+
+    /// Version of the module consensus supported by this implementation given a
+    /// certain [`CoreConsensusVersion`].
+    ///
+    /// Refer to [`ModuleConsensusVersion`] for more information about
+    /// versioning.
+    ///
+    /// One module implementation ([`ServerModuleGen`] of a given
+    /// [`ModuleKind`]) can potentially implement multiple versions of the
+    /// consensus, and depending on the config module instance config,
+    /// instantiate the desired one. This method should expose all the
+    /// available versions, purely for information, setup UI and sanity
+    /// checking purposes.
+    fn versions(&self, core: CoreConsensusVersion) -> &[ModuleConsensusVersion];
+
+    fn supported_api_versions(&self) -> SupportedModuleApiVersions;
+
+    fn kind() -> ModuleKind {
+        <Self as ExtendsCommonModuleGen>::Common::KIND
+    }
+
+    /// Initialize the [`DynServerModule`] instance from its config
+    async fn init(
+        &self,
+        cfg: ServerModuleConfig,
+        db: Database,
+        task_group: &mut TaskGroup,
+    ) -> anyhow::Result<DynServerModule>;
+
+    /// Retrieves the `MigrationMap` from the module to be applied to the
+    /// database before the module is initialized. The `MigrationMap` is
+    /// indexed on the from version.
+    fn get_database_migrations(&self) -> MigrationMap {
+        MigrationMap::new()
+    }
+
+    fn parse_params(&self, params: &ConfigGenModuleParams) -> anyhow::Result<Self::Params> {
+        params.to_typed::<Self::Params>()
+    }
+
+    fn trusted_dealer_gen(
+        &self,
+        peers: &[PeerId],
+        params: &ConfigGenModuleParams,
+    ) -> BTreeMap<PeerId, ServerModuleConfig>;
+
+    async fn distributed_gen(
+        &self,
+        peer: &PeerHandle,
+        params: &ConfigGenModuleParams,
+    ) -> DkgResult<ServerModuleConfig>;
+
+    fn validate_config(&self, identity: &PeerId, config: ServerModuleConfig) -> anyhow::Result<()>;
+
+    /// Converts the consensus config into the client config
+    fn get_client_config(
+        &self,
+        config: &ServerModuleConsensusConfig,
+    ) -> anyhow::Result<<<Self as ExtendsCommonModuleGen>::Common as CommonModuleGen>::ClientConfig>;
+
+    async fn dump_database(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        prefix_names: Vec<String>,
+    ) -> Box<dyn Iterator<Item = (String, Box<dyn erased_serde::Serialize + Send>)> + '_>;
+}
+
+#[apply(async_trait_maybe_send!)]
+impl<T> IServerModuleGen for T
+where
+    T: ServerModuleGen + 'static + Sync,
+{
+    fn as_common(&self) -> &(dyn IDynCommonModuleGen + Send + Sync + 'static) {
+        self
+    }
+
+    fn supported_api_versions(&self) -> SupportedModuleApiVersions {
+        <Self as ServerModuleGen>::supported_api_versions(self)
+    }
+
+    fn database_version(&self) -> DatabaseVersion {
+        <Self as ServerModuleGen>::DATABASE_VERSION
+    }
+
+    async fn init(
+        &self,
+        cfg: ServerModuleConfig,
+        db: Database,
+        task_group: &mut TaskGroup,
+    ) -> anyhow::Result<DynServerModule> {
+        <Self as ServerModuleGen>::init(self, cfg, db, task_group).await
+    }
+
+    fn get_database_migrations(&self) -> MigrationMap {
+        <Self as ServerModuleGen>::get_database_migrations(self)
+    }
+
+    fn validate_params(&self, params: &ConfigGenModuleParams) -> anyhow::Result<()> {
+        <Self as ServerModuleGen>::parse_params(self, params)?;
+        Ok(())
+    }
+
+    fn trusted_dealer_gen(
+        &self,
+        peers: &[PeerId],
+        params: &ConfigGenModuleParams,
+    ) -> BTreeMap<PeerId, ServerModuleConfig> {
+        <Self as ServerModuleGen>::trusted_dealer_gen(self, peers, params)
+    }
+
+    async fn distributed_gen(
+        &self,
+        peers: &PeerHandle,
+        params: &ConfigGenModuleParams,
+    ) -> DkgResult<ServerModuleConfig> {
+        <Self as ServerModuleGen>::distributed_gen(self, peers, params).await
+    }
+
+    fn validate_config(&self, identity: &PeerId, config: ServerModuleConfig) -> anyhow::Result<()> {
+        <Self as ServerModuleGen>::validate_config(self, identity, config)
+    }
+
+    fn get_client_config(
+        &self,
+        module_instance_id: ModuleInstanceId,
+        config: &ServerModuleConsensusConfig,
+    ) -> anyhow::Result<ClientModuleConfig> {
+        ClientModuleConfig::from_typed(
+            module_instance_id,
+            <Self as ServerModuleGen>::kind(),
+            config.version,
+            <Self as ServerModuleGen>::get_client_config(self, config)?,
+        )
+    }
+
+    async fn dump_database(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        prefix_names: Vec<String>,
+    ) -> Box<dyn Iterator<Item = (String, Box<dyn erased_serde::Serialize + Send>)> + '_> {
+        <Self as ServerModuleGen>::dump_database(self, dbtx, prefix_names).await
+    }
+}
+
+pub enum ConsensusProposal<CI> {
+    /// Trigger new epoch immediately including these consensus items
+    Trigger(Vec<CI>),
+    /// Contribute consensus items if other module triggers an epoch
+    // TODO: turn into `(Vec<CI>, Update)` where `Updates` is a future
+    // that will return a new `ConsensusProposal` when updates are available.
+    // This wake we can get rid of `await_consensus_proposal`
+    Contribute(Vec<CI>),
+}
+
+impl<CI> ConsensusProposal<CI> {
+    pub fn empty() -> Self {
+        ConsensusProposal::Contribute(vec![])
+    }
+
+    /// Trigger new epoch if contains any elements, otherwise contribute
+    /// nothing.
+    pub fn new_auto_trigger(ci: Vec<CI>) -> Self {
+        if ci.is_empty() {
+            Self::Contribute(vec![])
+        } else {
+            Self::Trigger(ci)
+        }
+    }
+
+    pub fn map<F, CIO>(self, f: F) -> ConsensusProposal<CIO>
+    where
+        F: FnMut(CI) -> CIO,
+    {
+        match self {
+            ConsensusProposal::Trigger(items) => {
+                ConsensusProposal::Trigger(items.into_iter().map(f).collect())
+            }
+            ConsensusProposal::Contribute(items) => {
+                ConsensusProposal::Contribute(items.into_iter().map(f).collect())
+            }
+        }
+    }
+
+    pub fn forces_new_epoch(&self) -> bool {
+        match self {
+            ConsensusProposal::Trigger(_) => true,
+            ConsensusProposal::Contribute(_) => false,
+        }
+    }
+
+    pub fn items(&self) -> &[CI] {
+        match self {
+            ConsensusProposal::Trigger(items) => items,
+            ConsensusProposal::Contribute(items) => items,
+        }
+    }
+
+    pub fn into_items(self) -> Vec<CI> {
+        match self {
+            ConsensusProposal::Trigger(items) => items,
+            ConsensusProposal::Contribute(items) => items,
+        }
+    }
+}
+
+/// Module associated types required by both client and server
+pub trait ModuleCommon {
+    type ClientConfig: ClientConfig;
+    type Input: Input;
+    type Output: Output;
+    type OutputOutcome: OutputOutcome;
+    type ConsensusItem: ModuleConsensusItem;
+
+    fn decoder_builder() -> DecoderBuilder {
+        let mut decoder_builder = Decoder::builder();
+        decoder_builder.with_decodable_type::<Self::ClientConfig>();
+        decoder_builder.with_decodable_type::<Self::Input>();
+        decoder_builder.with_decodable_type::<Self::Output>();
+        decoder_builder.with_decodable_type::<Self::OutputOutcome>();
+        decoder_builder.with_decodable_type::<Self::ConsensusItem>();
+        decoder_builder
+    }
+
+    fn decoder() -> Decoder {
+        Self::decoder_builder().build()
+    }
+}
+
+#[apply(async_trait_maybe_send!)]
+pub trait ServerModule: Debug + Sized {
+    type Common: ModuleCommon;
+
+    type Gen: ServerModuleGen;
+    type VerificationCache: VerificationCache;
+
+    fn module_kind() -> ModuleKind {
+        // Note: All modules should define kinds as &'static str, so this doesn't
+        // allocate
+        <Self::Gen as ExtendsCommonModuleGen>::Common::KIND
+    }
+
+    /// Returns a decoder for the following associated types of this module:
+    /// * `Input`
+    /// * `Output`
+    /// * `OutputOutcome`
+    /// * `ConsensusItem`
+    fn decoder() -> Decoder {
+        Self::Common::decoder_builder().build()
+    }
+
+    /// Blocks until a new `consensus_proposal` is available.
+    async fn await_consensus_proposal<'a>(&'a self, dbtx: &mut ModuleDatabaseTransaction<'_>);
+
+    /// This module's contribution to the next consensus proposal
+    async fn consensus_proposal<'a>(
+        &'a self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+    ) -> ConsensusProposal<<Self::Common as ModuleCommon>::ConsensusItem>;
+
+    /// This function is called once for every consensus item. If the function
+    /// returns Ok(ConsensusDecision::Accept) then the item changed the
+    /// modules state and has to be included in the history of the
+    /// federation, otherwise it may safely be discarded. We return an error
+    /// for actually invalid items while we return
+    /// Ok(ConsensusDecision::Discard) for merely superfluous items.
+    async fn process_consensus_item<'a, 'b>(
+        &'a self,
+        dbtx: &mut ModuleDatabaseTransaction<'b>,
+        consensus_item: <Self::Common as ModuleCommon>::ConsensusItem,
+        peer_id: PeerId,
+    ) -> anyhow::Result<ConsensusDecision>;
+
+    /// Some modules may have slow to verify inputs that would block transaction
+    /// processing. If the slow part of verification can be modeled as a
+    /// pure function not involving any system state we can build a lookup
+    /// table in a hyper-parallelized manner. This function is meant for
+    /// constructing such lookup tables.
+    fn build_verification_cache<'a>(
+        &'a self,
+        inputs: impl Iterator<Item = &'a <Self::Common as ModuleCommon>::Input> + MaybeSend,
+    ) -> Self::VerificationCache;
+
+    /// Validate a transaction input before submitting it to the unconfirmed
+    /// transaction pool. This function has no side effects and may be
+    /// called at any time. False positives due to outdated database state
+    /// are ok since they get filtered out after consensus has been reached on
+    /// them and merely generate a warning.
+    async fn validate_input<'a, 'b>(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'b>,
+        verification_cache: &Self::VerificationCache,
+        input: &'a <Self::Common as ModuleCommon>::Input,
+    ) -> Result<InputMeta, ModuleError>;
+
+    /// Try to spend a transaction input. On success all necessary updates will
+    /// be part of the database transaction. On failure (e.g. double spend)
+    /// the database transaction is rolled back and the operation will take
+    /// no effect.
+    async fn apply_input<'a, 'b, 'c>(
+        &'a self,
+        dbtx: &mut ModuleDatabaseTransaction<'c>,
+        input: &'b <Self::Common as ModuleCommon>::Input,
+        verification_cache: &Self::VerificationCache,
+    ) -> Result<InputMeta, ModuleError>;
+
+    /// Validate a transaction output before submitting it to the unconfirmed
+    /// transaction pool. This function has no side effects and may be
+    /// called at any time. False positives due to outdated database state
+    /// are ok since they get filtered out after consensus has been reached on
+    /// them and merely generate a warning.
+    async fn validate_output(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        output: &<Self::Common as ModuleCommon>::Output,
+    ) -> Result<TransactionItemAmount, ModuleError>;
+
+    /// Try to create an output (e.g. issue notes, peg-out BTC, …). On success
+    /// all necessary updates to the database will be part of the database
+    /// transaction. On failure (e.g. double spend) the database transaction
+    /// is rolled back and the operation will take no effect.
+    ///
+    /// The supplied `out_point` identifies the operation (e.g. a peg-out or
+    /// note issuance) and can be used to retrieve its outcome later using
+    /// `output_status`.
+    async fn apply_output<'a, 'b>(
+        &'a self,
+        dbtx: &mut ModuleDatabaseTransaction<'b>,
+        output: &'a <Self::Common as ModuleCommon>::Output,
+        out_point: OutPoint,
+    ) -> Result<TransactionItemAmount, ModuleError>;
+
+    /// Retrieve the current status of the output. Depending on the module this
+    /// might contain data needed by the client to access funds or give an
+    /// estimate of when funds will be available. Returns `None` if the
+    /// output is unknown, **NOT** if it is just not ready yet.
+    async fn output_status(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        out_point: OutPoint,
+    ) -> Option<<Self::Common as ModuleCommon>::OutputOutcome>;
+
+    /// Queries the database and returns all assets and liabilities of the
+    /// module.
+    ///
+    /// Summing over all modules, if liabilities > assets then an error has
+    /// occurred in the database and consensus should halt.
+    async fn audit(&self, dbtx: &mut ModuleDatabaseTransaction<'_>, audit: &mut Audit);
+
+    /// Returns a list of custom API endpoints defined by the module. These are
+    /// made available both to users as well as to other modules. They thus
+    /// should be deterministic, only dependant on their input and the
+    /// current epoch.
+    fn api_endpoints(&self) -> Vec<ApiEndpoint<Self>>;
+}
+
+/// Creates a struct that can be used to make our module-decodable structs
+/// interact with `serde`-based APIs (HBBFT, jsonrpsee). It creates a wrapper
+/// that holds the data as serialized
+// bytes internally.
+#[derive(Clone, Debug, Eq, PartialEq, Hash, Serialize, Deserialize)]
+pub struct SerdeModuleEncoding<T: Encodable + Decodable>(
+    #[serde(with = "::fedimint_core::encoding::as_hex")] Vec<u8>,
+    #[serde(skip)] PhantomData<T>,
+);
+
+impl<T: Encodable + Decodable> From<&T> for SerdeModuleEncoding<T> {
+    fn from(value: &T) -> Self {
+        let mut bytes = vec![];
+        fedimint_core::encoding::Encodable::consensus_encode(value, &mut bytes)
+            .expect("Writing to buffer can never fail");
+        Self(bytes, PhantomData)
+    }
+}
+
+impl<T: Encodable + Decodable + 'static> SerdeModuleEncoding<T> {
+    pub fn try_into_inner(&self, modules: &ModuleDecoderRegistry) -> Result<T, DecodeError> {
+        let mut reader = std::io::Cursor::new(&self.0);
+        Decodable::consensus_decode(&mut reader, modules)
+    }
+
+    /// In cases where we know exactly which module kind we expect but don't
+    /// have access to all decoders this function can be used instead.
+    ///
+    /// Note that it just assumes the decoded module instance id to be valid
+    /// since it cannot validate against the decoder registry. The lack of
+    /// access to a decoder registry also makes decoding structs impossible that
+    /// themselves contain module dyn-types (e.g. a module output containing a
+    /// fedimint transaction).
+    pub fn try_into_inner_known_module_kind(&self, decoder: &Decoder) -> Result<T, DecodeError> {
+        let mut reader = std::io::Cursor::new(&self.0);
+        let module_instance =
+            ModuleInstanceId::consensus_decode(&mut reader, &ModuleDecoderRegistry::default())?;
+
+        let total_len = u64::consensus_decode(&mut reader, &ModuleDecoderRegistry::default())?;
+
+        let mut reader = reader.take(total_len);
+
+        // No recursive module decoding is supported since we give an empty decoder
+        // registry to the decode function
+        let val = decoder.decode(
+            &mut reader,
+            module_instance,
+            &ModuleDecoderRegistry::default(),
+        )?;
+
+        if reader.limit() != 0 {
+            return Err(fedimint_core::encoding::DecodeError::new_custom(
+                anyhow::anyhow!("Dyn type did not consume all bytes during decoding"),
+            ));
+        }
+
+        Ok(val)
+    }
+}
+
+/// A handle passed to [`ServerModuleGen::distributed_gen`]
+///
+/// This struct encapsulates dkg data that the module should not have a direct
+/// access to, and implements higher level dkg operations available to the
+/// module to complete its distributed initialization inside the federation.
+#[non_exhaustive]
+pub struct PeerHandle<'a> {
+    // TODO: this whole type should be a part of a `fedimint-server` and fields here inaccessible
+    // to outside crates, but until `ServerModule` is not in `fedimint-server` this is impossible
+    #[doc(hidden)]
+    pub connections: &'a MuxPeerConnections<(ModuleInstanceId, String), DkgPeerMsg>,
+    #[doc(hidden)]
+    pub module_instance_id: ModuleInstanceId,
+    #[doc(hidden)]
+    pub our_id: PeerId,
+    #[doc(hidden)]
+    pub peers: Vec<PeerId>,
+}
+
+impl<'a> PeerHandle<'a> {
+    pub fn new(
+        connections: &'a MuxPeerConnections<(ModuleInstanceId, String), DkgPeerMsg>,
+        module_instance_id: ModuleInstanceId,
+        our_id: PeerId,
+        peers: Vec<PeerId>,
+    ) -> Self {
+        Self {
+            connections,
+            module_instance_id,
+            our_id,
+            peers,
+        }
+    }
+
+    pub fn peer_ids(&self) -> &[PeerId] {
+        self.peers.as_slice()
+    }
+}
+
+

@@ -1,0 +1,296 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_core/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+
+
+use std::borrow::Cow;
+use std::time;
+
+use fedimint_logging::LOG_TIMING;
+use tracing::{debug, info, trace, warn, Level};
+
+/// Data inside `TimeReporter`, in another struct to be able to move it out of
+/// without violating `drop` consistency
+struct TimeReporterInner {
+    name: Cow<'static, str>,
+    level: Level,
+    start: time::SystemTime,
+    threshold: Option<time::Duration>,
+}
+
+impl TimeReporterInner {
+    fn report(&mut self) {
+        let duration = crate::time::now()
+            .duration_since(self.start)
+            .map_err(|error| {
+                warn!(
+                    target: LOG_TIMING,
+                    %error,
+                    "Timer reporter duration overflow. This should not happen."
+                );
+                error
+            })
+            .unwrap_or_default();
+
+        // even `event!` doesn't support non-constant values, so we have to do a match
+        // here
+        let duration_ms = duration.as_millis();
+        match self.level {
+            Level::TRACE => {
+                trace!(
+                    target: LOG_TIMING,
+                    name = %self.name,
+                    duration_ms,
+                    "Operation timing"
+                );
+            }
+            Level::DEBUG => {
+                debug!(
+                    target: LOG_TIMING,
+                    name = %self.name,
+                    duration_ms,
+                    "Operation timing"
+                );
+            }
+            Level::INFO => {
+                info!(
+                    target: LOG_TIMING,
+                    name = %self.name,
+                    duration_ms,
+                    "Operation timing"
+                );
+            }
+            // anything else is just a warn, whatever; it's long enough
+            _ => {
+                warn!(
+                    target: LOG_TIMING,
+                    name = %self.name,
+                    duration_ms,
+                    "Operation timing"
+                );
+            }
+        }
+        if let Some(threshold) = self.threshold {
+            if duration < threshold {
+                warn!(
+                    target: LOG_TIMING,
+                    name = %self.name,
+                    duration_ms = duration.as_millis(),
+                    threshold_ms = threshold.as_millis(),
+                    "Operation time exeeded threshold"
+                );
+            }
+        }
+    }
+}
+
+pub struct TimeReporter {
+    /// Inner data
+    ///
+    /// If `None`, time reported has been moved out from and is now a no-op
+    inner: Option<TimeReporterInner>,
+}
+
+impl TimeReporter {
+    pub fn new(name: &'static str) -> Self {
+        Self {
+            inner: Some(TimeReporterInner {
+                name: Cow::from(name),
+                level: Level::DEBUG,
+                start: crate::time::now(),
+                threshold: None,
+            }),
+        }
+    }
+
+    pub fn level(mut self, level: tracing::Level) -> Self {
+        Self {
+            inner: self
+                .inner
+                .take()
+                .map(|inner| TimeReporterInner { level, ..inner }),
+        }
+    }
+
+    /// Add a threshold, which will log a warning if exeeded
+    pub fn threshold(mut self, threshold: time::Duration) -> Self {
+        Self {
+            inner: self.inner.take().map(|inner| TimeReporterInner {
+                threshold: Some(threshold),
+                ..inner
+            }),
+        }
+    }
+
+    /// Handy alias for [`Self::threshold`]
+    pub fn threshold_millis(self, millis: u64) -> Self {
+        self.threshold(time::Duration::from_millis(millis))
+    }
+
+    pub fn info(self) -> Self {
+        self.level(Level::INFO)
+    }
+
+    pub fn cancel(&mut self) {
+        self.inner.take();
+    }
+
+    pub fn finish(self) {
+        /* drop */
+    }
+}
+
+impl Drop for TimeReporter {
+    fn drop(&mut self) {
+        if let Some(mut inner) = self.inner.take() {
+            inner.report()
+        }
+    }
+}
+
+

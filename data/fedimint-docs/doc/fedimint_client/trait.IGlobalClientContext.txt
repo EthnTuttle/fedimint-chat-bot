@@ -1,0 +1,192 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_client/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_client/index.html
+
+
+IGLOBALCLIENTCONTEXT
+
+
+REQUIRED METHODS
+
+ * add_state_machine_dyn
+ * api
+ * claim_input_dyn
+ * client_config
+ * decoders
+ * fund_output_dyn
+ * module_api
+ * transaction_update_stream
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CLIENT [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT FEDIMINT_CLIENT [index.html]::IGLOBALCLIENTCONTEXTCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_client/lib.rs.html#156-203] · [−]
+
+pub trait IGlobalClientContext: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + MaybeSend + MaybeSync + 'static {
+    fn module_api(&self) -> DynModuleApi;
+    fn client_config(&self) -> &ClientConfig;
+    fn api(&self) -> &DynGlobalApi;
+    fn decoders(&self) -> &ModuleDecoderRegistry;
+    fn claim_input_dyn<'life0, 'life1, 'life2, 'life3, 'async_trait>(
+        &'life0 self,
+        dbtx: &'life1 mut ClientSMDatabaseTransactionsm/struct.ClientSMDatabaseTransaction.html<'life2, 'life3>,
+        input: InstancelessDynClientInputtype.InstancelessDynClientInput.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = (TransactionId, Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<OutPoint>)> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait,
+        'life2: 'async_trait,
+        'life3: 'async_trait;
+    fn fund_output_dyn<'life0, 'life1, 'life2, 'life3, 'async_trait>(
+        &'life0 self,
+        dbtx: &'life1 mut ClientSMDatabaseTransactionsm/struct.ClientSMDatabaseTransaction.html<'life2, 'life3>,
+        output: InstancelessDynClientOutputtype.InstancelessDynClientOutput.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<(TransactionId, Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<OutPoint>)>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait,
+        'life2: 'async_trait,
+        'life3: 'async_trait;
+    fn add_state_machine_dyn<'life0, 'life1, 'life2, 'life3, 'async_trait>(
+        &'life0 self,
+        dbtx: &'life1 mut ClientSMDatabaseTransactionsm/struct.ClientSMDatabaseTransaction.html<'life2, 'life3>,
+        sm: Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn IStatesm/trait.IState.html<DynGlobalClientContextstruct.DynGlobalClientContext.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html>
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait,
+        'life2: 'async_trait,
+        'life3: 'async_trait;
+    fn transaction_update_stream<'life0, 'async_trait>(
+        &'life0 self,
+        operation_id: OperationIdsm/struct.OperationId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = BoxStream<'_, OperationStatesm/struct.OperationState.html<TxSubmissionStatestransaction/enum.TxSubmissionStates.html>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../src/fedimint_client/lib.rs.html#159]
+
+FN MODULE_API(&SELF) -> DYNMODULEAPI
+
+Returned a reference client’s module API client, so that module-specific calls can be made
+
+source [../src/fedimint_client/lib.rs.html#161]
+
+FN CLIENT_CONFIG(&SELF) -> &CLIENTCONFIG
+
+source [../src/fedimint_client/lib.rs.html#168]
+
+FN API(&SELF) -> &DYNGLOBALAPI
+
+Returns a reference to the client’s federation API client. The provided interface [IGlobalFederationApi] typically does not
+provide the necessary functionality, for this extension traits like [fedimint_core::api::GlobalFederationApi] have to be used.
+
+source [../src/fedimint_client/lib.rs.html#170]
+
+FN DECODERS(&SELF) -> &MODULEDECODERREGISTRY
+
+source [../src/fedimint_client/lib.rs.html#176-180]
+
+FN CLAIM_INPUT_DYN<'LIFE0, 'LIFE1, 'LIFE2, 'LIFE3, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT CLIENTSMDATABASETRANSACTION [sm/struct.ClientSMDatabaseTransaction.html]<'LIFE2, 'LIFE3>,
+    INPUT: INSTANCELESSDYNCLIENTINPUT [type.InstancelessDynClientInput.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = (TRANSACTIONID, OPTION
+[https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<OUTPOINT>)> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    'LIFE3: 'ASYNC_TRAIT,
+
+This function is mostly meant for internal use, you are probably looking for DynGlobalClientContext::claim_input
+[struct.DynGlobalClientContext.html#method.claim_input]. Returns transaction id of the funding transaction and an optional
+OutPoint that represents change if change was added.
+
+source [../src/fedimint_client/lib.rs.html#186-190]
+
+FN FUND_OUTPUT_DYN<'LIFE0, 'LIFE1, 'LIFE2, 'LIFE3, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT CLIENTSMDATABASETRANSACTION [sm/struct.ClientSMDatabaseTransaction.html]<'LIFE2, 'LIFE3>,
+    OUTPUT: INSTANCELESSDYNCLIENTOUTPUT [type.InstancelessDynClientOutput.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<(TRANSACTIONID, OPTION
+[https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<OUTPOINT>)>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    'LIFE3: 'ASYNC_TRAIT,
+
+This function is mostly meant for internal use, you are probably looking for DynGlobalClientContext::fund_output
+[struct.DynGlobalClientContext.html#method.fund_output]. Returns transaction id of the funding transaction and an optional
+OutPoint that represents change if change was added.
+
+source [../src/fedimint_client/lib.rs.html#193-197]
+
+FN ADD_STATE_MACHINE_DYN<'LIFE0, 'LIFE1, 'LIFE2, 'LIFE3, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT CLIENTSMDATABASETRANSACTION [sm/struct.ClientSMDatabaseTransaction.html]<'LIFE2, 'LIFE3>,
+    SM: BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN ISTATE
+[sm/trait.IState.html]<DYNGLOBALCLIENTCONTEXT [struct.DynGlobalClientContext.html]> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    'LIFE3: 'ASYNC_TRAIT,
+
+Adds a state machine to the executor.
+
+source [../src/fedimint_client/lib.rs.html#199-202]
+
+FN TRANSACTION_UPDATE_STREAM<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [sm/struct.OperationId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = BOXSTREAM<'_, OPERATIONSTATE
+[sm/struct.OperationState.html]<TXSUBMISSIONSTATES [transaction/enum.TxSubmissionStates.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+
+IMPLEMENTORS§
+
+

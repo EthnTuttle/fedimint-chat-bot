@@ -1,0 +1,272 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_logging/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+
+
+use std::fs::File;
+use std::io;
+use std::net::SocketAddr;
+use std::time::Duration;
+
+use tracing_subscriber::layer::SubscriberExt;
+use tracing_subscriber::util::SubscriberInitExt;
+use tracing_subscriber::{EnvFilter, Layer};
+
+/// Constants for categorizing the logging type
+pub const LOG_BLOCKCHAIN: &str = "net::blockchain";
+pub const LOG_CONSENSUS: &str = "consensus";
+pub const LOG_CORE: &str = "core";
+pub const LOG_DB: &str = "db";
+pub const LOG_DEVIMINT: &str = "devimint";
+pub const LOG_ECASH_RECOVERY: &str = "ecash-recovery";
+pub const LOG_NET_API: &str = "net::api";
+pub const LOG_NET_PEER_DKG: &str = "net::peer::dkg";
+pub const LOG_NET_PEER: &str = "net::peer";
+pub const LOG_NET: &str = "net";
+pub const LOG_TASK: &str = "task";
+pub const LOG_TEST: &str = "test";
+pub const LOG_TIMING: &str = "timing";
+pub const LOG_WALLET: &str = "wallet";
+pub const LOG_CLIENT: &str = "client";
+pub const LOG_CLIENT_BACKUP: &str = "client::backup";
+pub const LOG_CLIENT_RECOVERY: &str = "client::recovery";
+pub const LOG_CLIENT_RECOVERY_MINT: &str = "client::recovery::mint";
+
+/// Consolidates the setup of server tracing into a helper
+#[derive(Default)]
+pub struct TracingSetup {
+    tokio_console_bind: Option<SocketAddr>,
+    with_jaeger: bool,
+    with_chrome: bool,
+    with_file: Option<File>,
+}
+
+impl TracingSetup {
+    /// Setup a console server for tokio logging <https://docs.rs/console-subscriber>
+    #[cfg(feature = "telemetry")]
+    pub fn tokio_console_bind(&mut self, address: Option<SocketAddr>) -> &mut Self {
+        self.tokio_console_bind = address;
+        self
+    }
+
+    /// Setup telemetry through Jaeger <https://docs.rs/tracing-jaeger>
+    #[cfg(feature = "telemetry")]
+    pub fn with_jaeger(&mut self, enabled: bool) -> &mut Self {
+        self.with_jaeger = enabled;
+        self
+    }
+
+    /// Setup telemetry through Chrome <https://docs.rs/tracing-chrome>
+    #[cfg(feature = "telemetry")]
+    pub fn with_chrome(&mut self, enabled: bool) -> &mut Self {
+        self.with_chrome = enabled;
+        self
+    }
+
+    pub fn with_file(&mut self, file: Option<File>) -> &mut Self {
+        self.with_file = file;
+        self
+    }
+
+    /// Initialize the logging, must be called for tracing to begin
+    pub fn init(&mut self) -> anyhow::Result<()> {
+        use tracing_subscriber::fmt::writer::{BoxMakeWriter, Tee};
+        let filter_layer =
+            EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
+
+        let fmt_writer = if let Some(file) = self.with_file.take() {
+            BoxMakeWriter::new(Tee::new(io::stderr, file))
+        } else {
+            BoxMakeWriter::new(io::stderr)
+        };
+
+        let fmt_layer = tracing_subscriber::fmt::layer()
+            .with_writer(fmt_writer)
+            .with_filter(filter_layer);
+
+        let console_opt = || -> Option<Box<dyn Layer<_> + Send + Sync + 'static>> {
+            #[cfg(feature = "telemetry")]
+            if let Some(l) = self.tokio_console_bind {
+                let tracer = console_subscriber::ConsoleLayer::builder()
+                    .retention(Duration::from_secs(60))
+                    .server_addr(l)
+                    .spawn()
+                    // tokio-console cares only about these layers, so we filter separately for it
+                    .with_filter(EnvFilter::new("tokio=trace,runtime=trace"));
+                return Some(tracer.boxed());
+            }
+            None
+        };
+
+        let telemetry_layer_opt = || -> Option<Box<dyn Layer<_> + Send + Sync + 'static>> {
+            #[cfg(feature = "telemetry")]
+            if self.with_jaeger {
+                let tracer = opentelemetry_jaeger::new_agent_pipeline()
+                    .with_service_name("fedimint")
+                    .install_simple()
+                    .unwrap();
+
+                return Some(tracing_opentelemetry::layer().with_tracer(tracer).boxed());
+            }
+            None
+        };
+
+        let chrome_layer_opt = || -> Option<Box<dyn Layer<_> + Send + Sync + 'static>> {
+            #[cfg(feature = "telemetry")]
+            if self.with_chrome {
+                let (cr_layer, guard) = tracing_chrome::ChromeLayerBuilder::new()
+                    .include_args(true)
+                    .build();
+                // drop guard cause file to written and closed
+                // in this case file will closed after exit of program
+                std::mem::forget(guard);
+
+                return Some(cr_layer.boxed());
+            }
+            None
+        };
+
+        tracing_subscriber::registry()
+            .with(fmt_layer)
+            .with(console_opt())
+            .with(telemetry_layer_opt())
+            .with(chrome_layer_opt())
+            .try_init()?;
+        Ok(())
+    }
+}
+
+

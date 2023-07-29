@@ -1,0 +1,63 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+MODULE RPC
+
+ * Modules
+ * Structs
+ * Enums
+ * Traits
+ * Functions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE LN_GATEWAY [../index.html]::RPCCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/ln_gateway/rpc/mod.rs.html#1-182] · [−]
+
+
+MODULES
+
+rpc_client [rpc_client/index.html]
+rpc_server [rpc_server/index.html]
+
+
+STRUCTS
+
+BackupPayload [struct.BackupPayload.html]
+BalancePayload [struct.BalancePayload.html]
+ConnectFedPayload [struct.ConnectFedPayload.html]
+DepositAddressPayload [struct.DepositAddressPayload.html]
+FederationInfo [struct.FederationInfo.html]
+Information about one of the feds we are connected to
+GatewayInfo [struct.GatewayInfo.html]
+GatewayRequestInner [struct.GatewayRequestInner.html]
+InfoPayload [struct.InfoPayload.html]
+RestorePayload [struct.RestorePayload.html]
+WithdrawPayload [struct.WithdrawPayload.html]
+
+
+ENUMS
+
+GatewayRequest [enum.GatewayRequest.html]
+
+
+TRAITS
+
+GatewayRequestTrait [trait.GatewayRequestTrait.html]
+
+
+FUNCTIONS
+
+serde_hex_deserialize [fn.serde_hex_deserialize.html]
+serde_hex_serialize [fn.serde_hex_serialize.html]

@@ -1,0 +1,324 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../hkdf/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../hkdf/index.html
+
+
+BITCOINHASH
+
+
+REQUIRED ASSOCIATED TYPES
+
+ * Engine
+ * Inner
+
+
+REQUIRED ASSOCIATED CONSTANTS
+
+ * LEN
+
+
+PROVIDED ASSOCIATED CONSTANTS
+
+ * DISPLAY_BACKWARD
+
+
+REQUIRED METHODS
+
+ * all_zeros
+ * as_inner
+ * from_engine
+ * from_inner
+ * from_slice
+ * into_inner
+
+
+PROVIDED METHODS
+
+ * engine
+ * hash
+
+
+IMPLEMENTORS
+
+
+IN HKDF [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT HKDF [index.html]::BITCOINHASHCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait BitcoinHash: Copyhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Copy.html + Clonehttps://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html + PartialEqhttps://doc.rust-lang.org/1.67.0/core/cmp/trait.PartialEq.html<Self> + Eqhttps://doc.rust-lang.org/1.67.0/core/cmp/trait.Eq.html + PartialOrdhttps://doc.rust-lang.org/1.67.0/core/cmp/trait.PartialOrd.html<Self> + Ordhttps://doc.rust-lang.org/1.67.0/core/cmp/trait.Ord.html + Hashhttps://doc.rust-lang.org/1.67.0/core/hash/trait.Hash.html + Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + Displayhttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html + LowerHexhttps://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerHex.html + Indexhttps://doc.rust-lang.org/1.67.0/core/ops/index/trait.Index.html<RangeFullhttps://doc.rust-lang.org/1.67.0/core/ops/range/struct.RangeFull.html, Output = [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], Output = [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], Output = [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], Output = [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], Output = u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html> + Indexhttps://doc.rust-lang.org/1.67.0/core/ops/index/trait.Index.html<RangeFromhttps://doc.rust-lang.org/1.67.0/core/ops/range/struct.RangeFrom.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html>> + Indexhttps://doc.rust-lang.org/1.67.0/core/ops/index/trait.Index.html<RangeTohttps://doc.rust-lang.org/1.67.0/core/ops/range/struct.RangeTo.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html>> + Indexhttps://doc.rust-lang.org/1.67.0/core/ops/index/trait.Index.html<Rangehttps://doc.rust-lang.org/1.67.0/core/ops/range/struct.Range.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html>> + Indexhttps://doc.rust-lang.org/1.67.0/core/ops/index/trait.Index.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html> + Borrowhttps://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html<[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]> {
+    type Engine: HashEngine;
+    type Inner: FromHex;
+
+    const LEN: usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html;
+    const DISPLAY_BACKWARD: boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html = false;
+
+    fn from_engine(e: Self::Enginetrait.BitcoinHash.html#associatedtype.Engine) -> Self;
+    fn from_slice(sl: &[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Self, Error>;
+    fn into_inner(self) -> Self::Innertrait.BitcoinHash.html#associatedtype.Inner;
+    fn as_inner(&self) -> &Self::Innertrait.BitcoinHash.html#associatedtype.Inner;
+    fn from_inner(inner: Self::Innertrait.BitcoinHash.html#associatedtype.Inner) -> Self;
+    fn all_zeros() -> Self;
+
+    fn engine() -> Self::Enginetrait.BitcoinHash.html#associatedtype.Engine { ... }
+    fn hash(data: &[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]) -> Self { ... }
+}
+
+Expand description
+
+Trait which applies to hashes of all types.
+
+
+REQUIRED ASSOCIATED TYPES§
+
+TYPE ENGINE: HASHENGINE
+
+A hashing engine which bytes can be serialized into. It is expected to implement the io::Write trait, and to never return errors
+under any conditions.
+
+TYPE INNER: FROMHEX
+
+The byte array that represents the hash internally.
+
+
+REQUIRED ASSOCIATED CONSTANTS§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+Length of the hash, in bytes.
+
+
+PROVIDED ASSOCIATED CONSTANTS§
+
+CONST DISPLAY_BACKWARD: BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html] = FALSE
+
+Flag indicating whether user-visible serializations of this hash should be backward. For some reason Satoshi decided this should
+be true for Sha256dHash, so here we are.
+
+
+REQUIRED METHODS§
+
+FN FROM_ENGINE(E: SELF::ENGINE [trait.BitcoinHash.html#associatedtype.Engine]) -> SELF
+
+Produces a hash from the current state of a given engine.
+
+FN FROM_SLICE(SL: &[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, ERROR>
+
+Copies a byte slice into a hash object.
+
+FN INTO_INNER(SELF) -> SELF::INNER [trait.BitcoinHash.html#associatedtype.Inner]
+
+Unwraps the hash and returns the underlying byte array.
+
+FN AS_INNER(&SELF) -> &SELF::INNER [trait.BitcoinHash.html#associatedtype.Inner]
+
+Unwraps the hash and returns a reference to the underlying byte array.
+
+FN FROM_INNER(INNER: SELF::INNER [trait.BitcoinHash.html#associatedtype.Inner]) -> SELF
+
+Constructs a hash from the underlying byte array.
+
+FN ALL_ZEROS() -> SELF
+
+Returns an all zero hash.
+
+An all zeros hash is a made up construct because there is not a known input that can create it, however it is used in various
+places in Bitcoin e.g., the Bitcoin genesis block’s previous blockhash and the coinbase transaction’s outpoint txid.
+
+
+PROVIDED METHODS§
+
+FN ENGINE() -> SELF::ENGINE [trait.BitcoinHash.html#associatedtype.Engine]
+
+Constructs a new engine.
+
+FN HASH(DATA: &[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]) -> SELF
+
+Hashes some bytes.
+
+
+IMPLEMENTORS§
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::HASH160 [hashes/struct.Hash160.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 20
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 20USIZE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::RIPEMD160 [hashes/struct.Ripemd160.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 20
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 20USIZE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::SHA1 [hashes/struct.Sha1.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 20
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 20USIZE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::SHA256 [hashes/struct.Sha256.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 32
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 32USIZE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::SHA256D [hashes/struct.Sha256d.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 32
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 32USIZE
+
+§
+
+CONST DISPLAY_BACKWARD: BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html] = TRUE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::SHA512 [hashes/struct.Sha512.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 64
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 64USIZE
+
+§
+
+
+IMPL HASH [trait.BitcoinHash.html] FOR HKDF::HASHES::SIPHASH24 [hashes/struct.Siphash24.html]
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 8
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 8USIZE
+
+§
+
+
+IMPL<T> HASH [trait.BitcoinHash.html] FOR HASH<T>WHERE
+    T: TAG,
+
+§
+
+TYPE ENGINE = HASHENGINE
+
+§
+
+TYPE INNER = [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]; 32
+[https://doc.rust-lang.org/1.67.0/std/primitive.array.html]]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = 32USIZE
+
+§
+
+CONST DISPLAY_BACKWARD: BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html] = TRUE
+
+§
+
+
+IMPL<T> HASH [trait.BitcoinHash.html] FOR HMAC<T>WHERE
+    T: HASH [trait.BitcoinHash.html],
+
+§
+
+TYPE ENGINE = HMACENGINE<T>
+
+§
+
+TYPE INNER = <T AS HASH [trait.BitcoinHash.html]>::INNER [trait.BitcoinHash.html#associatedtype.Inner]
+
+§
+
+CONST LEN: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html] = T::LEN
+

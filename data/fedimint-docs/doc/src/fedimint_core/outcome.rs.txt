@@ -1,0 +1,44 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_core/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+
+
+use fedimint_core::module::SerdeModuleEncoding;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Eq, PartialEq, Hash, Deserialize, Serialize)]
+pub enum TransactionStatus {
+    /// The rejected state is only recorded if the error happens after consensus
+    /// is achieved on the transaction. This should happen only rarely, e.g.
+    /// on double spends since a basic validity check is performed on
+    /// transaction submission or on not having enough UTXOs to peg-out.
+    Rejected(String),
+    /// The transaction was accepted and is now being processed
+    Accepted {
+        epoch: u64,
+        outputs: Vec<SerdeOutputOutcome>,
+    },
+}
+
+pub type SerdeOutputOutcome = SerdeModuleEncoding<fedimint_core::core::DynOutputOutcome>;
+
+

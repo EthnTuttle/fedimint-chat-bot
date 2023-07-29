@@ -1,0 +1,51 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+MODULE MINT
+
+ * Modules
+ * Structs
+ * Enums
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CLIENT_LEGACY [../index.html]::MINTCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client_legacy/mint/mod.rs.html#1-682] · [−]
+
+
+MODULES
+
+backup [backup/index.html]
+Backup and recovery of ecash notes
+db [db/index.html]
+
+
+STRUCTS
+
+MintClient [struct.MintClient.html]
+Federation module client for the Mint module. It can both create transaction inputs and outputs of the mint type.
+NoteIndex [struct.NoteIndex.html]
+An index used to deterministically derive [Note]s
+NoteIssuanceRequest [struct.NoteIssuanceRequest.html]
+Single [Note] issuance request to the mint.f
+NoteIssuanceRequests [struct.NoteIssuanceRequests.html]
+Multiple [Note] issuance requests
+SpendableNote [struct.SpendableNote.html]
+A [Note] with associated secret key that allows to proof ownership (spend it)
+
+
+ENUMS
+
+MintClientError [enum.MintClientError.html]
+NoteFinalizationError [enum.NoteFinalizationError.html]

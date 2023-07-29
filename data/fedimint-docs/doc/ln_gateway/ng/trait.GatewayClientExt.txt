@@ -1,0 +1,256 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+GATEWAYCLIENTEXT
+
+
+REQUIRED METHODS
+
+ * gateway_handle_intercepted_htlc
+ * gateway_pay_bolt11_invoice
+ * gateway_subscribe_ln_pay
+ * gateway_subscribe_ln_receive
+ * register_with_federation
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * Client
+
+
+IMPLEMENTORS
+
+
+IN LN_GATEWAY::NG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT LN_GATEWAY [../index.html]::NG [index.html]::GATEWAYCLIENTEXTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/ln_gateway/ng/mod.rs.html#93-123] · [−]
+
+pub trait GatewayClientExt {
+    fn gateway_pay_bolt11_invoice<'life0, 'async_trait>(
+        &'life0 self,
+        contract_id: ContractId../../fedimint_ln_common/contracts/struct.ContractId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<OperationId../../fedimint_client/sm/struct.OperationId.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn gateway_subscribe_ln_pay<'life0, 'async_trait>(
+        &'life0 self,
+        operation_id: OperationId../../fedimint_client/sm/struct.OperationId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<UpdateStreamOrOutcome../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html<'_, GatewayExtPayStatesenum.GatewayExtPayStates.html>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn register_with_federation<'life0, 'async_trait>(
+        &'life0 self,
+        gateway_api: Urlhttps://docs.rs/url/2.3.1/url/struct.Url.html,
+        route_hints: Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<RouteHint../../fedimint_ln_common/route_hints/struct.RouteHint.html>,
+        time_to_live: Durationhttps://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html,
+        gateway_id: PublicKey
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn gateway_handle_intercepted_htlc<'life0, 'async_trait>(
+        &'life0 self,
+        htlc: Htlcstruct.Htlc.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<OperationId../../fedimint_client/sm/struct.OperationId.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn gateway_subscribe_ln_receive<'life0, 'async_trait>(
+        &'life0 self,
+        operation_id: OperationId../../fedimint_client/sm/struct.OperationId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<UpdateStreamOrOutcome../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html<'_, GatewayExtReceiveStatesenum.GatewayExtReceiveStates.html>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/ln_gateway/ng/mod.rs.html#95-98]
+
+FN GATEWAY_PAY_BOLT11_INVOICE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    CONTRACT_ID: CONTRACTID [../../fedimint_ln_common/contracts/struct.ContractId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Pay lightning invoice on behalf of federation user
+
+source [../../src/ln_gateway/ng/mod.rs.html#101-104]
+
+FN GATEWAY_SUBSCRIBE_LN_PAY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<UPDATESTREAMOROUTCOME
+[../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html]<'_, GATEWAYEXTPAYSTATES [enum.GatewayExtPayStates.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Subscribe to update to lightning payment
+
+source [../../src/ln_gateway/ng/mod.rs.html#107-113]
+
+FN REGISTER_WITH_FEDERATION<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    GATEWAY_API: URL [https://docs.rs/url/2.3.1/url/struct.Url.html],
+    ROUTE_HINTS: VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<ROUTEHINT
+[../../fedimint_ln_common/route_hints/struct.RouteHint.html]>,
+    TIME_TO_LIVE: DURATION [https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html],
+    GATEWAY_ID: PUBLICKEY
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Register gateway with federation
+
+source [../../src/ln_gateway/ng/mod.rs.html#116]
+
+FN GATEWAY_HANDLE_INTERCEPTED_HTLC<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    HTLC: HTLC [struct.Htlc.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Attempt fulfill HTLC by buying preimage from the federation
+
+source [../../src/ln_gateway/ng/mod.rs.html#119-122]
+
+FN GATEWAY_SUBSCRIBE_LN_RECEIVE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<UPDATESTREAMOROUTCOME
+[../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html]<'_, GATEWAYEXTRECEIVESTATES [enum.GatewayExtReceiveStates.html]>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Subscribe to updates when the gateway is handling an intercepted HTLC
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/ln_gateway/ng/mod.rs.html#126-292]§
+
+
+IMPL GATEWAYCLIENTEXT [trait.GatewayClientExt.html] FOR CLIENT [../../fedimint_client/struct.Client.html]
+
+source [../../src/ln_gateway/ng/mod.rs.html#128-175]§
+
+FN GATEWAY_PAY_BOLT11_INVOICE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    CONTRACT_ID: CONTRACTID [../../fedimint_ln_common/contracts/struct.ContractId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Pays a LN invoice with our available funds
+
+source [../../src/ln_gateway/ng/mod.rs.html#223-245]§
+
+FN REGISTER_WITH_FEDERATION<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    GATEWAY_API: URL [https://docs.rs/url/2.3.1/url/struct.Url.html],
+    ROUTE_HINTS: VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<ROUTEHINT
+[../../fedimint_ln_common/route_hints/struct.RouteHint.html]>,
+    TIME_TO_LIVE: DURATION [https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html],
+    GATEWAY_ID: PUBLICKEY
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Register this gateway with the federation
+
+source [../../src/ln_gateway/ng/mod.rs.html#248-258]§
+
+FN GATEWAY_HANDLE_INTERCEPTED_HTLC<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    HTLC: HTLC [struct.Htlc.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Handles an intercepted HTLC by buying a preimage from the federation
+
+source [../../src/ln_gateway/ng/mod.rs.html#177-220]§
+
+FN GATEWAY_SUBSCRIBE_LN_PAY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<UPDATESTREAMOROUTCOME
+[../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html]<'_, GATEWAYEXTPAYSTATES [enum.GatewayExtPayStates.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/ln_gateway/ng/mod.rs.html#260-291]§
+
+FN GATEWAY_SUBSCRIBE_LN_RECEIVE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<UPDATESTREAMOROUTCOME
+[../../fedimint_client/oplog/enum.UpdateStreamOrOutcome.html]<'_, GATEWAYEXTRECEIVESTATES [enum.GatewayExtReceiveStates.html]>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+
+IMPLEMENTORS§
+
+

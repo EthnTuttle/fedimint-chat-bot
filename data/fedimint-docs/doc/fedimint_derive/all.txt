@@ -1,0 +1,28 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_derive/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_derive/index.html
+
+
+CRATE FEDIMINT_DERIVE
+
+ * Derive Macros
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+LIST OF ALL ITEMS
+
+
+DERIVE MACROS
+
+ * Decodable [derive.Decodable.html]
+ * Encodable [derive.Encodable.html]
+ * UnzipConsensus [derive.UnzipConsensus.html]
+

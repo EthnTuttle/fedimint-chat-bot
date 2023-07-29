@@ -1,0 +1,604 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../devimint/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+
+
+use std::ffi::OsStr;
+
+use anyhow::{anyhow, bail};
+use fedimint_core::task;
+use serde::de::DeserializeOwned;
+use tokio::fs::OpenOptions;
+use tokio::process::Child;
+use tracing::{debug, warn};
+
+use super::*;
+
+fn kill(child: &Child) {
+    let _ = nix::sys::signal::kill(
+        nix::unistd::Pid::from_raw(child.id().expect("pid should be present") as _),
+        nix::sys::signal::Signal::SIGTERM,
+    );
+}
+
+/// Kills process when all references to ProcessHandle are dropped.
+///
+/// NOTE: drop order is significant make sure fields in struct are declared in
+/// correct order it is generallly clients, process handle, deps
+#[derive(Debug, Clone)]
+pub struct ProcessHandle(Arc<ProcessHandleInner>);
+
+impl ProcessHandle {
+    pub async fn kill(self) -> Result<()> {
+        let arc_process_handle_inner = self.0;
+        let mut process_handle_inner = match Arc::try_unwrap(arc_process_handle_inner) {
+            Ok(process_handler_inner) => process_handler_inner,
+            Err(_) => return Err(anyhow!("Cannot kill process because of clones")),
+        };
+        let mut child = std::mem::take(&mut process_handle_inner.child).unwrap();
+        info!(LOG_DEVIMINT, "killing {}", process_handle_inner.name);
+        kill(&child);
+        child.wait().await?;
+        Ok(())
+    }
+}
+
+#[derive(Debug)]
+pub struct ProcessHandleInner {
+    name: String,
+    child: Option<Child>,
+}
+
+impl Drop for ProcessHandleInner {
+    fn drop(&mut self) {
+        let Some(child) = &mut self.child else { return; };
+        info!(LOG_DEVIMINT, "killing {}", self.name);
+        kill(child);
+    }
+}
+
+pub struct ProcessManager {
+    pub globals: vars::Global,
+}
+
+impl ProcessManager {
+    pub fn new(globals: vars::Global) -> Self {
+        Self { globals }
+    }
+
+    /// Logs to $FM_LOGS_DIR/{name}.{out,err}
+    pub async fn spawn_daemon(&self, name: &str, mut cmd: Command) -> Result<ProcessHandle> {
+        let logs_dir = env::var("FM_LOGS_DIR")?;
+        let path = format!("{logs_dir}/{name}.log");
+        let log = OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open(path)
+            .await?
+            .into_std()
+            .await;
+        cmd.cmd.kill_on_drop(false); // we handle killing ourself
+        cmd.cmd.stdout(log.try_clone()?);
+        cmd.cmd.stderr(log);
+        let child = cmd
+            .cmd
+            .spawn()
+            .with_context(|| format!("Could not spawn: {name}"))?;
+        Ok(ProcessHandle(Arc::new(ProcessHandleInner {
+            name: name.to_owned(),
+            child: Some(child),
+        })))
+    }
+}
+
+pub struct Command {
+    pub cmd: tokio::process::Command,
+    pub args_debug: Vec<String>,
+}
+
+impl Command {
+    pub fn arg<T: ToString>(mut self, arg: T) -> Self {
+        let string = arg.to_string();
+        self.cmd.arg(string.clone());
+        self.args_debug.push(string);
+        self
+    }
+
+    pub fn env<K, V>(mut self, key: K, val: V) -> Self
+    where
+        K: AsRef<OsStr>,
+        V: AsRef<OsStr>,
+    {
+        self.cmd.env(key, val);
+        self
+    }
+
+    pub fn envs<I, K, V>(mut self, env: I) -> Self
+    where
+        I: IntoIterator<Item = (K, V)>,
+        K: AsRef<OsStr>,
+        V: AsRef<OsStr>,
+    {
+        self.cmd.envs(env);
+        self
+    }
+
+    pub fn kill_on_drop(mut self, kill: bool) -> Self {
+        self.cmd.kill_on_drop(kill);
+        self
+    }
+
+    /// Run the command and get its output as json.
+    pub async fn out_json(&mut self) -> Result<serde_json::Value> {
+        Ok(serde_json::from_str(&self.out_string().await?)?)
+    }
+
+    fn command_debug(&self) -> String {
+        self.args_debug
+            .iter()
+            .map(|x| x.replace(' ', "␣"))
+            .collect::<Vec<_>>()
+            .join(" ")
+    }
+
+    /// Run the command and get its output as json.
+    pub async fn out_string(&mut self) -> Result<String> {
+        let output = self
+            .run_inner()
+            .await
+            .with_context(|| format!("command: {}", self.command_debug()))?;
+        let output = String::from_utf8(output.stdout)?;
+        Ok(output.trim().to_owned())
+    }
+
+    pub async fn run_inner(&mut self) -> Result<std::process::Output> {
+        debug!(LOG_DEVIMINT, "> {}", self.command_debug());
+        let output = self.cmd.output().await?;
+        if !output.status.success() {
+            bail!(
+                "{}\nstdout:\n{}\nstderr:\n{}",
+                output.status,
+                String::from_utf8_lossy(&output.stdout),
+                String::from_utf8_lossy(&output.stderr),
+            );
+        }
+        Ok(output)
+    }
+
+    /// Run the command ignoring its output.
+    pub async fn run(&mut self) -> Result<()> {
+        let _ = self
+            .run_inner()
+            .await
+            .with_context(|| format!("command: {}", self.command_debug()))?;
+        Ok(())
+    }
+
+    /// Run the command logging the output and error
+    pub async fn run_with_logging(&mut self, name: String) -> Result<()> {
+        let logs_dir = env::var("FM_LOGS_DIR")?;
+        let path = format!("{logs_dir}/{name}.log");
+        let log = OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open(path)
+            .await?
+            .into_std()
+            .await;
+        self.cmd.stdout(log.try_clone()?);
+        self.cmd.stderr(log);
+        let status = self.cmd.spawn()?.wait().await?;
+        if !status.success() {
+            bail!("{}", status);
+        }
+        Ok(())
+    }
+}
+
+/// easy syntax to create a Command
+///
+/// `(A1, A2, A3)` expands to
+/// ```ignore
+/// A1.cmd().await?
+///     .arg(A2)
+///     .arg(A3)
+///     .kill_on_drop(true)
+/// ```
+///
+/// If `An` is a string literal, it is replaced with `format!(a)`
+#[macro_export]
+macro_rules! cmd {
+    ($(@head ($($head:tt)* ))? $curr:literal $(, $($tail:tt)*)?) => {
+        cmd! {
+            @head ($($($head)*)? format!($curr),)
+            $($($tail)*)?
+        }
+    };
+    ($(@head ($($head:tt)* ))? $curr:expr $(, $($tail:tt)*)?) => {
+        cmd! {
+            @head ($($($head)*)? $curr,)
+            $($($tail)*)?
+        }
+    };
+    (@head ($($head:tt)* )) => {
+        cmd! {
+            @last
+            $($head)*
+        }
+    };
+    // last matcher
+    (@last $this:expr, $($arg:expr),* $(,)?) => {
+        {
+            #[allow(unused)]
+            use $crate::util::ToCmdExt;
+            $this.cmd().await
+                $(.arg($arg))*
+                .kill_on_drop(true)
+                .env("RUST_BACKTRACE", "1")
+        }
+    };
+}
+
+const POLL_INTERVAL: Duration = Duration::from_millis(200);
+
+pub async fn poll<Fut>(name: &str, f: impl Fn() -> Fut) -> Result<()>
+where
+    Fut: Future<Output = Result<bool>>,
+{
+    poll_value(name, || async { Ok(f().await?.then_some(())) }).await?;
+    Ok(())
+}
+
+pub async fn poll_value<Fut, R>(name: &str, f: impl Fn() -> Fut) -> Result<R>
+where
+    Fut: Future<Output = Result<Option<R>>>,
+{
+    let start = fedimint_core::time::now();
+    let mut last_time = start;
+    loop {
+        if let Some(output) = f().await? {
+            break Ok(output);
+        }
+        // report every 20 seconds
+        let now = fedimint_core::time::now();
+        if now.duration_since(last_time)? > Duration::from_secs(20) {
+            let total_duration = now.duration_since(start)?;
+            warn!(
+                LOG_DEVIMINT,
+                "waiting {name} for over {} seconds",
+                total_duration.as_secs()
+            );
+            last_time = now;
+        }
+        task::sleep(POLL_INTERVAL).await;
+    }
+}
+
+// used to add `cmd` method.
+pub trait ToCmdExt {
+    type Fut;
+    fn cmd(self) -> Self::Fut;
+}
+
+// a command that uses self as program name
+impl ToCmdExt for &'_ str {
+    type Fut = std::future::Ready<Command>;
+
+    fn cmd(self) -> Self::Fut {
+        std::future::ready(Command {
+            cmd: tokio::process::Command::new(self),
+            args_debug: vec![self.to_owned()],
+        })
+    }
+}
+
+pub trait JsonValueExt {
+    fn to_typed<T: DeserializeOwned>(self) -> Result<T>;
+}
+
+impl JsonValueExt for serde_json::Value {
+    fn to_typed<T: DeserializeOwned>(self) -> Result<T> {
+        Ok(serde_json::from_value(self)?)
+    }
+}
+
+

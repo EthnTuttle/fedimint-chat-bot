@@ -1,0 +1,33 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+IN FEDIMINT_TESTING::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_TESTING [../index.html]::DB [index.html]::GET_PROJECT_ROOTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/db.rs.html#20-36] · [−]
+
+pub fn get_project_root() -> Resulthttps://doc.rust-lang.org/1.67.0/std/io/error/type.Result.html<PathBufhttps://doc.rust-lang.org/1.67.0/std/path/struct.PathBuf.html>
+
+Expand description
+
+Get the project root (relative to closest Cargo.lock file)
+
+match fedimint_testing::db::get_project_root() {
+    Ok(p) => println!("Current project root is {:?}", p),
+    Err(e) => println!("Error obtaining project root {:?}", e),
+};
+

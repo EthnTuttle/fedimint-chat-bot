@@ -1,0 +1,658 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../tbs/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+
+
+//! # Threshold Blind Signatures
+//!
+//! This library implements an ad-hoc threshold blind signature scheme based on
+//! BLS signatures using the (unrelated) BLS12-381 curve.
+
+use std::hash::Hasher;
+
+use bls12_381::{pairing, G1Affine, G1Projective, G2Affine, G2Projective};
+pub use bls12_381::{G1Affine as MessagePoint, G2Affine as PubKeyPoint, Scalar};
+use ff::Field;
+use group::Curve;
+use rand::rngs::OsRng;
+use rand::RngCore;
+use serde::{Deserialize, Serialize};
+use sha3::digest::generic_array::typenum::U32;
+use sha3::Digest;
+
+use crate::hash::{hash_bytes_to_curve, hash_to_curve};
+use crate::poly::Poly;
+
+pub mod hash;
+pub mod poly;
+pub mod serde_impl;
+
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+pub struct PublicKeyShare(#[serde(with = "serde_impl::g2")] pub G2Affine);
+
+#[allow(clippy::derive_hash_xor_eq)]
+impl std::hash::Hash for PublicKeyShare {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        // As per <https://rust-lang.github.io/rust-clippy/master/index.html#/derive_hash_xor_eq>
+        // k1 == k2 ⇒ hash(k1) == hash(k2)
+        // must hold, and all infinities are equal, so must hash to the same value.
+        if bool::from(self.0.is_identity()) {
+            0.hash(state)
+        } else {
+            // TODO: This is not ideal, `Hash` impls should be as fast as possible.
+            // Would be better to hash in the `x` and `y`
+            self.0.to_compressed().hash(state)
+        }
+    }
+}
+
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+pub struct SecretKeyShare(#[serde(with = "serde_impl::scalar")] pub Scalar);
+
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+pub struct AggregatePublicKey(#[serde(with = "serde_impl::g2")] pub G2Affine);
+
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+pub struct BlindingKey(#[serde(with = "serde_impl::scalar")] pub Scalar);
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+pub struct BlindedMessage(#[serde(with = "serde_impl::g1")] pub G1Affine);
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+pub struct BlindedSignatureShare(#[serde(with = "serde_impl::g1")] pub G1Affine);
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+pub struct BlindedSignature(#[serde(with = "serde_impl::g1")] pub G1Affine);
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+pub struct Signature(#[serde(with = "serde_impl::g1")] pub G1Affine);
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+pub struct Message(#[serde(with = "serde_impl::g1")] pub G1Affine);
+
+pub trait FromRandom {
+    fn from_random(rng: &mut impl RngCore) -> Self;
+}
+
+impl FromRandom for Scalar {
+    fn from_random(rng: &mut impl RngCore) -> Self {
+        Field::random(rng)
+    }
+}
+
+impl Message {
+    pub fn from_bytes(msg: &[u8]) -> Message {
+        Message(hash_bytes_to_curve::<G1Projective>(msg).to_affine())
+    }
+
+    /// **IMPORTANT**: `from_bytes` includes a tag in the hash, this doesn't
+    pub fn from_hash(hash: impl Digest<OutputSize = U32>) -> Message {
+        Message(hash_to_curve::<G1Projective, _>(hash).to_affine())
+    }
+}
+
+#[allow(clippy::derive_hash_xor_eq)]
+impl std::hash::Hash for AggregatePublicKey {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        let serialized = self.0.to_compressed();
+        state.write(&serialized);
+    }
+}
+
+macro_rules! point_impl {
+    ($type:ty) => {
+        impl std::hash::Hash for $type {
+            fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+                let serialized = self.0.to_compressed();
+                state.write(&serialized);
+            }
+        }
+
+        impl $type {
+            pub fn encode_compressed(&self) -> [u8; 48] {
+                self.0.to_compressed()
+            }
+        }
+
+        impl PartialEq for $type {
+            fn eq(&self, other: &$type) -> bool {
+                self.0 == other.0
+            }
+        }
+
+        impl Eq for $type {}
+    };
+}
+
+point_impl!(BlindedMessage);
+point_impl!(Message);
+point_impl!(Signature);
+point_impl!(BlindedSignature);
+point_impl!(BlindedSignatureShare);
+
+impl SecretKeyShare {
+    pub fn to_pub_key_share(self) -> PublicKeyShare {
+        PublicKeyShare((G2Projective::generator() * self.0).to_affine())
+    }
+}
+
+impl BlindingKey {
+    pub fn random() -> BlindingKey {
+        // TODO: fix rand incompatibities
+        BlindingKey(Scalar::random(OsRng))
+    }
+}
+
+/// * `threshold`: how many signature shares are needed to produce a signature
+/// * `keys`: how many keys to generate
+pub fn dealer_keygen(
+    threshold: usize,
+    keys: usize,
+) -> (AggregatePublicKey, Vec<PublicKeyShare>, Vec<SecretKeyShare>) {
+    let mut rng = OsRng; // FIXME: pass rng
+    let poly = Poly::<Scalar, Scalar>::random(threshold - 1, &mut rng);
+    let (pub_shares, sec_shares) = (1..=keys)
+        .map(|idx| {
+            let sk = poly.evaluate(idx as u64);
+            let pk = G2Projective::generator() * sk;
+
+            (PublicKeyShare(pk.to_affine()), SecretKeyShare(sk))
+        })
+        .unzip();
+    let pub_key = G2Projective::generator() * poly.evaluate(0);
+
+    (
+        AggregatePublicKey(pub_key.to_affine()),
+        pub_shares,
+        sec_shares,
+    )
+}
+
+pub fn blind_message(msg: Message, blinding_key: BlindingKey) -> BlindedMessage {
+    let blinded_msg = msg.0 * blinding_key.0;
+
+    BlindedMessage(blinded_msg.to_affine())
+}
+
+pub fn sign_blinded_msg(msg: BlindedMessage, sks: SecretKeyShare) -> BlindedSignatureShare {
+    let sig = msg.0 * sks.0;
+    BlindedSignatureShare(sig.to_affine())
+}
+
+/// Combines a sufficient amount of valid blinded signature shares to a blinded
+/// signature. The responsibility of verifying the supplied shares lies with the
+/// caller.
+///
+/// * `sig_shares`: an iterator yielding pairs of key indices and signature
+///   shares from said key
+/// * `threshold`: number of shares needed to combine a signature
+///
+/// # Panics
+/// If the amount of shares supplied is less than the necessary amount
+pub fn combine_valid_shares<I>(sig_shares: I, threshold: usize) -> BlindedSignature
+where
+    I: IntoIterator<Item = (usize, BlindedSignatureShare)>,
+    I::IntoIter: Clone + ExactSizeIterator,
+{
+    let points = sig_shares
+        .into_iter()
+        .take(threshold)
+        .map(|(idx, share)| {
+            let x = Scalar::from((idx as u64) + 1);
+            let y = share.0.into();
+            (x, y)
+        })
+        .collect::<Vec<(Scalar, G1Projective)>>();
+    if points.len() < threshold {
+        panic!("Not enough signature shares");
+    }
+
+    if points.len() == 1 {
+        return BlindedSignature(points.first().unwrap().1.to_affine());
+    }
+
+    let bsig: G1Projective = poly::interpolate_zero(points.into_iter());
+    BlindedSignature(bsig.to_affine())
+}
+
+pub fn unblind_signature(blinding_key: BlindingKey, blinded_sig: BlindedSignature) -> Signature {
+    let sig = blinded_sig.0 * blinding_key.0.invert().unwrap();
+    Signature(sig.to_affine())
+}
+
+pub fn verify(msg: Message, sig: Signature, pk: AggregatePublicKey) -> bool {
+    pairing(&msg.0, &pk.0) == pairing(&sig.0, &G2Affine::generator())
+}
+
+pub fn verify_blind_share(
+    msg: BlindedMessage,
+    sig: BlindedSignatureShare,
+    pk: PublicKeyShare,
+) -> bool {
+    pairing(&msg.0, &pk.0) == pairing(&sig.0, &G2Affine::generator())
+}
+
+pub trait Aggregatable {
+    type Aggregate;
+
+    fn aggregate(&self, threshold: usize) -> Self::Aggregate;
+}
+
+impl Aggregatable for Vec<PublicKeyShare> {
+    type Aggregate = AggregatePublicKey;
+
+    fn aggregate(&self, threshold: usize) -> Self::Aggregate {
+        if self.len() == 1 {
+            return AggregatePublicKey(self.first().unwrap().0);
+        }
+
+        let elements = self
+            .iter()
+            .enumerate()
+            .map(|(idx, PublicKeyShare(pk))| (Scalar::from((idx + 1) as u64), pk.into()))
+            .take(threshold);
+        let pk: G2Projective = poly::interpolate_zero(elements);
+        AggregatePublicKey(pk.to_affine())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::{
+        blind_message, combine_valid_shares, dealer_keygen, sign_blinded_msg, unblind_signature,
+        verify, Aggregatable, BlindingKey, Message,
+    };
+
+    #[test]
+    fn test_keygen() {
+        let (pk, pks, _sks) = dealer_keygen(5, 15);
+        assert_eq!(pks.len(), 15);
+
+        let pka = pks.aggregate(5);
+        assert_eq!(pka, pk);
+    }
+
+    #[test]
+    fn test_roundtrip() {
+        let msg = Message::from_bytes(b"Hello World!");
+        let threshold = 5;
+
+        let bkey = BlindingKey::random();
+        let bmsg = blind_message(msg, bkey);
+
+        let (pk, _pks, sks) = dealer_keygen(threshold, 15);
+
+        let mut sigs = sks
+            .iter()
+            .enumerate()
+            .map(|(idx, sk)| (idx, sign_blinded_msg(bmsg, *sk)))
+            .collect::<Vec<_>>();
+
+        // All sig shards available
+        let bsig = combine_valid_shares(sigs.clone().into_iter(), threshold);
+        let sig = unblind_signature(bkey, bsig);
+        assert!(verify(msg, sig, pk));
+
+        // Missing sig shards
+        for _ in 0..5 {
+            sigs.pop();
+        }
+        let bsig = combine_valid_shares(sigs.clone().into_iter(), threshold);
+        let sig = unblind_signature(bkey, bsig);
+        assert!(verify(msg, sig, pk));
+
+        let new_order = [9, 5, 4, 7, 8, 6, 0, 1, 3, 2];
+
+        let shuffle_sigs = new_order.iter().map(|idx| sigs[*idx]);
+        let bsig = combine_valid_shares(shuffle_sigs, threshold);
+        let sig = unblind_signature(bkey, bsig);
+        assert!(verify(msg, sig, pk));
+    }
+
+    #[test]
+    #[should_panic(expected = "Not enough signature shares")]
+    fn test_insufficient_shares() {
+        let msg = Message::from_bytes(b"Hello World!");
+        let threshold = 5;
+
+        let bmsg = blind_message(msg, BlindingKey::random());
+
+        let (_, _pks, sks) = dealer_keygen(threshold, 4);
+
+        let sigs = sks
+            .iter()
+            .enumerate()
+            .map(|(idx, sk)| (idx, sign_blinded_msg(bmsg, *sk)));
+
+        // Combining an insufficient number of signature shares should panic
+        combine_valid_shares(sigs, threshold);
+    }
+}
+
+

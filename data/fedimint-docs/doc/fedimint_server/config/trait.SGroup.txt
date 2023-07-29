@@ -1,0 +1,129 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+SGROUP
+
+
+REQUIRED METHODS
+
+ * deserialize2
+ * serialize2
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * G1Projective
+ * G2Projective
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::CONFIG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../index.html]::CONFIG [index.html]::SGROUPCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait SGroup: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html {
+    fn serialize2<S>(
+        &self,
+        s: S
+    ) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<<S as Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html>::Okhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok, <S as Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html>::Errorhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error>
+    where
+        S: Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html;
+    fn deserialize2<'d, D>(d: D) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Self, <D as Deserializerhttps://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html<'d>>::Errorhttps://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error>
+    where
+        D: Deserializerhttps://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html<'d>;
+}
+
+
+REQUIRED METHODS§
+
+FN SERIALIZE2<S>(
+    &SELF,
+    S: S
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<<S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], <S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>WHERE
+    S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html],
+
+FN DESERIALIZE2<'D, D>(D: D) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, <D AS DESERIALIZER
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>WHERE
+    D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>,
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL SGROUP [trait.SGroup.html] FOR G1PROJECTIVE
+
+§
+
+FN SERIALIZE2<S>(
+    &SELF,
+    S: S
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<<S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], <S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>WHERE
+    S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html],
+
+§
+
+FN DESERIALIZE2<'D, D>(
+    D: D
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<G1PROJECTIVE, <D AS DESERIALIZER
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>WHERE
+    D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>,
+
+§
+
+
+IMPL SGROUP [trait.SGroup.html] FOR G2PROJECTIVE
+
+§
+
+FN SERIALIZE2<S>(
+    &SELF,
+    S: S
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<<S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], <S AS SERIALIZER
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>WHERE
+    S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html],
+
+§
+
+FN DESERIALIZE2<'D, D>(
+    D: D
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<G2PROJECTIVE, <D AS DESERIALIZER
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>WHERE
+    D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>,
+
+
+IMPLEMENTORS§
+
+

@@ -1,0 +1,69 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+FINAL
+
+
+REQUIRED METHODS
+
+ * is_final
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * TransactionStatus
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CLIENT_LEGACY::TRANSACTION [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CLIENT_LEGACY [../index.html]::TRANSACTION [index.html]::FINALCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client_legacy/transaction.rs.html#196-198] · [−]
+
+pub trait Final {
+    fn is_final(&self) -> boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_client_legacy/transaction.rs.html#197]
+
+FN IS_FINAL(&SELF) -> BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/fedimint_client_legacy/transaction.rs.html#222-238]§
+
+
+IMPL FINAL [trait.Final.html] FOR TRANSACTIONSTATUS
+
+source [../../src/fedimint_client_legacy/transaction.rs.html#223-237]§
+
+FN IS_FINAL(&SELF) -> BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_client_legacy/transaction.rs.html#205-220]§
+
+
+IMPL FINAL [trait.Final.html] FOR OUTPUTOUTCOME [../outcome/legacy/enum.OutputOutcome.html]
+

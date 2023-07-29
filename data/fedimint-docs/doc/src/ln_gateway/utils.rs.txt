@@ -1,0 +1,174 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../ln_gateway/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+
+
+use std::future::Future;
+use std::result::Result;
+use std::time::Duration;
+
+use fedimint_core::task;
+use tracing::info;
+
+/// Run the supplied closure `op_fn` up to `max_attempts` times. Wait for the
+/// supplied `Duration` `interval` between attempts
+///
+/// # Returns
+///
+/// - If the closure runs successfully, the result is immediately returned
+/// - If the closure did not run successfully for `max_attempts` times, the
+///   error of the closure is returned
+pub async fn retry<F, Fut, T>(
+    op_name: String,
+    op_fn: F,
+    interval: Duration,
+    max_attempts: u32,
+) -> Result<T, anyhow::Error>
+where
+    F: Fn() -> Fut,
+    Fut: Future<Output = Result<T, anyhow::Error>>,
+{
+    assert_ne!(max_attempts, 0, "max_attempts must be greater than 0");
+    let mut attempts = 0;
+    loop {
+        attempts += 1;
+        match op_fn().await {
+            Ok(result) => return Ok(result),
+            Err(err) if attempts < max_attempts => {
+                // run closure op_fn again
+                info!(
+                    "{} failed with error: {}. Retrying in {} seconds",
+                    op_name,
+                    err,
+                    interval.as_secs()
+                );
+                task::sleep(interval).await;
+            }
+            Err(err) => return Err(err),
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::sync::atomic::{AtomicU8, Ordering};
+    use std::time::Duration;
+
+    use anyhow::anyhow;
+
+    use super::retry;
+
+    #[tokio::test]
+    async fn retry_succeed_with_one_attempt() {
+        let counter = AtomicU8::new(0);
+        let closure = || async {
+            counter.fetch_add(1, Ordering::SeqCst);
+            // always return a success
+            Ok(42)
+        };
+
+        let _ = retry("Run once".to_string(), closure, Duration::ZERO, 3).await;
+
+        assert_eq!(counter.load(Ordering::SeqCst), 1);
+    }
+
+    #[tokio::test]
+    async fn retry_fail_with_three_attempts() {
+        let counter = AtomicU8::new(0);
+        let closure = || async {
+            counter.fetch_add(1, Ordering::SeqCst);
+            // always fail
+            Err::<(), anyhow::Error>(anyhow!("42"))
+        };
+
+        let _ = retry("Run 3 times".to_string(), closure, Duration::ZERO, 3).await;
+
+        assert_eq!(counter.load(Ordering::SeqCst), 3);
+    }
+}
+
+

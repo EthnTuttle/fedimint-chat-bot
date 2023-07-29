@@ -1,0 +1,129 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_client/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_client/index.html
+
+
+ICLIENTMODULEGEN
+
+
+REQUIRED METHODS
+
+ * as_common
+ * decoder
+ * init
+ * module_kind
+ * supported_api_versions
+
+
+TRAIT IMPLEMENTATIONS
+
+ * AsRef<dyn IClientModuleGen + 'static>
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CLIENT::MODULE::GEN [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_CLIENT [../../index.html]::MODULE [../index.html]::GEN [index.html]::ICLIENTMODULEGENCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_client/module/gen.rs.html#44-66] · [−]
+
+pub trait IClientModuleGen: IDynCommonModuleGen + Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + MaybeSend + MaybeSync {
+    fn decoder(&self) -> Decoder;
+    fn module_kind(&self) -> ModuleKind;
+    fn as_common(&self) -> &(dyn IDynCommonModuleGen + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html + 'static);
+    fn supported_api_versions(&self) -> MultiApiVersion;
+    fn init<'life0, 'async_trait>(
+        &'life0 self,
+        cfg: ClientModuleConfig,
+        db: Database,
+        instance_id: ModuleInstanceId,
+        api_version: ApiVersion,
+        module_root_secret: DerivableSecret../../../fedimint_derive_secret/struct.DerivableSecret.html,
+        notifier: Notifier../../sm/struct.Notifier.html<DynGlobalClientContext../../struct.DynGlobalClientContext.html>,
+        api: DynGlobalApi
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<DynClientModule../struct.DynClientModule.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_client/module/gen.rs.html#45]
+
+FN DECODER(&SELF) -> DECODER
+
+source [../../../src/fedimint_client/module/gen.rs.html#47]
+
+FN MODULE_KIND(&SELF) -> MODULEKIND
+
+source [../../../src/fedimint_client/module/gen.rs.html#49]
+
+FN AS_COMMON(&SELF) -> &(DYN IDYNCOMMONMODULEGEN + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] + 'STATIC)
+
+source [../../../src/fedimint_client/module/gen.rs.html#52]
+
+FN SUPPORTED_API_VERSIONS(&SELF) -> MULTIAPIVERSION
+
+See ClientModuleGen::supported_api_versions [trait.ClientModuleGen.html#tymethod.supported_api_versions]
+
+source [../../../src/fedimint_client/module/gen.rs.html#55-65]
+
+FN INIT<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    CFG: CLIENTMODULECONFIG,
+    DB: DATABASE,
+    INSTANCE_ID: MODULEINSTANCEID,
+    API_VERSION: APIVERSION,
+    MODULE_ROOT_SECRET: DERIVABLESECRET [../../../fedimint_derive_secret/struct.DerivableSecret.html],
+    NOTIFIER: NOTIFIER [../../sm/struct.Notifier.html]<DYNGLOBALCLIENTCONTEXT [../../struct.DynGlobalClientContext.html]>,
+    API: DYNGLOBALAPI
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<DYNCLIENTMODULE [../struct.DynClientModule.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [../../../src/fedimint_client/module/gen.rs.html#127-131]§
+
+
+IMPL ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<DYN ICLIENTMODULEGEN [trait.IClientModuleGen.html] +
+'STATIC> FOR DYNCLIENTMODULEGEN [struct.DynClientModuleGen.html]
+
+source [../../../src/fedimint_client/module/gen.rs.html#128-130]§
+
+FN AS_REF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html#tymethod.as_ref](&SELF) -> &(DYN ICLIENTMODULEGEN
+[trait.IClientModuleGen.html] + 'STATIC)
+
+Converts this type into a shared reference of the (usually inferred) input type.
+
+
+IMPLEMENTORS§
+
+source [../../../src/fedimint_client/module/gen.rs.html#69-114]§
+
+
+IMPL<T> ICLIENTMODULEGEN [trait.IClientModuleGen.html] FOR TWHERE
+    T: CLIENTMODULEGEN [trait.ClientModuleGen.html] + 'STATIC + MAYBESEND + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+

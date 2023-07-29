@@ -1,0 +1,35 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+MODULE MACROS
+
+ * Macros
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_SERVER [../index.html]::MACROSCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+
+MACROS
+
+_dyn_newtype_define_inner [macro._dyn_newtype_define_inner.html]
+_dyn_newtype_define_with_instance_id_inner [macro._dyn_newtype_define_with_instance_id_inner.html]
+_dyn_newtype_impl_deref_mut [macro._dyn_newtype_impl_deref_mut.html]
+dyn_newtype_define [macro.dyn_newtype_define.html]
+Define “dyn newtype” (a newtype over dyn Trait)
+dyn_newtype_define_with_instance_id [macro.dyn_newtype_define_with_instance_id.html]
+dyn_newtype_impl_dyn_clone_passhthrough [macro.dyn_newtype_impl_dyn_clone_passhthrough.html]
+Implement Clone on a “dyn newtype”
+dyn_newtype_impl_dyn_clone_passhthrough_with_instance_id [macro.dyn_newtype_impl_dyn_clone_passhthrough_with_instance_id.html]

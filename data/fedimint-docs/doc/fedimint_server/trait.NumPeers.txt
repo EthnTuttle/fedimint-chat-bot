@@ -1,0 +1,144 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_server/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_server/index.html
+
+
+NUMPEERS
+
+
+REQUIRED METHODS
+
+ * total
+
+
+PROVIDED METHODS
+
+ * degree
+ * max_evil
+ * one_honest
+ * threshold
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * &[PeerId]
+ * BTreeMap<PeerId, T, Global>
+ * BTreeSet<PeerId, Global>
+ * Vec<PeerId, Global>
+ * Vec<PeerUrl, Global>
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT FEDIMINT_SERVER [index.html]::NUMPEERSCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait NumPeers {
+    fn total(&self) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html;
+
+    fn max_evil(&self) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html { ... }
+    fn one_honest(&self) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html { ... }
+    fn degree(&self) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html { ... }
+    fn threshold(&self) -> usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html { ... }
+}
+
+Expand description
+
+for consensus-related calculations given the number of peers
+
+
+REQUIRED METHODS§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+
+PROVIDED METHODS§
+
+FN MAX_EVIL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+number of peers that can be evil without disrupting the federation
+
+FN ONE_HONEST(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+number of peers to select such that one is honest (under our assumptions)
+
+FN DEGREE(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+Degree of a underlying polynomial to require threshold signatures
+
+FN THRESHOLD(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+number of peers required for a signature
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL NUMPEERS [trait.NumPeers.html] FOR BTREESET
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<PEERID [struct.PeerId.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+§
+
+
+IMPL NUMPEERS [trait.NumPeers.html] FOR &[PEERID [struct.PeerId.html]]
+
+§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+§
+
+
+IMPL NUMPEERS [trait.NumPeers.html] FOR VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<PEERID
+[struct.PeerId.html], GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+§
+
+
+IMPL<T> NUMPEERS [trait.NumPeers.html] FOR BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<PEERID [struct.PeerId.html], T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+§
+
+
+IMPL NUMPEERS [trait.NumPeers.html] FOR VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<PEERURL
+[config/struct.PeerUrl.html], GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN TOTAL(&SELF) -> USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]
+
+
+IMPLEMENTORS§
+
+

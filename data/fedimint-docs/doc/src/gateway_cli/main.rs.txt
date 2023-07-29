@@ -1,0 +1,326 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../gateway_cli/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+
+
+use bitcoin::{Address, Amount};
+use clap::{CommandFactory, Parser, Subcommand};
+use fedimint_core::config::FederationId;
+use fedimint_logging::TracingSetup;
+use ln_gateway::rpc::rpc_client::GatewayRpcClient;
+use ln_gateway::rpc::{
+    BackupPayload, BalancePayload, ConnectFedPayload, DepositAddressPayload, RestorePayload,
+    WithdrawPayload,
+};
+use serde::Serialize;
+use url::Url;
+
+#[derive(Parser)]
+#[command(version)]
+struct Cli {
+    /// The address of the gateway webserver
+    #[clap(short, long, default_value = "http://127.0.0.1:8175")]
+    address: Url,
+    #[command(subcommand)]
+    command: Commands,
+    /// WARNING: Passing in a password from the command line may be less secure!
+    #[clap(long)]
+    rpcpassword: Option<String>,
+}
+
+#[derive(Subcommand)]
+pub enum Commands {
+    /// Display CLI version hash
+    VersionHash,
+    /// Display high-level information about the Gateway
+    Info,
+    /// Check gateway balance
+    Balance {
+        #[clap(long)]
+        federation_id: FederationId,
+    },
+    /// Generate a new peg-in address, funds sent to it can later be claimed
+    Address {
+        #[clap(long)]
+        federation_id: FederationId,
+    },
+    /// Claim funds from a gateway federation
+    Withdraw {
+        #[clap(long)]
+        federation_id: FederationId,
+        /// The amount to withdraw
+        #[clap(long)]
+        amount: Amount,
+        /// The address to send the funds to
+        #[clap(long)]
+        address: Address,
+    },
+    /// Register federation with the gateway
+    ConnectFed {
+        /// ConnectInfo code to connect to the federation
+        connect: String,
+    },
+    /// Make a backup of snapshot of all ecash
+    Backup {
+        #[clap(long)]
+        federation_id: FederationId,
+    },
+    /// Restore ecash from last available snapshot or from scratch
+    Restore {
+        #[clap(long)]
+        federation_id: FederationId,
+    },
+    Completion {
+        shell: clap_complete::Shell,
+    },
+}
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    TracingSetup::default().init()?;
+
+    let cli = Cli::parse();
+    let client = || GatewayRpcClient::new(cli.address, source_password(cli.rpcpassword));
+
+    match cli.command {
+        Commands::VersionHash => {
+            println!("{}", env!("FEDIMINT_BUILD_CODE_VERSION"));
+        }
+        Commands::Info => {
+            let response = client().get_info().await?;
+
+            print_response(response).await;
+        }
+        Commands::Balance { federation_id } => {
+            let response = client()
+                .get_balance(BalancePayload { federation_id })
+                .await?;
+
+            print_response(response).await;
+        }
+        Commands::Address { federation_id } => {
+            let response = client()
+                .get_deposit_address(DepositAddressPayload { federation_id })
+                .await?;
+
+            print_response(response).await;
+        }
+        Commands::Withdraw {
+            federation_id,
+            amount,
+            address,
+        } => {
+            let response = client()
+                .withdraw(WithdrawPayload {
+                    federation_id,
+                    amount,
+                    address,
+                })
+                .await?;
+
+            print_response(response).await;
+        }
+        Commands::ConnectFed { connect } => {
+            let response = client()
+                .connect_federation(ConnectFedPayload { connect })
+                .await?;
+
+            print_response(response).await;
+        }
+        Commands::Backup { federation_id } => {
+            client().backup(BackupPayload { federation_id }).await?;
+        }
+        Commands::Restore { federation_id } => {
+            client().restore(RestorePayload { federation_id }).await?;
+        }
+        Commands::Completion { shell } => {
+            clap_complete::generate(
+                shell,
+                &mut Cli::command(),
+                "gateway-cli",
+                &mut std::io::stdout(),
+            );
+        }
+    }
+
+    Ok(())
+}
+
+pub async fn print_response<T: Serialize>(val: T) {
+    println!(
+        "{}",
+        serde_json::to_string_pretty(&val).expect("Cannot serialize")
+    )
+}
+
+pub fn source_password(rpcpassword: Option<String>) -> String {
+    match rpcpassword {
+        None => rpassword::prompt_password("Enter gateway password:").unwrap(),
+        Some(password) => {
+            eprintln!("WARNING: Passing in a password from the command line may be less secure!");
+            password
+        }
+    }
+}
+
+

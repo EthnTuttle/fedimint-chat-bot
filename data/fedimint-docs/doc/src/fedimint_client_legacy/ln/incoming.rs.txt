@@ -1,0 +1,112 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../fedimint_client_legacy/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+
+
+use bitcoin::secp256k1::KeyPair;
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::Amount;
+use lightning_invoice::Invoice;
+use serde::Serialize;
+
+use crate::modules::ln::contracts::incoming::IncomingContract;
+use crate::modules::ln::contracts::{ContractId, IdentifiableContract};
+use crate::modules::ln::LightningInput;
+
+#[derive(Debug, Clone, Encodable, Decodable)]
+pub struct IncomingContractAccount {
+    pub amount: Amount,
+    pub contract: IncomingContract,
+}
+
+impl IncomingContractAccount {
+    pub fn claim(&self) -> LightningInput {
+        LightningInput {
+            contract_id: self.contract.contract_id(),
+            amount: self.amount,
+            witness: None,
+        }
+    }
+}
+
+// TODO: should this have some kind of "state" enum - e.g. pending, paid,
+// expired
+/// Invoice whose "offer" has been accepted by federation
+#[derive(Debug, Encodable, Decodable)]
+pub struct ConfirmedInvoice {
+    /// The invoice itself
+    pub invoice: Invoice,
+    /// Keypair that will be able to sweep contract once it has received payment
+    pub keypair: KeyPair,
+}
+
+impl Serialize for ConfirmedInvoice {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_str(self.invoice.to_string().as_str())
+    }
+}
+
+impl ConfirmedInvoice {
+    pub fn contract_id(&self) -> ContractId {
+        // FIXME: Should we be using the payment hash?
+        (*self.invoice.payment_hash()).into()
+    }
+}
+
+

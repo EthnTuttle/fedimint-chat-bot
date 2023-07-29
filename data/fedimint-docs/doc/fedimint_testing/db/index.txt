@@ -1,0 +1,48 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+MODULE DB
+
+ * Constants
+ * Functions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_TESTING [../index.html]::DBCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/db.rs.html#1-135] · [−]
+
+
+CONSTANTS
+
+BYTE_8 [constant.BYTE_8.html]
+BYTE_20 [constant.BYTE_20.html]
+BYTE_32 [constant.BYTE_32.html]
+STRING_64 [constant.STRING_64.html]
+
+
+FUNCTIONS
+
+copy_directory [fn.copy_directory.html]
+Helper function that recursively copies all of the contents from src to dst.
+get_project_root [fn.get_project_root.html]
+Get the project root (relative to closest Cargo.lock file)
+prepare_snapshot [fn.prepare_snapshot.html]
+Creates the database backup directory by appending the snapshot_name to db/migrations. Then this function will execute the
+provided prepare_fn which is expected to populate the database with the appropriate data for testing a migration. If the snapshot
+directory already exists, this function will do nothing.
+validate_migrations [fn.validate_migrations.html]
+Iterates over all of the databases supplied in the database backup directory. First, a temporary database will be created and the
+contents will be populated from the database backup directory. Next, this function will execute the provided validate closure. The
+validate closure is expected to do any validation necessary on the temporary database, such as applying the appropriate database
+migrations and then reading all of the data to verify the migrations were successful.

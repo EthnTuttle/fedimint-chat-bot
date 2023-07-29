@@ -1,0 +1,82 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+CRATE TBS
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Modules
+ * Structs
+ * Traits
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE TBSCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/tbs/lib.rs.html#1-325] · [−]
+Expand description
+
+
+THRESHOLD BLIND SIGNATURES
+
+This library implements an ad-hoc threshold blind signature scheme based on BLS signatures using the (unrelated) BLS12-381 curve.
+
+
+MODULES
+
+hash [hash/index.html]
+poly [poly/index.html]
+serde_impl [serde_impl/index.html]
+
+
+STRUCTS
+
+AggregatePublicKey [struct.AggregatePublicKey.html]
+BlindedMessage [struct.BlindedMessage.html]
+BlindedSignature [struct.BlindedSignature.html]
+BlindedSignatureShare [struct.BlindedSignatureShare.html]
+BlindingKey [struct.BlindingKey.html]
+Message [struct.Message.html]
+MessagePoint [struct.MessagePoint.html]
+This is an element of $\mathbb{G}_1$ represented in the affine coordinate space. It is ideal to keep elements in this
+representation to reduce memory usage and improve performance through the use of mixed curve model arithmetic.
+PubKeyPoint [struct.PubKeyPoint.html]
+This is an element of $\mathbb{G}_2$ represented in the affine coordinate space. It is ideal to keep elements in this
+representation to reduce memory usage and improve performance through the use of mixed curve model arithmetic.
+PublicKeyShare [struct.PublicKeyShare.html]
+Scalar [struct.Scalar.html]
+Represents an element of the scalar field $\mathbb{F}_q$ of the BLS12-381 elliptic curve construction.
+SecretKeyShare [struct.SecretKeyShare.html]
+Signature [struct.Signature.html]
+
+
+TRAITS
+
+Aggregatable [trait.Aggregatable.html]
+FromRandom [trait.FromRandom.html]
+
+
+FUNCTIONS
+
+blind_message [fn.blind_message.html]
+combine_valid_shares [fn.combine_valid_shares.html]
+Combines a sufficient amount of valid blinded signature shares to a blinded signature. The responsibility of verifying the
+supplied shares lies with the caller.
+dealer_keygen [fn.dealer_keygen.html]
+threshold: how many signature shares are needed to produce a signature keys: how many keys to generate
+sign_blinded_msg [fn.sign_blinded_msg.html]
+unblind_signature [fn.unblind_signature.html]
+verify [fn.verify.html]
+verify_blind_share [fn.verify_blind_share.html]

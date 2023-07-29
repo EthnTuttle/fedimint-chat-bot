@@ -1,0 +1,269 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+ISINGLEUSEDATABASETRANSACTION
+
+
+REQUIRED METHODS
+
+ * add_notification_key
+ * commit_tx
+ * raw_find_by_prefix
+ * raw_find_by_prefix_sorted_descending
+ * raw_get_bytes
+ * raw_insert_bytes
+ * raw_remove_by_prefix
+ * raw_remove_entry
+ * rollback_tx_to_savepoint
+ * set_tx_savepoint
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::DB [index.html]::ISINGLEUSEDATABASETRANSACTIONCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/db/mod.rs.html#431-454] · [−]
+
+pub trait ISingleUseDatabaseTransaction<'a>: 'a + MaybeSend../task/trait.MaybeSend.html {
+    fn raw_insert_bytes<'life0, 'life1, 'life2, 'async_trait>(
+        &'life0 mut self,
+        key: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html],
+        value: &'life2 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html>>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait,
+        'life2: 'async_trait;
+    fn raw_get_bytes<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        key: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html>>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn raw_remove_entry<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        key: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html>>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn raw_find_by_prefix<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        key_prefix: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<PrefixStreamtype.PrefixStream.html<'_>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn raw_find_by_prefix_sorted_descending<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        key_prefix: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<PrefixStreamtype.PrefixStream.html<'_>>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn raw_remove_by_prefix<'life0, 'life1, 'async_trait>(
+        &'life0 mut self,
+        key_prefix: &'life1 [u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn commit_tx<'life0, 'async_trait>(
+        &'life0 mut self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn rollback_tx_to_savepoint<'life0, 'async_trait>(
+        &'life0 mut self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn set_tx_savepoint<'life0, 'async_trait>(
+        &'life0 mut self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn add_notification_key(&mut self, _key: &[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]) -> Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>;
+}
+
+Expand description
+
+ISingleUseDatabaseTransaction re-defines the functions from IDatabaseTransaction but does not consumed self when committing to the
+database. This allows for wrapper structs to more easily borrow ISingleUseDatabaseTransaction without needing to make additional
+allocations.
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/db/mod.rs.html#432]
+
+FN RAW_INSERT_BYTES<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]],
+    VALUE: &'LIFE2 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#434]
+
+FN RAW_GET_BYTES<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#436]
+
+FN RAW_REMOVE_ENTRY<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>>>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#438]
+
+FN RAW_FIND_BY_PREFIX<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY_PREFIX: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<PREFIXSTREAM [type.PrefixStream.html]<'_>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#440-443]
+
+FN RAW_FIND_BY_PREFIX_SORTED_DESCENDING<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY_PREFIX: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<PREFIXSTREAM [type.PrefixStream.html]<'_>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#445]
+
+FN RAW_REMOVE_BY_PREFIX<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF,
+    KEY_PREFIX: &'LIFE1 [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#447]
+
+FN COMMIT_TX<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#449]
+
+FN ROLLBACK_TX_TO_SAVEPOINT<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#451]
+
+FN SET_TX_SAVEPOINT<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 MUT SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_core/db/mod.rs.html#453]
+
+FN ADD_NOTIFICATION_KEY(&MUT SELF, _KEY: &[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]) -> RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/db/notifications.rs.html#129-184]§
+
+
+IMPL<'A> ISINGLEUSEDATABASETRANSACTION [trait.ISingleUseDatabaseTransaction.html]<'A> FOR NOTIFYINGTRANSACTION
+[notifications/struct.NotifyingTransaction.html]<'A>
+
+source [../../src/fedimint_core/db/mod.rs.html#470-556]§
+
+
+IMPL<'A, TX: IDATABASETRANSACTION [trait.IDatabaseTransaction.html]<'A> + MAYBESEND [../task/trait.MaybeSend.html]>
+ISINGLEUSEDATABASETRANSACTION [trait.ISingleUseDatabaseTransaction.html]<'A> FOR SINGLEUSEDATABASETRANSACTION
+[struct.SingleUseDatabaseTransaction.html]<'A, TX>
+

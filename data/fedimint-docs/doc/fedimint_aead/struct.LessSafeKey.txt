@@ -1,0 +1,369 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+LESSSAFEKEY
+
+
+METHODS
+
+ * algorithm
+ * new
+ * open_in_place
+ * open_within
+ * seal_in_place
+ * seal_in_place_append_tag
+ * seal_in_place_separate_tag
+
+
+TRAIT IMPLEMENTATIONS
+
+ * Debug
+
+
+AUTO TRAIT IMPLEMENTATIONS
+
+ * RefUnwindSafe
+ * Send
+ * Sync
+ * Unpin
+ * UnwindSafe
+
+
+BLANKET IMPLEMENTATIONS
+
+ * Any
+ * Borrow<T>
+ * BorrowMut<T>
+ * From<T>
+ * Into<U>
+ * Same<T>
+ * TryFrom<U>
+ * TryInto<U>
+ * VZip<V>
+
+
+IN FEDIMINT_AEAD [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+STRUCT FEDIMINT_AEAD [index.html]::LESSSAFEKEYCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#451] · [−]
+
+pub struct LessSafeKey { /* private fields */ }
+
+Expand description
+
+Immutable keys for use in situations where OpeningKey/SealingKey and NonceSequence cannot reasonably be used.
+
+Prefer to use OpeningKey/SealingKey and NonceSequence when practical.
+
+
+IMPLEMENTATIONS§
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#455]§
+
+
+IMPL LESSSAFEKEY [struct.LessSafeKey.html]
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#457]
+
+PUB FN NEW(KEY: UNBOUNDKEY [struct.UnboundKey.html]) -> LESSSAFEKEY [struct.LessSafeKey.html]
+
+Constructs a LessSafeKey from an UnboundKey.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#465-472]
+
+PUB FN OPEN_IN_PLACE<A, 'IN_OUT>(
+    &SELF,
+    NONCE: NONCE [https://briansmith.org/rustdoc/ring/aead/nonce/struct.Nonce.html],
+    AAD: AAD [struct.Aad.html]<A>,
+    IN_OUT: &'IN_OUT MUT [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<&'IN_OUT MUT [U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]], UNSPECIFIED
+[https://briansmith.org/rustdoc/ring/error/struct.Unspecified.html]>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+Like OpeningKey::open_in_place() [https://briansmith.org/rustdoc/ring/aead/struct.OpeningKey.html#method.open_in_place], except it
+accepts an arbitrary nonce.
+
+nonce must be unique for every use of the key to open data.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#481-489]
+
+PUB FN OPEN_WITHIN<A, 'IN_OUT>(
+    &SELF,
+    NONCE: NONCE [https://briansmith.org/rustdoc/ring/aead/nonce/struct.Nonce.html],
+    AAD: AAD [struct.Aad.html]<A>,
+    IN_OUT: &'IN_OUT MUT [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]],
+    CIPHERTEXT_AND_TAG: RANGEFROM [https://doc.rust-lang.org/1.67.0/core/ops/range/struct.RangeFrom.html]<USIZE
+[https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]>
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<&'IN_OUT MUT [U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]], UNSPECIFIED
+[https://briansmith.org/rustdoc/ring/error/struct.Unspecified.html]>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+Like OpeningKey::open_within() [https://briansmith.org/rustdoc/ring/aead/struct.OpeningKey.html#method.open_within], except it
+accepts an arbitrary nonce.
+
+nonce must be unique for every use of the key to open data.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#497-505]
+
+PUB FN SEAL_IN_PLACE<A, INOUT>(
+    &SELF,
+    NONCE: NONCE [https://briansmith.org/rustdoc/ring/aead/nonce/struct.Nonce.html],
+    AAD: AAD [struct.Aad.html]<A>,
+    IN_OUT: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]INOUT
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html], UNSPECIFIED
+[https://briansmith.org/rustdoc/ring/error/struct.Unspecified.html]>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+    INOUT: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]> + FOR<'IN_OUT> EXTEND
+[https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.Extend.html]<&'IN_OUT U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>,
+
+👎Deprecated: Renamed to seal_in_place_append_tag.
+
+Deprecated. Renamed to seal_in_place_append_tag().
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#515-523]
+
+PUB FN SEAL_IN_PLACE_APPEND_TAG<A, INOUT>(
+    &SELF,
+    NONCE: NONCE [https://briansmith.org/rustdoc/ring/aead/nonce/struct.Nonce.html],
+    AAD: AAD [struct.Aad.html]<A>,
+    IN_OUT: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]INOUT
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html], UNSPECIFIED
+[https://briansmith.org/rustdoc/ring/error/struct.Unspecified.html]>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+    INOUT: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]> + FOR<'IN_OUT> EXTEND
+[https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.Extend.html]<&'IN_OUT U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>,
+
+Like SealingKey::seal_in_place_append_tag()
+[https://briansmith.org/rustdoc/ring/aead/struct.SealingKey.html#method.seal_in_place_append_tag], except it accepts an arbitrary
+nonce.
+
+nonce must be unique for every use of the key to seal data.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#534-541]
+
+PUB FN SEAL_IN_PLACE_SEPARATE_TAG<A>(
+    &SELF,
+    NONCE: NONCE [https://briansmith.org/rustdoc/ring/aead/nonce/struct.Nonce.html],
+    AAD: AAD [struct.Aad.html]<A>,
+    IN_OUT: &MUT [U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<TAG
+[https://briansmith.org/rustdoc/ring/aead/struct.Tag.html], UNSPECIFIED
+[https://briansmith.org/rustdoc/ring/error/struct.Unspecified.html]>WHERE
+    A: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<[U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>,
+
+Like SealingKey::seal_in_place_separate_tag(), except it accepts an arbitrary nonce.
+
+nonce must be unique for every use of the key to seal data.
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#548]
+
+PUB FN ALGORITHM(&SELF) -> &'STATIC ALGORITHM [https://briansmith.org/rustdoc/ring/aead/struct.Algorithm.html]
+
+The key’s AEAD algorithm.
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#553]§
+
+
+IMPL DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] FOR LESSSAFEKEY [struct.LessSafeKey.html]
+
+source [https://briansmith.org/rustdoc/src/ring/aead.rs.html#554]§
+
+FN FMT [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html#tymethod.fmt](&SELF, F: &MUT FORMATTER
+[https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://doc.rust-lang.org/1.67.0/core/fmt/struct.Error.html]>
+
+Formats the value using the given formatter. Read more [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html#tymethod.fmt]
+
+
+AUTO TRAIT IMPLEMENTATIONS§
+
+§
+
+
+IMPL REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html] FOR LESSSAFEKEY
+[struct.LessSafeKey.html]
+
+§
+
+
+IMPL SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] FOR LESSSAFEKEY [struct.LessSafeKey.html]
+
+§
+
+
+IMPL SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] FOR LESSSAFEKEY [struct.LessSafeKey.html]
+
+§
+
+
+IMPL UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] FOR LESSSAFEKEY [struct.LessSafeKey.html]
+
+§
+
+
+IMPL UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html] FOR LESSSAFEKEY
+[struct.LessSafeKey.html]
+
+
+BLANKET IMPLEMENTATIONS§
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#200]§
+
+
+IMPL<T> ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] FOR TWHERE
+    T: 'STATIC + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#201]§
+
+FN TYPE_ID [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id](&SELF) -> TYPEID
+[https://doc.rust-lang.org/1.67.0/core/any/struct.TypeId.html]
+
+Gets the TypeId of self. Read more [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#211]§
+
+
+IMPL<T> BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#213]§
+
+FN BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow](&SELF) -> &
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Immutably borrows from an owned value. Read more [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#220]§
+
+
+IMPL<T> BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#221]§
+
+FN BORROW_MUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut](&MUT SELF) -> &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Mutably borrows from an owned value. Read more
+[https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#733]§
+
+
+IMPL<T> FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T> FOR T
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#736]§
+
+FN FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html#tymethod.from](T: T) -> T
+
+Returns the argument unchanged.
+
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#717]§
+
+
+IMPL<T, U> INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<U> FOR TWHERE
+    U: FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>,
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#725]§
+
+FN INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html#tymethod.into](SELF) -> U
+
+Calls U::from(self).
+
+That is, this conversion is whatever the implementation of From [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>
+for U chooses to do.
+
+source [https://docs.rs/typenum/1.16.0/src/typenum/type_operators.rs.html#34]§
+
+
+IMPL<T> SAME [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html]<T> FOR T
+
+§
+
+TYPE OUTPUT [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html#associatedtype.Output] = T
+
+Should always be Self
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#775]§
+
+
+IMPL<T, U> TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U> FOR TWHERE
+    U: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error] = INFALLIBLE
+[https://doc.rust-lang.org/1.67.0/core/convert/enum.Infallible.html]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#781]§
+
+FN TRY_FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#tymethod.try_from](VALUE: U) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, <T AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#760]§
+
+
+IMPL<T, U> TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<U> FOR TWHERE
+    U: TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error] = <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#766]§
+
+FN TRY_INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#tymethod.try_into](SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U, <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+§
+
+
+IMPL<V, T> VZIP<V> FOR TWHERE
+    V: MULTILANE<T>,
+
+§
+
+FN VZIP(SELF) -> V
+

@@ -1,0 +1,1091 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_server/index.html
+
+
+ENCODABLE
+
+
+REQUIRED METHODS
+
+ * consensus_encode
+
+
+PROVIDED METHODS
+
+ * consensus_encode_to_hex
+ * consensus_encode_to_vec
+ * consensus_hash
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * &[T]
+ * &str
+ * ()
+ * (T1, T2)
+ * (T1, T2, T3)
+ * (T1, T2, T3, T4)
+ * Address
+ * AggregatePublicKey
+ * Amount
+ * BTreeMap<K, V, Global>
+ * BTreeSet<K, Global>
+ * BlindedMessage
+ * BlindedSignature
+ * BlindedSignatureShare
+ * BlindingKey
+ * BlockHash
+ * BlockHeader
+ * Box<T, Global>
+ * Box<dyn DynEncodable + 'static, Global>
+ * Certificate
+ * Cow<'static, str>
+ * Descriptor<K>
+ * Duration
+ * Hash
+ * Invoice
+ * Network
+ * Option<T>
+ * OutPoint
+ * PartialMerkleTree
+ * PartiallySignedTransaction
+ * PublicKey
+ * PublicKey
+ * PublicKeySet
+ * PublicKeyShare
+ * RoutingFees
+ * Script
+ * Signature
+ * Signature
+ * Signature
+ * String
+ * SystemTime
+ * Transaction
+ * Txid
+ * Url
+ * Vec<T, Global>
+ * XOnlyPublicKey
+ * [T; SIZE]
+ * bool
+ * u16
+ * u32
+ * u64
+ * u8
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::ENCODING [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../index.html]::ENCODING [index.html]::ENCODABLECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+[−]
+
+pub trait Encodable {
+    fn consensus_encode<W>(&self, writer: &mut https://doc.rust-lang.org/1.67.0/std/primitive.reference.htmlW) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html, Errorhttps://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html>
+    where
+        W: Writehttps://doc.rust-lang.org/1.67.0/std/io/trait.Write.html;
+
+    fn consensus_encode_to_vec(&self) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html, Globalhttps://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html>, Errorhttps://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html> { ... }
+    fn consensus_encode_to_hex(&self) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Stringhttps://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html, Errorhttps://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html> { ... }
+    fn consensus_hash<H>(&self) -> H
+    where
+        H: Hash../trait.BitcoinHash.html,
+        <H as Hash../trait.BitcoinHash.html>::Engine../trait.BitcoinHash.html#associatedtype.Engine: Writehttps://doc.rust-lang.org/1.67.0/std/io/trait.Write.html,
+    { ... }
+}
+
+Expand description
+
+Data which can be encoded in a consensus-consistent way
+
+
+REQUIRED METHODS§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+Encode an object with a well-defined format. Returns the number of bytes written on success.
+
+The only errors returned are errors propagated from the writer.
+
+
+PROVIDED METHODS§
+
+FN CONSENSUS_ENCODE_TO_VEC(&SELF) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+Self::consensus_encode [trait.Encodable.html#tymethod.consensus_encode] to newly allocated Vec<u8>
+
+FN CONSENSUS_ENCODE_TO_HEX(&SELF) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<STRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html], ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+FN CONSENSUS_HASH<H>(&SELF) -> HWHERE
+    H: HASH [../trait.BitcoinHash.html],
+    <H AS HASH [../trait.BitcoinHash.html]>::ENGINE [../trait.BitcoinHash.html#associatedtype.Engine]: WRITE
+[https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+Generate a SHA256 hash of the consensus encoding using the default hash engine for H.
+
+Can be used to validate all federation members agree on state without revealing the object
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PARTIALLYSIGNEDTRANSACTION
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T, CONST SIZE: USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html]> ENCODABLE [trait.Encodable.html] FOR [T;
+SIZE] [https://doc.rust-lang.org/1.67.0/std/primitive.array.html]WHERE
+    T: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLINDEDSIGNATURESHARE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PUBLICKEYSHARE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLOCKHASH
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR AMOUNT
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR ROUTINGFEES
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR XONLYPUBLICKEY
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SCRIPT
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR URL [https://docs.rs/url/2.3.1/url/struct.Url.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T1, T2> ENCODABLE [trait.Encodable.html] FOR (T1, T2) [https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: ENCODABLE [trait.Encodable.html],
+    T2: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, S: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T> ENCODABLE [trait.Encodable.html] FOR OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<T>WHERE
+    T: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T> ENCODABLE [trait.Encodable.html] FOR &[T] [https://doc.rust-lang.org/1.67.0/std/primitive.slice.html]WHERE
+    T: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR OUTPOINT
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR HASH
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<K> ENCODABLE [trait.Encodable.html] FOR BTREESET
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<K, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    K: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<K> ENCODABLE [trait.Encodable.html] FOR DESCRIPTOR<K>WHERE
+    K: MINISCRIPTKEY,
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLINDINGKEY
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR INVOICE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR TXID
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T> ENCODABLE [trait.Encodable.html] FOR BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    T: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SYSTEMTIME [https://doc.rust-lang.org/1.67.0/std/time/struct.SystemTime.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN DYNENCODABLE
+[trait.DynEncodable.html] + 'STATIC, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLINDEDSIGNATURE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR AGGREGATEPUBLICKEY
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T1, T2, T3, T4> ENCODABLE [trait.Encodable.html] FOR (T1, T2, T3, T4)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: ENCODABLE [trait.Encodable.html],
+    T2: ENCODABLE [trait.Encodable.html],
+    T3: ENCODABLE [trait.Encodable.html],
+    T4: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, S: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR COW [https://doc.rust-lang.org/1.67.0/alloc/borrow/enum.Cow.html]<'STATIC, STR
+[https://doc.rust-lang.org/1.67.0/std/primitive.str.html]>
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PARTIALMERKLETREE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR ADDRESS
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR NETWORK
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T1, T2, T3> ENCODABLE [trait.Encodable.html] FOR (T1, T2, T3)
+[https://doc.rust-lang.org/1.67.0/std/primitive.tuple.html]WHERE
+    T1: ENCODABLE [trait.Encodable.html],
+    T2: ENCODABLE [trait.Encodable.html],
+    T3: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, S: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLINDEDMESSAGE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<K, V> ENCODABLE [trait.Encodable.html] FOR BTREEMAP
+[https://doc.rust-lang.org/1.67.0/alloc/collections/btree/map/struct.BTreeMap.html]<K, V, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    K: ENCODABLE [trait.Encodable.html],
+    V: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DURATION [https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR U32 [https://doc.rust-lang.org/1.67.0/std/primitive.u32.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR TRANSACTION
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PUBLICKEY
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BLOCKHEADER
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PUBLICKEYSET
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL<T> ENCODABLE [trait.Encodable.html] FOR VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<T, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>WHERE
+    T: ENCODABLE [trait.Encodable.html],
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PUBLICKEY
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR () [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, _WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SIGNATURE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR &STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html]
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CERTIFICATE
+
+§
+
+FN CONSENSUS_ENCODE<W>(&SELF, WRITER: &MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>WHERE
+    W: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+
+IMPLEMENTORS§
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CONSENSUSDECISION [../enum.ConsensusDecision.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CONSENSUSITEM [../epoch/enum.ConsensusItem.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR APIVERSIONSET [../api/struct.ApiVersionSet.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGDOWNLOADTOKEN [../api/struct.ClientConfigDownloadToken.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR WSCLIENTCONNECTINFO [../api/struct.WsClientConnectInfo.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTBACKUPKEY [../backup/struct.ClientBackupKey.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTBACKUPKEYPREFIX [../backup/struct.ClientBackupKeyPrefix.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTBACKUPSNAPSHOT [../backup/struct.ClientBackupSnapshot.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BITCOINRPCCONFIG [../bitcoinrpc/struct.BitcoinRpcConfig.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIG [../config/struct.ClientConfig.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTMODULECONFIG [../config/struct.ClientModuleConfig.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR FEDERATIONID [../config/struct.FederationId.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PEERURL [../config/struct.PeerUrl.html]
+
+source [../../src/fedimint_server/config/mod.rs.html#115]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SERVERCONFIGCONSENSUS [../config/struct.ServerConfigConsensus.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SERVERMODULECONSENSUSCONFIG [../config/struct.ServerModuleConsensusConfig.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BACKUPREQUEST [../core/backup/struct.BackupRequest.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYNCLIENTCONFIG [../core/struct.DynClientConfig.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYNINPUT [../core/struct.DynInput.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYNMODULECONSENSUSITEM [../core/struct.DynModuleConsensusItem.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYNOUTPUT [../core/struct.DynOutput.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYNOUTPUTOUTCOME [../core/struct.DynOutputOutcome.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR KEYPAIR [../core/struct.KeyPair.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR MODULEKIND [../core/struct.ModuleKind.html]
+
+source [../../src/fedimint_server/db.rs.html#34]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR ACCEPTEDTRANSACTIONKEY [../db/struct.AcceptedTransactionKey.html]
+
+source [../../src/fedimint_server/db.rs.html#37]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR ACCEPTEDTRANSACTIONKEYPREFIX [../db/struct.AcceptedTransactionKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#112]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGDOWNLOADKEY [../db/struct.ClientConfigDownloadKey.html]
+
+source [../../src/fedimint_server/db.rs.html#109]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGDOWNLOADKEYPREFIX [../db/struct.ClientConfigDownloadKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#73]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGSIGNATUREKEY [../db/struct.ClientConfigSignatureKey.html]
+
+source [../../src/fedimint_server/db.rs.html#83]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGSIGNATURESHAREKEY [../db/struct.ClientConfigSignatureShareKey.html]
+
+source [../../src/fedimint_server/db.rs.html#86]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CLIENTCONFIGSIGNATURESHAREPREFIX [../db/struct.ClientConfigSignatureSharePrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#100]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CONSENSUSUPGRADEKEY [../db/struct.ConsensusUpgradeKey.html]
+
+source [../../src/fedimint_server/db.rs.html#51]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR EPOCHHISTORYKEY [../db/struct.EpochHistoryKey.html]
+
+source [../../src/fedimint_server/db.rs.html#54]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR EPOCHHISTORYKEYPREFIX [../db/struct.EpochHistoryKeyPrefix.html]
+
+source [../../src/fedimint_server/db.rs.html#64]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR LASTEPOCHKEY [../db/struct.LastEpochKey.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CONSENSUSUPGRADE [../epoch/struct.ConsensusUpgrade.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR EPOCHOUTCOME [../epoch/struct.EpochOutcome.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SERDESIGNATURE [../epoch/struct.SerdeSignature.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SERDESIGNATURESHARE [../epoch/struct.SerdeSignatureShare.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR SIGNEDEPOCHOUTCOME [../epoch/struct.SignedEpochOutcome.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR APIVERSION [../module/struct.ApiVersion.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR CORECONSENSUSVERSION [../module/struct.CoreConsensusVersion.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR MODULECONSENSUSVERSION [../module/struct.ModuleConsensusVersion.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR FEDIMINT_SERVER::AMOUNT [../struct.Amount.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR FEERATE [../struct.Feerate.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR FEDIMINT_SERVER::OUTPOINT [../struct.OutPoint.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR PEERID [../struct.PeerId.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR TRANSACTIONID [../struct.TransactionId.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR FEDIMINT_SERVER::TRANSACTION::TRANSACTION [../transaction/struct.Transaction.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR TXOUTPROOF [../txoproof/struct.TxOutProof.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BIGSIZE [struct.BigSize.html]
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DATABASEVERSION
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DATABASEVERSIONKEY
+
+§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYN DYNENCODABLE [trait.DynEncodable.html] + 'STATIC
+
+§
+
+
+IMPL<C> ENCODABLE [trait.Encodable.html] FOR TIERED [../struct.Tiered.html]<C>WHERE
+    C: ENCODABLE [trait.Encodable.html],
+
+§
+
+
+IMPL<C> ENCODABLE [trait.Encodable.html] FOR TIEREDMULTI [../struct.TieredMulti.html]<C>WHERE
+    C: ENCODABLE [trait.Encodable.html],
+
+§
+
+
+IMPL<T> ENCODABLE [trait.Encodable.html] FOR DYNRAWFALLBACK [enum.DynRawFallback.html]<T>WHERE
+    T: ENCODABLE [trait.Encodable.html],
+

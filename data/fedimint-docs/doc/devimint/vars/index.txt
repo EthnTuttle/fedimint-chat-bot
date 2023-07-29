@@ -1,0 +1,40 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+MODULE VARS
+
+ * Structs
+ * Traits
+ * Functions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE DEVIMINT [../index.html]::VARSCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/devimint/vars.rs.html#1-173] · [−]
+
+
+STRUCTS
+
+Fedimintd [struct.Fedimintd.html]
+Global [struct.Global.html]
+
+
+TRAITS
+
+ToEnvVar [trait.ToEnvVar.html]
+
+
+FUNCTIONS
+
+utf8 [fn.utf8.html]

@@ -1,0 +1,40 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../gateway_cli/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../gateway_cli/index.html
+
+
+CRATE GATEWAY_CLI
+
+ * Structs
+ * Enums
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+LIST OF ALL ITEMS
+
+
+STRUCTS
+
+ * Cli [struct.Cli.html]
+
+
+ENUMS
+
+ * Commands [enum.Commands.html]
+
+
+FUNCTIONS
+
+ * main [fn.main.html]
+ * print_response [fn.print_response.html]
+ * source_password [fn.source_password.html]
+

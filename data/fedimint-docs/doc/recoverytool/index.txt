@@ -1,0 +1,54 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../recoverytool/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../recoverytool/index.html
+
+
+CRATE RECOVERYTOOL
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Structs
+ * Enums
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE RECOVERYTOOLCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/recoverytool/main.rs.html#1-463] · [−]
+
+
+STRUCTS
+
+ImportableWallet [struct.ImportableWallet.html] 🔒
+A UTXO with its Bitcoin Core importable descriptor
+ImportableWalletMin [struct.ImportableWalletMin.html] 🔒
+A Bitcoin Core importable descriptor
+RecoveryTool [struct.RecoveryTool.html] 🔒
+Tool to recover the on-chain wallet of a Fedimint federation
+SecretKeyInjector [struct.SecretKeyInjector.html] 🔒
+Miniscript [Translator] that replaces a public key with a private key we know.
+
+
+ENUMS
+
+Key [enum.Key.html] 🔒
+MiniscriptKey that is either a WIF-encoded private key or a compressed, hex-encoded public key
+TweakSource [enum.TweakSource.html] 🔒
+
+
+FUNCTIONS
+
+input_tweaks_output_present [fn.input_tweaks_output_present.html] 🔒
+main [fn.main.html] 🔒
+tweak_descriptor [fn.tweak_descriptor.html] 🔒
+tweak_parser [fn.tweak_parser.html] 🔒

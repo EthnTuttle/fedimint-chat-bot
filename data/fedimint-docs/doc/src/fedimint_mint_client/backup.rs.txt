@@ -1,0 +1,196 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_mint_client/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+
+
+use fedimint_client::sm::Executor;
+use fedimint_client::DynGlobalClientContext;
+use fedimint_core::api::{DynGlobalApi, GlobalFederationApi};
+use fedimint_core::core::ModuleInstanceId;
+use fedimint_core::db::ModuleDatabaseTransaction;
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::{OutPoint, Tiered, TieredMulti};
+use serde::{Deserialize, Serialize};
+
+use super::MintClientModule;
+use crate::output::{MintOutputStateMachine, MultiNoteIssuanceRequest};
+use crate::{MintClientStateMachines, NoteIndex, SpendableNote};
+
+pub mod recovery;
+
+/// Snapshot of a ecash state (notes)
+///
+/// Used to speed up and improve privacy of ecash recovery,
+/// by avoiding scanning the whole history.
+#[derive(Serialize, Deserialize, PartialEq, Eq, Debug, Encodable, Decodable)]
+pub struct EcashBackup {
+    notes: TieredMulti<SpendableNote>,
+    pending_notes: Vec<(OutPoint, MultiNoteIssuanceRequest)>,
+    epoch_count: u64,
+    next_note_idx: Tiered<NoteIndex>,
+}
+
+impl EcashBackup {
+    /// An empty backup with, like a one created by a newly created client.
+    pub fn new_empty() -> Self {
+        Self {
+            notes: TieredMulti::default(),
+            pending_notes: vec![],
+            epoch_count: 0,
+            next_note_idx: Tiered::default(),
+        }
+    }
+}
+
+impl MintClientModule {
+    pub async fn prepare_plaintext_ecash_backup(
+        &self,
+        dbtx: &mut ModuleDatabaseTransaction<'_>,
+        executor: Executor<DynGlobalClientContext>,
+        api: DynGlobalApi,
+        module_instance_id: ModuleInstanceId,
+    ) -> anyhow::Result<EcashBackup> {
+        // fetch consensus height first - so we dont miss anything when scanning
+        let epoch_count = api.fetch_epoch_count().await?;
+
+        let notes = Self::get_all_spendable_notes(dbtx).await;
+
+        let pending_notes: Vec<(OutPoint, MultiNoteIssuanceRequest)> = executor
+            .get_active_states()
+            .await
+            .into_iter()
+            .filter_map(|(dyn_state, _active_state)| {
+                if dyn_state.module_instance_id() != module_instance_id {
+                    return None;
+                }
+
+                let state: MintClientStateMachines = dyn_state
+                    .as_any()
+                    .downcast_ref()
+                    .cloned()
+                    .expect("Can't downcast mint client state machine state");
+
+                match state {
+                    MintClientStateMachines::Output(MintOutputStateMachine { common, state }) => {
+                        match state {
+                            crate::output::MintOutputStates::Created(state) => Some((common.out_point, state.note_issuance)),
+                            crate::output::MintOutputStates::Succeeded(_) => None /* we back these via get_all_spendable_notes */,
+                            _ => None,
+                        }
+                    }
+                    _ => None,
+                }
+            })
+            .collect::<Vec<_>>() ;
+
+        let mut idxes = vec![];
+        for &amount in self.cfg.tbs_pks.tiers() {
+            idxes.push((amount, self.get_next_note_index(dbtx, amount).await));
+        }
+        let next_note_idx = Tiered::from_iter(idxes);
+
+        Ok(EcashBackup {
+            notes,
+            pending_notes,
+            next_note_idx,
+            epoch_count,
+        })
+    }
+}
+
+

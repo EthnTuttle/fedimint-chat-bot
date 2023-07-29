@@ -1,0 +1,87 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+DATABASEKEY
+
+
+PROVIDED ASSOCIATED CONSTANTS
+
+ * NOTIFY_ON_MODIFY
+
+
+REQUIRED METHODS
+
+ * from_bytes
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::DB [index.html]::DATABASEKEYCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/db/mod.rs.html#63-73] · [−]
+
+pub trait DatabaseKey: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html {
+    const NOTIFY_ON_MODIFY: boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html = false;
+
+    fn from_bytes(
+        data: &[u8https://doc.rust-lang.org/1.67.0/std/primitive.u8.html],
+        modules: &ModuleDecoderRegistry../module/registry/type.ModuleDecoderRegistry.html
+    ) -> Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Self, DecodingErrorenum.DecodingError.html>;
+}
+
+Expand description
+
+DatabaseKey that represents the lookup structure for retrieving key/value pairs from the database.
+
+
+PROVIDED ASSOCIATED CONSTANTS§
+
+source [../../src/fedimint_core/db/mod.rs.html#71]
+
+CONST NOTIFY_ON_MODIFY: BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html] = FALSE
+
+Send a notification to tasks waiting to be notified if the value of DatabaseKey is modified
+
+For instance, this can be used to be notified when a key in the database is created. It is also possible to run a closure with the
+value of the DatabaseKey as parameter to verify some changes to that value.
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/db/mod.rs.html#72]
+
+FN FROM_BYTES(
+    DATA: &[U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]],
+    MODULES: &MODULEDECODERREGISTRY [../module/registry/type.ModuleDecoderRegistry.html]
+) -> RESULT [https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<SELF, DECODINGERROR [enum.DecodingError.html]>
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/db/mod.rs.html#1288-1311]§
+
+
+IMPL<T> DATABASEKEY [trait.DatabaseKey.html] FOR TWHERE
+    T: DATABASERECORD [trait.DatabaseRecord.html] + DECODABLE [../encoding/trait.Decodable.html] + SIZED
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [../../src/fedimint_core/db/mod.rs.html#1294]§
+
+CONST NOTIFY_ON_MODIFY: BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html] = <T AS DATABASERECORD>::NOTIFY_ON_MODIFY
+

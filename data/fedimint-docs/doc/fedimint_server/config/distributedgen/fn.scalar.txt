@@ -1,0 +1,28 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+IN FEDIMINT_SERVER::CONFIG::DISTRIBUTEDGEN [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+FUNCTION FEDIMINT_SERVER [../../index.html]::CONFIG [../index.html]::DISTRIBUTEDGEN [index.html]::SCALARCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_server/config/distributedgen.rs.html#233-235] · [−]
+
+pub fn scalar(peer: &PeerId../../struct.PeerId.html) -> Scalar
+
+Expand description
+
+PeerIds are offset by 1, since evaluating a poly at 0 reveals the secret
+

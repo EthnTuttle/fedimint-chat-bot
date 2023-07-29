@@ -1,0 +1,29 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+MODULE AS_HEX
+
+ * Functions
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+MODULE FEDIMINT_CORE [../../index.html]::ENCODING [../index.html]::AS_HEXCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_core/encoding/as_hex.rs.html#1-23] · [−]
+
+
+FUNCTIONS
+
+deserialize [fn.deserialize.html]
+serialize [fn.serialize.html]

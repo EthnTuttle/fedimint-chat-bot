@@ -1,0 +1,115 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_wallet_common/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_wallet_common/index.html
+
+
+TWEAKABLE
+
+
+REQUIRED METHODS
+
+ * tweak
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * Descriptor<CompressedPublicKey>
+ * PublicKey
+ * SecretKey
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_WALLET_COMMON::TWEAKABLE [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_WALLET_COMMON [../index.html]::TWEAKABLE [index.html]::TWEAKABLECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#14-21] · [−]
+
+pub trait Tweakable {
+    fn tweak<Ctx: Verification + Signing, Ctr: Contracttrait.Contract.html>(
+        &self,
+        tweak: &https://doc.rust-lang.org/1.67.0/std/primitive.reference.htmlCtr,
+        secp: &Secp256k1<Ctx>
+    ) -> Self;
+}
+
+Expand description
+
+A key or object containing keys that may be tweaked for pay-to-contract constructions
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#16-20]
+
+FN TWEAK<CTX: VERIFICATION + SIGNING, CTR: CONTRACT [trait.Contract.html]>(
+    &SELF,
+    TWEAK: & [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]CTR,
+    SECP: &SECP256K1<CTX>
+) -> SELF
+
+Tweak the key with a tweak contract
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#23-36]§
+
+
+IMPL TWEAKABLE [trait.Tweakable.html] FOR PUBLICKEY
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#24-35]§
+
+FN TWEAK<CTX: VERIFICATION + SIGNING, CTR: CONTRACT [trait.Contract.html]>(
+    &SELF,
+    TWEAK: & [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]CTR,
+    SECP: &SECP256K1<CTX>
+) -> SELF
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#38-55]§
+
+
+IMPL TWEAKABLE [trait.Tweakable.html] FOR SECRETKEY
+
+source [../../src/fedimint_wallet_common/tweakable.rs.html#39-54]§
+
+FN TWEAK<CTX: VERIFICATION + SIGNING, CTR: CONTRACT [trait.Contract.html]>(
+    &SELF,
+    TWEAK_IN: & [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]CTR,
+    SECP: &SECP256K1<CTX>
+) -> SELF
+
+source [../../src/fedimint_wallet_common/txoproof.rs.html#112-145]§
+
+
+IMPL TWEAKABLE [trait.Tweakable.html] FOR DESCRIPTOR<COMPRESSEDPUBLICKEY [../keys/struct.CompressedPublicKey.html]>
+
+source [../../src/fedimint_wallet_common/txoproof.rs.html#113-144]§
+
+FN TWEAK<CTX: VERIFICATION + SIGNING, CTR: CONTRACT [trait.Contract.html]>(
+    &SELF,
+    TWEAK: & [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]CTR,
+    SECP: &SECP256K1<CTX>
+) -> SELF
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_wallet_common/keys.rs.html#94-104]§
+
+
+IMPL TWEAKABLE [trait.Tweakable.html] FOR COMPRESSEDPUBLICKEY [../keys/struct.CompressedPublicKey.html]
+

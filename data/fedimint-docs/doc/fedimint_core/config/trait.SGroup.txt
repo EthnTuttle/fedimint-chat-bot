@@ -1,0 +1,103 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+SGROUP
+
+
+REQUIRED METHODS
+
+ * deserialize2
+ * serialize2
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * G1Projective
+ * G2Projective
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::CONFIG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::CONFIG [index.html]::SGROUPCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/config.rs.html#779-782] · [−]
+
+pub trait SGroup: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html {
+    fn serialize2<S: Serializerhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html>(&self, s: S) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<S::Okhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok, S::Errorhttps://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error>;
+    fn deserialize2<'d, D: Deserializerhttps://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html<'d>>(d: D) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<Self, D::Errorhttps://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error>;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/config.rs.html#780]
+
+FN SERIALIZE2<S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>(&SELF, S: S) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<S::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], S::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>
+
+source [../../src/fedimint_core/config.rs.html#781]
+
+FN DESERIALIZE2<'D, D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>(D: D) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, D::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/fedimint_core/config.rs.html#784-792]§
+
+
+IMPL SGROUP [trait.SGroup.html] FOR G2PROJECTIVE
+
+source [../../src/fedimint_core/config.rs.html#785-787]§
+
+FN SERIALIZE2<S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>(&SELF, S: S) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<S::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], S::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>
+
+source [../../src/fedimint_core/config.rs.html#789-791]§
+
+FN DESERIALIZE2<'D, D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>(D: D) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, D::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>
+
+source [../../src/fedimint_core/config.rs.html#794-802]§
+
+
+IMPL SGROUP [trait.SGroup.html] FOR G1PROJECTIVE
+
+source [../../src/fedimint_core/config.rs.html#795-797]§
+
+FN SERIALIZE2<S: SERIALIZER [https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html]>(&SELF, S: S) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<S::OK
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Ok], S::ERROR
+[https://docs.rs/serde/1.0.163/serde/ser/trait.Serializer.html#associatedtype.Error]>
+
+source [../../src/fedimint_core/config.rs.html#799-801]§
+
+FN DESERIALIZE2<'D, D: DESERIALIZER [https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html]<'D>>(D: D) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<SELF, D::ERROR
+[https://docs.rs/serde/1.0.163/serde/de/trait.Deserializer.html#associatedtype.Error]>
+
+
+IMPLEMENTORS§
+
+

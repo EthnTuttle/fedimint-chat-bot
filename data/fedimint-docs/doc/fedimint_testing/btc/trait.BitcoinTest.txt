@@ -1,0 +1,221 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+BITCOINTEST
+
+
+REQUIRED METHODS
+
+ * get_mempool_tx_fee
+ * get_new_address
+ * lock_exclusive
+ * mine_block_and_get_received
+ * mine_blocks
+ * prepare_funding_wallet
+ * send_and_mine_block
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_TESTING::BTC [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_TESTING [../index.html]::BTC [index.html]::BITCOINTESTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/btc/mod.rs.html#10-44] · [−]
+
+pub trait BitcoinTest {
+    fn lock_exclusive<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn BitcoinTesttrait.BitcoinTest.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn mine_blocks<'life0, 'async_trait>(
+        &'life0 self,
+        block_num: u64https://doc.rust-lang.org/1.67.0/std/primitive.u64.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = ()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn prepare_funding_wallet<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = ()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn send_and_mine_block<'life0, 'life1, 'async_trait>(
+        &'life0 self,
+        address: &'life1 Address,
+        amount: Amount
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = (TxOutProof../../fedimint_core/txoproof/struct.TxOutProof.html, Transaction)> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn get_new_address<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Address> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn mine_block_and_get_received<'life0, 'life1, 'async_trait>(
+        &'life0 self,
+        address: &'life1 Address
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Amount../../fedimint_core/struct.Amount.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn get_mempool_tx_fee<'life0, 'life1, 'async_trait>(
+        &'life0 self,
+        txid: &'life1 Txid
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Amount../../fedimint_core/struct.Amount.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_testing/btc/mod.rs.html#13]
+
+FN LOCK_EXCLUSIVE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN BITCOINTEST [trait.BitcoinTest.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Make the underlying instance act as if it was exclusively available for the existence of the returned guard.
+
+source [../../src/fedimint_testing/btc/mod.rs.html#16]
+
+FN MINE_BLOCKS<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    BLOCK_NUM: U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = ()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html]
++ 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Mines a given number of blocks
+
+source [../../src/fedimint_testing/btc/mod.rs.html#22]
+
+FN PREPARE_FUNDING_WALLET<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = ()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html]
++ 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Prepare funding wallet
+
+If needed will mine initial 100 blocks for send_and_mine_block to work.
+
+source [../../src/fedimint_testing/btc/mod.rs.html#29-33]
+
+FN SEND_AND_MINE_BLOCK<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    ADDRESS: &'LIFE1 ADDRESS,
+    AMOUNT: AMOUNT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = (TXOUTPROOF
+[../../fedimint_core/txoproof/struct.TxOutProof.html], TRANSACTION)> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Send some bitcoin to an address then mine a block to confirm it. Returns the proof that the transaction occurred.
+
+The implementation is responsible for making sure the funds can be sent (e.g. first 100 blocks are mined to make funds available)
+
+source [../../src/fedimint_testing/btc/mod.rs.html#36]
+
+FN GET_NEW_ADDRESS<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = ADDRESS> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Returns a new address.
+
+source [../../src/fedimint_testing/btc/mod.rs.html#40]
+
+FN MINE_BLOCK_AND_GET_RECEIVED<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    ADDRESS: &'LIFE1 ADDRESS
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = AMOUNT [../../fedimint_core/struct.Amount.html]>
++ SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Mine a block to include any pending transactions then get the amount received to an address
+
+source [../../src/fedimint_testing/btc/mod.rs.html#43]
+
+FN GET_MEMPOOL_TX_FEE<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    TXID: &'LIFE1 TXID
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = AMOUNT [../../fedimint_core/struct.Amount.html]>
++ SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Waits till tx is found in mempool and returns the fees
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_testing/btc/mock.rs.html#129-237]§
+
+
+IMPL BITCOINTEST [trait.BitcoinTest.html] FOR FAKEBITCOINTEST [mock/struct.FakeBitcoinTest.html]
+
+source [../../src/fedimint_testing/btc/real.rs.html#167-208]§
+
+
+IMPL BITCOINTEST [trait.BitcoinTest.html] FOR REALBITCOINTEST [real/struct.RealBitcoinTest.html]
+
+source [../../src/fedimint_testing/btc/real.rs.html#211-246]§
+
+
+IMPL BITCOINTEST [trait.BitcoinTest.html] FOR REALBITCOINTESTLOCKED [real/struct.RealBitcoinTestLocked.html]
+

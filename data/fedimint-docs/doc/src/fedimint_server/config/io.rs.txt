@@ -1,0 +1,252 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../fedimint_server/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+
+
+use std::fmt::Display;
+use std::fs;
+use std::io::Write;
+use std::path::{Path, PathBuf};
+
+use fedimint_aead::{encrypted_read, encrypted_write, get_encryption_key, LessSafeKey};
+use fedimint_core::config::ServerModuleGenRegistry;
+use serde::de::DeserializeOwned;
+use serde::Serialize;
+
+use crate::config::ServerConfig;
+
+/// Version of the server code (should be the same among peers)
+pub const CODE_VERSION: &str = env!("FEDIMINT_BUILD_CODE_VERSION");
+
+/// Client configuration file
+pub const CLIENT_CONFIG: &str = "client";
+
+/// Server encrypted private keys file
+pub const PRIVATE_CONFIG: &str = "private";
+
+/// Server locally configurable file
+pub const LOCAL_CONFIG: &str = "local";
+
+/// Server consensus-only configurable file
+pub const CONSENSUS_CONFIG: &str = "consensus";
+
+/// Client connection string file
+pub const CLIENT_CONNECT_FILE: &str = "client-connect";
+
+/// Salt backup for combining with the private key
+pub const SALT_FILE: &str = "private.salt";
+
+/// Plain-text stored password, used to restart the server without having to
+/// send a password in via the API
+pub const PLAINTEXT_PASSWORD: &str = "password.private";
+
+/// Database file name
+pub const DB_FILE: &str = "database";
+
+pub const JSON_EXT: &str = "json";
+
+const ENCRYPTED_EXT: &str = "encrypt";
+
+/// Reads the server from the local, private, and consensus cfg files
+pub fn read_server_config(password: &str, path: PathBuf) -> anyhow::Result<ServerConfig> {
+    let salt = fs::read_to_string(path.join(SALT_FILE))?;
+    let key = get_encryption_key(password, &salt)?;
+
+    Ok(ServerConfig {
+        consensus: plaintext_json_read(path.join(CONSENSUS_CONFIG))?,
+        local: plaintext_json_read(path.join(LOCAL_CONFIG))?,
+        private: encrypted_json_read(&key, path.join(PRIVATE_CONFIG))?,
+    })
+}
+
+/// Reads a plaintext json file into a struct
+fn plaintext_json_read<T: Serialize + DeserializeOwned>(path: PathBuf) -> anyhow::Result<T> {
+    let string = fs::read_to_string(path.with_extension(JSON_EXT))?;
+    Ok(serde_json::from_str(&string)?)
+}
+
+/// Reads an encrypted json file into a struct
+fn encrypted_json_read<T: Serialize + DeserializeOwned>(
+    key: &LessSafeKey,
+    path: PathBuf,
+) -> anyhow::Result<T> {
+    let decrypted = encrypted_read(key, path.with_extension(ENCRYPTED_EXT));
+    let string = String::from_utf8(decrypted?)?;
+    Ok(serde_json::from_str(&string)?)
+}
+
+/// Writes the server into configuration files (private keys encrypted)
+pub fn write_server_config(
+    server: &ServerConfig,
+    path: PathBuf,
+    password: &str,
+    module_config_gens: &ServerModuleGenRegistry,
+) -> anyhow::Result<()> {
+    let salt = fs::read_to_string(path.join(SALT_FILE))?;
+    let key = get_encryption_key(password, &salt)?;
+
+    let client_config = server.consensus.to_client_config(module_config_gens)?;
+    plaintext_json_write(&server.local, path.join(LOCAL_CONFIG))?;
+    plaintext_json_write(&server.consensus, path.join(CONSENSUS_CONFIG))?;
+    plaintext_display_write(&server.get_connect_info(), &path.join(CLIENT_CONNECT_FILE))?;
+    plaintext_json_write(&client_config, path.join(CLIENT_CONFIG))?;
+    encrypted_json_write(&server.private, &key, path.join(PRIVATE_CONFIG))
+}
+
+/// Writes struct into a plaintext json file
+fn plaintext_json_write<T: Serialize + DeserializeOwned>(
+    obj: &T,
+    path: PathBuf,
+) -> anyhow::Result<()> {
+    let file = fs::File::options()
+        .create_new(true)
+        .write(true)
+        .open(path.with_extension(JSON_EXT))?;
+
+    serde_json::to_writer_pretty(file, obj)?;
+    Ok(())
+}
+
+fn plaintext_display_write<T: Display>(obj: &T, path: &Path) -> anyhow::Result<()> {
+    let mut file = fs::File::options()
+        .create_new(true)
+        .write(true)
+        .open(path)?;
+    file.write_all(obj.to_string().as_bytes())?;
+    Ok(())
+}
+
+/// Writes struct into an encrypted json file
+fn encrypted_json_write<T: Serialize + DeserializeOwned>(
+    obj: &T,
+    key: &LessSafeKey,
+    path: PathBuf,
+) -> anyhow::Result<()> {
+    let bytes = serde_json::to_string(obj)?.into_bytes();
+    encrypted_write(bytes, key, path.with_extension(ENCRYPTED_EXT))
+}
+
+

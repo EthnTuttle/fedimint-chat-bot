@@ -1,0 +1,326 @@
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]../../../ln_gateway/index.html
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+
+
+use std::net::SocketAddr;
+
+use axum::response::IntoResponse;
+use axum::routing::post;
+use axum::{Extension, Json, Router};
+use axum_macros::debug_handler;
+use bitcoin_hashes::hex::ToHex;
+use fedimint_ln_client::pay::PayInvoicePayload;
+use serde_json::json;
+use tokio::sync::mpsc;
+use tower_http::auth::RequireAuthorizationLayer;
+use tower_http::cors::CorsLayer;
+use tracing::{error, instrument};
+
+use super::{
+    BackupPayload, BalancePayload, ConnectFedPayload, DepositAddressPayload, InfoPayload,
+    RestorePayload, WithdrawPayload,
+};
+use crate::{Gateway, GatewayError};
+
+pub async fn run_webserver(
+    authkey: String,
+    bind_addr: SocketAddr,
+    mut gateway: Gateway,
+) -> axum::response::Result<mpsc::Sender<()>> {
+    // Public routes on gateway webserver
+    let routes = Router::new().route("/pay_invoice", post(pay_invoice));
+
+    // Authenticated, public routes used for gateway administration
+    let admin_routes = Router::new()
+        .route("/info", post(info))
+        .route("/balance", post(balance))
+        .route("/address", post(address))
+        .route("/withdraw", post(withdraw))
+        .route("/connect-fed", post(connect_fed))
+        .route("/backup", post(backup))
+        .route("/restore", post(restore))
+        .layer(RequireAuthorizationLayer::bearer(&authkey));
+
+    let app = Router::new()
+        .merge(routes)
+        .merge(admin_routes)
+        .layer(Extension(gateway.clone()))
+        .layer(CorsLayer::permissive());
+
+    let (tx, mut rx) = mpsc::channel::<()>(100);
+    let server = axum::Server::bind(&bind_addr).serve(app.into_make_service());
+    gateway
+        .task_group
+        .spawn("Gateway Webserver", move |_| async move {
+            let graceful = server.with_graceful_shutdown(async {
+                rx.recv().await;
+            });
+
+            if let Err(e) = graceful.await {
+                error!("Error shutting down gatewayd webserver: {:?}", e);
+            }
+        })
+        .await;
+
+    let handle = gateway.task_group.make_handle();
+    let shutdown_tx = tx.clone();
+    handle
+        .on_shutdown(Box::new(|| {
+            Box::pin(async move {
+                // Send shutdown signal to the webserver
+                let res = shutdown_tx.send(()).await;
+                if res.is_err() {
+                    error!("Error shutting down gatewayd webserver: {res:?}");
+                }
+            })
+        }))
+        .await;
+
+    Ok(tx)
+}
+
+/// Display high-level information about the Gateway
+#[debug_handler]
+#[instrument(skip_all, err)]
+async fn info(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<InfoPayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let info = gateway.handle_get_info(payload).await?;
+    Ok(Json(json!(info)))
+}
+
+/// Display gateway ecash note balance
+#[debug_handler]
+#[instrument(skip_all, err)]
+async fn balance(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<BalancePayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let amount = gateway.handle_balance_msg(payload).await?;
+    Ok(Json(json!(amount)))
+}
+
+/// Generate deposit address
+#[debug_handler]
+#[instrument(skip_all, err)]
+async fn address(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<DepositAddressPayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let address = gateway.handle_address_msg(payload).await?;
+    Ok(Json(json!(address)))
+}
+
+/// Withdraw from a gateway federation.
+#[debug_handler]
+#[instrument(skip_all, err)]
+async fn withdraw(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<WithdrawPayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let txid = gateway.handle_withdraw_msg(payload).await?;
+    Ok(Json(json!(txid)))
+}
+
+#[instrument(skip_all, err)]
+async fn pay_invoice(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<PayInvoicePayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let preimage = gateway.handle_pay_invoice_msg(payload).await?;
+    Ok(Json(json!(preimage.0.to_hex())))
+}
+
+/// Connect a new federation
+#[instrument(skip_all, err)]
+async fn connect_fed(
+    Extension(mut gateway): Extension<Gateway>,
+    Json(payload): Json<ConnectFedPayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    let fed = gateway.handle_connect_federation(payload).await?;
+    Ok(Json(json!(fed)))
+}
+
+/// Backup a gateway actor state
+#[instrument(skip_all, err)]
+async fn backup(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<BackupPayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    gateway.handle_backup_msg(payload).await?;
+    Ok(())
+}
+
+// Restore a gateway actor state
+#[instrument(skip_all, err)]
+async fn restore(
+    Extension(gateway): Extension<Gateway>,
+    Json(payload): Json<RestorePayload>,
+) -> Result<impl IntoResponse, GatewayError> {
+    gateway.handle_restore_msg(payload).await?;
+    Ok(())
+}
+
+

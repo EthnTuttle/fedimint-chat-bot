@@ -1,0 +1,40 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client_legacy/index.html
+
+
+MODULE UTILS
+
+ * Structs
+ * Functions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CLIENT_LEGACY [../index.html]::UTILSCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client_legacy/utils.rs.html#1-104] · [−]
+
+
+STRUCTS
+
+ClientContext [struct.ClientContext.html]
+
+
+FUNCTIONS
+
+from_hex [fn.from_hex.html]
+network_to_currency [fn.network_to_currency.html]
+parse_bitcoin_amount [fn.parse_bitcoin_amount.html]
+parse_ecash [fn.parse_ecash.html]
+parse_fedimint_amount [fn.parse_fedimint_amount.html]
+parse_gateway_id [fn.parse_gateway_id.html]
+parse_peer_id [fn.parse_peer_id.html]
+serialize_ecash [fn.serialize_ecash.html]

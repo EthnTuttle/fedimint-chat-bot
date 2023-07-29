@@ -1,0 +1,52 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_client/index.html
+
+
+MODULE MODULE
+
+ * Modules
+ * Structs
+ * Traits
+ * Type Definitions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_CLIENT [../index.html]::MODULECopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_client/module/mod.rs.html#1-418] · [−]
+Expand description
+
+Module client interface definitions
+
+
+MODULES
+
+gen [gen/index.html]
+
+
+STRUCTS
+
+DynClientModule [struct.DynClientModule.html]
+
+
+TRAITS
+
+ClientModule [trait.ClientModule.html]
+Fedimint module client
+IClientModule [trait.IClientModule.html]
+Type-erased version of ClientModule [trait.ClientModule.html]
+
+
+TYPE DEFINITIONS
+
+ClientModuleRegistry [type.ClientModuleRegistry.html]
+StateGenerator [type.StateGenerator.html]

@@ -1,0 +1,252 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_bitcoind/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+
+
+use std::collections::HashMap;
+
+use anyhow::format_err;
+use bitcoin::{BlockHash, Network, Script, Transaction, Txid};
+use bitcoin_hashes::hex::ToHex;
+use fedimint_core::task::TaskHandle;
+use fedimint_core::txoproof::TxOutProof;
+use fedimint_core::{apply, async_trait_maybe_send, Feerate};
+use tracing::{info, warn};
+use url::Url;
+
+use crate::{DynBitcoindRpc, IBitcoindRpc, IBitcoindRpcFactory, RetryClient};
+
+#[derive(Debug)]
+pub struct EsploraFactory;
+
+impl IBitcoindRpcFactory for EsploraFactory {
+    fn create_connection(&self, url: &Url, handle: TaskHandle) -> anyhow::Result<DynBitcoindRpc> {
+        Ok(RetryClient::new(EsploraClient::new(url)?, handle).into())
+    }
+}
+
+#[derive(Debug)]
+pub struct EsploraClient(esplora_client::AsyncClient);
+
+impl EsploraClient {
+    fn new(url: &Url) -> anyhow::Result<Self> {
+        // Url needs to have any trailing path including '/' removed
+        let without_trailing = url.as_str().trim_end_matches('/');
+
+        let builder = esplora_client::Builder::new(without_trailing);
+        let client = builder.build_async()?;
+        Ok(Self(client))
+    }
+}
+
+#[apply(async_trait_maybe_send!)]
+impl IBitcoindRpc for EsploraClient {
+    async fn get_network(&self) -> anyhow::Result<Network> {
+        let genesis_height: u32 = 0;
+        let genesis_hash = self.0.get_block_hash(genesis_height).await?;
+
+        let network = match genesis_hash.to_hex().as_str() {
+            crate::MAINNET_GENESIS_BLOCK_HASH => Network::Bitcoin,
+            crate::TESTNET_GENESIS_BLOCK_HASH => Network::Testnet,
+            crate::SIGNET_GENESIS_BLOCK_HASH => Network::Signet,
+            hash => {
+                warn!("Unknown genesis hash {hash} - assuming regtest");
+                Network::Regtest
+            }
+        };
+
+        Ok(network)
+    }
+
+    async fn get_block_height(&self) -> anyhow::Result<u64> {
+        match self.0.get_height().await {
+            Ok(height) => Ok(height as u64),
+            Err(e) => Err(e.into()),
+        }
+    }
+
+    async fn get_block_hash(&self, height: u64) -> anyhow::Result<BlockHash> {
+        Ok(self.0.get_block_hash(height as u32).await?)
+    }
+
+    async fn get_fee_rate(&self, confirmation_target: u16) -> anyhow::Result<Option<Feerate>> {
+        let fee_estimates: HashMap<String, f64> = self.0.get_fee_estimates().await?;
+
+        let fee_rate_vb =
+            esplora_client::convert_fee_rate(confirmation_target.into(), fee_estimates)?;
+
+        let fee_rate_kvb = fee_rate_vb * 1_000f32;
+
+        Ok(Some(Feerate {
+            sats_per_kvb: (fee_rate_kvb).ceil() as u64,
+        }))
+    }
+
+    async fn submit_transaction(&self, transaction: Transaction) {
+        let _ = self.0.broadcast(&transaction).await.map_err(|error| {
+            info!(?error, "Error broadcasting transaction");
+        });
+    }
+
+    async fn get_tx_block_height(&self, txid: &Txid) -> anyhow::Result<Option<u64>> {
+        Ok(self
+            .0
+            .get_tx_status(txid)
+            .await?
+            .block_height
+            .map(|height| height as u64))
+    }
+
+    async fn watch_script_history(
+        &self,
+        script: &Script,
+    ) -> anyhow::Result<Vec<bitcoin::Transaction>> {
+        let transactions = self
+            .0
+            .scripthash_txs(script, None)
+            .await?
+            .into_iter()
+            .map(|tx| tx.to_tx())
+            .collect::<Vec<_>>();
+
+        Ok(transactions)
+    }
+
+    async fn get_txout_proof(&self, txid: Txid) -> anyhow::Result<TxOutProof> {
+        let proof = self
+            .0
+            .get_merkle_block(&txid)
+            .await?
+            .ok_or(format_err!("No merkle proof found"))?;
+
+        Ok(TxOutProof {
+            block_header: proof.header,
+            merkle_proof: proof.txn,
+        })
+    }
+}
+
+

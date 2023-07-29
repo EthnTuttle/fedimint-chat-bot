@@ -1,0 +1,69 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_server/index.html
+
+
+PEERSLICE
+
+
+REQUIRED METHODS
+
+ * peers
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * Target<PeerId>
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_SERVER::NET::PEERS [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_SERVER [../../index.html]::NET [../index.html]::PEERS [index.html]::PEERSLICECopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_server/net/peers.rs.html#296-298] · [−]
+
+pub trait PeerSlice {
+    fn peers(&self, all_peers: &BTreeSethttps://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html<PeerId../../struct.PeerId.html>) -> Vechttps://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html<PeerId../../struct.PeerId.html> ⓘ;
+}
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_server/net/peers.rs.html#297]
+
+FN PEERS(&SELF, ALL_PEERS: &BTREESET [https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<PEERID
+[../../struct.PeerId.html]>) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<PEERID
+[../../struct.PeerId.html]> Ⓘ
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../../src/fedimint_server/net/peers.rs.html#300-309]§
+
+
+IMPL PEERSLICE [trait.PeerSlice.html] FOR TARGET<PEERID [../../struct.PeerId.html]>
+
+source [../../../src/fedimint_server/net/peers.rs.html#301-308]§
+
+FN PEERS(&SELF, ALL_PEERS: &BTREESET [https://doc.rust-lang.org/1.67.0/alloc/collections/btree/set/struct.BTreeSet.html]<PEERID
+[../../struct.PeerId.html]>) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<PEERID
+[../../struct.PeerId.html]> Ⓘ
+
+
+IMPLEMENTORS§
+
+

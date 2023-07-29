@@ -1,0 +1,62 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_client_legacy/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+
+
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::impl_db_record;
+use serde::Serialize;
+use strum_macros::EnumIter;
+
+use crate::ClientSecret;
+
+#[repr(u8)]
+#[derive(Clone, EnumIter, Debug)]
+pub enum DbKeyPrefix {
+    ClientSecret = 0x29,
+}
+
+impl std::fmt::Display for DbKeyPrefix {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "{self:?}")
+    }
+}
+
+#[derive(Debug, Encodable, Decodable, Serialize)]
+pub struct ClientSecretKey;
+
+impl_db_record!(
+    key = ClientSecretKey,
+    value = ClientSecret,
+    db_prefix = DbKeyPrefix::ClientSecret
+);
+
+

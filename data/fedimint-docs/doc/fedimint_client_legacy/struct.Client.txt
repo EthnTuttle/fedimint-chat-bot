@@ -1,0 +1,1264 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_client_legacy/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_client_legacy/index.html
+
+
+CLIENT
+
+
+METHODS
+
+ * abort_outgoing_payment
+ * await_consensus_block_height
+ * await_invoice_confirmation
+ * await_outgoing_contract_acceptance
+ * await_outgoing_contract_claimed
+ * await_outgoing_contract_execution
+ * await_outpoint_outcome
+ * await_preimage_decryption
+ * buy_preimage_offer
+ * cancel_outgoing_contract
+ * claim_incoming_contract
+ * claim_outgoing_contract
+ * concurrency_lock
+ * config
+ * config_ref
+ * context
+ * db
+ * decoders
+ * fetch_active_gateway
+ * fetch_all_notes
+ * fetch_epoch_history
+ * fetch_notes
+ * fetch_outgoing_contract
+ * fetch_registered_gateways
+ * fund_outgoing_ln_contract
+ * generate_confirmed_invoice
+ * generate_unconfirmed_invoice
+ * generate_unconfirmed_invoice_and_submit
+ * get_new_pegin_address
+ * list_active_issuances
+ * list_fetchable_notes
+ * list_pending_claimed_outgoing
+ * list_pending_outgoing
+ * ln_client
+ * mint_client
+ * mint_secret_static
+ * module_gens
+ * new
+ * new_peg_out_with_fees
+ * new_with_api
+ * notes
+ * pay_to_blind_nonces
+ * peg_in
+ * peg_out
+ * rbf_tx
+ * receive_notes
+ * refund_incoming_contract
+ * register_with_federation
+ * reissue
+ * reissue_pending_notes
+ * remint_ecash
+ * remint_ecash_await
+ * remove_ecash
+ * root_secret
+ * save_outgoing_payment
+ * spend_ecash
+ * submit_tx_with_change
+ * summary
+ * switch_active_gateway
+ * try_refund_outgoing_contract
+ * validate_note_signatures
+ * validate_outgoing_account
+ * wallet_client
+
+
+AUTO TRAIT IMPLEMENTATIONS
+
+ * !RefUnwindSafe
+ * Send
+ * Sync
+ * Unpin
+ * !UnwindSafe
+
+
+BLANKET IMPLEMENTATIONS
+
+ * Any
+ * Borrow<T>
+ * BorrowMut<T>
+ * Conv
+ * FmtForward
+ * From<T>
+ * FutureExt
+ * Instrument
+ * Into<U>
+ * IntoRequest<T>
+ * MaybeSend
+ * MaybeSend
+ * MaybeSync
+ * Pipe
+ * Same<T>
+ * Tap
+ * TryConv
+ * TryFrom<U>
+ * TryInto<U>
+ * VZip<V>
+ * WithSubscriber
+
+
+IN FEDIMINT_CLIENT_LEGACY [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+STRUCT FEDIMINT_CLIENT_LEGACY [index.html]::CLIENTCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_client_legacy/lib.rs.html#168-174] · [−]
+
+pub struct Client<C> { /* private fields */ }
+
+
+IMPLEMENTATIONS§
+
+source [../src/fedimint_client_legacy/lib.rs.html#176-196]§
+
+
+IMPL<C> CLIENT [struct.Client.html]<C>
+
+source [../src/fedimint_client_legacy/lib.rs.html#177-179]
+
+PUB ASYNC FN CONCURRENCY_LOCK(&SELF) -> MUTEXGUARD<'_, CONCURRENCYLOCK [struct.ConcurrencyLock.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#181-183]
+
+PUB FN DECODERS(&SELF) -> &MODULEDECODERREGISTRY
+
+source [../src/fedimint_client_legacy/lib.rs.html#185-187]
+
+PUB FN MODULE_GENS(&SELF) -> &CLIENTMODULEGENREGISTRY
+
+source [../src/fedimint_client_legacy/lib.rs.html#189-191]
+
+PUB FN CONTEXT(&SELF) -> &ARC [https://doc.rust-lang.org/1.67.0/alloc/sync/struct.Arc.html]<CLIENTCONTEXT
+[utils/struct.ClientContext.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#193-195]
+
+PUB FN ROOT_SECRET(&SELF) -> &DERIVABLESECRET
+
+source [../src/fedimint_client_legacy/lib.rs.html#230-234]§
+
+
+IMPL<T> CLIENT [struct.Client.html]<T>
+
+source [../src/fedimint_client_legacy/lib.rs.html#231-233]
+
+PUB FN MINT_SECRET_STATIC(ROOT_SECRET: &DERIVABLESECRET) -> DERIVABLESECRET
+
+source [../src/fedimint_client_legacy/lib.rs.html#238-792]§
+
+
+IMPL<T: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<CLIENTCONFIG> + CLONE
+[https://doc.rust-lang.org/1.67.0/core/clone/trait.Clone.html] + MAYBESEND> CLIENT [struct.Client.html]<T>
+
+source [../src/fedimint_client_legacy/lib.rs.html#239-241]
+
+PUB FN DB(&SELF) -> &DATABASE
+
+source [../src/fedimint_client_legacy/lib.rs.html#243-254]
+
+PUB FN LN_CLIENT(&SELF) -> LNCLIENT [ln/struct.LnClient.html]
+
+source [../src/fedimint_client_legacy/lib.rs.html#256-269]
+
+PUB FN MINT_CLIENT(&SELF) -> MINTCLIENT [mint/struct.MintClient.html]
+
+source [../src/fedimint_client_legacy/lib.rs.html#271-283]
+
+PUB FN WALLET_CLIENT(&SELF) -> WALLETCLIENT [wallet/struct.WalletClient.html]
+
+source [../src/fedimint_client_legacy/lib.rs.html#285-287]
+
+PUB FN CONFIG(&SELF) -> T
+
+source [../src/fedimint_client_legacy/lib.rs.html#289-291]
+
+PUB FN CONFIG_REF(&SELF) -> & [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+source [../src/fedimint_client_legacy/lib.rs.html#293-302]
+
+PUB ASYNC FN NEW(
+    CONFIG: T,
+    DECODERS: MODULEDECODERREGISTRY,
+    MODULE_GENS: CLIENTMODULEGENREGISTRY,
+    DB: DATABASE,
+    SECP: SECP256K1<ALL>
+) -> SELF
+
+source [../src/fedimint_client_legacy/lib.rs.html#304-325]
+
+PUB ASYNC FN NEW_WITH_API(
+    CONFIG: T,
+    DECODERS: MODULEDECODERREGISTRY,
+    MODULE_GENS: CLIENTMODULEGENREGISTRY,
+    DB: DATABASE,
+    API: DYNGLOBALAPI,
+    SECP: SECP256K1<ALL>
+) -> CLIENT [struct.Client.html]<T>
+
+source [../src/fedimint_client_legacy/lib.rs.html#347-367]
+
+PUB ASYNC FN PEG_IN<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    TXOUT_PROOF: TXOUTPROOF,
+    BTC_TRANSACTION: BITCOINTRANSACTION,
+    RNG: R
+) -> RESULT [type.Result.html]<TRANSACTIONID>
+
+source [../src/fedimint_client_legacy/lib.rs.html#374-393]
+
+PUB ASYNC FN SUBMIT_TX_WITH_CHANGE<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    GUARD: MUTEXGUARD<'_, CONCURRENCYLOCK [struct.ConcurrencyLock.html]>,
+    TX: TRANSACTIONBUILDER [transaction/struct.TransactionBuilder.html],
+    RNG: R
+) -> RESULT [type.Result.html]<TRANSACTIONID>
+
+Submits a transaction to the fed, making change using our change module
+
+TODO: For safety, if the submission fails, the DB write still occurs. We should instead ensure the state of the client and
+consensus are always the same.
+
+source [../src/fedimint_client_legacy/lib.rs.html#405-429]
+
+PUB ASYNC FN REISSUE<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    NOTES: TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>,
+    RNG: R
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+Spent some SpendableNote [mint/struct.SpendableNote.html]s to receive a freshly minted ones
+
+This is useful in scenarios where certain notes were handed over directly to us by another user as a payment. By spending them we
+can make sure they can no longer be potentially double-spent.
+
+On success the out point of the newly issued e-cash notes is returned. It can be used to easily poll the transaction status using
+MintClient::fetch_notes [mint/struct.MintClient.html#method.fetch_notes] until it returns Ok(()), indicating we received our newly
+issued e-cash notes.
+
+source [../src/fedimint_client_legacy/lib.rs.html#436-445]
+
+PUB ASYNC FN VALIDATE_NOTE_SIGNATURES(
+    &SELF,
+    NOTES: &TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Validate signatures on notes.
+
+This function checks if signatures are valid based on the federation public key. It does not check if the nonce is unspent.
+
+source [../src/fedimint_client_legacy/lib.rs.html#460-478]
+
+PUB ASYNC FN PAY_TO_BLIND_NONCES<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    BLIND_NONCES: TIEREDMULTI<BLINDNONCE>,
+    RNG: R
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+Pay by creating notes provided (and most probably controlled) by the recipient.
+
+A standard way to facilitate a payment between users of a mint. Generate a transaction spending notes we own as inputs and
+creating new notes from [BlindNonce]s provided by the recipient as outputs.
+
+Returns a OutPoint of a fedimint transaction created and submitted as a payment.
+
+The name is derived from Bitcoin’s terminology of “pay to <address-type>”.
+
+source [../src/fedimint_client_legacy/lib.rs.html#487-492]
+
+PUB ASYNC FN RECEIVE_NOTES(
+    &SELF,
+    AMOUNT: AMOUNT
+) -> (TIEREDMULTI<BLINDNONCE>, BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FN
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html](OUTPOINT)>)
+
+Receive e-cash directly from another user when online (vs. offline transfer)
+
+Generates notes that another user will pay for and let us know the OutPoint in create_tx Payer can use the pay_to_blind_nonces
+function Allows transfer of e-cash without risk of double-spend or not having exact change
+
+source [../src/fedimint_client_legacy/lib.rs.html#494-510]
+
+PUB ASYNC FN NEW_PEG_OUT_WITH_FEES(
+    &SELF,
+    AMOUNT: AMOUNT,
+    RECIPIENT: ADDRESS
+) -> RESULT [type.Result.html]<PEGOUT>
+
+source [../src/fedimint_client_legacy/lib.rs.html#512-527]
+
+PUB ASYNC FN RBF_TX(&SELF, RBF: RBF) -> RESULT [type.Result.html]<OUTPOINT>
+
+source [../src/fedimint_client_legacy/lib.rs.html#529-557]
+
+PUB ASYNC FN PEG_OUT<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    PEG_OUT: PEGOUT,
+    RNG: R
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+source [../src/fedimint_client_legacy/lib.rs.html#569-577]
+
+PUB ASYNC FN GET_NEW_PEGIN_ADDRESS<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    RNG: R
+) -> ADDRESS
+
+Returns a bitcoin address suited to perform a fedimint peg-in [struct.Client.html#method.peg_in]
+
+This function requires a cryptographically secure randomness source, and utilizes the wallet-clients
+[wallet/struct.WalletClient.html] get_new_pegin_address [wallet/struct.WalletClient.html#method.get_new_pegin_address] to derive a
+bitcoin-address from the federations public descriptor by tweaking it.
+
+ * this function will write to the clients DB
+
+read more on fedimints address derivation: https://fedimint.org/Fedimint/wallet/ [https://fedimint.org/Fedimint/wallet/]
+
+source [../src/fedimint_client_legacy/lib.rs.html#583-621]
+
+PUB ASYNC FN SPEND_ECASH<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    AMOUNT: AMOUNT,
+    RNG: R
+) -> RESULT [type.Result.html]<TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>>
+
+Issues a spendable amount of ecash
+
+WARNING the ecash will be deleted from the database, the returned ecash must be reissued or it will be lost
+
+source [../src/fedimint_client_legacy/lib.rs.html#624-635]
+
+PUB ASYNC FN REMOVE_ECASH(&SELF, ECASH: TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>)
+
+Removes spent ecash from the database
+
+source [../src/fedimint_client_legacy/lib.rs.html#646-657]
+
+PUB ASYNC FN REMINT_ECASH<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    AMOUNT: AMOUNT,
+    RNG: R
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+For tests only: Select notes of a given amount, and then remint them, remove the amount of notes from the database and return it
+to the user.
+
+This is a respin of spent_ecash for tests, where it is necessary to process epochs after self.submit_tx_with_change. Then
+remint_ecash_await can be called to do the rest.
+
+TODO: Like spend_ecash, I think this function works in tests mostly by accident.
+
+source [../src/fedimint_client_legacy/lib.rs.html#660-676]
+
+PUB ASYNC FN REMINT_ECASH_AWAIT(
+    &SELF,
+    AMOUNT: AMOUNT
+) -> RESULT [type.Result.html]<TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>>
+
+Continuation of remint_notes
+
+source [../src/fedimint_client_legacy/lib.rs.html#682-687]
+
+PUB ASYNC FN FETCH_NOTES<'A>(&SELF, OUTPOINT: OUTPOINT) -> RESULT [type.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Tries to fetch e-cash notes from a certain out point. An error may just mean having queried the federation too early. Use
+MintClientError::is_retryable [mint/enum.MintClientError.html#method.is_retryable] to determine if the operation should be retried
+at a later time.
+
+source [../src/fedimint_client_legacy/lib.rs.html#691]
+
+PUB ASYNC FN REISSUE_PENDING_NOTES<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    RNG: R
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+Should be called after any transaction that might have failed in order to get any note inputs back.
+
+source [../src/fedimint_client_legacy/lib.rs.html#730-738]
+
+PUB ASYNC FN AWAIT_CONSENSUS_BLOCK_HEIGHT(
+    &SELF,
+    BLOCK_HEIGHT: U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]
+) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html], ELAPSED>
+
+source [../src/fedimint_client_legacy/lib.rs.html#749-766]
+
+PUB ASYNC FN FETCH_ALL_NOTES<'A>(&SELF) -> RESULT [type.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<OUTPOINT>>
+
+source [../src/fedimint_client_legacy/lib.rs.html#768-770]
+
+PUB ASYNC FN SUMMARY(&SELF) -> TIEREDSUMMARY
+
+source [../src/fedimint_client_legacy/lib.rs.html#773-775]
+
+PUB ASYNC FN NOTES(&SELF) -> TIEREDMULTI<SPENDABLENOTE [mint/struct.SpendableNote.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#777-779]
+
+PUB ASYNC FN LIST_ACTIVE_ISSUANCES(
+    &SELF
+) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<(OUTPOINT, NOTEISSUANCEREQUESTS
+[mint/struct.NoteIssuanceRequests.html])> Ⓘ
+
+source [../src/fedimint_client_legacy/lib.rs.html#781-791]
+
+PUB ASYNC FN FETCH_EPOCH_HISTORY(
+    &SELF,
+    EPOCH: U64 [https://doc.rust-lang.org/1.67.0/std/primitive.u64.html],
+    EPOCH_PK: PUBLICKEY
+) -> RESULT [type.Result.html]<SIGNEDEPOCHOUTCOME>
+
+source [../src/fedimint_client_legacy/lib.rs.html#794-1201]§
+
+
+IMPL CLIENT [struct.Client.html]<USERCLIENTCONFIG [struct.UserClientConfig.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#795-797]
+
+PUB ASYNC FN FETCH_REGISTERED_GATEWAYS(&SELF) -> RESULT [type.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<LIGHTNINGGATEWAY>>
+
+source [../src/fedimint_client_legacy/lib.rs.html#799-815]
+
+PUB ASYNC FN FETCH_ACTIVE_GATEWAY(&SELF) -> RESULT [type.Result.html]<LIGHTNINGGATEWAY>
+
+source [../src/fedimint_client_legacy/lib.rs.html#821-852]
+
+PUB ASYNC FN SWITCH_ACTIVE_GATEWAY(
+    &SELF,
+    GATEWAY_ID: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<PUBLICKEY>
+) -> RESULT [type.Result.html]<LIGHTNINGGATEWAY>
+
+Switches the clients active gateway to a registered gateway with the given node pubkey. If no pubkey is given (node_pub_key ==
+None) the first available registered gateway is activated. This behavior is useful for scenarios where we don’t know any
+registered gateways in advance.
+
+source [../src/fedimint_client_legacy/lib.rs.html#854-899]
+
+PUB ASYNC FN FUND_OUTGOING_LN_CONTRACT<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    INVOICE: INVOICE,
+    RNG: R
+) -> RESULT [type.Result.html]<(CONTRACTID, OUTPOINT)>
+
+source [../src/fedimint_client_legacy/lib.rs.html#906-935]
+
+PUB ASYNC FN TRY_REFUND_OUTGOING_CONTRACT(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+Claims a refund for an expired or cancelled outgoing contract
+
+This can be necessary when the Lightning gateway cannot route the payment, is malicious or offline. The function returns the out
+point of the e-cash output generated as change.
+
+source [../src/fedimint_client_legacy/lib.rs.html#937-947]
+
+PUB ASYNC FN AWAIT_OUTGOING_CONTRACT_ACCEPTANCE(
+    &SELF,
+    OUTPOINT: OUTPOINT
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#953-977]
+
+PUB ASYNC FN AWAIT_OUTPOINT_OUTCOME(&SELF, OUTPOINT: OUTPOINT) -> RESULT [type.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Waits for the federation to sign an ecash note.
+
+This function will poll until the returned result includes a SigResponse from the federation or it will timeout.
+
+source [../src/fedimint_client_legacy/lib.rs.html#979-992]
+
+PUB ASYNC FN GENERATE_CONFIRMED_INVOICE<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    AMOUNT: AMOUNT,
+    DESCRIPTION: STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html],
+    RNG: R,
+    EXPIRY_TIME: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]>
+) -> RESULT [type.Result.html]<CONFIRMEDINVOICE [ln/incoming/struct.ConfirmedInvoice.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#993-1018]
+
+PUB ASYNC FN GENERATE_UNCONFIRMED_INVOICE_AND_SUBMIT<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html]
++ CRYPTORNG [https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    AMOUNT: AMOUNT,
+    DESCRIPTION: STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html],
+    RNG: R,
+    EXPIRY_TIME: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]>
+) -> RESULT [type.Result.html]<(TRANSACTIONID, INVOICE, KEYPAIR)>
+
+source [../src/fedimint_client_legacy/lib.rs.html#1020-1108]
+
+PUB ASYNC FN GENERATE_UNCONFIRMED_INVOICE<R: RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]>(
+    &SELF,
+    AMOUNT: AMOUNT,
+    DESCRIPTION: STRING [https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html],
+    PAYMENT_KEYPAIR: KEYPAIR,
+    RNG: R,
+    EXPIRY_TIME: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]>
+) -> RESULT [type.Result.html]<(INVOICE, OUTPUT [transaction/legacy/enum.Output.html])>
+
+source [../src/fedimint_client_legacy/lib.rs.html#1110-1133]
+
+PUB ASYNC FN AWAIT_INVOICE_CONFIRMATION(
+    &SELF,
+    TXID: TRANSACTIONID,
+    INVOICE: INVOICE,
+    PAYMENT_KEYPAIR: KEYPAIR
+) -> RESULT [type.Result.html]<CONFIRMEDINVOICE [ln/incoming/struct.ConfirmedInvoice.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#1135-1154]
+
+PUB ASYNC FN CLAIM_INCOMING_CONTRACT(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+source [../src/fedimint_client_legacy/lib.rs.html#1158-1200]
+
+PUB ASYNC FN AWAIT_OUTGOING_CONTRACT_EXECUTION(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Notify gateway that we’ve escrowed notes they can claim by routing our payment and wait for them to do so
+
+source [../src/fedimint_client_legacy/lib.rs.html#1203-1564]§
+
+
+IMPL CLIENT [struct.Client.html]<GATEWAYCLIENTCONFIG [struct.GatewayClientConfig.html]>
+
+source [../src/fedimint_client_legacy/lib.rs.html#1205-1213]
+
+PUB ASYNC FN FETCH_OUTGOING_CONTRACT(
+    &SELF,
+    CONTRACT_ID: CONTRACTID
+) -> RESULT [type.Result.html]<OUTGOINGCONTRACTACCOUNT [ln/outgoing/struct.OutgoingContractAccount.html]>
+
+Fetch the specified outgoing payment contract account
+
+source [../src/fedimint_client_legacy/lib.rs.html#1218-1258]
+
+PUB ASYNC FN VALIDATE_OUTGOING_ACCOUNT(
+    &SELF,
+    ACCOUNT: &OUTGOINGCONTRACTACCOUNT [ln/outgoing/struct.OutgoingContractAccount.html]
+) -> RESULT [type.Result.html]<PAYMENTPARAMETERS [struct.PaymentParameters.html]>
+
+Check if we can claim the contract account and returns the max delay in blocks for how long other nodes on the route are allowed
+to delay the payment.
+
+source [../src/fedimint_client_legacy/lib.rs.html#1279-1287]
+
+PUB ASYNC FN SAVE_OUTGOING_PAYMENT(&SELF, CONTRACT: OUTGOINGCONTRACTACCOUNT [ln/outgoing/struct.OutgoingContractAccount.html])
+
+Save the details about an outgoing payment the client is about to process. This function has to be called prior to instructing the
+lightning node to pay the invoice since otherwise a crash could lead to loss of funds.
+
+Note though that extended periods of staying offline will result in loss of funds anyway if the client can not claim the
+respective contract in time.
+
+source [../src/fedimint_client_legacy/lib.rs.html#1291-1301]
+
+PUB ASYNC FN LIST_PENDING_OUTGOING(&SELF) -> VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<OUTGOINGCONTRACTACCOUNT
+[ln/outgoing/struct.OutgoingContractAccount.html]> Ⓘ
+
+Lists all previously saved transactions that have not been driven to completion so far
+
+source [../src/fedimint_client_legacy/lib.rs.html#1304-1314]
+
+PUB ASYNC FN ABORT_OUTGOING_PAYMENT(&SELF, CONTRACT_ID: CONTRACTID) -> RESULT [type.Result.html]<()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Abort payment if our node can’t route it and give money back to user
+
+source [../src/fedimint_client_legacy/lib.rs.html#1318-1344]
+
+PUB ASYNC FN CANCEL_OUTGOING_CONTRACT(
+    &SELF,
+    CONTRACT_ACCOUNT: OUTGOINGCONTRACTACCOUNT [ln/outgoing/struct.OutgoingContractAccount.html]
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Cancel an outgoing contract we haven’t accepted yet, possibly because it was underfunded
+
+source [../src/fedimint_client_legacy/lib.rs.html#1354-1377]
+
+PUB ASYNC FN CLAIM_OUTGOING_CONTRACT(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    PREIMAGE: PREIMAGE,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<OUTPOINT>
+
+Claim an outgoing contract after acquiring the preimage by paying the associated invoice and initiates e-cash issuances to receive
+the bitcoin from the contract (these still need to be fetched later to finalize them).
+
+Callers need to make sure that the contract can still be claimed by the gateway and has not timed out yet. Otherwise the
+transaction will fail.
+
+source [../src/fedimint_client_legacy/lib.rs.html#1389]
+
+PUB ASYNC FN BUY_PREIMAGE_OFFER(
+    &SELF,
+    PAYMENT_HASH: &HASH,
+    HTLC_AMOUNT: &AMOUNT,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<(OUTPOINT, CONTRACTID)>
+
+Buy a lightning preimage listed for sale inside the federation
+
+Called when a lightning gateway attempts to satisfy a contract on behalf of a user
+
+ * payment_hash - hash of the preimage we want to buy. It is included inside a bolt11 invoice and should match the offer hash
+ * htlc_amount - amount from the htlc the gateway wants to pay. Should be less than or equal to the offer amount depending on
+   gateway fee policy
+
+source [../src/fedimint_client_legacy/lib.rs.html#1437]
+
+PUB ASYNC FN REFUND_INCOMING_CONTRACT(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    RNG: IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html] + CRYPTORNG
+[https://rust-random.github.io/rand/rand_core/trait.CryptoRng.html]
+) -> RESULT [type.Result.html]<TRANSACTIONID>
+
+Claw back funds after incoming contract that had invalid preimage
+
+source [../src/fedimint_client_legacy/lib.rs.html#1459-1469]
+
+PUB ASYNC FN LIST_PENDING_CLAIMED_OUTGOING(&SELF) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<CONTRACTID>
+Ⓘ
+
+Lists all claim transactions for outgoing contracts that we have submitted but were not part of the consensus yet.
+
+source [../src/fedimint_client_legacy/lib.rs.html#1473-1517]
+
+PUB ASYNC FN AWAIT_PREIMAGE_DECRYPTION(
+    &SELF,
+    OUTPOINT: OUTPOINT
+) -> RESULT [type.Result.html]<PREIMAGE>
+
+Wait for a lightning preimage gateway has purchased to be decrypted by the federation
+
+source [../src/fedimint_client_legacy/lib.rs.html#1522-1545]
+
+PUB ASYNC FN AWAIT_OUTGOING_CONTRACT_CLAIMED(
+    &SELF,
+    CONTRACT_ID: CONTRACTID,
+    OUTPOINT: OUTPOINT
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Waits for a outgoing contract claim transaction to be confirmed and retransmits it periodically if this does not happen.
+
+source [../src/fedimint_client_legacy/lib.rs.html#1547-1554]
+
+PUB ASYNC FN LIST_FETCHABLE_NOTES(&SELF) -> VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<OUTPOINT> Ⓘ
+
+source [../src/fedimint_client_legacy/lib.rs.html#1557-1563]
+
+PUB ASYNC FN REGISTER_WITH_FEDERATION(
+    &SELF,
+    CONFIG: LIGHTNINGGATEWAY
+) -> RESULT [type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>
+
+Register this gateway with the federation
+
+
+AUTO TRAIT IMPLEMENTATIONS§
+
+§
+
+
+IMPL<C> !REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html] FOR CLIENT
+[struct.Client.html]<C>
+
+§
+
+
+IMPL<C> SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] FOR CLIENT [struct.Client.html]<C>WHERE
+    C: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<C> SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] FOR CLIENT [struct.Client.html]<C>WHERE
+    C: SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+§
+
+
+IMPL<C> UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] FOR CLIENT [struct.Client.html]<C>WHERE
+    C: UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html],
+
+§
+
+
+IMPL<C> !UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html] FOR CLIENT
+[struct.Client.html]<C>
+
+
+BLANKET IMPLEMENTATIONS§
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#200]§
+
+
+IMPL<T> ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] FOR TWHERE
+    T: 'STATIC + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#201]§
+
+FN TYPE_ID [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id](&SELF) -> TYPEID
+[https://doc.rust-lang.org/1.67.0/core/any/struct.TypeId.html]
+
+Gets the TypeId of self. Read more [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#211]§
+
+
+IMPL<T> BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#213]§
+
+FN BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow](&SELF) -> &
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Immutably borrows from an owned value. Read more [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#220]§
+
+
+IMPL<T> BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#221]§
+
+FN BORROW_MUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut](&MUT SELF) -> &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Mutably borrows from an owned value. Read more
+[https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut]
+§
+
+
+IMPL<T> CONV FOR T
+
+§
+
+FN CONV<T>(SELF) -> TWHERE
+    SELF: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+Converts self into T using Into<T>. Read more
+§
+
+
+IMPL<T> FMTFORWARD FOR T
+
+§
+
+FN FMT_BINARY(SELF) -> FMTBINARY<SELF>WHERE
+    SELF: BINARY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Binary.html],
+
+Causes self to use its Binary implementation when Debug-formatted.
+§
+
+FN FMT_DISPLAY(SELF) -> FMTDISPLAY<SELF>WHERE
+    SELF: DISPLAY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html],
+
+Causes self to use its Display implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_EXP(SELF) -> FMTLOWEREXP<SELF>WHERE
+    SELF: LOWEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerExp.html],
+
+Causes self to use its LowerExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_HEX(SELF) -> FMTLOWERHEX<SELF>WHERE
+    SELF: LOWERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerHex.html],
+
+Causes self to use its LowerHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_OCTAL(SELF) -> FMTOCTAL<SELF>WHERE
+    SELF: OCTAL [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Octal.html],
+
+Causes self to use its Octal implementation when Debug-formatted.
+§
+
+FN FMT_POINTER(SELF) -> FMTPOINTER<SELF>WHERE
+    SELF: POINTER [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Pointer.html],
+
+Causes self to use its Pointer implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_EXP(SELF) -> FMTUPPEREXP<SELF>WHERE
+    SELF: UPPEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperExp.html],
+
+Causes self to use its UpperExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_HEX(SELF) -> FMTUPPERHEX<SELF>WHERE
+    SELF: UPPERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperHex.html],
+
+Causes self to use its UpperHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_LIST(SELF) -> FMTLIST<SELF>WHERE
+    &'A [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF: FOR<'A> INTOITERATOR
+[https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.IntoIterator.html],
+
+Formats each item in a sequence. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#733]§
+
+
+IMPL<T> FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T> FOR T
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#736]§
+
+FN FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html#tymethod.from](T: T) -> T
+
+Returns the argument unchanged.
+
+§
+
+
+IMPL<T> FUTUREEXT FOR T
+
+§
+
+FN WITH_CONTEXT(SELF, OTEL_CX: CONTEXT) -> WITHCONTEXT<SELF>
+
+Attaches the provided Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+§
+
+FN WITH_CURRENT_CONTEXT(SELF) -> WITHCONTEXT<SELF>
+
+Attaches the current Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#276]§
+
+
+IMPL<T> INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#82]§
+
+FN INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument](SELF, SPAN: SPAN
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html]) -> INSTRUMENTED
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the provided Span [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an
+Instrumented wrapper. Read more [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#121]§
+
+FN IN_CURRENT_SPAN [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span](SELF) ->
+INSTRUMENTED [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the current [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html#method.current] Span
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an Instrumented wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#717]§
+
+
+IMPL<T, U> INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<U> FOR TWHERE
+    U: FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>,
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#725]§
+
+FN INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html#tymethod.into](SELF) -> U
+
+Calls U::from(self).
+
+That is, this conversion is whatever the implementation of From [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>
+for U chooses to do.
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#384]§
+
+
+IMPL<T> INTOREQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html]<T> FOR T
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#385]§
+
+FN INTO_REQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html#tymethod.into_request](SELF) -> REQUEST
+[https://docs.rs/tonic/0.9.2/tonic/request/struct.Request.html]<T>
+
+Wrap the input message T in a tonic::Request
+§
+
+
+IMPL<T> PIPE FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+§
+
+FN PIPE<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](SELF) -> R) -> RWHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Pipes by value. This is generally the method you want to use. Read more
+§
+
+FN PIPE_REF<'A, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_REF_MUT<'A, R>(&'A MUT SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Mutably borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_BORROW<'A, B, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R) -> RWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.borrow() into the pipe function. Read more
+§
+
+FN PIPE_BORROW_MUT<'A, B, R>(
+    &'A MUT SELF,
+    FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R
+) -> RWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.borrow_mut() into the pipe function. Read more
+§
+
+FN PIPE_AS_REF<'A, U, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.as_ref() into the pipe function.
+§
+
+FN PIPE_AS_MUT<'A, U, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.as_mut() into the pipe function. Read more
+§
+
+FN PIPE_DEREF<'A, T, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.deref() into the pipe function.
+§
+
+FN PIPE_DEREF_MUT<'A, T, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.deref_mut() into the pipe function. Read more
+source [https://docs.rs/typenum/1.16.0/src/typenum/type_operators.rs.html#34]§
+
+
+IMPL<T> SAME [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html]<T> FOR T
+
+§
+
+TYPE OUTPUT [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html#associatedtype.Output] = T
+
+Should always be Self
+§
+
+
+IMPL<T> TAP FOR T
+
+§
+
+FN TAP(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Immutable access to a value. Read more
+§
+
+FN TAP_MUT(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Mutable access to a value. Read more
+§
+
+FN TAP_BORROW<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Borrow<B> of a value. Read more
+§
+
+FN TAP_BORROW_MUT<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the BorrowMut<B> of a value. Read more
+§
+
+FN TAP_REF<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the AsRef<R> view of a value. Read more
+§
+
+FN TAP_REF_MUT<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the AsMut<R> view of a value. Read more
+§
+
+FN TAP_DEREF<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DEREF_MUT<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap() only in debug builds, and is erased in release builds.
+§
+
+FN TAP_MUT_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_MUT_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_MUT_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_MUT_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+
+IMPL<T> TRYCONV FOR T
+
+§
+
+FN TRY_CONV<T>(SELF) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, SELF::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error]>WHERE
+    SELF: TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<T>,
+
+Attempts to convert self into T using TryInto<T>. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#775]§
+
+
+IMPL<T, U> TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U> FOR TWHERE
+    U: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error] = INFALLIBLE
+[https://doc.rust-lang.org/1.67.0/core/convert/enum.Infallible.html]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#781]§
+
+FN TRY_FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#tymethod.try_from](VALUE: U) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, <T AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#760]§
+
+
+IMPL<T, U> TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<U> FOR TWHERE
+    U: TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error] = <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#766]§
+
+FN TRY_INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#tymethod.try_into](SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U, <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+§
+
+
+IMPL<V, T> VZIP<V> FOR TWHERE
+    V: MULTILANE<T>,
+
+§
+
+FN VZIP(SELF) -> V
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#334]§
+
+
+IMPL<T> WITHSUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#169-171]§
+
+FN WITH_SUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]<S>(SELF,
+SUBSCRIBER: S) -> WITHDISPATCH [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>WHERE
+    S: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<DISPATCH
+[https://docs.rs/tracing-core/0.1.22/tracing_core/dispatcher/struct.Dispatch.html]>,
+
+Attaches the provided Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type,
+returning a WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#221]§
+
+FN WITH_CURRENT_SUBSCRIBER
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber](SELF) -> WITHDISPATCH
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>
+
+Attaches the current default [https://docs.rs/tracing/0.1.37/tracing/dispatcher/index.html#setting-the-default-subscriber]
+Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type, returning a
+WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber]
+§
+
+
+IMPL<T> MAYBESEND FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<T> MAYBESEND FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<T> MAYBESYNC FOR TWHERE
+    T: SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+

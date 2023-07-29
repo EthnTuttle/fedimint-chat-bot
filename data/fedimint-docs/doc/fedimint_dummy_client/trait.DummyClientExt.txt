@@ -1,0 +1,232 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_client/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_client/index.html
+
+
+DUMMYCLIENTEXT
+
+
+REQUIRED METHODS
+
+ * account
+ * fed_public_key
+ * fed_signature
+ * print_money
+ * receive_money
+ * send_money
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * Client
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_DUMMY_CLIENT [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT FEDIMINT_DUMMY_CLIENT [index.html]::DUMMYCLIENTEXTCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_dummy_client/lib.rs.html#40-59] · [−]
+
+pub trait DummyClientExt {
+    fn print_money<'life0, 'async_trait>(
+        &'life0 self,
+        amount: Amount
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<(OperationId, OutPoint)>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn send_money<'life0, 'async_trait>(
+        &'life0 self,
+        account: XOnlyPublicKey,
+        amount: Amount
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<OutPoint>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn receive_money<'life0, 'async_trait>(
+        &'life0 self,
+        outpoint: OutPoint
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn fed_signature<'life0, 'life1, 'async_trait>(
+        &'life0 self,
+        message: &'life1 strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Resulthttps://docs.rs/anyhow/1.0.71/anyhow/type.Result.html<Signature>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn account(&self) -> XOnlyPublicKey;
+    fn fed_public_key(&self) -> PublicKey;
+}
+
+Expand description
+
+Exposed API calls for client apps
+
+
+REQUIRED METHODS§
+
+source [../src/fedimint_dummy_client/lib.rs.html#42]
+
+FN PRINT_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    AMOUNT: AMOUNT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<(OPERATIONID, OUTPOINT)>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Request the federation prints money for us
+
+source [../src/fedimint_dummy_client/lib.rs.html#45-46]
+
+FN SEND_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    ACCOUNT: XONLYPUBLICKEY,
+    AMOUNT: AMOUNT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OUTPOINT>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Send money to another user
+
+source [../src/fedimint_dummy_client/lib.rs.html#49]
+
+FN RECEIVE_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OUTPOINT: OUTPOINT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Wait to receive money at an outpoint
+
+source [../src/fedimint_dummy_client/lib.rs.html#52]
+
+FN FED_SIGNATURE<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MESSAGE: &'LIFE1 STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<SIGNATURE>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Request the federation signs a message for us
+
+source [../src/fedimint_dummy_client/lib.rs.html#55]
+
+FN ACCOUNT(&SELF) -> XONLYPUBLICKEY
+
+Return our account
+
+source [../src/fedimint_dummy_client/lib.rs.html#58]
+
+FN FED_PUBLIC_KEY(&SELF) -> PUBLICKEY
+
+Return the fed’s public key
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../src/fedimint_dummy_client/lib.rs.html#62-169]§
+
+
+IMPL DUMMYCLIENTEXT [trait.DummyClientExt.html] FOR CLIENT
+
+source [../src/fedimint_dummy_client/lib.rs.html#63-92]§
+
+FN PRINT_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    AMOUNT: AMOUNT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<(OPERATIONID, OUTPOINT)>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../src/fedimint_dummy_client/lib.rs.html#94-133]§
+
+FN SEND_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    ACCOUNT: XONLYPUBLICKEY,
+    AMOUNT: AMOUNT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<OUTPOINT>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../src/fedimint_dummy_client/lib.rs.html#135-151]§
+
+FN RECEIVE_MONEY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OUTPOINT: OUTPOINT
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../src/fedimint_dummy_client/lib.rs.html#153-158]§
+
+FN FED_SIGNATURE<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MESSAGE: &'LIFE1 STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://docs.rs/anyhow/1.0.71/anyhow/type.Result.html]<SIGNATURE>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+source [../src/fedimint_dummy_client/lib.rs.html#160-163]§
+
+FN ACCOUNT(&SELF) -> XONLYPUBLICKEY
+
+source [../src/fedimint_dummy_client/lib.rs.html#165-168]§
+
+FN FED_PUBLIC_KEY(&SELF) -> PUBLICKEY
+
+
+IMPLEMENTORS§
+
+

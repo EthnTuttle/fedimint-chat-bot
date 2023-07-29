@@ -1,0 +1,64 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_bitcoind/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_bitcoind/index.html
+
+
+CRATE FEDIMINT_BITCOIND
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Modules
+ * Structs
+ * Traits
+ * Functions
+ * Type Definitions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_BITCOINDCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_bitcoind/lib.rs.html#1-231] · [−]
+
+
+MODULES
+
+bitcoincore [bitcoincore/index.html]
+
+
+STRUCTS
+
+DynBitcoindRpc [struct.DynBitcoindRpc.html]
+DynBitcoindRpcFactory [struct.DynBitcoindRpcFactory.html]
+RetryClient [struct.RetryClient.html]
+Wrapper around IBitcoindRpc [trait.IBitcoindRpc.html] that will retry failed calls
+
+
+TRAITS
+
+IBitcoindRpc [trait.IBitcoindRpc.html]
+Trait that allows interacting with the Bitcoin blockchain
+IBitcoindRpcFactory [trait.IBitcoindRpcFactory.html]
+Trait for creating new bitcoin RPC clients
+
+
+FUNCTIONS
+
+create_bitcoind [fn.create_bitcoind.html]
+Create a bitcoin RPC of a given kind
+register_bitcoind [fn.register_bitcoind.html]
+Register a new factory for creating bitcoin RPCs
+
+
+TYPE DEFINITIONS
+
+Result [type.Result.html]
+Result<T, Error>

@@ -1,0 +1,42 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+MODULE FIXTURES
+
+ * Structs
+ * Constants
+ * Functions
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+MODULE FEDIMINT_TESTING [../index.html]::FIXTURESCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/fixtures.rs.html#1-208] · [−]
+
+
+STRUCTS
+
+Fixtures [struct.Fixtures.html]
+A tool for easily writing fedimint integration tests
+
+
+CONSTANTS
+
+TIMEOUT [constant.TIMEOUT.html]
+A default timeout for things happening in tests
+
+
+FUNCTIONS
+
+test_dir [fn.test_dir.html]
+If FM_TEST_DIR is set, use it as a base, otherwise use a tempdir

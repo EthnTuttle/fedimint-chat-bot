@@ -1,0 +1,82 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../devimint/index.html
+
+
+TOCMDEXT
+
+
+REQUIRED ASSOCIATED TYPES
+
+ * Fut
+
+
+REQUIRED METHODS
+
+ * cmd
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES
+
+ * &str
+
+
+IMPLEMENTORS
+
+
+IN DEVIMINT::UTIL [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT DEVIMINT [../index.html]::UTIL [index.html]::TOCMDEXTCopy item path [../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/devimint/util.rs.html#273-276] · [−]
+
+pub trait ToCmdExt {
+    type Fut;
+
+    fn cmd(self) -> Self::Futtrait.ToCmdExt.html#associatedtype.Fut;
+}
+
+
+REQUIRED ASSOCIATED TYPES§
+
+source [../../src/devimint/util.rs.html#274]
+
+TYPE FUT
+
+
+REQUIRED METHODS§
+
+source [../../src/devimint/util.rs.html#275]
+
+FN CMD(SELF) -> SELF::FUT [trait.ToCmdExt.html#associatedtype.Fut]
+
+
+IMPLEMENTATIONS ON FOREIGN TYPES§
+
+source [../../src/devimint/util.rs.html#279-288]§
+
+
+IMPL TOCMDEXT [trait.ToCmdExt.html] FOR &STR [https://doc.rust-lang.org/1.67.0/std/primitive.str.html]
+
+§
+
+TYPE FUT = READY [https://doc.rust-lang.org/1.67.0/core/future/ready/struct.Ready.html]<COMMAND [struct.Command.html]>
+
+source [../../src/devimint/util.rs.html#282-287]§
+
+FN CMD(SELF) -> SELF::FUT [trait.ToCmdExt.html#associatedtype.Fut]
+
+
+IMPLEMENTORS§
+
+

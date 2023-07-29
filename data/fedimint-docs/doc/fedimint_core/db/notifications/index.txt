@@ -1,0 +1,33 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+MODULE NOTIFICATIONS
+
+ * Structs
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+MODULE FEDIMINT_CORE [../../index.html]::DB [../index.html]::NOTIFICATIONSCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_core/db/notifications.rs.html#1-251] · [−]
+
+
+STRUCTS
+
+Notifications [struct.Notifications.html]
+The state of Notification.
+NotifyQueue [struct.NotifyQueue.html]
+Save notifications to be sent after transaction is complete.
+NotifyingTransaction [struct.NotifyingTransaction.html]
+Wrapper to implement add_notification_key

@@ -1,0 +1,151 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_core/index.html
+
+
+DYNENCODABLE
+
+
+REQUIRED METHODS
+
+ * consensus_encode_dyn
+
+
+TRAIT IMPLEMENTATIONS
+
+ * Encodable
+ * Encodable
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::ENCODING [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../index.html]::ENCODING [index.html]::DYNENCODABLECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_core/encoding/mod.rs.html#35-40] · [−]
+
+pub trait DynEncodable {
+    fn consensus_encode_dyn(
+        &self,
+        writer: &mut dyn Writehttps://doc.rust-lang.org/1.67.0/std/io/trait.Write.html
+    ) -> Resulthttps://doc.rust-lang.org/1.67.0/core/result/enum.Result.html<usizehttps://doc.rust-lang.org/1.67.0/std/primitive.usize.html, Errorhttps://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html>;
+}
+
+Expand description
+
+Object-safe trait for things that can encode themselves
+
+Like rust-bitcoin’s consensus_encode, but without generics, so can be used in dyn objects.
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_core/encoding/mod.rs.html#36-39]
+
+FN CONSENSUS_ENCODE_DYN(&SELF, WRITER: &MUT DYN WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html]) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [../../src/fedimint_core/encoding/mod.rs.html#60-64]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN DYNENCODABLE
+[trait.DynEncodable.html]>
+
+source [../../src/fedimint_core/encoding/mod.rs.html#61-63]§
+
+FN CONSENSUS_ENCODE [trait.Encodable.html#tymethod.consensus_encode]<W: WRITE
+[https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html]>(&SELF, WRITER: &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+Encode an object with a well-defined format. Returns the number of bytes written on success. Read more
+[trait.Encodable.html#tymethod.consensus_encode]
+source [../../src/fedimint_core/encoding/mod.rs.html#75-79]§
+
+FN CONSENSUS_ENCODE_TO_VEC [trait.Encodable.html#method.consensus_encode_to_vec](&SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>, ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+Self::consensus_encode [trait.Encodable.html#tymethod.consensus_encode] to newly allocated Vec<u8>
+source [../../src/fedimint_core/encoding/mod.rs.html#81-85]§
+
+FN CONSENSUS_ENCODE_TO_HEX [trait.Encodable.html#method.consensus_encode_to_hex](&SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<STRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html], ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+source [../../src/fedimint_core/encoding/mod.rs.html#92-101]§
+
+FN CONSENSUS_HASH [trait.Encodable.html#method.consensus_hash]<H>(&SELF) -> HWHERE
+    H: HASH [../trait.BitcoinHash.html],
+    H::ENGINE [../trait.BitcoinHash.html#associatedtype.Engine]: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+Generate a SHA256 hash of the consensus encoding using the default hash engine for H. Read more
+[trait.Encodable.html#method.consensus_hash]
+source [../../src/fedimint_core/encoding/mod.rs.html#42-46]§
+
+
+IMPL ENCODABLE [trait.Encodable.html] FOR DYN DYNENCODABLE [trait.DynEncodable.html]
+
+source [../../src/fedimint_core/encoding/mod.rs.html#43-45]§
+
+FN CONSENSUS_ENCODE [trait.Encodable.html#tymethod.consensus_encode]<W: WRITE
+[https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html]>(&SELF, WRITER: &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]W) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<USIZE [https://doc.rust-lang.org/1.67.0/std/primitive.usize.html],
+ERROR [https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+Encode an object with a well-defined format. Returns the number of bytes written on success. Read more
+[trait.Encodable.html#tymethod.consensus_encode]
+source [../../src/fedimint_core/encoding/mod.rs.html#75-79]§
+
+FN CONSENSUS_ENCODE_TO_VEC [trait.Encodable.html#method.consensus_encode_to_vec](&SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]>, ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+Self::consensus_encode [trait.Encodable.html#tymethod.consensus_encode] to newly allocated Vec<u8>
+source [../../src/fedimint_core/encoding/mod.rs.html#81-85]§
+
+FN CONSENSUS_ENCODE_TO_HEX [trait.Encodable.html#method.consensus_encode_to_hex](&SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<STRING
+[https://doc.rust-lang.org/1.67.0/alloc/string/struct.String.html], ERROR
+[https://doc.rust-lang.org/1.67.0/std/io/error/struct.Error.html]>
+
+source [../../src/fedimint_core/encoding/mod.rs.html#92-101]§
+
+FN CONSENSUS_HASH [trait.Encodable.html#method.consensus_hash]<H>(&SELF) -> HWHERE
+    H: HASH [../trait.BitcoinHash.html],
+    H::ENGINE [../trait.BitcoinHash.html#associatedtype.Engine]: WRITE [https://doc.rust-lang.org/1.67.0/std/io/trait.Write.html],
+
+Generate a SHA256 hash of the consensus encoding using the default hash engine for H. Read more
+[trait.Encodable.html#method.consensus_hash]
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_core/encoding/mod.rs.html#48-58]§
+
+
+IMPL<T> DYNENCODABLE [trait.DynEncodable.html] FOR TWHERE
+    T: ENCODABLE [trait.Encodable.html],
+

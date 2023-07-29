@@ -1,0 +1,51 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../tbs/index.html
+
+
+FROMRANDOM
+
+
+REQUIRED METHODS
+
+ * from_random
+
+
+IMPLEMENTORS
+
+
+IN TBS [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+TRAIT TBS [index.html]::FROMRANDOMCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/tbs/lib.rs.html#68-70] · [−]
+
+pub trait FromRandom {
+    fn from_random(rng: &mut impl RngCorehttps://rust-random.github.io/rand/rand_core/trait.RngCore.html) -> Self;
+}
+
+
+REQUIRED METHODS§
+
+source [../src/tbs/lib.rs.html#69]
+
+FN FROM_RANDOM(RNG: &MUT IMPL RNGCORE [https://rust-random.github.io/rand/rand_core/trait.RngCore.html]) -> SELF
+
+
+IMPLEMENTORS§
+
+source [../src/tbs/lib.rs.html#72-76]§
+
+
+IMPL FROMRANDOM [trait.FromRandom.html] FOR SCALAR [struct.Scalar.html]
+

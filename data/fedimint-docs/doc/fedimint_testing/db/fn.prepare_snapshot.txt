@@ -1,0 +1,35 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+IN FEDIMINT_TESTING::DB [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+FUNCTION FEDIMINT_TESTING [../index.html]::DB [index.html]::PREPARE_SNAPSHOTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/db.rs.html#43-57] · [−]
+
+pub async fn prepare_snapshot<F>(
+    snapshot_name: &strhttps://doc.rust-lang.org/1.67.0/std/primitive.str.html,
+    prepare_fn: F,
+    decoders: ModuleDecoderRegistry../../fedimint_core/module/registry/type.ModuleDecoderRegistry.html
+)where
+    F: for<'a> Fnhttps://doc.rust-lang.org/1.67.0/core/ops/function/trait.Fn.html(DatabaseTransaction../../fedimint_core/db/struct.DatabaseTransaction.html<'a>) -> BoxFuture<'a, ()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>,
+
+Expand description
+
+Creates the database backup directory by appending the snapshot_name to db/migrations. Then this function will execute the
+provided prepare_fn which is expected to populate the database with the appropriate data for testing a migration. If the snapshot
+directory already exists, this function will do nothing.
+

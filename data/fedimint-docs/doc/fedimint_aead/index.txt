@@ -1,0 +1,61 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_aead/index.html
+
+
+CRATE FEDIMINT_AEAD
+
+ * Version 0.1.0
+ * All Items [all.html]
+
+ * Structs
+ * Constants
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+CRATE FEDIMINT_AEADCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_aead/lib.rs.html#1-132] · [−]
+
+
+STRUCTS
+
+Aad [struct.Aad.html]
+The additionally authenticated data (AAD) for an opening or sealing operation. This data is authenticated but is not encrypted.
+LessSafeKey [struct.LessSafeKey.html]
+Immutable keys for use in situations where OpeningKey/SealingKey and NonceSequence cannot reasonably be used.
+UnboundKey [struct.UnboundKey.html]
+An AEAD key without a designated role or nonce sequence.
+
+
+CONSTANTS
+
+NONCE_LEN [constant.NONCE_LEN.html]
+All the AEADs we support use 96-bit nonces.
+
+
+FUNCTIONS
+
+decrypt [fn.decrypt.html]
+Decrypts a ciphertext using key.
+encrypt [fn.encrypt.html]
+Encrypt plaintext using key.
+encrypted_read [fn.encrypted_read.html]
+Reads encrypted data from a file
+encrypted_write [fn.encrypted_write.html]
+Write data encrypted to a file with a random nonce that will be encoded in the file
+get_encryption_key [fn.get_encryption_key.html]
+Key used to encrypt and authenticate data stored on the filesystem with a user password.
+get_random_nonce [fn.get_random_nonce.html]
+Get a random nonce.
+random_salt [fn.random_salt.html]
+Generates a B64-encoded random salt string of the recommended 16 byte length

@@ -1,0 +1,160 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+ILNRPCCLIENT
+
+
+REQUIRED METHODS
+
+ * complete_htlc
+ * info
+ * pay
+ * route_htlcs
+ * routehints
+
+
+IMPLEMENTORS
+
+
+IN LN_GATEWAY::LNRPC_CLIENT [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT LN_GATEWAY [../index.html]::LNRPC_CLIENT [index.html]::ILNRPCCLIENTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#26-47] · [−]
+
+pub trait ILnRpcClient: Debughttps://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html {
+    fn info<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../type.Result.html<GetNodeInfoResponse../gatewaylnrpc/struct.GetNodeInfoResponse.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn routehints<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../type.Result.html<GetRouteHintsResponse../gatewaylnrpc/struct.GetRouteHintsResponse.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn pay<'life0, 'async_trait>(
+        &'life0 self,
+        invoice: PayInvoiceRequest../gatewaylnrpc/struct.PayInvoiceRequest.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../type.Result.html<PayInvoiceResponse../gatewaylnrpc/struct.PayInvoiceResponse.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn route_htlcs<'a, 'life0, 'async_trait>(
+        self: Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<Self>,
+        task_group: &'life0 mut TaskGroup../../fedimint_core/task/struct.TaskGroup.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../type.Result.html<(RouteHtlcStreamtype.RouteHtlcStream.html<'a>, Archttps://doc.rust-lang.org/1.67.0/alloc/sync/struct.Arc.html<dyn ILnRpcClienttrait.ILnRpcClient.html>)>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'a: 'async_trait,
+        'life0: 'async_trait;
+    fn complete_htlc<'life0, 'async_trait>(
+        &'life0 self,
+        htlc: InterceptHtlcResponse../gatewaylnrpc/struct.InterceptHtlcResponse.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../type.Result.html<EmptyResponse../gatewaylnrpc/struct.EmptyResponse.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#28]
+
+FN INFO<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT [../type.Result.html]<GETNODEINFORESPONSE
+[../gatewaylnrpc/struct.GetNodeInfoResponse.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Get the public key and alias of the lightning node
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#31]
+
+FN ROUTEHINTS<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[../type.Result.html]<GETROUTEHINTSRESPONSE [../gatewaylnrpc/struct.GetRouteHintsResponse.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Get route hints to the lightning node
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#34]
+
+FN PAY<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    INVOICE: PAYINVOICEREQUEST [../gatewaylnrpc/struct.PayInvoiceRequest.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT [../type.Result.html]<PAYINVOICERESPONSE
+[../gatewaylnrpc/struct.PayInvoiceResponse.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Attempt to pay an invoice using the lightning node
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#41-44]
+
+FN ROUTE_HTLCS<'A, 'LIFE0, 'ASYNC_TRAIT>(
+    SELF: BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<SELF>,
+    TASK_GROUP: &'LIFE0 MUT TASKGROUP [../../fedimint_core/task/struct.TaskGroup.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT [../type.Result.html]<(ROUTEHTLCSTREAM
+[type.RouteHtlcStream.html]<'A>, ARC [https://doc.rust-lang.org/1.67.0/alloc/sync/struct.Arc.html]<DYN ILNRPCCLIENT
+[trait.ILnRpcClient.html]>)>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'A: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#46]
+
+FN COMPLETE_HTLC<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    HTLC: INTERCEPTHTLCRESPONSE [../gatewaylnrpc/struct.InterceptHtlcResponse.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT [../type.Result.html]<EMPTYRESPONSE
+[../gatewaylnrpc/struct.EmptyResponse.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+
+IMPLEMENTORS§
+
+source [../../src/ln_gateway/lnd.rs.html#266-517]§
+
+
+IMPL ILNRPCCLIENT [trait.ILnRpcClient.html] FOR GATEWAYLNDCLIENT [../lnd/struct.GatewayLndClient.html]
+
+source [../../src/ln_gateway/lnrpc_client.rs.html#95-134]§
+
+
+IMPL ILNRPCCLIENT [trait.ILnRpcClient.html] FOR NETWORKLNRPCCLIENT [struct.NetworkLnRpcClient.html]
+

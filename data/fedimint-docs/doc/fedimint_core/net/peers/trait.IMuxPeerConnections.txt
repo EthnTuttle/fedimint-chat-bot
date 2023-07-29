@@ -1,0 +1,150 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../fedimint_core/index.html
+
+
+IMUXPEERCONNECTIONS
+
+
+REQUIRED METHODS
+
+ * ban_peer
+ * receive
+ * send
+
+
+PROVIDED METHODS
+
+ * into_dyn
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_CORE::NET::PEERS [index.html]
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+TRAIT FEDIMINT_CORE [../../index.html]::NET [../index.html]::PEERS [index.html]::IMUXPEERCONNECTIONSCopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../../src/fedimint_core/net/peers.rs.html#91-112] · [−]
+
+pub trait IMuxPeerConnections<MuxKey, Msg>where
+    Msg: Serializehttps://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html + DeserializeOwnedhttps://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html,
+    MuxKey: Serializehttps://docs.rs/serde/1.0.163/serde/ser/trait.Serialize.html + DeserializeOwnedhttps://docs.rs/serde/1.0.163/serde/de/trait.DeserializeOwned.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html,{
+    fn send<'life0, 'life1, 'async_trait>(
+        &'life0 self,
+        peers: &'life1 [PeerId../../struct.PeerId.html],
+        mux_key: MuxKey,
+        msg: Msg
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Cancellable../../cancellable/type.Cancellable.html<()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait,
+        'life1: 'async_trait;
+    fn receive<'life0, 'async_trait>(
+        &'life0 self,
+        mux_key: MuxKey
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Cancellable../../cancellable/type.Cancellable.html<(PeerId../../struct.PeerId.html, Msg)>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn ban_peer<'life0, 'async_trait>(
+        &'life0 self,
+        peer: PeerId../../struct.PeerId.html
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = ()https://doc.rust-lang.org/1.67.0/std/primitive.unit.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+
+    fn into_dyn(self) -> MuxPeerConnectionsstruct.MuxPeerConnections.html<MuxKey, Msg>
+    where
+        Self: Sizedhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + Synchttps://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html + Unpinhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html + 'static,
+    { ... }
+}
+
+Expand description
+
+Like IPeerConnections [trait.IPeerConnections.html] but with an ability to handle multiple destinations (like modules) per each
+peer-connection.
+
+Notably, unlike IPeerConnections [trait.IPeerConnections.html] implementations need to be thread-safe, as the primary intended use
+should support multiple threads using multiplexed channel at the same time.
+
+
+REQUIRED METHODS§
+
+source [../../../src/fedimint_core/net/peers.rs.html#97]
+
+FN SEND<'LIFE0, 'LIFE1, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    PEERS: &'LIFE1 [PEERID [../../struct.PeerId.html]],
+    MUX_KEY: MUXKEY,
+    MSG: MSG
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CANCELLABLE
+[../../cancellable/type.Cancellable.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+
+Send a message to a specific destination at specific peer.
+
+source [../../../src/fedimint_core/net/peers.rs.html#100]
+
+FN RECEIVE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MUX_KEY: MUXKEY
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CANCELLABLE
+[../../cancellable/type.Cancellable.html]<(PEERID [../../struct.PeerId.html], MSG)>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Await receipt of a message from any connected peer.
+
+source [../../../src/fedimint_core/net/peers.rs.html#103]
+
+FN BAN_PEER<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    PEER: PEERID [../../struct.PeerId.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = ()
+[https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html]
++ 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Removes a peer connection in case of misbehavior
+
+
+PROVIDED METHODS§
+
+source [../../../src/fedimint_core/net/peers.rs.html#106-111]
+
+FN INTO_DYN(SELF) -> MUXPEERCONNECTIONS [struct.MuxPeerConnections.html]<MUXKEY, MSG>WHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html] + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + SYNC
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] + UNPIN
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] + 'STATIC,
+
+Converts the struct to a PeerConnection trait object
+
+
+IMPLEMENTORS§
+
+

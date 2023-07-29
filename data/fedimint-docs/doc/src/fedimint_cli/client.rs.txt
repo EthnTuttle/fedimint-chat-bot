@@ -1,0 +1,878 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_cli/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+
+
+use std::str::FromStr;
+use std::time::Duration;
+
+use anyhow::{anyhow, bail};
+use bitcoin::secp256k1;
+use bitcoin_hashes::hex;
+use bitcoin_hashes::hex::ToHex;
+use clap::Subcommand;
+use fedimint_client::backup::Metadata;
+use fedimint_client::secret::PlainRootSecretStrategy;
+use fedimint_client::sm::OperationId;
+use fedimint_client::Client;
+use fedimint_core::config::ClientConfig;
+use fedimint_core::core::{ModuleInstanceId, ModuleKind};
+use fedimint_core::encoding::{Decodable, Encodable};
+use fedimint_core::module::registry::ModuleDecoderRegistry;
+use fedimint_core::time::now;
+use fedimint_core::{Amount, ParseAmountError, TieredMulti, TieredSummary};
+use fedimint_ln_client::contracts::ContractId;
+use fedimint_ln_client::{
+    InternalPayState, LightningClientExt, LnPayState, LnReceiveState, PayType,
+};
+use fedimint_mint_client::{MintClientExt, MintClientModule, SpendableNote};
+use fedimint_wallet_client::{WalletClientExt, WithdrawState};
+use futures::StreamExt;
+use serde::{Deserialize, Serialize};
+use serde_json::json;
+use tracing::info;
+
+use crate::{metadata_from_clap_cli, LnInvoiceResponse};
+
+#[derive(Debug, Clone)]
+pub enum ModuleSelector {
+    Id(ModuleInstanceId),
+    Kind(ModuleKind),
+}
+
+impl FromStr for ModuleSelector {
+    type Err = anyhow::Error;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Ok(if s.chars().all(|ch| ch.is_ascii_digit()) {
+            Self::Id(s.parse()?)
+        } else {
+            Self::Kind(ModuleKind::clone_from_str(s))
+        })
+    }
+}
+
+#[derive(Debug, Clone, Subcommand)]
+pub enum ClientCmd {
+    /// Display wallet info (holdings, tiers)
+    Info,
+    /// Reissue notes received from a third party to avoid double spends
+    Reissue {
+        #[clap(value_parser = parse_ecash)]
+        notes: TieredMulti<SpendableNote>,
+    },
+    /// Prepare notes to send to a third party as a payment
+    Spend {
+        #[clap(value_parser = parse_fedimint_amount)]
+        amount: Amount,
+    },
+    /// Create a lightning invoice to receive payment via gateway
+    LnInvoice {
+        #[clap(long, value_parser = parse_fedimint_amount)]
+        amount: Amount,
+        #[clap(long, default_value = "")]
+        description: String,
+        #[clap(long)]
+        expiry_time: Option<u64>,
+    },
+    /// Wait for incoming invoice to be paid
+    WaitInvoice { operation_id: OperationId },
+    /// Pay a lightning invoice via a gateway
+    LnPay { bolt11: lightning_invoice::Invoice },
+    /// List registered gateways
+    ListGateways,
+    /// Switch active gateway
+    SwitchGateway {
+        #[clap(value_parser = parse_gateway_id)]
+        gateway_id: secp256k1::PublicKey,
+    },
+    /// Generate a new deposit address, funds sent to it can later be claimed
+    DepositAddress,
+    /// Wait for desposit on previously generated address
+    AwaitDeposit { operation_id: OperationId },
+    /// Withdraw funds from the federation
+    Withdraw {
+        #[clap(long)]
+        amount: bitcoin::Amount,
+        #[clap(long)]
+        address: bitcoin::Address,
+    },
+    /// Upload the (encrypted) snapshot of mint notes to federation
+    Backup {
+        #[clap(long = "metadata")]
+        /// Backup metadata, encoded as `key=value` (use `--metadata=key=value`,
+        /// possibly multiple times)
+        // TODO: Can we make it `*Map<String, String>` and avoid custom parsing?
+        metadata: Vec<String>,
+    },
+    /// Wipe the state of the client (mostly for testing purposes)
+    #[clap(hide = true)]
+    Wipe {
+        #[clap(long)]
+        force: bool,
+    },
+    /// Discover the common api version to use to communicate with the
+    /// federation
+    #[clap(hide = true)]
+    DiscoverVersion,
+    /// Restore the previously created backup of mint notes (with `backup`
+    /// command)
+    Restore {
+        #[clap(value_parser = parse_secret)]
+        secret: [u8; 64],
+    },
+    /// Print the secret key of the client
+    PrintSecret,
+}
+
+pub fn parse_gateway_id(s: &str) -> Result<secp256k1::PublicKey, secp256k1::Error> {
+    secp256k1::PublicKey::from_str(s)
+}
+
+fn parse_secret(s: &str) -> Result<[u8; 64], hex::Error> {
+    hex::FromHex::from_hex(s)
+}
+
+pub async fn handle_ng_command(
+    command: ClientCmd,
+    _config: ClientConfig,
+    client: Client,
+) -> anyhow::Result<serde_json::Value> {
+    match command {
+        ClientCmd::Info => {
+            return get_note_summary(&client).await;
+        }
+        ClientCmd::Reissue { notes } => {
+            let amount = notes.total_amount();
+
+            let operation_id = client.reissue_external_notes(notes, ()).await?;
+            let mut updates = client
+                .subscribe_reissue_external_notes(operation_id)
+                .await
+                .unwrap()
+                .into_stream();
+
+            while let Some(update) = updates.next().await {
+                if let fedimint_mint_client::ReissueExternalNotesState::Failed(e) = update {
+                    return Err(anyhow::Error::msg(format!("Reissue failed: {e}")));
+                }
+
+                info!("Update: {:?}", update);
+            }
+
+            Ok(serde_json::to_value(amount).unwrap())
+        }
+        ClientCmd::Spend { amount } => {
+            let (operation, notes) = client
+                .spend_notes(amount, Duration::from_secs(3600), ())
+                .await?;
+            info!("Spend e-cash operation: {operation}");
+
+            Ok(json!({
+                "notes": serialize_ecash(&notes),
+            }))
+        }
+        ClientCmd::LnInvoice {
+            amount,
+            description,
+            expiry_time,
+        } => {
+            client.select_active_gateway().await?;
+
+            let (operation_id, invoice) = client
+                .create_bolt11_invoice(amount, description, expiry_time)
+                .await?;
+            Ok(serde_json::to_value(LnInvoiceResponse {
+                operation_id,
+                invoice: invoice.to_string(),
+            })
+            .unwrap())
+        }
+        ClientCmd::WaitInvoice { operation_id } => {
+            let mut updates = client
+                .subscribe_ln_receive(operation_id)
+                .await?
+                .into_stream();
+            while let Some(update) = updates.next().await {
+                match update {
+                    LnReceiveState::Claimed => {
+                        return get_note_summary(&client).await;
+                    }
+                    LnReceiveState::Canceled { reason } => {
+                        return Err(reason.into());
+                    }
+                    _ => {}
+                }
+
+                info!("Update: {:?}", update);
+            }
+
+            return Err(anyhow::anyhow!("Lightning receive failed"));
+        }
+        ClientCmd::LnPay { bolt11 } => {
+            client.select_active_gateway().await?;
+
+            let (pay_type, contract_id) = client.pay_bolt11_invoice(bolt11).await?;
+
+            match pay_type {
+                PayType::Internal(operation_id) => {
+                    let mut updates = client
+                        .subscribe_internal_pay(operation_id)
+                        .await?
+                        .into_stream();
+
+                    while let Some(update) = updates.next().await {
+                        match update {
+                            InternalPayState::Preimage(preimage) => {
+                                return Ok(serde_json::to_value(PayInvoiceResponse {
+                                    operation_id,
+                                    contract_id,
+                                    preimage: preimage.to_public_key()?.to_string(),
+                                })
+                                .unwrap());
+                            }
+                            InternalPayState::RefundSuccess(outpoint) => {
+                                let e = format!(
+                                    "Internal payment failed. A refund was issued to {outpoint}"
+                                );
+                                return Err(anyhow!(e));
+                            }
+                            InternalPayState::Error(e) => {
+                                return Err(anyhow!(e));
+                            }
+                            _ => {}
+                        }
+
+                        info!("Update: {:?}", update);
+                    }
+                }
+                PayType::Lightning(operation_id) => {
+                    let mut updates = client.subscribe_ln_pay(operation_id).await?.into_stream();
+
+                    while let Some(update) = updates.next().await {
+                        match update {
+                            LnPayState::Success { preimage } => {
+                                return Ok(serde_json::to_value(PayInvoiceResponse {
+                                    operation_id,
+                                    contract_id,
+                                    preimage,
+                                })
+                                .unwrap());
+                            }
+                            LnPayState::Refunded { gateway_error } => {
+                                info!("{gateway_error}");
+                                return get_note_summary(&client).await;
+                            }
+                            _ => {}
+                        }
+
+                        info!("Update: {:?}", update);
+                    }
+                }
+            };
+
+            return Err(anyhow::anyhow!("Lightning Payment failed"));
+        }
+        ClientCmd::ListGateways => {
+            let gateways = client.fetch_registered_gateways().await?;
+            if gateways.is_empty() {
+                return Ok(serde_json::to_value(Vec::<String>::new()).unwrap());
+            }
+
+            let mut gateways_json = json!(&gateways);
+            let active_gateway = client.select_active_gateway().await?;
+
+            gateways_json
+                .as_array_mut()
+                .expect("gateways_json is not an array")
+                .iter_mut()
+                .for_each(|gateway| {
+                    if gateway["node_pub_key"] == json!(active_gateway.node_pub_key) {
+                        gateway["active"] = json!(true);
+                    } else {
+                        gateway["active"] = json!(false);
+                    }
+                });
+            Ok(serde_json::to_value(gateways_json).unwrap())
+        }
+        ClientCmd::SwitchGateway { gateway_id } => {
+            client.set_active_gateway(&gateway_id).await?;
+            let gateway = client.select_active_gateway().await?;
+            let mut gateway_json = json!(&gateway);
+            gateway_json["active"] = json!(true);
+            Ok(serde_json::to_value(gateway_json).unwrap())
+        }
+        ClientCmd::DepositAddress => {
+            let (operation_id, address) = client
+                .get_deposit_address(now() + Duration::from_secs(600))
+                .await?;
+            Ok(serde_json::json! {
+                {
+                    "address": address,
+                    "operation_id": operation_id,
+                }
+            })
+        }
+        ClientCmd::AwaitDeposit { operation_id } => {
+            let mut updates = client
+                .subscribe_deposit_updates(operation_id)
+                .await?
+                .into_stream();
+
+            while let Some(update) = updates.next().await {
+                info!("Update: {update:?}");
+            }
+
+            Ok(serde_json::to_value(()).unwrap())
+        }
+
+        ClientCmd::Backup { metadata } => {
+            let metadata = metadata_from_clap_cli(metadata)?;
+
+            client
+                .backup_to_federation(Metadata::from_json_serialized(metadata))
+                .await?;
+            Ok(serde_json::to_value(()).unwrap())
+        }
+        ClientCmd::Restore { .. } => {
+            panic!("Has to be handled before initializing client")
+        }
+        ClientCmd::Wipe { force } => {
+            if !force {
+                bail!("This will wipe the state of the client irrecoverably. Use `--force` to proceed.")
+            }
+            client.wipe_state().await?;
+            Ok(serde_json::to_value(()).unwrap())
+        }
+        ClientCmd::PrintSecret => {
+            let secret = client.get_secret::<PlainRootSecretStrategy>().await;
+            let hex_secret = hex::ToHex::to_hex(&secret[..]);
+
+            Ok(json!({
+                "secret": hex_secret,
+            }))
+        }
+        ClientCmd::Withdraw { amount, address } => {
+            let fees = client.get_withdraw_fee(address.clone(), amount).await?;
+            let absolute_fees = fees.amount();
+
+            info!("Attempting withdraw with fees: {fees:?}");
+
+            let operation_id = client.withdraw(address, amount, fees).await?;
+
+            let mut updates = client
+                .subscribe_withdraw_updates(operation_id)
+                .await?
+                .into_stream();
+
+            while let Some(update) = updates.next().await {
+                info!("Update: {update:?}");
+
+                match update {
+                    WithdrawState::Succeeded(txid) => {
+                        return Ok(json!({
+                            "txid": txid.to_hex(),
+                            "fees_sat": absolute_fees.to_sat(),
+                        }));
+                    }
+                    WithdrawState::Failed(e) => {
+                        return Err(anyhow!("Withdraw failed: {e}"));
+                    }
+                    _ => {}
+                }
+            }
+
+            unreachable!("Update stream ended without outcome");
+        }
+        ClientCmd::DiscoverVersion => {
+            Ok(json!({ "versions": client.discover_common_api_version().await? }))
+        }
+    }
+}
+
+async fn get_note_summary(client: &Client) -> anyhow::Result<serde_json::Value> {
+    let (mint_client, _) = client.get_first_module::<MintClientModule>(&fedimint_mint_client::KIND);
+    let summary = mint_client
+        .get_wallet_summary(&mut client.db().begin_transaction().await.with_module_prefix(1))
+        .await;
+    Ok(serde_json::to_value(InfoResponse {
+        total_msat: summary.total_amount(),
+        denominations_msat: summary,
+    })
+    .unwrap())
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct InfoResponse {
+    total_msat: Amount,
+    denominations_msat: TieredSummary,
+}
+
+pub fn parse_fedimint_amount(s: &str) -> Result<fedimint_core::Amount, ParseAmountError> {
+    if let Some(i) = s.find(char::is_alphabetic) {
+        let (amt, denom) = s.split_at(i);
+        fedimint_core::Amount::from_str_in(amt, denom.parse()?)
+    } else {
+        //default to millisatoshi
+        fedimint_core::Amount::from_str_in(s, bitcoin::Denomination::MilliSatoshi)
+    }
+}
+
+pub fn parse_ecash(s: &str) -> anyhow::Result<TieredMulti<SpendableNote>> {
+    let bytes = base64::decode(s)?;
+    Ok(Decodable::consensus_decode(
+        &mut std::io::Cursor::new(bytes),
+        &ModuleDecoderRegistry::default(),
+    )?)
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct PayInvoiceResponse {
+    operation_id: OperationId,
+    contract_id: ContractId,
+    preimage: String,
+}
+
+pub fn serialize_ecash(c: &TieredMulti<SpendableNote>) -> String {
+    let mut bytes = Vec::new();
+    Encodable::consensus_encode(c, &mut bytes).expect("encodes correctly");
+    base64::encode(&bytes)
+}
+
+

@@ -1,0 +1,250 @@
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]../../fedimint_testing/index.html
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+
+
+use std::collections::BTreeMap;
+use std::net::SocketAddr;
+use std::sync::Arc;
+
+use fedimint_client::module::gen::ClientModuleGenRegistry;
+use fedimint_client::Client;
+use fedimint_client_legacy::modules::ln::config::GatewayFee;
+use fedimint_core::db::mem_impl::MemDatabase;
+use fedimint_core::db::Database;
+use fedimint_core::module::registry::ModuleDecoderRegistry;
+use fedimint_core::task::TaskGroup;
+use lightning::routing::gossip::RoutingFees;
+use ln_gateway::client::StandardGatewayClientBuilder;
+use ln_gateway::rpc::rpc_client::GatewayRpcClient;
+use ln_gateway::rpc::rpc_server::run_webserver;
+use ln_gateway::rpc::{ConnectFedPayload, FederationInfo};
+use ln_gateway::Gateway;
+use tempfile::TempDir;
+use tokio::sync::RwLock;
+use url::Url;
+
+use crate::federation::FederationTest;
+use crate::fixtures::test_dir;
+use crate::ln::LightningTest;
+
+/// Fixture for creating a gateway
+pub struct GatewayTest {
+    /// Password for the RPC
+    pub password: String,
+    /// URL for the RPC
+    api: Url,
+    /// Handle of the running gateway
+    gateway: Gateway,
+    /// Temporary dir that stores the gateway config
+    _config_dir: Option<TempDir>,
+}
+
+impl GatewayTest {
+    /// RPC client for communicating with the gateway admin API
+    pub async fn get_rpc(&self) -> GatewayRpcClient {
+        GatewayRpcClient::new(self.api.clone(), self.password.clone())
+    }
+
+    /// Removes a client from the gateway
+    pub async fn remove_client(&self, fed: &FederationTest) -> Client {
+        self.gateway.remove_client(fed.id()).await.unwrap()
+    }
+
+    /// Connects to a new federation and stores the info
+    pub async fn connect_fed(&mut self, fed: &FederationTest) -> FederationInfo {
+        let connect = fed.connection_code().to_string();
+        let rpc = self.get_rpc().await;
+        rpc.connect_federation(ConnectFedPayload { connect })
+            .await
+            .unwrap()
+    }
+
+    pub fn get_gateway_id(&self) -> secp256k1::PublicKey {
+        self.gateway.gateway_id
+    }
+
+    pub(crate) async fn new(
+        base_port: u16,
+        password: String,
+        lightning: Box<dyn LightningTest>,
+        decoders: ModuleDecoderRegistry,
+        registry: ClientModuleGenRegistry,
+    ) -> Self {
+        let listen: SocketAddr = format!("127.0.0.1:{base_port}").parse().unwrap();
+        let address: Url = format!("http://{listen}").parse().unwrap();
+        let (path, _config_dir) = test_dir(&format!("gateway-{}", rand::random::<u64>()));
+
+        // Create federation client builder for the gateway
+        let client_builder: StandardGatewayClientBuilder =
+            StandardGatewayClientBuilder::new(path.clone(), registry, 0);
+
+        let mut tg = TaskGroup::new();
+        // Create the stream to route HTLCs. We cannot create the Gateway until the
+        // stream to the lightning node has been setup.
+        let (stream, ln_client) = lightning.route_htlcs(&mut tg).await.unwrap();
+
+        let clients = Arc::new(RwLock::new(BTreeMap::new()));
+        let scid_to_federation = Arc::new(RwLock::new(BTreeMap::new()));
+
+        // Create gateway with the client created from `route_htlcs`
+        let gateway = Gateway::new(
+            ln_client.clone(),
+            client_builder.clone(),
+            GatewayFee(RoutingFees {
+                base_msat: 0,
+                proportional_millionths: 0,
+            })
+            .0,
+            Database::new(MemDatabase::new(), decoders.clone()),
+            address.clone(),
+            clients.clone(),
+            scid_to_federation.clone(),
+            tg.clone(),
+        )
+        .await
+        .unwrap();
+
+        run_webserver(password.clone(), listen, gateway.clone())
+            .await
+            .expect("Failed to start webserver");
+
+        // Spawn new thread to listen for HTLCs
+        tg.spawn("Subscribe to intercepted HTLCs", move |handle| async move {
+            Gateway::handle_htlc_stream(stream, ln_client, handle, scid_to_federation, clients)
+                .await;
+        })
+        .await;
+
+        Self {
+            password,
+            api: address,
+            _config_dir,
+            gateway,
+        }
+    }
+}
+
+

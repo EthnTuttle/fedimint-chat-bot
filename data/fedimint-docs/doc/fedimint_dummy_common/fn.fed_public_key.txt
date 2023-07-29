@@ -1,0 +1,23 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_common/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_common/index.html
+
+
+IN FEDIMINT_DUMMY_COMMON [index.html]
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+FUNCTION FEDIMINT_DUMMY_COMMON [index.html]::FED_PUBLIC_KEYCopy item path [../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../src/fedimint_dummy_common/lib.rs.html#118-120] · [−]
+
+pub fn fed_public_key() -> XOnlyPublicKey
+

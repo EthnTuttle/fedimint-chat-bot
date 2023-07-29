@@ -1,0 +1,34 @@
+☰
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../ln_gateway/index.html
+
+
+
+
+logo [../../../static.files/rust-logo-151179464ae7ed46.svg]
+../../../ln_gateway/index.html
+
+
+MODULE GET_ROUTE_HINTS_RESPONSE
+
+ * Structs
+
+? [../../../help.html]
+Change settings [../../../static.files/wheel-5ec35bf9ca753509.svg]../../../settings.html
+
+
+MODULE LN_GATEWAY [../../index.html]::GATEWAYLNRPC [../index.html]::GET_ROUTE_HINTS_RESPONSECopy item path
+[../../../static.files/clipboard-7571035ce49a181d.svg]
+
+source
+[../../../src/ln_gateway/Users/ethantuttle/code/fedimint/up/fedimint-chat-bot/data/fedimint-docs/release/build/ln-gateway-3e20b0116ec04f2c/out/gatewaylnrpc.rs.html#132]
+· [−]
+Expand description
+
+Nested message and enum types in GetRouteHintsResponse.
+
+
+STRUCTS
+
+RouteHint [struct.RouteHint.html]
+RouteHintHop [struct.RouteHintHop.html]

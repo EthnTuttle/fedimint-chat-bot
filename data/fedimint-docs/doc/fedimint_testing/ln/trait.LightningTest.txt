@@ -1,0 +1,135 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../fedimint_testing/index.html
+
+
+LIGHTNINGTEST
+
+
+REQUIRED METHODS
+
+ * amount_sent
+ * invoice
+ * is_shared
+
+
+PROVIDED METHODS
+
+ * invalid_invoice
+
+
+IMPLEMENTORS
+
+
+IN FEDIMINT_TESTING::LN [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+TRAIT FEDIMINT_TESTING [../index.html]::LN [index.html]::LIGHTNINGTESTCopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/fedimint_testing/ln/mod.rs.html#20-59] · [−]
+
+pub trait LightningTest: ILnRpcClient../../ln_gateway/lnrpc_client/trait.ILnRpcClient.html {
+    fn invoice<'life0, 'async_trait>(
+        &'life0 self,
+        amount: Amount../../fedimint_core/struct.Amount.html,
+        expiry_time: Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<u64https://doc.rust-lang.org/1.67.0/std/primitive.u64.html>
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Result../../ln_gateway/type.Result.html<Invoice>> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn amount_sent<'life0, 'async_trait>(
+        &'life0 self
+    ) -> Pinhttps://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html<Boxhttps://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html<dyn Futurehttps://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html<Output = Amount../../fedimint_core/struct.Amount.html> + Sendhttps://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html + 'async_trait>>
+    where
+        Self: 'async_trait,
+        'life0: 'async_trait;
+    fn is_shared(&self) -> boolhttps://doc.rust-lang.org/1.67.0/std/primitive.bool.html;
+
+    fn invalid_invoice(
+        &self,
+        amount: Amount../../fedimint_core/struct.Amount.html,
+        expiry_time: Optionhttps://doc.rust-lang.org/1.67.0/core/option/enum.Option.html<u64https://doc.rust-lang.org/1.67.0/std/primitive.u64.html>
+    ) -> Result../../ln_gateway/type.Result.html<Invoice> { ... }
+}
+
+
+REQUIRED METHODS§
+
+source [../../src/fedimint_testing/ln/mod.rs.html#22-26]
+
+FN INVOICE<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html],
+    EXPIRY_TIME: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[../../ln_gateway/type.Result.html]<INVOICE>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Creates invoice from the lightning implementation
+
+source [../../src/fedimint_testing/ln/mod.rs.html#55]
+
+FN AMOUNT_SENT<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = AMOUNT [../../fedimint_core/struct.Amount.html]>
++ SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT>>WHERE
+    SELF: 'ASYNC_TRAIT,
+    'LIFE0: 'ASYNC_TRAIT,
+
+Returns the amount that the gateway LN node has sent
+
+source [../../src/fedimint_testing/ln/mod.rs.html#58]
+
+FN IS_SHARED(&SELF) -> BOOL [https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+Is this a LN instance shared with other tests
+
+
+PROVIDED METHODS§
+
+source [../../src/fedimint_testing/ln/mod.rs.html#29-52]
+
+FN INVALID_INVOICE(
+    &SELF,
+    AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html],
+    EXPIRY_TIME: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<U64
+[https://doc.rust-lang.org/1.67.0/std/primitive.u64.html]>
+) -> RESULT [../../ln_gateway/type.Result.html]<INVOICE>
+
+Creates an invoice that is not payable
+
+
+IMPLEMENTORS§
+
+source [../../src/fedimint_testing/ln/mock.rs.html#59-88]§
+
+
+IMPL LIGHTNINGTEST [trait.LightningTest.html] FOR FAKELIGHTNINGTEST [mock/struct.FakeLightningTest.html]
+
+source [../../src/fedimint_testing/ln/real.rs.html#46-90]§
+
+
+IMPL LIGHTNINGTEST [trait.LightningTest.html] FOR CLNLIGHTNINGTEST [real/struct.ClnLightningTest.html]
+
+source [../../src/fedimint_testing/ln/real.rs.html#191-228]§
+
+
+IMPL LIGHTNINGTEST [trait.LightningTest.html] FOR LNDLIGHTNINGTEST [real/struct.LndLightningTest.html]
+

@@ -1,0 +1,59 @@
+☰
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_common/index.html
+
+
+
+
+logo [../static.files/rust-logo-151179464ae7ed46.svg]
+../fedimint_dummy_common/index.html
+
+
+CRATE FEDIMINT_DUMMY_COMMON
+
+ * Structs
+ * Enums
+ * Constants
+ * Functions
+
+? [../help.html]
+Change settings [../static.files/wheel-5ec35bf9ca753509.svg]../settings.html
+
+
+LIST OF ALL ITEMS
+
+
+STRUCTS
+
+ * DummyCommonGen [struct.DummyCommonGen.html]
+ * DummyInput [struct.DummyInput.html]
+ * DummyModuleTypes [struct.DummyModuleTypes.html]
+ * DummyOutput [struct.DummyOutput.html]
+ * DummyOutputOutcome [struct.DummyOutputOutcome.html]
+ * config::DummyClientConfig [config/struct.DummyClientConfig.html]
+ * config::DummyConfig [config/struct.DummyConfig.html]
+ * config::DummyConfigConsensus [config/struct.DummyConfigConsensus.html]
+ * config::DummyConfigLocal [config/struct.DummyConfigLocal.html]
+ * config::DummyConfigPrivate [config/struct.DummyConfigPrivate.html]
+ * config::DummyGenParams [config/struct.DummyGenParams.html]
+ * config::DummyGenParamsConsensus [config/struct.DummyGenParamsConsensus.html]
+ * config::DummyGenParamsLocal [config/struct.DummyGenParamsLocal.html]
+
+
+ENUMS
+
+ * DummyConsensusItem [enum.DummyConsensusItem.html]
+ * DummyError [enum.DummyError.html]
+
+
+FUNCTIONS
+
+ * fed_key_pair [fn.fed_key_pair.html]
+ * fed_public_key [fn.fed_public_key.html]
+
+
+CONSTANTS
+
+ * CONSENSUS_VERSION [constant.CONSENSUS_VERSION.html]
+ * KIND [constant.KIND.html]
+

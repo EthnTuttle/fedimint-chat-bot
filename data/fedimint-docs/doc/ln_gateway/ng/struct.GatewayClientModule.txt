@@ -1,0 +1,1190 @@
+☰
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+
+
+logo [../../static.files/rust-logo-151179464ae7ed46.svg]
+../../ln_gateway/index.html
+
+
+GATEWAYCLIENTMODULE
+
+
+FIELDS
+
+ * notifier
+ * redeem_key
+
+
+METHODS
+
+ * to_gateway_registration_info
+
+
+TRAIT IMPLEMENTATIONS
+
+ * ClientModule
+ * Debug
+
+
+AUTO TRAIT IMPLEMENTATIONS
+
+ * !RefUnwindSafe
+ * Send
+ * Sync
+ * Unpin
+ * !UnwindSafe
+
+
+BLANKET IMPLEMENTATIONS
+
+ * Any
+ * Borrow<T>
+ * BorrowMut<T>
+ * Conv
+ * FmtForward
+ * From<T>
+ * FutureExt
+ * IClientModule
+ * Instrument
+ * Into<U>
+ * IntoRequest<T>
+ * IntoRequest<T>
+ * IntoRequest<T>
+ * MaybeSend
+ * MaybeSend
+ * MaybeSync
+ * Pipe
+ * Same<T>
+ * Tap
+ * TryConv
+ * TryFrom<U>
+ * TryInto<U>
+ * VZip<V>
+ * WithSubscriber
+
+
+IN LN_GATEWAY::NG [index.html]
+
+? [../../help.html]
+Change settings [../../static.files/wheel-5ec35bf9ca753509.svg]../../settings.html
+
+
+STRUCT LN_GATEWAY [../index.html]::NG [index.html]::GATEWAYCLIENTMODULECopy item path
+[../../static.files/clipboard-7571035ce49a181d.svg]
+
+source [../../src/ln_gateway/ng/mod.rs.html#374-384] · [−]
+
+pub struct GatewayClientModule {
+    pub notifier: ModuleNotifier../../fedimint_client/sm/notifier/struct.ModuleNotifier.html<DynGlobalClientContext../../fedimint_client/struct.DynGlobalClientContext.html, GatewayClientStateMachinesenum.GatewayClientStateMachines.html>,
+    pub redeem_key: KeyPair,
+    /* private fields */
+}
+
+
+FIELDS§
+
+§notifier: ModuleNotifier [../../fedimint_client/sm/notifier/struct.ModuleNotifier.html]<DynGlobalClientContext
+[../../fedimint_client/struct.DynGlobalClientContext.html], GatewayClientStateMachines
+[enum.GatewayClientStateMachines.html]>§redeem_key: KeyPair
+
+
+IMPLEMENTATIONS§
+
+source [../../src/ln_gateway/ng/mod.rs.html#431-534]§
+
+
+IMPL GATEWAYCLIENTMODULE [struct.GatewayClientModule.html]
+
+source [../../src/ln_gateway/ng/mod.rs.html#432-449]
+
+PUB FN TO_GATEWAY_REGISTRATION_INFO(
+    &SELF,
+    ROUTE_HINTS: VEC [https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<ROUTEHINT
+[../../fedimint_ln_common/route_hints/struct.RouteHint.html]>,
+    TIME_TO_LIVE: DURATION [https://doc.rust-lang.org/1.67.0/core/time/struct.Duration.html],
+    API: URL [https://docs.rs/url/2.3.1/url/struct.Url.html],
+    GATEWAY_ID: PUBLICKEY
+) -> LIGHTNINGGATEWAY [../../fedimint_ln_common/struct.LightningGateway.html]
+
+
+TRAIT IMPLEMENTATIONS§
+
+source [../../src/ln_gateway/ng/mod.rs.html#386-429]§
+
+
+IMPL CLIENTMODULE [../../fedimint_client/module/trait.ClientModule.html] FOR GATEWAYCLIENTMODULE [struct.GatewayClientModule.html]
+
+§
+
+TYPE COMMON [../../fedimint_client/module/trait.ClientModule.html#associatedtype.Common] = LIGHTNINGMODULETYPES
+[../../fedimint_ln_common/struct.LightningModuleTypes.html]
+
+Common module types shared between client and server
+§
+
+TYPE MODULESTATEMACHINECONTEXT [../../fedimint_client/module/trait.ClientModule.html#associatedtype.ModuleStateMachineContext] =
+GATEWAYCLIENTCONTEXT [struct.GatewayClientContext.html]
+
+Data and API clients available to state machine transitions of this module Read more
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.ModuleStateMachineContext]
+§
+
+TYPE STATES [../../fedimint_client/module/trait.ClientModule.html#associatedtype.States] = GATEWAYCLIENTSTATEMACHINES
+[enum.GatewayClientStateMachines.html]
+
+All possible states this client can submit to the executor
+source [../../src/ln_gateway/ng/mod.rs.html#391-400]§
+
+FN CONTEXT [../../fedimint_client/module/trait.ClientModule.html#tymethod.context](&SELF) -> SELF::MODULESTATEMACHINECONTEXT
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.ModuleStateMachineContext]
+
+source [../../src/ln_gateway/ng/mod.rs.html#402-410]§
+
+FN INPUT_AMOUNT [../../fedimint_client/module/trait.ClientModule.html#tymethod.input_amount](
+    &SELF,
+    INPUT: &<SELF::COMMON [../../fedimint_client/module/trait.ClientModule.html#associatedtype.Common] AS MODULECOMMON
+[../../fedimint_core/module/trait.ModuleCommon.html]>::INPUT
+[../../fedimint_core/module/trait.ModuleCommon.html#associatedtype.Input]
+) -> TRANSACTIONITEMAMOUNT [../../fedimint_core/module/struct.TransactionItemAmount.html]
+
+Returns the amount represented by the input and the fee its processing requires Read more
+[../../fedimint_client/module/trait.ClientModule.html#tymethod.input_amount]
+source [../../src/ln_gateway/ng/mod.rs.html#412-428]§
+
+FN OUTPUT_AMOUNT [../../fedimint_client/module/trait.ClientModule.html#tymethod.output_amount](
+    &SELF,
+    OUTPUT: &<SELF::COMMON [../../fedimint_client/module/trait.ClientModule.html#associatedtype.Common] AS MODULECOMMON
+[../../fedimint_core/module/trait.ModuleCommon.html]>::OUTPUT
+[../../fedimint_core/module/trait.ModuleCommon.html#associatedtype.Output]
+) -> TRANSACTIONITEMAMOUNT [../../fedimint_core/module/struct.TransactionItemAmount.html]
+
+Returns the amount represented by the output and the fee its processing requires Read more
+[../../fedimint_client/module/trait.ClientModule.html#tymethod.output_amount]
+source [../../src/fedimint_client/module/mod.rs.html#42]§
+
+FN DECODER [../../fedimint_client/module/trait.ClientModule.html#method.decoder]() -> DECODER
+[../../fedimint_core/core/struct.Decoder.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#50]§
+
+FN HANDLE_CLI_COMMAND [../../fedimint_client/module/trait.ClientModule.html#method.handle_cli_command]<'LIFE0, 'LIFE1, 'LIFE2,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _CLIENT: &'LIFE1 CLIENT [../../fedimint_client/struct.Client.html],
+    _ARGS: &'LIFE2 [OSSTRING [https://doc.rust-lang.org/1.67.0/std/ffi/os_str/struct.OsString.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VALUE
+[https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html], ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+source [../../src/fedimint_client/module/mod.rs.html#71]§
+
+FN SUPPORTS_BACKUP [../../fedimint_client/module/trait.ClientModule.html#method.supports_backup](&SELF) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#75]§
+
+FN BACKUP [../../fedimint_client/module/trait.ClientModule.html#method.backup]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    _EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>,
+    _API: DYNGLOBALAPI [../../fedimint_core/api/struct.DynGlobalApi.html],
+    _MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+source [../../src/fedimint_client/module/mod.rs.html#85]§
+
+FN RESTORE [../../fedimint_client/module/trait.ClientModule.html#method.restore]<'LIFE0, 'LIFE1, 'LIFE2, 'LIFE3, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT DATABASETRANSACTION [../../fedimint_core/db/struct.DatabaseTransaction.html]<'LIFE2>,
+    _MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    _EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>,
+    _API: DYNGLOBALAPI [../../fedimint_core/api/struct.DynGlobalApi.html],
+    _SNAPSHOT: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<&'LIFE3 [U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    'LIFE3: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+source [../../src/fedimint_client/module/mod.rs.html#97]§
+
+FN WIPE [../../fedimint_client/module/trait.ClientModule.html#method.wipe]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    _MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    _EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+source [../../src/fedimint_client/module/mod.rs.html#115]§
+
+FN SUPPORTS_BEING_PRIMARY [../../fedimint_client/module/trait.ClientModule.html#method.supports_being_primary](&SELF) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+Does this module support being a primary module Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.supports_being_primary]
+source [../../src/fedimint_client/module/mod.rs.html#136]§
+
+FN CREATE_SUFFICIENT_INPUT [../../fedimint_client/module/trait.ClientModule.html#method.create_sufficient_input]<'LIFE0, 'LIFE1,
+'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    _OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    _MIN_AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<CLIENTINPUT
+[../../fedimint_client/transaction/builder/struct.ClientInput.html]<<SELF::COMMON
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.Common] AS MODULECOMMON
+[../../fedimint_core/module/trait.ModuleCommon.html]>::INPUT
+[../../fedimint_core/module/trait.ModuleCommon.html#associatedtype.Input], SELF::STATES
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.States]>, ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+Creates an input of at least a given min_amount from the holdings managed by the module. Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.create_sufficient_input]
+source [../../src/fedimint_client/module/mod.rs.html#154]§
+
+FN CREATE_EXACT_OUTPUT [../../fedimint_client/module/trait.ClientModule.html#method.create_exact_output]<'LIFE0, 'LIFE1, 'LIFE2,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    _OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    _AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CLIENTOUTPUT
+[../../fedimint_client/transaction/builder/struct.ClientOutput.html]<<SELF::COMMON
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.Common] AS MODULECOMMON
+[../../fedimint_core/module/trait.ModuleCommon.html]>::OUTPUT
+[../../fedimint_core/module/trait.ModuleCommon.html#associatedtype.Output], SELF::STATES
+[../../fedimint_client/module/trait.ClientModule.html#associatedtype.States]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+Creates an output of exactly amount that will pay into the holdings managed by the module. Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.create_exact_output]
+source [../../src/fedimint_client/module/mod.rs.html#167]§
+
+FN AWAIT_PRIMARY_MODULE_OUTPUT [../../fedimint_client/module/trait.ClientModule.html#method.await_primary_module_output]<'LIFE0,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    _OUT_POINT: OUTPOINT [../../fedimint_core/struct.OutPoint.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<AMOUNT [../../fedimint_core/struct.Amount.html], ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+Waits for the funds from an output created by Self::create_exact_output
+[../../fedimint_client/module/trait.ClientModule.html#method.create_exact_output] to become available. This function returning
+typically implies a change in the output of Self::get_balance
+[../../fedimint_client/module/trait.ClientModule.html#method.get_balance]. Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.await_primary_module_output]
+source [../../src/fedimint_client/module/mod.rs.html#177]§
+
+FN GET_BALANCE [../../fedimint_client/module/trait.ClientModule.html#method.get_balance]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    _DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = AMOUNT [../../fedimint_core/struct.Amount.html]>
++ SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+Returns the balance held by this module and available for funding transactions. Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.get_balance]
+source [../../src/fedimint_client/module/mod.rs.html#183]§
+
+FN SUBSCRIBE_BALANCE_CHANGES [../../fedimint_client/module/trait.ClientModule.html#method.subscribe_balance_changes]<'LIFE0,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = PIN
+[https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN
+STREAM<ITEM = () [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'STATIC, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    SELF: 'ASYNC_TRAIT + SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
+Returns a stream that will output the updated module balance each time it changes. Read more
+[../../fedimint_client/module/trait.ClientModule.html#method.subscribe_balance_changes]
+source [../../src/ln_gateway/ng/mod.rs.html#373]§
+
+
+IMPL DEBUG [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html] FOR GATEWAYCLIENTMODULE [struct.GatewayClientModule.html]
+
+source [../../src/ln_gateway/ng/mod.rs.html#373]§
+
+FN FMT [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html#tymethod.fmt](&SELF, F: &MUT FORMATTER
+[https://doc.rust-lang.org/1.67.0/core/fmt/struct.Formatter.html]<'_>) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/fmt/type.Result.html]
+
+Formats the value using the given formatter. Read more [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Debug.html#tymethod.fmt]
+
+
+AUTO TRAIT IMPLEMENTATIONS§
+
+§
+
+
+IMPL !REFUNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.RefUnwindSafe.html] FOR GATEWAYCLIENTMODULE
+[struct.GatewayClientModule.html]
+
+§
+
+
+IMPL SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] FOR GATEWAYCLIENTMODULE [struct.GatewayClientModule.html]
+
+§
+
+
+IMPL SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] FOR GATEWAYCLIENTMODULE [struct.GatewayClientModule.html]
+
+§
+
+
+IMPL UNPIN [https://doc.rust-lang.org/1.67.0/core/marker/trait.Unpin.html] FOR GATEWAYCLIENTMODULE
+[struct.GatewayClientModule.html]
+
+§
+
+
+IMPL !UNWINDSAFE [https://doc.rust-lang.org/1.67.0/core/panic/unwind_safe/trait.UnwindSafe.html] FOR GATEWAYCLIENTMODULE
+[struct.GatewayClientModule.html]
+
+
+BLANKET IMPLEMENTATIONS§
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#200]§
+
+
+IMPL<T> ANY [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] FOR TWHERE
+    T: 'STATIC + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+source [https://doc.rust-lang.org/1.67.0/src/core/any.rs.html#201]§
+
+FN TYPE_ID [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id](&SELF) -> TYPEID
+[https://doc.rust-lang.org/1.67.0/core/any/struct.TypeId.html]
+
+Gets the TypeId of self. Read more [https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html#tymethod.type_id]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#211]§
+
+
+IMPL<T> BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#213]§
+
+FN BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow](&SELF) -> &
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Immutably borrows from an owned value. Read more [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html#tymethod.borrow]
+source [https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#220]§
+
+
+IMPL<T> BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<T> FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+const: unstable [https://github.com/rust-lang/rust/issues/91522] · source
+[https://doc.rust-lang.org/1.67.0/src/core/borrow.rs.html#221]§
+
+FN BORROW_MUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut](&MUT SELF) -> &MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T
+
+Mutably borrows from an owned value. Read more
+[https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut]
+§
+
+
+IMPL<T> CONV FOR T
+
+§
+
+FN CONV<T>(SELF) -> TWHERE
+    SELF: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+Converts self into T using Into<T>. Read more
+§
+
+
+IMPL<T> FMTFORWARD FOR T
+
+§
+
+FN FMT_BINARY(SELF) -> FMTBINARY<SELF>WHERE
+    SELF: BINARY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Binary.html],
+
+Causes self to use its Binary implementation when Debug-formatted.
+§
+
+FN FMT_DISPLAY(SELF) -> FMTDISPLAY<SELF>WHERE
+    SELF: DISPLAY [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Display.html],
+
+Causes self to use its Display implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_EXP(SELF) -> FMTLOWEREXP<SELF>WHERE
+    SELF: LOWEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerExp.html],
+
+Causes self to use its LowerExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_LOWER_HEX(SELF) -> FMTLOWERHEX<SELF>WHERE
+    SELF: LOWERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.LowerHex.html],
+
+Causes self to use its LowerHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_OCTAL(SELF) -> FMTOCTAL<SELF>WHERE
+    SELF: OCTAL [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Octal.html],
+
+Causes self to use its Octal implementation when Debug-formatted.
+§
+
+FN FMT_POINTER(SELF) -> FMTPOINTER<SELF>WHERE
+    SELF: POINTER [https://doc.rust-lang.org/1.67.0/core/fmt/trait.Pointer.html],
+
+Causes self to use its Pointer implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_EXP(SELF) -> FMTUPPEREXP<SELF>WHERE
+    SELF: UPPEREXP [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperExp.html],
+
+Causes self to use its UpperExp implementation when Debug-formatted. Read more
+§
+
+FN FMT_UPPER_HEX(SELF) -> FMTUPPERHEX<SELF>WHERE
+    SELF: UPPERHEX [https://doc.rust-lang.org/1.67.0/core/fmt/trait.UpperHex.html],
+
+Causes self to use its UpperHex implementation when Debug-formatted. Read more
+§
+
+FN FMT_LIST(SELF) -> FMTLIST<SELF>WHERE
+    &'A [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF: FOR<'A> INTOITERATOR
+[https://doc.rust-lang.org/1.67.0/core/iter/traits/collect/trait.IntoIterator.html],
+
+Formats each item in a sequence. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#733]§
+
+
+IMPL<T> FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T> FOR T
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#736]§
+
+FN FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html#tymethod.from](T: T) -> T
+
+Returns the argument unchanged.
+
+§
+
+
+IMPL<T> FUTUREEXT FOR T
+
+§
+
+FN WITH_CONTEXT(SELF, OTEL_CX: CONTEXT) -> WITHCONTEXT<SELF>
+
+Attaches the provided Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+§
+
+FN WITH_CURRENT_CONTEXT(SELF) -> WITHCONTEXT<SELF>
+
+Attaches the current Context [crate::Context] to this type, returning a WithContext wrapper. Read more
+source [../../src/fedimint_client/module/mod.rs.html#268]§
+
+
+IMPL<T> ICLIENTMODULE [../../fedimint_client/module/trait.IClientModule.html] FOR TWHERE
+    T: CLIENTMODULE [../../fedimint_client/module/trait.ClientModule.html],
+
+source [../../src/fedimint_client/module/mod.rs.html#272]§
+
+FN AS_ANY [../../fedimint_client/module/trait.IClientModule.html#tymethod.as_any](&SELF) -> &(DYN ANY
+[https://doc.rust-lang.org/1.67.0/core/any/trait.Any.html] + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html] + 'STATIC)
+
+source [../../src/fedimint_client/module/mod.rs.html#276]§
+
+FN DECODER [../../fedimint_client/module/trait.IClientModule.html#tymethod.decoder](&SELF) -> DECODER
+[../../fedimint_core/core/struct.Decoder.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#280]§
+
+FN CONTEXT [../../fedimint_client/module/trait.IClientModule.html#tymethod.context](&SELF, INSTANCE: U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]) -> DYNCONTEXT [../../fedimint_client/sm/state/struct.DynContext.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#284]§
+
+FN HANDLE_CLI_COMMAND [../../fedimint_client/module/trait.IClientModule.html#tymethod.handle_cli_command]<'LIFE0, 'LIFE1, 'LIFE2,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    CLIENT: &'LIFE1 CLIENT [../../fedimint_client/struct.Client.html],
+    ARGS: &'LIFE2 [OSSTRING [https://doc.rust-lang.org/1.67.0/std/ffi/os_str/struct.OsString.html]]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VALUE
+[https://docs.rs/serde_json/1.0.96/serde_json/value/enum.Value.html], ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#292]§
+
+FN INPUT_AMOUNT [../../fedimint_client/module/trait.IClientModule.html#tymethod.input_amount](&SELF, INPUT: &DYNINPUT
+[../../fedimint_core/core/struct.DynInput.html]) -> TRANSACTIONITEMAMOUNT
+[../../fedimint_core/module/struct.TransactionItemAmount.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#302]§
+
+FN OUTPUT_AMOUNT [../../fedimint_client/module/trait.IClientModule.html#tymethod.output_amount](&SELF, OUTPUT: &DYNOUTPUT
+[../../fedimint_core/core/struct.DynOutput.html]) -> TRANSACTIONITEMAMOUNT
+[../../fedimint_core/module/struct.TransactionItemAmount.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#312]§
+
+FN SUPPORTS_BACKUP [../../fedimint_client/module/trait.IClientModule.html#tymethod.supports_backup](&SELF) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#316]§
+
+FN BACKUP [../../fedimint_client/module/trait.IClientModule.html#tymethod.backup]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>,
+    API: DYNGLOBALAPI [../../fedimint_core/api/struct.DynGlobalApi.html],
+    MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<VEC
+[https://doc.rust-lang.org/1.67.0/alloc/vec/struct.Vec.html]<U8 [https://doc.rust-lang.org/1.67.0/std/primitive.u8.html], GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>, ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#326]§
+
+FN RESTORE [../../fedimint_client/module/trait.IClientModule.html#tymethod.restore]<'LIFE0, 'LIFE1, 'LIFE2, 'LIFE3, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT DATABASETRANSACTION [../../fedimint_core/db/struct.DatabaseTransaction.html]<'LIFE2>,
+    MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>,
+    API: DYNGLOBALAPI [../../fedimint_core/api/struct.DynGlobalApi.html],
+    SNAPSHOT: OPTION [https://doc.rust-lang.org/1.67.0/core/option/enum.Option.html]<&'LIFE3 [U8
+[https://doc.rust-lang.org/1.67.0/std/primitive.u8.html]]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    'LIFE3: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#338]§
+
+FN WIPE [../../fedimint_client/module/trait.IClientModule.html#tymethod.wipe]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    DBTX: &'LIFE1 MUT MODULEDATABASETRANSACTION [../../fedimint_core/db/struct.ModuleDatabaseTransaction.html]<'LIFE2, U16
+[https://doc.rust-lang.org/1.67.0/std/primitive.u16.html]>,
+    MODULE_INSTANCE_ID: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    EXECUTOR: EXECUTOR [../../fedimint_client/sm/executor/struct.Executor.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<() [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html],
+ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#347]§
+
+FN SUPPORTS_BEING_PRIMARY [../../fedimint_client/module/trait.IClientModule.html#tymethod.supports_being_primary](&SELF) -> BOOL
+[https://doc.rust-lang.org/1.67.0/std/primitive.bool.html]
+
+source [../../src/fedimint_client/module/mod.rs.html#351]§
+
+FN CREATE_SUFFICIENT_INPUT [../../fedimint_client/module/trait.IClientModule.html#tymethod.create_sufficient_input]<'LIFE0,
+'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MODULE_INSTANCE: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    DBTX: &'LIFE1 MUT DATABASETRANSACTION [../../fedimint_core/db/struct.DatabaseTransaction.html]<'LIFE2>,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    MIN_AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<CLIENTINPUT
+[../../fedimint_client/transaction/builder/struct.ClientInput.html]<DYNINPUT [../../fedimint_core/core/struct.DynInput.html],
+DYNSTATE [../../fedimint_client/sm/state/struct.DynState.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>>, ERROR [https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> +
+SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#368]§
+
+FN CREATE_EXACT_OUTPUT [../../fedimint_client/module/trait.IClientModule.html#tymethod.create_exact_output]<'LIFE0, 'LIFE1,
+'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MODULE_INSTANCE: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    DBTX: &'LIFE1 MUT DATABASETRANSACTION [../../fedimint_core/db/struct.DatabaseTransaction.html]<'LIFE2>,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    AMOUNT: AMOUNT [../../fedimint_core/struct.Amount.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = CLIENTOUTPUT
+[../../fedimint_client/transaction/builder/struct.ClientOutput.html]<DYNOUTPUT [../../fedimint_core/core/struct.DynOutput.html],
+DYNSTATE [../../fedimint_client/sm/state/struct.DynState.html]<DYNGLOBALCLIENTCONTEXT
+[../../fedimint_client/struct.DynGlobalClientContext.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#385]§
+
+FN AWAIT_PRIMARY_MODULE_OUTPUT
+[../../fedimint_client/module/trait.IClientModule.html#tymethod.await_primary_module_output]<'LIFE0, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    OPERATION_ID: OPERATIONID [../../fedimint_client/sm/struct.OperationId.html],
+    OUT_POINT: OUTPOINT [../../fedimint_core/struct.OutPoint.html]
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<AMOUNT [../../fedimint_core/struct.Amount.html], ERROR
+[https://docs.rs/anyhow/1.0.71/anyhow/struct.Error.html]>> + SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] +
+'ASYNC_TRAIT, GLOBAL [https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#393]§
+
+FN GET_BALANCE [../../fedimint_client/module/trait.IClientModule.html#tymethod.get_balance]<'LIFE0, 'LIFE1, 'LIFE2, 'ASYNC_TRAIT>(
+    &'LIFE0 SELF,
+    MODULE_INSTANCE: U16 [https://doc.rust-lang.org/1.67.0/std/primitive.u16.html],
+    DBTX: &'LIFE1 MUT DATABASETRANSACTION [../../fedimint_core/db/struct.DatabaseTransaction.html]<'LIFE2>
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = AMOUNT [../../fedimint_core/struct.Amount.html]>
++ SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    'LIFE1: 'ASYNC_TRAIT,
+    'LIFE2: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [../../src/fedimint_client/module/mod.rs.html#401]§
+
+FN SUBSCRIBE_BALANCE_CHANGES [../../fedimint_client/module/trait.IClientModule.html#tymethod.subscribe_balance_changes]<'LIFE0,
+'ASYNC_TRAIT>(
+    &'LIFE0 SELF
+) -> PIN [https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX
+[https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN FUTURE
+[https://doc.rust-lang.org/1.67.0/core/future/future/trait.Future.html]<OUTPUT = PIN
+[https://doc.rust-lang.org/1.67.0/core/pin/struct.Pin.html]<BOX [https://doc.rust-lang.org/1.67.0/alloc/boxed/struct.Box.html]<DYN
+STREAM<ITEM = () [https://doc.rust-lang.org/1.67.0/std/primitive.unit.html]> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'STATIC, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>> + SEND
+[https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html] + 'ASYNC_TRAIT, GLOBAL
+[https://doc.rust-lang.org/1.67.0/alloc/alloc/struct.Global.html]>>WHERE
+    'LIFE0: 'ASYNC_TRAIT,
+    T: 'ASYNC_TRAIT,
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#276]§
+
+
+IMPL<T> INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#82]§
+
+FN INSTRUMENT [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument](SELF, SPAN: SPAN
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html]) -> INSTRUMENTED
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the provided Span [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an
+Instrumented wrapper. Read more [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.instrument]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#121]§
+
+FN IN_CURRENT_SPAN [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span](SELF) ->
+INSTRUMENTED [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.Instrumented.html]<SELF>
+
+Instruments this type with the current [https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html#method.current] Span
+[https://docs.rs/tracing/0.1.37/tracing/span/struct.Span.html], returning an Instrumented wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.Instrument.html#method.in_current_span]
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#717]§
+
+
+IMPL<T, U> INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<U> FOR TWHERE
+    U: FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>,
+
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#725]§
+
+FN INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html#tymethod.into](SELF) -> U
+
+Calls U::from(self).
+
+That is, this conversion is whatever the implementation of From [https://doc.rust-lang.org/1.67.0/core/convert/trait.From.html]<T>
+for U chooses to do.
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#384]§
+
+
+IMPL<T> INTOREQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html]<T> FOR T
+
+source [https://docs.rs/tonic/0.9.2/src/tonic/request.rs.html#385]§
+
+FN INTO_REQUEST [https://docs.rs/tonic/0.9.2/tonic/request/trait.IntoRequest.html#tymethod.into_request](SELF) -> REQUEST
+[https://docs.rs/tonic/0.9.2/tonic/request/struct.Request.html]<T>
+
+Wrap the input message T in a tonic::Request
+source [https://docs.rs/tonic/0.8.3/src/tonic/request.rs.html#350]§
+
+
+IMPL<T> INTOREQUEST [https://docs.rs/tonic/0.8.3/tonic/request/trait.IntoRequest.html]<T> FOR T
+
+source [https://docs.rs/tonic/0.8.3/src/tonic/request.rs.html#351]§
+
+FN INTO_REQUEST [https://docs.rs/tonic/0.8.3/tonic/request/trait.IntoRequest.html#tymethod.into_request](SELF) -> REQUEST
+[https://docs.rs/tonic/0.8.3/tonic/request/struct.Request.html]<T>
+
+Wrap the input message T in a tonic::Request
+source [https://docs.rs/tonic/0.6.2/src/tonic/request.rs.html#346]§
+
+
+IMPL<T> INTOREQUEST [https://docs.rs/tonic/0.6.2/tonic/request/trait.IntoRequest.html]<T> FOR T
+
+source [https://docs.rs/tonic/0.6.2/src/tonic/request.rs.html#347]§
+
+FN INTO_REQUEST [https://docs.rs/tonic/0.6.2/tonic/request/trait.IntoRequest.html#tymethod.into_request](SELF) -> REQUEST
+[https://docs.rs/tonic/0.6.2/tonic/request/struct.Request.html]<T>
+
+Wrap the input message T in a tonic::Request
+§
+
+
+IMPL<T> PIPE FOR TWHERE
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+§
+
+FN PIPE<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](SELF) -> R) -> RWHERE
+    SELF: SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Pipes by value. This is generally the method you want to use. Read more
+§
+
+FN PIPE_REF<'A, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_REF_MUT<'A, R>(&'A MUT SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+MUT [https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF) -> R) -> RWHERE
+    R: 'A,
+
+Mutably borrows self and passes that borrow into the pipe function. Read more
+§
+
+FN PIPE_BORROW<'A, B, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R) -> RWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.borrow() into the pipe function. Read more
+§
+
+FN PIPE_BORROW_MUT<'A, B, R>(
+    &'A MUT SELF,
+    FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B) -> R
+) -> RWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.borrow_mut() into the pipe function. Read more
+§
+
+FN PIPE_AS_REF<'A, U, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.as_ref() into the pipe function.
+§
+
+FN PIPE_AS_MUT<'A, U, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]U) -> R) -> RWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<U>,
+    U: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.as_mut() into the pipe function. Read more
+§
+
+FN PIPE_DEREF<'A, T, R>(&'A SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Borrows self, then passes self.deref() into the pipe function.
+§
+
+FN PIPE_DEREF_MUT<'A, T, R>(&'A MUT SELF, FUNC: IMPL FNONCE
+[https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&'A MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T) -> R) -> RWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: 'A + ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+    R: 'A,
+
+Mutably borrows self, then passes self.deref_mut() into the pipe function. Read more
+source [https://docs.rs/typenum/1.16.0/src/typenum/type_operators.rs.html#34]§
+
+
+IMPL<T> SAME [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html]<T> FOR T
+
+§
+
+TYPE OUTPUT [https://docs.rs/typenum/1.16.0/typenum/type_operators/trait.Same.html#associatedtype.Output] = T
+
+Should always be Self
+§
+
+
+IMPL<T> TAP FOR T
+
+§
+
+FN TAP(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Immutable access to a value. Read more
+§
+
+FN TAP_MUT(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Mutable access to a value. Read more
+§
+
+FN TAP_BORROW<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Borrow<B> of a value. Read more
+§
+
+FN TAP_BORROW_MUT<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the BorrowMut<B> of a value. Read more
+§
+
+FN TAP_REF<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the AsRef<R> view of a value. Read more
+§
+
+FN TAP_REF_MUT<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the AsMut<R> view of a value. Read more
+§
+
+FN TAP_DEREF<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Immutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DEREF_MUT<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Mutable access to the Deref::Target of a value. Read more
+§
+
+FN TAP_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap() only in debug builds, and is erased in release builds.
+§
+
+FN TAP_MUT_DBG(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]SELF)) -> SELF
+
+Calls .tap_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROW [https://doc.rust-lang.org/1.67.0/core/borrow/trait.Borrow.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_BORROW_MUT_DBG<B>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]B)) -> SELFWHERE
+    SELF: BORROWMUT [https://doc.rust-lang.org/1.67.0/core/borrow/trait.BorrowMut.html]<B>,
+    B: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_borrow_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASREF [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsRef.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_REF_MUT_DBG<R>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]R)) -> SELFWHERE
+    SELF: ASMUT [https://doc.rust-lang.org/1.67.0/core/convert/trait.AsMut.html]<R>,
+    R: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_ref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREF [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html]<TARGET = T>,
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref() only in debug builds, and is erased in release builds. Read more
+§
+
+FN TAP_DEREF_MUT_DBG<T>(SELF, FUNC: IMPL FNONCE [https://doc.rust-lang.org/1.67.0/core/ops/function/trait.FnOnce.html](&MUT
+[https://doc.rust-lang.org/1.67.0/std/primitive.reference.html]T)) -> SELFWHERE
+    SELF: DEREFMUT [https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.DerefMut.html]<TARGET = T> + DEREF
+[https://doc.rust-lang.org/1.67.0/core/ops/deref/trait.Deref.html],
+    T: ?SIZED [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sized.html],
+
+Calls .tap_deref_mut() only in debug builds, and is erased in release builds. Read more
+§
+
+
+IMPL<T> TRYCONV FOR T
+
+§
+
+FN TRY_CONV<T>(SELF) -> RESULT [https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, SELF::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error]>WHERE
+    SELF: TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<T>,
+
+Attempts to convert self into T using TryInto<T>. Read more
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#775]§
+
+
+IMPL<T, U> TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U> FOR TWHERE
+    U: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error] = INFALLIBLE
+[https://doc.rust-lang.org/1.67.0/core/convert/enum.Infallible.html]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#781]§
+
+FN TRY_FROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#tymethod.try_from](VALUE: U) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<T, <T AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<U>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+source [https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#760]§
+
+
+IMPL<T, U> TRYINTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html]<U> FOR TWHERE
+    U: TRYFROM [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>,
+
+§
+
+TYPE ERROR [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#associatedtype.Error] = <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]
+
+The type returned in the event of a conversion error.
+const: unstable [https://github.com/rust-lang/rust/issues/88674] · source
+[https://doc.rust-lang.org/1.67.0/src/core/convert/mod.rs.html#766]§
+
+FN TRY_INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.TryInto.html#tymethod.try_into](SELF) -> RESULT
+[https://doc.rust-lang.org/1.67.0/core/result/enum.Result.html]<U, <U AS TRYFROM
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html]<T>>::ERROR
+[https://doc.rust-lang.org/1.67.0/core/convert/trait.TryFrom.html#associatedtype.Error]>
+
+Performs the conversion.
+§
+
+
+IMPL<V, T> VZIP<V> FOR TWHERE
+    V: MULTILANE<T>,
+
+§
+
+FN VZIP(SELF) -> V
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#334]§
+
+
+IMPL<T> WITHSUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html] FOR T
+
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#169-171]§
+
+FN WITH_SUBSCRIBER [https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]<S>(SELF,
+SUBSCRIBER: S) -> WITHDISPATCH [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>WHERE
+    S: INTO [https://doc.rust-lang.org/1.67.0/core/convert/trait.Into.html]<DISPATCH
+[https://docs.rs/tracing-core/0.1.22/tracing_core/dispatcher/struct.Dispatch.html]>,
+
+Attaches the provided Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type,
+returning a WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber]
+source [https://docs.rs/tracing/0.1.37/src/tracing/instrument.rs.html#221]§
+
+FN WITH_CURRENT_SUBSCRIBER
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber](SELF) -> WITHDISPATCH
+[https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html]<SELF>
+
+Attaches the current default [https://docs.rs/tracing/0.1.37/tracing/dispatcher/index.html#setting-the-default-subscriber]
+Subscriber [https://docs.rs/tracing-core/0.1.22/tracing_core/subscriber/trait.Subscriber.html] to this type, returning a
+WithDispatch [https://docs.rs/tracing/0.1.37/tracing/instrument/struct.WithDispatch.html] wrapper. Read more
+[https://docs.rs/tracing/0.1.37/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber]
+source [../../src/fedimint_core/task.rs.html#568]§
+
+
+IMPL<T> MAYBESEND [../../fedimint_core/task/trait.MaybeSend.html] FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+§
+
+
+IMPL<T> MAYBESEND FOR TWHERE
+    T: SEND [https://doc.rust-lang.org/1.67.0/core/marker/trait.Send.html],
+
+source [../../src/fedimint_core/task.rs.html#582]§
+
+
+IMPL<T> MAYBESYNC [../../fedimint_core/task/trait.MaybeSync.html] FOR TWHERE
+    T: SYNC [https://doc.rust-lang.org/1.67.0/core/marker/trait.Sync.html],
+
