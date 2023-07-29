@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":[["LightningNode",""]],"fn":[["dev_fed",""],["external_daemons",""],["open_channel",""]],"macro":[["cmd","easy syntax to create a Command"]],"mod":[["federation",""],["util",""],["vars",""]],"struct":[["Bitcoind",""],["DevFed",""],["Electrs",""],["Esplora",""],["ExternalDaemons",""],["Faucet",""],["Gatewayd",""],["Lightningd",""],["Lnd",""]]};

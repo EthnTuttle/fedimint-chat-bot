@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":[["BackupRequest",""],["Mint","Federated mint member mint"],["MintGen",""],["SignedBackupRequest",""],["VerificationCache",""]]};

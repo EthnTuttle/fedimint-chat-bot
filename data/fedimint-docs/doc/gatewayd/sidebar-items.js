@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"constant":[["DB_FILE",""]],"fn":[["main","Fedimint Gateway Binary"]],"struct":[["GatewayOpts",""]]};

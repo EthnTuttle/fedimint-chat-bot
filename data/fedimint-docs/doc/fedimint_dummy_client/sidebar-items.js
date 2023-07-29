@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":[["api",""]],"struct":[["DummyClientContext","Data needed by the state machine"],["DummyClientGen",""],["DummyClientModule",""]],"trait":[["DummyClientExt","Exposed API calls for client apps"]]};

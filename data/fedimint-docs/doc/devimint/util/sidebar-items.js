@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":[["poll",""],["poll_value",""]],"struct":[["Command",""],["ProcessHandle","Kills process when all references to ProcessHandle are dropped."],["ProcessHandleInner",""],["ProcessManager",""]],"trait":[["JsonValueExt",""],["ToCmdExt",""]]};

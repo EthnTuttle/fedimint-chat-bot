@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":[["broadcast_pending_tx",""],["run_broadcast_pending_tx",""]],"struct":[["Wallet",""],["WalletGen",""],["WalletVerificationCache",""]]};

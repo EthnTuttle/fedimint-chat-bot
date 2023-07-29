@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":[["EcashBackup","Encrypted version of [`PlaintextEcashBackup`]."],["EcashRecoveryFinalState",""],["Metadata","Backup metadata"],["PlaintextEcashBackup","Snapshot of a ecash state (notes)"]]};

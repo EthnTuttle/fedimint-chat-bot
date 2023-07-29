@@ -22,8 +22,9 @@ await client.init({
 // })();
 
     
-const loader = new DirectoryLoader("./data/transcripts", {
+const loader = new DirectoryLoader("./data/", {
     ".txt": (path) => new TextLoader(path),
+    ".md": (path) => new TextLoader(path),
 });
 
 let docs = await loader.load();

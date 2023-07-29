@@ -1,3 +1,0 @@
-(function() {var implementors = {
-"fedimint_client_legacy":[["impl ClientModule for <a class=\"struct\" href=\"fedimint_client_legacy/ln/struct.LnClient.html\" title=\"struct fedimint_client_legacy::ln::LnClient\">LnClient</a>"],["impl ClientModule for <a class=\"struct\" href=\"fedimint_client_legacy/mint/struct.MintClient.html\" title=\"struct fedimint_client_legacy::mint::MintClient\">MintClient</a>"],["impl ClientModule for <a class=\"struct\" href=\"fedimint_client_legacy/wallet/struct.WalletClient.html\" title=\"struct fedimint_client_legacy::wallet::WalletClient\">WalletClient</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

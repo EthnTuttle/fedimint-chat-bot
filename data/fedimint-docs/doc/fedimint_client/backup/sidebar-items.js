@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":[["ClientBackup","Client state backup"],["EncryptedClientBackup","Encrypted version of [`ClientBackup`]."],["Metadata","Backup metadata"]]};

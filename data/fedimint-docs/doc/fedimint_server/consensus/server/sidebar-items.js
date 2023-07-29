@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":[["EpochMessage",""]],"struct":[["ConsensusServer","Runs the main server consensus loop"]]};

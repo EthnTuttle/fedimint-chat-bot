@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":[["GatewayRpcError",""]],"struct":[["Error","The Errors that may occur when processing a `Request`."],["GatewayRpcClient",""],["Response","A Response to a submitted `Request`."]],"type":[["GatewayRpcResult",""]]};

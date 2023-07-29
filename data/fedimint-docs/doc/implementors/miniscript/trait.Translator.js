@@ -1,3 +1,0 @@
-(function() {var implementors = {
-"recoverytool":[["impl Translator&lt;<a class=\"struct\" href=\"fedimint_wallet_common/keys/struct.CompressedPublicKey.html\" title=\"struct fedimint_wallet_common::keys::CompressedPublicKey\">CompressedPublicKey</a>, <a class=\"enum\" href=\"recoverytool/enum.Key.html\" title=\"enum recoverytool::Key\">Key</a>, <a class=\"primitive\" href=\"https://doc.rust-lang.org/1.67.0/std/primitive.unit.html\">()</a>&gt; for <a class=\"struct\" href=\"recoverytool/struct.SecretKeyInjector.html\" title=\"struct recoverytool::SecretKeyInjector\">SecretKeyInjector</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

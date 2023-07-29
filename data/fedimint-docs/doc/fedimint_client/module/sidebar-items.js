@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":[["gen",""]],"struct":[["DynClientModule",""]],"trait":[["ClientModule","Fedimint module client"],["IClientModule","Type-erased version of [`ClientModule`]"]],"type":[["ClientModuleRegistry",""],["StateGenerator",""]]};
