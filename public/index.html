@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question Form</title>
+</head>
+
+<body>
+    <h1>Question Form</h1>
+    <form id="questionForm">
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="resultParagraph"></p>
+
+    <script>
+        document.getElementById('questionForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const questionInput = document.getElementById('question').value;
+            fetch('http://localhost:3338/api', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "question": questionInput })
+            })
+            .then(response => {
+                console.log(response);
+                response.json()
+            })
+            .then(response => {
+                console.log(response);
+                document.getElementById('resultParagraph').textContent = response;
+            });
+        });
+    </script>
+</body>
+
+</html>

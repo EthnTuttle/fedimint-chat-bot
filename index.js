@@ -1,16 +1,13 @@
 import { PineconeClient } from "@pinecone-database/pinecone";
-import { DirectoryLoader } from "langchain/document_loaders/fs/directory"
-import { TextLoader } from "langchain/document_loaders/fs/text"
 import * as dotenv from "dotenv"
-import { createPineconeIndex } from "./createPinecone.js"
-import { updatePinecone } from "./updatePinecone.js"
 import { queryPineconeVectorStoreAndQueryLLM } from "./queryPineconeAndQueryGPT.js"
-
+import express  from "express";
 
 dotenv.config();
-
+const app = express();
+const port = 3338;
 const indexName = "fedimint-index"
-const vectorDimension = 1536; // needed for OpenAI embeddings, might be different for other LLMS
+// const vectorDimension = 1536; // needed for OpenAI embeddings, might be different for other LLMS
 
 const client = new PineconeClient();
 await client.init({
@@ -22,16 +19,28 @@ await client.init({
 // })();
 
     
-const loader = new DirectoryLoader("./data/", {
-    ".txt": (path) => new TextLoader(path),
-    ".md": (path) => new TextLoader(path),
-});
+// const loader = new DirectoryLoader("./data/", {
+//     ".txt": (path) => new TextLoader(path),
+//     ".md": (path) => new TextLoader(path),
+// });
 
-let docs = await loader.load();
+// let docs = await loader.load();
 
-const question = "What is fedimint?";
+// const question = "How does Fedimint consensus work?";
 
-(async () => {
-    await updatePinecone(client, indexName, docs);
-    await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-})();
+// (async () => {
+//     // await updatePinecone(client, indexName, docs);
+//     console.log(answer)
+// })();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.post('/api', async (req, res) => {
+    console.log(req.body)
+    const question = req.body.question;
+    const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+    res.send({"answer": answer})
+})
+app.use(express.static('public'))
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
