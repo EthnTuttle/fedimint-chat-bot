@@ -1,0 +1,1018 @@
+ Let's-- there we go.
+ OK, yeah, so last week, I've been
+ trying to basically run the UIs that we have and just sort of
+ get a sense of the readiness.
+ So I'm going to give a demo of each one of these for you guys,
+ just so you can see.
+ And some people have more or less experience looking at them.
+ But I just want to just do an overview
+ and then talk about how we can basically
+ meet in the middle between what we have code-wise, what
+ we have design-wise, and then just tighten up
+ the process a little bit so that the time we put into this
+ is--
+ yields more and more results as time goes on.
+ So first one I want to show is this.
+ This is what the gateway UI looks like.
+ And so basically, this part here, this is just--
+ I'm running it locally on my computer.
+ This part here, when you first run it, wouldn't show up,
+ but just how I have it running here.
+ So this would be--
+ [INAUDIBLE]
+ I'm always sharing my screen.
+ Like, when I'm not sharing my screen, it's surprising.
+ It's like, aren't I sharing my screen at all times?
+ I guess not.
+ OK, now can you see?
+ OK, cool.
+ So yeah, so when you first load this, this would not show up.
+ So it just gives you one button.
+ And when you click it, you have a field here
+ to enter a piece of text that will
+ allow you to join a federation.
+ And nicely, it does have some error handling.
+ So Igbo thought of this.
+ That's great.
+ Our smiley face will come.
+ And he's smiling face in the chat.
+ So yeah, this is--
+ that's what it's at currently.
+ So if it's real, then this will pop up, basically.
+ So I'm just going to reload so that it goes away.
+ So this will pop up.
+ And so there's three tabs that--
+ and so we got this to actually--
+ that's interesting.
+ No QR.
+ Yesterday, that worked.
+ Yeah.
+ Interesting.
+ Oh.
+ OK.
+ Let me-- this is not--
+ this is just, I guess, it was running all night.
+ That's what happens in demo.
+ Well, it was running overnight.
+ So it seemed to just crash, having just run for a day.
+ Maybe I killed it accidentally.
+ So just give me a--
+ OK, so there we go.
+ So yeah, you'll have a couple of screens, a balance.
+ And the balance will probably go up here in a second.
+ So this is-- it's just setting up a local environment.
+ And everything seems to be going well.
+ And so now it gave some money to the gateway.
+ So now I have a little balance.
+ That's just an automated script that
+ funds your local environment.
+ So this is what a balance looks like.
+ And this looked a little better.
+ There was more stuff here a couple of days ago.
+ So a couple of days ago, there was more stuff,
+ but it didn't work.
+ It was all static.
+ So I just went through and basically removed
+ the things that were static and got it to work.
+ So all it shows here is the balance.
+ This is a federation ID.
+ Basically, that's in the code, the identifier of a federation,
+ kind of like a node pubkey in Lightning.
+ If you ever go to 1ml.com and look at a Lightning node,
+ it's very similar to this node pubkey.
+ It's like the identifier for the federation
+ instead of for the node.
+ So but it's not terribly useful if we concatenate it.
+ So you can't really do much with this besides just
+ like a visual identifier.
+ And so deposit, you're able to get an address.
+ So I can send some money to it.
+ And I have to--
+ I had it set up previously, but I have to--
+ just to avoid typing that in.
+ If I mine enough blocks for it to become valid,
+ I think in this little environment,
+ you need 10 blocks.
+ So some blocks were mined, and then all of a sudden,
+ we were to-- it was--
+ this is 20,000 sats.
+ So this isn't displayed.
+ All these are millisats.
+ So it's 20,000 sats.
+ So if we reload now, the 0.1 Bitcoin I sent showed up.
+ And so you can see that the deposit quote, unquote,
+ "works."
+ It's very rough, but it does work.
+ And then let's do a withdrawal.
+ So Bitcoin CLI.
+ And so a couple of weird things here.
+ If you accidentally type anything
+ that isn't a number in here, you get not a number.
+ And then it doesn't render.
+ So that's just a little weird thing I noticed.
+ But if you do type a number, and 100,000,
+ paste in an address, you get a beautiful modal confirming.
+ And then this is something I did.
+ You can tell because it's ugly.
+ But it just displays the transaction ID.
+ And so you can see now over here, ended in 20,000 sats.
+ And it'll be less.
+ And so yeah, so that's where we're at.
+ Currently, the gateway is not able to show transaction
+ history, which really stinks.
+ Something we'll probably add in the next month or two.
+ But right now, it doesn't exist.
+ And we don't have good--
+ like, originally, this UI was designed sort of like--
+ it's like a row here.
+ So it's designed to have multiple gateways.
+ I think it would be perfectly fine and maybe even better
+ to just have it just be like just one gateway.
+ You just run with one federation.
+ Sorry, I think I misspoke.
+ This was originally designed to have multiple federations.
+ One gateway could be a part of multiple federations.
+ You get a list of them.
+ I think it'd be perfectly fine to just have it be one for now.
+ We can simplify-- just simplify things a little bit.
+ And then later on, when we want to support multiple,
+ we'll have to make some changes to FedEments as well,
+ I suspect.
+ So lastly, like this--
+ I don't know.
+ I think it would be fine if we just opened up
+ all the details all the time.
+ But those are just some observations
+ I made the last day or so on the state of the gateway.
+ And one thing to mention is that this gateway UI is not
+ really complete in terms of--
+ a gateway operator will not be able to do everything
+ they need to do to run their Lightning gateway
+ through this UI currently, because they
+ will need to open and close Lightning channels.
+ And we can't do that here.
+ And it would be a ton of work-- it
+ would be quite a bit of work to be able to do that, I think.
+ And we still probably wouldn't be
+ able to do a great job of that.
+ So I think a user will always use this in addition
+ to either the command line or a user interface,
+ like a Lightning node interface, like Ride the Lightning
+ or ThunderHub.
+ So that's just a comment there.
+ I mean, I was just thinking about this a little bit more.
+ In a perfect world, we could just
+ have a little widget in each one of these node UIs.
+ That would be really great if we could just
+ drop this little widget into Ride the Lightning
+ or into ThunderHub.
+ I doubt that will happen.
+ But that's just a thought I had the last day or so.
+ So yeah, any questions about this?
+ That's--
+ [INTERPOSING VOICES]
+ Do you think it would make sense to maintain
+ a fork of one of those?
+ I thought about that, yeah.
+ Like, that could almost--
+ I think that would basically be the option,
+ because I wouldn't really want to upstream it,
+ because this is going to be kind of under construction
+ for a while.
+ You know what I mean?
+ Like, yeah, it would suck to--
+ yeah, I don't know if we could depend on them always merging
+ our changes we need.
+ So that's an option that we could play with,
+ because the number of--
+ I think that sounds pretty feasible.
+ I don't know.
+ What do other people think about that?
+ I think that'd be really cool.
+ I mean, I don't know those code bases very well at all.
+ So it takes some learning to get up to speed on that.
+ But that'd be really cool to do that.
+ Yeah.
+ Yeah, that might be worth just a little exploration,
+ because that's just like noticing this,
+ like, if you run this, you're always
+ going to have to run something else, basically,
+ or just be using the command line.
+ So it's not a great user experience.
+ And I don't think trying to turn this into a great user
+ experience for a full Lightning Node operator
+ is something that we have that bandwidth to do.
+ It would be a ton of work for--
+ which we could accommodate.
+ Do you know--
+ Yep.
+ Do they have a plug-in system or anything?
+ Does RTL allow you to write plug-ins or anything like that?
+ I imagine that'd be useful.
+ I'm pretty certain they don't, unless something recently
+ has been added.
+ I mean, that's also an option, is
+ try to contribute some plug-in concept to an existing
+ Lightning dashboard.
+ Yeah, I was just going to say that.
+ I'd imagine that's useful beyond FettyMint as well, right?
+ There's probably other Lightning features
+ that they might not want directly in,
+ let's say, for RTL, directly in their product right now.
+ But there's things coming down the pipeline
+ that they'll probably want later.
+ Yeah, I mean, I think that's slightly--
+ basically, if we did a fork with a plug-in,
+ it would function very similar.
+ But yeah, that would change things a little bit,
+ because then we wouldn't really have two apps that
+ are sharing a UI library.
+ We would just basically probably make
+ it look like the rest of their ThunderHub or something.
+ I guess whichever one we use, if somebody's using the other one,
+ they'd kind of be a little--
+ they'd be shit out of luck a little bit.
+ They'd just have to--
+ but I don't know.
+ Any other thoughts from that, from Jotam or Igbo or Seth?
+ [SIDE CONVERSATION]
+ I don't know if the design changes a lot from where
+ we are to adding these into RTL.
+ But RTL would look like a really good option,
+ because it cuts across all the nodes
+ that we know we can support, like CLN and LND.
+ Is ThunderHub only CLN?
+ Is only LND?
+ [SIDE CONVERSATION]
+ I mean, there's also the thing of--
+ I mean, in Fetiment, we have a concept of a lightning node
+ that--
+ you could have a lightning node that isn't--
+ oh.
+ [SIDE CONVERSATION]
+ OK.
+ Yeah, I mean, the RTL would be a little annoying,
+ because I think it's all in Angular, which is not
+ something that--
+ it's like a different JavaScript framework, which is maybe--
+ I haven't used Angular in years, but that
+ might be a little annoying.
+ But yeah, I mean, that's an option,
+ just in terms of the job to be done here, right?
+ Like, it's kind of debatable whether this does the job,
+ you know, like whether we'll get to that point
+ where it does everything you need.
+ I mean, maybe it doesn't need to do everything you need,
+ but it's just something to think about.
+ So the option you're floating is to outsource the dashboard
+ or the gateway interface to some other thing?
+ Is that what that means?
+ The UI would be--
+ Instead of having our own app that just does this,
+ we would go take someone else's app,
+ like ride the lightning or thunder hub, fork it,
+ basically put roughly this code into their interface somewhere.
+ OK.
+ So I mean, I think we could save a lot of the code.
+ We could make it look the same as it does currently.
+ We could make it look like their app.
+ But that's just one of the--
+ something to think about.
+ Like, yeah.
+ So if there's nothing else--
+ Interesting.
+ I'll try to give just like a really fast demo of the--
+ [TYPING]
+ --of the setup UI.
+ Or should I--
+ [TYPING]
+ --a little confused why it's asking me for a password again.
+ Still a little work to do here.
+ Hmm.
+ Yeah, it's not a storage thing.
+ If the server comes back and you're not
+ in the awaiting password state, it's going to ask you.
+ Oh, yeah, you're in consensus running somehow.
+ Yeah, I don't know how that happens.
+ OK, give me like--
+ I don't know what is like--
+ It's a little annoying how we have two different ways of--
+ It's going to be on your file system, not a running process.
+ So you might want to run the stop servers clear data
+ thing there on the left.
+ Yeah, I thought it was just--
+ What happens if you just click the Submit
+ and not even enter a password?
+ Well, it probably won't--
+ OK.
+ --ensure what is it.
+ Like, that might--
+ I wouldn't really trust that.
+ OK, why did it just--
+ OK, I think this will maybe work now.
+ OK, that's good.
+ OK, so I'll be--
+ two of them, leader and follower.
+ I think we've-- I'll do this really fast.
+ I think we've kind of gone through this one before,
+ but like--
+ Right, so there are some--
+ so we have this design spec.
+ It's not exactly the same as this.
+ And that's one thing I want to talk about a little later,
+ is to what degree do we want to keep
+ the designs in the app in sync?
+ You know, like, do we have a spec?
+ What's the spec?
+ I'll keep this simple.
+ So we have some--
+ yeah, there's some kind of like slightly technical issues
+ that we'll need to sort out here.
+ Basically, there's-- I won't get into that.
+ There's a couple little shortcomings.
+ So the leader is going to basically create the ceremony,
+ share a link.
+ The follower gets the link, paste it in here,
+ and can proceed.
+ This is one little weird thing, is that it--
+ so I should-- maybe should have chosen a better name.
+ But x is like this guy, and it says pending.
+ And it should probably just be like done,
+ because the leader created the ceremony
+ and has already opted into all the configuration
+ for the federation, because they chose it.
+ So this one, we might want to just say like it's done,
+ like whatever the finish state is.
+ This table looks a little better if there's like four guardians.
+ But I'll prove here, and you can see it'll--
+ I think it would turn over to like a done state for this guy.
+ And now they're all done, so now it's generating the codes.
+ And then you just share these.
+ And these are basically the--
+ you're making sure you're doing it.
+ Everyone opts into the set of all of their guardians.
+ And then we get to done.
+ So yeah, so this is another one where like a lot of this
+ is not--
+ like basically, this part of the UI actually is live.
+ And the rest of it is more or less, I think, totally static.
+ It's just sort of stubbed in.
+ Like a lot of these don't do anything, which is fine.
+ So yeah, that's where we're at.
+ Any thoughts or comments there?
+ I think we have seen this before.
+ I just want to kind of go over it again.
+ OK, cool.
+ So yeah, so I just want to share a little thing
+ that me and Skylar did yesterday.
+ Just kind of like--
+ I've been trying to audit where we're at,
+ just to try to get something, just try to run something.
+ And so yeah, last week, like I said with Ethan,
+ I was able to run the setup UI.
+ And the federation is running right now.
+ It's operative.
+ And now we're just trying to basically deploy the gateway UI.
+ And now, so I have a gateway running.
+ It doesn't have the UI.
+ So I'm going to try to get the UI working today.
+ But at that point, I think we'll actually
+ have a Signet federation that is quote, unquote, "usable."
+ There's still some shortcomings, but you could actually route Lightning payments over it
+ on Mutiny.net.
+ So that's kind of a pretty cool milestone I think we're going to hit this week is two
+ UIs that are usable.
+ So I just want to kind of like...
+ So at the high level, we're at the point where we can actually build and we can implement
+ and deploy these interfaces.
+ So that's great.
+ So I just want to get to the point where we try to focus on building things that we can...
+ Designing and building in lockstep.
+ The things we design, we can actually build.
+ And so part of that is we got to communicate better to the designers what's possible.
+ So I've been bad at that so far, but I think we can get better.
+ So yeah, just how to get the designs and the code a little more in sync.
+ I'm going to skip this and let Skylar go up on this.
+ Do you want to do this now or should we do it...
+ You're muted.
+ Sorry, I'm muted.
+ Let's just do it now.
+ Yeah, I mean, I'll just...
+ I'll do it now.
+ Yeah.
+ So if you guys want to follow me on Figma, I can zoom into things.
+ But yeah, so one thing I wanted to push for is kind of bringing...
+ There's this other question of design systems that we need to resolve and component libraries
+ because the setup UI was built on the specific...
+ A very small component set and the dashboard, I think Seth has been using Tailwind.
+ So we need to reconcile these a little bit because we need to make sure that the engineers
+ are not using multiple systems.
+ So that's kind of a different topic.
+ But I think for a visual inspiration, I think we should try to aim for something a little
+ bit higher than Tailwind styles because they're good for structure, but I think we can elevate
+ the visuals a little bit.
+ And I just put together some inspiration here and some themes I see in these are hierarchy
+ or contrast between typography to really call out what's important.
+ I feel like sometimes Tailwind can kind of get like, you know, each component is beautiful
+ in itself, but when a lot of them come together, it becomes a little bit hard to follow what's
+ going on because it's like, you know, it wasn't cohesively created.
+ It was more like pieced together.
+ Whereas some of these, I feel like the hierarchy is stronger where you see different elements
+ at different times and it's easier to ascertain information quickly.
+ So that was something I want to push for is like, in this new scope, we're going to talk
+ about some scope.
+ We've simplified the scope a lot to what the devs can actually build.
+ So I think that like a really robust component library is not actually necessary yet because
+ it's like the things that we can actually build right now are like very simple.
+ So I think that means we could actually like punt diving into a component library and sort
+ of keeping things a little bit more bespoke and simple, which would allow us to have more
+ of a free aesthetic, I think.
+ So that's some points there.
+ I'm happy to go into details later.
+ But overall, I think we should try to aim for interfaces that feel more like this, that
+ are more open and simple.
+ Let's see.
+ Yeah.
+ Justin, talk about...
+ Yeah.
+ So one thing Skylar was kind of talking about is that we kind of have two design systems,
+ right?
+ So one has, I think the components and like the fonts and everything are a little different.
+ They seem to me like a little different.
+ I mean, maybe I'm just don't know how Figma works enough, but it seems like we have kind
+ of two different sets of components.
+ So if we do go the route of having two different apps, we'll want them to look the same ideally.
+ But yeah, if we end up just like forking Ride the Lightning or something, that's less of
+ an issue.
+ So yeah, that was one thing I noticed.
+ Another thing is like, I think we've been a little like, it's been a little unclear
+ like when something's ready to be built.
+ So like, I think like, you know, like we kind of have something that's like, it'd just be
+ nice to have a little more clear, like this is ready to build, right?
+ I think, yeah, just don't want devs like building something and then it's, we decided it wasn't,
+ you know, wasn't quite right or something.
+ And then just clearly define what's feasible to build and what isn't, right?
+ Because I think like some of the stuff, like designers haven't been getting enough information,
+ just so we got to just share more about like what's possible, what isn't possible.
+ So that's something I got to help a lot more on.
+ And so we were just thinking about like, what in terms of like, what we just tried to like,
+ like, what's the minimum we could have, we need for like, the guard, like the guard,
+ the setup UI thing was mostly ready is like, what's the minimum we actually need for the
+ gate guard guardian UI that is doable, right?
+ And so I'll just go down the list, like, name of the federation, federation title, the Bitcoin
+ balance and like, this actually isn't, there's no API for this right now, but like, we could,
+ we could build one.
+ So like a few of these things aren't like ready right now, but I think we could add
+ them a table for all the consensus state.
+ And so that's like this thing that we have currently, right?
+ Like this is basically Will's, Will's attempt at dumping all the information that he had
+ into a table.
+ And so I think we have a little bit more for the peers, right?
+ So there's a couple things for all the other guardians, you can see whether they're flagged
+ or not, this basically means do we think they're having a problem, right?
+ So this is something you could use to like display it as red, you know, or something
+ like that.
+ Whether they're connected or not.
+ Yeah, I think this is, we could use a little more definition on what exactly flagged means,
+ it's a little gray to me.
+ Because I'm not sure if you can be flagged and be disconnected.
+ But so that's, this one is like, do we think they're basically out of consensus?
+ Are they disagreeing with us?
+ Right?
+ This one is like, can we not reach them at all?
+ Right?
+ Is their server down?
+ And this one is like, when did they last contribute to consensus?
+ Meaning like, if we're trying to process a transaction, when was the last time they were
+ one of the people that signed, that like signed the EPIC, which is basically a block.
+ And so this is this is kind of useful.
+ If someone's offline, this is kind of like, you know that they haven't been online any,
+ they probably haven't been online more any more recently than this.
+ So you can kind of tell how long they've been down.
+ Right?
+ Perfect world, we get a lot more information than that we get more information than this.
+ This is what we have right now.
+ So this is like, totally ready to go.
+ Invite link, we have that lightning gateways, we have a nice design for that in Seth's dashboard.
+ And so that one looks really nice.
+ I think we just like basically pulled a few things out of it that couldn't, I don't think
+ we couldn't show like maybe the channel balances and stuff.
+ Like from the guardian side, I don't think you can see any of that there was one or two
+ things, but just like we can show is we can show that alias of the node, the node ID,
+ which is what would allow you to go to like one ml, and then the fees they're charging.
+ So we could show that so we could show like a list of all the gateways and that would
+ be really great to have.
+ Yeah, every time I run a gate with a guardian or Federation, I'm always checking this on
+ the command line.
+ So that would be really great.
+ Let's see.
+ And just like your Bitcoin node, right, like just some connection information, what you
+ think the block height is, and just whether it's like not working at all.
+ Right.
+ So you could, if it's if it's down, it would be nice to show that.
+ And so this will take a little bit of work, but I think we can do it.
+ I think we can do all this client side, like we don't.
+ Well, I don't think you can do Bitcoin RPC client side, like we could, I think we could
+ probably get this to work.
+ But this would be really nice to have, because if your Bitcoin node isn't working, Fetimint
+ is not going to work very well.
+ And then, yeah, just like what we do have Fetimint.org and some Discord and like, yeah,
+ one thing right now is it's it's kind of a problem.
+ We don't have we don't have docs, we don't really have docs.
+ Well, the idea is like go and deploy this.
+ And as we do it, start writing up, you know, writing up these docs, but they don't exist
+ yet.
+ So that's the Guardian dashboard and just like just try to like kind of like this would
+ be so this is kind of like a little bit of a subset of what Seth has been working on.
+ And but I think we could actually build this.
+ Right.
+ And so it's it's kind of, you know, obviously, this is just copy and paste it from the first
+ one, but just just just try to like, reduce the scope a little bit like we could build
+ and ship this really quick.
+ So yeah, any any comments there?
+ Going once, going twice, sold.
+ OK.
+ And so lastly, just the gateway dashboard.
+ So I think it'd be perfectly fine, like, right, like the onboarding we have right now is great.
+ It's just like, you know, paste in something.
+ I think it'd be totally fine if we just had one one federation at a time.
+ It's probably I would argue this is better just because we're not.
+ I mean, we're yeah, we're we're not it's not really ready on the back end side, so we probably
+ shouldn't expose it in user interface and have somebody use it and break their, you
+ know, have encounter problems.
+ So I would say just one at a time would be better.
+ And that is basically just kind of deleting some code.
+ And info is like balance node pub key.
+ Actually this is this should be here.
+ Yeah, balance and federation name.
+ We don't have the federation name right now.
+ We have the federation ID, which I don't know what are your thoughts on that guys?
+ Like is that is that useful to have like in the interface or not?
+ Maybe we could copy it.
+ Maybe I can see people wanting that sometimes.
+ I like it as like a secondary bit of information under the real name, you know, identifiable
+ name.
+ Any other thoughts there?
+ I personally find it to be just, yeah, not a critical part of the UI, but just just a
+ nice piece to just just know what you're looking at, really.
+ But I guess that's more applicable if there were multiple federations.
+ So if there's only one, it's not as important.
+ I think if in either case, I think it's probably more useful.
+ Like every federation has a name.
+ I think it's more useful if the name is the higher level one, just because it's probably
+ easier to remember than a string of hexadecimal digits.
+ That's my feeling.
+ When you said we don't have it, do you mean that the API doesn't have it right now or
+ just the API?
+ The API could have it.
+ I'm not sure like right now if it has it, but it would, I think it could have it very
+ easily.
+ Like, yeah, I think we should just send the whole meta blob because we're going to continue
+ to build that out and add more things like, you know, potentially some kind of logo or
+ identifier for federations that we can configure, stuff like that.
+ That would be cool.
+ So we should just make sure we're sending that whole thing over.
+ Nice.
+ I agree there.
+ So yeah, but just be nice.
+ Yeah.
+ That would be like in the future.
+ That's a good idea.
+ So a little bit of stuff about the lightning node, like we have the node pub key, but we
+ don't have any of this stuff and this stuff would be really, really useful.
+ I think about using like one of these other node UIs is that this stuff is already there.
+ Right.
+ So like Jotam, I think we would have to be like adding this.
+ We'd have to add this all the way through the GRPC spec in order to get like enough
+ info to pop this up into the UI or we could just like punt over.
+ It's like, Hey, if you want to look at this, go visit 1ML.
+ Right.
+ Like, I don't know what your thoughts there, like, would we want to try to expose this
+ stuff in the UI?
+ I mean, we can start with the MVP where we just link out to those existing ones.
+ Yeah.
+ I think we'll get there.
+ It's like the reason is that if you don't have, if you don't know, if you don't know
+ what your channel balances are, you have no, you don't know if you're actually running
+ a lightning gateway, like if it's actually working.
+ So yeah.
+ Okay.
+ And then just like, I mean, these are pretty much all done, like inter, like functionality,
+ right?
+ Like we have a form to enter address and amount confirmation step.
+ The one nice thing is it would be nice if we could say what fee, it would be nice if
+ we could say what fee you're paying.
+ And we could probably make the success step look better.
+ I just did like the alert, the operating center, the browser alert, just to get something quick.
+ And deposit, we basically already do this.
+ I don't know what that was going to be.
+ But yeah, so that's like, I think quite a lot of this is already there.
+ So just like a couple, maybe we should like tag these with what's left to do.
+ But I think that like, to me, that's like the scope of like an MVP that we could build
+ pretty quickly and like we could all be running this in a couple of weeks, a week or two.
+ For the deposit, could we show a link out to progress?
+ Say you watch the mempool.
+ That's probably what I was typing here.
+ Display link to something like that.
+ Yeah, that would be great.
+ That's good catch.
+ Good idea.
+ Cool.
+ Yeah.
+ So I mean, this is just like my, I wish I would have helped a little more over the past
+ couple months with sort of spec out what an MVP is, but better late than never.
+ And I think we're pretty close, I guess.
+ Yeah, I mean, it seems like the best course of action right now is to just kind of continue
+ with this for now.
+ And if anybody has the availability and wants to try sort of like adding some functionality
+ to Thunder Hub, that would be great.
+ But I think we're just like a little resource constrained right there.
+ Nobody wants to do it, it probably won't happen.
+ If nobody has like a need or a desire to do it, it probably won't happen.
+ So yeah.
+ So what needs to happen in order to make a decision on whether we look at outsourcing
+ this UI, this gateway UI to something else?
+ Who?
+ Oh, someone needs to try to build it.
+ Okay.
+ Like the thing is like, that could always happen in the future.
+ Yeah.
+ Yeah, because like, I think this makes as a separate app, it makes a lot of sense, a
+ lot more sense if you're managing like a bunch of fediments, maybe.
+ Yeah, it seems pretty feasible to just like, yeah, I'm not sure.
+ Yeah, I mean, I don't see a reason why, like, it would be necessarily bad if we had both
+ because I think having a standalone thing might be useful for somebody who already has
+ all that set up and they just want one thing to add on for FettyMint.
+ I also think like there's anything that we do to integrate with one of these other ones
+ has the risk of like not being maintained.
+ You know, if we have to go the fork method, since neither of them seem to have any kind
+ of plugin architecture, that means, you know, we have to keep doing, we have to keep rebasing
+ off of upstream and have to make releases and all that stuff.
+ Yeah.
+ Yeah.
+ So I kind of think that this is probably the best, like what we have now is good.
+ And I don't know, for like our initial, we're making like some just basic deployment scripts
+ and maybe we could just jam in ThunderHub or something or ride the lightning in there
+ and just have that as an option.
+ So it would be like plug and play for, you know, you could create channels, you just
+ have two UIs.
+ [BLANK_AUDIO]
+ But yeah, that's all-- this is kind of what I got.
+ And so-- but yeah, the one thing is,
+ does that make sense about the multiple design systems?
+ How do we feel?
+ Am I wrong there?
+ It seems like it's tailwinded another one.
+ Yeah, I can chime in for a little bit here.
+ Yeah, at a high level, it's great
+ that you took the time to, I guess, do this audit
+ and sort of set some constraints for me on my end.
+ I've been thinking a bit more grandiose, I suppose,
+ knowing what is doable and what's not doable
+ is super helpful.
+ So I appreciate that.
+ Design system-- so if you go into the design system page,
+ I've gone into there from the very beginning.
+ And so the pane above that--
+ Up above, yeah.
+ Yeah.
+ I'm basically a little bit with this sometimes.
+ Yeah, there you go.
+ Yeah, so when I first started, I was checking this out.
+ And it's pretty sparse, honestly.
+ I mean, it's a stretch to call this a design system.
+ So going back a couple of months,
+ I decided it would probably be best
+ to use something existing that had a bit more detail.
+ So yeah, I never even bothered to use this,
+ just thinking that it wasn't really much of a design system.
+ I mean, there's a couple of some typography there.
+ There's some colors, but very few components.
+ And the components that are there
+ were only applicable to the onboarding for federations.
+ Yeah, going to visuals, I guess the place
+ I've arrived at so far is piggybacking totally off
+ of the existing Tailwinds system, which I felt
+ was really, really close to whatever system
+ these designs used.
+ I'm not sure what they are.
+ But visually, I mean, unless you look super, super close,
+ they're like 90% identical, really.
+ Well, so the main difficulty in the building of it
+ is that we've built out all these components using
+ the numbers in there.
+ And I think it's difficult for a developer
+ to get handed off a design where you've
+ got fonts at 24 or 32 font size line height,
+ and then our library is like 22, 30, or something like that.
+ It's just a little hard to track, like,
+ are you actually matching the design?
+ So I think a lot of Tailwind is meant to be extensible.
+ So either we could modify the Tailwind stuff
+ to use our existing sizing or colors,
+ or the other alternative is that we just
+ have to go back through the onboarding
+ and apply new styles and new stuff to that.
+ But the component library that we're using
+ is already built out to that existing spec.
+ So if we're building these new pages
+ and we're reusing those components,
+ they're just not going to match up
+ unless we're using a single design system.
+ Right.
+ Got it.
+ OK.
+ So going back to Skyler's pointing out of visuals,
+ I mean, if there is going to be sort of a--
+ I think they use the term elevation of style,
+ I take that as meaning that all of these--
+ the screens we're looking at right now and all of them
+ would ultimately need to change and have
+ a revised style applied to every existing page.
+ Is that accurate, Skyler?
+ I think that the dashboard--
+ the purpose of the dashboard--
+ I mean, there's components on the dashboard that don't exist
+ in the onboarding, right?
+ Like how do you display big numbers or how do you display--
+ I guess there's a list here.
+ But we don't need a big list like this in the dashboard.
+ We need kind of like a tiny list.
+ So there's going to be things that are new.
+ Like you said, what we have right now
+ is not like a design system.
+ There's a couple of styles and components.
+ But I think the onboarding is like--
+ I kind of see it as a different--
+ it just has different things in it.
+ And the dashboard has different things in it.
+ So I can flesh out more.
+ I've been thinking about some wireframes
+ that we can kind of look at structure and hierarchy
+ a little bit differently.
+ And then maybe there's components
+ that fit this new--
+ not new, but it's just like a different sort of layout.
+ But yeah, I'm not really hardcore on this either.
+ I think for MVP, we should try to do whatever we can do.
+ But I want to move more towards a UI that doesn't look
+ just like a set of components, like a little bit more
+ designed.
+ And it doesn't need to be now either.
+ It could be later.
+ Yeah, I would take that one as just like, here's
+ some more kind of design inspiration.
+ And I'd say that's like--
+ there's kind of like the trying to nail down a scope
+ and just try to--
+ that's the top thing.
+ Let's just try to leverage as much--
+ there's a lot of existing work here.
+ And it's open source, and everyone's got other things.
+ So it's not terribly coordinated.
+ Let's just try to keep as much of that work
+ and get it to work.
+ Let's go from 0 to 1.
+ We're almost there.
+ And then let's use it.
+ Let's use it and see what it's like to actually run it.
+ To me, that's the big goal.
+ And it'd be cool to have more thinking long term about some
+ design inspirations and stuff.
+ But I don't want to dictate.
+ I don't think scholars-- or my intention there
+ is to dictate too much.
+ It's just like, here's some ideas.
+ And yeah, I think the big thing the next week or two is,
+ let's just try to--
+ in two weeks, let's all have these running on MutinyNet
+ or something.
+ Yeah.
+ My priority, just to make it clear to this point,
+ has been not to make things look super pretty,
+ but focus almost exclusively on making it usable.
+ Yeah, yeah.
+ And just intuitive to the user.
+ So just to add some color there.
+ Yeah.
+ No, that's--
+ Yeah, totally.
+ That's what we talked about in the beginning a lot too.
+ So I think we're on track there.
+ So yeah, that's all really I have.
+ And I think Ethan's not here.
+ So I think we'll just try in Slack and the Design Channel
+ to just create--
+ so how do we want to finalize a design?
+ Let's say we go and say, let's simplify--
+ where is it here?
+ Yeah, let's say we decide to just not have a list.
+ Once you join a federation, you can't join another one.
+ If we decide to lock that in and say, let's just do that,
+ how do we want to say that's the final thing?
+ Let's implement that.
+ There's kind of a distinction over here
+ that I see between a spec and an exploration.
+ How do we have a spec for the Lightning dashboard,
+ for example?
+ What came to my mind is to just duplicate
+ one of the existing designs that I've created
+ and just start to basically just remove elements from it
+ and get down to the bare bones of what's doable,
+ and then take that and just make it look presentable,
+ basically, if that's the direction.
+ I love that.
+ So if we could just have another spec one
+ and we can just--
+ once we just make a decision, then we
+ can just create a GitHub issue.
+ And then anything that's in a GitHub issue,
+ just Igbo or anybody else could just run with it.
+ That would be great.
+ We'd kind of review that.
+ One thing that might be helpful because there's not really
+ version control in Figma, or at least not anything
+ sophisticated, is maybe when we go
+ to open issues for these things, like always export an artboard
+ or do the export all artboards as PDF thing
+ and throw that in the issue too, just so that it
+ can be hard to tell if when you go to revisit a Figma,
+ if something has actually changed
+ since the implementation or was the implementation wrong.
+ Yeah.
+ One option there is to just duplicate an entire page
+ and just date that page July 12 and just archive that
+ as an entire set of designs.
+ Yeah, no, I mean, that would honestly be my preferred.
+ I'm just kind of facing the reality
+ that process is only as good as actually following it.
+ And sometimes it can be very tempting to pop into a Figma
+ and just realign some things.
+ And I mean, at that level, it's not that important.
+ It's really only when major features are changing around.
+ But yeah, that totally works for me.
+ If in addition to design spec and exploration,
+ it's going to sections in here.
+ So if we had an archive, when you're
+ going to go publish a new spec, you take the old spec,
+ move it down into the archive, give it a date,
+ and then put out the new spec.
+ That sounds to me like great, ready to stay organized.
+ Yeah.
+ Yeah, I could work on getting--
+ so the page you're looking at right now,
+ design spec for Federation setup,
+ I could focus on just getting something more bare bones
+ for the gateway into this design spec.
+ And then maybe we all talk about it again
+ and see if it's realistic, what's good, what's bad,
+ and take it from there.
+ Awesome.
+ Who can build this?
+ What are the design--
+ I mean, the development resources look like right now?
+ Is it just Will?
+ Or who else would be working on this?
+ I think Ibo has done some work.
+ Oh, Ibo, too.
+ Yeah, I'm also working on some of the designs.
+ Then with OK, I think OK has a lot on his plate now.
+ So well, aside from that, Seth, I
+ noticed that there are some designs you've
+ done before on the gateways.
+ Are they not what you're going to be working on,
+ or they're just like explorations?
+ Because sometimes I do hop into the Figma,
+ and I see you doing stuff on the gateways.
+ Based on the discussion we had the last time,
+ when OK.org outlisted the necessary things that
+ are going to be needed for designing the gateways,
+ I think the list by the left--
+ no.
+ Good, yeah.
+ It goes--
+ Yeah, that one.
+ So there's a list by the left, yes.
+ I think-- no.
+ Oh, just the white text on the--
+ Yes.
+ Oh, no.
+ Yeah, that's what I-- so yeah, like I said before,
+ I was thinking on a much more, I guess, grandiose level, right?
+ So this is what I've been doing.
+ It's probably best to describe my designs as more exploratory
+ and maybe thinking past MVP.
+ I think it's a safe framing for these.
+ So I guess disregard, I guess, a lot of these designs
+ and think of what I'm going to produce now
+ as more realistic for MVP.
+ Yeah, so it'd be great.
+ Like, I love these exploratory designs.
+ I think they're great.
+ It'd be good to have a spec, and then we just basically slowly
+ pull more of the exploratory work into the spec,
+ and then eventually--
+ Yeah, exactly.
+ And yeah, to your point before, when you were talking, Justin,
+ I've been using these design meetings as a way
+ to sort of suss out what is actually doable
+ and then trying to come up with some constraints.
+ So I guess that describes why I've
+ been going off on this more grandiose, I guess, tangent.
+ But it's good to be real back in.
+ So I appreciate that.
+ Yeah, I mean, it's--
+ Yeah, I wanted to--
+ Go ahead.
+ Justin, two things that I noticed in that list,
+ in the slimmed-down list.
+ I think we should also prioritize the auth
+ for both UAs and how auth shows up and also errors,
+ how errors show up.
+ Yeah.
+ Just those two.
+ Yeah, I think we have a good point.
+ So this one-- let's just put that in here.
+ I mean, auth works for this one.
+ It's just a little--
+ I'd say a little buggy, as you saw in my demo.
+ Like sometimes-- it seems like there's a little-- there
+ are corner cases where it can get a little confused.
+ Like, I've just noticed that a few times.
+ It generally works.
+ I don't think we have any auth for the gateway UI.
+ Is that-- like, the API has it, but I think the gateway UI is--
+ does it just have the password in it already?
+ Because it's just reading the--
+ I'm not sure exactly how it's getting the password, right?
+ Because all these API calls are authenticated.
+ Yeah, it's something we configure on deployment.
+ Yeah, so we might want just on the gateway--
+ I'll have to think about that, because we might not want--
+ Maybe for MVP.
+ Yeah, I think for MVP, you just have to enter in-- you
+ have to have a--
+ maybe just enter in the--
+ just have a form field at the beginning to enter in the password
+ that you give to the deployments.
+ That will probably work.
+ Yeah, I think that'll work.
+ We just have to be kind of careful with this, because it
+ would be pretty easy to find--
+ like, if you deploy this, it would be pretty easy to find it.
+ Like, if I'm on a federation and I can see that gateway x is there,
+ it would be pretty easy to go find gateway x's dashboard
+ and we wouldn't want--
+ like, yeah.
+ Yeah, that's a great point.
+ We need to think through a lot more.
+ Great suggestion.
+ And the other one was errors.
+ It's one of the issues.
+ In your demo, like, something broke and there was no error
+ anyway at all.
+ Yeah, it's there in some places, right?
+ Like, I showed the connection when the connection fails.
+ Connecting a federation that has errors, but yeah, it'd be good
+ to just have that everywhere.
+ Well, to be fair, Justin's didn't break.
+ It was a consensus running, like, from an API perspective.
+ It-- everything was working.
+ Like, I don't know.
+ I don't know that that's something
+ that we can present differently.
+ But I do agree that, in general, when you get--
+ when we get these design specs, they sometimes don't--
+ they're mostly happy path.
+ And it's always good to show the very, very sad path
+ of things breaking.
+ Yeah.
+ Yeah.
+ Yeah, I did put some effort into those sad paths
+ when I was working on the fed Guardian admin UI,
+ trying to think through all of the different shitty cases.
+ We talked about some of those.
+ And so some of that is just like--
+ so these ones, this is a lot of the information
+ we have on the cases where it isn't running.
+ And so I think the attitude there
+ should be is just try to really communicate clearly
+ to what we have.
+ So that's kind of what I try to do here.
+ This is what we have that we could render today.
+ And then we can try to add more, like,
+ pull out more information from FettyMint.
+ But currently, this is basically what we have.
+ Well, cool, I mean, that's the hour.
+ There is nothing else we could wrap it up here.
+ We can kind of take it to Discord for the week
+ and try to-- hopefully next week,
+ we have something we can play with.
+ That sounds good.
+ This was super helpful.
+ Awesome.
+ Appreciate it.
+ Yeah.
+ Thanks, guys.
+ OK, bye.
+ Later, y'all.

@@ -1,0 +1,923 @@
+ [BLANK_AUDIO]
+ Okay, let's see how this goes.
+ I need to remember to hit the stop recording button at the end.
+ [LAUGH] I have failed at that before.
+ Okay, welcome to DevCon.
+ I was talking a little bit with Eric last week about trying to
+ adjust how we do this a little bit.
+ In the past, we've mostly
+ [BLANK_AUDIO]
+ Actually, what?
+ I'm not exactly sure what's being recorded here.
+ [BLANK_AUDIO]
+ Wow.
+ [BLANK_AUDIO]
+ Okay, I think this will be good.
+ Okay, so it's recording this, okay.
+ I think this is what's getting recorded, okay.
+ Yeah, so in the past, we've mostly focused on the last week of pull request issues
+ and stuff like that, we'll try to have a little more forward looking planning
+ at the end and try to get it on a little project board to some degree.
+ Just to help coordinate and
+ have more contributors, more things going on.
+ I think that'll just help us plan a little more.
+ So yeah, Cody was kind enough to help put together a list and
+ so yeah, let's get started.
+ So Eric's got this one level one,
+ removing a redundant await transaction rejected function.
+ This one seems like it, Mr.
+ Cool Guy, I think this one's kind of ready to merge if CI passes.
+ >> Yeah, this is a pretty small change, so.
+ >> Okay, why can't I just rerun?
+ Okay, let's see if that'll do it.
+ And let's mark it to, Am I allowed to say it's ready to review?
+ Or is that just Eric?
+ I'll say it's ready to review.
+ Okay, cool.
+ Another client one was having the client itself be in charge of joining
+ the federation in the past has always been something that's kind of delegated
+ to the caller, so in Fedimit's case, the CLI or
+ like the gateway are the two things that actually do this.
+ And so the idea is to move it into the client itself to cut down on a little
+ redundant code, and this would also, I believe,
+ move the config into the database instead of a text file.
+ So what's the status here, Jotam?
+ >> Yeah, so far we figured out a way of
+ downloading the config from within client-ng,
+ storing that to database, and all this is within the client builder.
+ What is the next step is to figure out how to align that with how
+ the gateway generates its own clients.
+ Because gateway creates a new client,
+ can't config which adds a lightning to it.
+ So we can't just use the base client config.
+ I mean to talk to you, Mr. Cool Guy, about this.
+ Maybe you can take a look and build some background and then we can talk about it.
+ >> Yeah, I think I really skimmed this.
+ I'll take another look.
+ I think conceptually it's similar to what we do in the gateway side, right?
+ Like the gateway has to store all the configs as well for
+ each federation that it's connected to.
+ And we do currently do that in the database.
+ So I haven't looked specifically at what you're doing here, but
+ it should be pretty similar.
+ >> Yeah, so Jotam, what you're talking about in particular there is,
+ is the gateway config, does that wrap the federation config into a new struct?
+ >> It does, so we can just create it from within the shared
+ generator from the bottom.
+ So how to wrap it is going to be the problem.
+ And while this one stores a single config within the class DB,
+ gateway has a specific DB for storing all the configs.
+ >> Interesting, one thing, interesting.
+ One thing we could do, I mean, we don't necessarily have to wrap it.
+ We could just have like a new, like two fields, two things in the database.
+ One of them is like the federation config, the other one is just like
+ the gateway config that doesn't wrap the federation config.
+ Like we could just do it that way, just like spin out the gateway specific stuff
+ into like a separate database entry.
+ Does that make sense?
+ >> Yeah, let me.
+ >> We don't necessarily need to wrap it.
+ We could just leave the federation config in it.
+ So for the gateway, what are we, I guess the, like what Mr.
+ Kuga was saying, I think it's slightly different from what the gateway does.
+ Because like this isn't adding like a new database,
+ like a meta one that can list all the connected federations.
+ Like it doesn't do that, which is what the gateway does.
+ >> Right, the gateway uses a separate database.
+ That could be something we could fix in the future, but
+ it's not a huge priority right now.
+ >> Yeah.
+ >> I would be supportive of not wrapping the two, but yeah.
+ >> Okay, cool.
+ One other thing, I added like a lightning channel in Discord,
+ just because me and Joe and Mr. Kuga have had a little private chat
+ that we do talking about lightning stuff, just to not overwhelm the general or
+ anything.
+ But I think a few other people might find that
+ this conversation is interesting.
+ So I just added a lightning channel to Discord, just so that wouldn't be hidden.
+ And you can feel free to ignore it if that's not your cup of tea, but just FYI.
+ Okay, cool, so yeah, we'll have to look into that.
+ How to, I mean, it feels like we could almost do without having
+ the meta database, because all that really, like what is that used for?
+ What is that exactly used for?
+ >> You're talking about on the gateway side?
+ >> Yeah, like the one, there's an extra database that has all currently
+ joined federations in it, is that right?
+ >> Yeah, I think we use it for- >> Initial loading probably,
+ like how do you know which ones to load into the map?
+ Yeah.
+ >> Yes, essentially this metadata database contains the data that you need to
+ create the clients, and then the clients have their own databases.
+ So that's kind of the separation right now.
+ >> Okay, I mean, it seems like it could be possible to just,
+ if that meta one just had, for example,
+ whatever is needed to locate on disk the client specific databases.
+ If it was just like, I forget what we use,
+ if it's the federation ID is the name of the data, I think that's what it is.
+ So we could just have that, it could just have one key in there that's just
+ like a list of all the joined federations.
+ And then I think that would still work.
+ That make sense?
+ >> Yeah, that would solve about half of it.
+ I have some of the unknown with the gateway client gen that I wanted.
+ I'm not sure I can articulate it very well here, but I'll put it in the channel.
+ It's how we use the gateway client gen.
+ Okay, cool, works for me.
+ So now I think this is a little versioning section here.
+ Do a little reorganization on my other monitor here.
+ Yep, so some versioning things.
+ So cache common API versions to use in the database DPC.
+ >> So on every start,
+ the client is supposed to figure out the version of API to talk with the federation.
+ But obviously it's going to take some time to do it.
+ And that's not great, because any time we create a client,
+ we need to figure out that from scratch.
+ So the idea is here to write it to the database and
+ use the last one while figuring it out for the next run kind of thing.
+ Yeah.
+ >> So basically just prevents network calls,
+ just prevent a bunch of network calls every time.
+ >> It prevents us waiting for the network calls on every start.
+ >> Cool. >> We could add some more heuristic,
+ but it should be a good start.
+ >> Okay, sounds good.
+ I think we'll need a little help.
+ I said again, Eric's off this week, so I'll try to help a few of us.
+ We'll also need to review this.
+ This is usually, I think, one that usually Eric would be reviewing.
+ Okay, let's see what the next one is.
+ Yeah, I don't know.
+ I guess we'll do this one first.
+ Move the version discovery from the module to the gen.
+ >> Yeah, to module gen.
+ So we figure out the module,
+ the API version to use before the modules are instantiated.
+ Yeah, this way we can pass the version to the module when we instantiate it,
+ like in the init function.
+ We can pass the version for it to use.
+ Yeah.
+ >> Okay, what's the benefit of that?
+ >> Well, before this change, we were first creating all the modules,
+ all their instances.
+ And then we were using them to figure out the version.
+ Which is kind of backwards because the module is already created.
+ So how are we gonna now tell it what version to use of the API?
+ Or the server side?
+ So we need to move that before construction of the modules.
+ >> Okay.
+ >> Yeah.
+ >> Cool.
+ And then we have improved version hash detection and handling.
+ >> So this isn't versioning, this is the-
+ >> Yeah, I think I took over some
+ PR that one of the contributors couldn't finish.
+ And just wrapped it up.
+ This is for the building system to make sure the version is set.
+ >> Okay, awesome, sweet.
+ So version hash is now all we set.
+ Sick.
+ Cool.
+ Okay, now to some consensus and module stuff.
+ Encode the length of Dyn types in their encodings.
+ >> So we used a bunch of these Dyn types that are module specific.
+ So we encode them as the module instance ID and then some blob of data.
+ And this blob of data only that modules know how to decode.
+ The problem with that is that if you don't have that module,
+ you don't know where that blob of data ends.
+ Because the consensus encoding is not based on,
+ it's not length prefixed.
+ So here I'm going to change the encoding so it's instance ID length data.
+ So if you don't have that module, you still are able to just read the length and
+ skip all the data.
+ And you cannot figure out what there was, but
+ you can move to the next field or whatever.
+ So this should make possible to, for example,
+ traverse the history of federation without having all the modules, for example.
+ Yeah.
+ >> Cool.
+ >> What else is there?
+ Name- >> This is just refactoring.
+ >> That's a basic one.
+ >> They were, yeah.
+ >> Okay, create Dyn client module config new type.
+ Can you describe this one, DPC?
+ >> So we used to pass kind of a JSON
+ to when the client connects, it needs to verify the config.
+ So the client config was being passed as a JSON and
+ then kind of a hashing of that would happen.
+ And it was a little bit weird to play with JSON there.
+ So at some point I've changed it to encodable decodable.
+ And we use kind of that and we pass the config for
+ each module as a vector of bytes as well.
+ So you can verify the config even if you don't have a module
+ to interpret the config itself because you can take those bytes and hash them.
+ And that was the time when we kind of figure out that we should probably do it for
+ those Dyn types as well because we want the ability to skip certain fields
+ even if you don't have the corresponding module to decode them.
+ So this was done first for the config and
+ then we started talking that we should do it for all the types.
+ Yeah.
+ And we probably want to move after I finish the prefixing
+ with the length of all the Dyn types.
+ I'm going to turn the client config into something like Dyn type as well.
+ Or just a Dyn type.
+ So it will be associated type on the module trait.
+ >> Awesome.
+ >> Yeah.
+ >> Any questions about these?
+ >> It's pretty straightforward.
+ Great work here.
+ And last one is Josh's son discovered a pretty bad bug where,
+ yeah, I guess this is just to give a little history.
+ Initially, Fetiment didn't have proper database transactions.
+ We had a trait that would sort of pretend to have database transactions.
+ And I think in there, this was like nine months ago or
+ something that we changed this.
+ This thing is one of the first things Mr.
+ Cool Guy does, added proper database transactions.
+ And then as we were merging that,
+ I think the old thing would filter out double spends within transactions.
+ But we neglected to move that over to the version with proper
+ database transactions, so you could actually double spend an e-cash note
+ if it was within the same input in a transaction, I think.
+ So that was a very good catch that Josh's son found
+ as he was exploring the atomic broadcast change.
+ Anything else, Josh's son?
+ >> Yeah, if there's one thing I would like to, can you hear me?
+ >> Yeah.
+ >> Okay, great.
+ If there's one thing I would like to enter the discussion,
+ it was something I brought up independently, or
+ I came up independently with.
+ Eric, one or two weeks earlier, you said it might make sense
+ to make a mint e-cash--
+ to make a mint input just a single e-cash note instead
+ of a tiered multi of e-cash notes,
+ as it would generally be simpler.
+ And so we thought of this independently.
+ And I think the bug we've seen here now
+ would be an argument for this to, in a sense,
+ unroll this nested data structure
+ and make a single e-cash note for--
+ and use a single e-cash note for a mint input,
+ because it would actually have prevented this bug.
+ So yeah.
+ Yeah, just some food for thought, I guess.
+ Somewhere in FedEman itself, we have something
+ that's checking the double--
+ quote, unquote, "double spends" at an input level.
+ But it's just because we jam a bunch of extra stuff
+ into the inputs, that doesn't detect it.
+ Yeah, I think that's--
+ Josh, did you mute yourself?
+ Thanks.
+ Fix error not being swallowed.
+ OK, yeah.
+ This is kind of a--
+ we have some of these.
+ We just ran into one of these with the--
+ as we were trying to set up a SIGNET federation last week,
+ it was when we were trying to make the first connection
+ to LND, and it was just return--
+ we basically swallowed the error.
+ We just checked, is there an error?
+ And then we gave our own error message.
+ But we lost the context of what it actually was.
+ So this kind of makes it harder for debugging.
+ So I think in these sorts of cases,
+ it's always better to just do .context and then fail.
+ So you can see a little bit of the context,
+ but you still retain the original error message.
+ This is, I think, a pattern that we probably
+ could use in some other places.
+ And just going forward, try to write it this way.
+ [TYPING]
+ Cool.
+ Thanks, DBC.
+ Better error handling.
+ What was this one, Douglas?
+ I think it was very simple stuff.
+ It was similar, like to give a proper error message for people
+ to figure out what is happening, why it failed.
+ Yeah.
+ Like when you try to run without some variables,
+ before you wouldn't know which variables you would need
+ to give, why it failed.
+ Yeah, this kind of relates to the problem
+ we talked about last week, where I
+ don't think modules have a way to say which environment
+ variables they need.
+ It's not the same thing, but it's a little related.
+ Because, yeah, it's a little-- you got to kind of--
+ it's kind of a guessing game to see if you have all the right
+ environment variables set.
+ Yeah.
+ Cool.
+ So yeah, it looks like this is pretty simple.
+ We're just logging before logging was initialized.
+ Doesn't work.
+ Some more small debugging stuff.
+ Yeah, more contexts.
+ Cool.
+ So this one's nice.
+ Just makes the gateway CLI a little more ergonomic,
+ I think.
+ Yeah, so it'll show--
+ instead of just a list of the federation IDs or something,
+ it'll actually show a little--
+ it'll show the balances in the CLI.
+ So that's a pretty nice ergonomic improvement.
+ So you don't have to-- to see the balance of a given
+ federation, you don't have to go find the ID
+ and then do a separate RPC call.
+ That's a great change.
+ Martin K. I think he's on here.
+ Thanks for that.
+ Yeah, so this is the one I was talking about earlier.
+ We're just swallowing an error message.
+ This one, I actually don't think I did the right context thing.
+ I just stuck it in the original one.
+ So it might be a little--
+ yeah, we should probably actually
+ rewrite that with context.
+ We can note this level about that.
+ I think it's fine.
+ You just give your warning.
+ Yeah.
+ And it will have the backtrace.
+ Exactly.
+ Yeah, that's good.
+ Because we don't want to actually throw here.
+ Cool, so on to some lightning stuff.
+ We had-- I think--
+ so we've been learning how to use the new client state
+ machine structure.
+ And I think one of them is--
+ one of the learnings is if you can get away
+ without using it, without using the state machines,
+ it's probably better, just because they're
+ kind of complicated.
+ And if you don't need the persistence
+ of the state of your progress, then probably
+ don't use the client state machines,
+ because that's kind of the whole point of them,
+ is that they can be restarted at any point.
+ And so it's like gateway registration.
+ If you've tried three times and failed,
+ that's not really that useful information to keep around.
+ So doing it without that, you end up with a lot less code.
+ So that's my-- anything to add there, Mr. Cool Guy?
+ The state machine framework doesn't handle loops well.
+ So if you want to model a loop, that's also a situation
+ you probably don't want to use the state machine framework
+ for.
+ Cool.
+ OK.
+ Yeah, and we just merged Jodom's change
+ to add to keep track of the fee limits in LND.
+ That was kind of a thing that we forgot
+ to add when adding LND in the first place.
+ CLN didn't have this problem, but LND did.
+ And so I merged the pull request,
+ but it doesn't have a test yet, because it
+ would require some changes to the test framework.
+ Just to replicate this particular one,
+ we'd need a third node, as far as we could tell.
+ So just added an issue here to go and address that once we
+ can.
+ Another one with LND is this.
+ This is a curious one.
+ We use Douglas's load test tool to simulate
+ 10 concurrent payments, generating the invoices
+ from Core Lightning.
+ We pay them using a LND gateway.
+ Some of the payments get stuck.
+ And yeah, anything else there, Mr. Kulga?
+ Yeah, I haven't had a chance to really dive deep on it.
+ I'm a bit confused on why it's stuck.
+ LND clearly knows about the payment,
+ because it says it's in flight.
+ But it doesn't ever come back with a preimage.
+ So as far as I can tell, I don't see anything with our code.
+ It's just our code's kind of sitting around waiting for it
+ to be completed.
+ So I'll have to check the LND logs,
+ see if there's anything there.
+ I'm pretty sure this does not happen on C Lightning.
+ So if you do the same command on the C Lightning side,
+ I'm pretty sure that works every single time.
+ This could be a good one to post to the LND Slack,
+ just because I feel like they could--
+ it does-- yeah, it seems like it's on their end, or at least
+ maybe we're using their API in a way that
+ wasn't intended or something.
+ But they might be able to help us debug this faster
+ than we could ourselves.
+ Somebody over there, maybe.
+ Cool, yeah, so this is one other one.
+ In making the gateway payments at MFTTENT,
+ it's like a small little kind of user experience
+ issue we have now, where we have two Fetiment clients try
+ to pay the same invoice using the same gateway.
+ Since the API is now idempotent, the second client,
+ who's a different client, will-- when they attempt to pay it,
+ it'll say payment successful.
+ It'll look like they actually paid the invoice, when,
+ in fact, they didn't pay the invoice.
+ Another node had paid it.
+ Another Fetiment client had paid it.
+ So this would be a nice one to address in some way.
+ It seems like they'll need probably some kind of--
+ the gateway would need some way of distinguishing
+ when a client is retrying this or when it's a new client,
+ if that makes sense.
+ So some kind of shared secret or something,
+ just on that one pay invoice API call.
+ So any thoughts there, Mr. Cool Guy?
+ [INAUDIBLE]
+ Nope.
+ Well, agreed.
+ Yeah.
+ It's not a bug, though, right?
+ Technically, it's not repaying the invoice.
+ Yeah.
+ No, that's the thing.
+ It's like getting the status from the previous one,
+ which is a weird--
+ yeah, it's like a weird user experience thing.
+ Yeah, it appears to pay the invoice, but doesn't.
+ So it's just-- the user would think they--
+ I mean, it would just be weird.
+ Like, you thought you paid an invoice,
+ but your balance didn't change.
+ Does it respond with a preimage?
+ Like, is this potentially some kind of attack vector
+ if the preimage is some sort of--
+ Yeah, so this would leak the preimage.
+ But I think right now, they're actually--
+ the preimage exists in the Federation log,
+ which is public.
+ So that--
+ No, so that's only for receiving, remember?
+ Like, receiving the-- like, when you do the decryption,
+ the preimage is in the log.
+ But on payments, it's not.
+ Because payments, like outgoing payments,
+ the preimage never interacts with the Federation at all.
+ But I mean, what's the attack vector?
+ Like, I'm just trying-- like, the second payment
+ will get the preimage.
+ But the payment's already done, right?
+ Like, I don't really-- what would you even
+ do with that preimage?
+ I guess two users would have proof of payment,
+ though only one of them paid, in a scenario where the--
+ OK, yeah.
+ --previous proof of payment.
+ Yeah.
+ So yeah, OK.
+ I'll revisit that one.
+ I want to try to get through these a little bit,
+ so we got a little bit to talk about the upcoming things.
+ OK, so yeah, gateway Ceylon extension.
+ There's some commands.
+ Like, these core Lightning plugins
+ are a little weird, because you register commands
+ on Lightning CLI.
+ And they shouldn't conflict with other plugins,
+ which you don't know about, because you don't know
+ what the other plugins are using.
+ And yeah, so Eric's idea is just prefix them
+ with, like, fm- or something like that,
+ just so we pretty much eliminate the chance
+ that our commands conflict with someone else's.
+ So yeah, we have a fork of the gRPC library for LND,
+ and we've made some changes to it.
+ And ideally, we could get off that fork
+ and upstream it to the original library.
+ So yeah, this is just--
+ I think we just need to figure out exactly what to throw,
+ and get a pull request, and get it reviewed.
+ Like, Kiksunil does-- he is still
+ maintaining this library, so he would accept a pull request.
+ Anything else, Jordan?
+ JORDAN TIGANI: Yeah, I reached out.
+ He mentioned he's been limited in bandwidth,
+ but he's coming back to help me learn some of these things.
+ I reached out to him, though, so he's better about that.
+ MATT MOLEN: So we don't have to talk about it right now,
+ but there might be a discussion where we don't want to upstream,
+ and we actually do maintain our own one,
+ because that repo is essentially doing the Rust stuff
+ that we need for gRPC.
+ And there's some features that it doesn't have.
+ Like, I'm pretty sure today it doesn't support the invoices
+ service.
+ So if we want to add that, we're essentially
+ going to need to just go ahead and add it anyway.
+ And it depends on how responsive he is, I guess.
+ But if we want to add features to that in the future,
+ I don't think we want to necessarily be blocked on him.
+ So there's a discussion there.
+ This is actually blocking me on a different PR,
+ so I need to revisit this soon.
+ OK, cool.
+ Yeah, I guess one thing that we talked about a long time ago
+ is just that if we want to publish stuff on crates.io,
+ like our crates on crates.io, I think we have to get off of--
+ I don't think they let you do that if you're on Git Forks.
+ You have to be--
+ I think all your dependencies have to be there.
+ So yeah, either upstreaming it or just
+ having our own fork that's on crates.io
+ would allow us to do that.
+ I'm not sure how important that is either.
+ I don't think too many of our users
+ will actually be running it off there.
+ But just to bring that up again.
+ OK, so we had some--
+ Joshson added some tests that included 60-second sleep.
+ Just I think they were more for debugging,
+ not intended to run in CI.
+ So DPC just disabled those for now,
+ but didn't remove them because they're
+ useful for Josh to debug.
+ Yeah, this is a note from the previous double spend
+ discussion about making a test for.
+ We don't have tests for that right now.
+ So we should.
+ OK, a couple of small ones.
+ Now all the UI development's happening in an external repo.
+ So just remove that code from this repo.
+ So now we just have Rust code.
+ We don't have a bunch of TypeScript in here as well.
+ Yeah, so this one is--
+ like at Feddy, we found it useful to stick some stuff
+ in the meta section of the config.
+ For example, the federation name is one
+ that Feddy Mintz has been having in there.
+ But another one that's really useful
+ is just having an expiration date for the federation.
+ Like if you're intending a federation
+ to only exist for a certain period of time,
+ just being able to communicate that somewhere is useful.
+ So Eric is proposing that we just
+ have some kind of standard ones that other people could use.
+ Like for example, a welcome message,
+ some description of the federation or something.
+ And we'll just put those in the meta with well-known tags.
+ And then if other clients want to have their own custom ones,
+ they could maybe prefix it or something like that.
+ We just have a little bit more communication
+ on how this could be used.
+ This is not like a code change.
+ It's more just informational.
+ Cool.
+ So yeah, this is a small one.
+ We had a command in the past at Debian Mint
+ that would just run the setup UI.
+ And it was called run UI because it actually ran a UI server.
+ Now, since we moved the UI to an external repo,
+ we'd like to still be able to use this.
+ I was trying to add Debian Mint to that external repo.
+ And one issue is this one command.
+ does DKG, which we don't want if you want to run the setup UI.
+ You don't want to generate configs
+ because that's the whole point of the UI
+ is to be able to use that to generate configs.
+ So this one just removed that functionality.
+ So yeah, now we're just bike-shitting
+ on what to call the name of the command
+ because run UI isn't really descriptive anymore.
+ But I think this one should be ready to go.
+ I'll mark it ready for you now as passing CI.
+ But yeah, this is kind of nice.
+ It'll be nice having the UI repo
+ to be able to do the setup using DevElement.
+ And the one downside is that you do end up
+ waiting for code to compile for a long time.
+ It has to compile FetElementD and GatewayD on release mode,
+ so it is a little slow, developer experience-wise,
+ whenever the upstream changes.
+ But it does work.
+ And so yeah, this one is--
+ we made some progress on this last week
+ where we-- yeah, I'll revisit this later,
+ but just having some documentation for running FetElementD.
+ Myself and another-- and Ethan were able to set up
+ a MutinyNet Federation last week.
+ It was two of two MutinyNet Federation,
+ each on our own little DigitalOcean server.
+ And we didn't get the Gateway sorted out,
+ but we did get FetElementD and the setup UI working smoothly,
+ so that was a nice step forward there.
+ So we haven't written up any documentation yet, really,
+ but hopefully this week we can sort out
+ more of the Gateway deployment.
+ So I think Ethan was doing some work over the weekend
+ trying to get the--
+ we ran into a problem.
+ Yeah, it's funny, we figured out that LND
+ does not support custom signets, basically.
+ BTCD doesn't.
+ LND depends on BTCD, and BTCD cannot--
+ it just does not work with MutinyNet
+ because it has some sanity checks on the difficulty
+ adjustment, and MutinyNet targets a 30-second block
+ instead of a 10-minute block.
+ So it just straight up doesn't work.
+ We were attempting to deploy the Federation--
+ we're attempting to deploy LND using Neutrino.
+ So that would actually go and fetch information
+ over the peer-to-peer network, and the deserialization code
+ in BTCD just didn't work.
+ So it's a little unfortunate, but I
+ think we have some plans to make MutinyNet Federation still
+ work with LND.
+ We'll let you know next week.
+ Douglas got a doc composed that would have two containers, one
+ of them running FetimentD and the other one just
+ serving the static UI for the admin dashboard.
+ So that was pretty neat.
+ That's what Ethan and I used to set up a Federation.
+ So that's nice progress.
+ Yep, so we're taking notes as we go.
+ So that's pretty nice.
+ Yeah, next-- I don't remember.
+ What is this one?
+ Fixed step name?
+ So this is just something inside the CI workflows.
+ Oh, OK, there we go.
+ Just fixing a little CI thing.
+ Printing-- let's just skip some of these
+ so we have a little more time to--
+ yeah, these are all pretty basic, just some small house
+ cleaning changes.
+ Thank you very much, DPC.
+ So this one was pretty interesting.
+ It looks like we were--
+ the ports we were using, we would
+ notice a lot of flakiness on our CI.
+ It would complain that one of our services
+ couldn't bind to a port, which was kind of strange.
+ And so it looks like we were in the range of ports
+ that the operating system might just use for ephemeral ports
+ that it needs.
+ And so perhaps this was causing a bunch of the CI--
+ the intermittent CI failures.
+ So hopefully, those will reduce.
+ Good catch, DPC.
+ And Joshison notes that, I think,
+ in the PRs around removing epochs and dropping of peers,
+ we changed how the randomness works for peg ins and peg outs.
+ So now we have a counter instead of this randomness thing.
+ And so the recovery tool will need
+ to be updated to work with that.
+ Is that accurate, Joshison?
+ It might have dropped.
+ Yeah.
+ I don't totally understand what the change was, but keep moving.
+ So we already talked about that one.
+ And this was one other small one that we fixed
+ as we were trying to--
+ this was one annoying thing that was preventing the Federation
+ UI from really working.
+ So a small fix there that we sorted out as a group pair
+ programming in Discord.
+ So now the setup UI is working pretty smoothly.
+ And yeah, so that's it from the stuff from last week.
+ And so I was just thinking we could just
+ kind of go around anybody who's planning to do--
+ working on Fetimith this week, if they just
+ want to give an update on what they're doing.
+ So we talked about what happened last week.
+ Now let's talk about what we're doing this week.
+ So if anybody wants to just kind of a stand-up style,
+ what are you looking for?
+ What are you working on this week?
+ And I'm going to try to throw it into a little--
+ where is it?
+ I'm going to try to throw some of it
+ into this little board, this little Kanban board,
+ this little board, and just so we can coordinate a little more
+ here.
+ We've tried this a little bit in the past,
+ but I want to get this going just a little more
+ so we can just have an eye on what people are working on,
+ we can coordinate a little better.
+ So yeah, anybody want to start?
+ I guess for me, I'm going to mostly be working on trying
+ to get a few contributors through the Federation setup
+ and I guess that adding docs, PR.
+ And along with that, try to get the gateway UI
+ to actually work.
+ So far, it's still kind of static information.
+ But if we could get both those UIs to actually work,
+ that would be really nice.
+ So that's going to be my focus this week,
+ is just deploying all on MutinyNet.
+ So just deploying MutinyNet.
+ And we're not really contributing to committing
+ to backwards compatibility yet.
+ Some of these versioning pull requests
+ that DPC is working on would be nice to get in,
+ but just try to sort all that out.
+ So that's what I'm doing.
+ Anyone else want to go?
+ Yes, I also work on making a gateway Docker
+ compose with LNG.
+ With everything already set up for a fast setup.
+ Like you can-- something that would not
+ need to wait for Bitcoin to synchronize.
+ Yeah.
+ This is particularly for MutinyNet, right?
+ Yes, yes.
+ For Mainnet, it's easier.
+ Yeah.
+ So this is just basically a workaround
+ for that neutrino problem we ran into.
+ I can go too.
+ So on the gateways--
+ also on the gateway side, I think, for me,
+ the big one I want to keep working on
+ and hopefully get in relatively soon
+ is the parallel HTLCs processing.
+ Like I mentioned, that one's kind of
+ blocked by some upstream changes that we need to make
+ to that Tonic LND repo.
+ But yeah, so there's that.
+ And then outside of that, we have just a bunch
+ of backlog issues on structural things, CLI output.
+ But I see those as more smaller.
+ So yeah, that's kind of on deck for me.
+ Awesome.
+ I'll convert these to-- I'll find the proper--
+ a lot of these, we have existing issues and stuff.
+ I'll add those later.
+ Jordan, how about you?
+ Yeah, so yeah, I'll put a Tonic LND on top of mine.
+ Yeah, so that issue I have open.
+ There's about three tasks, three media tasks.
+ One of them unblocks you, Mr. Cool Guy.
+ And I could do all of them on our fork of Tonic LND
+ and then figure out later the story of upstreaming this
+ to the main Tonic LND.
+ So in fact, I could start opening
+ PRs after this call to our fork of Tonic LND
+ and see how far we can go with that.
+ Besides this, I have some context on the gateway UI
+ stuff where we left off, what needs--
+ some of the changes we might need to do immediately
+ before we can deploy that UI.
+ So I'll maybe look closely at what you're doing, Justin,
+ and see where I can help.
+ Yeah, so just for anyone else who's interested,
+ after this call, me and Jordan are
+ going to hop in the Discord general channel
+ and do some pair programming on that
+ and just try to get a little plan for what's
+ needed on the gateway UI.
+ There's one decision to make there.
+ We've talked about the gateway UI has its own--
+ it has a little HTTP server.
+ And all of our other APIs use WebSockets.
+ So we talked about just converting
+ that to be consistent with everything else.
+ But my feeling would be to just try
+ to get it to work with what we have currently and then
+ can try to update.
+ We can try both.
+ I just wouldn't want to be blocked on having a usable UI
+ for weeks as we're rewriting the transport, the API.
+ I'll add the joint federation.
+ Yeah.
+ Yeah.
+ Cool, DPC, how about you?
+ Continuing on the versioning?
+ Yeah, the versioning, the consensus and coding changes,
+ I might look into introducing variable integer encoding
+ because we were talking about it a couple of times.
+ If anyone has any preferences or ideas
+ for variable integer encoding, just ping me on JMP.
+ And yeah, it would be good to get the CI pipeline working.
+ Use it the same as Lightning.
+ Or you can send me, I don't know, some doc--
+ it's one of the first specs.
+ Yeah, that would be the CI flakiness
+ would be a really good one to improve.
+ I mean, I hadn't done much contribution
+ for a couple of weeks as I was on vacation and stuff.
+ And I went and tried to do a couple of just tiny PRs.
+ And I think basically every single one of them,
+ I had some test failures.
+ I just threw them in Discord here just
+ to, if they happened again, try to point out what they were.
+ But I don't know if this is a good way to--
+ how should we tackle this?
+ Just so it's-- if you get some insight to what's happening
+ but don't actually fix the problem,
+ how should we retain that?
+ Should we use issues?
+ Should we use Discord?
+ Any opinions there?
+ I don't know.
+ Discord is good enough for me.
+ But if there's more issues, then I think it's good to track them.
+ Cool.
+ OK, well, I'm just going to do this for now.
+ I'm just going to try to--
+ I think I'll try to work on this one a little bit too,
+ just because it is really--
+ it's kind of disheartening to sit and retry
+ your PRs over and over again.
+ This all looks kind of like a one big flakiness somewhere.
+ Yeah.
+ I don't think that many tests are independently--
+ Well, yeah.
+ --differently flaky.
+ I think there is one issue there.
+ OK, cool.
+ That's a good thing to have in mind.
+ All right, anybody else want to have anything to voice
+ that they're looking at?
+ Probably finish the proof of concept
+ by adding Tor support to the JSON RPC.
+ So hopefully I have that done.
+ And also coordinating with the JSON RPC team
+ some refactor that I need to make the stream agnostic.
+ Awesome.
+ That's something that I discussed with Eric
+ some weeks before.
+ I just had a general question about docs.
+ Would an MD book thing be appropriate?
+ That's what they used to make the Rust book and stuff.
+ From my point of view, if we just
+ had Markdown in the docs folder, that
+ would be good enough for now.
+ Like an MD book sounds good, but then it's just
+ another thing to maintain.
+ So I guess I'd try to defer that for a little while.
+ Just so we don't--
+ we have so many things to maintain currently
+ that I'm always hesitant to add more.
+ Right now we have a bunch of Markdown documents
+ that are kind of ad hoc per subject.
+ Yeah, if we have an MD book, then we
+ should kind of structure it better
+ so it reads more like a book, I guess.
+ Yeah.
+ I guess what would be--
+ It would be nice to have like a--
+ Yeah, but someone would have to do the legwork.
+ I guess, yeah, with the MD book, there's
+ always kind of like a narrative of what the reader is
+ trying to accomplish.
+ One of them could be like building Fetiment modules.
+ That's kind of its own book.
+ And another one would be like deployment.
+ That's kind of its own book.
+ Or they could, I guess--
+ [INAUDIBLE]
+ Yeah.
+ My initial thought and idea was I
+ was going to take all my notes from working
+ on this deployment on UnityNet and throw that
+ into an MD book, because it is like a step-by-step process.
+ Like you need to deploy this, deploy this, blah, blah, blah,
+ check this config.
+ Yeah.
+ And I just wanted to gauge general interest
+ on building it up.
+ Yeah, I've done a bunch of them.
+ And the way that we have the docs folder,
+ it wouldn't take too much to just kind of slightly
+ reorganize that so that it can also,
+ without having to change the docs folder,
+ it also works as an MD book.
+ Yeah, I would say if we can just start with one markdown file,
+ like a deployment markdown file folder or file.
+ And if it gets too big, then try to turn it into a book.
+ But my concern with the MD book is that all of a sudden,
+ it just needs to--
+ it will get outdated.
+ And we'll need to really pay attention to it.
+ But once we have more of a public release,
+ I think that would be a great thing to have.
+ OK, thanks.
+ Cool.
+ [SIGHS]
+ Anything up, Monmeet?
+ You got anything to add?
+ Here, I thought I saw him.
+ Maybe we lost him.
+ OK, well, that's it for me.
+ Anybody else have anything to bring up before we depart?
+ [SIDE CONVERSATION]
+ All right, well, five minutes early today.
+ Me and Jotam, I'm going to, in a couple minutes,
+ hop over into the Discord channel
+ and do some gateway explorations,
+ if anybody's curious to join.
+ If not, see you guys on Thursday.
+ Thank you.
