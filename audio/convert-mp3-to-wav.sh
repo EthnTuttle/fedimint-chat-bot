@@ -21,9 +21,9 @@ if [ ! -d "$output_dir" ]; then
 fi
 
 # Loop through all mp3 files in the input directory
-for file in "${input_dir}"/*.mp3; do
+for file in "${input_dir}"/*.webm; do
     # Extract the file name without extension
-    filename=$(basename "${file%.mp3}")
+    filename=$(basename "${file%.webm}")
 
     # Execute the ffmpeg command
     ffmpeg -i "${file}" -ar 16000 -ac 1 -c:a pcm_s16le "${output_dir}/${filename}.wav"

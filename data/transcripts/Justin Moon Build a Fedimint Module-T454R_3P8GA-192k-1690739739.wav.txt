@@ -1,0 +1,938 @@
+ So, yeah, so the first thing I want you guys to do to get started, so this talk is going
+ to be, originally I wanted to kind of build a Fed, so yeah, a little bit about Fetiment.
+ So Fetiment, from a developer point of view, is kind of like a federated, meaning, well
+ I'll just say a little bit, federated transaction system, basically.
+ So federated just means it's like a multi-sig, so different people can share control of whatever
+ the federation controls.
+ And transaction system is like Bitcoin, so there's a transaction, and there's inputs
+ and outputs, like Bitcoin, and a signature for a transaction.
+ And one really cool thing about Fetiment, one interesting thing about Fetiment, which
+ we'll kind of get into today towards the end, is that the transaction that it has is extensive.
+ So you can build something called a module, which can add inputs and outputs to a transaction.
+ So you can basically add new consensus rules really quickly, or remove the default ones
+ that you have.
+ So you've probably heard about Fetiment associated with the word e-cash, which is kind of like
+ a way of building an account system, so people can deposit Bitcoin in and then get an IOU.
+ But the neat thing is that the federation itself doesn't see any balances for users.
+ The users hold an IOU that they can redeem, but the federation can't see the history.
+ There's no such thing as even a user.
+ There's just these IOUs that clients have.
+ And so that's a module.
+ E-cash is a module.
+ The on-chain wallet is a module.
+ The Lightning integration is a module, which Jordan will get into, he's in the back left
+ corner, but he'll get into it in the next talk.
+ So yeah, that's Fetiment.
+ You can build like a custodial platform.
+ It can custody Bitcoin, but in a multi-sig, and you can apply any manner of rules that
+ you can express in code, which I think is pretty exciting.
+ And it doesn't require any soft forks or hard forks in Bitcoin.
+ It works right now.
+ All the next requirements are already in Bitcoin.
+ And we're sort of, you know, we're still in the process of figuring out how to make
+ it work.
+ So it's a really cool thing.
+ And I think it's a really cool thing to be able to build something like this.
+ And I think it's a really cool thing to be able to build something like this.
+ And I think it's a really cool thing to be able to build something like this.
+ And I think it's a really cool thing to be able to build something like this.
+ Who has it?
+ Who has it?
+ Who doesn't?
+ Who's had a problem?
+ Anybody else see no instance available?
+ If you get that, we can try again.
+ Cody did us a number on us with all the sales pitch out there.
+ Yes, I just want to say that this is so the conference is built around Replit, right?
+ Which is a really cool conference.
+ So, yeah, it's a really cool conference.
+ And I think it's a really cool thing to be able to build something like this.
+ And I think it's a really cool thing to be able to build something like this.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ And I think it's a really cool conference.
+ Okay.
+ Does Justin need to be louder?
+ I think so.
+ I mean, just for the people in the back, it actually helps.
+ Yeah, I can be louder.
+ Okay, so we have this.
+ So we have two tools that we built to basically spawn --
+ and I think these are going to be interesting for people to --
+ hopefully people can take these to their own projects.
+ So it can spawn, like, the entire world that a FedEvent needs, right?
+ So a FedEvent needs a Bitcoin node.
+ And all it needs is the block header, so it can spawn Bitcoin.
+ But we can also use Explorer or Electris, so it will spawn those, too.
+ It needs Lightning nodes.
+ We support LND and core Lightning.
+ And then there's a bunch of things that we have internally that I'll show you in a bit.
+ So you can try -- let's try -- we'll try the easier to use -- one of them is in tmux,
+ which is even harder to use.
+ I mean, this is convoluted, like, tmux and VS Code in the browser, right?
+ Let's not go there.
+ Let's, you know, not put the paste apart.
+ The one problem, though, is that the copy and pasting doesn't work in the simpler ones in the browser.
+ But, you know, I just have to -- like, last year at Capcom, we tried to do a workshop,
+ and we ended up spending the entire time downloading stuff on the console or conference Wi-Fi.
+ So this Clover setup is pretty amazing.
+ Like, I don't think we'd be able to do this without it.
+ Okay, so we'll try justFedShell.
+ [ Video ]
+ - In FedEmit or VCC++?
+ - In FedEmit.
+ So yeah, this is a little tool
+ that runs a bunch of processes at once.
+ And so this bottom one down here is our test framework.
+ We have like a Rust project that knows
+ how to spawn all these binaries.
+ - Just Nick Shell?
+ - When you're in the FedEmit folder, just Fed-Shell.
+ - Just Fed-Shell.
+ - Fed-Shell.
+ Anyone have problems with that?
+ People see this?
+ - Yeah.
+ - Oh my god, that's just unbelievable.
+ This is unbelievable.
+ I don't, I'm just gonna stop.
+ (audience laughing)
+ Only goes downhill from here, to be honest.
+ Okay, so we have this thing called FedEmit Bin Tests,
+ recently renamed to DebitMint,
+ but we're on a little bit older Git branch here.
+ So this one will spawn everything, right?
+ And so one of them is Bitcoin-D.
+ So here's Bitcoin-D, hopefully that's...
+ That's not good, Bitcoin-D didn't start.
+ Or Bitcoin-D stopped.
+ Let me see.
+ Sorry, I don't really know what I'm doing here.
+ New, baby terminal, okay, we'll try it.
+ Let's see if Bitcoin-D is running.
+ (audience chattering)
+ Just doing a little cleanup here, sorry.
+ Oh, change directory.
+ (audience chattering)
+ It's gonna kill everything that might be a problem.
+ - This password doesn't even just destroy the instance.
+ Start again.
+ - How do I do that?
+ - Just go back to the original URL.
+ - Oh, there we go, okay.
+ - Destroy that in the watch house.
+ - There we go.
+ (audience chattering)
+ I was messing around with this all morning,
+ it's just...
+ (audience chattering)
+ Awesome, look at that.
+ Okay, give me one second.
+ - If you give it a second, it might open there in four.
+ - Okay.
+ There we go, okay, cool.
+ Okay, second try.
+ (audience chattering)
+ Just fed shell.
+ Yeah, so it starts Bitcoin-D,
+ which the Federation needs to deposit money in, right?
+ When you deposit money in,
+ you need to prove that you gave them Bitcoin on chain,
+ and the Federation needs a Bitcoin on for that.
+ The cool thing is that it only needs block headers.
+ It doesn't need a blockchain,
+ it doesn't need a transaction index.
+ It doesn't need...
+ Okay, there we go.
+ Let's see, Bitcoin-D.
+ Bitcoin-D looking good.
+ Another cool thing,
+ I see how LND and CLN haven't done anything yet.
+ So we, like this,
+ anyone in the test tool does it all in order.
+ So it starts with Bitcoin-D first,
+ waits till it has mine in a block, right?
+ Then starts LND, then starts CLN.
+ Once those are ready,
+ like you see these two aren't there yet.
+ Once LND and CLN are ready,
+ the Lightning Gateways,
+ those are the things that Jordan will discuss,
+ that connect the Federation to the Lightning Networks,
+ those start up.
+ And then once all that is done,
+ we start the Federation.
+ So we do a key generation ceremony,
+ and then we start producing consensus.
+ So you see over in the FedEV,
+ if you see here, you'll see stuff about block height.
+ It'll say epic, that's like the analog of a block, right?
+ So that's like consensus being produced.
+ Everyone got this far?
+ So cool.
+ I will show you, I'll try to do it in here,
+ and then it will have problems copying.
+ And so I'll show you how to open up a new terminal
+ and get all of this environment to work in the new terminal.
+ So that we can copy and paste,
+ 'cause copy and paste doesn't work in here.
+ Okay, FedEvent CLI should be available.
+ And you can see a bunch of stuff
+ will print out with a bunch of commands.
+ And the interesting one to get started is info.
+ So this will basically show you what,
+ what is in the wallet.
+ And so, sorry, it's hard to do this.
+ So yeah, you can see the network we're on,
+ we're on regtest,
+ we'll be able to mine blocks ourselves, stuff like that.
+ We're connected to a Federation,
+ I think the ID is above that,
+ that's like a threshold public key
+ representing all of the members of the Federation.
+ So like, important messages are signed,
+ configuration of the Federation is signed
+ with that threshold public key.
+ It's got a mint, our default one is house trustee mint.
+ And then you have a number, you have a balance, right?
+ So you have a total amount and a number of notes.
+ What is a note?
+ This is an e-cash token.
+ So it's a blinded ID that corresponds to a denomination.
+ So you can see the denominations on the left side,
+ there's orders of two and no sass.
+ And on the right side is how many
+ of each denomination you have.
+ So we just have, by default we have a limit of three notes
+ for every denomination, but that's configurable.
+ And so, I will show you how to pull
+ an e-cash token out of the wallet,
+ and I won't be able to copy it,
+ and so we'll do the new terminal trick.
+ So you can do payment CLI spend,
+ and let's say, let's try to spend one sass,
+ so 1,000 note sass.
+ And it'll print this guy out,
+ and yeah, you won't be able to copy,
+ so, and that's totally fine.
+ It's a default of this project,
+ like the copying is a little weird with this thing.
+ So what you can do is you can open a new terminal,
+ go back to FedEvent,
+ and you have to source two files.
+ You have to load some environment variables
+ into your shell, right?
+ So like right now, payment CLI won't work.
+ Doesn't know what it is.
+ So you should be able to do source.tmpenv,
+ so this just has a bunch of environment variables
+ that that little tool uses.
+ And then you gotta source one more file,
+ scripts, aliases.sh.
+ So this just has a bunch of aliases
+ plugging in the right environment variables,
+ and this will get easier.
+ Sorry, you have to go through this,
+ but just kind of a workaround
+ with conference wifi and everything,
+ this is the best we can do.
+ So if you do that, now it works in the new terminal window.
+ So source.tmpenv,
+ and source scripts/aliases.sh.
+ And again, I apologize for this.
+ Source scripts/aliases.sh.
+ And you can tap into it if you're curious.
+ Who has successfully done that?
+ Wow, okay, there we go.
+ And it's still working?
+ .tmpenv, and we're in the FedEx folder, .tmpenv,
+ then scripts/aliases.sh.
+ Why do I use .tmpenv?
+ - And is that mprox tool running?
+ Did you cd into FedInit?
+ - I did cd into it, and I have it just running.
+ (people chattering)
+ (people chattering)
+ (indistinct)
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ [INAUDIBLE]
+ So you have this whole federation that could have tons of people in it and on chain it
+ looks like a one of one.
+ That would be sick.
+ The problem is that the consensus in the federation needs to produce one signature.
+ So you need a threshold signing algorithm that each member can run and to produce one
+ threshold signature, to find one signature.
+ And the example of that, there's a thing called Frost, which works if everybody's in the same,
+ if there aren't any malicious parties, but it can be disrupted.
+ Basically they designed it so a malicious party can disrupt it, but you cannot locate who
+ is malicious, right?
+ Who's disrupting it, right?
+ And then so you can rerun the algorithm without that.
+ And that's what Roast is all about.
+ Roast is just like rerunning because you notice who disrupted it last time.
+ And so in order to do a tablet wallet, we would need to implement Roast.
+ And we've been wanting to, but haven't.
+ There's a guy, Nick, from Australia who came to a hackathon, I think in Austin.
+ It was Bitcoin Plus Plus.
+ Was it Bitcoin Plus Plus?
+ Yeah, he did Frosty Mint when we did Sinty Mint.
+ Wow.
+ Bitcoin Plus Plus.
+ Yeah.
+ So last Bitcoin Plus Plus, he built a module that was like a Frost-based on-chain wallet.
+ I don't know if it was actually a wallet, but it ran Frost, but it was like a very kind
+ of, it wasn't like a sound version of Frost.
+ Does he have like a website that's like...
+ Yeah.
+ VTX.club.
+ Yeah, it's wild and famous.
+ No, it's a beautiful HTML.
+ Everybody go to VTX.club.
+ So that would be, at the end I'm going to give some hackathon ideas.
+ That would be a really fun one if you know a lot about Frost or Roast.
+ I'd love to help you integrate.
+ Justin, why is the wallet so difficult to do?
+ Why can't the Federation just generate its own addresses?
+ So, yeah, that's a great question.
+ So, well, let's move on to...
+ So, this is a tough answer.
+ I'm going to answer that interactively.
+ This is a workbook.
+ So we just, mysteriously in this developer environment, you open it up and you had a
+ bunch of money, right?
+ So the question is, where did the money come from?
+ So let's explore that.
+ So, if anyone's CLI, if you run into it, it'll print out a little thing.
+ So this is the thing we're interested in, Peggy and Alex.
+ We're borrowing the verbiage from Liquid, which I think can be improved upon.
+ Peggy and Alex is like a deposit address.
+ And the idea of Peggy and Alex is the Federation has a descriptor, right?
+ So who knows the descriptor language?
+ Anyone familiar with descriptors in Bitcoin?
+ Yeah, a few of us.
+ Yeah, so it's, yeah, the output descriptor, right?
+ It's just a way of saying like what Bitcoin related metadata is surrounding public and
+ private keys, right?
+ Like what do these public and private keys mean in the context of Bitcoin, right?
+ If you have a private key, but is it paid a pub key, right?
+ That's one sort of contract in Bitcoin.
+ Paid a pub key hash.
+ Is it paid a script hash?
+ Is it segwit?
+ Is it wrap segwit?
+ Is it taproot?
+ Is it multisig?
+ Is it native segwit and multisig so you can compose it?
+ And so Federation has a native segwit wallet that is pay event multisig without XPUP, with
+ just like single public keys, right?
+ So let's say this one's running through a port.
+ So each Federation member has one private key and a corresponding public key that's shared
+ with everybody.
+ And so it does not use an HD wallet.
+ So that's Cody's question, right?
+ Why doesn't it use an HD wallet?
+ So the reason is, is that clients can generate their addresses without having to request
+ a consensus run.
+ So you can generate an address, peg in address, peg in address.
+ You can generate this, you can see how fast it responded.
+ Like we didn't have to wait for anything.
+ And what we do here is we, the client will generate a new private key, which is basically
+ a secret, and they will, I forget if it's add or multiply, something like add or multiply
+ that to the, or they do an operation, like a cryptographic operation on the public keys
+ of the Federation, and so they basically create a new multi-sig that the Federation would
+ be able to control if they had this private key.
+ But they don't, so they can't spend it yet.
+ In fact, they don't even know it exists when you deposit into it.
+ So this is an address that would become spendable by the Federation if you gave them the secret.
+ Right?
+ So let's send some money to it.
+ So you can do, it all says Bitcoin CLI in here.
+ Really quickly, that's that binding key that you're applying to that one?
+ So you deposited the Federation, and the Federation can see that you deposited into it, but there's
+ no mechanism to control it.
+ And so now, you wouldn't even know you deposited yet.
+ Well, once I do the deposit, it's that they can't sweep it without giving me the e-cash.
+ Right?
+ This is why, if they generate the address that they control, and I deposit into it, there's
+ no way to force them to give me the e-cash.
+ But if I deposit into it, then I make it atomic so that in order for me, like I can give you
+ the e-cash, I can give you the binding key if you give me the e-cash now.
+ Now, I'm not trusting the Federation when I do this deposit.
+ It's like an adapter signature?
+ It's not an adapter signature, it's a binding factor off of the Federation.
+ Yeah, let's keep moving here.
+ Let's do the basics here.
+ So Bitcoin CLI is here.
+ And so you might know send to address.
+ I think it's called.
+ And so you can paste that address in there.
+ And let's send it one Bitcoin.
+ Let's send it 0.1 Bitcoin.
+ If you send it up, stupid JV, let's send it one Bitcoin.
+ If you, yeah, if you send huge amounts of money, you'll notice that it's a little slow
+ because it got off a lot of photography.
+ And so you get a transaction ID.
+ And so you'll want to make note of that.
+ And so now we'll want to mine some blocks.
+ And I think we need to mine 11 blocks.
+ So we got this little mine blocks tool.
+ So this is one of the things that that aliases, one of those tools is we just have a bunch
+ of aliases to make things easier.
+ I don't know, I think send to address and generate to address have like the parameter switch.
+ It's really confusing.
+ I never get it right.
+ So mine blocks, and then you can say, let's say 11.
+ I don't have that command.
+ Okay, so if you source scripts, look.sh, you can do that.
+ Sorry, this is, you can see it's the first attempt at this workshop.
+ Source scripts, look.sh, or you can attempt to compose a generate to address command,
+ which is good luck.
+ Yeah, it's like generate to address, then you have to have the number of blocks in the address.
+ Remember we got that source script, so look.sh, and then mine blocks 11.
+ Those are block hashes.
+ Yep, so these are just the 11 block hashes, right?
+ So the federation needs, I think, kind of, it basically, it has, it lags behind, it has
+ like a chain tip in terms of block hash, and it lags behind a number of blocks.
+ So it likes to hang like 11, 10 blocks.
+ So once you mine 11, now if you prove that you deposited like 10 blocks ago, it will
+ recognize the block hash.
+ If you give a proof that a given transaction was in a block 10 blocks ago, or 11 blocks
+ ago, it will now credit that as an input, right?
+ So you're basically creating a transaction.
+ So the input is a proof you deposited on chain, and the outputs are requests for e-cash.
+ So this is the modularity, right?
+ This is a transaction with inputs and outputs from two different modules, right?
+ So that's kind of the really cool thing, is that if you add a new module, you can compose
+ it however the hell you want transactions, right?
+ Okay, so we have the, we have mine blocks, and so now we need to do pegging.
+ So Bitcoin's bettyment CLI, let's just run peg -n and just get the help manual.
+ So it asks for a TXL proof in a transaction.
+ And so, where is it?
+ (muted due to copyright)
+ I think it's get_tx_outproof.
+ So what is a tx_outproof?
+ You can do bitcoin_cli get_tx_outproof.
+ tx_outproof maybe?
+ Bitcoin CLI get_tx_outproof.
+ And so it'll just show you a little help command
+ what it is.
+ And so returns a hex encoded proof
+ that tx_id was included in block.
+ So if you trust that the block hash
+ associated with that block was mined,
+ which the federation has consensus on
+ and lags a number of blocks behind the chain tip,
+ then that's proof that this was actually deposited
+ into the address of the federation's controls.
+ So once again, instead of trying to write this command
+ out manually, because you have to write JSON by hand,
+ which isn't fun, we have another tool, git.
+ I'm gonna go back to the, I'm gonna grab this.
+ Is everybody following behind me?
+ I'm gonna go grab the transaction ID.
+ Remember we did bitcoin_cli sent_address
+ and then we got a transaction ID.
+ So I'm just gonna copy that transaction ID,
+ go to the bottom and say git tx_outproof and paste it in.
+ I copied it wrong.
+ There's a space there.
+ There was like a space and then, oh, it's just this.
+ Yeah.
+ Okay.
+ The perils of coding in the browser.
+ Okay, so that's our tx_outproof
+ and then we need one more thing.
+ We need, you remember that command?
+ We needed a raw transaction.
+ So there's another command, git transaction.
+ Git raw transaction, excuse me.
+ And so this is like a raw hex encoded bitcoin transaction.
+ Perhaps yesterday you might have learned about this
+ if you went to, I bet if you went to Lisa's workshop.
+ I don't know what she talked about.
+ She probably talked about this.
+ She's really great at explaining all this stuff.
+ And so now we're ready to deposit into the federation.
+ So, bettyment CLI.
+ So bettyment CLI, peg in.
+ And I'm just gonna run the help again
+ so we need the tx_outproof.
+ So bettyment CLI dash dash tx_out-proof.
+ And then we're gonna copy this first block.
+ Paste it in.
+ And I probably should use environment variables,
+ but whatever.
+ And then we need dash dash transaction.
+ And then paste in the second block.
+ Right, so bettyment CLI, peg in.
+ Dash dash tx_outproof and the proof.
+ And then dash dash transaction and the transaction.
+ And this is enough to prove to the federation
+ we gave them bitcoin on chain.
+ And all the federation needs is a trusted source
+ of block headers, which is pretty cool.
+ So, and at this point they have no idea
+ that this transaction relates to them at all.
+ They might know that it's a 304 multisync
+ 'cause it's, that's visible on chain.
+ But if we had tapped it, even that wouldn't be visible
+ on chain.
+ And now we get a transaction ID.
+ And if you do this info again,
+ it won't show up like we talked about previously.
+ Right, still the same balance.
+ If we do this fetch command,
+ which we're shortly getting rid of,
+ it will say, ooh, I found an issuance.
+ Right, there was a transaction with a proof
+ that the federation was giving bitcoin
+ and outputs requesting IOUs.
+ And it's like, here, I found them.
+ And the client knows how to turn those IOUs
+ into these e-cash tokens.
+ Basically, the IOUs from the federation
+ uses them as blinded signatures.
+ And the client gets them and unblinds the signature.
+ So it has a signature of the federation
+ that the federation has never seen before,
+ which is cool, that's a blind signature
+ to the crypto magic.
+ That's how double-spend protection works
+ in the zcash system, right?
+ Whenever the federation's given a signature,
+ one of these nodes, e-cash nodes, e-cash tokens,
+ it just checks, hey, is this facility signature valid?
+ And have I seen it before?
+ If I've seen it before, that's a double-spend.
+ If I haven't, it's good,
+ as long as the signature's good.
+ And so, if we do info, you'll see now
+ I have a god-awful lot of e-cash nodes.
+ I've got much, much, much richer.
+ One whole bitcoin worth of e-cash.
+ I wouldn't recommend that on mainnet.
+ Yep, see?
+ Okay, any questions there?
+ Okay, so I was gonna cover the lighten aspect
+ of things a little bit, but I'm gonna skip that.
+ (audience member coughing)
+ - Should we?
+ - Huh?
+ - Go in a bit.
+ - What?
+ - Set some basis, and then we'll cover this.
+ - Yeah, okay.
+ Okay, I'll do it really, really quick.
+ - Just another five minutes.
+ - Okay, I won't do it.
+ (audience laughing)
+ Okay, so I have this second git repo,
+ and I just want to share how this modularization work.
+ We have these different modules, right?
+ So you go in the FedEvent code base,
+ and you scroll, scroll, scroll.
+ You'll see this folder, Modules,
+ and you'll have FedEvent-lm,
+ and there will be three of them.
+ There's a common, and there's a client side,
+ and a server side.
+ Most of it's in common.
+ There's a little bit in the client and server.
+ And so, a new module has two components,
+ the server side and the client side.
+ And the modularization happens at build time,
+ which is not great.
+ Like, we want to make it happen at run time
+ in the future, like Core Lighten does then.
+ It happens at build time, so you need to,
+ if you want to have custom modules,
+ you have to build a custom FedEvent-d,
+ and then a custom client that knows
+ how to interact with those modules, right?
+ So, but yeah, we're gonna try to get that
+ to run more of a run time thing in the future,
+ but we gotta get the basic thing in there first.
+ So, previously, in order to create a new module,
+ we have this dummy module, too.
+ Dummy module is just like a starter.
+ And so previously, you need to fork the repo,
+ and then you start working this dummy folder,
+ which kind of stinks.
+ Like, if you want to share it with other people,
+ it's a little difficult.
+ It's just a bunch of forks of FedEvent, not great.
+ So, the idea is to have a separate folder
+ that just has a few crates, right?
+ You have your module, these little three crates
+ that correspond to the module,
+ and then you have a custom client,
+ and a custom, the client side and the server side,
+ which you build your module into.
+ And so, yeah, let me just show these really quick.
+ So, what does it look like when you build
+ a custom FedEvent-d?
+ Oh, that's great.
+ Let's see.
+ So, here is FedEvent-d.
+ It's in the bc++ folder, FedEvent-d, source, FedEvent-d.
+ So, it's pretty cool.
+ You have import FedEvent-d, FedEvent-d, FedEvent-d.
+ (audience laughs)
+ We can maybe do something about that.
+ And then you say, say, FedEvent-d new,
+ with default modules, that's e-cache,
+ on-chain, Bitcoin, Lightning.
+ And then you say, with new module,
+ and you just pass it a thing to initialize
+ the starter module, or the, you know,
+ whatever module you're building.
+ And the same thing happens on the client side.
+ You have a FedEvent-cli,
+ that works the same way.
+ You can just import FedEvent-cli,
+ run it with default modules, and then you add your own module.
+ So, now you have a client and a server
+ that both add new, that know how to add new consensus rules,
+ new APIs, and stuff like that,
+ and also how to interpret them from the client.
+ So, a lot of the work that I've been doing
+ in the past few days is trying to extract
+ our test frameworks and stuff,
+ and that mprox is the tool that fetched out
+ these tools from FedEvent,
+ and be able to run them outside.
+ Oh, I might have forgot to do something.
+ Yeah, I did forget to do something,
+ so we may be, well, waiting for compilation
+ here for a while.
+ So, I'm gonna cd to btc++.
+ I'm gonna run, this is, I may get wrecked here.
+ Let's see.
+ Yeah, I could get wrecked here.
+ So, I need to run a new nix,
+ so we use this tool nix for all of our,
+ for our dependencies and everything,
+ and yeah, I'm gonna get wrecked here.
+ I should have run this in the beginning.
+ [BLANK_AUDIO]
+ So let's just pretend this was done.
+ And so what you can do then is just run that same,
+ I think I renamed it to just mprox,
+ it's the same thing as the fetch shell.
+ And so you drop into a new thing here,
+ a new thing, but Fibonacci Live would all of a sudden
+ roll out this new starter module,
+ and the server side would be running that as well.
+ And the finishes I can show you,
+ I just have, it's very simple right now,
+ it just has one endpoint, it's a ping pong endpoint,
+ so it just has an endpoint and the client can ping it.
+ And I'm basically out of time, so that will be the last,
+ if this thing can finish, I will show that.
+ Any other questions while we wait?
+ - Did you do the tests for the helloswap?
+ - The tests, I think need this to happen.
+ Yeah, so I have one little, let me show you
+ our little test framework.
+ So yeah, Tenement has two really interesting test frameworks.
+ One of them was pure Rust from the beginning,
+ and we could do it, but it assumed this whole
+ federation thing is running outside of it, right?
+ And then we had another one where we just had
+ a god awful amount of bash scripts,
+ and we would write CLI commands and stuff
+ against these bash scripts, and they were very flaky,
+ hard to maintain, and just crappy,
+ so we wrote this tool that basically
+ ported all the bash scripts to Rust,
+ and so now, so this thing outside of our rebuild
+ is able to run a test, so bc++ test, test, test.
+ (audience laughs)
+ Sorry.
+ Yeah, so this is pretty neat, right?
+ We do some initialization, we pick this process manager,
+ so this is a thing that can spawn all these shells,
+ and then when you kill the process,
+ it will kill everything it's spawned.
+ A task group sort of works similarly,
+ but things inside of Tenement.
+ So we'll install kill_handler,
+ we'll kill all those when we do it,
+ and so we just run this one function,
+ fed_shell, with the task group and the process manager,
+ and we get all the stuff that you saw in that mprox tool.
+ So this is all that's happening under that mprox tool,
+ it just runs this, and then just tails logs.
+ Actually, all it's doing is tailing logs,
+ so it barely does anything,
+ and this is where all the magic happens, just being able to.
+ So this is, I think, a really cool thing
+ if you're working on a different project,
+ you should try to collaborate on allowing
+ your project to consume this, because this is pretty cool,
+ and it can all be compiled into just one binary,
+ so you can do, go ahead.
+ - Kind of related to this,
+ if we update one of the gateways,
+ do you need to install it, not gateways,
+ but you've made your module
+ to make the custom pediment key, right?
+ - Yeah.
+ - Does that custom pediment key
+ have to get run by all the guardians?
+ - Yes.
+ - Okay.
+ - Yes.
+ I think if it isn't, that module just won't be able
+ to do anything, right?
+ I think it would still run, or it should still run,
+ but it just won't, so this is one of the things
+ we like to play with, we're gonna have to,
+ good at these upgrades, and if we do this at runtime,
+ it would be a lot easier than having to have people
+ build custom pediment keys,
+ that's like, hopefully a temporary thing.
+ Yeah, so, but you can see, we're able to write a test
+ where I call pediment-cli-module,
+ and I say which module I'm using,
+ and I just say, oh, my command is ping,
+ and over here, the server will spit out pong, right?
+ So it's pretty cool, you get the server side running,
+ the client side running, the whole federation running,
+ and we can write tests on it against it and rust.
+ We're still working on porting our more granular
+ test framework, I think that might be done
+ by the end of the weekend, one of our contributors
+ is working on it.
+ So yeah, we have a bunch of cool test infrastructure
+ that I kinda wanna share, and a lot of what we've been
+ working on is allow external module developers
+ to be able to leverage all this.
+ So yeah, I have a couple ideas, just wrapping up,
+ on what people can do if they wanna build Acton,
+ right, as part of this conference.
+ The idea of the conference is, first day,
+ they're going to basics, the second day,
+ it's gonna be some more advanced stuff, right?
+ And then the third day, maybe parts of the second
+ and third day are Acton, right?
+ And so I wanna give you guys some ideas
+ if you want to build on Figma, what you can do.
+ So one thing we've been working on a lot
+ is how to set up a federation.
+ I don't know how to use Figma at all,
+ but we got all these really nice flows
+ on how UIs each guardian would get,
+ each one of these running servers would get,
+ and you go through stuff in the federation,
+ you choose a name, you choose how many block confirmations
+ you need, a bunch of stuff like this.
+ And so we have APIs to build all this,
+ and actually we built a prototype
+ that's extremely simple that can consume the APIs.
+ Now we just need a production version ready one
+ that would be a lot easier.
+ We have something right now,
+ but it's a little more of a developer tool, to be honest.
+ If you don't know very much about how things work,
+ it's error prone, so we really are trying to move over
+ to a new initial setup experience.
+ I think in a focused couple of days or two
+ we could probably implement this.
+ So let me know if you're interested,
+ if you're a front-end developer and would like to work on this
+ I think we could probably have a working version
+ of this by the end of the weekend, that would be really cool.
+ There's also a gateway UI for the Lightning Node
+ that Jodan will talk about, which he's been working on.
+ Another thing would be we could work on this starter module
+ and try to have it do something,
+ like build an account system.
+ I started a previous hack one a month ago
+ building a little thing that was kind of a lottery.
+ You'd enter a lottery at a given block height,
+ put some money in the contract,
+ and then when the block cash for that came,
+ it would be used as entropy to choose a winner.
+ So that's a really simple little module
+ that would be instructive to build,
+ and I've built most of the code already.
+ So that would be a fun one.
+ Another thing I mentioned is new client.
+ It's a new client that did things automatically,
+ and everything has an operation ID.
+ So one thing that would be really cool
+ is when we're using this client,
+ can you try to use spawn a tour circuit with that?
+ We haven't really tried to integrate tour in earnest yet.
+ So every time you're doing a new operation,
+ like create a new circuit, a new tour circuit,
+ a fresh connection federation over tour,
+ I think this tool RT, it's like a Rust client,
+ or a Rust implementation of a tour,
+ I think it might be ready.
+ Like it's been being built for a long time.
+ I think it might be ready to actually integrate that.
+ So that would be a really fun hackathon project.
+ And those are kind of like in Fetiman itself,
+ but like externally, I guess I mentioned,
+ yeah, Cody, is Cody still here?
+ So you have an idea, right?
+ - Yes, I have a great idea.
+ Justin's gonna be helping me with it this weekend.
+ So it's stable sass, right?
+ So the way that Bitcoin Beach Wallet does USD balances
+ without having to bank anywhere up and down the stack
+ is that it turns out you're Fetiman, right?
+ And so now any Fetiman can have an associated USD balance
+ for all of their users without touching the bank
+ anywhere up or down the stack.
+ - So basically like a federation that manages its own peg,
+ you're using a hedging on the exchange, right?
+ - It's not a peg, it is a synthetic USD.
+ - Oh, it's a synthetic USD, sorry.
+ - But it's not Luna.
+ - Yeah, okay.
+ I don't know about that financial engineering stuff.
+ So one other idea that would be really cool
+ is like at some point we would like this client
+ to be able to run in WASM.
+ Like I think it's a composite WASM,
+ but this new client we haven't really run in WASM yet.
+ So like one really cool thing that I think
+ we eventually want is something like WebElement, right?
+ Something you might know WebElement, right?
+ Before Fetiman, right?
+ So like when you write these new modules,
+ they need one thing.
+ They need like a default module that can,
+ they'll be like, I want to build a transaction, right?
+ Here's an output side of a transaction.
+ I need it funded, right?
+ Like the wallet has a default module,
+ the e-cash module that will fund it, right?
+ And so a cool thing is if you could have something
+ like running in a WebElement environment
+ or like something like that, like a browser environment,
+ if the client running in the browser could be like,
+ hey, like externally to the extension
+ or whatever is running there,
+ could you fund this transaction, right?
+ And it would work very similar to WebElement.
+ Something like that would be really interesting
+ to work with this new client in WASM
+ and a bunch of cool things.
+ So those are some ideas I have.
+ I am now I think out of time.
+ - You are.
+ - I'm out of time.
+ And I will pass it over to Jodan
+ to teach you all about the Lightning integration
+ with Fetiman.
+ - Hey Justin, can I get a hug?
+ (audience applauding)
+ - This is John from Clover who made this demo possible,
+ right?
+ Without this, we probably wouldn't have an interactive demo
+ and it wouldn't have been hard.
+ (audience applauding)

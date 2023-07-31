@@ -26,21 +26,23 @@ await client.init({
 
 // let docs = await loader.load();
 
-// const question = "How does Fedimint consensus work?";
+const question = "how do you use lightning gateways to turn your federation into a decentralized liquidity provider";
+const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+console.log(answer);
 
 // (async () => {
 //     // await updatePinecone(client, indexName, docs);
 //     console.log(answer)
 // })();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.post('/api', async (req, res) => {
-    console.log(req.body)
-    const question = req.body.question;
-    const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-    res.send({"answer": answer})
-})
-app.use(express.static('public'))
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.post('/api', async (req, res) => {
+//     console.log(req.body)
+//     const question = req.body.question;
+//     const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+//     res.send({"answer": answer})
+// })
+// app.use(express.static('public'))
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`)
+// })
