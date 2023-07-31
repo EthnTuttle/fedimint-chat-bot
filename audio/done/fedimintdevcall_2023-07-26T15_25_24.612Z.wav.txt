@@ -1,0 +1,295 @@
+ Okay, so
+ Usually everything is working
+ Okay, so I'll do
+ I'll just do a how many how many guardians should we do? Well, let's do three minimum
+ Minimum what does that mean? Is that it? Can you do two leader?
+ Yeah, we're gonna see that so here's one one thing that's a little weird is like so this is like we added this
+ The footer I do it looks a little odd on the first page here
+ You know like it looks like it's a little I mean, I don't know it looks like a marketing site to me like a
+ That's just my impression
+ So
+ Yeah, I mean the same thing we got to do something about this like we keep leaving that
+ Unfixed actually, let's just make an issue for that
+ Turn issue for this already
+ It's basically it's doing validation before there's any interaction with the form
+ It don't do number of guardians
+ Yep, so guardian name alpha
+ Name of Federation I
+ Also think I always think it's like a little weird that the name of the Federation
+ I would sort of think that that one would come first. I always
+ Sometimes I put the name of the Federation here
+ Unfed
+ Okay
+ And this is another a little weird one like
+ It's a little weird that this says pending like your alpha and like you're done at this point like you're
+ You're done to me this this should be this should probably say like done
+ That makes sense like this guy's alpha. He has nothing left to do
+ or joined
+ Yeah
+ Where's that put this I don't want to make a github issue about this, but this is just like a kind of a
+ I
+ Basically the the leader status is showing pending
+ Yeah, like if I were the guardian doing this the first time I'd say like my name's here. Why is it pending?
+ What do I have to do? You know?
+ Right, right
+ That's what I thought the first time I'd tried it as a card, yeah, like okay, so I gotta do something else
+ But you don't have to do anything else yet. I
+ Guess you have to nag the other people to set up there
+ Yeah, I'm going Federation. Yeah, that's over. That's that's a little bit of them kind of on there sit set. Yes, right
+ actually
+ I'm gonna do it with more
+ We'll do a quick one
+ I mean it is it is sort of better to do it with more people because not just this graph you never for this
+ This table really see or the table you never see like going oh
+ You're right
+ And so one thing that is good
+ Okay, you can't see it so he moved over to pending so he's joined and now you have a name so that's good
+ You can open an incognito window
+ Yeah, so this is still kind of broken
+ Go to him here. No
+ Like if I go
+ Yeah, if I go to an incognito window
+ It should I should be able to log back in and get to like my same session
+ Let me just see why that is happening
+ Is that same thing happen with a refresh or is it just an incognito
+ Result no
+ So
+ It's trying to request off my password is test that just checks the yeah, that just checks the password
+ Yeah, so this I
+ Don't know if I were like password checking mechanics or right or something. I don't I don't I don't know
+ That's like very strange that it does I can't reload right like I'm able to reload in it
+ Although that seemed to like kind of break it what the hell happened there
+ I
+ Can you see that yeah
+ What the hell
+ I
+ Interesting it seems to be like in a socket connection with okay there one weird
+ So little web socket connection weirdness at times, but you should be able to reload this page
+ Wonder if I
+ Okay, I reloaded it like three times fast
+ Cause it so I can say improve over here
+ And they both go this actually generates the keys
+ And you got to share this thing. And so this was a nice improvement. We made is uh
+ so
+ previously
+ Basically if if if this guy shared his code with him, then this guy would have been able to move forward
+ But he could forget to share his own code, right?
+ So that you could get in a place where this guy could not get the code anymore
+ Cuz this guy on the right side here ran, you know move proceeded before he shared
+ So now it basically checks whether everyone has done this
+ Before it can see like now this guy can't go to the next page. That's a that's a big improvement
+ And then you can see okay everybody has done
+ And yeah, so this is what we got we got now why does it say X on the right there
+ [BLANK_AUDIO]
+ Like the Fetiment name is wrong.
+ I have no idea.
+ All federations are now called X.
+ Yeah, it's Elon.
+ Elon bought me off.
+ Elon pushed to Fetiment.
+ Yeah.
+ What happens on the left one?
+ I don't know.
+ Now it disappeared.
+ What if you refresh on the left one?
+ Ooh, that logo scaling.
+ Yeah.
+ I guess no screens are really that small.
+ We should probably, yeah.
+ But I mean, people will have a screen this small.
+ Yeah.
+ Like that looks pretty bad.
+ Okay.
+ Let me see.
+ Why is it?
+ I've got, I'm taking some notes.
+ I'm going to file issues for all.
+ Okay, cool.
+ I'll file issues for after this.
+ Yeah, I mean, this is weird.
+ Like it's getting the right name here.
+ Maybe we're just not hydrating from that piece of data.
+ Like, yeah.
+ I don't know.
+ Weird though.
+ But yeah, that's where we're at.
+ And these are all fake.
+ This is fake.
+ I think we should, we just need to figure out how to actually get this.
+ Like, I don't think we have this.
+ Yeah, we should be able to implement this soon.
+ Wasn't there a sidebar before?
+ Is that?
+ Yeah.
+ So we decided to just move to, like, we didn't really know what to put in the sidebar.
+ Like basically none of the stuff that, there wasn't much to put in the sidebar.
+ So we're just like, okay, let's just collapse it.
+ The thing is we can't actually display all that much information currently in our, like
+ just with what our API can do.
+ So just decided to like, just keep it simple.
+ Let's just try to render a dashboard with real stuff in it.
+ And yeah, some work still needed there.
+ All right, well, that's it for the, let me just look at the garden UI.
+ I guess I got to run it separately here.
+ So the gateway.
+ One weird one that we need to look into is when you join, you won't actually see it here
+ in this demo because it's, it'll already be joined.
+ But for some reason, like the, throw it in here.
+ He's been doing most of the work here, so be good to him.
+ Okay.
+ So it's already joined, but for some reason, like when you actually connect to a federation,
+ like when you actually join, it's quite slow.
+ So I don't know why that is, but like, yeah.
+ So this really hasn't changed much.
+ We did some, we had some updated designs last week and it doesn't look like anything's changed,
+ but we made issues for a lot of these things.
+ So yeah, we got a few of these issues for last week.
+ So yeah, this hasn't really changed, right?
+ Like kind of flatten it out into four pieces, have the nicer joined step and a password.
+ But it looks like these haven't gone anywhere.
+ Yeah, that's it for where we're currently at.
+ So some progress on like kind of simplifying the guardian UI and got some of the core stuff
+ like the password, like just being able to reload the page and password management is
+ getting a little better, but it's still kind of slow going.
+ So with that, do we want to transition over looking at the designs at all?
+ Yeah, from my end, I haven't spent any time really since we talked last week and kind
+ of signed off on those designs.
+ I believe that Jordan was on that call.
+ So he's, I'm pretty sure that he is familiar with all of those updates.
+ We got a lot of issues here.
+ So I think it might just be like, let's wait another week and see what we can get, you
+ know?
+ I guess we're...
+ I was just going to ask, I mean, would it be, would it make sense maybe to try to rack
+ and stack some of these?
+ Because I picked one randomly out of the list and I don't know if it's the most value add
+ that we could have right now.
+ You mean like rank them?
+ Yeah, or at least like what are like, what are the key issues here that we should focus
+ on or shill to new developers coming into the project or something like that, right?
+ And again, just the other day I was like, okay, I need to write some front end code
+ because I have been slacking on that.
+ And so I just picked a random issue, but I'm not confident now seeing this that it's the
+ right issue to be working on at the moment.
+ I mean, we could just like stick some on this little project board we have.
+ Yeah, I mean, yeah.
+ That's probably the best way.
+ Like I mean, what are some, so we could do like, some of these are pretty easy.
+ Good first issue.
+ I mean, this is, this one should be on there because it's like, it's, it basically makes
+ it so this bit, like one of one setups are broken right now I think.
+ I just did one yesterday actually.
+ So I got to check if this is actually still a problem.
+ This might've gotten fixed.
+ And just out of curiosity, one on one just works, right?
+ Like there's no nothing other than your...
+ It should work.
+ There was a day where it didn't, but like one time I tried it, it didn't work.
+ You should just flash a message for one on one, just a URL to kiss you.
+ Yeah.
+ Okay.
+ So what are some other big ones?
+ I mean, I think these ones are the, these ones, these are like the, these are the main
+ ones for like the, like implementing stuff, latest designs.
+ Right.
+ Okay.
+ Yeah.
+ Okay.
+ So I picked a good one at least.
+ Are these going to be, I guess, how do we identify them?
+ It's in the project board is where that goes?
+ Yeah, so we just have one project board and it's the same for the UI and the main repo.
+ Oh, very cool.
+ I mean, this one is pretty important too, like the gateway authentication.
+ Right.
+ Yeah, so those are the main ones, I think.
+ But it is usable right now.
+ We've done a few setups.
+ This one would be kind of a note.
+ This is a good one too.
+ Basically, the first time you run it, it doesn't build the Fetiment packages.
+ So I think the readme is technically wrong right now.
+ Everybody hits this the first time, so I'll put that on there too.
+ Yeah, so that's kind of it.
+ I mean, I think we just need a little more progress.
+ But we did, yeah, basically last week we had two race conditions that could basically destroy your setup.
+ One of them, you remember that there's that step where you have to hit approve?
+ Like you say, I approve the parameters, right?
+ I approve that we're running it on mainnet if you're the follower.
+ Right.
+ Basically, there was like an ordering assumption there where if any one guardian hit that button before other people saw that button,
+ the key generation would fail.
+ And we fixed that.
+ So now it doesn't have that race condition.
+ And then the one I showed you where you couldn't jump to the next screen when you're sharing the config hash.
+ So those are the big ones last week, and Jotun picked those.
+ That was really great because those were kind of breaking the whole thing.
+ Yeah, that's kind of it.
+ I think a big one this week will just be trying to get the SES designs up to speed and then having authentication for the --
+ like the authentication is kind of half-assed right now, and I think we just need to get it totally working.
+ That's it for me.
+ I think we just need to have another week to play around with it.
+ On the other hand, we're trying to do a Fettie Mint release this week.
+ Like we got really close last night -- or yesterday, but I did notice there's a couple pretty big -- we found a pretty big bug with yesterday.
+ We should probably fix that one first.
+ So hopefully by Friday we can fix it.
+ I have, I guess, a longer-term sort of planning question.
+ So we have the gateway UI, the guardian admin UI.
+ From my understanding, there was like a client NG that was being developed on the back end.
+ Is that going to be like the -- I guess so we have a way of setting this up and setting up a gateway.
+ When do we start servicing like simple buttons for I want e-cash or I want to send e-cash or whatever?
+ Because I don't think you're talking to the CLI, right, to do all that.
+ Yeah, so I don't think Fettie Mint is going to have like a default client, like a user interface.
+ Fettie Mint just builds the libraries and then third parties can build clients.
+ So this is just like kind of like set up the federation, like make it so the protocol can work.
+ And then third parties can build clients.
+ But there should be a bunch of really nice libraries to do that.
+ Because all these are like guardian or gateway operator facing.
+ They're not like end user facing.
+ Right.
+ So what are those -- like what libraries do you mean for those clients?
+ That's what that --
+ Crates?
+ Yeah, like, I mean, this is the library that you can use to build like an app, right?
+ It's like Fettie is built on top of this, right?
+ So this runs in WASM.
+ It runs in mobile apps.
+ It runs in -- you can basically run it anywhere.
+ So, yeah, you just need to get that -- build that for a mobile app or a mobile app or web app or anything.
+ And then that's how you can start building.
+ So I think --
+ And am I correct in understanding that the Fettie Mint CLI uses that under the hood, right?
+ Yeah, they all will use that basically.
+ Okay.
+ Yeah, there was one -- yeah, Eric just -- Eric started making just like a little -- we've had a few little ones.
+ I had one a long time ago.
+ A web event, you know, it hasn't been updated for a long time.
+ But this is just like a really simple -- it's probably still running.
+ Okay.
+ It only worked with a -- okay, yeah, so you can like paste in a federation code and then there's like send and receive buttons and that's it.
+ So I think, yeah, we'll just kind of encourage more third parties to do that but don't want to like pick a favorite.
+ Yeah.
+ So it's pretty easy.
+ So, yeah.
+ Or just like a basic web app.
+ From a framing point of view, you know, we have Bitcoin, the BDK, the LDK.
+ Would it be -- it seems like it would make sense to actually do a development kit just as a, you know, terminology wise.
+ Yeah, that could make sense.
+ I mean, the only thing that's really missing is basically the bindings to go and hook it into various platforms.
+ So, yeah, it's -- I think that's something that's probably going to be like more like end of the year though because it's -- we just kind of have to wait for everything to settle down.
+ Because like with those, it's like -- so our code is like Rust code and you got to basically wait until that stops changing, you know, until it makes sense to expose it as Python library or Java library.
+ So I think that'll be more like end of the year when our code stops changing and then it makes sense to invest the effort in making it accessible on other platforms.
+ Got it.
+ Yeah.
+ Any other questions or thoughts?
+ Yeah, from my end, it would be great, you know, to do another demo next Wednesday and see what progress has been made.
+ And then I could spend a bit more time on, I guess, you know, having my mic criticalized and sort of like pointing out towards, you know, what could be improved a bit more.
+ Thanks.
+ Yeah.
+ Awesome.
+ Well, I think that's good.
+ Yeah, we just got to catch up.
+ We've made some good progress.
+ But just need a little more work.
+ So if there's nothing else, talk to you guys next week.
+ Sounds good.

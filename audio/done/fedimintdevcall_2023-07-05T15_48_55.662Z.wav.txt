@@ -1,0 +1,539 @@
+ So what you know, yep, everyone, I was just saying that a number of people that are on the call now
+ weren't here last week. So one option we could do is kind of go through the gateway UI designs that
+ we checked out last week, if people want to do that. Justin, I see your hand raised.
+ That was accidental.
+ Okay.
+ Okay.
+ Nice.
+ How do people feel about going through the designs for the Lightning Gateway at this point?
+ Cool.
+ Yeah, that'd be good.
+ Okay, cool. Is there anything before we jump into that, is there anything that people want
+ to talk about in the meantime, before that?
+ No, let's go for it.
+ Okay, cool.
+ One question I had for developers before I jump into that is, it's a bit of a tangent, but
+ the Federation invite code, do people know if that'll be a consistent number of characters?
+ It might be 172 or 76. I forget which one it is, but
+ I'm trying to nail down an answer there to update designs.
+ I think right now it will be consistent.
+ In the future, it may not. I'm not sure. I wouldn't count on it forever. It used to not
+ be consistent. And then it changed. It used to vary depending on how many guardians there were,
+ but it doesn't anymore. And I'm not sure if it will, if it will, I'm not sure what will happen
+ there going through, like in terms of the next like six months, but at least right now, I think
+ it should be consistent.
+ Okay. Good to know.
+ Let's see. And let's see. I'll share my screen.
+ Lightning gateway.
+ Yep. So as I quickly mentioned last week, we walked through this flow. There weren't that
+ many people on the call. So I think it might be a good use of time to go through this again.
+ And there's, I can try to call out a couple of specific questions I might have,
+ which I think we probably would have talked about last week in the recorded call. Let's see.
+ What questions do I have currently? Yep. So preface this conversation with the decision
+ to limit the number of federations a gateway to can connect to, to only one at this point.
+ Jodham, I think that expressed a desire to, to use that approach for MVP and post MVP,
+ build functionality to allow a gateway, gateway to connect to multiple federations.
+ I did call that out here just for clarity.
+ Yeah. And Justin, I was asking about the federation by code characters, because that
+ could be a one way to, for users to figure out if what they're pasting here is correct or not.
+ So I'll just remove this.
+ We can validate it. If it's wrong, we could say so here.
+ Did, let's see. Yeah. Pose a question here. Ways for error detection here to either call
+ out the number of characters being wrong or the input code not beginning with fed one.
+ Yeah, actually the way the app is built currently, like it's very easy to do this if the rust code
+ is running in the app. But I think with our setup UI right now, we actually don't have any
+ ability to like run our pediment rust code. So it would be a little tricky, but I think it's
+ enough to just check. I mean, I think we can just, you can just try it and you'll get an error
+ message if it's wrong, basically.
+ Good. So UI, you know, for first view, super clean, just simple rounding, just a simple
+ lightning gateway notifier, just to let you know, like kind of like where we're at and call to
+ action is get started by connecting to a federation using an invite code. One addition to this
+ messaging here is, is we could specify, you know, where they might be able to find that invite code.
+ But I suspect that people would know that already by someone else sharing it with them.
+ Or other possible means. So user pastes it in, button disabled for now.
+ Button becomes enabled or yeah, enabled. And I think a simple spinner here,
+ waiting model would be great because I imagine this process could take, you know, anywhere
+ between one second to maybe on super slow connections, maybe up to, you know, 30 seconds,
+ maybe a minute. I'm not sure on that one, but regardless, I think that a spinner here would be
+ helpful. I did want to pose a question to the open source design community to maybe take this
+ Fetidman icon and make it, you know, like spruce it up a little bit, add some color, add some
+ animation. So here's sort of the meat and potatoes of the UI here. Sort of an ongoing question I
+ have is if we can, I guess, encode a federation description within the invite code. So when you
+ first see this model, you'll have the actual federation name and then a description. I think
+ that's just a user friendly, just kind of like a handholdy sort of approach to this design.
+ Yeah. So it wouldn't be in the invite code, but it would be in basically what the invite code,
+ basically all the invite code is, is a way to download a configuration file. And in the
+ configuration file, there's a section that is sort of like a freestyle, you know, it's called meta.
+ You can put whatever the hell you want in there. So in the past, like at Feddy, we've used that to
+ say like, you know, our app has a chat feature in there. So there's like a link for their stuff
+ about the chat in there, whether to enable that. There's just a bunch of like metadata we can put
+ in there. And so one thing I think FeddyMint want to do is just sort of have like some sort of like
+ a standard, like kind of like dip style, a little process just to say like, Hey, if you want to
+ stick a description in there, put it in this meta field. So that will, I think that that's a good
+ way to enable these sorts of like use cases without, yeah, I think that's kind of how we'll
+ do. So once you paste in the connection string, you could get that. Okay. So when you enter that
+ description, would it be during the actual Federation setup on the screen? Yeah. So in
+ terms of how it gets there in the first place, yeah, there, I think we'll probably want, yeah,
+ we'll, I think like in the near term, we'll probably want more things in the setup experience
+ to be able to like add these meta fields, right. Like, and in different deployments, they might
+ want different things. So yeah, it would, it would be at, you'd either add it here or potentially
+ you could add it later and the different, like, yeah, I mean, this is a little bit more engineering
+ focused, but since there are a couple of devs on the call, I'm going to mention it. Like
+ we'll want the admin UI to have a way to like edit the meta thing and get consensus on it.
+ So for something like this, if you want to change the description of your Federation, right? Like
+ one person might propose it and then the other guardians would say, yeah, that's good. And then
+ it updates for everybody. So that would either happen at the setup or later on once it's already
+ running. Cause I doubt, in most cases, I don't think people get everything set up just the way
+ they want at the first thing for stuff like this maybe. Okay. Yeah. Excellent stuff to know.
+ Good. Thanks for that. That little insight there. Cool. So, you know, big call to action,
+ deposit Bitcoin. That's what we want to do. I want to make sure it's clear that we're not
+ requiring that people can opt out and do it later by this, this big button on the bottom.
+ But I think that we do want to have the, this be a prominent part of the flow for users to
+ deposit Bitcoin. We did talk about this messaging here a little bit last week.
+ I did remove a little bit that might've been overly complicating the experience.
+ And I think that people can read this. If not, I'll try to get it just right.
+ So I'm specifying that on-chain transaction is the easiest way to receive e-cash notes.
+ E-cash notes are required for incoming transactions. And then I'm actually going
+ sort of a step beyond and saying that there's a minimum recommended amount of 100,000 sets. You
+ can add more later. Only doing that because, you know, if a operator comes in and says,
+ and just wants to deposit a hundred sets, it's not that useful for the Federation.
+ So, and I'm not sure if 100,000 sets is, it's actually probably not that useful of an amount,
+ actually. So maybe it should be bumped up to maybe 100,000 sets, or maybe it should actually
+ not be denominated in stats, but maybe Bitcoin. That's kind of a open question I have is,
+ is when to, you know, use the stats versus Bitcoin terminology. Because right now it kind
+ of flip-flops back and forth. So I think leaning towards just Bitcoin might be a better approach
+ for just clarity wise, clarity sake. Cool. Any feedback on this model?
+ I wanted to say in the case that a minimum amount is recommended,
+ it which will somehow I highlight it and place it in a different place than that
+ string of text, like to make it more visible or to call more attention.
+ Okay. Yeah. That's good. Good feedback. Yeah. That could be called out quite a bit more.
+ I'm not sure how much we want to push it though. So I think that coming up with some
+ alternatives to this design would be a good approach. One thing I would recommend is
+ the language around, I mean, this is like a nitpicky copy thing, but it's kind of important
+ from like a legal and understanding perspective. The, how we talk about e-cash notes is
+ really tough because there's a lot of like technical nuance that happens that it needs
+ to get communicated like almost perfectly to be really compliant. And not that I like,
+ think we should be completely constrained to what is compliant, but it'll be really helpful
+ in protecting people in the future running these federations. So I would avoid like talking about
+ e-cash here and just simplify it and be like, the first thing you need to do is deposit Bitcoin.
+ Like that's it. I don't know, Justin, do you agree with this or what do you think?
+ I don't really have a comment there.
+ Okay.
+ My feeling is like we should focus on getting it functional and
+ go zero to get from zero to one. That's kind of my...
+ Yeah. So I guess on that, just to align, like I would just say the most essential thing is like
+ they need to deposit Bitcoin. I don't think we should talk about how the e-cash is related yet.
+ That can be dealt with a little bit later.
+ Okay. Yeah. That's, yeah. Coming from a compliance angle, totally appreciate that. But I guess,
+ you know, the reason why I did include it here and totally open to removing it was just for
+ educational purposes. So educate people as they go through this journey of screens. Right. But
+ I think that compliance is probably more important at this point. So yeah, I'll take that.
+ Yeah. There definitely needs to be education. So I agree with that. I just, I don't know the
+ best way to do it right now. So yeah. Okay. Maybe I'll get some more info.
+ Yeah. Yeah. Having some actual like legality, like lawyer input here would be at some point
+ would be super. Yeah. Cool. Okay. But yeah, I totally like Justin's approach just from zero
+ to one just to get this operational. Cool. So I like to believe that the app will detect when
+ a transaction has been made and the screen will magically go from year to year after a
+ on-chain deposit is made. And this is another spot where we'll probably have to adjust.
+ I think we will have to adjust some language. Possibly. So number of stats is being confirmed.
+ Again, I'm not sure if stats or Bitcoin is the right terminology to use here. This 10 block
+ confirmation I understand is used in the Federation setup. 10 is the default. So whatever that number
+ is displayed here. Yeah. We'll be able to read what it actually is here.
+ Okay. We'll have that available. So you can see how many.
+ Excellent. Excellent. And then just some quick and dirty math, 1.6 hours for 10 block confirmations.
+ User can always easily make or find their transaction ID and copy and go over to mempool
+ space and check it out there. Once the
+ The 10 block confirmations are done.
+ Update this notification area with a simple confirmation.
+ This is where I do a little bit more education.
+ You have 100 million e-cash notes when sat equals 1,000 e-cash notes.
+ This might be too much information at this point.
+ I'm not sure at what point it would be beneficial to communicate that denominated value of one
+ sat equals 1,000 notes.
+ I would just say number of sats.
+ This works the same way as lightning does.
+ Lightning has a minimum denomination of a millisat, a thousandth of a sat.
+ I don't think you really need to ... Most wallets just say how many sats you got, and
+ I think that's sufficient.
+ I guess ...
+ It's just too much less to understand, right?
+ I would just say what's your balance.
+ Last week, I didn't have this box here.
+ I only had the e-cash notes value.
+ I did add this.
+ I need to better understand at what point does this number go up or down, and this number
+ go up and down, and what the distinct relationship is between those.
+ I think of it this way.
+ The gateway just holds IOUs to the Federation, and these are denominated in millisatoshis,
+ so a thousandth of a satoshi, just like lightning channels are.
+ Fetiman does that because that's what lightning does.
+ That's the only balance that ... That's the only Fetiman balance that a gateway has.
+ There don't need to be two numbers here.
+ There just needs to be one.
+ I would suggest just using the sats.
+ We can use whatever denomination we want, sats or bitcoin or millisats.
+ That's kind of a distinct thing, but the important thing is there's only one balance.
+ Yeah.
+ A common thing I've seen in wallets is you have the option of clicking to change what
+ it looks like.
+ You click once or tap once or whatever, and it goes from bitcoin to sats, goes to e-cash
+ or whatever.
+ I think that pattern might work here, right?
+ Yeah, totally.
+ I would just say don't use millisat.
+ Probably don't use millisats.
+ I've never seen something display ... A millisat is like a ten thousandth of a cent or something,
+ right?
+ It's so small that it's probably overwhelming.
+ Yeah.
+ Excuse me if I'm in a noisy area.
+ I hope it's not too noisy.
+ Is it very noisy?
+ Yeah.
+ It's okay.
+ All right, cool.
+ I was just wondering how important is it for users to see their transaction ID because
+ I was looking here in that green box there.
+ Your transaction ID is an initial string.
+ Would it be an option to hide the string and then just say copy, just three words, copy
+ your transaction ID and then they have the option to copy it, which would take away all
+ those numbers and letters?
+ Yeah.
+ Yeah, absolutely.
+ This isn't a requirement.
+ So yeah, could just be copy as a hyperlink, right?
+ I'll get to that later.
+ But yeah, I think that's good feedback just to simplify the UI, get rid of all those extra
+ numbers.
+ Thanks, Mo.
+ No worries.
+ Cool.
+ So, yeah, a mental note taken that this area should explore methods of just displaying
+ one value and have that value be user selectable.
+ That could decrease UI complexity.
+ The user dismisses the notification and the non-notification using UI.
+ So some other things we talked about last week was this inclusion of lightning transactions
+ here.
+ And one of the questions was, is that needed for MVP or not?
+ Then below this, the no details, is that needed for MVP or not?
+ And Justin, to your point of getting from zero to one, it doesn't seem like those are
+ critical at this point.
+ So I defer to this idea of getting something out and usable before delving into all of
+ these metrics, which aren't critical at this point in the project.
+ Feedback there?
+ From my point of view, and I'd be curious what Mr. Cool Guy thinks, strictly speaking,
+ the MVP here is like, I need to be able to deposit funds, which you showed in generating
+ an address.
+ I need to be able to withdraw funds from Fetiment, deposit and withdraw.
+ I need to be able to join the Federation.
+ And I think it would, minimum, you'd probably want to be able to display the outgoing and
+ the incoming channel capacity.
+ Because that sort of affects the ability for the gateway to facilitate payments.
+ If you've got a bunch of e-cash, but your Lightning Node doesn't have any channels,
+ you're not going to do anything.
+ You're not going to have any effect.
+ So that's the one.
+ Other than that, that's, to me, the minimum that it needs to be able to do, which we pretty
+ much have here.
+ Yeah, I agree with that.
+ I mean, we talked a little bit about this last week, I think.
+ And I think we mentioned the Lightning side.
+ We talked a little bit about failed versus rejected as well.
+ Like some of the nuance there on how certain failures can happen in the gateway.
+ I think that's certainly a thing that we should eventually display.
+ So that this dashboard can be used somewhat for debugging and figuring out what's going
+ on in your node.
+ But that's definitely not an MVP thing if we're just talking about what to get to zero
+ to one.
+ It's mainly, let's get the main numbers up there, the main operations you can do, and
+ then we can sort of add on these features next.
+ All right, that sounds good.
+ So I didn't show this alternative here.
+ So user does click, I'll do this later, they zip to this version of UI where it's still
+ a persistent messaging area here, just to keep sort of like pushing in a direction of
+ user depositing Bitcoin.
+ I'll revisit that language there to, you know, change depending on the other things we talked
+ about here in this call.
+ So here's another screen where user clicks.
+ So they have deposits, they click details, the version of what this screen could look
+ like.
+ Stepping back a little bit higher level, I think following our call last week, I'm
+ now thinking that this entire UI should probably get a left rail navigation with options of
+ the deposit, withdraw, and I think some other items over there that would just make it a
+ bit more usable.
+ And I think more extendable as additional functionality is added, it could just sort
+ of be bolted into this left nav rail area.
+ See what else?
+ Yeah, I'm not sure if it's worth getting into those nuances today.
+ One thing I would like to do this week is just try to get it so the things we just discussed,
+ you know, being able to join a federation, you know, deposit, withdraw with the federation,
+ and then just display the channel balances.
+ Like I would like to try to get that to actually work in the UI that we have so far.
+ I'm not really sure the status of it currently, but that's one of the things the next couple
+ weeks I'm going to try to work on a little bit is just getting these working and try
+ to actually be able to deploy maybe a SIGNET little federation.
+ And I think it might be kind of interesting if we had a little SIGNET federation we could
+ use so that like-- I mean, we could probably just allow anybody to log into it, you know,
+ just to be able to play with it, you know, since it's just fake SAS.
+ At least us on the call, that might be kind of nice.
+ Yeah, from my end, I would find that to be super helpful just to, you know, start to
+ eat the own dog food, as they say.
+ Cool.
+ So, yeah, I'll make some progress in sort of pairing this back to, you know, touch upon
+ some of the things we talked about in this call today, which would pretty much just be,
+ you know, part of it would be removing that whole section, maybe adding in the left hand
+ nav at this point.
+ Or, you know, since the functionality exists here without the left nav, is that something
+ I would recommend I leave out for now, just for simplicity's sake?
+ I don't have an opinion on that one.
+ I'll defer to others.
+ One other thing I'll mention is that I don't actually think we, and Justin, you can correct
+ me if I'm wrong, but I don't think we actually have the ability to render a transaction history
+ currently in the gateway.
+ So we would have to add that in terms of that page to the left, to the right.
+ Although that would be useful.
+ We'd have to add that.
+ Like, you know, being able to, like, actually, I think right now, we wouldn't even be able
+ to check the transaction ID.
+ Would we, Justin?
+ Are you talking about for, this is just peg ins and peg outs?
+ Yeah.
+ Yeah, I don't know off the top of my head what's saved in the database.
+ Yeah, I mean, we probably not.
+ I think we could do it by reading the client's operation log, you know, but we'd have to
+ actually do that.
+ You know, like, I think the transaction IDs are probably in the operation log, but they're
+ not, like, we'd need to expose that a little bit.
+ Yeah.
+ Yep.
+ That's true.
+ What users, I just, of course, thinking out loud, would they want to see their total amount
+ of deposits and their total amount of withdrawals?
+ Or do you think that that's, would they want to see that on a weekly basis or a monthly
+ basis, this kind of overview of what's coming in and what's going out?
+ Do you guys think that's not really a good thing?
+ If I heard that correctly, you're looking for, like, an aggregated number of total deposits
+ and withdrawals on a monthly basis?
+ Yep.
+ Correct.
+ Yep.
+ I think they would want to see the profitability.
+ They'd want, like, from my point of view, they'd want to be able to see, like, how much,
+ how much, like, liquidity did I put in here and what kind of, like, for me, if I'm running
+ a gateway, I'd like to know what kind of yield I'm making on both my, you know, yeah, like,
+ it's got to be like, what's my APR, right?
+ In terms of, like, I'm locking this Bitcoin into this federation and routing payments.
+ Like, am I making any yield on this, you know?
+ Like, am I putting my capital to use effectively?
+ But that's something I think that wouldn't be like the first iteration.
+ Like that's a post one, post zero to one thing.
+ But I think that's, that's to me what I would want to see.
+ Yeah, just to add on to that, I think, I mentioned it last week, but it's, it's very similar
+ to a Lightning channel.
+ You can think of your Ecash balance as, it's just a virtual Lightning channel between your,
+ your Lightning node and the federation.
+ So pretty much anything that you, similar stats on what you'd want to see for your Lightning
+ channel, you'd maybe want to see for this balance as well.
+ Got it.
+ Hey, do you have a particular dashboard you use if you do run a Lightning node, whether
+ it's like RTL or Torx or one of those?
+ Yeah, I mainly just use RTL.
+ I'm not like running a big routing node or anything though.
+ So yeah, in the, you know, I think it's, that's pretty basic.
+ There's probably, yeah, like Torq or I think Surge just came out.
+ There's probably a lot more design work that's gone into that area recently.
+ So, okay.
+ Yeah, I mean, that's, that's one thing to kind of on a related thing here is in the
+ future, someday it would be kind of nice if we could just have something like this in,
+ if we could like embed a little bit of this inside existing node managers.
+ Like I don't know, I don't know how that would work.
+ I don't know how these things work, but that would be really nice because like the Fetimid
+ side of things was relatively simple compared to like a full node manager.
+ Like a node manager is really complicated.
+ We don't want to build that into here just cause it's a ton.
+ It's way more complicated than just this.
+ So that would be just being able to integrate with like, like my point is like this, to
+ just this thing is kind of insufficient because you do need to balance your lightning channels and open and closed channels and everything and
+ We probably don't want to build all that into here like maybe a simple version of it
+ But maybe not like it could be quite complicated
+ so
+ Yeah, just just just exploring how to integrate with some of these some of these node managers that already exist would be
+ Could be very productive
+ But I don't really know how what's involved there
+ Yeah, I
+ Was just a last comment on the lightning thing. It's like
+ The analogy of lightning is like this this e-cash balance is your channel
+ But one nice thing about it, I think I mentioned this last week too is that you can resize it just by
+ Doing an on-chain transaction. So that's maybe a distinction in that in lightning you you can't really without splicing
+ You can't really do that today
+ But with this it's it's very easy to do that. So
+ Yeah, like make making changes to your balance is much easier than
+ Lightning I think right right now. So that's a really good way of explaining it. Yeah
+ Yeah
+ Yeah, thanks for that helpful
+ See what else talk about
+ All right, I have some pretty good ideas as to how to progress here and
+ Jose if you have any cycles to adopt in and
+ Do some do some lifting then just let me know and we could
+ Sort of tag team some some progress on the stuff
+ to
+ The the other thing worth, you know calling out is I was listening to the developer call that was yesterday and
+ we were getting into some of the
+ Getting into some of the weeds regarding
+ graphing
+ these have graphs in the
+ Federation UI
+ And so yeah, I understand that that's probably you know, it's not it's not needed for
+ MVP or maybe not even post MVP
+ And I think that there was a loose decision made to allow
+ operators to you know, somehow gather their data and then input that into some
+ External app graphene or something along those lines
+ What kind of a you know
+ If that was allowed I'd wanna have it be easily accessible to the to the user to just push a button
+ Copy paste some some snippets and then enter it into into wherever they want to enter it
+ So thinking more about that
+ Would it be some kind of a just like a couple lines of code that that the user could use or is it something a
+ bit more more involved and
+ Could that code be exposed in the UI just to make it easily accessible
+ Yeah, I think it's a little premature to talk about how the UX of that will work
+ like the the problem right now is just how to get the data out of Fetiment in a way that isn't gonna interfere with the
+ Like the core consensus system and and isn't gonna be a bloat to maintain in the future
+ so that's kind of the where we're trying to figure out like some path forward and
+ And I would think of it as a little bit more of like a developer tool
+ So like if you're like the default setup of a federation probably wouldn't even have any of this
+ You'd have to do a little extra work to set this up
+ So I would say it's kind of out of scope for the admin UI currently and the idea is that we could you know
+ Play with that and just figure out what's possible and then later on we could say like, okay
+ So here's some useful data. Here's some things that we get actually exposed to this to the to the to the admin UI
+ So it's I think a little bit more
+ It's almost like we're just trying to do some hands-on research to be able to actually figure out what we can put in here
+ We'll know more what we want to display I suppose once like there's more people running these federations
+ Yeah, and the gateways and I think that's kind of the point of doing it the Prometheus Grafana way, right?
+ Is that like we can sort of?
+ Do like graph different things easier rather than be locked into like one thing
+ So I think maybe at some point people run through the whole thing and they're like, oh, yeah, I'm gonna do this
+ I'm gonna be locked into like one thing
+ It's like I think maybe at some point people run those federations like that for a while and they say okay
+ This is a graph that is very useful for like a gateway or something
+ Then maybe that gets you know added to this UI
+ Okay, good stuff
+ I think that that's that's it from from my end. I know that there's a there's plenty of stuff I can do design-wise
+ So much so and you know one thing I wanted to mention was that you know
+ I've been seeing that some of this some of these designs have been making their way to
+ in the code and
+ I guess I want to be sensitive to you know
+ Not having things not having designs in these stigma files being being you know coded and then developers having to
+ You know sort of like backtrack and I feel like they might be you know, like expending cycles that that weren't very productive
+ So I want to be super sensitive to that
+ So from from a you know saying that is is there something
+ that I can do in in these design files to
+ You know say like, you know continue or not continue
+ I know I do use these these tags like in progress and you know, like feedback appreciated
+ Would it be helpful if there was a I know I have this other tag
+ Complete you know, would it be helpful to have this complete tag on things that were
+ You know quote-unquote signed off on that that should be put in the code or or is that kind of like reaching reaching too far?
+ I think Ethan and Jordan would be the two that
+ Might have an opinion there if Ethan might not be able to use his microphone maybe just guessing
+ Get to a UI is not a concern right now. So in progress
+ Whatever is still good
+ We started work on that up. No one has made any changes in the get where you are for the admin UI
+ That menu I think is just the charge
+ functionality which seems like a
+ Next step on this just like looking at the flow top to bottom flow of these UI
+ So these these card he's helpful to help to guide the developers
+ I think that the way you're talking them are useful at least for me and look at these designs like hey, this one is
+ This one is you know called back or not
+ Maybe art tag developers that you know, I'm working on the thing for to bubble up the notification even faster
+ Did you say an ad tag
+ And the way you tagged me on some of them were helpful
+ So just tags
+ Tag the names of the devs. I think they it's myself Ethan
+ Ebo
+ Okay, you meaning like by using
+ Yeah comments in Figma. Yeah. Oh, okay. Good. Got it
+ Okay. Yeah, I think that's that's you know, any like I'd rather always try to like over communicate rather than under so that's that's good
+ That's good approach
+ Cool, all right
+ and yeah, anyone ever if you ever have any questions always always hit me up and if there's any
+ Unclarity or like uncertainty about things about their where they're at in the in the process
+ But you know, of course if things kind of a you know, yeah moving targets
+ So that's you
+ Cool yeah, Ethan mentions there you can add in the UI channel as well. And that's that also reaches more devs
+ In discord you mean yeah in this court. Yep. Okay
+ Yep, I keep track of some of the convos happening there. I could probably maybe chime in a bit more often
+ Cool all right, what else is there to chat about?
+ Yeah, you know we could cut this short if there's nothing else to cover at this point
+ You know, my big thing is I just want to like isolate
+ like so I
+ Just got back from vacation last week
+ So I'm gonna be a little more I'm gonna be more active here and trying to I really want to get this month just to
+ do a first release of Fetiment so that you know for a technical somewhat technical user who like
+ Know has used docker before you knows how to like run a docker command and knows how to like set up a server
+ But it's not like a system administrator or anything like that
+ Just can do some basic stuff or if you're just good at following like instructions
+ you could set up a federation or a guardian or a gateway that's kind of like one thing I'd like to see this month and
+ So I'm just gonna try to like identify what is like the minimum
+ What are the things that we need to do to actually get it working and just try to get those things to happen here in
+ the UI
+ So that's that's gonna be the one thing I'm gonna be doing next week or two just
+ And then and then also produce some instructions for how to how to run these so that's a what yeah one one
+ yeah, so that's that's that's a
+ One thing I'm curious about smart developer thing is just like how are we gonna serve the UIs in like our in our?
+ Docker based deployments in particular that's one thing I'm curious about
+ But we can cover that elsewhere, that's just kind of where my head is that
+ Cool for what it's worth
+ Ethan took the time to walk me through the the setup
+ I think it was about maybe maybe two weeks ago now, and you know it wasn't wasn't too painful
+ Mprox, I think that's that's how you say it Mprox was
+ an approach that that
+ We ended up taking and it was pretty much. You know it was painless
+ Coming from a place where I can find my way around the terminal a little bit, but certainly not not you know
+ Yeah, so that's that's the first so the thing is like once we have that then I think we should we should also be able
+ To get like easier version of it
+ That's like a one-click deployment either through some cloud provider
+ Or maybe there are a couple Bitcoin oriented cloud providers who have expressed interest, but that'll come second like we just need a way to
+ get
+ kind of zero to one set up a couple little federations, maybe signet federations in the discord and
+ Try to get try to get it so you can run it with gateway
+ I mean it'd be yeah, it would be nice if yeah, that's kind of where where I think we're at right now nice
+ on the umbrella front
+ That you'd probably have to pass a certain you know a gate to get onto their app store
+ I imagine, but you know ultimately I see that being an option right umbrellas and my notes and platforms like that
+ Totally, we just want to get a little more stable like we don't we want to like for a vettement
+ It's gonna like what's gonna happen is there's probably gonna be like a few iterations
+ Where like you know the first generation of these public federations?
+ We say like they run for a month right and then after that we don't support them anymore
+ Just to try to get a few little baby step iterations, and then after we do a couple of those successfully
+ You know then then we'll probably try to run some longer term ones
+ Like like we'll try to have like a version of fediment that we can like give to umbrella
+ And they can you know?
+ Users can expect to run that indefinitely. I think that'll probably be the way to go
+ So
+ Ethan is saying currently the UI repo does not support gateway connecting to L&D. It has both containers. Yeah, so that's one thing
+ I'm gonna
+ Start looking at there. Yeah start 9 uses dock containers. So does voltage and a couple these cloud providers
+ So yeah, well once we get like a developer like so something where the people in the discord like can set up a fediment
+ Like what once once me Ethan mr.
+ Cool guy and Jotam can set up a fediment in a gateway
+ Then we could we have something we could probably give to we could do make a simpler
+ Deployment that other people will find more accessible. You just have to click buttons and like digitalocean.com or something
+ Or voltage.com maybe something like that voltage.cloud
+ And then and then after that would be umbral because it's always it's always like self hosting is just gonna be the last one because
+ It's just kind of more
+ It just more can go wrong
+ Yeah, I could I could maybe help out with the docker stuff on the UI if you want the I did some of that
+ digital ocean stuff while back
+ We could get that repo such that you can point it at that repo and it and it auto deploys
+ Like on you there's like a one-click button to auto deploy to digital ocean
+ I think on the UI repo that'd be a lot easier than on the the fediment repo
+ Yeah
+ Well, yeah, there it could a potentially also just be a completely separate repo. Maybe I don't know
+ We I don't have any other comments
+ All right, I'm pretty much solid on my end
+ Hoping to join next week's call and and have a lot of these UI things that we talked about
+ Into a better shape that we could you know build off of
+ So that's it for me
+ Really great job. Sorry really great job. So really nice to you all
+ Appreciate that. Thank you
+ Yes, very good everyone right you are safe, thanks everyone Cheers
+ Bye.

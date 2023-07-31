@@ -20,3 +20,6 @@ Misspelled Whisper words.
 
 Deployment: 
 npm install pm2 -g
+
+Inspiration/tutorial:
+https://www.youtube.com/watch?v=CF5buEVrYwo

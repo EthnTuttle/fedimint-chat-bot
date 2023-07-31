@@ -1,0 +1,877 @@
+ Cool.
+ - You're recording.
+ - Thanks.
+ Okay, so this was kind of...
+ - We're actually just checking that all the binaries that have the git hashes in them
+ that you can query using some CLI command, that they have the correct hash set.
+ I'm not sure if it has anything to do with the DTMS SQLs.
+ Maybe I just don't get a full picture.
+ - Yeah, I'm just saying that based on the little Discord conversation.
+ So does this actually test it?
+ How does this verify that the version hashes were set?
+ - It compares them with a git.
+ In a CI mix, you're gonna see the comparison.
+ Yeah, here.
+ We're just gonna run the binary and compare with the GitHub shaft and a variable.
+ - Oh, and so this does it for each one of these then.
+ Okay, cool.
+ Yeah, this was kind of related to this one.
+ Like, VPNRC is not here.
+ Oh, he is.
+ Had one that was via Deviment.
+ Are these the same?
+ Is this checking the same thing?
+ - Not really.
+ So in there, we're more about kind of a local flow when you run things locally.
+ - Okay.
+ But they do check the same thing, right?
+ - I guess, yeah.
+ - Yeah, okay.
+ - Okay, so the previous PR was about the packages we kind of release by specifying them in our flake file.
+ While this one is about the Dev environment.
+ The one Justin just showed.
+ Cool.
+ - Okay.
+ Neat.
+ Yeah, looks like this one could -- there we go.
+ - CI is failing.
+ Do we know why CI is failing?
+ Is it related?
+ I think I actually restarted it.
+ - There's a lot of failures in CI on the Lightning Gateway test.
+ And I'm kind of pasting them in general.
+ I'll be looking into them.
+ - Okay.
+ Cool.
+ Let's try to -- yeah, CI got pretty flaky here recently.
+ Let's try to -- I'll look into those because I have a decent understanding of those.
+ Maybe Joto can help too.
+ Mr. Cool Guy is out the next two days, I think.
+ So.
+ Cool.
+ So, yeah, this is -- I don't know exactly what -- Manvi, can you describe this one?
+ - Yeah, so when I was using -- oh, this is the fix up one, right?
+ - Yeah.
+ - When we do fix ups, like the convo check just feels -- this just special cases fix ups.
+ So they pass the test.
+ - What is the workflow for fix ups?
+ I've never used that before.
+ - Fix up, like you want something to be merged in a previous commit, and you just have it as a different commit with a fix up as a prefix of the commit message.
+ And later you can auto squash them so they get converted into --
+ - What merge?
+ - Git can use them, I think.
+ - Okay.
+ - How do you generate those?
+ - Because usually when I use fix up, I just do interactive rebase, and I just fix them up.
+ I mean, I merge them right away into where they're supposed to go.
+ - I just keep them fix ups and merge at the end of the PR.
+ - At least IntelliJ has a function to fix up specific commits.
+ - I guess, I think Git also has a built in fix up.
+ - Yeah.
+ There's that commit dash dash fix up, I think.
+ - Yeah.
+ Because it's really useful for reviewers.
+ If you do interactive rebases, then it's hard to tell where changes happened since your last review.
+ While if you're doing fix ups, then you can see exactly which comments, for example, were addressed.
+ And at the end, you can programmatically check if the squashed version is the same as the version you last reviewed with all the fix ups.
+ - So if you did it with --
+ - In theory, it's a really neat workflow.
+ I think in practice, nobody's using it.
+ - So whose responsibility is it to squash it in a review setting with fix ups being used?
+ Would that be our --
+ - I think the one who opened the PR.
+ - Okay, so you'd basically have to have an extra step at the end where it's approved and then they go and rebase it?
+ - I don't think GitHub has good support for that.
+ - Yeah.
+ - In theory, you could probably have automation there.
+ But then you kind of lose the signatures.
+ - Yeah.
+ - The assigned commits.
+ - Interesting.
+ All right.
+ We'll keep moving.
+ - It's good to support it in theory at least.
+ - Yeah.
+ - Maybe one day we want to use it.
+ - Cool.
+ Thanks, Manmeet.
+ Eric?
+ - Yeah.
+ We, at the beginning of the new client, we had two different functions for awaiting a transaction being accepted or rejected.
+ Turns out in most cases, we want to await both anyway.
+ And so we changed it to await transaction accepted, returning a result.
+ And if, like, the transaction was rejected instead of accepted, it will just return an error instead.
+ And we still kept the await transaction rejected function around because it was easier at that point.
+ But there was to do to remove it because it doesn't really serve any purpose.
+ It's just redundant code.
+ So now if you want to await that the transaction was rejected, you just call await transaction accepted and then check if it's returning an error.
+ Like it's done there.
+ - Okay.
+ - Just check this error.
+ And if so, then the type.
+ - Sounds good to me.
+ Any thoughts here?
+ Nope.
+ So, Manmeet, so we have the legacy client still in a few places.
+ I think we finished the removal from the gateway now.
+ At least, I mean, you can see with DPCs commit back here, it, like, completely -- I guess it was still in the CLI in one place, but I think now it's completely gone.
+ So two other places, we need to remove it from the test framework, which Kipman has been working on.
+ And then Manmeet is working to get it out of Debiment.
+ And why is this so heavily read, Manmeet?
+ - A lot of, like, legacy client got removed from Debiment, I think.
+ - So is it just more concise, I guess?
+ Like the -- that's nice.
+ - Earlier we had just two versions, right?
+ - Oh, okay.
+ - The legacy and the engine.
+ - Also just getting rid of a bunch of stuff from the CLI, too.
+ Cool.
+ Awesome.
+ - Removing code is always so much better than --
+ - Beautiful.
+ Awesome.
+ So -- oh, yeah, this is merged, too.
+ Fantastic.
+ Beautiful.
+ Any other comments here?
+ Nice.
+ All right.
+ Thanks, Manmeet.
+ Kipman migrated, so this is the other thing migrating.
+ We have this create integration tests, which uses the old client.
+ And we basically have to totally port all those tests to the new module-specific test framework,
+ modularized test framework that uses the new client.
+ And so I think -- I'm not sure what the state is with the e-cache or the lightning modules,
+ but it looks like we got at least some of the walled stuff ported over.
+ So it looks like Kipman's not here.
+ So I don't have any comments about this.
+ I don't think so.
+ I haven't looked into it very much.
+ But, yeah, I think that's probably going to be -- so this is going to be the last thing.
+ I think this is going to be the slowest thing to move over.
+ So if anybody wants to try writing some -- porting some tests,
+ that would actually be a pretty decent way to get started contributing,
+ because you don't have to -- all you've got to do is understand one test and try to move it over.
+ You might have to hack into the framework some, probably, to get your tests passed,
+ but it would be a good way to learn how things work, I think.
+ Cool.
+ Okay, so here's a bug report from Douglas.
+ A wait transaction recepted was just -- except it was just polling without any wait over and over
+ with 100% CPU utilization.
+ Any thoughts here?
+ Okay.
+ No, but that's, like, a really bad mark.
+ I'm not sure if it's actually polling without delay.
+ The issue is not --
+ There's so many parallel ones, right?
+ The issue is not the delay or the lack of delay.
+ It's just inefficient, the way it's doing.
+ It's doing a lot of work that I think you could optimize to do less work, like --
+ Yeah, fully agree there.
+ If you look at the example I described, it will take one hour to process a big transaction,
+ but this could be processed in a few seconds if you could reach all the completed features.
+ So I think there's room here for optimization.
+ Yeah, definitely.
+ Currently, we are really unintelligent about wheezing features.
+ We just throw them away every time in the main event loop.
+ It isn't really a problem for normal client users, but you're totally right that if you are processing a lot of transactions in parallel,
+ I think that's probably, like, quadratic or something like that.
+ Yes, something like that.
+ Yeah.
+ So why is the CPU utilization so high?
+ Because this process, it curates the database.
+ So you are doing a lot of work, and you are doing it again and again.
+ Yeah.
+ So the problem here is, for example, if we have 256 state machines that are waiting to make progress,
+ then we create all the trigger features, then we wait for any of the trigger features to be completed,
+ and then we throw away all the other trigger features, and then we execute the state transition.
+ And then next round, we create all the remaining trigger features again, and we do this, like, 256 times.
+ So this is probably quadratic because, like, in the second run, we create 255 features, on the third run, 254, and so on.
+ We could reuse them.
+ We just need to be slightly more intelligent about how we construct them.
+ So I don't think that's a big problem fixing this.
+ It just hasn't been, like, a priority when building it.
+ But I think the interfaces and everything can stay the same.
+ It's just internal optimization.
+ And, like, also the way we create the transaction subscriptions, there's a lot we can optimize.
+ Yeah.
+ Cool.
+ And also I noticed when reading the database of the federation, even just our decoding seems to be pretty slow.
+ Like, just reading all the keys and values from database and decoding them for, like, a 100 megabyte database took a few minutes, I think.
+ When you were doing, like, dbdump or something?
+ Yeah.
+ Interesting.
+ Yeah, when I was pulling out some statistics.
+ Yeah.
+ Cool.
+ And so related, transactions with more than 255 outputs fail.
+ Yeah, that's a pretty similar problem.
+ Like, we make 256 calls to the federation where we ask the federation if output outcomes are ready for each of the outputs we are waiting, essentially.
+ And our RPC framework seems to have a built-in limit for how many parallel requests we can do.
+ Now, the question is, should this actually be, like, RPC requests or RPC function calls?
+ Or should we rather create a subscription where, like, the client subscribes to updates?
+ And I don't think that would have such a low upper limit.
+ That's, I think, what we wanted to do originally, actually.
+ Like, that's why we chose JSON RPC, because it has subscriptions.
+ And we can do these long-held connections that at some point terminate once there's a result.
+ We could do this over HTTP, actually.
+ Thoughts, Manojit?
+ Like, I pinged you in the issue, because I think you know a little bit more about JSON RPC stuff.
+ So, there is some, like, support for, like, polling, like, push, like, where server pushes events.
+ Like, you can subscribe for events and, like, it pushes the similar types of events.
+ I think that would be useful.
+ So, we just make a single connection instead of multiple in this case.
+ I mean, it's not the connections, I think.
+ It's still one TCP connection for a federation member.
+ But the problem here is that the JSON RPC client has to keep track of, like, 256 parallel requests that go over the same TCP connection.
+ I'm not sure why that would, there would be a limit on that.
+ I mean, maybe for now we can just increase the limit.
+ I'm also not sure why there would be a limit like that.
+ You could increase this to 10 times more, but it will always be some limit.
+ Yeah.
+ Yeah, I mean, maybe we should also just limit how many state machines are trying to make progress in parallel.
+ And only if, like, let's say we limit that to 10.
+ And then only if these 10 don't make any progress in a second, then we add more.
+ I don't know.
+ Like, the current executor isn't really built for, like, high throughput.
+ Or, like, high concurrency.
+ Like, it deals quite well with it.
+ But, like, it's not the most efficient thing you could build, probably.
+ Cool.
+ We'll sort those out later.
+ Um, so this is one, let's see where we did this.
+ Okay, yeah.
+ It's just adding...
+ The annoying thing about gateway CLI is you have to see what federations you're connected to
+ and then you have to go grab the ID of the federation and do another command to see what the balance is.
+ And most of the time you're using the CLI, you just want to know what your balance is.
+ So this one just pulls out that information into the info command.
+ And it looks like it's still kind of a work in progress here.
+ Yeah, I got the thing working.
+ And the test that was existing was about the info command
+ and it just displays a zero balance because I'm not funding anything there.
+ But I wanted to get the balance test implemented.
+ That's why I left it in draft.
+ So I'm trying to get that.
+ I'll, after the call, help you with this because I'm pretty familiar with these tests.
+ Oh, yeah.
+ Cool.
+ Nice. Thanks for working on that.
+ Thanks.
+ Okay, so Mr. Cool Guy's not here.
+ Maybe Jotam can comment on this one a little bit.
+ So this is like a big problem with the gateway currently
+ is that there's some call when you're paying invoices that's...
+ Yeah, that you make the same call multiple times and it responds differently.
+ That's the root issue.
+ So the problem is the new client relies on all the API calls that it makes to be idempotent
+ because in case the client crashes before we have saved to the database
+ that the API call succeeded, before we got to restart it and it succeeded,
+ we have to be able on restart to just do the same API call again.
+ And with Lightning Payments previously, I think the problem was
+ if you make the same call twice, then the second time will just fail
+ because the payment has already happened.
+ But what it should do is actually it should return you to the payment
+ because the payment already happened.
+ If you try to pay again, like that doesn't make much sense from the gateway's perspective,
+ but it can still just give you the payment because you tried to pay again.
+ And that will make the new client work much better.
+ I think that's what it does.
+ So he's just grabbing, finding the preimage some other way then?
+ Oh, look up payment.
+ Yeah, I think both Core Lightning and LND have a way to just get the preimage.
+ Yeah.
+ I guess we'd also just save them locally or something.
+ Yeah, then we have to be careful what happens if the extension, for example,
+ in the Core Lightning case crashes or if the gateway crashes.
+ Yeah.
+ Like we're building a distributed system.
+ Yeah, we might.
+ Exactly. The source of truth is, I guess, always on the Lightning node.
+ Yeah, that's definitely easier that way.
+ Yeah.
+ Okay, cool. I'll review that one a little more.
+ Any other comments here?
+ I wonder if these are causing some of the –
+ I wonder if these are causing some of the –
+ or at least one of the things that DPC is reporting in their general Discord channel
+ about intermittent failures.
+ Do these happen much like in test?
+ Have these caused test failures in the past,
+ or are these more like running it in production?
+ I think that would be more of a production run thing.
+ Yeah.
+ Not entirely sure.
+ If the CLI is waiting, that we completed the API call successfully, but I think so.
+ Yeah.
+ Okay, cool.
+ And it's also a real edge case.
+ It's not a real problem, I think, currently.
+ It might be a design problem.
+ I don't think it's an edge case.
+ Like this will always happen if you make two users try to pay something at some time
+ with LNG.
+ At this moment, the LNG gateway is broken.
+ It just supports one user at the time.
+ Oh, that's interesting.
+ So this call might actually fail in cases where it should succeed
+ if there wasn't concurrent payment going on.
+ Yeah, exactly.
+ Then we'd also need to handle that in the client, actually,
+ because I think the client, if the gateway returns any error,
+ then the client will just think the payment failed and will try to get a refund.
+ Like it will not retry if it gets an error.
+ Yes, yes.
+ So that's definitely good to know.
+ Interesting.
+ I'm going to ask you some more questions about this one, Alan.
+ I don't totally understand, but --
+ Cool.
+ All right.
+ This is another one trying to parallelize the processing of HTLCs in the gateway.
+ Anyone review this yet?
+ I have some context around it.
+ And that is -- so with the migration to client engine gateway,
+ one of the last items remaining is the way we process HTLCs,
+ central point where we have the single interceptor for HTLCs.
+ And now Mr. Cougar is proposing we use a state machine
+ that would do the completion of processed HTLCs.
+ That's what this PR is about.
+ So this one adds a new state machine?
+ Yes.
+ Okay.
+ Interesting.
+ Cool.
+ We'll have to review this a little.
+ All right.
+ And so this is just a small change in the gateway CLI using the --
+ instead of using the node, the public key for the lightning node to --
+ kind of like the identifier to the node.
+ I guess it uses multiple places.
+ Use the -- like the redeem key of the gateway in the federation.
+ So you use the public key instead of the lightning public key as an identifier.
+ Seems pretty sane.
+ Jotam, want to cover this one?
+ Yeah.
+ So just building on what we had last week.
+ We didn't have a setting for in LND where we didn't have a cap on the
+ fee paid.
+ So just reported an issue where someone could drain the gateway by
+ creating a high fee channel beyond the gateway from the gateway node.
+ So in fixing that, we realized we were using percentages in terms of
+ the fee.
+ Like max fee is a percentage of the amount we're paying.
+ And that has issues.
+ One of them is -- Eric, you pointed out.
+ We don't know it's a percentage of what.
+ So we had an assumption there.
+ The other thing which came up is LND uses a certain way of
+ representing these percentages.
+ So their range is -- actually allows negative fee limits.
+ And CLN actually -- CLN just allows positive fee limits.
+ So we have to somehow generalize it.
+ And in generalizing it, we moved to fixed caps, fixed limits instead
+ of the percentages.
+ That's one thing proposed by this PR.
+ And the other one is it also adds fee limits for LND.
+ And so one of the questions was how to test it.
+ Any thoughts there?
+ >> I still don't know how to test it.
+ Besides adding another node to the network, which is -- I've
+ tried to test it manually.
+ Right?
+ Seems to work.
+ To automate the test, we need a larger network.
+ So we need two channels.
+ We need the channel -- a channel between the gateway node and
+ another node.
+ And create a high fee environment there so that we can
+ automate it.
+ I don't know if I'll add that to this PR because it's really
+ expensive to have that as a way of testing.
+ >> Could we in theory do a trick where like we create a high fee
+ channel between the LND and the core lighting node.
+ And depending on which we are testing, we're routing one way
+ or the other.
+ >> That way we could get two hop routes.
+ Right?
+ And still only have the two lighting nodes that we already
+ have to test.
+ >> So the two hop route is the virtual one?
+ >> No, no.
+ Like if you count the virtual hop, then it would be three
+ hops.
+ But like what I'm proposing is if you're testing the LND
+ gateway, then you would be using a channel from the LND
+ node to the core lighting node to simulate a high routing
+ piece.
+ Like you could have a channel between the two that charges
+ ridiculous fees.
+ And then see like how the gateway reacts.
+ >> Another idea would just be to have like if our deviment
+ channel -- because the two nodes always have a channel between
+ them.
+ So that one could just have like some reasonable fee just by
+ default.
+ And then in the actual like settings for the gateway maybe.
+ Well, I guess that's also -- maybe the gateway could just
+ have a super, super low fee that that channel would violate.
+ >> I don't think this works.
+ Because when you are paying another node, your fee, it
+ doesn't make any difference.
+ You won't pay your fee to yourself.
+ So it doesn't matter if you put a high fee there.
+ >> Yes.
+ So you need another hop after this channel, which involves,
+ you know.
+ >> Yeah.
+ >> Oh, right.
+ We're already using the second node.
+ Never mind.
+ >> Yeah.
+ >> And then we probably need another node.
+ >> Yeah.
+ >> I'm wondering if it's actually that expensive if we
+ properly parallelize the setting up.
+ Because like most of the time spent on waiting for the node
+ to just recognize the Bitcoin blockchain being there and
+ recognizing its channels.
+ So if we open two channels at the same time and then wait for
+ both in parallel, I don't think that will take twice the time.
+ It would take like the same time plus like a small margin of
+ CPU.
+ >> Yeah.
+ And we need this for -- the CLN case is not tested.
+ So at least we have -- we need to test both.
+ That's what I was --
+ >> Yeah.
+ Maybe it's easier to test if you create a contract that just
+ doesn't have any fee margin.
+ Maybe it's only paying one set in fees.
+ And then test if like it's failing.
+ Because like -- oh, no.
+ We're not charging anything for ourselves.
+ It's really annoying.
+ It doesn't work.
+ We need -- yeah.
+ Not even about charging a lot of fees.
+ Charging any at all.
+ >> Yeah.
+ All right.
+ Well, let's -- >> Yeah.
+ We should just do that.
+ >> I think -- >> Even if it makes the S slower.
+ >> The question for me is like do we have to end up -- as we do
+ more and more tests, is this something that we have to like do
+ the setup on the test itself or on just dev set up at the
+ beginning?
+ >> I think it's just at the beginning.
+ >> Yeah.
+ >> Yeah.
+ >> We can always change the fees, for example, on the channel.
+ But it's not even necessary here.
+ Like we could just choose to create a contract such that fees
+ are low even for a normal channel.
+ >> Yeah.
+ That's kind of what I was thinking.
+ >> I'll follow up.
+ I'm not sure I -- yeah, I'll follow up on how to do that.
+ >> Okay.
+ >> So, yeah, so we have this problem where the client makes a
+ bunch of -- has a bunch of references to the arc containing
+ the database.
+ And basically, so like if you try to drop the client, there
+ will be a bunch of -- that arc will still have a bunch of
+ references, I think.
+ And so if you then try to reinstantiate the database, like
+ if you create a client, drop it, and then create the same client
+ again, pointing at the same Roxy database, it will fail, saying
+ that something is already holding the lock for that
+ database.
+ So, yeah.
+ >> Essentially what we built here is a cyclic reference which
+ leads to memory leak.
+ And in this case, like the memory leak isn't the worst part
+ about it because like the database reference isn't big and
+ we're not doing this in a loop.
+ But rather us keeping the database live is basically
+ the problem if we want to recreate the same client.
+ But in principle, this can happen in other places.
+ If it's in loop, then this would be a way we can build memory
+ leak even in Rust, even though other memory problems should be
+ solved.
+ >> I didn't report, but we do have a memory leak on FedMint.
+ Like if a server keeps running for some time, it will have a
+ memory leak.
+ If it keeps running for some weeks, it will always increase
+ in memory.
+ >> Oh, okay.
+ Then we should check our usage of ARCs.
+ >> Yeah, this one is just on the client, though, so it's
+ something different, right?
+ >> Yeah.
+ >> Yeah, like ARCs are quite convenient if you don't want to
+ deal with lifetimes too much.
+ But, yeah.
+ For a long time, I didn't think about this memory leak issue,
+ so I kind of knew about it.
+ So we should probably double check in a few places if we have
+ any self-referential ARCs.
+ And the general solution to that is to make some ARCs weak
+ pointers, and these can only be dereferenced, or they can be
+ upgraded for full ARCs if the original ARC is still around.
+ If it doesn't, then it just returns none, and you have to
+ deal with that.
+ But that's how you break the loop.
+ >> Cool.
+ Well, Aaron, let's create -- have you created an issue for the
+ other memory leak problem?
+ >> No, but I'm going to create.
+ >> Cool.
+ Great.
+ So what do we see towards a general federation API error?
+ So
+ Before, we didn't have a way to express
+ kind of a logical problem in the API.
+ We would only be able to report an error
+ from each particular member,
+ which sometimes it makes it impossible
+ to express certain failures.
+ So I've added the new field
+ that is an optional general error.
+ So we don't have to fake such failure
+ as like fixed peer or something like that.
+ - Can you give an example of this scenario?
+ - So when I was implementing the AP,
+ finding an API version to use
+ to communicate with Federation,
+ sometimes you, theoretically,
+ you might not be able to find a version that works
+ for core API.
+ And then that's trying to return something.
+ And I started with just returning an error in a peer zero.
+ - Yeah, so it's not really an error that happened.
+ It wasn't like an, yeah,
+ it wasn't an error returned by any of the guardians,
+ let's say.
+ - Yeah, each guardian can return a version and everything.
+ - It's an error with how the, yeah,
+ with how they interact with each other or something.
+ Yeah.
+ - Okay.
+ - Not exactly common, but possible.
+ - Yeah, so do you wanna segue over to this one,
+ the API version discovery?
+ You probably talked about this last week,
+ but it wasn't there.
+ - Yeah, so this adds code to figure out
+ for every module and core API,
+ the best version to use that is supported by most peers.
+ And the strategy, kind of the query strategy
+ that uses it.
+ And yeah, that's kind of, yeah.
+ - Simple enough.
+ Any questions about this one?
+ Didn't seem to, okay, I got some review.
+ Guess not.
+ Okay, so we had a bunch of,
+ I guess this is,
+ in Joshi's, is he here?
+ I don't think so.
+ In Joshi's kind of roadmap for upgrading consensus
+ from HPBFT to LFBFT,
+ the next step is removing the concept of epics
+ and dropping peers from each of the modules.
+ Looks like one of them got merged in the dummy module,
+ but the real modules are still awaiting review.
+ Erik, what's the status here?
+ - I merged two, I think.
+ One, I left a review where changes are needed,
+ but Joshi's was not available last week,
+ so still waiting on that one.
+ Then today I noticed one that wasn't ready for review,
+ but he requested review and it looked good enough.
+ And then I made it ready for review.
+ I think it's that one, actually.
+ And there's one question I have for Kitman
+ about the, or maybe it wasn't that one.
+ There was another one.
+ Anyway, about auditing
+ and kind of waiting on a response there,
+ and I just merged it.
+ And as soon as all the four modules are migrated that way,
+ then there can be a fifth follow-up PR
+ that moves the loop,
+ that loops over all the consensus items
+ inside the begin consensus epoch function,
+ moves it out of there,
+ and changes the begin consensus epoch function
+ into a process module consensus item function.
+ Because currently, the begin consensus epoch function
+ can do arbitrary things with all the consensus items
+ it's given, but we want to get away from that
+ because the epoch concept is going away.
+ And so what we want to do is be able to process
+ single consensus items that belong to that module.
+ Like, for example, signature shares
+ or agreement proposals for the current block height,
+ stuff like that.
+ Yeah.
+ I think we'll tick off the correct things here.
+ - Cool.
+ I'll do the honors there.
+ - Yeah. (laughs)
+ - Least I can do.
+ Awesome, great to see progress here.
+ Great work there.
+ That wasn't all that easy.
+ And we're making much bigger progress than I hoped for,
+ so I couldn't imagine having all of BFP up and running
+ even this year.
+ - Wow.
+ - Yeah. - Good to hear.
+ - Okay, two small UI.
+ We have the FedEvent UI repo
+ with our guardian and gateway UIs.
+ And so this one starts implementing a little dashboard
+ for the guardian that some of the design community
+ led by Seth, who's on the call, have been designing.
+ So I don't think it's done yet,
+ but some progress from Iglo.
+ Great to see.
+ Any thoughts here?
+ Nope.
+ - Just one comment on that PR.
+ Just at the bottom, he mentions that there was discussion
+ around coming up with some charts and everything like that.
+ Or maybe not at the bottom, but.
+ - Yeah.
+ - Yeah, he's just, from the Discord,
+ he's gonna move forward with implementing the rechart.
+ And then, 'cause I think it will be a little bit more
+ involved for getting the dynamic charting and stuff.
+ - What do you mean the dynamic?
+ - Generally.
+ - Go ahead, Eric.
+ - I think what we should keep in mind is
+ that FedEvent itself should probably not become
+ a data aggregation system.
+ - Yeah.
+ - We will probably never really get historic data
+ out of FedEvent.
+ Like maybe at some point we want to have
+ like a companion service that does this collection
+ for just the WebUI, for example.
+ - Yeah.
+ - But I don't think it would be a good idea to
+ like put that essentially statistics logic
+ into a consensus system.
+ - Yeah.
+ Yeah, the backend work that's required
+ for that kind of stuff is,
+ like there's no way to read from the database.
+ Like we don't surface the data
+ that these dashboards will require.
+ So there's, I guess that's why there's a lot more
+ like considerations that will go into it.
+ - Yeah.
+ Like the problem that I see is
+ even if the database was readable,
+ you couldn't query this data efficiently
+ and you'd need to add a lot of indices
+ and like the current database we're using
+ is just not well suited.
+ Like if it was an SQL database,
+ we could just add some indices.
+ But for us it's very manual
+ because we didn't go the SQL route
+ 'cause we don't have enough control there.
+ Like at least was a fear.
+ Yeah, so it might be more useful
+ to export the data from FedEmint
+ via like some API and then aggregate it
+ in a separate service.
+ But then supplies to the front end.
+ - Yeah, that's exactly what was discussed.
+ So like Prometheus Grafana was brought up several times.
+ - Perfect.
+ - Yeah, I tend to think that the like actually
+ implementing the charts in here
+ will probably come at like a later iteration.
+ Like if we could just aggregate the data somewhere
+ and have some way to kind of start experimenting
+ with pulling useful stuff out of it in a more manual way,
+ then eventually we can integrate it here.
+ But I think this will probably,
+ I doubt this will be the first place
+ we surface interesting information
+ just 'cause it's a lot more moving pieces.
+ - Is the data aggregation pattern,
+ would it be similar in gateway?
+ Or the concerns that they shared
+ maybe across to that system?
+ - I mean, the gateway could in theory
+ aggregate more data itself, I think.
+ Like the gateway isn't as critical.
+ Like the main concern for me is if anything,
+ the database of the federation
+ or the guardian server goes wrong,
+ then the whole federation might stall.
+ Like on the gateway side, I'm not as concerned.
+ Also, as operator, I probably would be, I don't know.
+ It might make sense to just have the most minimal footprint
+ of what data needs to be aggregated or indexed
+ inside the gateway and then do some processing outside.
+ - Yeah, I don't know what like data lightning node operators
+ already are, I guess, publishing
+ or metrics or anything like that.
+ But there's no reason why like the same Prometheus instance
+ can't be used to aggregate data from the Fetiment
+ as well as like the gateway.
+ - Okay, let's move on.
+ So Ethan reports a problem when the setup UI completes
+ and we move from using the setup API to the consensus API,
+ that there's a web socket issue.
+ - Yeah, so this has been seen a couple of times.
+ I see it probably more than 50% of the time
+ when I'm testing locally in dev.
+ And when we go from setup to consensus,
+ we force shutdown by just dropping
+ the web socket server side.
+ And then we try to handle it on the UI side,
+ but I've yet to come up with like a very consistent way
+ that is a good UX, I guess.
+ So yeah, that's--
+ - Okay, I can try to help debug this a little bit too
+ 'cause I helped, I was working on this
+ at the very beginning.
+ And I noticed this problem too at the very,
+ when we first started, when we first,
+ yeah, this was happening right when we first got
+ the setup UI to work, the new setup UI to work at all.
+ So yeah, I have a couple of ideas.
+ Cool, yeah, and to lastly, a little deployment section,
+ like one thing I'd love to do this next couple of weeks
+ is to just start like setting up,
+ like start setting up federations and gateways.
+ Like I think the system's kind of a little more ready
+ to use now and like I said,
+ Feddy have done a couple of federation deployments,
+ but I think it's past time to get everyone else in the game.
+ So I think it'd be great if we could just try
+ to do some experiments, maybe use MutinyNet or Signet
+ and just run through this, the setup experience
+ with different people, different servers
+ and to start using it, trying to run federations,
+ trying to, when there are issues, try to,
+ yeah, it's a lot more real when you actually run it.
+ It's a totally, from my experience,
+ it's a different thing once you actually go run it,
+ you have a different perspective,
+ you notice all kinds of problems you didn't notice before.
+ So I'd like to have the whole kind of Feddymint dev community
+ try to move in that direction in the next week or two.
+ And part of that is we have doc containers that work
+ and have been publishing for a long time now.
+ And we could use a little documentation
+ for just like how to set up a Feddymint
+ using just a couple of Docker commands,
+ like maybe a system D service for Feddymint
+ and probably just use like the,
+ for this initial one, probably just use like an Explorer API
+ for the Bitcoin node or something,
+ especially with front MutinyNet.
+ There is an Explorer API for that.
+ So this would be a great thing to try to get more people
+ involved in running Feddymints.
+ And so we need a little documentation for that first.
+ And so, yep, that's one thing I think Nasser
+ and a few others might help me there.
+ So I'll probably be working on this a little bit this week.
+ And then another idea is once we have that,
+ it would be great to find some deployment provider
+ that could give us like a relatively one-click deployment.
+ Mr. Cool Guy did some work on DigitalOcean,
+ but there's a few other ones like fly.io,
+ a couple of these other ones that should have
+ close to one-click Docker deployments.
+ So that'd be really nice for FeddymintD in particular.
+ So you could go through a federation setup
+ without having to do a bunch of editing
+ and system D files and stuff.
+ I think that would make it more accessible
+ to people in the developer community.
+ So if anybody wants to experiment there,
+ this is kind of just like,
+ I think once a few of us can,
+ you know, have confidence running with Docker,
+ I think you should be able to go and figure out
+ how to do it with one of these other deployment providers.
+ So for example, this is basically all that was required
+ for Mr. Cool Guy to get this working in DigitalOcean.
+ It didn't completely work.
+ Like it seemed like this was a little more optimized
+ for like a web service.
+ So what seemed to actually happen
+ is you'd have two instances of FeddymintD
+ 'cause like with a web server,
+ you want multiple instances of it running
+ so you can handle more requests.
+ In a consensus system, you definitely don't want that.
+ So yeah, it didn't seem to respect
+ this instance count thing.
+ So there's a little more tweaking we need to do,
+ but I think in principle,
+ it should work at least somewhere.
+ So that's another great place to get started
+ if you're looking for a way to get involved.
+ And then lastly, we want to have, Ethan, go ahead.
+ - I was gonna point out to anybody listening,
+ the UI repo uses Docker Compose
+ for the local dev environment.
+ So if you're looking for like a starting point,
+ we've hashed out a few of these things.
+ The only thing that doesn't work is like the gateway
+ doesn't talk to the LND container.
+ And that's just something that nobody's gotten around to yet.
+ So.
+ - Interesting.
+ We can probably help on that too.
+ You have an issue?
+ So if you don't have an issue with that, send it to me
+ and I can probably figure that out.
+ Okay, cool.
+ So lastly, is once we, like as part of this process,
+ we'll want to actually make like a first release
+ of Feddymint.
+ And so a week or two before I went on vacation,
+ I started this, but decided it's better
+ a post vacation project.
+ So got a couple of like small deployment
+ and then these are kind of security
+ or just usability issues.
+ But I don't think there are too many of these.
+ So we'll try to isolate a few of these
+ and then probably make like a release candidate,
+ you know, like just maybe pretty soon here.
+ And you know, we can use that to try to set up
+ some of these federations.
+ And then once we got it working,
+ once we got the setup UI working, stuff like that,
+ we'll just, you know, cut a first release.
+ And the idea here is it's not gonna be something
+ that's gonna be supported for a long time.
+ Maybe we just support it for a month,
+ but we'll start this iterative process
+ of doing some releases and hopefully, you know,
+ in the coming months, get to a point where we have like
+ a release that will support for a long time.
+ That's it for me.
+ Anybody else have anything to add?
+ (keyboard clacking)
+ If not, I think something along these lines
+ would be interesting for the deep dive.
+ We'll see, it may be fun to set up
+ a little meet new net federation on Thursday,
+ if we can get that far, that would be fun.
+ But yeah, open other ideas for the deep dive.

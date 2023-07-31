@@ -1,0 +1,1208 @@
+ [BLANK_AUDIO]
+ Okay, so am I doing it correctly?
+ Yeah, you can see it.
+ [BLANK_AUDIO]
+ >> Yeah, we can see it.
+ [BLANK_AUDIO]
+ >> Okay, so got a little list, some deployment and UI stuff.
+ I just put that at the top cuz it's been kind of like a big,
+ a lot of progress through the last week or two.
+ And then kind of a mishmash of all kinds of different topics.
+ And one thing we should talk about at some point is just like,
+ maybe during this CI section, just talk a little bit about, yeah,
+ we can talk about it here, the intermittent CI failure tracking issue.
+ Like the CI has been really misbehaving, I think it's slowing everybody down and
+ making it less fun to do stuff.
+ So it'd be great to just put some focused effort on that, so
+ everything else is a little more fun.
+ >> Okay, so first I just wanted to point out is, yeah, so
+ like last Thursday, I do a BitDevs meetup.
+ And as the BitDevs meetup was starting, I just saw in a corner of my eye,
+ [LAUGH] four people in the voice channel.
+ I heard that Rindall and some others were doing a setup.
+ And so that was really cool.
+ It was a little nerve wracking cuz then my meetup started, so
+ I couldn't observe and watch it.
+ But apparently, it was successful, and
+ they were able to set up the whole federation.
+ So the setup UI, then set up lightning node on
+ MutinyNet using, I imagine these RTL.
+ And which Douglas made into a nice doc compose, so
+ no command line stuff needed, and then get the gateway UI working.
+ We're able to send and receive lightning payments, do pegins and stuff.
+ So Rindall's very technical, I imagine some of the others were quite technical.
+ But yeah, that's pretty exciting to see.
+ And yeah, so I don't know, it's a pretty big step forward, I think,
+ that just we're getting to the point where you can actually set this up on MutinyNet.
+ So it's still safe and foot guns are still there, but
+ they have less, they don't hurt quite as much as on MainNet.
+ But yes, I think that's a big step forward.
+ So kind of congrats to everybody to start to,
+ this is kind of a new phase, I think, now that we can run it.
+ Even Udi has responded.
+ >> I was wondering if he was muted.
+ >> Boy, yeah, he was muted, yeah, okay.
+ That's funny.
+ I mean, any comments or questions about that or anything?
+ No, so that's pretty sick.
+ So on to some more kind of deployment stuff.
+ So Douglas had some Doc Composes that just used raw IP addresses for
+ all the host names.
+ And so this is kind of the last step in just trying to have
+ reference deployment set up using Docker.
+ And so this one uses TLS.
+ And it does, using this, right?
+ I tried and I just was waiting for DNS to update for a while.
+ And I ended up using a little tool that appeared recently.
+ It's pretty neat, you just stick in any host name or any IP address and
+ it'll just give you a deterministic subdomain.
+ And as you can kind of see, it's just turning that,
+ mapping the bytes here to hex.
+ It's really nice, and so this will have DNS records for you.
+ So this is a really nice little tool that I was able to set up in a minute for
+ the Federation using this TLS.
+ And all the everything was, all the client facing connections at TLS.
+ So that's cool.
+ So I think this little project that Douglas has been leading to get
+ some relative, it's not like a one click install, but
+ it's like a one script install, right?
+ There's one script that you have to run on a server and
+ it'll set up everything for you.
+ So it's kind of, I think this project's basically kind of done.
+ Now it's just a matter of testing, testing it,
+ and which is gonna be a lot of work.
+ And so yeah, any thoughts there?
+ Josh, could you introduce yourself by the way?
+ >> Please never use the text IP service for any maintenance deployments.
+ >> Cody, thank you.
+ >> Like the hex IP service in theory, the operator can always
+ redirect you to a different IP address and they can also issue
+ TLS certificates themselves so they could man in the middle of you.
+ So only use the test environments.
+ >> Yeah. >> Yeah.
+ But it's just like a workaround till we figure out how to, for
+ example, have like toy hidden services for the client API.
+ >> Yeah.
+ But yeah, and I think it's a good way to test this stuff without having to wait so
+ much. So yeah, don't use it on mainnet.
+ Don't use, really don't use any of this on mainnet right now,
+ unless you're, only use it very cautiously, right?
+ Yeah, looking forward to an era of vigorous mutiny net testing.
+ So one other one on the deployment side is draft PR to make
+ just Linux, more Linux binaries in our CI.
+ So currently everything's, the CI just builds Docker containers and
+ that's what these are using.
+ So I think we have NIC support, but it's not released in,
+ it's not exposed in CI artifacts, the binaries aren't.
+ So that's a good step forward.
+ And yeah, so before this, I think kind of a goal of mine this week is to try,
+ I think we're basically right, basically ready to tag release now.
+ So that's kind of my goal this week is to be able to tag release and
+ sort of have it be like the reckless mutiny net release.
+ Just try it on mutiny net, hopefully get a lot of people testing that out.
+ And then a month later, do it again.
+ So yeah, that's hopefully what we can accomplish that this week.
+ But now that we kind of have this kind of unassisted people can set one up,
+ I think we're kind of ready for that.
+ Any other comments about that on the deployment angle?
+ [BLANK_AUDIO]
+ >> Are we gonna start bumping versions?
+ >> Yeah, so we'll, yeah, as part of tagging release, I think we'll bump
+ all the versions that are returned by the modules and stuff like that.
+ So that you can kind of distinguish, then we'll have a release branch that is always
+ backwards compatible and master will continue in its reckless fashion
+ moving forward.
+ Yeah, so a couple UI things.
+ So this is one, Joda's been doing some great work on the UI this last week,
+ getting it to be usable.
+ And so this is one that's open, just basically so
+ you can reload it at any time and it will figure if you're logged in,
+ logged out and get you to the right place.
+ Any other comments here, Jodan?
+ >> No, if you deploy anything right now, it's not secured.
+ Like that's where we are.
+ Hopefully we can get these in and apply that layer of auth to all those
+ UI experiences.
+ They get the admin sites.
+ Yeah.
+ >> Yep, so there's that and
+ we had a few internationalization PRs, like we had an initial one,
+ I think Ben Allen G made it and it was a little back in the list and
+ I was in a hurry so I just grabbed this one.
+ So there's two or three just getting internationalization to work.
+ And I think it seems to be working pretty smoothly.
+ There was one little issue where it wouldn't,
+ like the first time you run it, it would not show the translations.
+ What was that issue?
+ >> That was just the translations want you to do like en-us versus en-gb and
+ we just had en for English so it wasn't catching the right type deaths.
+ >> Gotcha. >> Or the right dictionary for
+ translation so.
+ >> Cool, but now yeah, it seems like the whole UI is basically internationalized
+ and or has the mechanics in there and now it's just a matter of like
+ keeping using it and keeping the translations up to date stuff like that.
+ That's a pretty big step forward and any comments there?
+ >> We have a possibility of getting a translator for some other dialects.
+ Cody said he's going to give me a touch with them so
+ looking forward to pushing that one forward some more.
+ >> Awesome, yeah, cool.
+ All right, keep moving.
+ Yeah, so this is one I just want to share as like,
+ this is like kind of horrible code that I wrote.
+ So I get to pick on myself, I try not to pick on other people but
+ I'll pick on myself.
+ So yeah, this is basically how the setup UI
+ communicates the module, like the parameters to the module.
+ And it's currently, this is a big thing that needs to be improved on.
+ Basically, when we read the defaults from the server,
+ we just grab out things that we want and stick them in an environment variable.
+ And it's this pretty horrible looking thing.
+ It's an object with number keys and those are the parameters for that module.
+ The first one's the name and then it's the parameters.
+ So this could use some, this will need some work.
+ Like for example, Eric added a default
+ like Bitcoin client or Bitcoin server for the client, right?
+ So this would be- >> So essentially,
+ which API you use to fetch packet and proofs.
+ Like when you make a deposit and you need to prove to the federation that you
+ actually did so.
+ And you need a blockchain back to generate it.
+ >> Yeah, so it's a blockchain back in that the federation gives the users.
+ Previously, it was just hard coded.
+ So any federation would use the same one.
+ So this is an example of like one, like this, yeah, this approach isn't great.
+ Because when a new thing is added, we don't notice that,
+ we don't persist that default.
+ So and if you were running a third module or fourth module,
+ it wouldn't get in there.
+ So this is just kind of a state of the world.
+ The setup UI is not very module capable now.
+ So this is gonna be something we'll need to improve.
+ But yeah, it's just like a little state.
+ This is the front is pretty good a lot of things.
+ One thing is very bad at is dealing with modules.
+ But yeah, first things first.
+ So this is once we had two race conditions in the, yeah,
+ this is one kind of big race condition we had in the UI.
+ Where like, let's say you had a couple guardians.
+ And after you'd run DKG, you share around like config hashes that basically allow
+ you to link, you do it on like a separate communication channel,
+ secure communication channel like signal or something.
+ It's basically a way to link the real world identity of your guardians with
+ the configs that they generated in DKG.
+ And so one little race condition we had was that let's say,
+ you got configs from everyone else, right?
+ Like this one got the config from their peer and
+ then they just went next without sharing their config hash.
+ They would have no way to get this again.
+ And so we just did like a small change.
+ We added one step to the back end state machine that just said whether they had
+ completed this config verification step yet.
+ And so basically now you can't proceed to the next screen unless you've,
+ unless all guardians have completed the screen.
+ So it's kind of nice like it's this the screen is now like atomic.
+ You got to finish it before you can move forward and actually run consensus.
+ So it was a great change by Jotam.
+ Any comments here?
+ Nope.
+ Yeah, so yeah, now we have one thing that's, we kind of have two ways for
+ the UI to be able to communicate with, to set up a dev environment.
+ We have one using Docker and then another one you can use deviment and
+ deviment installed via Nix.
+ And so, yeah, it's a little, yeah,
+ there it's a deviment is great.
+ But when you're tagging it via Nix, like every time when you have a dependency
+ via Nix, right, like whenever that changes, you have to do a full rebuild of
+ like the FedEvent packages, gateway packages and everything which takes
+ a few minutes on a fast machine, like five minutes on a fast machine,
+ which is a little annoying.
+ One nice thing about this though is like you can,
+ like this is the best way we have now for the UI to be able to like run
+ like some work in progress code in your local FedEvent repo.
+ So you can basically just point deviment.
+ There's another way to point deviment at like your build folder of your FedEvent
+ repo locally.
+ So like if you're doing a back end change, you can do kind of a full stack
+ change this way, which is a lot harder with Docker because you'd have to have,
+ like a whole Docker build image step.
+ And that doesn't really work very well on Apple Silicon in my experience.
+ So that's just like a little state of the world.
+ We now have pretty good deviment Nix setup in the UI repo.
+ It's just FYI.
+ So this is one, it seems like basically we have a problem currently with...
+ Does anyone here have a x86 Mac that they use with FedEvent?
+ I know a few of us have M1 Macs, but yeah, it seems like basically it's broken
+ on x86 Macs right now.
+ Two different people, Oscar and this person had a problem where they just
+ couldn't get mprox to run.
+ And Manmeet has a PR that might fix it, but we haven't got any confirmation
+ there yet.
+ Let's see if anybody...
+ Go ahead.
+ - I've been given the PR...
+ - I couldn't hear you very well there, Oscar.
+ - Sorry, can you hear me?
+ - Yeah.
+ - Hello.
+ Yeah, I just said I was going to test it.
+ I didn't see that new PR.
+ I can test that new PR today.
+ Is it linked there?
+ Yeah.
+ - That'd be great.
+ - I'll grab that.
+ - What was the kind of theory behind the fix?
+ Like, is that something that we'll accidentally run into again in the future?
+ - I believe I had run into in the past, like, someone else was, like,
+ complaining on Discord, and I forgot to push this.
+ - Oh.
+ So, basically, it's basically assuming that the Bitcoin RPC is up and running.
+ - Oh, okay.
+ That's interesting that that would only fail on x86.
+ That seems like a problem that would fail anywhere.
+ - It might be a timing issue, I think.
+ - Yeah.
+ Maybe the timing only shows up for...
+ Maybe it's...
+ - Oh, yeah.
+ Maybe the M1's so fast that...
+ - That's what I'm saying.
+ But, yeah, in general, we could use a little bit better error reporting here
+ because it doesn't...
+ You know, if you look at all the tabs and debument and all the logs,
+ it's unclear why it failed.
+ So, better error reporting is something that would be nice because I think this was
+ just failing and there was no...
+ It was basically just getting swallowed.
+ If this is actually what was happening.
+ So, Oscar, it'd be great if you could test that.
+ Keep moving.
+ - So, we have this, like, debument issue.
+ And like I said, my meet's going back to school here in a couple days.
+ So, we'll need a new head of debument development.
+ So, some issues here if anybody wants to try their hand at it.
+ It's probably one of the more accessible parts of the code base and you get to sort
+ of see the big picture.
+ - Yeah, so this is one last debument one that I attempted like a week or two ago,
+ but I haven't really done any...
+ Like, what do we want to do with this?
+ I was trying to get...
+ Basically, we have this file that we just write the process ID of debument to.
+ And then, basically, when you close, like, mprox or something, it should...
+ We'd have, like, a trap command here that will basically read from that file and try
+ to kill all the processes in there.
+ This used to be more...
+ This used to have the process IDs of everything we spawned.
+ But with debument, now debument keeps track of that stuff and now we only have
+ one process ID.
+ So, in a perfect world, we wouldn't need to do this.
+ But I think we kind of still do.
+ I guess I just moved it to pkillfettiment.
+ - Yeah, I don't know.
+ There's...
+ Yeah, it would be nice to get rid of that file, but I don't know.
+ Any thoughts here?
+ - Yeah, I can try this.
+ - Okay.
+ I was going to say, I don't know the use case for why someone would do this,
+ but if you were running, like, two instances of debument, it'd be a shame
+ that shutting one down would kill your Fettiment processes everywhere.
+ - You can't run two instances, no.
+ Like, because the ports conflict, right?
+ The ports are hardcoded.
+ - Yeah, I think we should be able to do two instances.
+ I mean, ideally, like, debument would be aware of what it's doing and it would...
+ Like, it's just...
+ It's slightly error-prone if you want to do this in an external repo.
+ You got to remember to write this file and everything.
+ - Yeah.
+ I mean, you could get into a situation where you tell the Linux kernel to isolate
+ the network stack.
+ Like, we do this in CI, actually.
+ We call the isolate command.
+ And then you could have two debuments running in parallel,
+ but you don't isolate the processes, so they can still kill each other.
+ So I think it's a relevant concern.
+ Yeah.
+ It's probably not too bad to just keep it around.
+ - Yeah.
+ - Yeah, like, it's a Docker by hand, essentially.
+ - Okay.
+ Well, I mean, I'm just going to leave this up if anybody wants to try this.
+ Like, yeah.
+ Let's keep moving.
+ So, yeah, we have had a ton of CI failures, intermittent CI failures.
+ We used to have this issue where we would just write them down and we ended up
+ closing it just because with the idea...
+ Probably a bad idea to close it in hindsight because from about this date,
+ they started growing.
+ But, yeah, so just like if you start seeing intermittent CI issues that require
+ restarting CI, just, like, post a link to it here and that will help us when someone
+ goes to debug something, try to go track it down because you have a
+ little more evidence.
+ Eric, you mentioned you were doing a little work trying to hunt down some
+ of these failures.
+ - Yeah, typically the ones that I experience myself,
+ but when we begin collecting them here,
+ then I can also look into others.
+ 'Cause you kinda need a high level overview of the system,
+ and there are probably not that many people,
+ probably like DPC, you, me, yeah.
+ - Cool.
+ - So I looked a little bit last week too.
+ I suspect some of these are like timing,
+ like client related.
+ I think some of the flakiness sort of started
+ once we really had a lot of the new client stuff
+ implemented, and I think there's probably
+ just some timing assumptions that need to be fixed up
+ that would make this better.
+ Haven't tracked it on the issues though.
+ - The old client was much more serial,
+ or like everything happened in the exact order
+ that you called the subcommands,
+ but now a lot of stuff just happens in parallel
+ in the background.
+ - Right, right.
+ - So that's totally possible.
+ - Maybe if it happens in the wrong order,
+ the test will fail, but in reality,
+ it's actually not a huge deal.
+ - Maybe since you built a gateway client,
+ you could also look into some of these
+ that seem gateway related,
+ 'cause I don't have a good overview of that stuff yet.
+ - Cool, I think this is a great thing to spend time on,
+ 'cause it slows everyone down.
+ And yet, it might take like half a day
+ to track one of these down,
+ but you'll save probably more than that
+ for people waiting for CI to pass.
+ - Yeah, especially people that don't have
+ the maintainer rights, 'cause then you cannot
+ restart yourself, and you have to wait
+ for someone else to do it.
+ That's just really demoralizing.
+ So we should really fix that.
+ - Someone posted something in the general channel
+ about another test runner that,
+ where was that?
+ Yeah, like an alternative Rust test runner
+ that might be able to help to some, it's like--
+ - Your proposal to automatically try three times
+ and only if it fails every time, then reject it.
+ (laughing)
+ - Yeah, yeah, well, this is--
+ - The horrible one.
+ - Yeah, another one, this would be like retry if it fails.
+ Probably a better thing would be to retry
+ until it succeeds multiple times,
+ just to force some of these successes,
+ or force things to not be flaky.
+ Also, one of the things, we just activated
+ the merge queue, it's called,
+ just because we've had a few instances
+ where like a PR will pass CI,
+ but then other things will be merged
+ before that passes, which break the PR,
+ but that one, once it goes in,
+ so now it's like your PR has to pass CI,
+ and then once it's accepted, it'll enter the merge queue,
+ where it has to run one more time.
+ I think it's three base and runs one more time,
+ and just to make sure that it still passes.
+ And so that will be a little bit more
+ of a forcing function, 'cause things will fail
+ at that step too.
+ So it's, yeah.
+ Here's just a panic that DPC noted,
+ so don't know anything about that.
+ But good to keep track.
+ Client-NG to-do list, Eric, any updates here?
+ - Yeah, a few.
+ I think you will cover them later.
+ - Yeah, so-- - Because I don't know
+ which ones I covered.
+ (Eric laughs)
+ Yeah, I'm currently working on the clean shutdown
+ for the payment CLI, because currently,
+ you always have these errors from Tokyo
+ that we are trying to start some future,
+ or await some future, but the Tokyo runtime
+ is already shutting down.
+ And it's only a matter of shutting down the client
+ and the background executor task
+ before actually exiting the program,
+ and then this error disappears.
+ There's still some flaky test issue.
+ I kind of got distracted with that.
+ Maybe if we restarted it, it would actually work,
+ but maybe not.
+ Still working on that.
+ - Well, I figured if I actually have this one elsewhere,
+ but I just, I don't know, sorry.
+ There's this one we talked about earlier,
+ where the client now, like, the federation
+ can tell the client which default,
+ like, Bitcoin RPC server, Bitcoin server to use,
+ Bitcoin, like, lock, well, like, yeah.
+ - Which source of TX outproofs and transactions.
+ Like, to do a deposit, you need two things.
+ One is the TX outproof that's like a Merkle proof
+ of inclusion of a specific transaction in a specific block.
+ And the federation knows which blocks it accepts,
+ but it doesn't have a full copy of the blockchain,
+ because that would be wasteful.
+ Then we would be duplicating a lot of data,
+ need a lot of indexing.
+ So we rather outsource this problem to the client,
+ who has to prove in a succinct way to us
+ that his transaction that he is claiming he sent to us
+ is actually included in the blockchain.
+ And for that, the client needs, like, either Bitcoin D
+ or access to some API, like Explorer.
+ Yeah, and we can now configure a default for that
+ on the server side, 'cause, for example,
+ if we run a custom SIGNET, then we cannot use
+ any of the official Explorer APIs,
+ and would rather define our own.
+ In the future, why it's called a default,
+ in the future, the client should be able
+ to locally overwrite that, 'cause why should we dictate
+ the client where to get his blockchain data from?
+ The client might not trust the API the federation gives it,
+ and it shouldn't, 'cause it's just a single API provider,
+ and doesn't follow the same trust semantics
+ as the federation.
+ But that will be more involved, like it will probably mean
+ we have to move this conflict option into the database
+ and stuff like that.
+ So for now, having this default is kind of good enough,
+ for testing, at least.
+ - Yeah, I think, yeah, we ended up,
+ I think this is kind of inspired by,
+ just as me and Alan, or me and Douglas,
+ were trying to get the Docker composes,
+ the Docker stuff working, we had,
+ if you're on network SIGNET, we'd use the MutinyNet one,
+ which is obviously, like, kind of a hack,
+ because there are other SIGNETs in MutinyNet.
+ So that, yeah, this is much better.
+ One other one, Jordan's gotten pulled away from this one,
+ do some great work on the UI,
+ but it's, this is like moving,
+ joining federation into the client,
+ instead of something that's external.
+ Any update here, or you want any help on this, Jordan?
+ - Yeah, so the questions which we raised last week is,
+ what happens if a client goes offline,
+ after downloading this first time?
+ And, yeah, that's, I've not answered that,
+ I'm just, like, re-onboarding to this, actually,
+ I think I should be able to get back to it.
+ If anyone wants to pay a program money to finish it,
+ I'm happy to call up.
+ - Cool.
+ - Yeah, then maybe let's do that,
+ 'cause that was also one of the things
+ that is still on my to-do list,
+ and yeah, there are some subtleties,
+ I think that we should consider.
+ So, let's try that.
+ - Cool.
+ Awesome.
+ So, this was, Douglas,
+ you wanna just give an overview of this one?
+ - Yeah.
+ So I, most of the time that we have tested on,
+ using servers on data centers,
+ everything works very smoothly.
+ You can set up the federation,
+ GKG will work.
+ But when I try to mix different networks,
+ like using a home computer,
+ with a server in another continent,
+ very far away,
+ then I start to get many errors,
+ connection reset by peer,
+ and reconnections,
+ and everything will fail,
+ like it will hit this limit on the queue,
+ and you can't set up the federation,
+ it will fail.
+ So I tried to debug it,
+ because I don't think other people
+ have had this problem,
+ I, as far as I know.
+ So I tried to reproduce it,
+ like creating a very small version of FedMint
+ that only does the connection,
+ and I can't reproduce it.
+ So it's something very, very specific to FedMint,
+ it's not a library issue,
+ it's not a hardware issue,
+ it's not a network issue,
+ it's something very specific to the logic
+ of how FedMint is using the network libraries.
+ - Could it be a difference in the size of network buffers,
+ like the raw TCP buffers of the operating system?
+ Like is the host machine something weird?
+ - I tried to use the,
+ to test it, to reproduce,
+ I tried to use the same configuration
+ like as FedMint is using,
+ and I could reproduce it.
+ But I don't know.
+ - It might have to do with,
+ like the problem is if we cannot serialize
+ certain structs in one go,
+ then we might still fail.
+ I'm not entirely sure,
+ like I had a PR open for that ages ago
+ and never got merged,
+ and then we kind of abandoned it,
+ because with out of BFT,
+ this will all be better,
+ and we don't need such a complicated network stack anymore.
+ But I need to read the logs,
+ and it could be that the network buffer is too small,
+ and we're running into some issues somewhere.
+ Also, I think we should be buffering
+ on the FedMint side too.
+ Like it cannot all be just in the CCP buffer.
+ - Yeah, that's, yes.
+ These are good.
+ - Anyway, let's look into it outside this call.
+ Sorry.
+ - Cool.
+ Well, good exploration.
+ This is, yeah.
+ Doing these kind of unusual tests is valuable.
+ So if anybody sees stuff like this
+ when you're running it in a novel new environment,
+ be sure to report it.
+ - Well, and the funny thing is that
+ that will be a normal environment.
+ - Yeah, this is the intended environment, right?
+ Like we've gone from the environment
+ is our artificial CI suite,
+ to now it's like, yeah,
+ slowly getting to the real end environment.
+ - Yeah, and I think it's ideal environment,
+ because both sides of the,
+ both servers, both machines,
+ they have a very good connection, very good network.
+ It's just that they are far away.
+ Like there's a bit of a latency, but it's not a lot.
+ It's 100 milliseconds.
+ But besides that, it's a good connection.
+ It's a lot of throughput.
+ So my guess is that if you have a connection
+ that is worse than that, you have more issues.
+ So it's still ideal.
+ - I think you can actually stimulate latency
+ in the Linux kernel.
+ Like you can tell the Linux networks
+ that you put latency in.
+ - Yeah, I don't think it's because of the latency,
+ perhaps something like you said, this buffer.
+ So the frame inside, the frame that's being transmitted,
+ I don't know, it's fragmented, something like that.
+ - Okay, let's look into this another time.
+ - Yeah, so I just saw a good question.
+ Oscar was asking, when I run just mprox,
+ I assume it's not creating a fresh federation
+ from scratch every time.
+ Trying to test the PR, and I may be seeing some weirdness
+ because I left it running in a broken state.
+ So basically, could I just delete this file
+ to redo it again?
+ So basically, every time you run just mprox,
+ it should be independent.
+ It'll just create a new temp directory
+ and run it from scratch.
+ The one problem can be is that sometimes,
+ at least for me, when you kill mprox,
+ Control + A, Q, and Y, yes to exit it.
+ Sometimes, like deviment should be killed,
+ but sometimes it seems like deviment
+ will leave some things running.
+ Like so you can use just grep processes
+ to see if like fedimentd is still running,
+ see if lnd is still running.
+ Sometimes for me, it is.
+ So like I have, it's horrible,
+ but I have like, I have just like a local script
+ that I run sometimes where I'll just pkill everything
+ that might be there.
+ And like sometimes, stuff is left running
+ and this will clean it out.
+ And once none of these are running anymore,
+ mprox will work smoothly.
+ But that's one little flaw of deviment and mprox right now.
+ - We should move that into the just file.
+ 'Cause I feel like we share this a lot.
+ - Yeah, yeah, that's a good point.
+ - So yeah, that did happen to me.
+ Like BitcoinD was still running, so I killed it.
+ And then I like was gonna rerun mprox,
+ but then I started seeing these like warnings.
+ Like it seemed to start trying to catch up with the block,
+ like the block height kept going up.
+ So yeah, I just wanted to like actually run the test
+ 'cause I realized I just left deviment up
+ for like a day or two.
+ So like it's deleting that folder.
+ - Okay, like just to start from scratch again?
+ - You shouldn't need to basically.
+ Like when you start from scratch again,
+ it should just use a new temp directory
+ and this should just be cleaned up
+ by your operating system eventually.
+ Like, yeah, the problem is if the daemons
+ are still running, that's the only thing
+ that would be a problem.
+ - Right, okay, so kill them all,
+ but then also do a new Nix shell?
+ - Don't need a new Nix shell.
+ Just rerun the exit mprox and then do it, run it again.
+ Should be--
+ - By the way, why are you restarting it so often?
+ If you're only changing stuff in the client,
+ you can just recompile and then use the new client
+ if you don't change anything in the server.
+ - I was just trying to be sure 'cause,
+ you know, I was testing this PR
+ and then it just didn't start properly.
+ So I was just making sure I wasn't, you know,
+ testing a fresh PR from like a state
+ that could be just, you know, weird.
+ - Let me help you after the call.
+ Let me just hop, I can help you debug this after.
+ - Sure, thanks.
+ - Cool, so,
+ oh yeah, this is just a little weird thing I noticed.
+ If you remember, there's like the step in the UI
+ where you're supposed to pass around these like config hashes.
+ One problem is that, and that's like run by this config API.
+ One problem is like, if you're at this state
+ and you restart VetimentD, VetimentD will just notice,
+ hey, you've already succeeded with key generation, right?
+ 'Cause there are config files
+ that get stored on the file system.
+ And so VetimentD will say,
+ well, it looks like we're ready to run consensus, right?
+ Whereas the setup UI has like an explicit step in between
+ before consensus will run.
+ So if you restart your computer here, don't do this.
+ Restart VetimentD here, don't do this.
+ VetimentD will just run consensus
+ without like this verification step.
+ So it's kind of an edge case
+ where you'd have to restart VetimentD right there.
+ But I did see it, I think happened to one of us
+ when we were testing it.
+ So yeah, this is just like a kind of a corner case
+ we need to address.
+ So yeah, we'll need to like this config verification step,
+ we'll need to have some,
+ we'll need to be stored somehow
+ that's not just like in memory in the config API,
+ which is how it works currently.
+ There's a state machine in the config API
+ that's just purely in memory.
+ And that's not quite enough for this case.
+ Okay.
+ Yeah, and so one other thing we talked about
+ was like we have this state in the config API
+ for when you're for distributed key generation.
+ Basically we have, we would like to split this up
+ into like basically,
+ so we have a command run DKG,
+ which will, I think it will just, it'll block.
+ And we'd like to split it up into two states.
+ One will run it in the background.
+ And then another one is it'll transition to a new state
+ when it's exceeded.
+ So just be able to basically run DKG in the background
+ instead of blocking would be a nice improvement
+ because basically there's a,
+ like this network request could time out
+ or if it's running and blocking
+ and you restart the browser, it'll get confused.
+ So yeah, a little config API improvement.
+ And yeah, so what, so this was actually,
+ we can probably, should we talk about this one?
+ Yeah, we're, there's an issue.
+ I was just going through some old issues
+ and trying to see if what we could clean up.
+ So we have this idea
+ that we should parallelize rejoin consensus.
+ I'm just wondering if this is relevant with ALF BFT.
+ - Wasn't it only about the tests?
+ Like DPC answered I think that it's about parallelizing
+ the checking the rejoining in the tests
+ and that might still make sense.
+ - Okay, okay, well it's low priority.
+ So I think we'll keep, it sounds like we'll keep it,
+ but it's kind of low priority.
+ - I think we even have priority attacks in GitHub.
+ We just never used them.
+ - Well, we are actually already reusing it here.
+ - Oh, it's a copy.
+ Oh, wow, wow, it's amazing.
+ - Look at this, yeah, look at that.
+ - Wow, okay, okay, how long ago?
+ Last time, it wasn't there, okay.
+ - I didn't do it just now.
+ Okay, so a few other parallelization,
+ I think another like really old issue
+ that, I mean, we only have,
+ do we want to talk about this, Eric?
+ - Yeah, it gets a little bit into the weeds.
+ For now, like what I discussed with Joshy-san
+ is that we will regress in a way
+ when migrating to LFP.
+ Like we don't really need this parallelization
+ to support like the current federation sizes
+ that we're dealing with,
+ especially since we migrated from like base 10 e-cash nodes
+ to base two e-cash nodes,
+ which means we have to issue way fewer e-cash nodes.
+ But eventually, we will pursue this goal
+ of parallelizing all these steps again
+ so we can use all the cores available to us.
+ But for now, we just don't want
+ to incur the complexity cost.
+ - Good enough for me.
+ So I know this is fun to discuss.
+ - Probably, yeah, we should probably test
+ what latency does, but I think it will not
+ be changed significantly.
+ - Okay.
+ Cool.
+ So, yeah, this was one I just noticed last night.
+ I thought it was a problem in the gateway,
+ but I think it's actually just a problem.
+ Basically, I was trying to pay a one millisat invoice.
+ The root problem was that, like,
+ when I had C Lightning generate a one millisat invoice,
+ LND couldn't pay it, and the problem was that
+ basically, like, the gateway doesn't give us
+ much useful information here.
+ It just says, like, 500 error,
+ and the logs are just a big backtrace
+ that just has a bunch of closures.
+ So this is one where we could,
+ it would be nice to just propagate the error up
+ a little bit, but I don't think there's anything
+ fundamentally wrong.
+ The problem was that, at least how we configure
+ LND and CLN, their channel couldn't, like,
+ pay a one millisat invoice for some reason.
+ So there's kind of two.
+ - I've seen an error before as well,
+ setting up a Fetiment and trying to pay sub one sat.
+ - Yeah, I think I also have an issue about this,
+ but I didn't have all that good logging, so.
+ - The error here was just a fail to find a route.
+ LND failed to find a route, and we definitely should
+ at least make the gateway logs better here.
+ I put in my message here, we could return the error back,
+ message back to the client, and thinking about that
+ a little more, I'm wondering if we should do that or not,
+ since, like, that might be somewhat of a privacy leak.
+ Like, you could, if you could, like, get the gateway
+ to, say, like, send an error message back to you,
+ you could maybe, like, deduce its balance somehow.
+ - Yeah, and that's not, it's not necessarily
+ the Federation's gateway, right?
+ Like, it's somebody, it's a user of the Federation's gateway.
+ I would not service that error.
+ Or just errors in general.
+ I'll be very specific about what errors we're servicing.
+ - Yeah, I mean, I think it might make sense
+ to be vague about it, but I think that returning
+ a 500 error, like, from the standpoint of trying
+ to build a client that is talking to the gateway
+ is maybe, like, too opaque, 'cause it's not clear, like,
+ should I try that again?
+ Like, some kind of error that's basically, like,
+ I'm not gonna, I'm not gonna be able to pay that,
+ and you shouldn't try again, to distinguish
+ between, like, some kind of intermittent failure.
+ - I mean, just, like, a failed to pay invoice,
+ like, the Lightning Node failed to pay invoice
+ would be nice.
+ Like, 'cause here, I don't know, like,
+ what's, you know, 500 errors could be caused
+ by all kinds of things, so if I could just say, like,
+ what it was doing, what operation failed,
+ that would be an improvement.
+ - Yeah, I mean, the message should be in the gateway log,
+ so, and it's not right now, so that's definitely--
+ - Yeah, that's the other good point, yeah.
+ At least the gateway log should have it.
+ My fancily formatted thing.
+ Right, okay.
+ Yeah, so this is-- - Yeah, it's the same issue.
+ - Yeah, okay, this is the same issue, okay, interesting.
+ - If you wanna close it as a duplicate, that's fine.
+ - Let me just look at these later.
+ I didn't realize they were the same issue.
+ Okay, got 15 minutes, so I'm gonna go fast a little bit.
+ So I just made an issue, the one thing we're gonna see,
+ like, it would be just kinda nice for the gateway
+ is to have, like, when you're withdrawing
+ from the federation, the, not, yeah,
+ it would just be nice to have an option to sweep,
+ like, just sweep out everything,
+ we don't have to guess what fee you're gonna be paying,
+ or do mental math like that, so it's kind of a little bit
+ of a low priority, but that would be really nice to have,
+ just from a UX point of view on running a gateway.
+ - Yeah, I think in general, the client being able
+ to send all this money somewhere would be good,
+ like, for both Lightning and On-Chain.
+ But it will require, like, some change to the client.
+ Yeah, maybe we can introduce our own amount,
+ which is either all or, like, a specific amount.
+ - Yeah.
+ - And that is given through the functions
+ dealing with loans.
+ - Okay, so this was another kind of a necro post
+ as I was looking through old issues.
+ We were at one time concerned about the multi-path payments,
+ like, our not explicitly handling multi-path payments
+ was causing, I think we were concerned
+ it was causing channel closures, right, Eric?
+ - Yes, like, we weren't sure why a lot of channels
+ were forced closed when we were running the gateway.
+ And, like, in retrospect, it was probably only related
+ to the gateway crashing all the time
+ and not resolving HTLCs that were in flight.
+ But we were suspecting that that might have been caused
+ by, like, multiple HTLCs arriving for the same payment
+ or something like that.
+ But it turns out that apparently multi-path payments
+ are only attempted if it's specified in the invoice,
+ which we don't.
+ So, it's probably not the case.
+ - Not much of a problem,
+ but then there was one kind of question.
+ What does it actually mean to disable MPP on our invoices?
+ Basically, does that disable it along the whole path?
+ Like, how much are we paying here,
+ like, in reduced ability to be routed to
+ if, like, MPP couldn't happen between us?
+ Like, I don't know if it,
+ can it happen in intermediate hops or not?
+ So that's just kind of a question.
+ But yeah, this is a lot lower.
+ Like, if, yeah, we could almost,
+ I mean, I think we'll leave this issue open
+ 'cause it could be a small improvement
+ if we could combine different HTLCs in the gateway itself,
+ but that also sounds like quite a lot of work.
+ And we'd have to do it twice, I think,
+ you know, for CLN and LND.
+ I don't even know if LND can, can LND do MPP?
+ Or is that just a CLN thing?
+ I forget. - Yes, yes, can do.
+ - Okay, but yeah, so we'll leave this open,
+ but it's pretty low priority.
+ Let's just say that, we'll start using that.
+ Cool.
+ Yes, there's another one.
+ We wanted a core lightning Docker image for the gateway,
+ but it's a little, basically, like,
+ with core lightning, right, you just have to,
+ you just have to have one binary that it can run,
+ and it has to be in a location that gateway,
+ LightningD knows about.
+ And so I would prefer that we don't maintain any Docker
+ or core lightning Docker image.
+ It would be nice if we had,
+ if we could find one core lightning Docker image
+ that was relatively easy to run
+ core lightning gateway on,
+ just if there was a way to basically
+ inject this binary into it, that would work in some way.
+ I guess this is sort of dependent on
+ publishing the binaries a little bit better,
+ but that's something to look into,
+ just like what, how to run, how to run core lightning,
+ how to run gateway, a gateway
+ via core lightning and Docker.
+ We had a way to do that, we could close this issue.
+ - To be clear, this is,
+ it's because the gateway is a plugin for core lightning,
+ right, so like, that's the binary
+ that needs to sit alongside it.
+ - Yeah, and it would be like,
+ basically, like if we published one,
+ naively, you'd only be able to run R1 plugin,
+ and sort of the whole point of core lightning plugins
+ is you could run a few of them.
+ So I don't even know, it wouldn't really be valuable
+ if we just had a custom one that could,
+ just kind of hard coded in R1 thing.
+ - Gotcha, thanks.
+ - Cool.
+ What was this one?
+ Yeah, I'm just gonna,
+ we have a little work to do with how we manage
+ like the actual passwords in the,
+ I think they're mostly environment variables now,
+ and now that they're settable via UIs,
+ like we can't just always have them be environment variables.
+ So we got a couple issues for that.
+ This one's for the gateway,
+ and this one's for FetimentD.
+ - There's a related GitHub discussion as well
+ for the password stuff.
+ - Say that again?
+ - I believe there's a GitHub discussion
+ that relates to passwords in Fetiment.
+ - Good point.
+ I'll pull this out and try to find that.
+ Thanks.
+ So this is one that's been open for a while,
+ and Mr. Kulga was asking whether this is still needed,
+ 'cause we now have gateway CLI info
+ will show the balances for each federation.
+ So the motivation here was basically gateway CLI,
+ you could get the balance of some federation in one command,
+ and now that's possible
+ just by digging through the output here.
+ So the question was whether we still even want this.
+ Thoughts here?
+ Leonardo here?
+ Can't hear you Leonardo if you're talking.
+ Justin, thoughts here?
+ - I think we can probably close this.
+ - It's still useful?
+ - Well, it's just there.
+ - Oh, right.
+ - Oh, sorry.
+ - Oh, sorry.
+ - Yeah, you're a connection.
+ You're a try again, I think I can hear you now.
+ - Okay, so I was talking that I think it's still useful
+ because we can filter for a single federation,
+ and also the balance command that we have,
+ it still calls the fetch all nodes, right?
+ I don't think that we would need that.
+ - Oh, so you're saying you have a optional parameter
+ to info to just filter on that federation?
+ - Yeah, for a single federation ID.
+ - Yeah, we can do that.
+ - Yeah, I mean, the tricky thing is to actually get
+ that federation ID, you're usually gonna run info
+ the first time to get the ID,
+ unless you have it somewhere else.
+ So yeah, I also not sure how useful it actually be.
+ So yeah, I mean, I'd be fine closing this,
+ Leonardo's pretty focused on Tor right now.
+ So trying to get to Tor clients.
+ If you wanna just focus on that and close this one,
+ I think that'd be fine.
+ 'Cause like also with the UI,
+ we're gonna be not using this need the CLI
+ quite so much anymore.
+ So if you wanna close it, go ahead.
+ But if you wanna continue it,
+ do you think it's worth to do that?
+ Cool, seven minutes left if it's a race.
+ Yeah, so this is one, we'll just skip that one.
+ I've been talking to Mr. Cool Guy about this one.
+ There's a couple of just really old lightning ones.
+ So just make it so if you have a lightning node
+ with 50 channels, you don't put 50 routings in the invoice.
+ That would actually happen right now in master.
+ So yeah, small change to not do that.
+ And then back in the ancient history,
+ our core lightning plugin pre-GatewayD,
+ it was very bad at setting a log level.
+ And so this is just like, is that still a problem?
+ I think Justin's gonna look into those too.
+ And so here's an interesting one,
+ serialize e-cash with federation ID.
+ Eric, you wanna describe this one?
+ - Yeah, so the problem is when you get raw e-cash,
+ then you cannot really tell
+ if it actually belongs to your federation or not.
+ But if you try to spend it in your federation
+ and it doesn't, then it will just appear
+ as if you tried to expand invalid e-cash
+ because it is invalid for your federation.
+ But that doesn't make you any wiser
+ that you might be able to spend it in another federation.
+ So if we included at least the federation ID
+ in say serialized e-cash,
+ then your client could display an error message
+ that you just received e-cash
+ that doesn't belong to your federation.
+ And if we also included the URL
+ of at least one of the APIs
+ of that federation it belongs to,
+ then it could even offer you
+ to join a different federation.
+ Also, we should consider it carefully
+ because in that moment,
+ you don't really know what federation you're joining there
+ 'cause you might not have a connection to them.
+ So yeah, but at least we should be able
+ to have better error messages
+ if we include the federation ID.
+ - This might be out of scope for this,
+ but something that would be nice to consider
+ is like a BIP21 sort of URI for these
+ because also like even if we do encode it with that in it,
+ it can be kind of difficult to recognize
+ if you're writing a client,
+ like that something is e-cash.
+ - Yeah, if it's a joint code e-cash or whatever, right?
+ - Right, right, oh yeah.
+ It's a combination too.
+ That's even worse.
+ And then that would also let us like expand
+ arbitrary metadata with like query parameters,
+ kind of like how BIP21 you can add
+ like lightning invoices and stuff.
+ - Yeah, I think we should add like a discussion about that
+ because there are some considerations
+ like if we just have like one URL prefix
+ which might be fediment colon slash slash
+ and then we just encode using for example,
+ bash 32 which already has a human readable part
+ where you can code the type of information you're supplying.
+ Like it could be a different prefix
+ for like a joint code or e-cash.
+ - Yeah, yeah, I mean we already do that
+ with the joint code, right?
+ - Yeah.
+ - Okay, I'm gonna keep moving so I don't go over.
+ So this was just like an issue
+ that Douglas noticed previously,
+ a error saying that like an e-cash note
+ was replaced in the database.
+ And I just ask if it's still a problem.
+ It was just a corner case.
+ It only happened on that one branch.
+ So I don't know, keep a lookout for that.
+ If we don't see it, maybe we could close this issue
+ 'cause that was a couple of months ago.
+ But yeah, I don't know.
+ Any thoughts there?
+ - Spooky.
+ - Yeah, let's leave it open
+ just 'cause it's pretty concerning
+ if it did happen again.
+ Another one is just it'd be good to have,
+ basically moving to the new client,
+ I think that e-cash recovery and recovery in general
+ got a little slower 'cause we lost some,
+ I think the old version was a little more multi-threaded.
+ I think it had like eight workers
+ and it was just a little faster.
+ So it'd be nice to have a benchmark
+ where we could just like measure improvements.
+ If we try to speed it up,
+ see if it actually got much faster.
+ That would be nice to have.
+ This one just allowing our Bitcoin,
+ when we're creating a Bitcoin D client,
+ currently we use username and password,
+ but there's this idea of a cookie file.
+ And it looks like this PR just adds that as an option.
+ So it looks done, it's approved.
+ But, and we already looked at that one.
+ You wanna?
+ Okay, it looks like this project has a little more.
+ Anything you wanna say here, Eric?
+ - I think it's happened.
+ I think it's actually.
+ Oh yeah, I think it actually has
+ quite a nice solution for that too.
+ Maybe when I wrote that comment, I wasn't aware of it.
+ I should look into that and maybe close the issue.
+ DPC isn't here, right?
+ Yeah, he's traveling.
+ - Yeah, I'm just gonna comment.
+ It might be closeable.
+ - Yeah, yeah, then I will revisit it.
+ - Cool, and that is it for me.
+ One minute to spare.
+ Cody said he had something else.
+ Cody, you wanna talk about it?
+ You there, Cody?
+ Can't hear you.
+ Cody sent this link in the chat.
+ It looks like a Nostra-based vending machine.
+ And can't hear Cody, so.
+ - Vending machine as in like sending micro payments to,
+ like AI, you can't put AI behind an API that's free
+ because AI costs real word compute.
+ Like if you're just hitting a database, it's so cheap
+ that a lot of APIs are free.
+ But I think what this is getting at
+ is the data vending machine
+ is you attach an e-cash token or whatever to the API request
+ and then now you're getting paid
+ and your API is in the black like from day one
+ because you can cover all of your overhead costs
+ by putting a payment in front of it.
+ It makes HTTP 402 very, very relevant,
+ even though it's started.
+ - Sorry, can you guys hear me now?
+ - Yeah.
+ - Okay, hey, yeah, so I just wanted to add this.
+ So I've been kind of out of pocket Fetimid side
+ focusing on this like hackathon
+ that we've been running through Fetty.
+ And I've been looking for ways
+ to get more like Fetimid side involved,
+ but I didn't really see one until,
+ if you guys have the chance,
+ watch the stream that I did with Pablo
+ who does a lot of Nostra stuff on the data vending machines
+ is that basically what you do is you connect
+ to a Nostra relay and you subscribe to jobs.
+ And they're just like requesting that you do some service
+ or like, you know, they're requesting that you do like,
+ hey, summarize this for me using an AI model
+ or transcribe this for me
+ or run this calculation for me or whatever.
+ And for this one,
+ if anybody was looking for a Fetimid module
+ that you'd want to like submit for a hackathon,
+ like I think this would be a really cool one
+ of just have the federation run
+ one of these data vending machine services
+ where all it's doing is it's just subscribing
+ to a Nostra relay, listening for kind 68001s.
+ And when it gets those, then it can,
+ then it says like, hey, if you pay me,
+ I will run this for you.
+ And so I think like something that we've been kind of
+ looking for for a while is a way for federations
+ to host services on behalf of their community and like offer.
+ - We lost you, Cody.
+ Did anybody else lose them?
+ - Yes, she's gone.
+ - Okay, Cody, thanks for sharing.
+ It's in the chat logs here.
+ So if you are curious looking into it,
+ yeah, I agree that'd be a fun module to build,
+ but we're over time
+ and I don't want to keep you too much longer.
+ So I think I'll drop, but if anybody,
+ so last week we did a little federation setup.
+ If anybody's interested,
+ we can try to just do like a speed run of that right now.
+ Again, it'd just be kind of nice to try it again.
+ If anybody wants to try it,
+ I'd be down to give it a hack.
+ So yeah, let's close the call here,
+ but if anybody wants to stick around.

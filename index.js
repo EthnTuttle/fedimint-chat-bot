@@ -33,14 +33,14 @@ await client.init({
 
 // let docs = await loader.load();
 
-// const question = "how do you use lightning gateways to turn your federation into a decentralized liquidity provider";
-// const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-// console.log(answer);
 
 // (async () => {
-//     await updatePinecone(client, indexName, docs);
-// })();
-
+    //     await updatePinecone(client, indexName, docs);
+    // })();
+    
+    // const question = "how do you use lightning gateways to turn your federation into a decentralized liquidity provider";
+    // const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+    // console.log(answer);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.post('/', async (req, res) => {

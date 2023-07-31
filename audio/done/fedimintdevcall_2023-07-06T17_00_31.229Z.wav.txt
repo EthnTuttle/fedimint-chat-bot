@@ -1,0 +1,647 @@
+ Thanks. Okay, so what I would want to do today, since I think it does not make sense in this hour to go into the technical details on LFBFT or HPBFT,
+ instead I will focus on how those algorithms differ and how we perform the switch
+ and how our new custom atomic broadcast direction that is going to wrap LFBFT looks like
+ and how we can build a filament system on top of it as a replicated state machine on top of an atomic broadcast.
+ Okay, so maybe just to give like a very high level overview of what an atomic broadcast does.
+ So the task of an atomic broadcast is to order a number of items so that every peer is going to see the exact same items in the exact same order
+ and if we have done so we can easily, I mean at least conceptually, easily build a replicated systems on those ordered items
+ where the system has a state and every item is a state transition and hence we have a state machine which is running on top of the broadcast.
+ Yeah, and the problem of the old algorithm HPBFT was, which the problem that initially motivated the switch was latency
+ and because HPBFT was not designed with latency in mind, latency meaning the speed at which an item that is submitted is ordered
+ which is critical to us because this also is a lower limit for the time that a single eCash transaction or lightning transaction takes to complete.
+ And the old algorithm HPBFT, it had a lot of issues, it did, yeah, Ethan, please.
+ I just want to, I guess, clarify some context. So atomic broadcast is a proposed replacement for the current consensus algorithm, is that, am I correct in understanding what you're saying?
+ No, sorry, LFBFT is called, is the replacement, atomic broadcast is just a name for a general class of algorithms which take items and order them.
+ Thank you.
+ Okay.
+ Is it only about the ordering part?
+ Yeah, I mean they also distribute the items among peers.
+ Okay.
+ So it is about like making data available and then ordering the data.
+ Make sense?
+ Okay, great.
+ Yeah, so HPBFT and LFBFT are both different approaches to constructing an atomic broadcast.
+ And yeah, the HPBFT had latency issues with higher numbers of peers and higher number of transactions and offline peers and generally bad network conditions, dropped messages, so forth.
+ And this was the like original reason which motivated the switch.
+ Furthermore, there, like when we started to, when we started to dig deeper into how another algorithm could be applied to fitament,
+ it turned out that there are a bunch of other, you know, lingering issues which can be solved now by switching to LFBFT.
+ Some of which were problems inherent to HPBFT just besides the latency.
+ So, it assumes a reliable network layer, which means that all messages sent between peers are going to be delivered eventually and they're going to be delivered in order.
+ So we have a network layer which needs to buffer them.
+ But at some point, obviously that buffer cannot grow indefinitely if it peers offline for a prolonged period of time.
+ And therefore, then messages have to be dropped. So this assumption is violated and then it becomes a question of, okay, how well can the system then tolerate this problem?
+ Because the algorithm itself cannot handle it and then we have to do it.
+ And it introduced a bunch of complexity in fitament when built on top of HPBFT.
+ So this is, for example, not going to be a problem with LFBFT anymore because LFBFT does not assume a reliable network layer at all.
+ So we just try to send a message and if we cannot deliver the message, we just discard it and the algorithm itself is going to handle all retry logic, etc. internally.
+ And it's also not necessary to deliver messages in order.
+ So this is just going to be a lot simpler and a lot more reliable.
+ And we will not need the reliable network layer anymore when we have completed the switch.
+ Okay, but the problems in the switch where, so I mean, at least though in theory, the algorithms solve the same problems of ordering items.
+ In practice, they do so very differently and what has caused a lot of problems was that fitament as it is implemented right now depends on a lot of implementation details
+ and also workings of HPBFT which are not part of being an atomic broadcast which just happened to be like this in this particular implementation of an atomic broadcast.
+ So we have to make substantial changes to the system in order to facilitate the switch.
+ The most important of which is, or the most important difference between the algorithms which also caused the most amount of work was the concept of epochs.
+ So the way HPBFT works, every few seconds or so it creates a batch of items which is seen by all peers.
+ And then the items within this batch can be ordered deterministically and can be processed at once.
+ So the fitament system at this point in time does not process one item at a time.
+ However, it processes batches of items which are called epochs one by one and uses this also as,
+ and there was an assumption in the system that one epoch is completely processed before the system makes,
+ proposes contributions for the next epoch. And so there's like a synchronicity assumption, I will call it, in there on which the fitament consensus built on top of it depended.
+ So this had to be removed because LFBFT, it returns single items and therefore we had to rewrite parts of the system to work on single items and not on batches of items anymore.
+ And we also cannot assume that a peer has seen an item, has processed an item, before the peer makes a proposal for the next item.
+ So there might be like an arbitrary distance between the ordered and processed items and proposals for like new items to be ordered.
+ So this has been like a lot of work over the last four or five weeks, has gone into this, changing the system in order to work on single items.
+ So, yeah, this, as you can already see, it's not really trivial, it's more like a multi-step effort.
+ There's this, oh, I should share my screen for this. There's this tracking issue here, can you all see it?
+ There's this tracking issue here, which also lists the steps we have to take to facilitate the switch and also shows the way how we proceed.
+ So the first step was, oh yeah, thanks for linking it.
+ The first step was creating an initial atomic broadcast abstraction.
+ As I said, we want to wrap, we don't use LFBFT directly because it misses a lot of functionality we need, but we implement a custom, like a new crate, which is a custom atomic broadcast abstraction, which entirely wraps LFBFT and abstracts this away towards the rest of Fetiment.
+ And yeah, this was merged a couple weeks ago.
+ You can see it here, there's more information on the design and the motivation.
+ If I would encourage anybody interested in this topic, I would encourage to read this pull request.
+ Then the next steps were removing the concept of epochs and dropping of peers, which was a related concept, from the modules.
+ So as I said, we need to remove the concept of epochs and we're going to do so, we're going to split this in like several peers and we're going to work ourselves up from the bottom to the top.
+ So we first remove the concept of epochs from the modules.
+ Then we can actually remove the concept of epochs from the server module traits, which defines how a module processes the items.
+ And we're going to switch to single item, like processing single items in the module trait.
+ I'm just waiting for this fourth peer to be merged and then there's going to be a follow-up peer, which does all of this.
+ And then also rewrites the Fetiment consensus state machine, which defines how we derive our system state from the ordering of items.
+ There's going to be a peer which also removes the concept of epochs from this.
+ So as I said, we go from the bottom up. We do it first from the modules, then the Fetiment consensus structs or state machine.
+ Obviously, it depends on the modules, so we remove it from the modules and we can remove it from Fetiment consensus.
+ This is going to be a peer that you should see coming up shortly.
+ And then in the final peer, we can actually remove HPBFT and then swap in our new custom atomic broadcast abstraction instead.
+ And then switch over the entire system to work on single items.
+ This is going to simplify a ton of codes or just we can remove a ton of codes in the network layer.
+ As I said, it does not assume a reliable network anymore.
+ And also the Fetiment server implementation is going to be a lot easier.
+ This is pretty much the outline of how we're going to do this in practice.
+ The next thing I would dive into is the design of the atomic broadcast abstractions and the concepts of session and signed blocks and so forth.
+ But before I start with this, are there any questions on where we are at with the project?
+ I see.
+ Yes, I have one question.
+ Yeah.
+ Today we use the concept of a box for many things, but there is one usage that's to figure out if there is some problem with some peer.
+ We know if a peer is behind the epoch, so probably there is a problem, should alert, should generate some warning or like there is monitoring for this.
+ But now without a box, I think what we could use to know if there is a problem with a peer, how to, because everything is very asynchronous.
+ But I think there should be some way to say tell that if a peer is, I don't know, is having big network problems or is very slow.
+ I don't know. Something like that.
+ Yeah, I mean you would notice in the ordered stream, you would notice that the peer is not submitting any items anymore.
+ So if the peer is very slow or obviously if it is offline, it will not submit any items to the consensus.
+ So we could do something very simple where we say, okay, if a peer has not submitted an item in like 15 minutes or so or an hour, we just, we can do a warning and we can show it in the admin panel and so forth.
+ As you can see, where we maybe had epochs before
+ and could say, okay, we do it like if he hasn't submitted it
+ like after like three epochs or so,
+ we now have to use absolute time
+ because yeah, we don't have this like synchronicity anymore
+ we can use to keep track for this.
+ - Could we generate some like a some number
+ or some timestamp that forces like the peers
+ to generate something like, ah, every minute
+ you need to tell your time or your what time is it?
+ Just to be sure everyone is trying to generate something
+ for, I don't know.
+ - Yeah, yeah, we could.
+ So we could do like a timestamping
+ and submit it to the broadcast once a minute.
+ And then when, for example, the last timestamping
+ is like that we have seen in the broadcast
+ is older than like 15 minutes or so,
+ we can say, okay, there's an issue with the peer.
+ - You say 15 minutes, this is some standard
+ - No, this is some random number.
+ I just came up with an example.
+ Depending on what you're trying to achieve,
+ it might be a day.
+ - Generally, you would like to know
+ if there is some problem as soon as possible.
+ So yeah, like few minutes, not many minutes.
+ - I mean, the question then is like,
+ a peer might be offline for a couple of minutes
+ without being a serious issue.
+ Like the wifi might just go down.
+ Like people might run this at home
+ and I have my wifi fail me like a couple of times a day.
+ So would you wanna put up a warning if there's?
+ - I think this should be configurable.
+ Like for some federations is okay.
+ If a federation is running across the world
+ in very unreliable networks,
+ then it's okay to be offline for many minutes.
+ But in some other federations,
+ I think if this happens for one minute,
+ minute is a reason to alert
+ because the operators would like to know that this happened.
+ - Yeah, I agree.
+ But this is not really a question of the broadcast
+ on this could be something like this could be realized
+ independent of choice of broadcast.
+ - Yes.
+ - Okay, there's another question by DPC in the chat.
+ Should we expect to receive the same message
+ from our peers at all times?
+ And missing ones must have issues.
+ Okay, I find this a little bit confusing.
+ DPC, could you elaborate?
+ - Nevermind, we should probably create a GitHub issue
+ and kind of discuss.
+ - Okay, okay, yes.
+ Okay, yeah, then I would now go to the API design
+ or any more questions.
+ Okay, great.
+ Let me see.
+ (keyboard clacking)
+ Okay, so this now is the documentation
+ of the atomic broadcast crate.
+ Not exactly as it is right now in the Federman repo, though.
+ This is an updated version,
+ which exposes a little different API,
+ and yeah, which should be merged soon.
+ But I just did it today,
+ so didn't have time to merge it before this.
+ Okay, the way,
+ maybe some, okay, so maybe we go here first.
+ So as you would expect, you have an atomic broadcast struct
+ which has a constructor,
+ which takes a keychain and a database,
+ and some connections for incoming and outgoing messages
+ and a way to submit items to the broadcast
+ in form of receivers and senders.
+ Internally, all of this is realized
+ as a message-passing architecture,
+ so it makes, and it is fully multiplexed,
+ so it makes sense to feed in
+ and give out those messages via independent channels.
+ The keychain is used to sign messages internally,
+ and the database, like sign messages sent between peers,
+ and the database is used to do a backup,
+ so in case of a crash, we can recover,
+ and it's also gonna store,
+ it's gonna store our backup,
+ we're gonna backup the history
+ of the federations,
+ the federation in the form of blocks,
+ which are very similar to Bitcoin blocks.
+ Yeah, so while HPBFT had a concept
+ of epochs, which are only a couple of seconds,
+ LFBFT has the concept of sessions,
+ which are much longer, so a session is five minutes,
+ and it is very different to an epoch,
+ while an epoch had to be finished
+ in order to know which items exactly are in it,
+ so that Finiman could start processing those items.
+ A session does obviously not have to be finished
+ to start processing items,
+ because five minutes would be way too long,
+ so how it works is we still, just like epochs,
+ we run one session after the other,
+ like we did run epoch after the other,
+ however, though this is an async function here,
+ run session is an async function,
+ it returns immediately, so it just,
+ it needs to be async because it does a load
+ from the database, but otherwise it returns immediately,
+ and it's gonna return a receiver,
+ and we can use this receiver to obtain ordered items,
+ which look like this, and the ordered item
+ is the serialized item itself in form of a vector,
+ like a bifector, the index, which,
+ with which this item has been ordered in the session,
+ and finally, like the PR ID from the peer,
+ which has submitted,
+ which has submitted this item to the broadcast.
+ So those are the ordered items here,
+ actually the ones that are gonna be fed
+ into the Fediming consensus state machine
+ that is built on top, so each of those items
+ does cause a state transition if it is valid,
+ and it does not cause a state transition
+ if it is not valid, and so we run a session,
+ we, so we use this method here to run a session,
+ then we use the receiver to immediately obtain items
+ while the session is running,
+ we apply those items to our system state,
+ and when the session completes,
+ which is currently after five minutes,
+ so every five minutes the session completes,
+ then we're gonna take all the items
+ which have been ordered in this session
+ and gonna put them in a block,
+ and this block is gonna be signed,
+ and then the signed block is gonna be put on disk.
+ So we write the history of the broadcast
+ in the form of signed blocks to our database.
+ Any questions so far?
+ Oh great, I'll take this.
+ Um.
+ - Okay. - I have another question.
+ - Yeah.
+ - These five minutes is just, it could change,
+ like it could be more, it could be less.
+ - Yeah, yeah, but it is probably at least five minutes
+ and something between like five and maybe 30,
+ but probably it's gonna be five for a while.
+ - Yeah.
+ - It really, it does not matter too much.
+ Yeah.
+ - Okay.
+ - Can you go back and look at the ordered item
+ in the documentation?
+ - Here, it is here.
+ - What is the item?
+ There's a vector of--
+ - It's a, yeah.
+ So it's a serialized consensus item.
+ So the broadcast itself--
+ - That just bytes.
+ - Yeah, just bytes.
+ Yeah.
+ - Is that like a Bitcoin transaction?
+ How do we, I'm just trying to understand
+ how do we process that?
+ Like what does that mean?
+ - It is, so an item could be a transaction.
+ I mean, Federment has the concept of transaction too,
+ which are in a way similar to Bitcoin.
+ So it could be a serialized,
+ importantly serialized transaction.
+ However, there are other consensus items
+ which are emitted by the modules themselves.
+ So for example, like signature shares
+ which are collected that are later then combined
+ to like an e-cash note and something like this.
+ So the broadcast really is totally indifferent
+ to what it orders.
+ It just orders byte streams.
+ And yeah, this is just,
+ it made sense to separate it
+ because the broker is really,
+ or yeah, does not care.
+ And so, however, he does care how big an item is.
+ So when it is serialized,
+ so it just makes sense to work on serialized items directly
+ instead of consensus items.
+ - Okay.
+ Any more questions?
+ - Are there anything that might be known obvious
+ about the index and peer ID in ordered item?
+ For example, I don't know,
+ they're always the same for all the peers at all times
+ and there is no holes in them.
+ And I don't know what else would be.
+ - So the ordered items are totally identical for everybody.
+ - And they're always like increasing by one.
+ - I'm sorry, always?
+ - They're always increasing by one, no holes.
+ - Yeah, that is the next topic I'm gonna talk about.
+ There are holes.
+ So the index is gonna be strictly increasing,
+ but there are holes and where they come from
+ is the next topic.
+ And it is probably the most complicated thing
+ we're gonna talk about today.
+ - Okay, it would be good to have it here
+ in the documentation, but yeah, let's just go ahead.
+ - Yeah, it is in the documentation, but yeah.
+ So far, everything clear.
+ (mouse clicking)
+ Okay, sounds good.
+ So, okay, maybe we take a step back.
+ So as I said, we're gonna write all ordered items,
+ or we're gonna write the history
+ of accepted transactions on risk.
+ And the problem, if we were to order,
+ like if we were to write all ordered items on disk,
+ the entire history of the broadcast,
+ that would be a huge issue.
+ This is actually as it is right now.
+ And that is a huge issue because if an item is invalid,
+ so for example, invalid transaction
+ would have to be put on disk
+ and would have to be maintained on disk
+ for the entire lifetime of the federation,
+ at least how the system works right now.
+ So this creates a huge DOS vector
+ where a client can just submit conflicting transactions.
+ So like a double spend of an e-cash note, for example.
+ And we would order all those conflicting transactions.
+ And then we would have to keep all of them on disk forever.
+ So a malicious client, not just a malicious peer,
+ but a malicious client could critically exhaust
+ or disk space if it tried by submitting
+ not double spends, but n spends.
+ So an n spend would be not spending
+ the same e-cash note twice, but spending it n times
+ where n is the number of peers.
+ So I would create n conflicting transactions
+ which all spend the same e-cash note.
+ I would send one of those transactions to every peer.
+ Every peer would check it.
+ For them, it would be valid.
+ So they would submit it and they have no ability to tell
+ that the other ones have received conflicting transaction.
+ So they all have to, they submit it to the broadcast.
+ All of them get order.
+ And only the first one to be ordered is valid.
+ So only the first one to be ordered actually,
+ and this critically pays fees.
+ So we have to store a bunch of invalid transactions on disk
+ for which never, for which we cannot take any fees
+ because they are invalid.
+ So the guardians cannot collect any fees,
+ which means we cannot really price in the use of,
+ the use of disk space in those transactions.
+ And this is a huge problem because this space is our,
+ like one of our most critical resources,
+ if not the most critical as a system while it runs,
+ just consumes it.
+ And yeah, if clients, and also if the attack
+ from the client stops, it's not like the damage is,
+ it's not a problem anymore because we have to maintain it
+ on disk forever.
+ So this is even bigger of a problem
+ than a regular DOS attack, where at least when the attack
+ stops, your system works again.
+ Now you have maybe a couple of hundred gigabytes
+ of like invalid transaction data on your disk.
+ And the only way to get rid of it is like right now,
+ it's just works just to like entirely close your federation.
+ You have to open up a new one and move over all the funds.
+ Yeah, so this is a problem.
+ We would only want to maintain the valid transactions
+ on disk indefinitely.
+ And we want to discard everything else.
+ In fact, we have to mitigate this DOS vector.
+ Yeah, there's really no way around it.
+ So we worked up the design of the broadcast
+ with this constriction in mind that we can,
+ we shall ever only put anything on disk long-term
+ if it is valid and hence has been paid for
+ in transaction fees.
+ Is that clear so far?
+ - That is a problem in HPBFT.
+ That is a problem with HPBFT.
+ Like right now, everything, this is not a problem
+ inherent to HPBFT, but how we use it right now,
+ I believe just everything is just put on disk.
+ And if it's invalid, it's gonna stay there.
+ Doesn't matter because there's no communication
+ between the Federman consensus and the broadcast.
+ So right now the broadcast does not know
+ if an item is valid or not.
+ And this gets even worse.
+ worse since the same, even the same valid transactions,
+ valid transaction might be submitted by multiple peers.
+ And hence like right now, even if there's no attack,
+ we have like every transaction on disc like two or three,
+ four times. Um,
+ so we consume like a multiple of the disk space we would actually, um,
+ we would actually need.
+ Um, yeah, there was a hand raised.
+ Um, or was it,
+ is there another question on this?
+ No. Okay. So, um, okay.
+ Um, yeah. So as I said, we need a way for the, um,
+ for the Fetiman consensus state machine built on top of the broadcast to let the
+ broadcast know, um, which, um,
+ um, which items were, um, accepted. Yeah.
+ So which, which items were valid and we want to record them in the history
+ and, um, and which are not valid. And
+ the, um, so with every ordered item we return,
+ we return the sender here, which is a one shot sender,
+ which gives the Fetiman broadcast the ability to,
+ um, uh, send back a decision, which states, um,
+ please, I accepted this item, uh,
+ please record it in the history or I discarded this item and,
+ um, and, um, uh, please, uh, yeah, please,
+ please discard it as well. Like it did, I, or this item is invalid,
+ please discard. And, um, but now you may ask, okay,
+ but if we are not storing an item,
+ a discarded item in the history, um,
+ like are like some notes not going to see the item,
+ is this not going to be a problem because we want to have consistent state in the
+ state machines? Um, like what is happening here? Like why can we just, um,
+ why can we just discard, uh, some of the items? Um,
+ this is also what, what, what leads to the holes, as I said, um,
+ or as DPC inquired, um,
+ correctly the indices here, though they are strictly increasing,
+ they are not increasing by one every time in,
+ but there are jumps between them and the jumps between them are, um,
+ items that were invalid and, um,
+ um, where the, uh,
+ fit them in consensus returns is the decision to discard them.
+ So if I get two ordered items with the index one and three,
+ there was one item would,
+ which was initially ordered with the index two, which has been, uh,
+ been discarded. So, um,
+ in fact, a note is not guaranteed to see all ordered items.
+ It is only guaranteed to see a subsequence of those oral items.
+ So it's still going to see if it sees two items,
+ it's all of them are going to see them in the exact same order. And,
+ um, however,
+ they may not see the discarded items between them.
+ They may or may not. So, um,
+ the sequence of all that items they see is it is a subsequence of all items
+ ever ordered.
+ And it is also a super sequence of the items that have been accepted.
+ And, um, yeah. So if, and yeah,
+ if the, um, fed them in consensus decides to accept an item,
+ then it is going to be stored in the block. So the block,
+ and then the signed at the end of a session.
+ So the sign blocks only can contain the accepted items.
+ And when, uh, when a peer has been offline for a prolonged period of time,
+ it's gonna recover with those blocks.
+ It's going to catch up to the federation with those blocks. And,
+ um, when it does so it's,
+ it's actually only going to see the accepted items and it's not going to see any
+ of the discarded items at all.
+ And the only way it can actually notice that they're aware
+ discarded items are the, um, are the, um,
+ indices, which, uh, which are, which have holds.
+ And, um, the way,
+ like the reason why we can do is why we can still build consistent state
+ machines on, um, on,
+ not really an atomic broadcast, but on, because the notes,
+ they see different subsects, subsequences. Um,
+ but we still can build a consistent state machine on top of them
+ because if an item, if,
+ if a note sees an item and the state machines does,
+ please discard the item does so even only if it's changed the state.
+ But think about this. If, if we see a valid action,
+ which spend any cash, no,
+ we store this each note and the database and it has changed the state.
+ But if we see an invalid transaction,
+ we actually don't change our database state at all. We,
+ because yeah, because there is nothing to write in the database.
+ Um, and, uh, we just, uh,
+ we just vote this card on it and do not change our state. So, um,
+ if we have two notes, which, um,
+ um, or if we have, for example,
+ if we have two ordered items like directly,
+ um, one after the other, but they are conflicting. So, um,
+ let's say they are the double spend of any cash notes, like, um,
+ some notes, they may only see, uh,
+ they may see both of those and they're going to see the first item.
+ It's going to change their state.
+ They're going to save the e-cash note to the database.
+ And then they're going to discard the second item while
+ other peers may only see the first item and may never see the second one.
+ They only see that there was an item skipped,
+ but at the end, both of those notes are going to be in the same state.
+ So, um, we can actually, we can tell like, right.
+ Um, uh, we can tell that, uh,
+ right after, um, uh, two peers,
+ two notes, um, accepted an item of the same index,
+ they are going to be in the exact same state,
+ regardless of how many ordered items they have
+ seen to get there. Um, is that clear?
+ Oh, great. Um, okay. Yeah, this is true.
+ This was really the most complicated part of this.
+ Um, there's also, um, I mean,
+ it's explained here again in the documentation. I like what everybody, uh,
+ who's interested in the topic. Um, I would suggest to read.
+ Um,
+ so those two parts are like journey of a consensus item and interplay with
+ the fitment consensus. Um, like they just like the latter one,
+ especially explains what I just laid out, how it works. Um, yeah.
+ And this is also already in the, um, in the, uh,
+ crate as it is right now at the feminine repo. So you can just, um,
+ you can just clone the repo,
+ ran out the doc of the crate and you're going to find it here even though the
+ exact API is gonna look a little different. Okay.
+ Um, yeah, then maybe, uh, let's look at next one.
+ Look at sign blocks here. And, um,
+ so this is how our history is recorded. Um,
+ which is like a sign block is just, um,
+ just a block and a signature which signs a blocks header.
+ And, um, the signature here is, um,
+ it's a net naive threshold or a snosh signature. Um,
+ which is, um, so yeah, it's just a, like a 64 bytes,
+ uh, uh,
+ sec P signature just as it's used for a tab root of other stuff.
+ Like no fancy pairing cryptography, just regular knife signatures.
+ Um, so they are, they can be pretty big if we have like a, uh,
+ 10 peer federation, there would be seven, uh,
+ seven times 64 bytes worth signatures in here, um,
+ for like seven different peers. And, um, but it,
+ that's not really an issue as we like create a block only every couple of
+ minutes. So it, it does not really make a difference.
+ And the block itself here, um, looks like this. And,
+ um, the blocks themselves also have indices and they have the vector,
+ the vector of accepted ordered items.
+ So items that were ordered in the session and then accepted by feminine
+ consensus. And, um, yeah,
+ the head of a block is, um, simply the, um,
+ its index and the Merkle roots of its items.
+ So in a sense it is, um, very similar to Bitcoin blocks.
+ Um, yeah, that we have like a header with a root and therefore we can later on,
+ we could do like efficient, uh, uh,
+ inclusion proofs with market proofs for like single transactions where if we
+ want to, or like single consensus items in general,
+ where we can prove to a client that this, uh,
+ transaction has been accepted in the history of, um,
+ of, um, the Federation, um,
+ without having to send the entire block and the client having to validate the
+ entire block and so forth. So, um, yeah, this is,
+ this is how that works. And the header again,
+ is the one that is signed by the threshold signature, uh,
+ here. Um, okay. Yeah.
+ Any, any questions on the record of the history?
+ Yes. I have one question is it's not clear why we need to store forever the
+ blocks. Why you can't just like, uh,
+ propose, okay,
+ this is the current state and just save this and,
+ uh, discarded all everything of the history.
+ We do it because we have to catch up peers,
+ which have been offline for a long time.
+ So a peer might be offline for days, uh, connectivity issues,
+ hardware issues, whatever. And, um, this,
+ um,
+ then we need all the accepted transactions in between to be able to catch up this
+ peer, um, to the, the current state. And,
+ um, yeah, this is first reason. Um,
+ the second reason is, um, for restoring e-cash.
+ Um,
+ I think I'm not sure exactly how this works, uh, but it's,
+ um, requires the entire history of, um, uh,
+ transactions right now and it, or like consensus items right now.
+ And I think in enables the client to restore its e-cash just from its
+ password. So, um, this, um,
+ yeah, if, if, if a client were to lose, uh, or if like a,
+ a user were to use, lose his phone,
+ his e-cash is not gone. If he can remember his password, um,
+ he can, uh, he can restore, uh,
+ he can restore his e-cash from the history. Um,
+ pretty much like you can do Bitcoin too by, um,
+ streaming through the history of transactions and, um,
+ looking for outputs, um, uh, you own.
+ Um, and yeah, the PC asked if we can prune very old blocks.
+ Um, yes we can. Um, this is, this is practically possible.
+ However, there is another, uh,
+ important use of those blocks right now. And that is, um,
+ also appear can entirely restore its state
+ trustlessly just from those blocks. So, um,
+ imagine you have a peer and which suffers a hardware failure and has pretty
+ much loses its entire system state.
+ We need a way for those peer to pretty much just get new hardware,
+ type in his password and catch up to the entire system.
+ And right now, um,
+ we do it with the exact same mechanism is used for catching up for,
+ longer than five minutes to catching up possibly for years.
+ Um, and, uh, yeah, I mean,
+ Mr. Kuga just said payment is becoming a side chain. Technically it's not a chain.
+ It's just a sequence of blocks. The blocks are not chained, but, uh, yeah,
+ we steal a lot of concepts from Bitcoin there. And, um, yeah,
+ that's, that's why that's the case. Um, in theory though,
+ we could prune all blocks if we would do checkpoints where we then sign the
+ entire system state. So then we also,
+ we threshold signed the entire system state. So then, um,
+ it then, um, like a recovering peer can, uh,
+ download the system state,
+ which is maybe a couple weeks old and then just the blocks from on there to
+ catch up. So, um, we could do this at some point as an optimization,
+ um, when, um, to prevent the, uh, ever growing, um,
+ use of this space. Uh, yeah, right now we are focused on,
+ um, uh, right now we are not doing this and trying to just, um,
+ consume as few, um, as little, uh, this space in the blocks,
+ um, as, uh, possible. Yeah.
+ Any more, any more questions on this?
+ I'm wondering if this right now we have started the history of all spent
+ nonsense.
+ Able to, I wonder if we could reuse the block storage for, for that.
+ Like I don't know, instead of storing the whole nonsense, et cetera,
+ maybe we could kind of
+ have like a history of all spent nonsense. Um,
+ but that's like something to think about on the, on the side, I guess.
+ Uh, but yeah, we need to look up key and that has to be the note anyway.
+ Probably not. Sorry.
+ Yeah. Yeah. You would need some kind of indexing and, um,
+ then maybe your indexing is going to be bigger than just storing the nonsense
+ directly as you would. Yeah. Um, yeah. So I thought about this,
+ uh, something like this, um, like separating the, uh,
+ like not storing the entire blocks directly,
+ but separating out the transactions and only, um,
+ creating links between them. However, like in my use case,
+ it was already the case that, uh, I would have, uh,
+ use the exact same disk space if not more. Um,
+ because what I need to store were also only a couple of bytes. So,
+ but I ended up with a way more complex data structure. Um,
+ yeah. Um, okay.
+ So we are coming up on the hour here. Cool. Um,
+ if, sorry.
+ No, I was, I was just going to say the same thing. Um,
+ just want to respect everybody's time. So we got a minute left. Uh,
+ I have a hard stop. We'll stop the recording right, right at one. Uh, but I mean,
+ welcome to stay on the call and discuss at length.
+ Okay. Yeah. I mean, there's another, let me just say this.
+ There's another interesting part in the documentation,
+ which is the journey of a consensus items, which just describes, um,
+ how an item, um,
+ actually ends up in the block in detail and how it moves to the
+ Fetterman server and between the, the network of peers.
+ Um, yeah. To end up there. Um, yeah, this is if,
+ so if you're interested in this, feel like,
+ feel free to take a look at this too.
+ Awesome. Thanks. Yeah. It was a pleasure.
