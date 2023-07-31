@@ -2,3 +2,4 @@ audio/**/*mp3
 audio/**/*wav
 .env
 node_modules
+ecosystem.config.json

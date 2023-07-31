@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <h1 class="topofpage">Fedimint Q&A Bot</h1>
-  <div class="header">Made by Ethan Tuttle (npub1tmycvul7aj4fxhypg5qkjgsjtx30zvnrfeufrgx9xlwtv0hne7cs67el78) and
-    @jordanwilk90</div>
+  <h1 class="topofpage">Mintmind</h1>
+  <h3 class="topofpage">A Fedimint Q&A Bot</h3>
+  <div class="header">Made by Ethan Tuttle (NIP05: ethanTuttle@learnfedimint.com) and @jordanwilk90</div>
+  <div class="header">This bot might have typos and errors as this is a basic Proof of Concept.</div>
   <div class="center">
     <form id="questionForm">
       <label for="question">Enter your question about Fedimint:</label>
@@ -38,7 +39,7 @@
       loadingSpinner.style.display = 'block';
 
       const questionInput = document.getElementById('question').value;
-      fetch('https://learnfedimint.com/api', {
+      fetch('https://learnfedimint.com/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
