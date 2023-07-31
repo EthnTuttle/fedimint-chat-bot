@@ -1,0 +1,572 @@
+ Yeah, so this is just pretty much a call to put together some admin personas for Fetty.
+ So, yeah, I have a couple of questions.
+ Jose wanted to join, but he couldn't make it, so he sent over some questions.
+ I created a bit of a -- I don't know if you guys prefer to work together in a Google document
+ or if you prefer to work together in Figma Jam.
+ Is there any preferences that you guys have?
+ Sorry, what was the second option?
+ Figma Jam.
+ Yeah, Seth here.
+ I would always prefer Figma Jam and keeping things in Figma whenever possible over Google,
+ absolutely.
+ Yeah, Figma.
+ Cool.
+ I've never used that before, but willing to learn, so let's do that.
+ Cool.
+ So I'll just share my screen.
+ I didn't -- you know, I kept things really loose because I'd like you guys to also try
+ to, you know, kind of guide this as much as possible because I kind of looked at the original
+ personas that we put together, and then kind of, you know, so it's the personality, the
+ set up, the goals, the administration, and I tried to put together some sticky notes
+ here to kind of pull these ideas out of you guys by asking questions and moving on to
+ discussing their needs.
+ Kind of just keep things very loose, but, you know, happy to be guided by you guys as
+ well because still very much learning.
+ So Seth, if you have any ideas, feel free to chime in.
+ Yeah, just for a bit of clarity today, are we talking about the -- it looks like we're
+ talking about the admin user personas as opposed to the Lightning Gateway personas.
+ Is that right?
+ As far as I know, right?
+ Okay.
+ Yeah, I was going back.
+ I was going back through -- I thought we were talking about the Gateway.
+ Is it the Gateway user personas?
+ So, I mean, maybe we can chat through both, I guess.
+ I mean, the Gateway and the Federation are -- they might be two separate people, right?
+ In some cases, they might overlap, but hopefully in kind of the end state of this, they will
+ be separate entities.
+ So, and I thought, if I remember correctly, I thought Kitman had done a bunch of the user
+ personas for the Federation a while back.
+ Is that right?
+ Or he at least brought some ideas there?
+ Yeah, my understanding is that the ones that we're looking at right here were done for
+ -- were the original ones done by Kitman, and I think Jose jumped in on that as well.
+ And I think that these were maybe just sort of broad in scope and applicable to maybe
+ the overall -- all of the different components of Fetiman.
+ Right.
+ So, right.
+ So, these are great for the Federation.
+ And I think it kind of really -- it describes that there's actually a few different kinds
+ of people that might want to run a Fetiman and it applies in different scenarios, like
+ above, at least.
+ My personal -- I suspect that these will be popular at meetups, which would be kind of
+ like the ban here.
+ And then also, with Fetty's initiative, sort of targeting smaller communities and the global
+ south and everything, like, yeah, the activism part, Global Activists would be another one.
+ But if we wanted to move on to the Lightning Gateway and talk through some of those, I
+ think those -- so, I think those people are actually going to be a little different.
+ And unfortunately, I think it's -- they're a bit more narrowly scoped.
+ And I can explain why I think that.
+ So, the main thing about the Gateway is that the operator of the Lightning Gateway must
+ trust the Federation.
+ But it's not the other way around.
+ So, the Federation does not have to trust the Lightning Gateway.
+ And in fact, it doesn't even really need to know, like, which Lightning Gateway is connected
+ to it.
+ So because of that, and the other part about the Gateway is that it -- the whole purpose
+ of it is to do this swap between e-cash notes and the Lightning Network.
+ So it's kind of like -- in a way, it's kind of like a market maker.
+ In that it is allowing for inbound and outbound liquidity over the Lightning Network in exchange
+ for e-cash notes from the Federation, essentially.
+ So I think this has a few implications on the personas.
+ And that's what I was kind of thinking about in the last day or so.
+ The main one being that really the people that are going to want to run gateways are
+ also going to be, like, Lightning router nodes or LSPs.
+ And so that's the main persona, I think, is someone that already has a successful Lightning
+ routing node on the network or operates an LSP like Zebedee or Voltage or something like
+ that.
+ And just to finish that thought, I think the reason why is mainly because, one, those people
+ already have liquidity on the network.
+ And to build a successful Lightning router node, you sort of need to lock in a bunch
+ of capital into channels and whatnot.
+ And there's some time spent balancing those.
+ And you'll need to also do that when you're operating a Lightning gateway.
+ >> And I guess part of that, it kind of goes without saying that the incentive here is
+ for that operator of the Lightning gateway to stack more Sats by providing that liquidity,
+ right?
+ >> Yep.
+ So they would stack Sats really via e-cash notes based on fees right now.
+ So I think they have, if I remember correctly, and we're still actively working on this part,
+ but there's like a 1% hard-coded fee for inbound payments.
+ So if you're doing a peg in via Lightning, the Lightning gateway will make 1% on the
+ payment, but it'll be paid out in e-cash notes.
+ So yeah, the other part of this is like, and I'm not sure how to think about this, I'll
+ just throw this out there, is that because the gateway needs to trust the Federation,
+ and it's obvious in how they are, right?
+ They're trusting the Federation by holding the e-cash notes of the Federation.
+ If the Federation were to go to rug pull, then the Lightning gateway would be out of
+ a lot of money.
+ So because of that trust relationship, I think it kind of, I mean, I'm kind of brainstorming
+ right here.
+ It never remains to be seen how many Federations a gateway will actually connect to.
+ I think in the beginning, like Fetty is going to be running one of these, and most people
+ will probably just connect to that one.
+ But in the ideal world, we'd have like sort of a marketplace for Federations where there's
+ a lot of, or sorry, for gateways, where a lot of people are running gateways, and you
+ kind of have your, when you're a client, you kind of have your option of which one to connect
+ to.
+ But it's also possible for gateways to be connected to multiple Federations.
+ And the trade-off there is that you can service more clients and you can potentially make
+ more fees, but you also need to trust like these new Federations, which might, depending
+ on who they are, might be a little sketchy, right?
+ Like I don't, if I was running a lightning gateway, I wouldn't necessarily want just
+ some random person I'd never met or conversed with to be like, "Hey, you should connect
+ your gateway to my Federation."
+ Because how do I know that they're not just going to run off with the funds?
+ So people have to trust the gateway to basically want to be part of a Federation.
+ Sorry, say again?
+ People have to trust the gateway to be part of the Federation.
+ So you're talking about clients, like end FediMint user clients?
+ I'm not quite sure.
+ I think I was asking more context of this one, but maybe it's not in context.
+ Right.
+ So the gateway is pretty much completely trustless.
+ Like clients, when they use the lightning gateway, don't need to trust that the gateway
+ will give them their funds.
+ Of course, the gateway is just the, it's like the conduit into the Federation, right?
+ So clients always need to trust the Federation.
+ And when you actually get down to it, the gateway is actually just another client.
+ So the gateway also needs to trust the Federation.
+ But that's it.
+ So again, sorry, I didn't prepare much for this, but if you were to draw a diagram.
+ Yeah, I think we need a diagram.
+ Yeah, it would be like the Federation would be all the way on the left.
+ And then in the middle would be the lightning gateway.
+ And then on the right side, it would be like a FediMint client, like someone that wants
+ to use one of the Federations.
+ And the trust relationship here, like essentially flows left, but it skips the gateway.
+ So like the gateway has to trust the Federation, client has to trust the Federation, but the
+ client does not need to trust the gateway to receive the funds.
+ So the Federation, the client needs to trust the Federation, it's the other way around.
+ The client needs to trust the Federation.
+ The client does not need to trust the lightning gateway.
+ But the gateway needs to trust the Federation.
+ The gateway needs to trust the Federation, gotcha.
+ And let me add one more reason to explain why, like really the trust relationship always
+ in FediMint is that the clients need to trust the Federation.
+ And you've probably heard this before, right?
+ Because of the consensus mechanism and like, if a threshold number of the guardians collude,
+ they can steal the funds.
+ And in this case, the gateway is just another client.
+ So both the gateway and the client here are both FediMint clients.
+ The gateway is kind of just performing this like special operation that interacts with
+ the lightning network.
+ So it's kind of almost like they're standing next to each other instead of being in the
+ middle, would you say?
+ Or would you say that, yeah, it's kind of they're standing next to each other a bit.
+ It's, I mean, it depends on what we're trying to describe.
+ For the trust relationship, there's definitely like the gateway is not in between.
+ But you have it correct here and that they both must trust the Federation.
+ In terms of the actual operations, though, like the client will go through the gateway.
+ So that's a little different, but I think it's kind of trying to show something separate.
+ Yeah, what another way to say this is the gateway is just another client that is bringing
+ value add to the FediMint.
+ Yeah, yeah.
+ The gateway has the ability to essentially do the swap between the lightning network
+ and the e-cash notes, but ultimately is just interacting with the Federation in a similar
+ way that the client might.
+ So it's kind of like if you would compare it, it's like the Federation would be like
+ the original robot that was created and the lightning gateway is almost it's a duplicate
+ of the original robot, but not fully, but kind of does the same thing.
+ Well, it's more of a duplicate of the client.
+ Like you can think of the lightning gateway as a smarter FediMint client.
+ Because it still holds e-cash notes and it needs to, in fact, it actually needs to do
+ a peg in to get e-cash notes so that it can service other users.
+ Because it essentially needs e-cash notes to do like outgoing payments and things like
+ that.
+ If we were to use a traditional finance metaphor, would there be an applicable one for the lightning
+ gateway and Federation in terms of like banks or like lending institutions?
+ Oh, that's a good question.
+ I unfortunately don't know the banking systems very well.
+ I get the point better than I know.
+ Could you repeat that question?
+ Yeah.
+ If we were to use a metaphor for help people better understand this, that we're familiar
+ with banking institutions, I'm asking like, would there be something applicable that we
+ could apply to this?
+ Yeah, I think I might have something that might be applicable, at least in my mental
+ model is most banks may or may not run like payment systems.
+ However, Visa runs those on their behalf.
+ So like if I'm using Visa, they're running a payments rails for my bank.
+ And so Visa does the debit card for my bank.
+ In my mental model, the Federment is the bank and then the gateway client is Visa in this
+ instance.
+ Like they are providing a service, which is payments that they're taking a fee to operate
+ and everything like that.
+ I don't know if that makes sense to anybody else, but that's how I would see it in like
+ a banking metaphor.
+ It's probably not perfect though, because yeah.
+ Yeah, it's interesting to think about.
+ And yeah, thinking further about this notion of trust, the flow that we're building here,
+ I was wondering without too much of a technical understanding, but enough to, I guess, kind
+ of be dangerous.
+ Would it be at all possible to somehow apply like a reputation score to a given federation?
+ Maybe it's a community voted attribute or it's the time that the federation has been
+ in existence or it's uptime or the fact that it's never run cold or something like that.
+ I think that's an interesting concept for sure, but I don't know.
+ I think that lives outside of like the Federment protocol.
+ Yeah.
+ Yeah.
+ If we take their goals, because now I'm trying to like, I'm trying to understand with the
+ goals that you guys have mentioned.
+ I'm just like dragging those goals up over to this part over here.
+ [BLANK_AUDIO]
+ It's a little bit tricky, but maybe we'll eventually be able to make something out of this.
+ So, you know, they're going to need to swap between e-cash notes and the Lightning Gateway.
+ It needs to allow for e-cash notes and up-bound liquidity.
+ This is a duplication over here.
+ And then their gain is that they get to stack more sats.
+ Okay, so in terms of their needs, would this be their primary need is basically swapping the e-cash notes?
+ Did I write this correctly? Swapping between e-cash notes and the Lightning Gateway.
+ Would that kind of be main?
+ Yeah, essentially, the way it works is...
+ Like, say you're doing an outgoing payment.
+ Essentially, the Fetimate client, the user that wants to make the outgoing payment,
+ will lock in some e-cash notes in essentially a smart contract that lives within the Federation.
+ Then it will tell the Gateway, "Hey, go and pay this Lightning invoice for me."
+ And in return, I will pay you via this smart contract, where you can see I've already locked up the e-cash notes.
+ And then receiving works a little differently,
+ where essentially the client creates an invoice and encrypts the pre-image and uploads it to the Federation.
+ Then the Gateway waits for HTLCs and intercepts them and detects that the HTLC is destined for the Federation.
+ And if it does detect that, it will buy the pre-image using e-cash notes from the Federation.
+ And that's the actual deposit part.
+ So essentially, the Gateway will give e-cash notes to the end Fetimate user,
+ and then the pre-image is decrypted and given back over the Lightning network,
+ which pays the Gateway via Lightning.
+ So that's the swap on the receive side.
+ Essentially, the first one's outgoing payments, the second one is incoming payments into the Federation.
+ So they're sending and receiving.
+ So let me see, this is pretty technical.
+ I'm trying to get my brain around it.
+ So if you're doing an outgoing payment, the person who wants to make the payment will lock in some e-cash notes.
+ So there's these imaginary e-cash notes.
+ And then it will tell the Gateway, go and pay these e-cash notes for me.
+ It'll say, go and pay the Lightning invoice.
+ And in exchange, you'll get the e-cash notes as a payment for doing that.
+ So you can see where the swap is.
+ Essentially, the Lightning invoice is then paid, and the Gateway is paid in e-cash notes.
+ So there's the swap happening here in the rebuild.
+ Please feel free to ask questions.
+ I'm trying my best to just ask questions to you, but it's some other level stuff, understanding this.
+ But I think I have a...
+ Okay, so they're sending, and then the person who wants to make the payment, they lock in some e-cash notes.
+ And there's a swapping that goes on in the background between the e-cash notes and the Lightning network.
+ There's the swapping going on, and then the person gets the e-cash notes.
+ And then they have liquidity, and then they can send.
+ Right. So the assumption in the outgoing case is that the Lightning Gateway, which is connected to a Lightning node, like LND or CLN,
+ it needs outgoing capacity to make that payment, right?
+ If it doesn't have any channels, then the payment will fail, for instance.
+ Is it possible that a person might not have that outgoing liquidity set up?
+ Is it possible that they might need help in setting up that outbound liquidity?
+ So that's why I said at the beginning that I think the people that will be best suited for running these are existing routing nodes,
+ because they will already have that set up.
+ But it's very possible that even if you do have that set up, you might not have a route to the person you're trying to pay.
+ And payments can fail that way as well.
+ It's the case, though, that if you had even just one channel, but that one channel was a big one, like let's say River, for example,
+ then it's highly likely that that payment would go through, right?
+ Yeah, as long as there's a route. It's the same as the normal Lightning network in that respect.
+ Right, right. So getting back to the overall personas, the general use case would be that the person is pretty well versed with Lightning already,
+ and that anybody that wasn't typically wouldn't be a gateway user.
+ Correct.
+ And I think that's more of a mint-by-mint question, right?
+ Because if you have an amateur Lightning operator that wants to try to set up a gateway and provide these services,
+ there's nothing that's stopping it.
+ But the ideal candidate for a mint is going to be somebody with operational experience running a Lightning node that's already well-connected.
+ Otherwise, you're going to run into liquidity problems and all the other challenges that make Lightning operations hard.
+ Correct me if I'm wrong, it feels a little bit like there's these two. It's kind of the Lightning router node or an LSP.
+ Or you have a third one here, someone that already has a successful routing Lightning node, but that feels like it's the first one.
+ Yeah, that's the same thing as the first one.
+ This is the same thing as the first one. So the LSP is kind of on its own.
+ Yeah, and really, I'd say the only distinction between an LSP and a successful Lightning router node is probably if they're backed by a company or not.
+ Right, right, right.
+ I'm picturing LSPs being like Zebedee or Voltage or any of these sort of bigger Lightning service providers.
+ Whereas a Lightning router node might just be some hobbyist that runs a pretty big node and put up all that capital themselves to do that.
+ So referring back to the existing personas that have been created, maybe I know that there's one that would be applicable to the gateway usage.
+ The user, I think his name is, let me just check really quick, Peter, the Neo bank entrepreneur.
+ And possibly Ben would both fit into that, just those node runners.
+ And then so a possible second persona would be the LSP.
+ Yeah. Does it feel like they're these two, they're very separate because the LSP is really backed by a company.
+ And then the Lightning router node is someone who just has that successful node set up.
+ They have the liquidity going. They run a big node.
+ Yeah, I think it's worth describing them as separate.
+ It's mainly about resources, right? LSPs will have more resources to put into their setups.
+ But at the end of the day, taking a step back and not looking at the individual personas here, really all you need is a Lightning node.
+ You need a Lightning node that is well capitalized.
+ And both of these people, the first one and the second one, the Lightning router node and the LSP will fit that description.
+ But I think the difference lies in, like I said, the resources that they have to put into it.
+ The first one is the Lightning router node. That might be someone that does it kind of on their spare time, looks at it in the evenings.
+ Whereas maybe the LSP actually have a dedicated person who sort of manages the liquidity for it.
+ Yeah. Do they both kind of benefit the same?
+ I mean, I'm just thinking profit wise, like from a SaaS perspective, the LSP has kind of more resources in the setup.
+ So in terms of the end goal, they would end up stacking more cash nodes than the Lightning router node.
+ Or what do you guys think?
+ Yeah, that depends on a few things.
+ Mainly, it's similar to Lightning where it'll depend on how many payments are coming in and out of the federation that they're connected to.
+ And it will also depend on how they set their fees.
+ And right now, the way the fees are implemented right now is just, I think it's 1% of incoming payments and outgoing payments are free.
+ But that will be changing. So that's still a work in progress.
+ So once that functionality exists to make fees more flexible, that would introduce this concept of a competition.
+ So I'm going to go with this federation because they provide more incentive for me to provide liquidity over there rather than this federation.
+ Well, it would be the gateways that would be competing.
+ Yes. And we don't have to get into it too much, but just I can shed a little light on what we're thinking for fees.
+ At least in my opinion, the main thing is that fees for outgoing payments and incoming payments will probably be separate.
+ And the reason behind that is that incoming payments have this trust relationship where you have to trust the federation.
+ So you could imagine, say, a gateway is connected to two federations, Federation A and Federation B.
+ Federation A is maybe super trustworthy, run by known people, that kind of thing.
+ And whereas Federation B is like, let's say, is run by total anons.
+ No one knows who they are. Maybe a little more sketchy.
+ The gateway might still want to provide liquidity for Federation B, but it might do so at a higher fee rate to sort of hedge its own risk kind of thing.
+ So this is starting to look like it's making a lot more sense. And please feel free to correct it if it's wrong.
+ We have this persona whose end goal is swapping between e-cash notes and the Lightning Gateway.
+ Actually, it feels like this is a task that they do.
+ Would you say that the task that they perform is they allow for inbound and outbound liquidity?
+ Yeah, yeah. Like at a high level. They allow people to deposit and withdraw using the Lightning Network from the federation.
+ So what they gain is the swap between the e-cash notes and the Lightning Gateway.
+ And the task that they perform is they allow for inbound and outbound liquidity.
+ And then we kind of have these two guys. We have an LSP and then we have the Lightning router node.
+ The LSP is backed by a company. They have a bit more liquidity.
+ The Lightning router node is just someone who has a big node themselves and kind of does it in their spare time.
+ What do they gain? They gain two steps more stats. And the stats are paid out in e-cash notes.
+ So that's a gain. Yeah.
+ So I'll mention one more thing. I don't want to make it too complicated, but they're paid out in e-cash notes or over the Lightning Network.
+ So essentially on incoming payments. So when people are pegging in to the Lightning Network using the Gateway, the Gateway will gain e-cash notes.
+ And right now, as you said, it stacks stats that way because it gets fees that way.
+ On outgoing payments. Sorry, did I have that backwards? I had that backwards.
+ In incoming payments, sorry, they actually gain stats on the Lightning Network.
+ So over their channel and they essentially deposit e-cash notes to the end recipient who is inside the federation.
+ On outgoing payments, it's the opposite. So on outgoing payments, they gain e-cash notes, but they lose stats that are in their Lightning channels.
+ And last thing here is that depending on the rate at which either outgoing or incoming payments are happening,
+ you could imagine there's like a lot, let's say a lot of people are withdrawing.
+ So outgoing payments, that means that the Gateway is going to end up with a lot of e-cash notes.
+ And they might not like that.
+ Like, again, depending on their, it's similar to balancing a channel where they might not like that they have a lot of e-cash notes because they have to trust the federation.
+ In which case, they periodically will need to do an on-chain peg out to get actual Bitcoin for the e-cash notes.
+ And then, yeah, this is kind of like, I'm sort of describing the maintenance operations you'll need to do.
+ That's for one side. And then on the other side, if you have a lot of incoming payments, that means that they have a lot of stats on the Lightning network,
+ but they don't, they're running out of e-cash notes because they're giving them out to users who are doing the deposits.
+ So in that case, they might need to do a peg in on-chain to essentially deposit more Bitcoin and get e-cash notes for it.
+ [BLANK_AUDIO]
+ So it's very similar to in the Lightning Network when you need to sort of balance your channels
+ and you might need to do a submarine swap or something to get a balanced channel.
+ You'll need to do the out these gateways will probably need to be doing either peg ins or
+ peg outs depending on the balance of their e-cash notes and their channels.
+ I'm just gonna really like I'm just a fan of diagrams.
+ This is making a lot of sense now.
+ It's like I'm just going to do it like this incoming outgoing the dependencies would be
+ the fees of this would kind of be going out here on the side and then they have these
+ they have it is so that's kind of the main goal.
+ The outgoing payments which are kind of dependent on these two things over here incoming payments
+ they need to pay so there's the peg in so the peg in is it is like a need peg in it's
+ almost like a need and then the peg out is also a need.
+ That needs to happen or be possible within the user interface.
+ Does that make sense what I've just put together here?
+ So I think so.
+ But right just to say it a different way the peg ins and peg outs via on chain will be
+ important for the lightning gateways because that's essentially how they're going to manage
+ their liquidity and manage their e-cash notes.
+ And it's like very similar to how an existing lightning node like balances their channels.
+ And so yes thinking a little further down to the UI.
+ You know the UI.
+ Well I mean this might be a lot longer conversation but like the UI will need to make that easy.
+ I don't know if that should be done using the lightning gateway UI or if that should
+ be done using like the normal FedEmic client UI.
+ Yeah I'm not sure but that will need to be easy.
+ They will need to be doing that just to manage their liquidity.
+ And then the fees part is a dependency because at the moment the fees are kind of set to
+ 1%.
+ Would you see them as, you mentioned the future, they could maybe like tweak the fee amount
+ to what the amount that they would prefer.
+ Would that be possible?
+ Yeah we're still developing that part right now.
+ And the 1% that's going to, so like actually right now you can change that but it's defaulted
+ to 1%.
+ I forget if it's for, I thought it was for incoming but maybe it's for outgoing.
+ I don't remember.
+ But regardless I don't, like you can kind of put a big TBD there because we're still
+ working on that part.
+ We'll just put this as a TBD.
+ Something else that comes to mind, we kind of have this guy now who's swapping his e-cash
+ notes.
+ They're performing this task of this inbound outbound liquidity.
+ On the inbound side they're gaining sets, on the allied network on the outbound side
+ they're losing sets but they're getting e-cash notes.
+ Because of that they need to peg in and peg out.
+ And then here they are, here is the LSP and then they can use the note.
+ Is there anything else you guys think would be important to add in?
+ I think that kind of covers it.
+ My main thing was that, I guess the main point I wanted to say in contrast to the existing
+ personas that Kipman worked on and you guys had in the, you were showing earlier.
+ I think these are more specific because of the liquidity issue.
+ Essentially you kind of need someone with Bitcoin on the Lightning Network that knows
+ how to manage this stuff.
+ It shouldn't just be like someone that doesn't have any idea what the Lightning Network is
+ but just wants to participate.
+ That's someone that's harder to get working here.
+ And it's more difficult since you need capital.
+ You need Bitcoin to do this.
+ Whereas for the, just contrasting a little bit, for the Fetiment Guardian to run a Fetiment
+ D, you know, Damon and be a Guardian, you actually don't need liquidity for that.
+ You can just run this little program and participate in the consensus and you're good.
+ But with this, you need liquidity in order for it to be productive at all.
+ So I think that extra constraint sort of limits who is actually going to run these things.
+ It also kind of answers the question from, because Jose's shot over some questions with
+ how much of knowledge about Bitcoin and security do they have?
+ I think a fair good amount since they've, well, how would you say?
+ Yeah, they'll need to have a lot of knowledge, I think.
+ I think in both the Lightning Router Node persona and the LSP, you know, both of those
+ people are pretty well versed in the Lightning network and know how to do like swaps and
+ manage their liquidity.
+ I'd say that's kind of a requirement for running one of these things.
+ Another thing to keep in mind is like, because you're not limited to just one gateway, you
+ might have a gateway run out of liquidity.
+ But if you have multiple gateways, that's only a benefit to the clients of the Fetterment
+ because now there's multiple options for that outbound set.
+ Yeah, you're just speaking from like an end user perspective, right?
+ Right, right.
+ Yeah.
+ Yep.
+ So could one of their goals be to set up multiple gateways?
+ Because if they set up multiple gateways, then they get more, you know, they get to
+ get more swap between, swapping between e-cash nodes and the Lightning gateway.
+ So if they set up more of these gateways, then they serve to gain more.
+ Would that make sense?
+ No, you don't really gain much by doing that.
+ So say you're running a gateway, the way you can make more money is either you support
+ more federations or you just have more liquidity coming into your node.
+ Say you were to run multiple gateways, that doesn't really help you because now you need
+ to manage liquidity from two separate nodes.
+ So that doesn't really help you that much, I think.
+ But supporting more federations comes with the trust trade-off.
+ So they can do that, but you know, it's kind of a risk trust thing, right?
+ It can be more profitable, but it could also be more risky.
+ So they'll be looking for the more trusted gateways.
+ No, what's the word if I'm using the right word?
+ Federations.
+ So they're looking for more trusted federations to set up these relationships with because
+ those are the trusted guys.
+ A hundred percent.
+ Yeah.
+ Again, I just think of it from my own perspective.
+ Say I'm running a gateway and I have to hold e-cash notes from your federation.
+ If I don't know you, you're going to have to somehow convince me to hold your e-cash
+ notes so that I'm convinced that you're not going to run off with my Bitcoin.
+ Yeah.
+ So one of my questions was, how would a federation, you know, you run off with someone's Bitcoin,
+ could they just decide to just close or just remove the federation without providing those
+ funds back to the gateway provider?
+ Yeah, I mean, there'd be a few different ways to do that, to run off with the money.
+ So today, in FettyMint, the federations can't, if there is a rug pull, then they need to
+ change the code, essentially.
+ You can't do that by default, which is good.
+ But they could essentially, like, there's like an on-chain wallet, essentially, and
+ the federation members could go and take that on-chain wallet out of band and construct
+ a Bitcoin transaction that would steal the funds.
+ It's a little more difficult.
+ You need to have a lot of technical knowledge to know how to do that.
+ But what is a bigger risk, I think, that doesn't require technical knowledge is just shutting
+ the federation down, so say you have four members, all four members are like, you know,
+ screw it, we're just done doing this.
+ And they don't allow for any peg outs.
+ So in that case, they don't steal the money, but the money is stuck.
+ You can't get it back.
+ So in the Guardian UI, there would be no option button to like add federation or anything
+ like that.
+ It's just not a provided option, right?
+ Right.
+ I mean, again, this is the trust model.
+ So like when you get into situations where you're talking about like, oh, how do you
+ get the Bitcoin back if like over the threshold amount of the Guardians have gone, you know,
+ offline, you're kind of stuck.
+ There's really not much you can do.
+ Yeah.
+ So the peg in and the peg out feature is quite an important one.
+ But then they're also like, so they're providing this, okay, cash, they're allowing for inbound.
+ So how are they monitoring this task that they're doing?
+ So they're providing this inbound and outbound liquidity.
+ How are they able to check the liquidity that they're providing and how are they able to
+ check who they're providing liquidity to?
+ Would that need to be something that's built into the interface, like some sort of overview
+ of I'm providing liquidity to all of these clients, that kind of thing?
+ Yeah.
+ So I think in like this, you know, future UI for the gateway, I know Jodham has done
+ a little work on this already.
+ So I'm not exactly sure what he's done.
+ But it'd be really nice if there was some kind of, I'll call it like a history of incoming
+ and outgoing payments.
+ And here we might need to be a bit careful.
+ I don't think there's probably not a ton of info you can actually show because of the
+ privacy aspect of it.
+ You won't know.
+ I'm pretty sure you won't know when you do an income, when the gateway facilitates an
+ incoming payment, for instance, the gateway is not going to know who it's doing that for.
+ But it should know that, oh, like I, you know, I facilitated an incoming payment of 3000
+ stats or something like that.
+ So you could have, like, I guess I'm kind of picturing like in Ride the Lightning, Ride
+ the Lightning kind of shows you the payments that you route.
+ And this is very similar in that you can actually think of the gateway as almost another routing
+ node on the Lightning network.
+ It just has a special ability to interact with federations.
+ And so I'm picturing something kind of similar to what RTL does where you say, hey, like
+ I routed a payment for this much, this many stats and I took a small fee of, you know,
+ X number of stats, something like that.
+ Yeah.
+ I guess for them as well, since it's also has this like kind of profit model for them,
+ like at the end of a month, they might want to like tally up like this is how many payments,
+ this is how much of inbound and outbound liquidity we provided.
+ And this is kind of how much we stacked as a result of doing this.
+ Yeah.
+ Again, in the Lightning network, there's the concept of like, I think it's the total capacity
+ routed.
+ And then there's also your fees.
+ And you could, yeah, you could have a similar metric for this.
+ Gotcha.
+ Cool.
+ It feels like we have a pretty clear persona.
+ This is definitely very, it's really specific, this persona, these personas, I would say.
+ Yeah.
+ Yeah.
+ I'll try to think of any more.
+ I don't want to exclude anyone.
+ Yeah.
+ This is kind of the, you know, when you sent that message a few days ago, I started thinking
+ about this, these were kind of what I came up with.
+ Yeah.
+ This is looking really messy at the moment, but I think it's like, you know, you kind
+ of start with their main goals of what they want to do, the tasks that they're performing,
+ then basically it's just the incoming and the outgoing stuff that's going on.
+ They would need to be able to pay in and pay out because this is how they manage their
+ costs.
+ Possibly in the future, also the fees, but that's not at the moment.
+ And maybe they would need to see their total capacity in the end so that they can, you
+ know, run it like a business, so to say.
+ Yeah.
+ On the fees thing, like that's coming.
+ That's like definitely going to be part of the roadmap.
+ We're just like currently implementing it.
+ And then we pretty much have the LSB and the Lightning router node and they really need
+ the liquidity to be able to do that.
+ So I hope that this is enough for the designers to work with in terms of, yeah.
+ And I guess if they have any questions, we can just add them in here.
+ Sounds good.
+ Yeah.
+ I think we'll just share this with the guys and then see if they have any questions.
+ And if you guys think of anything, just feel free to just totally go in here and edit stuff
+ and make notes and that kind of stuff.
+ Yeah.
+ I'll stop sharing my screen.
+ Yeah.
+ Cool.
+ Thanks.
+ You had so much in your brain that just needed to come out.
+ Just needed to kind of snap it.
+ That's what happens when you think about it for a few days and don't get a chance to write
+ it down.
+ So yeah.
+ Appreciate that.
+ Yeah.
+ Feel free to ping me offline.
+ Happy to answer any other questions that didn't get through.
+ Cool.
+ Yeah.
+ I'll stop the recording.
+ Otherwise I will forget.
