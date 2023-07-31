@@ -43,7 +43,7 @@ await client.init({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.post('/api', async (req, res) => {
+app.post('/', async (req, res) => {
     console.log(req.body);
     const question = req.body.question;
     const answer = await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
