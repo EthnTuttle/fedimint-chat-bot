@@ -38,7 +38,7 @@
       loadingSpinner.style.display = 'block';
 
       const questionInput = document.getElementById('question').value;
-      fetch('http://learnfedimint.com:3338/', {
+      fetch('https://learnfedimint.com:3338/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -48,13 +48,17 @@
       })
         .then(response => {
           console.log(response);
-          loadingSpinner.style.display = 'none';
           return response.json();
         })
         .then(response => {
           console.log(response);
-          loadingSpinner.style.display = 'none';
           document.getElementById('resultParagraph').textContent = response.answer;
+        })
+        .catch(() => {
+            console.log('error');
+        })
+        .finally(() => {
+            loadingSpinner.style.display = 'none';
         });
     });
   </script>

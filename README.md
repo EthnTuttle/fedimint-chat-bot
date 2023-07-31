@@ -16,3 +16,7 @@ Misspelled Whisper words.
 - fedimin - 2
 - Chowmian - 7
 - showmian
+
+
+Deployment: 
+npm install pm2 -g

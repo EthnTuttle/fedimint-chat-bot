@@ -1,0 +1,977 @@
+ All right.
+ Well, I don't have many updates, at least from my side.
+ I think I took a look, there might be some new things from Seth.
+ I think that was Seth, I don't know.
+ If you want to walk through some of that stuff or whatever you all think is relevant.
+ Yeah, yeah.
+ Thanks, Sahil.
+ I did make some more progress from the last time we met last Wednesday.
+ Happy to walk through some of those.
+ Should we wait a little while longer?
+ Maybe there's some others joining or we can just hop right in.
+ Let me try to fix that.
+ Did the sound okay?
+ Or is it quiet?
+ It's a bit roboty, but it might just be me.
+ Yeah.
+ I feel the same also.
+ Is the sound any better?
+ Is anybody saying anything?
+ I can't hear anyone.
+ Is that just me?
+ Yeah, does that sound?
+ Is that different?
+ Yeah, same with.
+ Cool.
+ What do you think, Cody?
+ Can you hear me okay?
+ I'll share my screen and we can check out some of the latest progress if that sounds
+ good for people.
+ Cool.
+ Can people see the screen?
+ Yep.
+ Cool.
+ So, yeah, I'll just do a quick rundown of, I guess, a recap of where we left off last
+ Wednesday and progress that I've made since then.
+ Yeah, so, you know, a couple of high-level questions is, I know the last ones that we
+ looked at, some screen that looked similar to this, and I think that there was quite
+ a bit of conversation around some elements that I included that probably didn't belong
+ there.
+ I think I had some wires crossed between some conversation in this thread.
+ I think there was some overlap between what was for the admin dashboard versus what should
+ be in the Lightning Gateway.
+ So I think that kind of derailed me a little bit.
+ But getting back to, yeah, changes to what I've made, I guess just start at the top here.
+ Well, also just to point something out, we also talked about this section here, the new
+ the Guardian nodes, and I sort of added my opinion on whether or not those should stay.
+ I'm sort of leaning towards no, just because it's a lot of screen real estate devoted to
+ that one section that only tries to communicate two things, that there's five nodes and whether
+ or not those nodes are online or offline.
+ So I think that we could probably do away with this section, because those two attributes
+ can be communicated via this number here, Guardian 6, and whether or not any of those
+ Guardians are offline.
+ And part of the rationale is that as modules are added to a dashboard, I can imagine this
+ page getting or this view getting pretty long.
+ So yeah, I would lean towards not including that, really, and just devote the space towards
+ other things.
+ It sounds like people can still hear me.
+ Cool.
+ Yeah, that looks amazing.
+ Good.
+ Awesome.
+ Good to hear.
+ So there's that aspect.
+ One thing I'm not clear about, and I guess I'll try to work from top to bottom, seems
+ to be a logical approach.
+ This community custody, these widgets here, in my mind, those each correlate with a module
+ that is enabled.
+ So if I just zip down here, so you have Bitcoin, eCash, Lightning, each of these is currently
+ enabled.
+ So those would correspond with each of these widgets.
+ And one of my questions regarding those modules is if they can be disabled or not.
+ They might just be all required default modules.
+ So that's something that I was curious about.
+ Yeah, in the current implementation, you can't.
+ But that's something where eventually some altcoiners are going to figure out that we're
+ doing this, and they're going to say disable Bitcoin, enable ETH.
+ But based on the current configuration for it, the default modules you have to ship with
+ and then everything else.
+ And this is also like, eventually, you're going to be able to, at runtime, be able to
+ turn these things on and off.
+ But for right now, it's basically during the setup, you're selecting which modules you
+ want, and then you're stuck with those.
+ And so long term, it's good to have the toggles and those things.
+ But just based on the current implementation of where we are right now, just in terms of
+ the complexity behind that, is that basically, you select at compile time.
+ You first set up the federation, and then you're just kind of stuck with that.
+ Cool.
+ All right, cool.
+ That's super helpful.
+ Okay.
+ So does it make sense that each of these will, I guess these will be persistent.
+ So no way to really toggle them on or off.
+ So okay, so that's kind of a moot point.
+ In terms of the graph, I think adding some filtering agents here would be great.
+ So daily, monthly, all time.
+ And then view the values over time.
+ Yeah, but by those and then the individual currency types, Bitcoin, eCash, or US dollar.
+ I'm not sure what this number would be in terms of the quantity of eCash in the Fed.
+ It's just a dummy number right there.
+ So there's that.
+ Yeah, it's going to be the exact same.
+ Maybe one thing you could do would be, and this might actually be a useful metric for
+ it, would be to see, because the thing that the federation knows is the federation knows
+ what eCash it has issued out in what denominations, but it can't correlate the inputs and the
+ outputs.
+ Right?
+ So I mean, that would just be like an actual useful usage metric for us would be seeing
+ what the denomination breakdowns are for it.
+ But you don't have to, that's kind of just like, because the total amount of issued eCash
+ is going to just be the exact same as the total reserves.
+ Okay, cool.
+ So that's helpful.
+ So would it be safe to operate at the current moment, just like the eCash quantity is equal
+ to the amount of individual sets?
+ Yeah.
+ Okay, cool.
+ Yeah.
+ So are those two calculated differently or calculated the same?
+ Nope.
+ It's, I mean, the eCash is the liability side.
+ The Bitcoin is the asset side.
+ But I guess like the underlying data, right?
+ So like there's going to be a UTXO set that the guardians control that is like, this is
+ the amount of Bitcoin that's in the federation that is separate from the data that provides
+ eCash.
+ So I would say leave them separate because that's almost like a check for guardians to
+ be like, "Oh shit, did we inflate it somehow?"
+ Or, you know, "Is there a bug?"
+ Yeah.
+ Okay.
+ Yeah.
+ So it's like if we made a mistake or whatever, and I don't know, maybe like a UTXO doesn't
+ get included into the guardians wallets and then, but they issue eCash or something.
+ I have a question as well with regards to eCash, because I know what you mentioned is
+ kind of like a liability.
+ So where would the sort of peg in, peg out function be working then?
+ So let's say the person is looking at this dashboard and then they're like, "Oh, I have
+ too much of eCash."
+ So where are they then clicking?
+ Yeah.
+ So that wouldn't happen.
+ So basically the way that it works, right, is that when I want to peg into the federation,
+ then what I do is the federation has this public address.
+ What I do is I tweak that address and then I deposit funds to it.
+ And I provide a proof to the federation that says, "Hey, I can prove to you by a cryptography
+ that this is a tweak of your address.
+ If you give me the eCash notes for this, I will tell you how to spend it."
+ And so now when you make it atomic, so the federation gives you the eCash notes and in
+ the process of giving you the eCash notes, they also get the ability to spend from this
+ wallet.
+ So it's not like a normal HD wallet where it's like I generate an address and give it
+ to you to spend because we don't want the federation to just generate an address, you
+ deposit to it and they don't give you the eCash.
+ So if I understand correctly, it's almost like an IOU note in the normal traditional
+ banking system.
+ Do I understand that correctly?
+ Yeah.
+ I mean, that's precisely what it is, is that you deposit into the federation and the federation
+ at some point in the future, if you come back, the federation has to honor that eCash note.
+ And so the way that they will normally do it is that you'll just show up and you'll
+ say, "Hey, I want you to just redeem this eCash note.
+ And so I'm going to give you this eCash note, give me another eCash note of the same value."
+ And that's like for the lightning payments, because I'm doing an eCash spend to the gateway
+ and the gateway is just reissuing to themselves.
+ But if you do a peg out, then the way that that works is, "Hey, I'm going to give you
+ a bunch of these eCash notes and it's going to be the equivalent value of the underlying
+ Bitcoin that you have in reserves.
+ I want you to send that to this address."
+ Right.
+ Yeah, I think primarily right now, if we see a difference between the eCash listed and
+ the Bitcoin listed, from the guardians perspective, that should just be a red flag.
+ "Hey, we need to do an audit."
+ Yeah, that's like a catastrophic error.
+ Yeah.
+ If there's a difference between the two.
+ Yeah.
+ So show the two and should they be different in UI?
+ Should we kind of like alert the guardians?
+ Yeah, that's like alert the guardians, alert everybody, like start the bank run.
+ Like everybody get all of your stuff out of this federation right now.
+ Yeah.
+ But it's kind of funny, but the only way we have for auditing a federation right now is
+ to actually do a bank run to a new federation.
+ Yeah.
+ Right.
+ Does that make sense?
+ Cool.
+ So would someone who pegged into this federation, would they want some proof to say like, "Okay,
+ I just want to check that everything's going okay in the federation."
+ Would they have access to this guardian dashboard or would the guardian-
+ No.
+ So normally they wouldn't.
+ Yeah.
+ The way that you check it is you just withdraw all of your money.
+ Right.
+ That's like the way that a normal bank run works.
+ And what's also, this is just like some kind of context on bank runs that I'd never realized
+ before, but apparently this is kind of like the history of bank runs and how this works,
+ is that the primary people who start bank runs are competitor banks.
+ Because they're basically like, "Hey, I'm going to call your bluff.
+ I think that you don't have any cards."
+ And so generally, probably the way that this is going to work is that gateways are just
+ going to be continuously basically bank running the federations.
+ And so there's going to be a lot of moving back and forth between these things.
+ But the way that you do it is the moment that you think that your federation doesn't have
+ any cards, then you just withdraw your money into self custody or to a different federation
+ or whatever it is.
+ And depending on the app that you use, so like on the Feddy side, we've made it so that
+ you basically, they kind of look like Slack channels when you're connected to different
+ federations.
+ And it's like two button clicks to move funds between one federation or another by a lightning
+ payment.
+ But you can do the exact same thing with an on-chain withdrawal to self custody.
+ Cody, could you explain how guardians could rug the federation?
+ How is that possible?
+ How would they actually do that?
+ Yeah, so it's just a threshold multi-sig, right?
+ So there's two kinds of ways that they could rug the federation.
+ They could literally just sign a transaction spending all of the Bitcoin to a different
+ wallet and stop honoring the e-cash notes.
+ So you just show up and there's no guardians there and they move their money to a different
+ wallet.
+ So the Bitcoin would be zero and the e-cash notes would have some number up top in this
+ dashboard, right?
+ And then the other thing they could do would be if they could do like a slow one where
+ only they would know this, right?
+ Like the guardians would be able to see that we have been issuing e-cash notes that don't
+ one to one match.
+ So they just like scrape off the top every once in a while?
+ Yeah, I mean, it's just like when I issue e-cash notes, right?
+ So e-cash notes, it's impossible to correlate the inputs and the outputs for that, right?
+ And so they could basically just print e-cash notes where it's like, as part of the consensus
+ rounds, it's like the input is water vapor and the output is e-cash notes instead of
+ the input is Bitcoin, the output is e-cash notes.
+ And the only way, the only people who would know they were doing that is the guardians,
+ right?
+ So in this sense, they'd print e-cash notes to themselves, right?
+ To their own user clients and spend it like redeem it for the Bitcoin.
+ Yeah.
+ Could just excuse all of my questions, but I'm trying, I'm making notes here as you guys
+ are explaining all of the concepts.
+ And I kind of had this idea after the last call that because this is an open source project,
+ a lot of people kind of jump into the project and there's a whole lot of terminology that
+ doesn't make sense to the normal human.
+ So I make notes about this and I was thinking of just putting it into like a Google document
+ just somewhere so that if the average human walks into the project and they don't understand
+ certain terminology, they actually can get a bit of an understanding of what it is.
+ How would you explain the epoch?
+ What is an epoch?
+ How would you explain what that is?
+ So epoch is just the term used in the Byzantine fault-tolerant consensus diagram that we use.
+ It's the equivalent of a block, right?
+ So basically for, the way you have to think about this, right, is that the most important
+ thing for any transaction system is that you need an absolute ordering of events, right?
+ Is that like Alice can't pay Bob with money she has not yet received from Dave, right?
+ And so like whatever system you use, you have to do that.
+ And so the way that we basically do that is that in the same way that Bitcoin has like
+ a mempool where there's no ordering of the transactions in the mempool, but then like
+ every 10 minutes there's like this snapshot of like, here's an absolute ordering.
+ And this absolute ordering comes after the previous absolute ordering, right?
+ And so it keeps going like that.
+ And so the epochs are the equivalents of blocks in the Bitcoin blockchain, right?
+ So epochs contain a bunch of transactions.
+ Gotcha.
+ Thank you.
+ So at each epoch, the guardians are stamping transactions that have happened in the last
+ span of time, right?
+ Since the last stamping.
+ Is that a good way analogy for it?
+ Yes.
+ Cody, I saw, I think it was in a GitHub that each epoch, right?
+ Each epoch interval is only three seconds.
+ Is that accurate?
+ Yeah.
+ I mean, so that's kind of configurable, right?
+ And so like the way that it was originally, it was basically, it was every single three
+ seconds, but now it's like, you can basically configure it.
+ So it's like either every three seconds or once you get a certain number of transactions,
+ then the three seconds starts or whatever, right?
+ So you don't have just a bunch of empty blocks or whatever.
+ But yeah, they're about every three seconds.
+ It depends on the size of the Federation.
+ It's just like, because the limiting factor here is like, how do you get a global state
+ among like the globe of the guardians?
+ And so if there's like 15 different guardians, then it's slightly longer than three seconds
+ versus if there's like four guardians, then it's like three seconds.
+ Yeah.
+ To that point, I was thinking about the, let's see, you know, no one with guardians and should
+ there be a minimum and a maximum that are allowed during setup and then communicated
+ to the guardian leader admin during that setup process?
+ Yes.
+ So the, during the setup process, the technical thing that you want is you want three M plus
+ one where M is the number of militia.
+ [INAUDIBLE]
+ >> You broke up, Seth, sorry, we can't hear you.
+ >> I think Cody was explaining the three and plus one situation.
+ We can move on while he's reconnecting.
+ Just let us know if you're there, Cody.
+ >> Yeah, can you guys hear me now?
+ >> Yeah, a little spotty.
+ >> Hi.
+ [BLANK_AUDIO]
+ >> It's pretty spotty still.
+ [BLANK_AUDIO]
+ >> Yeah, sorry, I just switched over to Wi-Fi for a moment.
+ [INAUDIBLE]
+ If you're on a boat or whatever, right?
+ You have three different clocks that you're using,
+ then you're actually using three different clocks and yourself, right?
+ And so you can decide, hey, these two align, and I'm going to go with them.
+ Or you can say all three of them align, so I'm wrong.
+ But what you don't want is to be in a situation where you have two clocks plus
+ you, because one of them says one thing, one of them says the other.
+ You have no mechanism to do a tie break between those two, right?
+ And so the technical thing for
+ this is the way that you always have a tie breaking mechanism for this.
+ [BLANK_AUDIO]
+ Three m plus one, where m is the number of wires, right?
+ And so that is, you'd want to do a three of four, and
+ then one person can be an actively malicious liar.
+ And you're still able to come to a consensus,
+ because those three can come to an agreement.
+ If you want two to be able to lie, then you want a five of seven, right?
+ So two, six plus one is seven, and that way two people can be actively lying.
+ And so whenever you scale up the size of the federation,
+ you always want it to be a interval of that number, right?
+ [BLANK_AUDIO]
+ >> So an absolute minimum should be three.
+ [BLANK_AUDIO]
+ Is that logical?
+ [BLANK_AUDIO]
+ >> Lost him.
+ [BLANK_AUDIO]
+ >> Okay.
+ [BLANK_AUDIO]
+ >> We can get a circle back to that one at some point.
+ >> I think that one note on that is, I think there's a possibility,
+ like when you say absolute minimum, I think there's a possibility to make
+ a federation where you are the only guardian.
+ But like- >> Yeah, I mean,
+ you can start, just a quick interrupt,
+ is that you can do whatever configuration you want, right?
+ But the correct configurations for all of the things that we're building
+ is 3m + 1, where n is the number of malicious people, right?
+ So you could do a single one or whatever, right?
+ But that one is, there is no benefit to the federation.
+ [BLANK_AUDIO]
+ Right?
+ Like the benefit comes from if you do a 3m + 1 setup.
+ So 3 of 4 or 5 of 7 or 7 of 10, right?
+ [BLANK_AUDIO]
+ >> Okay, so then it sounds like it doesn't make sense to impose a minimum, but
+ how about a maximum just to- >> Yeah,
+ the minimum would be 4, right?
+ I mean, yeah, the minimum should be 4.
+ [BLANK_AUDIO]
+ >> It's a recommended minimum.
+ [BLANK_AUDIO]
+ >> Yeah, maybe just like that could be the, I forget what it's called, but
+ like before you click on a text input or whatever,
+ there's like a shadow input side of it.
+ >> Yeah.
+ And what about a recommended maximum?
+ Would it make sense to include that in this area?
+ >> I mean, you can do as big as you want, but it's also just like,
+ once you get to about 20 or whatever, it's just kind of like practically it breaks down.
+ Right? And so,
+ just well it doesn't break down it's just like the epic rounds become like 20
+ seconds or so, right?
+ And so that's maybe it's like, they try to input 20 or
+ they try to input 21 or whatever.
+ And then it just like does a little prompt for them like,
+ this is how FeddyMint works, we recommend you set up two separate federations.
+ [BLANK_AUDIO]
+ >> Okay, yes, this could be helpful just as a little bit of extra context, but
+ yeah, not enforcing any hard rule.
+ Some kind of a text right here.
+ [BLANK_AUDIO]
+ Okay.
+ [BLANK_AUDIO]
+ Cool, so I think we talked about epochs a little bit.
+ I added those here.
+ I'm going contrary to mental, I'm going newer blocks get added to the left,
+ just feels more natural that way.
+ Open to changes there, of course.
+ And then I added a view all button here for users to kind of like zoom out if they
+ wanted to just to see a larger sequence of blocks, since it could be helpful.
+ And I could open a screen or
+ maybe open via a model perhaps so that the user doesn't lose context.
+ [BLANK_AUDIO]
+ Moving on from there, I think that some of what we're talking about here relates to
+ this back and forth between me and Joda here.
+ [BLANK_AUDIO]
+ So info for connected lightning nodes.
+ I initially went with the name of the node, node ID capacity.
+ Sounds like we want to add some additional info such as pegging out fees and
+ things of that sort, so I'll incorporate those items.
+ I was thinking about the connection string and
+ how it is discoverable and Joda mad some context here.
+ I need to go through and think about and plug into the design here.
+ But at a high level, I think that something like this makes sense.
+ So give them a URL where they can go to connect.
+ And then from what I understand, there will be a code needed.
+ I think it's called a connection string.
+ It's not quite as friendly as a Federation connection code.
+ I'm not sure what this value will actually look like, but
+ happy to, it's only to share with me what that looks like.
+ I could put that into the design.
+ This seems like the natural place for
+ this to live as well, right below the header here.
+ So any feedback on that would be great.
+ And from what I understand,
+ there's no maximum number of connected lightning nodes.
+ So in theory, this list could go on for quite a while.
+ So if that's the case, maybe we want to have a expand and collapse button here.
+ I guess that's sort of to be determined whether that's needed or not.
+ All right, what else here?
+ And I think, Jotam, that you chimed in on how would a lightning
+ node operator actually know that this particular Federation exists?
+ I was wondering if there would be some kind of indexed list of operators or
+ federations somewhere, and I think that that's been covered before.
+ I just have to track down that that combo, wherever it is.
+ Might be in GitHub or Discord, I'm not sure.
+ >> I think we were talking about that last time, and Cody had,
+ like, very international operators like Amboss could list gateways,
+ the same way they list lightning nodes.
+ It's just like, hey, this lightning node is also a gateway.
+ So there's this tricky bit where a gateway operator actually trusts
+ the Federation they're serving, right?
+ So seeing them publicly and seeing their information does not mean they'll
+ connect to your Federation and serve you.
+ So that bit is interesting.
+ So essentially, members of a Federation, be it the guardians or
+ be it users in the Federation, should be able to invite a gateway operator.
+ And the gateway operator should be able to kind of do some quick audit on who
+ is running, who is behind this Federation, what are they even doing?
+ And then, okay, I trust them enough, I'm going to connect to them and serve them.
+ I'm going to deploy my capital in serving this Federation.
+ So that's what I was alluding to there.
+ >> Okay.
+ So this current bit of info right here,
+ does that seem, I guess, good enough for now kind of a situation?
+ >> Yeah, it is the same information like you have at the top of the graph.
+ Let me see.
+ Scroll up.
+ So that same copy, that invite members should be the same information.
+ And it's not going to look like a URL.
+ I'll drop it in just a string.
+ It's with some data encoded in it.
+ But it's the same thing you'd invite members.
+ Since gateways are also just members, special members of a Federation,
+ the same string should be able to invite them in.
+ >> Interesting, okay.
+ That's good to know.
+ Yeah, I thought they would be unrelated at the least.
+ So that's good to know.
+ Cool.
+ Is there a type of a warning that they would want to have
+ when a Guardian is not active anymore?
+ So that red area there, sorry, Seth,
+ if you could just zoom into the top of the dashboard.
+ Yeah, there.
+ So when a Guardian goes offline, how impactful is that?
+ And should they know that information, or is it just okay?
+ >> Yeah, so a little bit of context.
+ I was imagining that this would actually be clickable.
+ I'm not sure if that's breaking a common design pattern of batches being clickable.
+ But in this case, if it was clickable, you would go to the other Guardian's page.
+ And you would see which Guardian it was, the fact that they are offline.
+ And I was brainstorming that if this fed had chat enabled,
+ that you could just chat with seven right from this dashboard area,
+ which would be pretty cool, I think.
+ But that's probably way out of MPP.
+ >> Yeah.
+ I guess the question is, how impactful is it for
+ the Federation if a Guardian goes offline, or
+ if they've been offline for a long time?
+ Do they need to pay attention to that, or is it fairly okay in the setup?
+ >> There's a number of Guardians can go offline, but
+ there's a threshold beyond which the Federation starts breaking down.
+ So the three and plus one.
+ So if you have four Guardians, one can safely go offline at any given time, and
+ the Federation would continue.
+ But when two go offline, then you start having issues with your consensus.
+ So a consensus might stall until some of those Guardians come back online and
+ the threshold is met again.
+ >> And that's always that threshold of four, is that always that four?
+ >> No, it's up to three and plus one.
+ It's like if you have four Guardians, one can go offline.
+ If you have seven Guardians, two can go offline.
+ And the Federation continues, yeah.
+ [BLANK_AUDIO]
+ >> I did make a quick note here about charting options and
+ charts.js could be a good tool used by BTC Pay Server.
+ It's MIT licensed, so I think that we could use that if that was a decent option.
+ Let's see, cover that.
+ I think those are the things for the most part I wanted to cover for the dashboard.
+ A couple of small details, I added this Federation info here,
+ API version, consensus version.
+ I picked those up from the current dashboard here,
+ of these two values here.
+ And I did make a note here, which is probably a larger discussion,
+ but what happens when consensus stops?
+ So when you have four Guardians and two of them go offline,
+ what is the actual expected experience from a Guardian point of view?
+ And also end users point of view.
+ In my mind, the Fed just kind of goes into this pause state.
+ And then once those Guardians come back online,
+ it kind of picks up where they left off.
+ And the part that I don't have my head wrapped around is,
+ I saw on the Fedia app that you can do offline payments.
+ So I'm not sure how that correlates with the epochs,
+ blocks being out of consensus.
+ And if that offline, those offline payments somehow will come back
+ into consensus with the overall Fed.
+ Yeah, again, probably a much larger discussion,
+ maybe outside of the scope of design.
+ >> Now, I mean, I can clarify that real fast.
+ So basically, when you're doing a payment with eCash,
+ it's that I tell you, like the eCash is a bare instrument.
+ It's kind of like telling somebody a seed phrase, right?
+ Where it's like, if you tell somebody a seed phrase,
+ they own your Bitcoin just as much as you do.
+ Like if I provide you the eCash note with this Federation signature on it,
+ they own it just as much as you do, right?
+ And so there's like some benefits and downsides of that.
+ The benefit of this is that I, as the sender, can do an offline payment,
+ where I just have to communicate the eCash note to you.
+ In order to complete the payment,
+ now, because now both of us know what the eCash note is.
+ You go to the Federation, the Federation redeems that one and issues you a new one.
+ And so now my knowledge of the eCash note is worth nothing because it's been redeemed.
+ Does that make sense in terms of the way that you complete a payment with the eCash?
+ >> Yeah, I get that.
+ >> Yeah, so for an offline payment, what we're doing there is that
+ the payment is not complete until the Federation does that reissuance, right?
+ But functionally, if I'm offline and you trust me,
+ then during that period where I tell you about the eCash note, right?
+ But both of us, because we're in a local community,
+ this only operates within a single Federation when we're doing this thing, right?
+ Is that you're trusting me as the sender,
+ that I'm not going to get back online before you go to the Federation and
+ reissue an eCash note, right?
+ And so when the Federation goes, they have more than M,
+ malicious people, but not more than the threshold.
+ But basically the thing just stops, right?
+ And people just keep making transactions, they broadcast to the Federation.
+ But the Federation without the threshold can't reach
+ that consensus in order to sign an Epoch block, right?
+ And so all of these transactions are basically just like filling up in
+ the Federation equivalent of a mempool.
+ And then once they come back online, then they sign all those transactions,
+ they make an absolute order right through those things,
+ they continue where they left off, right?
+ Got it.
+ Yeah, that's super, super helpful.
+ Yeah, I think that makes sense.
+ I might have to listen to that one more time in this recording.
+ Yeah, just the thing to keep in mind is that for an eCash payment,
+ the way that you do a payment is that I tell you about the eCash,
+ you go to the Federation, redeem that eCash, get issued new eCash.
+ And now my knowledge of the previous eCash note isn't worth anything
+ because you've redeemed it, right?
+ That's how you do a payment with eCash.
+ Yep.
+ It's so just-
+ Go ahead, sorry.
+ I'm sorry, go ahead, Mo.
+ No, I wrote a note over here is,
+ do we need to explain the threshold of guardians at some point
+ to people using the users of the UI?
+ Or, I don't know, I'm just thinking out loud.
+ To the guardians or to the users?
+ To the, this is, so-
+ This is for the guardians.
+ The guardians would go offline and that would make an impact on the Federation.
+ And then there's a minimal threshold of guardians that need to be online
+ to reach consensus.
+ So would it be something to, I don't know, explain it to them at some point
+ in the UI that there needs to be a minimum of, I wrote here four,
+ I don't know if I wrote that correctly, that there needs to be a minimum of four?
+ Yeah, I mean, it depends.
+ Like, really the way to approach this, right, is that when you have a single person,
+ the reason why we're doing this, right, is because in a distributed system,
+ it's impossible to distinguish between somebody who's being actively malicious
+ and someone who just isn't connected, right?
+ And so that's the whole baseline of this thing.
+ And so for, like, the notification for them is basically like,
+ hey, this person has been offline in the period of time that they've been offline
+ for whatever, right?
+ Because like, on our side, there's no way to distinguish between the person
+ who's being actively malicious or whatever, like trying to hide transactions
+ and all those kinds of things, just because it's a distributed system,
+ and somebody who's just offline or whatever.
+ So I think the way to communicate that would be like, this person has been offline
+ for this period of time or whatever, right?
+ And then like, in the note underneath it is like, your three and four federation
+ requires a three-threshold signature.
+ If another note goes offline or whatever, consensus will stop or whatever,
+ please contact this person or move your funds out of this federation or whatever it is.
+ Yeah, that makes sense.
+ - And then on the user's client app, would it make sense to just state
+ at a very high level that consensus has stopped, they can keep transacting,
+ but just, I guess, maybe for the...
+ just for the sake of full transparency or there was a--
+ - Yeah, Skylar, I think Skylar's already got like designs
+ and stuff around that, but then Betty,
+ I don't know how other people would handle it,
+ but that's something where it's like,
+ if you're part of a federation and that federation
+ has like an out of normal fans consensus issue,
+ then that gets communicated to the clients as well.
+ - Excellent, cool, cool.
+ Yeah, Skylar, I'd love to see what that looks like
+ just to have more context as to what the,
+ you know, the situation is.
+ If you're-- - Soon, soon, PM.
+ - Cool, okay.
+ So that's, last thing I talked about was this API version,
+ consensus version.
+ It seems like a decent place to put that, technical,
+ but we're doing guardians, so it seems applicable.
+ Okay, I don't think there's much to talk about here,
+ but-- - I have a question.
+ What is the account on the left trailing?
+ - The guardians account.
+ So just a couple of quick notes there.
+ So that's, in my head, that's a place
+ where they could possibly change the username,
+ change their password, maybe enable 2FA,
+ probably not for MVP, but down the roadways,
+ or these just out on left field somewhere.
+ - Okay, make sense.
+ Is that the same level as gateways then?
+ Just like, 'cause I see like the whole federation things
+ at the top, dashboard, guardians, module, server, settings,
+ and then I see these two special.
+ - Yeah, so account, I think, would be special
+ since it's applicable only to that one individual user,
+ whereas these are applicable to all users.
+ And then Lightning Gateway would,
+ I use this icon here to connote that.
+ It would open a new browser window
+ that's kind of outside of the guardian dashboard.
+ So they're kind of like ancillary.
+ Well, this would be an ancillary link,
+ and this one just seems like it's not,
+ shouldn't be bundled together with the top five.
+ - So is this the guardians gateway,
+ or what is Lightning Gateway here?
+ - Lightning Gateway dashboard.
+ So that would be whatever form this takes.
+ - Yeah, that implies this guardian is running,
+ operating a gateway, and they have.
+ - Oh, right, right, right, right.
+ Yeah, excellent point.
+ So that might not be the case.
+ Yeah, so it implies, I mean, it might not imply it.
+ Maybe just think of this as a shortcut
+ to get to this screen.
+ - Yeah, but the screen is only available
+ to people who are operating gateways.
+ That's fair.
+ - Yeah, maybe I'm wrong, correct me if I'm wrong, Jodan,
+ but it sounds like you're saying
+ they're essentially should be thought of
+ as completely separate things.
+ - Yeah, in a way, yes.
+ Not even in a way, that is how we think of them.
+ - Yeah, so although they are separate things,
+ this is still a publicly accessible screen.
+ Is that the case?
+ - No, this is like the dashboard to your Lightning node.
+ - Okay, okay.
+ - Yeah.
+ - That's good to know.
+ Yeah, that was one of my questions for Dev.
+ Glad we hit on that.
+ Okay, so it sounds like this should probably go away
+ in that case.
+ - Yeah, probably makes sense, yeah.
+ - Okay, cool.
+ Good.
+ (computer chimes)
+ Okay, modules view.
+ And then we can still talk about
+ if this whole left nav structure makes sense.
+ I think it does, and I would push on that a little bit,
+ but we can get into that now or in a little bit
+ if people want.
+ But these are the core modules.
+ And then just kind of like exploring here,
+ but modules in development.
+ If the guardians were tech oriented,
+ they could kind of foresee where they could bring
+ their federation and what functionality
+ that could be in store for them.
+ And this might be too techie,
+ but they could track the progress in GitHub,
+ perhaps just exploration here, nothing more than that.
+ So yeah, any thoughts on this stuff here?
+ (computer chimes)
+ - I don't know how they discover modules in development
+ to see this section here.
+ 'Cause the bundle, the code they're running
+ in their server does not know about these things.
+ - But if the, I think that the federation,
+ the FedEvent GitHub repo is publicly open.
+ So that's where I was thinking was just going
+ to the publicly accessible repo.
+ - Yeah, or we could do something like awesome Fetiment
+ or whatever, like people do stuff like that.
+ Like they've got like awesome core lightning
+ where it's just like a list of community curated plugins
+ that are like cool things thrown on top of that node.
+ And so just like a thing that makes it available
+ or whatever, we can just like add it or whatever
+ as like a, hey, these are things
+ that are currently under development.
+ And then we can even put like a,
+ maybe it'd be cool for the under development or whatever.
+ Right, like you put like a little link next to it
+ or something where it's like,
+ this is how you could support it
+ or like contact the maintainers
+ and just tell them you want it or something, right?
+ - Right, this sounds like a marketplace for modules.
+ Any kind of like discovery?
+ - Yeah, a little bit.
+ I mean, I don't know, maybe people make like paid modules
+ or something, but I was thinking more like,
+ for the stability pools or whatever,
+ like it would be nice if after we set up a bunch
+ of federations or whatever, those federations,
+ there are guys maintaining it.
+ They get a bunch of contacts from the people doing it.
+ I'm like, hey, we saw that you guys are working on this.
+ I think it's really important.
+ This is something my community could use.
+ - Yeah, Jonathan, it's interesting you mentioned that
+ 'cause it's kind of like, in my head,
+ it's a little bit like WordPress
+ where sort of instead of a plugin, it's module
+ and then they have this sort of like a store
+ of things that are possible.
+ So very extensible.
+ - Cool, all right.
+ Yeah, I'll just leave those there for now
+ and we can just have some back and forth on this area.
+ Server view, I just made a note here,
+ it's possible kind of like the umbrella,
+ track CPU, temp, RAM, disk space, all of those things.
+ And that would tie back to this state of healthy
+ or it could be healthy attention or warning
+ depending on how your server is behaving.
+ - My first thought here was given the range of deployments
+ possible with these FedMean servers,
+ I don't know if you're gonna always know
+ a usage temp, RAM, disk space and stuff like that.
+ For example, you could deploy a node
+ in a third party hosting solution
+ and they might not provide you with this information.
+ - Right, yeah, that's a good point.
+ Yeah, it's on Google Cloud or something.
+ Yeah, absolutely.
+ Interesting.
+ So I don't think that we would know where the code,
+ where the server was, whether it was self hosted or public.
+ So maybe this, yeah, maybe this isn't doable then,
+ this healthy status.
+ - Healthy is like whether it's,
+ whether these dashboard can talk to the server,
+ whether it's online or not.
+ So I'm thinking you can do some minimal health checks there.
+ Although the server can report some minimal.
+ - So yeah, it's more of a binary.
+ It's either like it's good or there's problems.
+ Okay.
+ - At least that, yes, at least that.
+ (keyboard clacking)
+ - What do you think, Cody?
+ - I think it's good.
+ - Cool, all right.
+ Yeah, here's a screen that I did wanna start
+ having a go at settings and just chime in
+ if any of this stuff seems out of place
+ or outside of the scope of MVP.
+ I think that I swear I saw this somewhere.
+ I can't seem to find it though,
+ but I did include this description
+ at the top of the Federation.
+ It's probably, you know, maybe it's easy to include
+ along with the Federation name,
+ but if that's not the case, then I'll tear that out.
+ Local currency selector.
+ I imagine that we'd wanna have this just so,
+ you know, just for, it just seems like it's a needed,
+ and this is where it would live.
+ Dark mode API version.
+ Those are, oh, for hell.
+ And these attributes that are used during setup,
+ is it the case where those are configurable post setup,
+ or once those are added,
+ then they are more of a permanent?
+ (silence)
+ Joram, Cody?
+ - I have, like, these are consensus configurations
+ like block confirmations,
+ and so you have to do a full setup right now.
+ You have to do a full setup to change consensus configs.
+ So I would just leave the most permanent ones set.
+ - All right.
+ (typing)
+ Okay.
+ Does it make sense to even include these
+ on the settings page?
+ Maybe just for, I guess, maybe transparency's sake.
+ I saw those around here somewhere.
+ - Sorry, Joram, I don't think the URLs are consensus, right?
+ - Yeah, not the URLs.
+ - The guardian, yeah.
+ - The first one, but wait, anyway,
+ with something like the P2P public URL,
+ if you change that,
+ you have to inform your guardian somehow before they change.
+ - Yes.
+ - Yeah, I mean, so just kind of just keep in mind
+ for this one is that, like, technically speaking,
+ like, it wouldn't be impossible to have it be like,
+ just during an epoch, everybody just kind of agrees
+ that, and this is the way we're doing things now, right?
+ But just like on an implementation,
+ that is extremely difficult to do.
+ And so the way that it currently works
+ is that you just say, one, they're doing the setup,
+ this is how we set everything up.
+ And that's kind of the way that works right now.
+ - Yeah.
+ Do you imagine that as things get a bit more refined,
+ that there might be a real world use case
+ where somebody might need to change their public URL?
+ - Yeah, the goal would be to get a lot of this stuff
+ to be configurable at runtime.
+ But currently, they're all configured at compile time
+ and config.
+ Right.
+ - At setup time, yeah.
+ - Yeah.
+ - Okay, cool.
+ Good stuff.
+ Does anyone have any strong opinions
+ on the left nav structure?
+ And I guess I ask that only because if we go back here,
+ there's this settings tab.
+ And under that settings tab,
+ there is the mod, it's module specific.
+ I guess I'd make that more clear by calling,
+ putting these under module as opposed to settings.
+ Sounds like maybe we don't need a settings view
+ at this point.
+ But longer term, I think we will.
+ So, the way I would approach things
+ is sort of like forward thinking, right?
+ So knowing that we will want this eventually,
+ do it now so that things don't have to be
+ sort of like re-architected at a later date.
+ - Yeah, Seth, that was kind of one of my thoughts
+ that I wanted to explore
+ and I just haven't gotten around to it.
+ Apologize for that.
+ At some point, I probably will just explore
+ a variation of this without the left nav
+ just seeing if we can, like if that's needed.
+ And maybe it is, I don't know.
+ But I'll just try that out.
+ And if you want to as well, it might be worth it.
+ Just, if I'm just looking at those options,
+ I wonder if that's really needed.
+ But to your point, maybe it is.
+ Like maybe you have 16 modules of different types of things
+ that you might need, but I'm not sure.
+ - Yeah.
+ - Well, left nav also translates really well to mobile.
+ - Yeah, thinking about mobile.
+ Yeah, if there's a little hamburger icon
+ in the upper right or left,
+ I think that this would fit in there nicely,
+ like you said, Cody,
+ as a way to navigate the different views.
+ Cool, so it's three minutes left before the top of the hour.
+ Are there other things that we should talk about
+ or next steps for me?
+ Or how do people wanna kind of like talk about next steps?
+ - I think everything looks great.
+ Let me just making sure that next steps
+ don't include dark mode.
+ 'Cause we're a light mode only.
+ - On the dev side, I know we have some more items.
+ I don't know, Ethan, if you wanna give a slight update
+ on the UI immigration.
+ And then at Bikinon, at least getting some sections
+ of this signed off, for example,
+ just to make sure that we're not missing anything.
+ So for example, just the dashboard part,
+ knowing that we're gonna have a left-right link
+ then the dashboard, and then maybe the far section
+ in that view, so that we just have like a flow of things
+ that maybe we can put some dev time to.
+ - Yeah, so there's gonna be a UI repo.
+ It's gonna break off from the main repository
+ just to, for a couple of reasons,
+ but directly relevant to this call
+ is we're gonna dockerize everything.
+ So that way it's a minimal lift for any designer
+ or anybody else that wants to play around with FettyMint
+ that they can hone the repo down.
+ All they have to do is install Docker
+ and then run a single command and they will have
+ a guardian set up and all of the goodness easily
+ and readily accessible.
+ So we're working on that and hopefully that lands sooner
+ than later, and then we can go walk through that
+ maybe in one of these calls and get some designers
+ running the thing.
+ - Yeah, that would be amazing for me to be able to
+ jump in and play with things, absolutely, yeah.
+ - Nice, do you have any ask from design, from dev
+ aside from the good questions in this?
+ - Yeah, I think we covered a lot of the questions
+ that I laid out here.
+ No, I'm separating that out from green, from yellow,
+ which I think is helpful for devs to just sort of like
+ jump in and see what things I'm wondering about.
+ At the moment, no, I think that I'm good here.
+ Oh, there's this one,
+ individual settings for each module.
+ I can add those here or it's not super important,
+ but could be super helpful.
+ So this one, for example, could be local currency.
+ Bitcoin, I'm not sure if there are settings.
+ Same with Lightning.
+ - There are, for example, in Bitcoin,
+ I suppose you can modify your local settings
+ for Bitcoin module, say pointing to your Bitcoin RPC,
+ even on runtime.
+ You probably should be able to change that.
+ I'm not also like, I'm not sure of these,
+ but maybe we can list out the settings that exist today.
+ - Yep, that could be helpful.
+ Just to kind of plug into these designs
+ to kind of keep it as a,
+ it's like the proverbial source of truth.
+ So that's a no.
+ Yeah, I think that's it from my end.
+ And just high level, I think that I'm going to,
+ now that this is in a decent spot,
+ and I know that Sahil might come up
+ with some better recommendations.
+ So sitting on that for now,
+ I might go back and revisit the setup flow.
+ I think that some of the copy could be improved
+ a little bit for sake of clarity,
+ and maybe terminology as well.
+ Mo, to your question before of terminology,
+ I know that Jose had started a glossary of terms.
+ And I can imagine that glossary being a part
+ of this betting guide that I'm thinking about,
+ where it's like, how do you, what's it, how do I use it?
+ What do these different terms mean?
+ And it's of that sort.
+ So over time, it'd be great to sort of collab
+ on the living dock of those kinds of items.
+ - And do you, does anyone know where the glossary is
+ that Jose created or should I just reach out to him?
+ - I have the link.
+ I could send it right now.
+ - Yeah, I think we also have one on the Feddy side.
