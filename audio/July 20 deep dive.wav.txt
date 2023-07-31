@@ -1,0 +1,825 @@
+ handle thing. Yeah, first of all, there's a process handle thing like this is an arc
+ internally which holds a reference to the PID of the things that are spawned and it kills
+ the process on drop. When all the references to the arc is gone, we will kill the process.
+ So this is the core concept of Dewey Met. And so for every demon like here, BitcoinD, it holds a
+ process handle. So when BitcoinD itself gets dropped, the process handle will get dropped.
+ It also implements clone here. So like... So what exactly does that mean? So the process
+ handle, like, so is this basically mean that when BitcoinD dies, everything dies?
+ No, when BitcoinD dies, you have to keep BitcoinD alive to keep other things alive. Let's say
+ you have... Yeah, there's like some dependency, isn't there?
+ Yeah. So dependencies, we can go here, for example, it stores a BitcoinD.
+ So it ensures that BitcoinD cannot be dropped because we are holding on to it.
+ Yeah.
+ And that also ensures the order of dropping things, like first of all, the very inner things
+ will... very outer things will die, then the inner things will die. Yeah, because this will be...
+ process field will be dropped before the BitcoinD field here. The order of this matters.
+ So like, let's see, BitcoinD new... we just generate some... we just get the directory
+ of BitcoinD engine, just... we have a process manager that can spawn things.
+ So it just creates some log files, redirecting the output and error to that.
+ One thing that might be interesting is, are you able to just run it here and just like kind of
+ do an LS on the logs on just like temp directory, maybe? Like, that's kind of interesting.
+ If we just had that running, we could kind of go back and forth.
+ For sure. Let's see.
+ Yeah, sometimes...
+ Sometimes man meets...
+ Can you hear me?
+ Yeah.
+ Yeah.
+ Yeah. So it's a bit laggy.
+ Like...
+ Yeah, so we have a bunch... we hold on to a bunch of demons so they don't die.
+ If we just drop one of them, it will die. We can look at the function devfed.
+ Like it starts a bunch of things in parallel, lightningd, BitcoinD, LND,
+ gatewayd for the CLN and for LND, it opens the channel, starts our faucet for WasmDisk.
+ Yeah. And to our electrics both in parallel, starts up the federation.
+ And mix... are there any messages? I can't see.
+ We're mostly just joking.
+ Okay, cool. So yeah, that's how devfed starts. There are also external ones,
+ which is like only external things. So function externally means it only starts,
+ the external element doesn't start anything FedEment related. So BitcoinD, CLightning,
+ and LND and Electris, Explora.
+ Do we use...
+ Similarly, like... we use this for the tests and for the Rust tests, right?
+ Because they spawn their own Federation.
+ There you go. Okay.
+ Did you hear me?
+ Yes.
+ Okay, so like there was use case to like start two Federation. We can do that here just by
+ making a new struct like double Federation devfed or something that would just hold on to two
+ FedEments, two Federations like in the... in the lib we have devfed. We could just say
+ this Federation and Federation2 if we did it, two Federations.
+ So yeah, we could also explore...
+ I saw one point that you went to global with environment variable in it. Could you explain
+ that?
+ Oh, right. That's just going there. So there are a few macros here like there's some macro rules,
+ command, this just... this explains perfectly like a1, a2 and a3 expands to a1.command.await.arga2,
+ arga3 and drop. And it gets formatted optionally.
+ The support function which calls for things and displace warnings if it's taking too long.
+ And then there is variables which is like this thing and this gets converted into a struct
+ which has all this and this type. So this is... and then there's a vars method that gets generated
+ that's just shows all the variables we have like just to iterate over all. So we can add
+ them to the environment and we can go to reference I hope. Yeah. So these are actually real fields,
+ you can use them in a type of fashion.
+ There are two environments like this, there is a global one and there's a Federation1
+ and it's still building.
+ Awesome.
+ Has mprox finished yet?
+ It is building.
+ Man, we got a lot of code.
+ Yeah.
+ Anyone have questions? I'm trying to think of one.
+ Yeah, mprox has started.
+ After you do this, I'll overview of what it takes to use this. You can actually use this
+ from an external library or from external repo. So I'll show that one because it's kind of...
+ Yeah. So there are a bunch of fediments here and CLN gateway, LND gateway, CLN sales,
+ LND Bitcoin DED event. This is faucet. This will just stay empty I think.
+ And this waits like this error that we're waiting to log. And now we have everything set up. So
+ we can see Fediment CLI. And now there are completions for this too.
+ Like Fediment CLI info, we can see all the balances. And one of the things we have is FM
+ logs. There are all the logs for every one of these.
+ Everything's inside are just tailing those logs. That's all that's happening.
+ Yeah. These are all just deals. Like we can deal one manually.
+ Yeah. So anything else we should cover?
+ So Zach asks, so the different Fediments are essentially running different nodes that would
+ run on different machines. Are they running consensus? Yes, they are running consensus.
+ So like, oh, did you kill it? Yeah, I can restart.
+ Okay. Yeah. So each one of those, if you look at each one of these Fediment servers on the side,
+ you'll see that they mostly log the same thing. So when it says like consensus,
+ epoch and a number, like you can see some of those where there's a dash, yeah, right there, epoch six,
+ you'll see that on every one of those because they just got consensus that was just around
+ a consensus. So yeah, they are running a federation. So it's like a local federation,
+ which in the real world would be on different machines.
+ Yeah. It's just a shared multisig. So each Fediment server is one key in a multisig.
+ So in this case, there's a three or four multisig.
+ Do you want to just do the LOS on the FM binder, I think, or FM data, just like the whole thing?
+ What happened? I don't know what crashed. I think mprox itself crashed.
+ I think mprox itself crashed.
+ So the PKs of the feds hold balances within the feds, kind of, if that means private keys.
+ Yeah, the four servers have a three or four multisig in this case that
+ will hold Bitcoin on behalf of end users and the end users get an IOU.
+ Yeah. So this is kind of useful, right? Like each one of these, like if you're debugging stuff,
+ sometimes it's helpful to just know this exists. So each one of these is, yeah, like
+ you can see quite a lot is going on here, right? Like all the stuff that goes into Electris,
+ all the stuff that goes into the gateway, all the stuff that goes, all the logs.
+ So if you're ever stuck, this is a good place to look for things like the config files and
+ stuff like that. Everything you'd need is in here. So it's also just kind of instructive to
+ just dig around and try to figure out what the different files mean.
+ That's an important one. Yeah. That's what the client gets to be able to connect.
+ This also includes, I think, the config files for each of the daemons, right?
+ I think, I don't know where they are. They might be somewhere.
+ Yeah. So yeah. Is there anything else with DevEvent?
+ Is there anything that we can like dive in and look at the database for the RocksDB stuff
+ within DevNet? Do you have dbdump on your path? Or dbtool?
+ Should be called dbtool, yeah.
+ Oh, we actually have a CLI for that. Okay.
+ And it's a little, every time you use it, you have to kind of remember how to use it.
+ Yeah. You just use dash dash database. And then I probably like, yeah, fm
+ tester slash server dash zero, maybe. Or cfg slash server dash zero slash database.
+ This is being really unhelpful.
+ Yeah. So you should be able to dbtool dash dash database and then dump.
+ Oh. What's the password for this?
+ Oh, no.
+ I think it's just server dash zero. That's what it used to be at least.
+ So, you know.
+ That's what I.
+ Yeah. So.
+ Here, I just put a link in the chat that contains some examples.
+ Oh, cool. Thank you.
+ And what.
+ I was just saying one thing to know about the dbtool is that like, there's a lot of stuff in
+ the database. And there's like the dbtool as a way of filtering stuff down. So like, you'll want to
+ do that if you're curious about poking around in there. Otherwise, it's gonna be too much data to
+ understand what it is.
+ And then there's the server side of this. And there's the client side database too.
+ That can all be accessible via dbtool.
+ Yeah, it should work. Maybe there might be some issues. I haven't looked at it in a while,
+ but it should work.
+ Got it.
+ Once you get all the parameters correct.
+ Which config do we want?
+ Okay. So you just need a path.
+ Okay.
+ So it must just be the config dur basically. Yeah, the config dur. Okay. Yeah.
+ It is...
+ Outdated, I think.
+ The way you written it was almost right. You just need to use server zero again on the
+ configuration.
+ Yeah, I think up to three. You almost had it.
+ Yeah, you need to pass both the configuration and the path to the database. I think most of
+ the time they're like in the same directory, but they could be in different directories.
+ So it takes both.
+ Yeah.
+ Oh, no.
+ Oh, no.
+ Is the password correct?
+ I try pass.
+ Get rid of the dash.
+ Yeah, or test zero.
+ What is...
+ It is.
+ That's the password.
+ Password.
+ Password, password, password.
+ It pass zero.
+ Yes, yes.
+ Yeah.
+ Boom, there it is.
+ Not terribly. Yeah, it's a little bit much, but...
+ So if you type the... If you go back to the examples, there's like a way of
+ passing it. You can say like consensus.
+ and it'll dump all the data just related to consensus.
+ Yeah, I think you need to do dash dash module.
+ I forget the, yeah, modules.
+ - Yeah.
+ - Yeah, some of these are a little tough
+ for things that are consensus encoded like that.
+ You can't really see what's inside of them again,
+ or in some ways you can't really see what's inside.
+ - Yes, there's JSON.
+ - Yeah.
+ - Perhaps DB2 could print some,
+ some 3D version of this.
+ It could be useful.
+ - Yeah.
+ - Yeah, I think this is the pretty,
+ I mean, this is just JSON.
+ Like the date, like I think we need some sort of,
+ to get the, that like hex data that's in there,
+ you probably need some sort of decoder or something
+ that I don't know if it has or not,
+ but most of it should be readable.
+ I think like really outside of the consensus stuff.
+ So maybe do like lightning or like LM
+ and see what happens.
+ - Yeah.
+ - That's a little more readable.
+ - Yeah.
+ I think it is.
+ - This is like-- - So that giant,
+ - Go ahead. - Oh, sorry, go ahead.
+ - No, you go.
+ - I was gonna say that giant hex blob,
+ that's like the, so it's each epoch, right?
+ Like we save each epoch to the database
+ and I believe those are like transactions and whatnot.
+ And so the consensus, I haven't looked at this in a while,
+ but the consensus code, like it's like type erased, right?
+ So it doesn't have like the types on it
+ to properly like decode it into the right struct
+ 'cause that's like module specific.
+ So that's why it's in that form.
+ - Yeah.
+ - Yeah, that is annoying.
+ - So that's it maybe.
+ (thudding)
+ - Yeah, I could show a little bit.
+ Let me try to get my screen here.
+ I'll just show you a little bit about what it takes
+ to run this in a external repo.
+ (clicking)
+ Are you guys still there?
+ - Yeah.
+ - Okay, sorry, just got real quiet.
+ Okay, I think I'm sharing.
+ (clicking)
+ Am I sharing?
+ No.
+ Okay, now I'm sharing.
+ Okay, you can hear me?
+ Wait, just get, when it gets silent like this,
+ it feels like no one can hear me.
+ - We can hear you.
+ - Okay.
+ Okay, so I'm just gonna pull up,
+ this is the UI repo and that one's kind of interesting.
+ So this is what it looks like to,
+ so this was a PR where I just copied some DevEvent stuff
+ and now, so it's basically a couple files.
+ So I added a Nix flake.
+ DPC I'm sure is just so proud of me right now.
+ So a couple inputs, Nix packages to download stuff
+ like Yarn and mprox and Node.js
+ and a specific hash of Fetiment.
+ So you basically just say like,
+ "Hey, I want the source code at this version of Fetiment."
+ And then basically when you create a dev shell,
+ I want you to build these Nix packages.
+ So I want you to build DevEvent, Gateway and Fetiment.
+ So this is nice because you can get access to everything.
+ It kind of sucks though,
+ because this can take a while to compile, right?
+ And it ends up downloading a lot of stuff.
+ So at least whenever this is updated,
+ it's a little, you gotta wait a little while.
+ So yeah, so that's the Nix flake.
+ And then, so we have just two little mprox
+ and you see one of them is, this is for the Gateway.
+ So this one runs a Gateway UI
+ and then this one is for the Guardian.
+ So this one runs four different Guardian UIs.
+ You can actually do like a three or four setup.
+ And one interesting point somewhere here
+ is I forget exactly where I did it.
+ Yeah, so we basically have like one shell script
+ that says what to actually do.
+ So, and where is it?
+ DevEvent command.
+ Yeah, so we actually run DevEvent
+ and we just pass in what command to run.
+ And so this is for web developers.
+ So everything, the interface is not just,
+ we're just gonna use the package of JSON.
+ So you do like yarn nix-guardian, yarn nix-gateway.
+ And so this one will basically tell it to use
+ the run UI command in DevEvent.
+ Run UI will not do DKG and devfed will do DKG.
+ So we'll generate configs.
+ So these could use slightly better names,
+ but that's what they're named currently.
+ So yeah, so this one, you can use the Gateway
+ with a setup running federation
+ and you can test the Guardian UI without doing DKG.
+ So you can actually go through the setup.
+ So we'll probably also need to add a version here
+ where you can play with the Guardian UI after setup,
+ if you just wanna skip that.
+ But so this is kind of nice,
+ just like set up the whole DevEvent environment
+ in different scenarios.
+ And so you can see that there's like some stuff
+ we need to copy, like a little users,
+ a couple little shell scripts,
+ but most of it is just half with DevEvent, right?
+ Like this mprox I'd say is kind of,
+ you know, it just says how to array it
+ into like a little terminal UI.
+ So really we just needed to copy
+ like two little shell scripts and to get it to run.
+ And one thing DevEvent I think could be improved at
+ is killing processes.
+ So like some, in my experience,
+ it usually kills the child processes,
+ but sometimes it doesn't.
+ And one thing I noticed like, so give me a second here.
+ (keyboard clacking)
+ Yeah, so I'll just show you what,
+ so I mean, that's like UI repo and yarn,
+ make sure, okay, so for some reason it is running.
+ I have like this FettyMint,
+ just have like a kill script
+ that just kills all the daemons that we have.
+ So now it's not running.
+ So I frequently just end up with these like,
+ kind of running in the background.
+ I don't know if other people do.
+ So like yarn, mix guardian.
+ And like, so one thing I noticed
+ is just kind of a bug report is that like when I kill this,
+ it like this thing will stop before,
+ like it'd be nice if when we kill DevEvent,
+ it would continue running
+ until all of its child processes are killed.
+ So I think we like send the kill command, the kill signal,
+ but we don't like wait for the child processes to die.
+ Right, so like I'm gonna exit
+ and then you'll see like FettyMint is still running,
+ but in a couple of seconds here, they'll start going away.
+ Hopefully.
+ Maybe not.
+ Yeah, so now they're all gone.
+ So it would be nice if it just like took a little,
+ DevEvent could continue, like just wait.
+ When we try to kill DevEvent, like it would just wait.
+ We'd have some way to just wait for it
+ to shut down all its child processes.
+ That's just one.
+ Yeah, any other comments here?
+ - Yeah.
+ - But that's cool.
+ Like I think, you know, if people build
+ kind of third-party modules and stuff like that,
+ this is a pretty nice little Dev environment
+ where you can leverage all of the DevEvent.
+ Like before DevEvent, we had a bunch of shell scripts.
+ So like to get this environment,
+ you'd need to copy like 50 shell scripts
+ and now you basically only need to copy two.
+ One to, this is really the only one that does something.
+ This one basically just like sets up a user shell, right?
+ Get some aliases and we could probably do all this
+ in DevEvent as well.
+ Waits for DevEvent to start, stuff like that.
+ - Yeah.
+ - So yeah, I don't have much more than that.
+ I mean, one thing, one other thing,
+ any other questions about DevEvent
+ or like this kind of Dev environment?
+ - So I think you were mentioning that
+ in the test environment,
+ DevEvent is also being invoked.
+ Is that right?
+ Can you, can someone explain what that means?
+ 'Cause I thought it was totally separate from testing.
+ - No, it's basically whenever we need like a local federation
+ we use this thing, so.
+ - Yeah, so DevEvent also has like a program, a REST API.
+ Like that's a command line API
+ that just uses the REST API.
+ There's also a REST API for much more.
+ - You cut out there a little bit on me.
+ - Okay.
+ - Okay, so I'm just gonna go.
+ So we have a couple of different types of tests, like,
+ we used to have a bunch of shell scripts
+ for some certain tests,
+ like testing the actual daemons themselves,
+ but they got kind of hard to,
+ they got kind of hard to extend and very flaky.
+ So we ended up just like writing these in DevEvent itself.
+ So like, if you go to devevent main.rs,
+ you can see there's like the main function handles some.
+ So this one will run like all the daemons,
+ but not FetimentDs.
+ This will run, so like, you know,
+ it'll run BitcoinD, it'll run LND and stuff,
+ but not the federation.
+ This one will run also the federation.
+ This one won't do DKG, so that's what the UI finds useful.
+ And then these are tests.
+ So this is a test that just like kind of checks
+ latency of transactions.
+ This one, is this reconnecting the lightning node?
+ I figured exactly which one this one is.
+ Oh no, this is the one that will reconnect to the federation.
+ Yeah, basically testing that we can restart consensus.
+ Right?
+ I think that's it.
+ And then this is like kind of testing the CLI tools,
+ Fetiment CLI.
+ This is the, yeah, there's the lightning reconnect test,
+ and this is for our, a little load test tool.
+ So like we have some tests that are written in,
+ they're just written Rust that mostly interface
+ with like the external daemons or like Fetiment CLI,
+ stuff like that.
+ And these are nice because it's,
+ you're actually running across multiple processes.
+ It's not just everything in that same process,
+ but one, the other one that is a little different
+ is this RustTest.sh.
+ So this is the one that will use external daemons command.
+ So it won't run Fetiment D, for example.
+ And so this waits for everything to start up.
+ So this like turns it on, this waits for it to start.
+ So Daemoment writes to a pipe and you just wait
+ for that pipe to have an error or have a message.
+ And then this one loads some environment stuff.
+ I wonder if we would be able to get this
+ to load the aliases as well.
+ What do you think about that, Manmeet?
+ - Yeah, we can do that.
+ Okay, I'm gonna make an issue for that right now.
+ Just 'cause I just noticed that we could do that.
+ That deletes one file we need from,
+ one thing we need to do in that external repo.
+ Give me a second.
+ We have like a little Daemoment issue.
+ So yeah, I'm just gonna throw it in here
+ just for some ideas.
+ So if you're thinking of an idea, just throw it in here.
+ Okay, so.
+ (keyboard clacking)
+ - And so those tests there, are they being run in CI
+ in the GitHub actions or those are more manual tests?
+ - Yeah, they're run on, all these are run on every PR.
+ - Oh, I see.
+ - And once it's good.
+ - But these are different from like
+ the other integration tests that I see, right?
+ That's different from.
+ - These ones are probably the integration tests you see.
+ The Rust integration tests.
+ So like integration tests.
+ So there's this crate integration tests.
+ We're actually moving away from this,
+ but this is like the kind of the core integration.
+ Yeah, this used to have a thousand lines of code.
+ So we've kind of ported them over half of them
+ to like a new modules, module based tests.
+ But like, these are the integration tests.
+ So these are in CI and everything, they're run.
+ I think they're running here somewhere.
+ Where are they run?
+ They meant tests, yeah.
+ So they run here.
+ And so this test, this one's a little weird
+ 'cause it runs against multiple versions
+ of Bitcoin backends.
+ So like this one runs them against Bitcoin D,
+ this one runs them against Electris
+ and this one runs them against Explorer backend.
+ So for these ones, see, they only use the tests
+ that have Bitcoin related stuff.
+ So if anyone tests, these two have like Bitcoin,
+ unchained Bitcoin related stuff.
+ So this is just a way to run the same test
+ against a different Bitcoin backend.
+ Yeah, that kind of makes sense.
+ So this core thing is like kind of the core
+ of where the actual, all the rust tests,
+ integration tests get run.
+ - Right, right.
+ So even in the gateway, Lightning gateway integration tests
+ where I see fixtures being set up,
+ is that also using DevInit here then?
+ - So that would be like in here.
+ So like this function for example.
+ - No, it's not using DevInit.
+ I mean, so it's kind of one of these hybrid things, right?
+ Where like, say you're running with the real,
+ like call it the real daemons or whatever,
+ that will like spawn, say like a real LND,
+ but it won't spawn a real gateway D.
+ That's what we do.
+ We make it the gateway in here.
+ That's what these functions are doing.
+ And then that connects to the real LND.
+ So it's kind of a hybrid.
+ - Yeah, so it's for in certain circumstances,
+ it assumes that basically that these,
+ you know, DevInit is running LND
+ and core Lightning and stuff like that.
+ But I think it'll be the same,
+ will it be the same node across the entire test?
+ - Is that sweet?
+ I think so.
+ Right, it doesn't like tear down the node or anything?
+ - Yeah.
+ - Yeah, so.
+ - I had a question too on actually that last file,
+ the rust tests.
+ Is there an easy command for,
+ I haven't looked at this super closely,
+ is there an easy command for like running,
+ say the lightning tests against the real lightning nodes?
+ What I've been doing is just been like going here
+ and hacking up this file to get that to run,
+ but it'd be nice if there was like a easier command
+ for doing that.
+ - You can run dev event externally means
+ and then a source dev event env,
+ then just run cargo test dot, dot, dot something.
+ - Okay, cool.
+ Yeah, I'll have to maybe write that down.
+ - And it'd be nice if it was just like a way to do it here.
+ - Um, right?
+ - Yeah, I was saying, I don't know,
+ like I was saying maybe you could pass in
+ some sort of parameter here or something that would.
+ - I mean, this is a little more,
+ if you just want to run like one crates test,
+ this is like super overkill, right?
+ You're going to be waiting for other stuff.
+ - That's why I go in here and hack up this file
+ when I want to do that,
+ but it's probably a better way of doing that.
+ - So what were you saying,
+ maybe you could run a dev event external demons
+ and then this?
+ - Dev event env.
+ - Oh, env.
+ - Yeah.
+ - Yeah, so basically if you ran this,
+ you're just in a terminal.
+ Well, let's try it.
+ - You will need to say FM test dev
+ and FM fed size, I think.
+ - Oh.
+ Yeah, just set it to something.
+ And then you need FM fed size.
+ - Yeah, it would be nice if this was a little easier.
+ Oh.
+ - Let's just remove to dev null.
+ - Yeah, I mean, if you do this,
+ then you have to like remember to kill everything again
+ to say you want to rerun the test or something.
+ Well, I suppose that depends on if the test
+ just connects or not, but.
+ - Okay.
+ And then just like,
+ (keyboard clacking)
+ - You also need eval dev event env.
+ - Okay, so dev event env.
+ Oh, that's a no.
+ - You again need to set the variables.
+ - Or I guess if I ran it over here,
+ - Yeah.
+ - It would work, right?
+ 'Cause it would be able to read them over.
+ Yeah, so it'd be able to read them
+ over from the environment, right?
+ Like I set these two as environment variables
+ so it can find them.
+ So this just basically spits out a shell script more or less
+ of just environment variables.
+ So if we eval that, then,
+ I don't know what's a good one.
+ Okay, that's not a little.
+ Right, so it's now,
+ all these environment variables are set.
+ So now I should be able to do this?
+ - Yeah.
+ - Oh, that's annoying.
+ - You can just remove that.
+ - Huh?
+ - You can just remove these things, yeah.
+ - I mean, I can just go like this, right?
+ - Yeah.
+ Oh.
+ - Oh.
+ Oops, I thought I was in a different directory.
+ We'll see if this works.
+ Might still work.
+ - Yeah, your paths were relative, I think.
+ Like test there, your path is relative, right?
+ - But does it matter yet?
+ Like nothing's been,
+ if they're just relative to where I am now,
+ does that matter?
+ Oh, okay, this doesn't.
+ I mean, I think this would work.
+ I have like a half finished change, I guess.
+ Yeah, me and Jordan, we're sketching some stuff out
+ with, you know, code didn't compile.
+ It's just like a sketch.
+ This might work.
+ Yeah, it does kind of help
+ to learn a couple of these little tricks.
+ Anything else you want to cover on the Debian mid front?
+ I think that's quite a lot of it.
+ Like, as I mentioned,
+ you know, my meet is going back to school here soon.
+ So he's going to be a lot less available
+ or not available at all.
+ And yeah, we hope his classes are boring
+ so that he continues to contribute.
+ So, okay, there we go.
+ So, but yeah, like this is an area if you want to,
+ if you want to contribute,
+ like I think this is kind of a nice,
+ Debian mid is nice because you don't,
+ you can learn a lot about how things work together,
+ but it's also like relatively accessible, right?
+ Like, you know, it's like, for example,
+ for when we were looking for summer Bitcoin interns,
+ like one of the things we did
+ is just create a bunch of DevMinitues
+ and they were all able to kind of improve things there.
+ So it's a good place to get started
+ and you also kind of learn a lot about how the system works.
+ So, but yeah, one thing we could talk about
+ and we got like a little 15 minutes left.
+ If Douglas, if you want to just give like a little overview
+ of some of the kind of deployment work,
+ we did a little bit,
+ we did like a little test setup on Monday
+ and had a couple UI failures,
+ but I think we got those fixed.
+ You wanna just go over for like 10 minutes,
+ kind of the state of the, our little test deployment stuff.
+ - Yes.
+ I don't remember what failed the previous test,
+ but I think everything is improved now.
+ What's new is that there is a PR for a TLS setup.
+ So it can have encrypted communication with the API
+ and also with the front end, like the Guardian UI,
+ the RTL, which is a node,
+ Lightning Node Management Interface.
+ So it can access that with HTTPS.
+ I think this is what is really new
+ and it should, I mean,
+ this setup is almost production ready.
+ Like you could really use it in something real.
+ I won't say it's not configured for main net,
+ it's only configured for a multi-net,
+ but you can derive it's a main net configuration from this.
+ - Okay, let's just go from the top here.
+ So we have a Fetiment Docker folder,
+ where Douglas has been kind of iterating here.
+ And so the first one, FetimentD MutinyNet.
+ So this runs basically two services,
+ FetimentD and Guardian UI.
+ So you can see all the different like environment variables
+ they need, the ports they need.
+ We have a volume where like the database
+ for the Guardian servers, RocksDB is written to.
+ And let's see what's interesting here.
+ So you can see like which,
+ we can sort of suggest which Bitcoin node to use.
+ So we're using a Splora, just like a public MutinyNet API.
+ So this Fetiment, I mean, it's kind of cheating
+ 'cause with Fetiment, you should really trust your node
+ and you shouldn't be using the same node
+ as the other guardians,
+ because then that's like a single point failure.
+ But for this test, we're doing that
+ just 'cause it's nice and simple.
+ And you can kind of see some networking details.
+ But that's it just to run FetimentD.
+ And I think in the future,
+ we will be feasible to just have FetimentD
+ serve this Guardian UI as well.
+ But this is it for to just do like a Guardian setup.
+ Any comments or questions there?
+ I have two other ones to show you after this,
+ just to give you a sense of the progression.
+ I'll show you one more afterwards.
+ Okay, so then we have the Gateway UI,
+ which has a few more services.
+ Basically, the Gateway could be similar.
+ All it really needs is the Gateway and a UI,
+ which again, in the future,
+ we could just have this binary serve the UI
+ if we wanted to, like as an option.
+ But to make it fully usable on MutinyNet,
+ like I assume most of you don't have MutinyNet Lightning
+ nodes or anything.
+ So we have LND and then we have ThunderHub.
+ And I don't know why there's two of them here,
+ but this is ThunderHub.
+ And then this is RTL.
+ And so it's nice to have all the,
+ this is much more fun to administer than CLI.
+ Any comments there, Alan?
+ Or Douglas?
+ - Yes, it's,
+ it's,
+ you have a two process because you need to write
+ these configurations easier if you're separating
+ into images, into steps.
+ - So does this only run like the first time?
+ - It will run every time, but it will only,
+ yeah, it will do nothing after that.
+ It will just keep this tail open.
+ - Okay.
+ - Yeah.
+ And then there's BitcoinD here,
+ mostly because we did an experiment trying to get
+ the LND to run using neutrino or compact block filters
+ on MutinyNet, but it just does not support
+ a custom SIGNET like MutinyNet yet.
+ And MutinyNet's great because you just have to wait
+ 30 seconds for blocks.
+ So it's just a lot better.
+ It's just more enjoyable to play around with.
+ So there's a lot going on here,
+ but this is mostly just so it's completely self-contained
+ and it works on LND with this funky SIGNET.
+ But for real usage, you might only need these two.
+ If you already had a lightning node
+ and you already had RTL or something like that
+ that you were used to using,
+ you'd only need these two to get the gateway and the UI.
+ But the problem with these is that they all use HTTP
+ for everything, right?
+ We have a custom script that will go
+ and a one-click script above here
+ that will go and so you can just run the script
+ and it will check like is curl installed,
+ is doc compose installed, it'll die if they aren't.
+ And then it will just basically go and replace localhost
+ with your IP, which it'll ask you for.
+ And then it will try to run these,
+ it'll ask if you wanna run FetimentD or the gateway.
+ So you'd respond to a couple of prompts
+ and then it will just run everything for you.
+ And the important thing is it'll replace your IP
+ with this one, but it doesn't work with TLS,
+ which we've had sort of two different,
+ so that's what this one is, is it's an attempt,
+ we haven't reviewed it yet or merged it yet,
+ but it's an attempt to basically make this work in Docker
+ with a custom domain name, which is good
+ 'cause it's more secure, but it's kind of annoying
+ 'cause you have to have a domain name.
+ And I guess that's something that DPC has been sort of
+ brainstorming about how to get rid of that requirement
+ in Discord.
+ But yeah, so this is where we're at.
+ And so, yeah, this is getting close to where you'd be,
+ and this is a hell of a mutiny net setup, I think,
+ getting close to a main net setup for basic testing.
+ So I don't know, any questions here?
+ - Also, this, you will not use explore,
+ it will use the local Bitcoin host
+ because it's setting up the guardia
+ and the gateway.
+ - Okay. - The same.
+ - Oh, gotcha, yeah.
+ So this one over here was two different Docker
+ for both files, one for the element, one for a gateway,
+ and this is everything.
+ And I did a little gist.
+ I tried to do some, like a setup on Friday,
+ last Friday with some people
+ who'd never used the terminal before.
+ And so this was just a little script.
+ I'll just share it in the meeting notes
+ in case anybody wants to try it.
+ But you just like paste this into,
+ basically you just run this one command
+ in like a DigitalOcean server.
+ And like on Friday, it failed,
+ but it would only fail for more than two guardians,
+ basically, like there was a screen where you,
+ there's a follower and a leader in the setup,
+ and the follower has to basically accept the parameters
+ that are posed by the guardian.
+ And there's basically a little race condition there
+ that Jotam has fixed, and there's a PR for that.
+ But yeah, so like this one was just one Docker pose
+ and looks like Alan went in the same direction,
+ trying to just have one big Docker pose
+ that runs everything.
+ And yeah, so I think this,
+ like I think kind of ideas like there's,
+ like the FettyMint project is not gonna just maintain
+ a deployment setup for every imaginable use case,
+ but I think it would be nice if we had like,
+ if we just kind of maintained one Docker pose
+ that ran everything.
+ And so this would be a little bit of a spec
+ for like somebody who wanted to integrate it
+ onto a different platform.
+ It's like, here's how you do it, right?
+ And I think if they're gonna run Docker,
+ this is basically all they need.
+ So it might be also interesting to just have like
+ some system defiles too, that just run it directly,
+ but we don't really, we do releases of Docker,
+ what is it, Docker images in CI,
+ but we don't do like Linux binaries yet,
+ unless we merge that PR, there's just a PR about this.
+ We haven't done them much recently.
+ So once we have that, it'd be nice to maybe just have
+ a couple of system defiles or something,
+ but and then from that point on,
+ people can customize it from there.
+ So yeah, any questions about this?
+ That's not, so yeah, this would be,
+ I think maybe on, maybe Monday after the Dev call again,
+ we can do another, maybe we can just make that
+ like a regular tradition now,
+ after the Dev call on Monday, if you wanna stick around,
+ we'll take a hack at a federation setup
+ and just kind of try to improve it every week.
+ We have a few improvements this week
+ from that we've made so far,
+ getting rid of a couple of race conditions
+ and dead ends in the UI.
+ So that's it for me.
+ If there's nothing else, see you guys Monday.
+ - That was awesome, see you, Justin.
+ - Thank you. - Cool, see you guys.
+ - See you.
+ Oh, I almost hit close call.

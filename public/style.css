@@ -1,0 +1,37 @@
+/* style.css */
+#chat-container {
+    border: 1px solid gray;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .user-message {
+    text-align: right;
+  }
+  
+  .bot-message {
+    text-align: left;
+  }
+  
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .center,
+  .header {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-self: center;
+  }
+  
+  .topofpage {
+    display: flex;
+    justify-content: center;
+  }

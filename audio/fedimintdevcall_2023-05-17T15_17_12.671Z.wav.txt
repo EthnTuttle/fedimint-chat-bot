@@ -1,0 +1,105 @@
+ The pressure's on now.
+ Yeah, yes I don't know maybe I can just summarize what we just kind of, you know, we're catching
+ up on like from the design side.
+ Personally I don't have too many updates I what I was saying was, I was hoping that I
+ had some more time this week to create some more issues on things that could be fixed,
+ like copy wise and little UI things.
+ But I think more importantly, since the UI is still being built, you know, Kim was talking
+ about some API changes that are going to affect the UI.
+ I think once we actually get the front end built out and we have it in a place where
+ we all can kind of run it ourselves a lot easier.
+ I think it'll be easier for us to make change request updates and things like that.
+ So that's my guess as to where we're at right now is kind of just a little bit of waiting.
+ And then the other thing Kim had mentioned was there are probably some settings that
+ are more like local for each individual guardian themselves.
+ And my response was I think that should be pretty easy to handle just with the current
+ UI.
+ So yeah, I don't think there's anything super major there is my guess.
+ Yeah, the basically like each guardian can.
+ So like we had the concept of the leader or post, you would be able to set the consensus
+ configuration values.
+ But we also have local configuration values, which could be like the Bitcoin node you connect
+ to.
+ So each guardian would be able to set those independently.
+ And so the question is like, should we call that out somehow like in the UI design that
+ like, hey, these are the locally configured parameters that aren't going to affect federation?
+ Or would that be self evident?
+ Another perhaps interesting point is that the you might have multiple modules that have
+ the same configuration.
+ So like the Bitcoin module and the lightning module both connect to like a Bitcoin node.
+ In theory, I guess you can connect to different Bitcoin nodes in each though I don't know
+ why you would want to.
+ Yeah, that's a good point.
+ Yeah, my feeling is like if it's just another one of these sections, and then to your point
+ Kipman, like whatever we want to call it, we could, you know, we could, I don't know,
+ call it I don't know, local settings or something like that, or, or maybe even have a description
+ underneath here that.
+ mentions this is just for you like this is not for everyone else. I don't know
+ does that sound right or am I just totally off? No that sounds right I think
+ yeah under the Bitcoin settings and then like for the followers do they also like
+ when they're setting up I guess we could also show the Bitcoin settings. Yeah the
+ followers page has configuration as well right? Yeah so I think this is the
+ followers page so they have their own name they have their password they have
+ the join link so whatever link that they get from the follower or the host rather
+ and I think here I just kind of put a bunch of these sections I'm not exactly
+ sure which ones are relevant for the follower but yeah as you mentioned like
+ one of these could just be the follower on the field so yeah so I think that
+ that could work it doesn't change the design. Yeah nice.
+ Yeah does anyone have anything else they wanted to bring up? I didn't have much
+ for this meeting other than that other than the local configuration being
+ introduced. Konstantin shared a nice document with me that he put together
+ with the user persona so I don't know if he wants to maybe chat about that
+ that's that's his work so not mine. It's not mine actually yeah not from
+ myself we we've been all contributing to that two meetings before this one so if
+ we have time yeah we might as well revisit that. Was this the Guardian for
+ the Guardians or was it for other personas? The Guardians. Okay yeah I
+ think we reviewed that like in another meeting but I think what could be useful
+ for next meeting to get us thinking would be to work on the gateway
+ administrator personas probably I think I don't think anyone started on that but
+ the gateway UI would be kind of the next thing we tackle design-wise probably so
+ it'd be good to get those personas.
+ >> And the gateway UI, that's not the admin page once you're done with
+ the federation, right?
+ That's the original react page that Justin had it before.
+ I think with the black buttons and stuff.
+ >> Yeah, that was one that Jotam created.
+ We're trying to get the styles to be more cohesive on them.
+ But we also haven't really thought much about how we would design that page for
+ the gateway administrators.
+ So yeah, the gateway runner is a different persona than the guardian.
+ They're more like an acting as an LSP or looking to make profit
+ by connecting to federations and helping users send and
+ receive lightning and charge a fee for it.
+ So they have a very different persona than the guardians would.
+ >> Nice.
+ >> Although some guardians may choose to be gateway admins,
+ but I imagine most wouldn't.
+ [BLANK_AUDIO]
+ >> Sounds good.
+ [BLANK_AUDIO]
+ >> Did you guys put those personas together as a team the last time?
+ Everyone just jamming in the jam or
+ how did you guys, sorry I wasn't present for that session.
+ >> I think I just came up with a couple of them and
+ then I think Jotam came up with one of them.
+ But yeah, I mean the more people that want to contribute to that, the better.
+ >> All right, I'll try to help out with that.
+ I've been busy with conference stuff this whole week, so
+ that's why I've literally not done anything.
+ We've been organizing stuff for BTC Prague, but
+ I'm definitely going to get more involved.
+ So just hang in there, I'm on my way.
+ >> Yeah, I think this week there's probably not much to go over,
+ because there's Miami and Prague happening.
+ >> Yeah.
+ [BLANK_AUDIO]
+ >> But yeah, I don't have anything else, so unless someone else has something,
+ I guess we could just end the meeting early and probably we'll have more momentum
+ next week when all the conferences are over and everyone can attend.
+ [BLANK_AUDIO]
+ >> Yeah, sounds good.
+ >> All right guys, well, thanks for showing up.
+ Yeah, please show up the next week, we'll probably have more to go over.
+ And yeah, bye everyone.
+ >> Cool, peace out.
+ [BLANK_AUDIO]

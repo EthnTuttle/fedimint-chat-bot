@@ -15,3 +15,4 @@ Misspelled Whisper words.
 - Feti - 19
 - fedimin - 2
 - Chowmian - 7
+- showmian

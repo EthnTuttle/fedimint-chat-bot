@@ -1,0 +1,521 @@
+ Let's do it.
+ Cool. All right. So this is, let's see, July 19th.
+ And I believe it's design call for Fettingman number 14.
+ So I'll kick things off here.
+ About two weeks ago, Justin, Will, and Skyler didn't audit on all of the exploratory designs that I've been working on for the last couple of months.
+ And came down to set criteria that would be, that will be included for MVP.
+ So they made a bunch of notes in this area.
+ So just for reference, this little section is kind of floating off to the right in the Guardian admin page.
+ I think I'll find a way to better organize these notes, but at a high level, start building, figured out what's going to be included for MVP for Guardian and gateway admin interfaces.
+ And yeah, the big one is getting designs and code closer together.
+ What I've been doing is going off on more of a exploratory tangent for a while.
+ And the on session with those three people sort of framed me back in.
+ So what I've done in the last couple of weeks or last week is...
+ We're kind of hooked up to you, Seth.
+ Is take that audit and then make the designs more realistic.
+ One thing that came from that audit and that conversation was the design system.
+ I've been using a Tailwinds and the original design system was one called Untitled UI at untitledui.com.
+ So I did all of the designs we'll see today, taking into consideration the existing design system, which was not really fully baked.
+ And so what I've done in the last week was take what had existed there and sort of built upon it with more of the sort of like necessary components and things.
+ So including tables and form elements.
+ Let's see, some alerts, modals, things like that.
+ I think that moving forward, designers that step into the project should be better suited to sort of pick up and run with the ball.
+ So that's one thing to point out.
+ So zooming out from the audit, there was these notes for the Guardian and this sort of reference design here on the left.
+ And for the gateway, these notes and these little widgets here on the left and on the right for each of those is the design that I've wrapped at so far.
+ And I've tagged each with a ready for review tag just to sort of like communicate that sort of progress is done, review and then take progress or conversations today and then tweak as needed.
+ Questions so far?
+ This looks awesome. Yeah, cool.
+ So just as a little update, we do have we do have like a widget for this thing at the bottom that we added just with like I'm not going to touch anything.
+ I don't I forget how to use Figma, but like this area down here, we do have like we can we actually render this now.
+ It doesn't look exactly like this, but so that's good.
+ So we figured out how to surface that information. And yeah, I mean, this this looks really nice.
+ Thanks. So I'll start at the top here. So, again, only the components and information that you pulled out of that audit are included here.
+ So Federation info info here, Bitcoin balance, Bitcoin node. One question I have here was was in the notes.
+ So inability to to connect.
+ So I take it that this is a sort of a warning error state, right?
+ Yeah. So it basically be like maybe, you know, it's basically it's can you not see this right?
+ If you can't see the block, if you can't get the block height, you know, that's the the state.
+ Yeah, it should be very big and red, like basically if this happens.
+ You're it's going to cause all kinds of other problems. Like it's just it's just going to make your server not really work.
+ Yeah. So. So, yeah, that yeah, that that one should be like very loud, you know, because it's basically make it so you can't you you're you're screwed.
+ You know. OK, so that that connection happens async. Right.
+ So we in my note here, I wrote down like, do we need a test connection button? Sort of like how Sparrow uses.
+ What you're saying is that this will just turn red or some kind of an error state.
+ Yeah, we won't. I don't think we need a test connection, but like we should we should just be able to like when this page loads, like say if this is this problem is happening, I think.
+ OK, yeah. Like that's I think that's you'll just get the we'll just get the information we need, I guess, one.
+ One interesting one. Is like if your node is behind the other ones, that could be kind of an interesting case that maybe we could just ignore that for now.
+ I mean, I think it's good enough if you see the block height and, you know, at least you'd have a way of figuring out, OK, well, the real block heights a lot higher than that.
+ So that's a problem. Yeah, I don't know. Yeah, I think this is just it'll just it'll basically just say it can't connect when this page loads and we can render we can display that information however we want.
+ OK. Yeah. So one thought is if someone's not keeping up with it's not really clear like what what calendar date this is.
+ Right. So maybe just considering having a calendar date here as well so people wouldn't have to go and check what what what date time actually correlates to the current block height.
+ OK, yeah, that's a good idea. I'm not sure.
+ Yeah, we'll see how we do that. But I think that that makes sense. Yeah, not critical, but nice to have.
+ Yeah, I mean, it's it's it would help if you're like you just very quickly see, well, that's not today's date.
+ You know, that's this is behind. Yeah. And then I imagine the error condition would say, hey, you know, check your URL.
+ And then where would actually go to to modify that because. Yeah. So I think in general, they wouldn't they wouldn't have a user interface if your Bitcoin node is running.
+ It's kind of just like running in the background somewhere. It could it could be all kinds of places like so. For one example, people could be using Blockstream.info, right, as their Bitcoin node.
+ Maybe that's down. Right. That happens. So I think it's it's very dependent on how you're how it was set up. And we're pretty flexible.
+ We offer most types of Bitcoin nodes like it can be just a straight Bitcoin node. It can be Electrum server or it can be an Esplora server.
+ So I think these depend. OK. Cool. In your notes, one one one interesting one, though, is see here, we should make a note to sanitize the password there.
+ So like the Bitcoin node, if you're talking to a Bitcoin node, it can have the username and password in there.
+ So like in order to talk to it, you'll need a username and password. So so it would it would kind of look like this.
+ I'm going to edit this. You can edit it back. So it would look like, you know, username colon password at like that.
+ It could it could look like that. And so we would just want to make sure that we are not displaying these just just for it's just probably a best practice to not actually show the password here.
+ Because that. Although I mean, I guess there's an argument to be made that you would want to show it just maybe the password is wrong and it should only be the guardian looking at this.
+ So, yeah, that's just like one consideration. So I'm not sure what we should do there. But that's just a thought.
+ Yeah, if it is, you know, it's a private UI, so I don't I don't see a reason to to sanitize that.
+ Yeah, unless there's there's concerns about like, you know, snooping cameras hanging out. Yeah.
+ Although, you know, the password to your your Bitcoin node isn't super sensitive, right?
+ Yeah, it shouldn't be like some idiots will put Bitcoin on there, you know, like there is a yeah, like it could be holding Bitcoin, you know.
+ Because you can you can Bitcoin node has a wallet so you can put you can put you can have it holding Bitcoin.
+ It's a very not smart thing to do, but I'm sure there's plenty of people doing it.
+ Yeah. I mean, it's a not smart thing to do if you're like connecting it to other stuff, you know, like if it's just running on like your your own computer, maybe that's a good and you're using the Bitcoin QT.
+ That's probably OK, but you're going to go back to a bunch of other stuff might not be a great idea.
+ Right. Cool. So I'll leave it up to you to figure out how to I guess just remove that.
+ That sounds like security best practice. Yeah.
+ Cool. So in the let's see, flagged.
+ So flagged, I'm calling it healthier. We could use the label flagged.
+ Doesn't really make too much of a difference. And I'm not sure what what those, you know, different states would be.
+ So would it just be good, bad, poor, you know, maybe just maybe just like red and green, like either healthier or unhealthy.
+ Yeah. I would say now red and green.
+ Yeah, just like red and green. I think that's what that's all we have right now.
+ And we should have more information there.
+ In the future, like we should be able to explain exactly what we think is is wrong.
+ But I think now just red and green is that's like what we could do today, like this this area, we could do this all today.
+ Right now. Yeah.
+ Let's see badge. I'll just do an example of what maybe red would just have the label issue inside instead of instead of just just color.
+ But either way. OK, so guardian table, guardian name, connection status flagged and then last contribution timestamp.
+ That's what I found over here in this text.
+ Yeah, I think we could probably display that as like a more human readable string to like that's something that we have like a library that will just print out or maybe not even a library to print out a little bit.
+ Or a little better. You know, like I think this is probably going to be in UTC, you know, so we could make it a local time zone.
+ I don't know. That's an option. OK.
+ I just pulled examples from, I think, I forget where it was.
+ But yeah, however, the roads are better rendered.
+ And then you said you have a widget for this.
+ So those are the four or the five components
+ or the five bits of info I saw in the notes.
+ So yeah, name, open 1ml, ID, incoming and outgoing fees.
+ I think we can easily transform that widget into this.
+ This looks far simpler and nice.
+ Good.
+ Let's see what else on the screen.
+ And there was a reference to adding a footer.
+ So I referenced a couple of different products out there.
+ I think one of them was, yeah, fennyman.org.
+ And then BTC Pay Server.
+ I took some cues from those two sites
+ to come up with this footer.
+ So get started, we go to fennyman.org.
+ FAQs, fennyman.org.
+ All these are fennyman.org, but just more and more granular
+ sections of that site.
+ And then Discord, Twitter Telegram.
+ The Telegram for Feddy is not dev-oriented at all.
+ I might say don't include that because it's just
+ a lot of banter, really.
+ Yeah.
+ So maybe not include Telegram.
+ I think Discord is the best place for it.
+ Yeah, definitely.
+ Yeah, like the Telegram has always been--
+ it's not very high signal.
+ So I think it's just only read-only right now.
+ It's like news.
+ Discord is where you're going to get support.
+ Yep.
+ And then I'm putting GitHub under Contribute,
+ just as a subtle call to action.
+ That's great.
+ Yeah.
+ Cool.
+ And so another question is, so this
+ is right now attached to the Federation UI.
+ We could also add that to the Lightning Gateway UI as well,
+ just have those be more in sync.
+ Yeah, sounds good to me.
+ All right.
+ Anything else on the screen that needs tweaking?
+ Let me think.
+ Oh, and just at a high level, also, I
+ should note that during the audit,
+ I think that Skyler said or suggested,
+ let's elevate the design a little bit.
+ I haven't touched anything on the aesthetic front,
+ really, just running with--
+ just getting it to be just usable.
+ Yeah, I like that.
+ That's good.
+ I think that's good for now.
+ I think that's-- can anyone else think of anything
+ we should have here?
+ [AUDIO OUT]
+ Error buzz.
+ That's it.
+ Again, errors.
+ Yeah, so what kind of error?
+ For example, you can't connect to the back end at all, maybe.
+ For the admin?
+ If you can bring in that error we had for, hey,
+ there's no gateways connected, connect some.
+ I think that was nice, or however it shows up here.
+ Yeah, I mean, I think in general,
+ it would be nice to just have all the states where something
+ could go wrong enumerated, and then show variance of the design
+ if a guardian is down, or if we can't contact the Bitcoin
+ node, or all that.
+ That would be a good to do for the developers
+ this week, is to just try to produce
+ that enumeration of all the possible error states.
+ and then the other one is auth.
+ Oh, right, because we want a password protect us.
+ So we already have an auth screen, right?
+ So I think auth is covered.
+ I think there's some issues with it.
+ I've noticed in the past.
+ I think this might be the one where it just doesn't redirect
+ you to the right place.
+ Do you think that's the same bug?
+ Because we do have a password screen for this whole interface.
+ Yeah, part of the bug is related to auth.
+ But it would look the same as it does now, probably.
+ So if we're wrapped up on this one for now,
+ I can move on to the gateway UI.
+ Yeah, I think that sounds good.
+ I just had two errors that are off the top of my head.
+ No gateway is connected.
+ It's not an error.
+ This will happen right when you first load the page.
+ But it's just kind of like an action item.
+ You need to do something here.
+ And most users who are doing this for the first time
+ maybe won't know that.
+ So it's just something you have to do.
+ You have to go and set up the gateway.
+ And then the other one is can't connect to a Fetiment API
+ at all.
+ I think Will, for example, when we did the federation,
+ your thing crashed immediately.
+ And so if you loaded up the admin UI at that point,
+ that would happen.
+ It's kind of an interesting question, though.
+ If you can't connect to the API at all,
+ we should probably have a separate screen,
+ just because we won't really be able to determine
+ whether we should be showing them the Guardian admin,
+ assuming that it's already been set up,
+ or maybe it hasn't been set up at all.
+ Yeah, I think we have some kind of generic error screen.
+ But something you mentioned, Justin,
+ would also be good to mock up as empty states.
+ Because you can have a Guardian--
+ or rather, you can have a federation that's one of one.
+ So do we just hide things, or do we
+ show some element that says, hey,
+ you have no other Guardians?
+ Yeah, like this one right here.
+ Yeah, the no lightning gateways.
+ Maybe on the title for that section,
+ you say, Guardians m of n, if we have that knowledge.
+ It's 2 of 3, 1 of 1.
+ And then it corresponds to what is in the list.
+ Sorry, say that again.
+ Just thinking as an extension to what I already see.
+ It's like Guardians on the top, and then show me m of n.
+ So then I have expectations for what to see in the table.
+ Yeah, so just for those who don't understand,
+ you can run a Fetiment with just one Guardian, just you.
+ So that's you up here, basically.
+ And so then this list would be empty.
+ So yeah.
+ So Jotam's proposing right here to say, oh, it's a 3 of 4
+ federation or something.
+ Is that the idea, Jotam?
+ Yeah.
+ But yeah, I don't know.
+ Seth, what is your thinking here?
+ If there are no other Guardians, if it's just you,
+ what would you--
+ would we just hide the whole table, maybe, or an empty state?
+ Yeah, I'd suggest just hiding the entire table, really.
+ Yeah, I think that makes sense.
+ Yeah, but everything else should--
+ that's kind of it for what we're looking at right here.
+ Cool, so I'll move on to the Lightning Gateway.
+ There's this screen here.
+ And then I actually mocked up some flows
+ under the Lightning Gateway page.
+ And this starts off at the beginning, so off page,
+ which I don't think currently exists.
+ No, it doesn't.
+ So simple welcome message, welcome to the Lightning
+ Gateway, create a password to get started.
+ User clicks here to create a password,
+ enters a password, button activates, next.
+ Connect to a federation using an invite code.
+ Little helper text here.
+ And let me know if this messaging is needed for now.
+ I'm not sure what people are expecting.
+ I think it might be good to know,
+ for people to know that they can only connect to one at a time.
+ So whether or not this banner here is needed or not,
+ let me know.
+ Regardless, paste federation invite code.
+ Connect to federation.
+ I'm using this similar spinner that I saw in other comps,
+ I think, during the federation setup.
+ And then we arrive at this screen,
+ which is really, really pared down from where I was heading
+ about a week ago.
+ And this uses the list from the audit between Will, Justin,
+ and Skyler.
+ So all we see here is each cache balance, node ID.
+ View on one ML, and deposit and withdraw functionality.
+ I did away with the tab structure,
+ just because I don't think there's any reason
+ to have things buried under tabs.
+ So I thought, just get rid of that,
+ and just expose it all within one view.
+ I love it.
+ And so is this up here the name of the federation
+ it's connected to?
+ Yeah.
+ Cool.
+ So what happens when you enter--
+ currently, when you enter something near this mountain
+ address, it'll do a modal to confirm.
+ Or do we want to keep that?
+ Let's see.
+ I did just withdraw all button, just
+ as a quick shortcut to do that.
+ Or the user can just enter whatever value they want.
+ Populate the amount, populate the address, withdraw.
+ And yeah, I did go with a modal.
+ And the modal serves two purposes,
+ as a confirmation that the withdrawal is in progress,
+ and then to communicate their transaction ID.
+ And then view transaction would open it up
+ on blog explorer of choice.
+ So what-- yeah, that looks great.
+ What if-- well, let's say they're
+ trying to withdraw more than their--
+ so one thing that will happen is they
+ try to withdraw more than their balance.
+ And it could be like, it's just the fees put it over
+ what you can do, and the front end couldn't predict.
+ Can't predict whether it will succeed or not.
+ I guess, do we want a confirmation step?
+ Like, are you OK with paying this many fees?
+ Yeah, let's see.
+ I remember seeing a note over here about confirmation step
+ which is fees you'll pay, don't show fee currently.
+ I ignored that for now.
+ just because of this section.
+ But whenever I send Bitcoin using any number of different wallets, it's good practice so
+ that if I entered...
+ So right now I have, let's see, I have a million sets.
+ If I do a million and one here, just expose or just communicate an error state.
+ You don't have enough sets to do that.
+ That's not taking into consideration the fees.
+ So I guess by default, you could either decide to include fees within the transaction or
+ require those on top of the intended transaction value.
+ Yeah.
+ So the weird thing is currently you don't get to choose the fees and the fees can be
+ pretty high just because you're basically like the Federation has an unchained Bitcoin
+ and you're going to basically use up one of those UTXOs for your withdrawal.
+ And so it's kind of a problem if we allow users to select really low fees, you know,
+ like if they're going to target like a 12 day or like a two week confirmation because
+ you're basically locking up that UTXO so no one else can use it if they want to.
+ Like let's say you have a Federation with only one UTXO in it, but there's two gateways
+ and each one wants to withdraw.
+ If the first one tries to withdraw and now the Federation is waiting for that transaction
+ to confirm, the second one wouldn't be able to withdraw until the first one confirms.
+ In the future, like we can integrate things like RBF a little better to be able to deal
+ with that scenario.
+ But right now the fee can be quite high just because we want to make sure it, we have very
+ aggressive fee targeting and so it can just be a little bit of surprise how much fees
+ you pay.
+ So we just want to display that if possible.
+ But I mean, overall, I think this looks great.
+ Withdrawal, I just find it enough, I just made an issue for this on the backend side.
+ Like we don't have the API for that right now, but I totally agree.
+ Let's put it in the design and try to get that because it will be like in this, these
+ first kind of federations, like, you know, people set it up and they're like, okay, I
+ had my fun time to tear it down.
+ And if you're guessing about the fee, it's a huge pain, you know?
+ Yep.
+ So design wise, I guess, would it be helpful to go through that motion of, I guess, communicating
+ fees and if you don't have enough in your balance to cover that?
+ Yeah, I mean, I think if we just had, you know, you have that like success screen, like
+ if it was something like that, with like in the modal, like there'd just be an intermediate
+ modal saying, you're sending to this address with these fees, okay, you know, something
+ like that would be good.
+ Or you could just, yeah, I think you'd need, that would probably be better.
+ And I'm not even sure like on the API side, what our current ability to, like, I'd have
+ to look into it, how we present the fee, like how we pull out the expected fee.
+ But yeah, just, I'll leave it to you how you want to do it.
+ But just like some, somewhere in the flow before the transaction is sent, they should
+ see, it would be nice if they could see the fee they're paying.
+ And that's also kind of a nice to have, like what we have here, I think would work for
+ our MutinyNet purposes, and we can attempt to iterate on that one.
+ But currently, yeah, we have a confirmation step, but there's no, it doesn't say the fee,
+ because I don't think we surfaced that in the actual data yet.
+ So yeah, any other thoughts there from anyone else?
+ We don't have an API for fees.
+ It's just try.
+ Yeah.
+ So that's, so yeah, I think this is probably good for now.
+ And we'll need to look into what it would take to surface the fee, the fee rate you're
+ going to pay.
+ But yeah, I mean, this looks really good.
+ I think we could probably rework what we have to this pretty easily.
+ Nice and simple.
+ Yeah, good.
+ And then I imagine as things progress, you can sort of dig into some of those more exploratory
+ designs and pull little bits and pieces out of those.
+ Yeah, I think that's the, it's like if we can deploy this like next week, I mean, I
+ think like what I'm trying to do is do a little setup on Friday.
+ So we're just trying to fix that one bug where we have the key generation can fail.
+ And then once we have that, I think we're going to have like something that works and
+ then we can try to maybe over the next week or two, get the gateway designs up to the,
+ or to match the Federation ones using this shared component library.
+ Cause right now I think the gateway is just using the UI libraries defaults that we have.
+ Chakra is the thing.
+ So we're just using the defaults for that.
+ So yeah.
+ Cool.
+ So I'll move this into a design spec page up here.
+ And also one other thing is maybe, maybe it would be better to have this be like a more
+ a nonzero number just so we can say how we want to like, I think we should probably like
+ comma separate, like, you know, should we do commas every three decimal places like
+ they do in the West?
+ Yeah.
+ Like something like that.
+ I don't know that that could be a small improvement.
+ Yeah.
+ Cause for a real number, it gets hard to like, I ended up using my cursor to count three
+ overs to find how much is in there.
+ Oh yeah.
+ Yup.
+ I do like the comma approach.
+ There's been a bit of a scuttlebutt on the, in the Twitter sphere about how to, how to
+ do this.
+ And yeah, so it's a, it's a bit of a minefield.
+ It seems like.
+ Yeah.
+ There's actually, there's a browser API for formatting a number based on the user's like
+ internationalization preferences.
+ So we should be able to display it however people want it.
+ Okay.
+ Cool.
+ Or rather, however their device typically displays it.
+ Makes sense to me.
+ Cool.
+ So I'll move for another design spec.
+ I guess, you know, would it, would it make sense for me to just use this one, this one
+ screen here or is there more needed for, for design spec?
+ This looks really good to me.
+ I mean, I think we can, yeah, this is, this looks really good.
+ I mean, I think it solves the, on the gateway side, it solves the big problem of having
+ no password entry.
+ I guess one small detail is that I think at least for the absolute first iteration, they
+ won't really be choosing a password.
+ The deployment script will set a password and we'll probably have to, like, I think
+ the better way for the gateway to do it would be to store.
+ So currently we're reading the password as like an environment variable.
+ So when the code first runs, it's like a config, there's like a config where the passwords
+ in there that we should change that to, we should get rid of that I think.
+ And then just save the password, hash the password and save it in the database.
+ So then, then, then the user does choose the password.
+ So that's just like one note.
+ I think we can leave the designs as they are because this is like a better one.
+ But yeah, like the first step they would be setting using the password that, yeah, we
+ should just try to like maybe improve this over the next week I think, because it is,
+ people will be confused as hell about, about this I think.
+ Like there's a, yeah.
+ Yeah.
+ So I think let's just leave the designs like they are and try to get the code up to these
+ designs because this is the way it should, this is like a better flow.
+ Cool.
+ Okay.
+ But yeah, that looks good to me.
+ I mean, well, I think we can try to get, get work towards this over the next week or so.
+ Okay.
+ Yeah, just a couple, I left a couple of these notes here, just use error correction on the
+ input field.
+ I don't know if you want to enforce a type of password that's more secure than another.
+ So if the user just like types in, you know, like one, two, three, is that acceptable or
+ not?
+ I mean, there's libraries out there that will probably help enforce something that's that
+ semi secure.
+ That sounds like a good idea to apply to both.
+ But I think if we can just have a password, the user can choose.
+ That's a good first step.
+ Agreed.
+ Cool.
+ Yeah, that's, I mean, I think this looks great.
+ We got, we got some work to do now.
+ Yeah.
+ And I'm just going to leave all of this, all of this other stuff here under explore exploration,
+ just like what happened with the operations version setup.
+ I know that Will, you had mentioned, I think it was a couple of weeks ago about archiving
+ work.
+ And I don't know if you had concerns about that or not, but you could always save a Figma
+ file to your local machine to be able to refer back to, you know, design.
+ So from a certain date, so that sort of like, you know, source of truth methodology, right?
+ So just in Figma, save as Figma, you can just download this entire, you know, design to
+ your, to your box.
+ That's cool.
+ Yeah.
+ I mean, I was also thinking maybe when we, when we open an issue with the design attached
+ to it, that we include not just a link to the Figma, but also like a snapshot.
+ Yeah.
+ Just export.
+ But knowing that you can have the whole file is actually pretty nice.
+ I hate to say, I didn't even know that Figma had its own file format.
+ Yeah.
+ Yeah.
+ I do backups every day just so that my work doesn't get blown up somewhere along the ways
+ by other people possibly.
+ So let's see what else.
+ Okay.
+ Yeah.
+ So I think a big question here is just now, how are we going to convert these into issues
+ that people can work on?
+ Maybe me and Jodham can take a little hack at that, at least try to get some of the bigger
+ ones have make issues for them.
+ What do you think Jodham?
+ Yep.
+ That's fun.
+ Cool.
+ Yeah.
+ Yeah.
+ So maybe we could start doing that once this call's done.
+ I mean, just make like a first pass.
+ Let's do it.
+ Okay, cool.
+ That's all I have.
+ Anybody else have anything they want to bring up?
+ If not pretty successful design call I think and we'll try to build it.
+ That sounds good.
+ Yeah.
+ Things are good on my end.
+ Awesome.
+ Well, yeah, hopefully next week we'll over the next week, like I'll let you guys know.
+ I mean, I'll post once the Federation setup is more expected to work.
+ Like we did one after the dev call on Monday.
+ I think we can maybe try it again next week and maybe next design call we can demo it
+ again too when it's in a more working state.
+ So you could, if you wanted to, you could, you just, you know, get a server and you're
+ able to set up a MutinyNet guardian or Federation or gateway on it.
+ So awesome.
+ Well, I think that's it for me.
+ I'll probably stop the recording and then me and Jodham might stick on and just try
+ to make some issues.
+ And if anybody else wants to ride along, feel free.
+ All right.
+ So it's good.
+ I'm going to drop everyone.
+ Thanks.
+ Thanks for your time.
+ - And I will stop recording.
