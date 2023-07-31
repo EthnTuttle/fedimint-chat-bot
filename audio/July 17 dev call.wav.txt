@@ -1,0 +1,621 @@
+ Okay, there we go.
+ DPC there.
+ Okay, we'll cover this one later.
+ Another one DPC.
+ I'm not sure what this one does.
+ If we had like an invalid, like anything that encodes a length, like a vector, it had an
+ invalid encoding, like say zero FF at the start of the byte, we will just allocate massive
+ amounts of memory.
+ This just limits that.
+ So if the colon colon decode fails, we stop allocating the memory.
+ Okay, I saw DPC's mic turn on.
+ Are you available to talk about this one?
+ My internet is spotty.
+ Yeah, so this is something we will need to discuss.
+ This implements a variable integer encoding.
+ So consensus breaking change.
+ Question is, do we want to do it or do we not want to do it?
+ And if we want to do it, is this the way to go?
+ But yeah, we can discuss it in the comments there, I guess, or separate call or something.
+ Any thoughts here, Eric?
+ Yeah, I'd like to have variable length encoding.
+ We should think about which one we choose, because like in Bitcoin, there are like three
+ different ones, and we shouldn't invent a fourth one at least.
+ But yeah, just take this offline.
+ Cool.
+ Got that one, got that one.
+ Yeah, this is one I kind of didn't finish because CI betrayed me.
+ Just removing the, like we had this like ID file that about all bash scripts were all
+ writing to.
+ So just tried to get rid of it, this process ID file.
+ So I'll try to revisit that one, just simplify the dev environment a little bit.
+ Douglas, you want to describe this one?
+ Yes.
+ There is some connection.
+ I don't know exactly when this happens, but I know it happens a lot on the Docker compose
+ files.
+ This is why I found out this.
+ So for some kind of connections, there is no delay, there is no sleep between the connection.
+ So there are a lot of logs when this happens.
+ So I tried to introduce this sleep here, but it's failing a test.
+ So it's draft because I need to figure out why the test starts failing.
+ It should not fail.
+ So this is mostly just around trying to clean up the logs just so they don't get hammered
+ by one statement.
+ Yes, yes, because it will flood the log a lot.
+ Oh, in this error case in particular, I guess.
+ Yeah.
+ Yes.
+ No, the error is okay because there's already a sleep, but on the okay case, after the connection
+ is broken, like it's after the connection closes, it will try without sleep.
+ It should try with sleep.
+ Okay.
+ Makes sense.
+ So Jodo making some progress on joining federations in the client, moving that into the client
+ instead of having the caller be responsible.
+ Still a draft.
+ Anything you need help with?
+ I actually applied the thing we discussed last DevCon and right now there's some tests
+ to walk through.
+ So cleaning out the tests and changing them to this new model, particularly in DevMint.
+ One thing that I'm not going to try to do with this change is how we test modules in
+ dummy tests.
+ So how dummy test modules, I'll, with config part of the builder so that I can keep those
+ tests working, but then I'll try to check off, move a bunch of other tests over to this
+ new client NG, which downloads its own config internally.
+ I think there's just maybe one or two more to work through.
+ Sounds good.
+ This one we can skip.
+ Mr. Koga, you want to give us an update on this one?
+ I'm still working through some issues.
+ I'm blocked though.
+ I got past some issues last week and I ran into some new problems.
+ So still have to do that.
+ Isn't that how it goes?
+ Yeah.
+ Okay.
+ Onto the, let's just discuss this one.
+ It's like a gateway ID refactor.
+ Yeah, this one.
+ So this is part of the ultimate goal here is to clean up the gateway CLI info command.
+ Right now the info command sort of gives back a bunch of data.
+ A lot of it is repeated.
+ And one thing that was noticed or noticed a few times is like the, so the way we switch
+ gateways before we were using like the node pub key, which isn't right since it could
+ be multiple gateways using the same node potentially.
+ And then now we're currently using the gateway redeem key, which actually works fine.
+ But one kind of weird thing is that like that key is generated based on the clients, like
+ the client that's created in the gateway.
+ And so the, like if you're, if you have a gateway that's connected to multiple federations,
+ you'll actually get different keys there, I believe.
+ Which is maybe a little confusing.
+ So this PR makes this just so it just generates a key like on the first boot of the gateway
+ and saves it to the database.
+ And that key isn't really, it's not used for anything other than public identity.
+ So then now this is used for switching gateways.
+ So that key should be stable across federations as well.
+ Okay.
+ And like end user clients don't interact with that key at all yet or will they?
+ The only place it's used is when you say like switch gateway, you'll pass this public key,
+ which is just like, it's called the gateway ID now.
+ So you'll pass the ID to identify the gateway.
+ But like the private key, this is just a public private key pair.
+ Private key is not used for anything.
+ I think that works for me.
+ If anybody has comments here, PR ready to review.
+ Okay.
+ Samgrep is silent.
+ This is blocked and it's been blocked for a long while in a draft.
+ Yeah.
+ Okay.
+ We have some, okay.
+ So that was, okay.
+ This is why I got our little script found it.
+ Like I was blocked on this and this thing did get merged or this got closed, but there
+ was like a stale bot.
+ There is like another issue.
+ So yeah, you should.
+ Okay.
+ Anyway, not a big deal one way or another.
+ Yeah.
+ Cool.
+ So Ethan's been trying to get the like, Ethan, myself and Douglas have been trying to have
+ been working on making it easier to run bettiment.
+ And so Ethan's been doing some work.
+ Douglas and I have been mostly been doing a Docker and Ethan's been trying to do it
+ just with like system CTL system, system defiles.
+ Oh, he's here.
+ I thought he said he wasn't going to be here.
+ Go ahead, Ethan.
+ Yeah, no, I was able to escape a real meeting.
+ So this just took, there's a, a Nick's bundle command.
+ I think somebody had emerged a while back.
+ So I just replicated that in a GitHub pipeline.
+ I don't know if it's the right answer.
+ I couldn't actually find where the binary is landed, but it only built in my I see there's
+ comments or I haven't, I haven't checked those out yet, but it only built in my fork.
+ So I don't know if something weird with my fork that I'm like not paying for it or something,
+ but I'll check out these comments later.
+ But yeah, it was just getting the Nick's bundle.
+ So where, what, what, what would be the benefit of having the Debian, the, like the operating
+ system package?
+ What's the benefit there of opposed to, because right now we can produce a binary that runs
+ on any, on any Linux distro, right?
+ So that's how we, go ahead, sorry.
+ You cannot really compile with a muscle.
+ Usually the way you do it is you compile with a muscle study, clip C and you can get a binary
+ with no dependencies on anything.
+ But it doesn't work because of rocks, DBC plus plus something, something.
+ So yeah.
+ Okay.
+ What was this issue?
+ I think that was, this was exactly trying to get the muscle target compilation working,
+ which failed and yeah.
+ And then the bundlers are the second.
+ This is what I base my PR on.
+ So again, it's for.dev and.rpm.
+ Gotcha.
+ Okay.
+ So, okay.
+ So you're basically just, so we, Nix, our Nix system has support for building these
+ and you're just adding, you're just making CI do that.
+ Run that.
+ Right.
+ Yeah.
+ The only question I would have, and I just haven't done any research is like, I'm not
+ sure the best way to surface those.
+ So like for public consumption or anything.
+ So open to ideas.
+ Yeah.
+ Let's talk about this one at the end a little, like I want to like put, start putting together
+ like a release candidate.
+ And so part of that is having Docker images and then it would be nice if we can also
+ have some of these like associated to like a GitHub release.
+ Cool.
+ So keep moving.
+ Just push this.
+ This is on top of other PRs and I noticed some suboptimal JSON encoding.
+ So yeah, I've noticed some as well.
+ Usually when you have a VAC of bytes and you don't do anything about it, then you get encoding
+ that is just JSON array, which is rather inefficient way.
+ Yeah.
+ Like one example, I think in one of the, in one of the configs, I just noticed with the
+ PR with Jordan, we ended up, I think it's listing the modules or something in the config
+ RPC response.
+ You get an, you get an object where the keys are string numbers like zero, one, and two.
+ And it would probably be better if it were,
+ it might be better if it were just an array.
+ - But then it theoretically can have holes.
+ - Yeah, that's true. - So I'm not sure.
+ Yeah, and then the keys have to be a string,
+ so they have to go into, yeah.
+ - Yeah, it might be better.
+ - I think there was like a signature there
+ that was like a long array of numbers and stuff.
+ Anyway, yeah.
+ - I just noticed we don't really look at the JSON.
+ Like we don't, how would,
+ we just look at the restructs for most of our development
+ and like that's one of the things I've noticed
+ working on the UI is sometimes the JSON is a little weird.
+ We should probably report those more often.
+ - Yep.
+ - Okay, don't need that.
+ So we talked about this one already.
+ Just documenting metafields.
+ Okay, what is this one, DPC?
+ He needs some review here.
+ (keyboard clicking)
+ Either DPC.
+ Okay, we'll come back to that one.
+ - Looks like a connectivity icon on his profile.
+ - Yeah, we talked about that one.
+ We need a test for that.
+ - Okay, DPC back.
+ No, okay, so WebSocket subscriptions.
+ Me and Manmeet were talking about this.
+ So Manmeet is looking into this
+ to see if we can actually add WebSocket subscriptions.
+ What's the status there, Manmeet?
+ - Yeah, so I investigated like,
+ let's say we have a way like subscribe to this thing
+ and that subscription gives exactly one notification.
+ So on a network level, there's no difference
+ between what we are doing currently
+ and what will happen with that.
+ If we have another type of notification,
+ say that we subscribe to this type of events
+ and then we get multiple of these events in the future,
+ then we have advantage
+ of implementing subscriptions differently.
+ So I just don't know the case where this will be useful,
+ like subscribe to an event
+ and it sends multiple events back.
+ - I don't think we have such a case,
+ but wasn't the problem
+ that if we have too many parallel function calls
+ that are just being held, like till the event happens,
+ that we run out of like these slots for the function calls.
+ Would it still be the case with subscriptions?
+ - I think there will be limits everywhere
+ if there are limits in the library.
+ I don't see why there should be special case for this,
+ but we should just retry in that case, I think.
+ - Yeah, then maybe you can just up the limits too.
+ - Yeah.
+ - That was a problem Alan ran into
+ during stress testing, I think.
+ - Okay.
+ Yeah, this one, I can skip.
+ Skip that one.
+ Skip that one.
+ Skip that one.
+ Oh, this is great.
+ How are we on the upstreaming tonic L&D?
+ It looks like we got one left.
+ Or these are just changes we need.
+ - Yeah, so we changed strategies
+ instead of trying hard to upstream them.
+ We just like actively support our own fork.
+ So all these changes were to our own fork
+ and this was able to unblock Mr. Kuga in his work.
+ I think this is the new thing.
+ I wanna look at the HTTP, non-HTTP, non-secure address.
+ I think we should just remain with what we have,
+ but we have some test scenarios
+ which require, which would be unsecured, non-TLS.
+ Connections to the node.
+ I'm not sure how to address that.
+ I'll see if we can support those test scenarios,
+ like when we are connecting to dockets.
+ Yeah, just on our fork still.
+ - Okay, cool.
+ Talked about that one already.
+ We've talked about that one.
+ Okay, so we kind of talked about this.
+ Was this what you were talking about earlier
+ with the with config thing?
+ Joram?
+ - Yeah, this is the one.
+ So this is the one after my changes.
+ Suppose I can land that change.
+ Soon we would still have with config on the current builder,
+ but with config should go away in favor of with connection.
+ - Just because the client itself can download the config,
+ so don't need to pass it in anymore?
+ I mean, I wonder if maybe in some scenarios
+ it would be useful to just like jam in a config.
+ I don't know.
+ Probably not.
+ - Right now I can only see test scenarios,
+ but then if we keep both APIs on the builder,
+ then we have to define behavior
+ when one is used for other stuff.
+ - Okay, yeah, makes sense to just remove it, I think.
+ Eric?
+ - But we should probably still commit to the config
+ that we're currently running on,
+ at least in the database or something like that.
+ Like we shouldn't just rely on what we receive
+ from the federation, right?
+ - I mean, with connection on the builder, we'll download.
+ And once it downloads, it commits it to database.
+ And from that point on, if you load the client, you--
+ - And then if we were to download the second time,
+ or like what happens if we use the builder
+ with the same database a second time?
+ - Okay, I think we should, it should download,
+ attempt to download from the database
+ if it has a, if it's the database is reused.
+ So already builder has the concept of fresh download,
+ fresh database or reused database, right?
+ So if it's a reused database, it just downloads it.
+ If it's a fresh database, if it's a reused database,
+ it sources it from the DB.
+ If it's a fresh database,
+ that's the only time it downloads it.
+ - Okay, okay.
+ - We'll wanna allow--
+ - I will take a look at the PR tool.
+ - Yeah, we'll wanna make sure that the client works
+ if there's no internet connection, right?
+ Like one cool thing with e-cache
+ is you can just generate e-cache tokens
+ and give them to people
+ when you're not connected to the internet.
+ So we wanna make sure that the client can boot
+ if there isn't an internet connection.
+ - That's a good one.
+ - Maybe with connection could look in the database
+ and if there's already config,
+ it just skips the download or something.
+ - Yeah, I have this concern
+ because it is removing the local config,
+ like for instance, in the load test,
+ usually we use a local configuration
+ that we have already saved.
+ So you don't need to connect to the FedMint
+ just to get it configured.
+ Like it will introduce another connection step
+ that's not related to the test.
+ So it will be good to be able
+ to load the local configuration.
+ (sighs)
+ Yeah, okay.
+ - Yeah, maybe for that,
+ we could have a special function
+ that just writes the config to the database
+ and that special case,
+ then we don't have to download it again.
+ Like that could be like something done
+ in the fixture setup.
+ - Okay, so we made one.
+ I did some work just trying to get the deviment to run
+ in the UI repo and I got very close,
+ but haven't revisited it yet.
+ And yeah, there's some like deviment kind of improvements
+ that I think we should just kind of track.
+ Like we had a deviment issue
+ when we were first trying to make it
+ and that was just had a bunch of stuff in there.
+ So I just made like a new little checklist
+ of things that would be nice to have.
+ Like two federations at once would be nice,
+ a flag to not register gateways,
+ like in the gateway UI,
+ it's nice to be able to test that.
+ Like, but if the gateway is already registered already,
+ you can't.
+ So this is just like a new little tracking issue
+ for deviment improvements.
+ Don't wanna make it a new issue for everyone necessarily.
+ And so if you have any ideas, throw them in here.
+ And then lastly, what was the story on these slow tests?
+ Oh yeah, these are just, so we just disabled them, right?
+ That's done.
+ Cool, so I think that's kind of it
+ for stuff from the last week.
+ Is there, was there anything else?
+ Nope, a little slow week with Eric off.
+ So yeah, I guess, so two things I wanna talk about
+ for like what to do this week
+ are just sort of getting our CI in better shape, right?
+ Like right now, it's pretty, there's a lot of flakiness.
+ So it just is very hard to get your PR merged,
+ especially if you're not like a maintainer,
+ like you don't have the ability to like rerun
+ a failed CI job.
+ So I don't know, what are our thoughts there?
+ How can we get it so our CI is less flaky?
+ Have we done, like I know a couple of weeks ago,
+ we tried, DPC had an idea moving the default ports
+ we have like out of the ephemeral range.
+ Didn't seem like it, did that have a big impact?
+ - I mean, are we still collecting the flaky failures?
+ Like maybe we could see a pattern in there,
+ like where the flakiness comes from.
+ - Yeah, I know there's a--
+ - We should probably start collecting them
+ in the issue again.
+ - There is a lightning reconnect test
+ that at least locally it always fails.
+ So this is a test that needs to,
+ I don't know, it needs to be fixed in some way.
+ - Okay, that's a good thing.
+ We don't really have a good, I guess 10 days ago,
+ I went and did ran a bunch of tests
+ and I noted some down the field in the discord forum
+ and maybe that's not the best place to put them.
+ Should we just have like one like tracking issue for this
+ and just start trying to correlate things?
+ We had that in the past,
+ but then we closed that like tracking issue.
+ The idea that like when new ones popped up,
+ we just make issues for them.
+ But now I think we have quite a few problems.
+ - Okay, if nobody,
+ does anybody wanna sort of like spearhead this effort,
+ try to track down and sort of start
+ at least describing the things that do fail a lot?
+ Like one thing you could do is just go through,
+ like the history of actions and see like what is causing failures.
+ No takers?
+ Okay, I can look into it a little bit.
+ But yeah, that's the first thing, like I think we should really,
+ we shouldn't tolerate this more than we need to.
+ We should try to put a little more effort in there.
+ And so lastly is trying to get, I think we're at a point where we should
+ like put out a release candidate for Vetiment and try to get like an actual release.
+ So we've had some little, like, so just,
+ I can share this little GitHub gist I have with anybody.
+ Like, so Alan and I put this together last week, which will,
+ it's basically like you run one little curl command and
+ it will set up a Docker compose on like a server.
+ So we were just using DigitalOcean and it would run quite a few services
+ like VetimentD, the Vetiment Guardian UI, BitcoinD, LND,
+ Ride the Lightning and the Gateway.
+ So you'd have like every, all the UIs you need to totally configure everything.
+ And so last Friday, I was able to get this to, off of Current Master,
+ to set up a federation on Mutiny.net and get, be able to send and, you know,
+ send and receive payments to like the Mutiny.net has a little faucet.
+ Fetty also has a faucet on Mutiny.net.
+ I was able to send and receive back and forth between these two
+ and using Vetiment CLI.
+ So we kind of have like a full, a little, a full thing to get people to be able to run
+ master now, which in the past we haven't, we've never really gotten this far.
+ So yeah, I think after this call, I will be hopping on with,
+ with Seth from the design community and we'll try to like set one up.
+ I did a little setup with Ethan last week or two weeks ago.
+ And so, yeah, let's say it is like this, we could like to, if anybody wants to try
+ to like set up a little federation and, you know, still kind of disposable
+ since we haven't like committed to a release candidate backwards compatible yet.
+ But ideally, we could try this on this week and then by the end of the week,
+ have like something that we're going to commit to backwards compatibility
+ for like at least a month.
+ So any thoughts there?
+ Anything you think we think we need to get in into that release?
+ - So is, not anything we need to get in, so please interrupt me if somebody
+ has an idea, but is there going to be like, because I don't know if it's immediate
+ obvious that people need to use like Vetiment CLI or even like what commands
+ they would need to run and what order and everything like that.
+ Is that, are we planning on doing that?
+ - Yeah, we'll like, this week, I'll write up a little dot, like a little tutorial
+ where it's like, this is what you need to run, this is how you can play with it.
+ - Okay.
+ If you have, I'm planning on setting up a Fediment with some of the local DC
+ BitDevs people, but I will try to document what commands we do when we run it as well.
+ And if you have anything before then, I'd be happy to like test it out and work
+ through the kinks with people.
+ I have one guy that's technical and one guy that's limited technical capability,
+ so I think it'd be good letting us test.
+ - Okay, cool.
+ Awesome.
+ Yeah, I did one with a couple of non-technical people last week too,
+ and it was a good learning experience.
+ Cool.
+ So, yeah, so there's just a couple of things basically, like some of these can
+ happen sort of like, so I have this like brand, this little milestone that we've
+ haven't paid much attention to, but like a couple of these can come afterwards.
+ Basically, all these can come after like a release.
+ I think this is the only one here currently that we should get in that would
+ like break backwards compatibility.
+ So, yeah, if there's anything else that you want to think about,
+ I guess one other thing is we have to actually start...
+ We should probably like increment all the version numbers maybe in the modules
+ and stuff.
+ Are we still on version zero for everything?
+ DPC here or Eric, do you know?
+ - Yeah, but even the JSON encoding issue, I don't think we have to necessarily get
+ it into the 0.1 because like it's long...
+ Like what we will do probably is just create another branch.
+ And all the changes we need as fixes on like the already released branch,
+ we just backport there from our side.
+ But we can still like keep a separate development master where we break things
+ all the time, any way we want.
+ - Okay.
+ - If it's short-lived, then it should be okay.
+ - Okay.
+ So maybe we can just take that off then.
+ Let's just do that to keep things easier.
+ We can always do that later for second release.
+ All right, cool.
+ Well, that's just kind of what I'll be working on this week.
+ And so that's all I have.
+ If anybody wants to stay on afterwards, Seth and I are going to attempt
+ the Federation setup and happy to, you know, if you want to see how it works,
+ dog food a little bit, feel free to stick around.
+ Anybody else have anything they want to cover?
+ Maybe do you just want to do like a little bit of a stand-up?
+ Like anybody want to discover, like say what else they're working on this week?
+ We did that last week.
+ It was kind of nice.
+ Sounds like Mr. Cool Guy is still working on some of the LND reconnection type stuff.
+ Or was this the parallel HTLC?
+ - Yeah, parallel HTLC and then just some smaller cleanup on the CLI stuff as well.
+ - Cool.
+ Jotam, how about you finishing off the...you got a couple open PRs?
+ - Yeah.
+ Client-NG primary, that's the only PR I have open right now.
+ So that client-NG connection, if I can finish that.
+ I'm looking at the test today and then there is the challenging bit with
+ TonicLND I might be interested in looking at this week.
+ If there's any new designs on the UI side, the MVP, because we slimmed down MVP
+ in the last call.
+ Hopefully, like there's some idea of things after doing the setup,
+ like things we can improve on there.
+ - Yeah, we made some progress there showing the lightning gateways.
+ That was nice.
+ So we're just trying to get like a Fediment dashboard now.
+ Like once you've set up a federation, you know, surface whatever information
+ we can get.
+ So, yeah, we made some good progress there last week.
+ I think I just merged your PR for that.
+ So, yeah, that'll be a fun one.
+ We can test that one out on the next call.
+ So, yeah, a little iteration on the app that UIs would be great.
+ - Yeah.
+ - I think Monmeet's kind of...yeah, I think he's...I mean, anyone else want to
+ share what they're working on this week?
+ - I will take a look at fixing the recovery tool, which doesn't work with one
+ of the consentless change PRs yet.
+ And, yeah, it should be a rather simple fix, but I just need to get to it.
+ So currently, the recovery tool is broken.
+ So please don't put main net funds on the current master federations.
+ - Yeah.
+ - Yeah.
+ I will continue to take a look at the deployment.
+ Perhaps there are some ideas for a one-click setup of federations,
+ and this maybe something could work on.
+ - Yeah, we're sort of like...I guess we're...like, we don't want to go off too much
+ of a rabbit hole to make it too custom, like, because there's...yeah,
+ it'd be great if we could find a one-click option that's a little easier,
+ although we're pretty close right now.
+ It's like just open up a terminal and paste one script and, like,
+ that's almost good enough.
+ I guess the other nice thing would be if we could figure out TLS.
+ - Yes.
+ - We said optionally, right?
+ Because, like, what we have currently...
+ - It should be option...
+ - Yes, for...I would say that for production assistance, it should be required.
+ - Yeah.
+ - But for tests, it should be optional because you need a host, you need a DNS,
+ you need to buy some domain.
+ You can't do that without buying domain.
+ So spending money, think about our name.
+ There's no way around it right now.
+ - I mean, that was one of the nice things about some of the one-click things.
+ Like, when we tried Mr. Cool Guy's one-click PR a couple months ago,
+ like, it did set TLS for, like, at least...at least I remember the gateway UI
+ or the Guardian UI had TLS enabled.
+ So, like, you know, it was like, you know, your app.you know,
+ digitaloceanapps.com or something.
+ But better than nothing, you don't have to buy a domain.
+ That was really nice.
+ - Yes, but...yes, this can be an option.
+ But if you do that, then you don't need to do anything.
+ Like, if DigitalOcean set ups a domain, you don't need to do anything on your
+ Docker Compose.
+ You just need to put the domain there.
+ - Yeah.
+ - Like, but, yeah, I will take a look at the DigitalOcean, how they do that.
+ Like, to at least to write a documentation.
+ - Yeah.
+ - Or you could set up that.
+ - Okay, cool.
+ Yeah, I mean, part of it too is, like, I think the end goal,
+ one-click providers will be like some of these Bitcoin companies,
+ like Voltage or Clover.
+ And I think part of what we've accomplished here with the Docker Compose we've
+ written is, like, it's kind of a spec for exactly what they need to do.
+ And they have, you know, this is what they do.
+ So, we don't want to go too far in that direction.
+ - Yeah, I think it's on each provider, it will be a different solution.
+ Like, I think it's very hard to have one-click solution that's working
+ in every environment.
+ - Yeah, exactly.
+ - The best you can do is, like, this Docker Compose and perhaps another
+ Kubernetes thing to be another solution that's very close to Docker Compose.
+ - Okay, cool.
+ That's it for me.
+ Any last things to discuss?
+ If not, see you guys on Thursday.
+ And, yeah, Seth and I will stick around afterwards and try to do a little
+ federation setup if anyone wants to join.
+ - Here or...
+ - Oh, yeah, I'll just stick around here.
+ - Okay.
+ - I'm in for it.
+ - Okay, cool.
+ I'm going to get...
+ So, that's it for the DevCon.
+ I'm going to get a little water.
+ So, I'll be back in a couple of minutes.
+ And then, ready to go.
+ We should be able to set it up in, like, 15 minutes or something, 20 minutes.
+ Like, it shouldn't take much longer than that.
+ - Don't forget to stop the recording.
+ - Go ahead.
+ - Don't forget to stop the recording.
+ - Okay.
+ You're good at that, remembering to stop the recording.
