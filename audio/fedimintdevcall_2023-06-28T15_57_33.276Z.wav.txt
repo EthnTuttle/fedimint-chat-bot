@@ -1,0 +1,600 @@
+ >> Hi, Martin.
+ Hi, Mr. Cool guy.
+ >> Hey, Wissam.
+ >> Nice to meet you.
+ >> All right.
+ Recording, Seth, if you want to kick us off with whatever status you got and then Wissam, if you had any design updates, we'll just start everything.
+ >> Yeah, absolutely.
+ So what we're looking at here is my first pass at the onboarding flow for the lightning gateway.
+ Just high level.
+ So we've talked about this in the last couple of design calls and Jose has shared some of this progress.
+ So I guess, you know, this sort of picks up where Jose left off last week.
+ Last week we talked about what features functionality should be included in for MVP.
+ So it's important to frame it that way, MVP versus not MVP.
+ So Jose, Jotam, Mo and I worked on this schematic here, which sort of like was the framework for the work that it did in the last couple of weeks.
+ So just sort of set that as a sort of just a marker, right?
+ >> Sorry to interrupt.
+ Could you zoom in just a little bit or magnify your screen just a little bit?
+ Thank you.
+ >> Yeah.
+ So for what I want to show today, it's important to frame it that the decision was made from a designing perspective last week that only one federation can be connected to at a time by a lightning gateway.
+ So everything that we'll see, you know, takes into consideration that there's only one possible federation, not multiple.
+ So that's a substantial shift in how I would think about the UI.
+ So I think of it as like, you know, MVP and then following MVP, multiple federations will be supported.
+ Just to set that as a preference, the design discussion around that.
+ So connect to federation.
+ Important info.
+ Details about the fed.
+ And then the other thing I would do would be the ability for the operator to peg in, peg out.
+ And see the history of withdrawals and deposits.
+ So moving on.
+ Not too dissimilar from where Jose left off.
+ I paired down the messaging to kind of like the bare minimum.
+ And I wanted to set the tone that like I mentioned before, that federations can only connect to -- gateways can only connect to one federation at a time.
+ So basically, paste invite code.
+ One of my questions was if the invite code will always begin with FED and if it will always be 176 characters in length.
+ Because then we could use error detection to say that doesn't look right.
+ It's too short, it's too long.
+ It doesn't begin with fed.
+ As helpful feedback to the user.
+ And I did have a Google doc of open questions that I'm looking for answers to these items on.
+ So I'm going to click paste code.
+ Paste the code.
+ Button activates.
+ I think that there's going to be a number of places in the app, maybe both in the gateway and then on the admin UI side that there's going to be a wait time.
+ Whether it's one second or five seconds.
+ So assuming that, we should have some sort of a loading message here.
+ And I had this idea to have this Fedimin icon animate in some subtle way just to -- you know, just to design detail.
+ So maybe let's just say like four seconds goes by.
+ And this modal is pretty crucial in the experience.
+ So it A, confirms that the user has successfully connected to a Fed.
+ And then the name of the Fed is called out.
+ And then I've also included the description of the Fed.
+ Which isn't being supported right now in the back end.
+ But maybe if people decide that that can be supported, then I'll take it or create a story.
+ So the call to action is deposit Bitcoin.
+ Right?
+ And coming from previous design calls, there's been numerous discussions about not requiring the gateway operator to deposit Bitcoin.
+ So not required, but a strong recommendation.
+ So this modal sort of pushes that idea of depositing Bitcoin as being pretty, pretty important in the flow.
+ So one comment here.
+ The second sentence that says you can optionally receive e-cash notes later by paying a Federation's member lightning invoice.
+ Yep.
+ That's like -- it's just slightly incorrect.
+ Like essentially the gateway will receive e-cash notes by paying any invoice essentially.
+ And it can be even a lightning invoice, like an external lightning invoice.
+ And the way I like to think of it is that it's doing a swap.
+ So the gateway will pay the invoice using the lightning network and then it will receive e-cash.
+ So in the case where the gateway has no e-cash notes, if it services an outgoing payment from the Federation, it will receive e-cash notes.
+ I think we mentioned last week or the week before, I don't remember, that the incoming case is the harder case.
+ The incoming case is where the gateway needs e-cash notes.
+ Because if the gateway is at zero e-cash notes and it tries to service an incoming payment, it cannot do the swap.
+ It can't receive the lightning gateway and give out e-cash notes because it doesn't have any e-cash notes.
+ So just like -- yeah, slightly correction.
+ Yeah, yeah. Good to know.
+ So on that topic, do you feel it would be helpful to even reference that at this point in the R-boarding flow?
+ Or is that too abstract of an idea?
+ Yeah, I think -- so this is more just like general instructions, right?
+ I would say that the user should be sort of like prompted to deposit Bitcoin as you're kind of doing here, but not required.
+ So you can even maybe get rid of that second line, like maybe it's too confusing.
+ I guess, at least from what I remember last week, the flow we were going for is that in most cases, users will want to deposit Bitcoin to get bootstrapped, right?
+ That's kind of how things get started.
+ But for maybe more advanced users, if they just start starting to get going, they might want to do this trick where they do the swap by paying an outward lightning invoice to get started quicker.
+ And I think like Justin's concern was like, we don't want to block on that.
+ Like if we're blocking on the deposit, that's actually like hindering the flow for maybe more advanced users.
+ So that's kind of my opinion.
+ Yep. Yep. So I kept that in mind.
+ So, you know, huge button at the bottom. I'll do this later.
+ So there's no blocking mechanism here, but it's a strong recommendation, right?
+ So you can just skip right by this and go about their merry way.
+ I do think that that remove of the second line is good.
+ I think that could probably be a bit of a head scratcher for the majority of users.
+ So I think it is good to remove that.
+ You know, while we're looking at this modal, a couple of questions I have is if lightning payments will be possible for MVP for initial deposit or any deposit and any withdrawal.
+ So what do you mean by that?
+ Just like the gate, like will lightning payments be supported by like FettyMint MVP?
+ Yes. Yep. For this, you know, could we show a lightning address here in addition to the Andrian address?
+ Oh, like LNURL?
+ Okay, sorry. Sorry.
+ So, yeah, let's back up a sec.
+ So you can't show a lightning, like an invoice or anything like that, because the gateway is actually the one that is doing the, is like providing the invoices, right?
+ You're kind of setting up the gateway here.
+ So you can't, yeah, you can't do, essentially the gateway needs to sort of, is taking the brunt of using on-chain initially such that it can service other users that want to use the gateway.
+ Got it. Got it. Okay.
+ Good. And then the other question was minimum recommended amount of sets.
+ So again, it's not a recommendation.
+ It's not a requirement. It's a recommendation of a minimum amount.
+ And I'm not sure if that, you know, in the real world, would it be useful or not so useful?
+ Yeah, that's, so that's a hard question to answer.
+ And it's kind of similar to like, what kind of capital requirements do you want on the Lightning Network?
+ So the way I like to think about it is essentially the gateways are doing swaps, right?
+ They're doing swaps between e-cash notes and Lightning Network payments.
+ And so this prompt right here is essentially saying, what kind of liquidity do you want on the e-cash side?
+ So like the amount of notes available to swap in to the federation, essentially.
+ So like when you say minimum 100,000 sets, really what that's saying is that you can service 100,000 sets worth of inbound payments into the federation before, you know, this virtual channel is kind of depleted.
+ Because once you get to zero, you can no longer service inbound payments, right?
+ And there's an analogy here of the Lightning Network, right?
+ So when you have inbound liquidity, if you use all that, you can no longer service inbound payments, right?
+ So the recommendation here is really more of how busy do you think this federation is going to be?
+ And how many inbound payments do you think it's going to service?
+ Like if it's a large federation, 100,000 sets is probably nowhere near enough.
+ But you can always deposit more, right?
+ So like that's kind of the nice, one nice part about this is that you can think of this kind of like a channel, like in the Lightning Network, but it's a virtual channel.
+ And so you can just, you can always like deposit more Bitcoin and get more e-cash notes.
+ You don't have to do this, you know, what you do have to do in the Lightning side.
+ So, right. Yep. Yep.
+ So considering, you know, what the expected federation size might be, you know, I mentioned that going to be like, eventually, like really big and then really small.
+ So to me, like 100,000 sets felt like a decent starting number just for conversation, really.
+ So, yeah, I think that's fair. And, you know, maybe, like, I don't know how to communicate this, so maybe you can run with it.
+ But like putting somewhere like you can always add more later.
+ Like you can sort of, if you, one job of a gateway might be that, you know, you initially deposit some Bitcoin, say 100,000 sets.
+ And then you're probably going to need to monitor that, see if it gets depleted.
+ Because like I said, once it gets depleted, you can no longer service inbound.
+ So there might need to be some sort of communication that like you can always add more later.
+ And that, like I said before, that's like, that's different from the way the Lightning Network works today.
+ Right. Like when you create a channel in Lightning, at least without splicing right now, you can't add more to it.
+ Whereas with this, you can. So.
+ Yeah, I like that addition. It's good.
+ Cool. All right.
+ I have a question. Is 100,000 sets perhaps something that could be configurable by the, you know, gateway operator?
+ I guess I forget the lingo that we use here, but the incentive for them is to have a lot of, I guess, sets coming in so that they can provide swaps.
+ And I'm just wondering if there's like a configurability aspect to this with like a default that we go backwards, just 100,000 sets is a good thing to start with.
+ I mean, so from the protocol side, there's no like constraints here.
+ Like this is purely like a recommendation on the UI.
+ Like you can literally deposit, you know, one set if you wanted to.
+ And it wouldn't, they wouldn't care. But yeah.
+ So I mean, as far as like making configurable, that's more just like a detail when you build the UI, I think.
+ Yeah. Cool.
+ So I see some async magic happening in the background where once the app recognizes that there's been a deposit, the modal shifts, dismisses.
+ The UI underneath is revealed. And then we have this messaging here.
+ And, you know, a bunch of questions here, you know, do we support X number of block confirmations in order for this messaging to communicate what we want to communicate to the user.
+ Right.
+ So I think that's a federation setting. When you're setting up the federation, you determine how many blocks for confirmations.
+ I wasn't sure if that if this crossover between the federation setup and then the latency of Lightning Gateway.
+ So if that is the case, then yeah, this number would be dictated by the fed setup.
+ If not, then it's I guess it's up to up to up to sun.
+ It's on a dev really. Right.
+ Yeah. So this is this is a setting controlled by the federation.
+ It has to be because the federation is the one that's like issuing the e-cash.
+ So you get think of it like there's no issue. There's no e-cash issued until after the we call it finale delay.
+ And I guess one one brief note here that might be useful is like, I guess, in traditional Bitcoin, like I saw you had six on there.
+ I think in infetiment, I would recommend that number to be higher.
+ I think by default we have it to be 10 blocks.
+ And the reasoning here is that like FettyMint absolutely cannot handle reorgs.
+ If you have a peg in that gets reorged out and e-cash was issued,
+ then essentially the federation is now running as fractional reserve.
+ So that number should be sufficiently high, probably higher than six.
+ I think, yeah, like I said, I think default is 10.
+ Yeah, so hopefully most users...
+ The default in the UI is 10, confirmed.
+ Yeah, okay, good to know.
+ Good.
+ Let's see.
+ So async, you know, in my head, the app will recognize when x number of confirmations happen.
+ And then that messaging would shift to confirm those confirmations.
+ And then communicate how many e-cash notes the user now has in exchange for Bitcoin.
+ A user can then view the transaction, mempool.space or dismiss the notification.
+ You know, there's a much larger discussion regarding what this number would be.
+ So if I sent into the federation 100,000 sats, does that equal 100,000 e-cash notes?
+ I'm not clear on that.
+ By default, it's a one-to-one sat to e-cash note.
+ That doesn't prevent somebody from running a separate module or a separate version of
+ BettyMint that does it differently.
+ Okay.
+ Yeah, to be very pedantic, it's actually millisats.
+ So one e-cash note, like the smallest e-cash note denomination is one millisat.
+ But that's a detail.
+ Other than that, yeah, what Ethan said is correct.
+ Wait, so if they deposited 100,000 sats, then they would have 100 million e-cash notes?
+ Yeah, it's times a thousand.
+ I get confused when it's big numbers, but it's the same as the Lightning Network.
+ So the Lightning Network operates in msats.
+ So does BettyMint.
+ 100,000 millisats e-cash notes?
+ I would do that.
+ It's essentially that same number with three more zeros at the end.
+ That's how many msats it is.
+ Yeah, so it's 100 million e-cash notes is 100,000 sats.
+ So that's good to know.
+ And there's still not enough Bitcoin.
+ [AUDIO OUT]
+ Cool, good stuff.
+ OK.
+ So once a deposit has been made, let's see.
+ Show the withdraw Bitcoin button.
+ Just the rare case that somebody would want to withdraw at this point, which would be super strange.
+ But before there's actual e-cash in the Fed or in the-- here, then don't show the withdraw button.
+ Quick question.
+ So deposit and withdraw, are we using those terms for peg in and peg out?
+ And then is there any consideration for using the vernacular used in the repository?
+ Yeah, that's an excellent question.
+ I take the end user approach where-- that's a wallet approach, more ubiquitous.
+ People are familiar with deposit and withdraw.
+ But then again, guardians, lightning gateway operators would maybe be more familiar with
+ both, so peg in, peg out.
+ Yeah, I would defer to others on what the vernacular, the best vernacular might be here.
+ I think withdraw and deposit is fine.
+ We actually do use that term inside some of the gateway code already.
+ So it's not the biggest deal.
+ You know, if there was possible confusion between those two, then I imagine that both
+ could be used simultaneously, like maybe peg in, peg out in parents.
+ OK.
+ Cool.
+ So continuing on with the flow, any questions at this point?
+ I had one question.
+ So some of these operations can be in parallel.
+ So in your flow here, you had the initial on-chain deposit, but theoretically, you could
+ have another deposit at the same time, which would be two on-chain transactions.
+ And then you could even have a deposit and a withdraw at the same time as well.
+ You thought, like, would these notifications kind of stack or what was sort of the thinking
+ behind that?
+ Yeah, that's a good question.
+ Yeah, I mean, if there were multiple events happening simultaneously, then just stacking
+ these would be one approach.
+ Another approach could be to contextualize the unique events.
+ So if you had deposit and withdraw happening at the same time, then you could sort of include
+ those notifications within these unique widgets, right?
+ You can even put some sort of a communication tool here or a widget that says, like, you
+ have two pending transactions happening here.
+ Same on withdraw.
+ So to better contextualize those things happening.
+ Yeah, that sounds good.
+ I don't think it's the biggest deal because most operators probably will only do, likely
+ will only do one thing at a time.
+ But it is something I think, yeah, it sounds like you have some ideas behind that.
+ Like, I guess the case I was slightly worried about is like, you don't want to do a deposit
+ and then there's no notification and someone's all of a sudden like, oh, where did my money
+ go?
+ Yeah.
+ Yep.
+ Yeah.
+ Good call out.
+ Yeah.
+ So using this, just one, I guess this is like the simplest case, which I'm trying to take
+ for MVP.
+ But in the case that there were multiple transactions happening, then imagine that the user would
+ be required to sort of click through.
+ So view details button here.
+ And they could see everything happening transaction wise, whether it was complete, pending, failed
+ for whatever reason.
+ But I think that bubbling some of that information up a level to the main dashboard area would
+ be good.
+ So that user didn't have to click through one layer deeper.
+ Yeah, good call out.
+ Stuff that I'm definitely thinking about.
+ So yeah, this screen shows what a, you know, sort of the bare bones, you know, initial
+ deposit, no notifications, just it's pretty, pretty clean, pretty simple.
+ Question I had, and I'm not sure, you know, what form would be best to ask this in.
+ But for MVP is this entire lightning section, transactions section here.
+ You know, should that be included in MVP?
+ If now I would just I would just remove it from the designs just so that, you know, people
+ wouldn't be confused.
+ Same goes for node detail section.
+ If that's not something that would be supported for MVP, I would just remove it.
+ I think that comes down to more what the gateway API supports currently.
+ Okay, that would definitely be a Mr. Cool Guy question.
+ Or somebody else.
+ So I didn't speak to that.
+ So no details right now.
+ Okay, so to just to start with, I'm saying a lot of this stuff is going to change.
+ But I do.
+ So like TLDRs, I do think you should include this in the MVP.
+ If we're not there yet on the API, like the API should be improved so that we can support
+ this.
+ Because like my thing is, like, if you remove both those sections, like, what are you even
+ showing here?
+ It's really, it's a pretty basic UI at that point.
+ So on the bottom section of the no details, we can definitely do that.
+ That's we're going to change that that API just a little bit right now.
+ But that should be a pretty quick thing.
+ On the lightning transaction side.
+ So this, this is something that I think is pretty essential for a gateway like this.
+ And I can I can add more comments on what else I think you should see.
+ But this, this would be good.
+ And this is data that we have.
+ The main problem right now is that it's just in a database that's not really easily queryable.
+ Like we don't we today we don't have an API for getting this data.
+ So there are some draft PRs out right now to actually add a new endpoint.
+ So it would be a separate endpoint from the gateway, but you would run it as part of the
+ gateway.
+ That would make this data available.
+ I could pull up those PRs.
+ Douglas has been working on those.
+ And I think so he was mainly trying to expose it through like a grafana.
+ And Prometheus, I think.
+ But I think you could probably use that same API for this data.
+ So I don't know, does that kind of answer the question?
+ I think you should include it is kind of what I'm saying.
+ Yeah, yeah.
+ Yeah.
+ So yeah, definitely leave it.
+ And I guess, you know, on the engineering side, just get get close to it.
+ You mentioned you had some some comments on what I guess metrics I included here.
+ This is a best guess just from going through GitHub and just my, you know, my own experience.
+ My learnings.
+ Are there other ones that you feel should be here?
+ No, this I think this looks good.
+ I guess I don't total transactions received.
+ Okay, so the top the top line makes sense.
+ What would be the difference between failed and rejected?
+ Yeah, technically, I remember a comment.
+ I forget where I saw it.
+ But I guess technically, there could be a differentiation between the two.
+ And I included it just for that one reason, with the caveat that I actually don't understand
+ the technical, you know,
+ Yeah, sure, sure.
+ I mean, would that be like a contract that just never gets redeemed?
+ Like the lightning?
+ That's not necessarily rejected, though.
+ So there's a lot of things that can go wrong, obviously, like when you're either receiving
+ a payment or when you're sending out a payment.
+ Really, okay, I'll say all this, I don't know how you want to display it in the UI,
+ or even if there is worth this, like making the difference between these two cases.
+ But like, essentially, there's the case, there's kind of two overall cases that I think of.
+ There's one where something goes wrong, and the gateway actually needs to refund money
+ back to the client.
+ So think of it like this, essentially, the Fetiment client is trying to make an outgoing
+ payment.
+ And so that they essentially lock up some e-cash and escrow in the federation.
+ And then the gateway tries to make the payment on the Lightning Network, and that fails.
+ Essentially, at that point, the gateway can then tell the federation, "Hey, this failed,
+ give the user his money back."
+ But the gateway doesn't have to do that.
+ So again, the gateway is like a separate entity, right?
+ So the gateway could say, "Hey, I'm going to try this payment."
+ But then it never tells the federation, "Hey, here's your money back."
+ So what happens in that case is essentially there's a timeout.
+ So the money that's locked in the e-cash and the escrow in the federation, when the timeout
+ passes, then the user can then claim their money back for the failed payment.
+ So there's an equivalent case on the receiving side as well.
+ You can think of it like there's sort of two failure cases.
+ There's a failure case that's the cooperative path, kind of like the Lightning Network.
+ There's a cooperative path failure case where the gateway is like, "Oh, I failed, here's
+ your money back."
+ And then there's kind of the adversarial case where maybe the gateway goes offline, it's
+ completely gone, and the timeout happens and the user can claim their money back.
+ So those are kind of the two major failure cases.
+ I don't know if it's worth showing in this dashboard between the two of them.
+ From a dev perspective or operational sense, it would be nice to know about those two cases
+ because on the second case, the user's money is locked up a lot longer.
+ They essentially tried to make this payment, they couldn't, and then now they can't get
+ their money back for a few days or something like that.
+ And I know when Justin and those guys were doing their pop-up federation in Prague, I
+ know this is pretty much the main error condition that we want to avoid.
+ We really don't want people's money locked up because that's a bad experience.
+ So yeah, like I said, I don't know how to show all that or even if it's worth delineating
+ between the two cases, but that's kind of what came to my mind.
+ Yeah, good stuff to think about.
+ My take is show more data than less just to anticipate questions and just to provide greater
+ levels of transparency for people that might be wondering, but not always at the expense
+ of complicating UIs.
+ In terms of labels, whether it's failed or rejected, I would also push for using whatever
+ common nomenclature is used out there.
+ So if these different cases are presented in the AMBOSS dashboard, then use similar
+ language.
+ Well, to be clear, those two cases that I just described, those are FedEvent failure
+ cases.
+ There's an analogy here with Lightning where if you're familiar with Lightning, when you're
+ closing a channel, there's a cooperative close and there's the unilateral close.
+ right. And you can think of it like...
+ And Lightning really is just like a bunch of smart contracts.
+ They're just Bitcoin scripts, right?
+ That's what, and inside the script is coded these two channel closer cases.
+ Again, the analogy in Fetiment is that in Fetiment we have smart contracts in the Federation
+ and the way you can interact with these contracts is either via the gateway can redeem the money
+ or the timeout case hits and the user can call the money back.
+ So I'm just trying to make an analogy to make it easier to understand, but they're not really
+ the same thing.
+ I guess they're slightly different.
+ We don't really have, I guess, like, I don't know, agreed upon terms for that yet.
+ So you could make something up.
+ I guess what I was thinking is like maybe some sort of like in transit or settled, in
+ transit versus settled might be easier to understand.
+ We really don't want the payments stuck in this timeout case.
+ So if the dashboard can maybe show like, I don't know, here's payments that are still
+ in transit or still pending, that could communicate this stuck payment case as well.
+ Okay.
+ Yeah.
+ Good feedback.
+ And yeah, I'd like the in transit label and maybe combine both of these under that one
+ label unless there's a real need to differentiate between those two scenarios.
+ So like transactions can fail and they can fail and then they can be settled right away.
+ Essentially that's like, you can think of that kind of as the cooperative case where,
+ you know, say the gateway didn't have any outgoing lightning liquidity.
+ What would happen is the FediMint user would lock up e-cash in a contract, say, "Hey, gateway,
+ pay this invoice."
+ Gateway cannot pay the invoice because it doesn't have any outbound liquidity.
+ And then it would go and tell the federation, "Hey, unlock the money for the user because
+ I couldn't pay it."
+ And then after that, everything's settled because everyone got their money back.
+ So that's still a rejected, like that's still a failed transaction because the invoice was
+ never paid.
+ But at least we avoided the stuck case, the timeout case.
+ So like I said, I think it is like, personally, if I was going to use this, I would like to
+ see the difference between those two because really the stuck case is like, that's kind
+ of a bug on our end.
+ We don't ever want that to happen.
+ Whereas the failed transaction but settled, that's probably more normal.
+ Like that will happen in normal operations.
+ You just might need to shift some liquidity around or something like that.
+ Got it.
+ Okay.
+ Yeah, super helpful to have this hash this out.
+ Yeah, it's stuff to think about.
+ Absolutely.
+ I have one more comment too.
+ I don't know.
+ It's actually kind of unrelated to that stuff.
+ Have you thought about like any just like lightning?
+ So this is kind of like overall lightning network stats.
+ I don't know how you show this, but the liquidity on the lightning network side is also important
+ to know for your gateway, right?
+ Like the case I just described where if you run out of outbound liquidity, you can't service
+ any outbound payments anymore.
+ So it actually might, it's probably helpful to know what your channels look like.
+ I don't know if you want to show that here or like just rely on the user just using something
+ like RTL or something like that.
+ But yeah, it's really important to mention that.
+ Yeah, that info should absolutely be included here.
+ I guess, I think we did touch upon that a little bit last week.
+ I forget the specifics, but I remember someone saying don't show any channel information,
+ but maybe it was the way that I asked the question.
+ Interesting.
+ Yeah, again, whatever information would answer the questions the operator might have would
+ be great to show here.
+ Yeah, probably that would not live under no details, but I would bubble it up a little
+ higher in the UI.
+ Yeah, you might need like a separate page.
+ I know like RTL has sort of like the, they have a dropdown for like peers and then like
+ what your channels kind of look like.
+ And yeah, I don't know what others think.
+ I guess I'm just thinking out loud a little bit here, but like I don't know how much we
+ want to reinvent like a whole like lightning node operation directly from the Fetiment
+ UI.
+ Yeah, it definitely seems like it might be a little bit of duplication of efforts if
+ those types of dashboards already exist, but that's, yeah, I don't know.
+ Like how robust is your lightning node operator?
+ So how much do you want to actually show them?
+ I mean, so yeah, they're going to do similar things, I guess.
+ Yeah, just saying out loud.
+ It might not even be the worst thing to recreate like some of the functionality because essentially
+ what you're creating here is really just a wallet, right?
+ It's a client that has a special purpose, but ultimately the operations that you do
+ here are their wallet operations, their deposit, withdraw.
+ And then on the lightning side, you might need to balance some liquidity and that's
+ essentially a lightning wallet at the end of the day.
+ So yeah, I mean, it might be a bit even poor experience if you have to tell people like,
+ oh, like if you want to do anything on the lightning side, you got to go either on the
+ command line or you got to go to RTL to do those things.
+ So maybe that's a little bit further away.
+ Focus on the e-cash side and pegging in and stuff like that.
+ But like longer term, that might be kind of where this goes, right?
+ Longer term too.
+ I don't know what RTL is like written or anything like that, but perhaps it's just a different
+ view or a different route on the web GUI for your gateway, right?
+ Like there's probably some opportunity for integrations like that.
+ Yeah, potentially.
+ I mean, I see this as like, this is an enhanced lightning wallet because it can do lighting
+ operations and it can also do e-cash operations and it manages e-cash like Seth has at the
+ top here with the number of e-cash notes and stuff.
+ So I guess I was just kind of brainstorming like where, the way I see it, if this keeps
+ on getting built out and becoming more and more advanced, at some point it's going to
+ feel very much like a lightning wallet and maybe that's okay.
+ But it's a lightning wallet plus e-cash.
+ So there might be a lot of duplicated things that RTL or Thunder Hub or whatever also do.
+ And because it's just a UI too, there's no reason why we can't go grab like pieces of
+ their UI and sort of copy paste the code.
+ Not quite exactly that, but sort of the UI design and reasonable components is probably
+ going to be a good thing in the long run for all the projects that are doing these types
+ of things.
+ Yeah.
+ As another question, as a lightning gateway operator, it is important to know your e-cash
+ bag and your lightning bag just at the high level, right?
+ Because the goal is to kind of keep them balanced.
+ Is that correct?
+ Yes.
+ Oh, okay.
+ Yes.
+ So I mean, I'm just thinking as an operator, it would be nice to at least see that high
+ level number right next to the e-cash notes.
+ It seems like a pretty good thing to see, just my opinion.
+ Yeah.
+ Yeah.
+ Good call out.
+ So question, technically, would there...
+ Yeah.
+ I'm still trying to bone up on my technical, I guess, lightning knowledge, but there wouldn't
+ be an open channel per se with the lightning gateway, right?
+ It's not really channel based.
+ It's more just X, what's my Bitcoin balance versus what's my e-cash note balance.
+ So you can actually kind of think of it like a channel.
+ So I guess let's back up.
+ Nodes in the lightning network, you could have...
+ When you do a payment, you have an incoming channel and outgoing channel, right?
+ That's when you're routing a payment.
+ You can think of this as like, it's the same thing, like you're still a lightning node.
+ So you still have an incoming channel.
+ That's like a real lightning channel on the lightning network.
+ And then the last channel, instead of a solid line, you think of it as a dotted line where
+ it's not a real channel, it's a virtual channel.
+ And the virtual channel is done using these e-cash notes, not using the lightning network.
+ But the beauty of it is that because it's a virtual channel, we sort of advertise on
+ the lightning network that, "Hey, the Federation's a real lightning node."
+ But as long as you can route to the gateway, then you know how to route to the Federation.
+ And that's why the gateway needs to know how to do these swaps because normal lightning
+ nodes can't do that.
+ Does that make sense?
+ So we actually do advertise that the Federation is a lightning node.
+ That's kind of, that's like the trick.
+ That's like why you can even pay invoices to Fetimates because the gateway is kind of
+ doing this translation from the lightning network into e-cash.
+ Okay.
+ Using a term to frame the amount of SaaS Bitcoin that the user might have within this
+ "channel," would you frame it as a channel to be, I guess, more easily understood?
+ Or is there a better terminology that you could think of?
+ I mean, balance is probably fine.
+ Because at the end of the day, like you said, it is essentially the gateway is just a client
+ of the Federation and clients have balances.
+ The channel part is that the balance is sort of treated as a channel and that when you
+ do outgoing payments, the balance will go up.
+ And when you do incoming payments, the balance will go down.
+ That's how you can think of it.
+ So you can actually think of it as this balance, the channel between the gateway and the Federation.
+ And in the lightning network example, I guess channels are like, what's the math thing?
+ Where you move the beads to one side.
+ So your balance is when the beads are on the gateway side.
+ And then when you do an incoming payment, you just move the beads into the Federation
+ side.
+ And then vice versa for outgoing payments.
+ Yep.
+ Yeah, definitely stuff to work into this design as I get back into it.
+ A couple of minutes left.
+ Just a zip over here.
+ There's one fork if the user does bail on this initial deposit.
+ So this fork brings them to the UI.
+ And then again, uses this yellow notification area to say, hey, deposit some Bitcoin to
+ receive new cash notes.
+ And seemed proper to have this message be persistent until they actually do a deposit.
+ Or the other secondary route happens where they pay a lightning invoice, in which case
+ then that message would go away.
+ Just to further reiterate that they need to have some amount of cash notes to actually--
+ I'm saying required to participate in Federation transactions.
+ There's probably better framing of that.
+ So if anyone has any feedback there, is it technically participating or-- what do folks
+ think?
+ I think that's fine as a high level.
+ Again, technically it's only receiving transactions.
+ Like, Fetimint clients cannot receive e-cash through your gateway until you have some e-cash
+ to pay them with.
+ So it's like e-cash notes are required maybe for, you'd say, for incoming transactions
+ or something like that.
+ I don't know.
+ And that shouldn't be a new concept to a lightning node operator too.
+ Correct.
+ Yeah.
+ It's, again, the analogy here is incoming liquidity.
+ In lightning, you can't receive Bitcoin until you have incoming liquidity.
+ So it's the same thing.
+ It's actually, I guess, kind of nice in that in Fetimint, you can directly get incoming
+ liquidity just by doing a non-chain transaction.
+ Whereas in lightning, you actually can't.
+ You got to get someone to either open a channel with you or do some sort of collaborative
+ open.
+ And then just two more things to show here is, let's see, thinking about, I guess, the
+ navigational structure for the overall gateway.
+ Exploring the use of just heavily leaning on use of modals and never having to deal
+ with navigation, like a back and forth paradigm, or actually including some level of nav.
+ In this case, it's just a simple back to dashboard button.
+ So I think that Jotam chimed in on that he would prefer this approach.
+ I'm trying to get my head wrapped around if there's any, I guess, more technical limitations
+ to the modal approach.
+ Yeah, the modal approach just kind of seems more intuitive for me.
+ But then I think about if the gateway operator was on a mobile device, how much that decreased
+ screen real estate size would sort of limit their productivity or UX, basically.
+ So thinking about the mobile experience always.
+ Yeah, that's it.
+ It's really a lot of stuff, excuse me, to think about after this call from the tech
+ side, which I super appreciate.
+ I got to hop off and take a little break before another meeting.
+ Yeah, Ethan, if you can stop recording and then...
+ Yeah, sounds good.

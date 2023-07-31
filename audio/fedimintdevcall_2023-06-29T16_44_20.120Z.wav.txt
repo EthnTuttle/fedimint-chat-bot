@@ -1,0 +1,500 @@
+ All right, cool.
+ Recording now, everyone.
+ Thanks for coming to the Fetimint deep dive.
+ Yeah, so we were talking about Fetimint transactions, how they're structured.
+ So we're saying that they're structured similar to Bitcoin transactions and that they have
+ inputs and outputs.
+ And part of the modularization work that was done a while back was to sort of type erase
+ each of those so that you can use...
+ Well, I think it's always been the case, but essentially you can mix and match these based
+ on modules.
+ So you can have like the mint module can fund a lightning output, essentially, which is
+ like an example would be funding like an outgoing transaction if you're trying to make a lightning
+ payment.
+ Yeah, I don't know.
+ Do you see anything else to add there?
+ I guess there's the whole notion of primary module.
+ I think on the general high level, the transaction is a core concept, not a module concept.
+ Modules just add inputs and outputs to that transaction.
+ And the transaction either happens or it doesn't.
+ Just like a database transaction.
+ Yep.
+ And so there's sort of the notion of a primary module, which I guess when you're creating
+ transactions has some implications that I see it as sort of like a syntactic sugar kind
+ of thing where if you can sort of like, if you just want to create like a lightning output,
+ you can say just create this transaction with this output.
+ And then the core infrastructure that I think Eric and DPC built will just fund it using
+ the primary module.
+ So I sort of see the primary module as the module that fills in the blanks when you don't
+ necessarily want to explicitly define like what is say funding like an output or something.
+ So we use this like in tests and whatnot, where in the tests we have the dummy module
+ as the primary module so that we don't need to depend on the mint module all the time
+ so that you can sort of just test the just test like the lightning side or the wallet
+ side and but you can still get it funded through the dummy module.
+ Can I can I share screen with like the code base so we can put eyes on code?
+ Sure.
+ Okay, nevermind.
+ I got permission issues.
+ I'll have to drop off the call.
+ I don't want to do that to ruin the recording.
+ But
+ maybe someone else wants to share.
+ I can share.
+ Can you see that?
+ Yeah, we see it.
+ Could you perhaps zoom in a little bit?
+ Yeah, maybe one sec.
+ Let me close this side.
+ I always forget the shortcut.
+ Is that good?
+ That's a little better.
+ Maybe like one or two steps more.
+ Perfect.
+ Thank you.
+ Let's see where.
+ What would be something good to look at a transaction maybe?
+ Yeah, so this is kind of the core the core structure we're talking about.
+ You can see the inputs and the outputs and then the these are like the type erased versions
+ of what the modules would supply.
+ And then all the inputs are signed, but sort of similar to Bitcoin.
+ But here we use the aggregated music to signature.
+ You can kind of think of this as like cross signature input aggregation.
+ Fetiment does that, whereas Bitcoin does not.
+ And so module just like this is like this is the core thing a module does.
+ It has inputs and then it has outputs in the I guess the secret sauce.
+ But like it's the signed transaction that makes it part of the consensus of Fetiment,
+ right?
+ Yeah, so this is the core struct that is used by like Fetiment core.
+ Like DBC said, it's not really this isn't a module concept.
+ The modules just provide the inputs and the outputs.
+ So again, I can show an example of how that's done.
+ But from like a consensus standpoint, like the signature is the part that provides a
+ consensus for whatever module has a transaction, right?
+ The signature is just a signature over the inputs.
+ That is what allows you to spend an input similar to Bitcoin.
+ So if you provide an invalid signature for an input, you won't be able to spend it.
+ Gotcha.
+ Okay.
+ So like an example, I guess we can show an example of how you create a trend.
+ So this is an example of creating a transaction and submitting it.
+ So this is the Mint client actually.
+ And this is like the reissue command.
+ So essentially what's happening here is when you have a note that's like serialized or
+ something, this will take that note and then reissue it to your wallet.
+ So you can see here it says create input from notes.
+ So I haven't looked at this in a while.
+ But essentially it takes this note that's being provided as external data, and then
+ it uses that as an input.
+ So it does a transaction builder, new input, and then add some extra like state machine
+ data here.
+ And then it just submits it to the federation.
+ Like I said here, you'll notice here you don't have to specify an output.
+ That's because we have this like primary module concept where like this transaction builder
+ will just automatically add outputs for whatever the primary module is.
+ So if you're using TMuxinator, this note will be reissued as a new note that is then added
+ to your database, the client's database as an e-cash note.
+ So you only have to define outputs if you're not going into e-cash?
+ No, you essentially just don't need to define anything.
+ Like the transaction builder will take care of defining anything via the primary module.
+ So like essentially you can cut it, it's in the codes in here, but you can sort of think
+ of this as saying like, I want to create a transaction and I want an input with this
+ note that I'm reissuing.
+ And then the output here will be whatever the primary module is.
+ So at least right now we really only have two primary modules.
+ We have the mint module and the dummy module.
+ So if the dummy module was the primary module, then like this note would essentially be transformed
+ into like a dummy output.
+ I wonder if we can look at that code real quick.
+ This one.
+ Okay.
+ I forget exactly where it is.
+ Maybe it's this.
+ I forget where it is.
+ There's some part of the code that is like adding the inputs and then will automatically
+ add outputs for whatever the primary module is.
+ What are you looking for?
+ That's, I think it's actually in finalize.
+ One sec.
+ I think it's here.
+ Transaction.
+ Yeah.
+ So this is the part.
+ So essentially it's like creating, finalize the transaction.
+ And if the transaction is underfunded, meaning essentially maybe you specify an output that
+ you didn't have in any input, it'll notice that and it'll say primary module give me
+ a sufficient input to fund this output.
+ And then after that it is the overfunding because it could potentially make change,
+ I believe.
+ So it's like if you overfund the input side, you might need to essentially add a change
+ output.
+ So that's what the create exact output is.
+ And then the transaction is built and it's done.
+ So that's what I was referring to earlier.
+ I still think we should rename primary to something else.
+ Default maybe?
+ Yeah, I don't know.
+ It has more to do with kind of liquidity.
+ It's kind of like your, I don't know, cash or change module.
+ That's the...
+ Yeah.
+ Right.
+ Right.
+ Yeah.
+ I guess like...
+ That doesn't really have to be one primary module.
+ It could work if you had a list of those modules and it could be sorted.
+ So when one cannot provide you with enough chain or inputs, then you ask for the next
+ one and the next one and stuff like that.
+ Right.
+ It would work just fine.
+ So, yeah.
+ I guess the difference is like when you contrast it with the Lightning module, like the Lightning
+ module really can only create contracts.
+ So back to your point about liquidity, there's not really a way to make change.
+ You can't use the Lightning module as a primary module since there's not really a way to make
+ change.
+ It's more like a fungible module.
+ That's what I would call it.
+ Yeah.
+ Yeah.
+ And some modules don't have input and outputs at all.
+ That's also possible.
+ What are scenarios like where you wouldn't have inputs or outputs?
+ Backup or something like that.
+ [BLANK_AUDIO]
+ persistent federation password manager.
+ In that case, though, you're not really using transactions, right?
+ Yeah.
+ But you could use consensus items.
+ So inputs, output and consensus items are like three main types
+ for modules.
+ What are consensus items? Is that a different struct then?
+ Uh-huh.
+ Different type.
+ So we can look at the module trait.
+ The typed one.
+ That's the one that the.
+ Well, you could open any module, I guess, and just find the one that implements it.
+ Oh, sure.
+ I think it's called server module.
+ Yeah.
+ This one, right?
+ This is the gen one.
+ Yeah, gen.
+ Oh, I see it there.
+ Yeah, this is what you're talking about, right?
+ Yeah.
+ So then the common, I think the common is where we implement the types for inputs,
+ output and other stuff because we share it between client side and server side.
+ Well, yeah, it's implemented in this macro.
+ You could jump to the implementation.
+ Maybe it's going to be clear, maybe not.
+ Yeah, so here we implement the module common and implement the type input, type
+ output, type output outcome and then consensus item.
+ So I guess, like generally, like a consensus item, what is that?
+ For the mint module, for example, every peer will.
+ What are they?
+ They submit a blinded signature share.
+ Yeah.
+ I think that's what it was.
+ So that's the general.
+ You're in the mint.
+ Yeah, in that macro call on the on the common.
+ I just jumped the wrong spot.
+ That was.
+ Yeah, you have to jump to.
+ Yeah, module types, that should be.
+ Yeah, this must just be OK, there's there should be a input here, yeah, and then
+ output outcome is the output outcome and consensus item is the consensus item.
+ So you can you can jump to them.
+ Yeah, so this is a signature share, so it's blinded signature share for the new.
+ Right, for the new nodes being issued.
+ Yeah, I mean, at a conceptual level, like consensus items are just things that you
+ want the Federation to agree upon, right?
+ So like block height in the wallet module is an example of that, where each
+ each each guardian could be running a different on a different Bitcoin D node and
+ potentially the blocks are different on each node and each guard, like they need to
+ come to consensus on what the block height is so that they can accept peg ins.
+ So that would be an example of a consensus item.
+ I think, yeah, I think here it's just signature shares, essentially.
+ So those consensus item, like how are those again, conceptually, not specifically, like
+ how are those created?
+ Because just hypothetically speaking, I'm thinking about like Fedipool, Pully Mint
+ type of stuff, and it seems like a consensus item would be like the number of shares
+ that an individual miner has contributed, right?
+ Generally, the way I think about it is things that don't fit into input and output.
+ That are supposed to be part of the consensus, are consensus items, you can always
+ make the consensus items an enum of different things like this.
+ Yeah, so you can one module can possibly agree on a lot of stuff.
+ And this just means that something, one instance of a module in a given peer wants to
+ commit to.
+ And then all other peers will get to see it.
+ And yeah, and the code will kind of deterministically implement kind of what does it
+ mean that someone committed to it?
+ Yeah.
+ Cool, thank you.
+ Let's.
+ Yeah, that's what this is doing, so there's two consensus items here, you know, this, I
+ think this one is agreed upon each epoch, each round.
+ And this one is agreed upon on payouts.
+ Yes, so the wallet module is a little special in the current implementation because it's in
+ every epoch, it will submit this consensus item.
+ Right.
+ Just for the purpose of agreeing on the random number between all the peers.
+ And also update the fade and the block height if they changed.
+ Yeah.
+ Awesome.
+ Well, thank you too.
+ I don't have any more questions at this moment.
+ Anybody else?
+ I think you could explain a bit about the state machines or how they are used.
+ Yeah, sure.
+ I mean, there are multiple state machines, right?
+ Is there a specific one that you're interested in, Douglas?
+ No, just in general.
+ Well, so I guess what, like the general concept of a state machine is one thing.
+ And in the code, we probably have a lot of state machines.
+ But I guess what Douglas means is the client side state machine modules are using.
+ Because there is no consensus.
+ On the server side, kind of consensus serves as a sort of a database that things are being
+ appended to consensus and everybody knows what happened and what didn't because that's
+ the consensus.
+ On the client side, if you're a client, in the old implementations, we have problems
+ that, for example, client would crash or shut down.
+ And we would drop the ball on something like the logic would not handle things correctly.
+ So especially in the environment when we have multiple modules and they can do multiple
+ things on the client, it can mean stuff.
+ We need a way for client logic to track.
+ DBC, you're muted.
+ I think you cut out there.
+ Yeah, we might have lost him.
+ Okay.
+ I think I can maybe finish what he was saying.
+ So if you look at the old client code, hopefully if you just look through some of the code,
+ it should become clear where issues can pop up.
+ If you just start looking through it and say, what happens if the client crashes here, you'll
+ find bugs where it's waiting, say, for change to come back from the federation or something
+ like that and the client never gets it.
+ And then when it boots back up again, it's not waiting for it anymore.
+ And so it never happens.
+ So essentially, the state machine framework was added to address that.
+ And conceptually, it's like any other state machine that you can think of.
+ It's each state has a trigger function and a transition function, and each transition
+ happens atomically.
+ So that transition function, when it's happening, takes a lock, and it's guaranteed to be the
+ only one that executes at that time.
+ So yeah, so like the...
+ And I don't know exactly.
+ Douglas, were you more curious about how the state machine framework was created?
+ I haven't looked at that code a ton.
+ Eric made a bunch of that.
+ But I guess like...
+ One question is, I'm not sure, but there is a state machine also on the server, I think,
+ like on that ratio transaction you were showing.
+ You can define a function, and there...
+ It's called state machine also.
+ I don't know if it's the same thing on the client or that was the client.
+ Let me check.
+ Another really useful way, if you're examining a state machine, is diagramming it out, because
+ each state is sort of like a block in the diagram, and then you'll have arrows, like
+ transition arrows between the different states, and each of those arrows represents some sort
+ of trigger to move from whatever state you're at to the secondary state.
+ Yeah, there's...
+ Yeah.
+ I don't think we have explicit state machines other than the client state machine.
+ There's one on the peers, but yeah.
+ So one...
+ What's the ratio, like that method you were explaining, the inputs or how it constructs
+ that transaction?
+ This one?
+ No, this is for ratio.
+ I think before that.
+ I don't remember.
+ Do you know where it is?
+ Yeah.
+ Search for ratio.
+ Maybe you can type in the chat.
+ Like the...
+ I don't know where it was.
+ It's just a transaction.
+ Oh, that part on the mint.
+ Perhaps.
+ Yeah, I mean, I was showing the client before, so...
+ So it was to the client?
+ Yeah, so this is the client.
+ So like you have this operation method gen, for instance.
+ Is this related to the state machine?
+ Yeah, this...
+ machine yeah this
+ So this function here is essentially starting a state machine.
+ Like most transactions that are submitted to the federation will start a state machine.
+ That's and it's such a...
+ Every input and output is a state machine.
+ Yes.
+ Basically, what happens is in the consensus on the server side, we're running a consensus
+ that things kind of change.
+ Input becomes...
+ Are spent and outputs are being created and confirmed and things are being agreed on.
+ And to reflect that on the client side, the client has to track some of this stuff as
+ well.
+ Like the client needs to know that when it submitted a transaction with some input, with
+ some outputs, it needs to know, it needs to track when those transactions confirmed and
+ those outcomes...
+ Yeah.
+ The client for every module kind of implements that on the client side.
+ If you think about normal Bitcoin, then when you create and broadcast a transaction, the
+ outputs of your transaction are also kind of state machines.
+ Like initially, you're going to notice that it went to the mempool and you can think about
+ it as like broadcast is but unconfirmed.
+ And then they're going to confirm and then you might track like six confirmations for
+ them.
+ And then you're going to know they're confirmed with six confirmations.
+ And then at some point, you're going to spend them.
+ So they're going to be...
+ This UTXO will switch to a pending state for being spent and then it will confirm and become
+ kind of destroyed, right?
+ So this flow is exactly a state machine that usually people kind of don't think in that
+ way.
+ But it is true.
+ Yeah.
+ So the state machine here is actually created in this function.
+ So see it's create input from notes and then this stands for state machine gen and it adds
+ a state machine for the input and it says this is the state that you should start at.
+ Okay.
+ I guess like one other thing to mention on the state machine side is like this is what
+ a state machine looks like is how it's actually implemented.
+ And so each state has, like I said, trigger functions and transition functions.
+ And so for the mint input to stay created, essentially there's this trigger, this is
+ the trigger function and this is the transition function.
+ And the way I think about it is that this is a vector.
+ So you can actually have multiple of these trigger functions.
+ And in fact, there might be trigger functions that are executed on other state machines
+ as well.
+ But the state machine framework takes all the trigger functions at the same time and
+ executes them.
+ And whatever future resolves first, that transition function is executed.
+ So it's really important that these trigger functions be idempotent because if they're
+ not idempotent, the state machine framework is going to execute them multiple times because
+ it's possible that a different future got resolved before this one.
+ And if it's not idempotent, that will result in bugs in the client side.
+ Well, it's like, it's about the persistence here.
+ That, let's say we're awaiting a success on the transaction.
+ Like here, we're calling await success and this returns successfully or like resolve
+ successfully when this code detects the transaction was successful.
+ But if this resolves successfully and the user turns off their mobile app and we didn't
+ have a chance to write it to the database, then from the perspective of the whole application,
+ this kind of didn't happen.
+ And we're still in the previous state.
+ So once you launch your mobile application again, the code will call that function again.
+ So that's like a technicality that everyone implementing this needs to be aware.
+ Pretty much the whole reason that the whole thing here exists is to make sure we're tracking
+ the, like we're never going to lose any change on the server side.
+ No matter if the user closes the application, suddenly the battery dies or whatever.
+ So it always comes down to idempotent functions because there might be called potentially
+ multiple times before we successfully execute the corresponding transition function.
+ Yeah, and the transition function.
+ That's the atomic part, right?
+ That's what makes it atomic is that it takes a lock and it has exclusive access to the
+ database while it's doing the transition.
+ So it's important that I guess if you're structuring APIs, it's important that the trigger functions
+ can call APIs, but they shouldn't ever touch the database.
+ Yeah.
+ I mean, there is no...
+ Technically, they could as long as it's okay for them to be called again.
+ Yeah, it's got to be idempotent.
+ Or never, or be suddenly kind of canceled.
+ So yeah.
+ The easiest way to do it is to have no side effects.
+ But yeah.
+ That gets weird with the database though, right?
+ Like you can't, it's essentially you can't ensure that these transition functions are
+ ever going to complete because it's possible another future interrupts it.
+ So if you're writing to the database, you can't ever be sure that what you're changing
+ is ever committed.
+ So like your code has to be okay with that it could possibly just fail before it's ever
+ committed.
+ So I'm pretty sure today we don't ever touch the database in these trigger functions, but
+ the transition function you can.
+ And that's why...
+ I think eCache recovery already does.
+ Oh, okay.
+ Okay.
+ Interesting.
+ Thanks, Jens.
+ I might be wrong.
+ Maybe we don't.
+ Or we might be reading something from a database, but not modify it.
+ Yeah.
+ Reading sounds like it'd be okay.
+ Yeah, generally it should be okay.
+ It could be, you could have like a cache there, for example.
+ You just have to have some way to maybe clean it, not to leave.
+ But yeah.
+ It's all about kind of idempotency there.
+ And this is very common.
+ If you do any sort of distributed system, then those kinds of problems appear over and
+ over again.
+ When you have a thing that is happening between two systems and you cannot have any sort of
+ atomicity between them, then you always have to organize everything in some kind of way
+ like this.
+ And you get at least one's delivery and outbox patterns and...
+ What is it?
+ CDC change?
+ Something logging.
+ Anyway, yeah.
+ Very common in distributed world.
+ Yeah.
+ We have some bugs on the lighting side with this right now.
+ So trying to fix those.
+ Yeah.
+ It's generally easy to kind of forget about idempotency somewhere in a more complicated
+ flows and...
+ Yeah.
+ Perhaps you could tell about this bug you are trying to solve it.
+ What's the problem?
+ How you are trying to handle?
+ Yeah, sure.
+ It's actually very related to what we were just talking about.
+ So this is all the code I'm changing right now.
+ Essentially in the gateway right now, we have this new state machine that...
+ Well, we just recently added this as far as for the...
+ This is the gateway pay state machine.
+ So essentially this is executed when the gateway receives a pay invoice request.
+ And you can trace the code here.
+ Essentially in this trigger function, await by preimage, it'll call wait by preimage over
+ lightning and this calls our lightning implementation, like pay this invoice.
+ So in LND, this function is then called and excuse the sort of hacky code right now, but
+ this send payment sync, which is like their actual API, this would be called twice potentially
+ since this is in the trigger function.
+ And in...
+ So like Douglas, that bug that you found, that's happening because the state machine
+ framework is calling essentially this trigger function twice, which leads to this being
+ called twice.
+ And LND essentially will...
+ It actually doesn't fail.
+ It just gives you back an error message and there's no preimage.
+ So like this check will fail.
+ Preimage is empty and we return an error and that's why we see the stack trace.
+ So the code I have here kind of works, but it's not great.
+ Hoping to figure out a different solution, but essentially like tries to make it item
+ potent by first looking up the payment.
+ So if the payment is currently executing, like just grab the preimage, like wait until
+ it's done and then grab the preimage from there instead of trying to payment again.
+ So yeah, pretty related to what we were just talking about in terms of item potency.
+ I don't have more questions.
+ I don't know if someone would like to ask something.
+ Awesome.
+ Yeah, we're approaching the end of time too.
+ So we could probably wrap it up here unless anybody else has anything.
+ I do if you guys want to hang on for a little.
+ So I'm working on a bug and it's delved into the Nix realm and I'm like totally out of
+ my depth.
+ So I could benefit from like a high level just kind of helping me build a mental framework
+ for Nix and how it works.
+ Yeah, if you don't mind, I'm going to stop the recording here.
+ That way it's just kind of like one contained discussion, but obviously everybody can stay
+ on.
+ So thanks.
+ Thanks everybody showing up.
+ Mr. Cool Guy DPC, thanks for doing the impromptu code dive.
+ [BLANK_AUDIO]

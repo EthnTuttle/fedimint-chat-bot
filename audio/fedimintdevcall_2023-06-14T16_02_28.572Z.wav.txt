@@ -1,0 +1,993 @@
+ Okay, I'm going to jump in quickly.
+ Hi everyone, this is our Fedimin Design Call number 9.
+ Today is 14th of June, 2023.
+ We are going to make a project catch up.
+ We're going to see some options for the admin UI that Seth has been working on.
+ I'll be showing also some Lightning Gateway that I have some doubts and I wanted to share
+ with you to get some feedback.
+ If anyone else has anything else to raise or to mention, jump in anytime.
+ I'll just jump in and introduce myself, Seth Nguyen, focusing on Fedimin for about a month.
+ I put together a doc, you can find the link in the chat.
+ I would encourage people to jump into there and go through and spend some time there to
+ make the most of our meeting time.
+ So at a high level, I'd like to share what I've been working on for maybe a half hour
+ to split the time up between Jose and myself.
+ So I'm hoping to end wherever I'm at, at around 11.30 and hand it over to Jose.
+ So within the doc, there's a number of questions to cover and go over, but there's three main
+ items.
+ I'm going to begin to talk through that are basically possible states that a guardian
+ can find themselves in.
+ And the purpose of calling these out now is to proactively think through the best approaches
+ as to how to handle those.
+ The first one is the funds in custody warning.
+ I think that's the big one.
+ And that's come up, I think, in the last two design calls.
+ So I think that we're making some headway there, but more to discuss.
+ The second one is the situation for no lightning notes connected.
+ And the third is not enough guardians online, which would cause an issue with the Fed remaining
+ in consensus.
+ And that goes back to the 3M plus one sort of phrase that we've heard a couple of times.
+ So yeah, high level.
+ I don't expect to reach any conclusive approaches here, but just to rather keep the conversation
+ moving forward for those three kind of like larger issues, or maybe not issues, but just
+ conversation topics.
+ And then below all of those, there's a number of smaller open questions that maybe we can
+ cover or get into today.
+ And if not, then people can chime in on the Google doc or just pick up where we left,
+ where we leave off next design call.
+ And maybe the next design call will be a walkthrough by Ethan to get us designers running Feds
+ in our local boxes so that we can sort of like, I guess, get a better understanding
+ as to how things are progressing and how things work.
+ So to that point, I will share my screen.
+ I think the best way to approach this is just kind of open free form conversation for each
+ of those, the big ones that I mentioned.
+ So the funds in custody, I think would be a good place to start.
+ And I'm not sure if Cody is here.
+ I don't see him, but he seems to be the person that would have the most insight into this
+ particular scenario.
+ So maybe we should not jump into too much of a technical detailed conversation, but
+ just kind of touch upon things.
+ Okay.
+ Or maybe I see Kitman.
+ Maybe he has some good insight as to these.
+ So I'll share my screen.
+ >> Yeah, Cody's not here, but I think we can answer some technical questions if needed.
+ >> Okay.
+ Cool.
+ So yeah, high level.
+ This is the main doc I've been working under.
+ Jose's works is in here as well as Islan, in addition to the previous work that's been
+ done for setup.
+ So this one centralized Figma file is what we're looking at right here.
+ And the one issue in particular, funds in custody, is here.
+ And I sort of described it in the doc for people that sort of aren't familiar with this
+ possible scenario, which I'm not sure how much of an edge case it is.
+ I'm hoping people will never see it because it sounds kind of pretty bad.
+ I think Cody mentioned like run for the exit doors, bank run, like emergency kind of stuff.
+ So just as a little context, the behavior right now with Fetiment is that if the liabilities
+ ever exceed the assets, Fetiment will basically just stop running.
+ So what would actually happen is that the setup UI wouldn't be able to connect.
+ It would basically, yeah, you wouldn't even really be able to, it would be like the backend
+ just basically disappeared.
+ That's what it would look like today.
+ We could probably improve that just so we could render a better error message.
+ But if that ever happens, it just refuses to go forward because it's kind of something
+ very, very unexpected has happened.
+ Yeah, I mean, one suggestion here is you're basically showing a balance sheet.
+ It's a financial balance sheet.
+ So you have assets and liabilities and the difference between them would be like your
+ operating profit.
+ So I think that's a good way to think about how you would visualize this, you know, because
+ some Fetiments may want to run a profit.
+ And so that might be something worth showing.
+ My understanding there is that anything profit related would be directly correlated to the
+ Lightning operator and, you know, increasing or generating revenue by Lightning fees.
+ Is that the case?
+ The Lightning, so this would be a dashboard for Fetiment, right?
+ This is different than the Gateway dashboard, right?
+ But both the Gateway and the Fetiment can run a profit.
+ Yeah, the operating assumption has mostly been that the Fetiments, you know, by default
+ they don't charge fees, but the protocol itself could support charging fees if some scenario
+ wanted that.
+ I see.
+ Okay, that's super helpful to know.
+ Okay, that's sort of a whole other paradigm I wasn't really familiar with, but good to
+ know.
+ Yeah, that's sort of like down the road, you know.
+ Okay.
+ Yeah.
+ Okay, cool.
+ So maybe for this conversation, it'd be helpful to keep things framed as the MVP and sort
+ of like, you know, stay within those guardrails.
+ And then, you know, as MVP launches, then begin to talk about and discuss design, additional
+ features functionality.
+ I think that feels like the right approach.
+ Yeah, sounds good.
+ Cool.
+ So, you know, within that context, so it sounds like today's UI doesn't support this
+ differentiation or any of these widgets really, but, you know, moving forward implementation
+ wise, I guess, does this feel like a sensible approach to call out, you know, this differentiation
+ between the two different funds and not funds, but the numbers here between Bitcoin and eCash.
+ And then, you know, bigger question is what to do if that happens?
+ You know, it sounds like, you know, the Fed should be shut down and guardians should withdraw
+ their funds.
+ So a couple of my questions was, you know, if the guardians aren't in consensus, is that
+ possible for them to remove the funds?
+ And then, you know, additionally, what happens to the members?
+ Sounds like that's kind of a rug pull, right?
+ So how are the members potentially, you know, made whole again in that scenario?
+ Yeah, I think right now this is just like an out of band.
+ Like I don't think we will have an automated solution for that.
+ It would have to be something that happens like out of band, you know, there are some
+ liabilities remaining and there are some assets and this would just need to be resolved out
+ of band currently.
+ And in the future, maybe we can have more tools around automating that, but currently
+ there's nothing.
+ Okay.
+ Yeah.
+ So going back to framing this as MVP, it sounds like that would just be a kind of an unfortunate
+ occurrence and just something that people have to live with for now.
+ Okay.
+ Cool.
+ Sorry, can I ask something?
+ Yeah, sorry if you already mentioned it, but I was just wondering if, is it possible to
+ warn people ahead of time when this type of situation is something that might be on the
+ horizon or when someone specific action might be causing this to prevent it in some cases,
+ ideally from happening in the first place?
+ From what is this exactly?
+ Well, the mismatch that's being caused here, like there's a problem here that needs to
+ be resolved, right?
+ But ideally you never want this issue.
+ Yeah, this is like a catastrophic error that would be caused by like, this should never
+ happen.
+ And we test that this doesn't happen very thoroughly, but you can never say never, bug
+ can always happen.
+ So yeah, like this should, the only thing that would really cause this is either they've
+ modified the software in some way maliciously, or there's a really bad bug.
+ Kipman, what do you think?
+ Or maybe this is not caused by user action or some accidental thing.
+ Okay.
+ Yeah, I mean, there are ways for the Fed, even if it's not charging fees to run a profit
+ unintentionally.
+ There's like some edge cases around like if the user pays e-cash right now, like RBS a
+ little bit, they could potentially overpay to pay out.
+ And in which case like the Bitcoin custody by the Federation would exceed the liabilities.
+ And these are, fees are configurable in a Federation.
+ So it is possible in the alpha version for someone to configure a Federation that does
+ charge fees per transaction.
+ So I don't think we should, I think we should assume that assets can exceed liabilities,
+ but liabilities should never exceed assets.
+ If you follow me.
+ Yeah, yeah, yeah, that makes sense.
+ Yeah.
+ And I don't want to dwell on this too much, you know, especially knowing that Justin said
+ it's a very, you know, highly unlikely situation, but you know, possible, but, but, you know,
+ I don't want to spin the wheels too much going over this and I want to make sure to give
+ Jose plenty of time.
+ So yeah, we can move on if people don't mind to this, this other situation, no connected
+ lightning nodes.
+ And, you know, the reason to call this out is, you know, it's, it's, it's much more likely,
+ I think, than, than the previous situation, you know, so you're happily running Fed and
+ then for some reason, node operators bail, what happens?
+ My understanding is that members and guardians can still transact, but, but it would be only
+ on chain.
+ And I spelled, you know, kind of like called it out here that, you know, it would just
+ be higher transaction costs, but, but the Fed would continue running and people, people,
+ people, end user apps, clients can transact offline.
+ Right.
+ Yeah.
+ That has been true until this week.
+ We are working on improving it so that in this situation where there's no connected
+ gateways, members of a Federation can, can do lightning like transactions between themselves.
+ But if they want to move in or out of the Federation, they would have to do that on
+ chain.
+ They have to do that on chain.
+ So now we should still, in my opinion, we should still encourage the guardians to connect
+ a Federation.
+ We should encourage anyone to connect, to connect a gateway that is to the Federation.
+ Yeah.
+ Okay, cool.
+ That's a, that's a exciting new, new development that guardians can still transact via lightning.
+ Awesome.
+ Okay.
+ Not enough guardians online to maintain consensus is another situation that I, that I thought
+ of that, that could happen for, for any, any number of reasons.
+ So, you know, basically here, we just want to ask guardians to get back online and how
+ do guardians know that people are offline?
+ We have a little, a little badge here and then an additional warning and a button at
+ the end here that, you know, would allow guardians to see which other guardians are offline,
+ the duration.
+ And as far as notifications, I don't think there's any, any notification system being
+ built.
+ I could be wrong, but, but then even if there was, how would, how would that notification
+ system actually alert other guardians of the situation?
+ Yeah, I don't think there will be a notification system for a little while, but maybe someday.
+ Yeah.
+ Okay.
+ Yeah.
+ So in that case, just the simple warning up here, I think that, you know, when, when the,
+ the three M plus one situation pops, it's, it's on the head then, then show this warning.
+ I think it's, could be as simple as that.
+ Yeah.
+ There's one other case that we want to cover was when enough guardians are online, but
+ they're out of consensus.
+ Like we've noticed this happen sometimes when all the servers are started, restarted exactly
+ the same time.
+ They can just basically the consensus algorithm that we use tends to get confused in that
+ scenario and we're working on switching to a different one that won't get confused.
+ So that's a bunch of other benefits.
+ And this is one of them.
+ That is one scenario that does happen every like somewhat rarely.
+ And it's, at least in my experience, it's always recoverable, but you have to like do
+ some stuff on the command line kind of.
+ So they'll probably remain that way for a little while.
+ Hopefully someday we could just, that never happens anymore, but currently it does happen.
+ And I think it's important to notice like the first generation of people are running
+ this are going to be probably more technical than the, you know, they're going to be a
+ little technical so they can, you know, yeah, we probably won't be able to resolve everything
+ in a beautiful design, nicely designed way.
+ Yeah.
+ At the very beginning.
+ So the error condition for that situation you just mentioned would be, let me just think
+ about this for a second.
+ One way, like there's, I don't think Alan is here, but he's a contributor that built
+ a little API that can expose this thing.
+ So what did this?
+ Yeah.
+ Like one way is if they think they're on different different epics that that can happen, if they
+ think they're on like different heights, that can be one indicator.
+ I think we could just basically, we'll just have like a, we'll have a way to just surface
+ this like, hey, there's one, one server that is not in consensus with the other three,
+ let's say.
+ Okay.
+ I had, sorry, I had a question.
+ As a, like if I invite members to this federation, how could I, as a, as a person who sets up
+ the federation, increase the trust between myself and the members that I invite?
+ So like what kind of information would the members want to see maybe, I don't know, every
+ month or every week or like what would they want to see to have that trust to say, well,
+ I feel like this federation is being run well and I'm happy to continue being part of it.
+ How is, I'm just, I'm kind of thinking out loud.
+ That's a great question.
+ Cause I'm putting myself in the members shoes, like in the traditional banking system, you
+ know, we have this automated sense of trust that we have with the banks where we have
+ fiat money and I'm just thinking, you know, if I'm a member of a federation, I, I want
+ to know that the guys that are, you know, have holding my, my stats are that I can trust
+ them.
+ So how would the, how would the guardian be able to kind of create or prove this trust
+ to the members?
+ And I guess it's when they're in the federation, but also when they're being invited to the
+ federation.
+ So I'm just putting thinking, putting myself in the members shoes and trying to make sure
+ that they always feel, you know, like they can trust the federation that they belong
+ to.
+ One aspect of that might be the, the fact that like a historical view of the other guardians,
+ the other members, if you could check, for instance, you know, what has their uptime
+ been?
+ What have they been keeping up with consensus?
+ People know like whether they, at least from an infrastructure standpoint are running reliable
+ infrastructure or not.
+ Like if they're running like a server that goes, that's like down 50% of the time, then
+ that's a sign that we need to reach out to them and tell them, Hey, your, your server
+ is keeps going offline for some reason.
+ Or your, your network latency is too high.
+ Yeah.
+ Go ahead.
+ One thing that would be interesting is if the guardians could sort of like, you know,
+ sort of prove this is very handwaving, but like prove
+ that they have or convince members that they have like,
+ that they will like continue to have sufficiently
+ good hosting for this, like for years to come, right?
+ So if you could somehow just like prove that you had,
+ you know, five years of hosting credit in Voltage,
+ if you're running it in Voltage or someone like that, right?
+ Like, I don't know how exactly that would work,
+ but that would be a good indicator, right?
+ But like, I can continue to run this, you know,
+ that's very gameable, but the example I just gave,
+ but something like that would be kind of nice.
+ - You can also look at how much are they contributing
+ to consensus, for instance,
+ like are they contributing transactions?
+ Are they contributing signature shares?
+ Or are they, you know, just part,
+ just never contributing consensus items?
+ Yeah, that sort of compares the guardians
+ between each other in terms of quality,
+ and it's not, but it's not really like the,
+ I think the member really cares about the quality
+ of the Federation in general, right?
+ - Yeah, yeah, I guess there's two,
+ there's two aspects of quality, I guess.
+ One is the infrastructure aspect, which is like,
+ you know, are you running on good quality infrastructure?
+ And the other is like trustworthiness,
+ which is much more of an ambiguous thing,
+ like do I trust you to hold money with me?
+ - I've taken notes, I wrote down infrastructure,
+ I wrote down hosting, and I wrote down
+ contributing to consensus, so just three points.
+ - One thing that I thought of earlier
+ is the duration that the Fed has been in operation.
+ So, you know, in a way, the longer the Fed's been,
+ you know, alive, you know, you could argue that
+ the greater the credibility or trustworthiness.
+ So that's one attribute to leverage
+ that's tangible, right?
+ - Yeah, there's a trust between the members,
+ the guardians themselves, and there's trust
+ between the users and the guardians,
+ and those are two separate things.
+ So the longer the Federation has been in operation
+ might improve the trust between the users
+ and the guardians.
+ - But not explicitly within the guardians themselves.
+ Yeah.
+ - So this is gonna be, my point here
+ is gonna be a longer term one.
+ In an e-cash system like this,
+ the thing you sacrifice is auditability,
+ but what you gain is really good privacy, right?
+ That's the trade.
+ And so the only way that an e-cash system
+ can prove that it's, like, can audit itself
+ is if it basically, like, organizes,
+ has everybody redeem their e-cash tokens
+ and get new ones with new, like,
+ kind of like roll it over to a whole new mint, basically.
+ I don't know how to explain this very simply.
+ Basically, you move to a new set of public keys
+ for the e-cash tokens, right?
+ So you allow everyone to redeem and then get new ones,
+ and you force them, basically.
+ That is one thing that will improve trust,
+ is if we can figure out how to organize something like that.
+ Like, we joked in the past,
+ it's like an automated bank run, right?
+ Like, organize a bank run,
+ and that's the only way the mint can prove,
+ like, hey, I am fully backed
+ because nobody was able to present an e-cash token,
+ which I couldn't, you know, withdraw,
+ allow them to withdraw.
+ - Yeah, you might be able to display, like,
+ a percentage of funds that are auditable.
+ And I don't want to go into the deep end,
+ but there's other ways that you can audit.
+ If we ever switch to, like, using zero-knowledge proofs
+ or state chains or things like that,
+ like, there is a percentage of supply that could be audited.
+ Or even be non-custodial.
+ - That seems, just because, like, if a user's not online,
+ they won't necessarily be part of the bank run
+ or however it's organized.
+ And then, like, maybe a historical track record,
+ because depending on, like, what epoch you have,
+ you know, the audit happening,
+ there might be, like, three epochs ago,
+ I haven't logged in 'cause I've been on vacation
+ or something like that.
+ So it seems like the percentages would have to be kept track
+ for, like, each sort of checkpoint, if that makes sense.
+ - Yeah, I think it's kind of undetermined
+ whether this will actually happen in practice.
+ I think, I can see for certainly in some,
+ like, if you had a really large federation that was,
+ maybe that would be, that was just oriented
+ more towards payments and less towards custody.
+ Maybe that would make a little more sense
+ to have that one do these things.
+ But, like, yeah, it's tough.
+ Like, if people are gonna leave their money in there for,
+ having people, forcing people to come online frequently
+ is a huge requirement, right?
+ It's a big, yeah, it's a tough one.
+ Go ahead, Stephen.
+ - Hey, hopefully a quick comment here
+ on the topic of, like, trust and auditability.
+ And, you know, it's also, like, you know,
+ there's different trust trade-offs
+ depending on the amount of money, I think.
+ And, like, one kind of happy medium between this
+ would be, like, okay, on the one end, you know,
+ you have a user who has no visibility into the federation,
+ you know, no level of trust or knowledge
+ over how much funds the federations have.
+ And then you have this, like, hypothetical scenario
+ where the user has complete knowledge of the auditability.
+ Like, they know that every single, you know,
+ piece of e-cash that exists is, you know,
+ 100% backed by this federation.
+ That's very hard, like,
+ that's the automated bank run you're talking about.
+ And then maybe there's, like, this, like,
+ happy middle ground, like, this kind of, like,
+ easier to accomplish sweet spot
+ where there's just this idea that, you know,
+ I can randomly kind of do bank runs on smaller amounts.
+ Like, I can redeem a hundred, a thousand sats of e-cash
+ in it for Bitcoin and it works.
+ Then I can redeem 200,000 sats worth of e-cash for Bitcoin
+ and it works.
+ And, you know, maybe I can randomly redeem
+ for a larger amount and it works.
+ So, like, maybe within the community,
+ there's, like, you know, some, I don't know,
+ individual or something who performs these kind of
+ random redemptions for certain amounts.
+ And it's not really, like, 100% proof
+ that, like, it's all backed, but it's like, you know,
+ if it's, like, random enough and for, like,
+ large enough amounts, it kind of maybe,
+ maybe keeps the Federation on its toes.
+ So, I don't know, maybe that's another angle to explore
+ just for trust and usability is just that you have this kind
+ of, like, you know, third party member of the community
+ who is not part of the Federation,
+ but who is kind of prodding and poking at the Federation
+ from time to time to check things.
+ - I think there's definitely a possibility
+ that we develop modules in the future
+ that are non-custodial or have less custodial requirements.
+ For instance, like, you could implement state chains.
+ So, like, you keep your smaller denominations of eCash
+ as eCash, but then you keep your larger denominations
+ as, like, on a state chain, which has less custodial risk
+ 'cause if the Federation ever stops,
+ you can reclaim that on chain.
+ But yeah, I don't know, like, we're probably going too deep
+ maybe for the discussion of the MVP here.
+ - Yeah, all good conversation.
+ Good things to think about.
+ It's 1130, so I want to not dig into Jose's time.
+ So, I'd like to hand it over to him.
+ - Thank you, Seth.
+ Thank you, everyone, for the comments.
+ Let me share my screen now.
+ Okay, so can you see my screen?
+ - Yep.
+ - Awesome.
+ So, what I'm showing here is like kind of an update
+ of the Lightning Payment Gateway.
+ I come up with a few questions I shared on the document.
+ You can see on the Google document
+ that we are sharing on the call.
+ This will be the Lightning Gateway
+ that the guardians will connect to the federations.
+ And the main question that I had here was that,
+ I know that the federation to connect
+ to the Lightning Gateway, you just need a federation code.
+ So, my question here was that,
+ if there could be possible to assign a federation name
+ and also to assign a Lightning Gateway name.
+ I mean, thinking on the future that guardian belongs
+ to different federations, it aims to connect
+ different federation, have different Lightning Gateways
+ like this one.
+ Could this be possible?
+ - Yeah, so one thing is that,
+ at least the way it currently works
+ is that the federations have their own name.
+ So, you wouldn't need to separately name it.
+ Like when you connect to the federation,
+ you download something and inside that
+ will contain the name that was entered
+ when they set up the federation in the first place.
+ So, you could potentially make your own, I guess.
+ But I think it'd probably be good enough
+ to just keep the one that the federation calls itself.
+ And on the second one, the Lightning Node Gateway name,
+ it's kind of an interesting one.
+ Like for example, if anyone has a CLI
+ and that has a command to show all the gateways, right?
+ And they kind of don't have,
+ they don't have anything like a name.
+ So, if you're ever gonna like,
+ try to show them in a UI, it's kind of confusing
+ which, what to actually name the thing, right?
+ Maybe the URL it is or the pub key or something.
+ There's not really a good way,
+ or you can maybe look up the node
+ and the Lightning Nodes have aliases.
+ So, yeah, potentially allowing the Lightning Nodes
+ to give themselves just like a human readable name
+ would be a good idea.
+ - Yeah, it probably would not be
+ for every time you're connecting a new federation.
+ Might be something you set once
+ when you're setting up your gateway
+ and probably you have an experience
+ in the UI for changing it.
+ - It's worth mentioning that nothing guarantees
+ the uniqueness of either the federation
+ or the Lightning names.
+ So, that would also have to be handled somehow.
+ - Will it be possible that case that the Guardian
+ aims to connect to Lightning gateway to the same federation?
+ Do you know any case, use case for this?
+ - In case that's possible.
+ - Could you repeat that?
+ - Yeah, my question was that,
+ if it could be any case that a Guardian
+ want to connect more than one Lightning gateway
+ to the same federation?
+ - Yeah, that's definitely so.
+ Like at Feddy, we just ran this like alpha federation
+ of the conference and we did that.
+ We connected two gateways.
+ And the reason we did that is just in case
+ one of them crashed or had a problem or something,
+ we just redundancy, right?
+ So, we didn't know if all of a sudden
+ a thousand people would try to do a payment
+ at the same time or something.
+ So, we ran two just to have a little redundancy.
+ And so, yeah, that is definitely something
+ that will happen, I think.
+ - It's not really, and it's not the federation
+ choosing the gateway, right?
+ It's the gateway that chooses the federation right now.
+ - Yeah.
+ - I guess the question, yeah,
+ that could be another question.
+ Like if you start a federation,
+ like how do you, like, should there be a way
+ for you to find the gateways
+ or should you always just rely on gateways to find you?
+ - Yeah, I mean, one other kind of interesting one
+ is that when,
+ like sometimes a federation might wanna just like,
+ so the default behavior of Fetiment
+ is that anyone who wants to run a Lightning gateway can.
+ Right, and so you can run this gateway
+ and connect it to a federation.
+ And then, you know, when users try
+ to make Lightning payments,
+ requests will be sent to this gateway, right?
+ The problem is, is somebody might not know
+ what they're, you know,
+ they might not know what they're doing.
+ They might be really bad at running this gateway
+ and it might not work very frequently.
+ So there are cases where a federation
+ might wanna just have like a white list
+ of gateways that they approve of, you know,
+ like basically invite them.
+ So like, that's what at this Fetty Alpha Federation
+ that we did at a conference last week,
+ we did that, right?
+ We just checked, we basically checked
+ is the URL a domain name we control,
+ just to make sure that like,
+ if somebody just ran a gateway,
+ just for fun, like just trying it out,
+ not even maliciously,
+ but if they're just trying it out,
+ that they wouldn't accidentally disrupt payments for users.
+ And hopefully in the future,
+ we have better systems for like rating
+ the performance of gateways.
+ So this isn't a problem,
+ but at least right now it is,
+ it can be a bit of a problem
+ if a gateway shows up that is really poor quality.
+ - A gateway can't steal funds,
+ but it can lock up a user's e-cash
+ for a certain amount of time, right?
+ - Yeah, like if a gateway shows up-
+ - Can you repeat that please?
+ - Go ahead.
+ - Kidman, can you repeat that?
+ - Oh, so like, it's up to the user right now,
+ like the client to choose which gateway they want to use.
+ And when they make, try to make a payment with e-cash,
+ they're basically locking their e-cash
+ in a contract with the gateway.
+ And then the gateway has a certain amount of time
+ to perform that payment.
+ A very unreliable gateway though,
+ could potentially just be locking up people's e-cash
+ and not making lightning payments.
+ So that eventually that's something we need to detect
+ and make part of how the users choose the gateway to use.
+ And potentially something the gateway itself
+ would want to monitor,
+ like how many payments are failing
+ or it's unable to complete.
+ - Yeah, so the slide information,
+ I think it's good that we're sharing some of this,
+ but I think the key thing here in terms of this design
+ is like, think of it as like the,
+ it's the Federation is running
+ and gateways are like an external thing
+ that can connect to the Federation
+ and make lightning payments for it.
+ And so frequently it may be the persona
+ of the guardian themselves saying like,
+ "Okay, I will also run the lightning gateway,"
+ but it doesn't have to be.
+ So that might be the, like just the language at the bottom,
+ like it would be more like connect to Federation.
+ The gateway is connecting to the Federation
+ versus maybe like the Federation
+ is connected into the gateway.
+ - Awesome, awesome.
+ Thank you, thank you for your comments.
+ Another question that I have,
+ the first one was that,
+ I understand that this will not be Fedimin.
+ So my question was,
+ it should keep the Fedimin logo as it is,
+ if it will require a new one,
+ or if we should make some kind of a version
+ like I'm proposing here.
+ (silence)
+ - I think the branding is okay.
+ It's just, this experience is owned
+ by the gateway operator, right?
+ They are running this as a dashboard
+ on top of their node or their lightning infrastructure
+ somewhere, and the whole purpose of it
+ is to connect to federations they've identified
+ or they've been invited to, and then they serve them.
+ - Yeah, I think this looks good to me.
+ - Yeah.
+ - I don't see, what are you thinking?
+ There would be like a different brand
+ for the gateway or something?
+ - I guess I was thinking that like,
+ that your last comment, it reinforced my thoughts
+ that it can be some user that they don't use Fedimin,
+ but they use this Fedimin gateway, lightning gateway.
+ So they are not operating on Fedimin,
+ they're operating in a different, let's call it product.
+ That's why I thought if we should separate it somehow or not.
+ - I say just keep it simple, just make it, yeah.
+ It's not gonna be necessarily like a brand,
+ it's like a tool, it's like,
+ think of it this way, like a federation is just like,
+ it's like a place to run like,
+ kind of like a Bitcoin little program, right?
+ So some program might be like send an on-chain payment,
+ another one would be send a lightning payment
+ or do an e-cash payment, right?
+ And so, some users will just come in
+ to do on-chain payments,
+ some users will just come in to do like e-cash payments,
+ another one might want to send lightning payments,
+ but then another one might want to connect to the federation
+ to facilitate lightning payments for a fee, right?
+ So it's, think of the gateway as just like any,
+ it's like a user of the federation,
+ but they're just using it for a different purpose.
+ They're not trying to send a payment,
+ they're trying to earn a fee by facilitating payments.
+ Or maybe not, maybe they don't even care about the fee,
+ maybe they're the mayor of a town
+ and they just want to make sure
+ their town has lightning payments, right?
+ So they don't care about the fee.
+ - Cool, thank you.
+ Another question I had was that how long time
+ could it take to the user fill up the form
+ and the lightning gets connected?
+ - It takes probably a 10th of a second or 20,
+ you know, yeah, but a 10th of a second between,
+ between.
+ in order to connect to Federation.
+ It's a basic instance.
+ Well, it depends what you mean
+ by like connecting to a Federation, I guess.
+ So there's sort of two steps.
+ One of them is you have to,
+ you get this invite code, right?
+ And the invite code is used to basically
+ download information about the Federation, right?
+ Like for example, what is the name of the Federation?
+ That's one thing that you download.
+ Another one is like, what are the public keys they use?
+ So those are, that's the first step.
+ That's kind of like in a technical term,
+ that's what we call like joining a Federation
+ or connecting to Federation.
+ And then there's a second step
+ to actually make the Lightning Node usable.
+ The Lightning Node has to deposit some Bitcoin
+ into the Federation and have some e-cash tokens, right?
+ So yeah, Ethan said in the bottom here,
+ the gateway needs to get some of the tokens of the,
+ or some of the IOUs of the Federation,
+ 'cause someday we, like Kipman has alluded to,
+ someday the e-cash will be an option.
+ We may have other ways of having IOUs that aren't e-cash,
+ but you need to get the IOUs of the Federation
+ because that's required to operate as a gateway.
+ So that's kind of the first step
+ is always depositing some money into the gateway.
+ - On that case, maybe we could differentiate
+ something on the status,
+ because I mean, you connect to the Federation
+ and then here before having the gateway operating,
+ you need to make some-
+ - Well, this one is like,
+ just zooming out a little bit,
+ there's basically two ways.
+ This is maybe slightly confusing.
+ There's two ways that a gateway can get a balance.
+ One of them is depositing directly into the Federation
+ and it gets a balance.
+ But one thing a gateway can do,
+ even if it has no IOUs,
+ is it can receive a payment into the Federation.
+ Or wait, no, no, no.
+ It can send a payment on behalf of a user, right?
+ So let's say there's a user in the Federation
+ that has a lot of e-cash
+ and they wanna pay a huge Lightning invoice.
+ They can ask the gateway to pay this invoice.
+ And so what happens is the gateway will spend
+ a little of their Lightning balance and receive e-cash.
+ So when you're operating a gateway,
+ sometimes you'll choose to do this
+ because it can have the beneficial side effect
+ of balancing a Lightning channel.
+ So that is something we should kind of think about.
+ - So I think what you're getting at is like depositing
+ or pegging into the Federation
+ is not necessarily a setup step that's required, right?
+ Like if I was running a Lightning gateway,
+ I would just connect to as many Federations as possible
+ and then deposit into the ones
+ that I've felt were more trustworthy
+ 'cause maybe I would earn more fees that way.
+ - Yeah, I guess what I was trying to get at
+ is like there's two ways that a gateway,
+ in order to really be operational,
+ to send in, you can send,
+ you can facilitate outgoing payments right off the bat.
+ You don't need anything special with that.
+ To facilitate incoming payments,
+ the gateway needs to own some of the IOUs of the Federation
+ basically because when you facilitate an incoming payment,
+ the gateway is basically taking some of their IOUs
+ and giving it to the user.
+ That's what happens more or less.
+ So they need some IOUs to give to the user
+ to facilitate the payment coming in.
+ So yeah, that's kind of the one thing.
+ I think for like an MVP, if it's just like,
+ if it just says like, you know,
+ these are how many IOUs you have,
+ these are how many E-cash tokens you have,
+ or E-cash notes.
+ And you know, if it's zero,
+ put it in red or something, right?
+ Like I think, yeah.
+ - Yeah, maybe depositing should be required
+ to join a Federation, I'm not sure.
+ - Probably not.
+ - I think it should, because I know like multiple times
+ in the past when I'm running at a Federation,
+ a few times I found it more,
+ like if I have one channel and it's too much incoming,
+ if I want more outgoing capacity,
+ it's easier to peg in to,
+ sometimes it's easier to peg in to like a user client
+ and then send it out over Lightning.
+ Like it is kind of an advanced feature,
+ but you know, people, it is useful.
+ - So you're saying a gateway can get incoming liquidity
+ into the Federation from users
+ who are sending payments outside using that gateway?
+ - Yes, that's one.
+ I mean, this is maybe we should,
+ this is probably gonna confuse people.
+ So maybe we should ignore this,
+ but it is like, I've done this multiple times, it's useful.
+ So I just don't think we should block people.
+ We shouldn't force an on-chain deposit
+ 'cause there's a way around it
+ that doesn't involve an on-chain deposit.
+ - We're saying that it shouldn't be required
+ to make the Lightning.
+ - I think, don't require an on-chain deposit.
+ - That's what my vote would be.
+ - Oh, thank you.
+ - Maybe like require, yeah.
+ I mean, you could have like,
+ just make sure that their balance gets off to zero, right?
+ Like, 'cause when it's on zero, it's not,
+ I mean, not require, but just like, yeah.
+ The user needs to understand that they need
+ to get some eCash tokens in order to be a gateway.
+ - Yeah.
+ - Thank you.
+ So I'm gonna follow up with this.
+ You will see.
+ - It keeps muting all day.
+ Maybe it's coming on.
+ - Can you hear me now?
+ - Yes.
+ - Okay, thank you.
+ So what I was saying that when you click on the row
+ of the one gateway,
+ you will see these three different options
+ to make the deposit, the withdrawal.
+ It could be possible to disconnect from the federation.
+ Or there is another option that we should add
+ at this point for the MVP.
+ - So I think the, what you really want
+ when you're looking at a gateway is,
+ there's sort of like,
+ to me, when I'm running, I've run a couple of gateways now.
+ Like what I'm thinking about is,
+ how much incoming lightning capacity do I have
+ in terms of channels?
+ How much outgoing capacity do I have?
+ And that's sort of shared across all the gateways, right?
+ Or like, no, sorry.
+ If you have a gateway,
+ you can be connected to multiple federations, right?
+ So it's kind of like about your lightning node itself.
+ And then for each one, it's like,
+ how many IOUs do I have?
+ Those are the three things that are really important.
+ Because that's what you're,
+ you're just trying to prevent those.
+ You're trying to keep those kind of balanced.
+ So those are the three pieces of information
+ that to me are really useful.
+ Is how many, how much outgoing capacity do I have?
+ How much incoming capacity do I have in lightning?
+ And then how many,
+ how many of the nodes do I have per federation?
+ So those are the, those are like the three things
+ I'd really want to see.
+ And I'd also say that we could,
+ we could make just the assumption
+ that people are going to be just connected
+ to one federation for the, for like kind of an MVP.
+ We've kind of, the, being connected
+ to multiple federations doesn't even work very well
+ in like the code itself right now.
+ That's just like, if we're looking for a simplification,
+ you could just assume, hey, you're connected to one.
+ [Click]
+ [Click]
+ Thank you, Justin.
+ And I think there's some like intermediate states that we might want to see here like
+ If I've made a deposit, so like when you make a deposit
+ To a gateway basically what you're doing like when I've done in the past is like I'm just staring at mempool.space
+ Waiting for it to confirm right so
+ It would probably be nice to have like hey you have a pending deposit right here's a link to a block explorer
+ That would be useful
+ Or you know it has one confirmation. It has two confirmations. That sort of thing would be very useful
+ Yeah, I like the idea of intermediate states
+ So maybe you know what one option to entertain Jose is before you get to to this screen
+ There's there's only possibly like one option is to make a deposit
+ And then following that that step you can then see what's happening with that deposit then on completion of that
+ Maybe you get to the screen. We're looking at right now
+ Yeah, but what I was saying earlier is we shouldn't block people we shouldn't force people to make a deposit because there is basically a
+ way to
+ Achieve the same effect as a deposit by just sending a lightning payment out of the Federation on behalf of a user
+ So that is we shouldn't force them to make a deposit
+ Maybe we can just warn them that there is no funds in the
+ in the gateway
+ Yeah, I mean and and just to be perfectly so the reality of gateway operators right now is that they're using the command line and it
+ stinks
+ Actually, I could let me show you something
+ This is the reality of gateway operators right now
+ Yeah, okay, I'm just gonna share my screen really quick. This is what well
+ I
+ Actually, maybe I won't just record and everything but uh I have like a text
+ I have like a it's I have a little web page. That's all text and it says like ecash balance
+ on-chain balance of balance of my lightning node
+ Whether it's synchronized to the graph. This is just a little page of all text right. There's no buttons
+ it says what my channels are the incoming and outgoing capacity and
+ That that's it right so it's like a that's the reality right now or you know, like that's all the tools there are so
+ If there was just something with buttons on it, it would be a huge improvement, right?
+ We don't have that yet. That would just be that would be great. You know, if there's a button for depositing
+ that would be a big improvement, but
+ You think that it will be yeah, I'll just I don't care if this is recorded
+ Let me just share this. This is this is what?
+ This is what it looks like right now
+ Lightning that would be like this is what we got, right?
+ It's uh, it's very simple right like here's some channels
+ Inbound outbound like this is the total outbound total inbound
+ whether the
+ L&D node is healthy. What's what's on the balance?
+ So that's what it looks like right now
+ so that's
+ that's
+ You know that that's what if you see that right Thank You Justin
+ I know that there is no any information about when the lightning get away was connected. Is that not relevant?
+ For me not real like so this was just for a little demo we were doing at a conference
+ So like we all knew when it was connected right it was a couple days ago, right?
+ I think I think one thing that would like so some things that would be really interesting for me is like
+ Like what percentage?
+ Payments are going through right? What's my payment success rate over time, right?
+ That would be really interesting
+ It would also be interesting to have some information about how long it takes for a payment to succeed
+ That's always one thing. I'm you know
+ With Feddy Mintz is a little slower because there's consensus involved
+ so I want you know, it's always nice to have like an a sense of how long a payment is taking to go through and
+ See those are things that are that are would be useful it's like
+ Just to get a sense of how quickly payments are going through and how much they're succeeding
+ Which I don't really have that information now like it's it's you know, it's anecdotal
+ Oh
+ Thank you, and I guess I just want to share one thing like having run a federation right now like one
+ one thing that I think would be really useful is
+ If we just had like this is this comment is more oriented towards the developers here. We just had a way to like
+ Have a read-only copy of the federation database or the gateway database and just be able to run queries on it
+ Like kind of in like a Jupiter notebook or something
+ and just like
+ Just like ad hoc make graphs as you're curious, right?
+ So don't go through like the whole process of trying to make a super polished dashboard
+ Kind of guessing what we find interesting like as people go and run a gateway or a federation
+ Just try to like query the database and see what graphs you actually find useful
+ And then once we find some like really useful graphs then try to like surface them in like a proper dashboard
+ like that would it would just be nice to have like more of a
+ Place to experiment on what what sort of information we can get and how we can present it in an interesting way
+ I think we could iterate a little faster that way then going through a whole design process and implementing the back end and then you know
+ That would be nice
+ Ideally and ideally this would be something where it would be some sort of like a dashboard
+ Thing if we could just export some data to some like dashboard tool
+ You wouldn't need to even know any programming you just sort of like yeah, like some some playground
+ Yeah, exactly like some some way of like saying hey, I want a histogram using this stuff. That would be really cool
+ Yeah, yeah, so mr. Cool guy says rocks CBS Python by an exponentially the tricky thing there is just like to serializing the stuff and
+ Instructs and stuff. I think that would be tricky
+ Rust also can run in Jupiter. So that's also an option. But yeah, this is just like kind of think about
+ how we could kind of iterate on producing graphs and stuff in a little bit more of a
+ Quicker way than having to do a whole development and release cycle to get them to show up
+ I just need to take a step back on MVP for the UI get we UI
+ Would things like deposit at those priority before even get to the dashboards and in chats?
+ I agree with would like the cycle for yeah
+ I think a deposit would be great like deposit would be really useful
+ So that's you know, it's frequently one of the things you have to do is deposit a withdrawal. So and
+ Yeah, man line and it stinks, you know, it's it stinks doing along the command line. So that would be really great
+ That's one of one of the things as you boys saying nature
+ That's one of the things we realized earlier and we're trying to do in that MVP now
+ We've not really hooked it up to the current gateway to get the gateway has been iterated like changing a lot, right?
+ But it's it's something that you know, just picturing the experience of making a deposit from a UI
+ Probably makes the gateways much more accessible to people than the CLI
+ Yeah, yeah, I guess what might yeah
+ So that that's what will be really nice is to just be having things that can replace the CLI will be really great getting a
+ Little information but for stuff like graphs like it would be nice graphs will be super super useful
+ Eventually, but I think it would be better if we iterate those not in like figma
+ but like just trying to run gateways over the next and federations over the next month or two and like having some more little more
+ rapid way of prototyping graphs and stuff I
+ Will have a better outcome that way
+ Cool super helpful. So part of question for me before we
+ end of this is would it would it make sense for me to sort of transition my my efforts from from dashboard to
+ sort of
+ Working with Jose on the lightning gateway aspect to sort of flesh out best approaches there
+ From my point of view, I think it's good to have like we need both of them and they're they're two different projects
+ my point of view the thing that's really missing right now is
+ The ability to actually use use what we have right to try it and to try it on like I
+ Think signet would be great
+ like if we could just all set up like a big signet Federation between us and
+ then we could try using it and then we'd all shoot ourselves in the foot a couple times and
+ Then we'd be much more informed
+ About what what we were interested in and what was missing because we'd actually have experienced it
+ I think that's gonna be the thing that we really that's gonna jump
+ really jumpstart things
+ So that's something I really want to improve the next couple weeks is help getting it so everyone can experience that
+ Yeah, yeah, I like that approach
+ and
+ one just I have a comment is that I
+ think set you have you've gone at length and we have the
+ the
+ Guardian UI the Guardian admin UI so there's all of that and and much of it is not we've not touched it from their side
+ so
+ In terms of like even iterating on that
+ maybe when if over the next weeks if you start building a few of the components like we have like a lot of
+ Runway to start building things and ask questions there
+ But the gateway one is a new territory. Okay. Yeah. Yeah
+ I think it makes sense in my head currently to sort of shift focus to work with Jose
+ Knowing knowing that the the dashboard is in a place where it can be like in this, you know good enough state for now
+ Thank you everyone for your comments it's already six past two minutes so thank you everyone
+ We keep chatting on the FedEmin
+ discord or the Bitcoin design
+ FedEcon
+ Thank you for your help. Yeah, good stuff. Everybody appreciate your time. Thanks guys
+ Cheers everyone
+ (electronic music)
