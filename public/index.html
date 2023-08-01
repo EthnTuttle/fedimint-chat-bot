@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/alby-tools@3.2.1/dist/index.browser.js"></script>
 </head>
 
 <body>
@@ -26,41 +27,64 @@
       <p id="resultParagraph" class="result-paragraph"></p>
   </div>
 
-
   <script>
     const questionForm = document.getElementById('questionForm');
     const resultParagraph = document.getElementById('resultParagraph');
     const loadingSpinner = document.querySelector('.loading-spinner');
     
-    document.getElementById('questionForm').addEventListener('submit', function (event) {
+    document.getElementById('questionForm').addEventListener('submit', async function (event) {
       event.preventDefault(); // Prevent form submission
-
+      if (!window.webln) {
+        alert("Please install the Alby Browser Extension to pay the required amount: getalby.com");
+      return;
+    }
       // Show the loading spinner while waiting for the response
       loadingSpinner.style.display = 'block';
 
-      const questionInput = document.getElementById('question').value;
-      fetch('https://learnfedimint.com/', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({"question": questionInput})
-      })
-        .then(response => {
-          console.log(response);
-          return response.json();
-        })
-        .then(response => {
-          console.log(response);
-          document.getElementById('resultParagraph').textContent = response.answer;
-        })
-        .catch(() => {
-            console.log('error');
-        })
-        .finally(() => {
+      const ln = new albyTools.LightningAddress("ethntuttle@getalby.com");
+      await ln.fetch();
+
+      try {
+        const invoice = await ln.requestInvoice({ satoshi: 42 });
+        console.log(invoice.paymentRequest); // print the payment request
+        console.log(invoice.paymentHash); // print the payment hash
+        await webln.enable();
+        await webln.sendPayment(invoice.paymentRequest);
+        if (await invoice.isPaid()) {
+          const questionInput = document.getElementById('question').value;
+          fetch('https://learnfedimint.com/', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({"question": questionInput})
+          })
+            .then(response => {
+              console.log(response);
+              return response.json();
+            })
+            .then(response => {
+              console.log(response);
+              document.getElementById('resultParagraph').textContent = response.answer;
+            })
+            .catch(() => {
+              console.log('error');
+            })
+            .finally(() => {
+              loadingSpinner.style.display = 'none';
+            });
+          } else {
             loadingSpinner.style.display = 'none';
-        });
+            return;
+          }
+        } catch (e) {
+        document.getElementById('resultParagraph').textContent = "My brain is powered by sats. Payment failed. Cannot compute. 🚫🧠"
+        loadingSpinner.style.display = 'none';
+        console.error(e);
+        return;
+      }
+
     });
   </script>
 </body>
