@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Fedimint Q&A Bot</title>
   <meta charset="utf-8">
@@ -16,12 +15,28 @@
   </div>
   <h3 class="topofpage">A Fedimint Q&A Bot</h3>
   <div class="header">Made by Ethan Tuttle (NIP05: ethanTuttle@learnfedimint.com) and @jordanwilk90</div>
-  <div class="header">This bot might have typos and errors as this is a basic Proof of Concept. Sats fund ongoing development and API costs.</div>
+  <div class="header">This bot might have typos and errors as this is a basic Proof of Concept. Sats fund ongoing development and API/server costs.</div>
   <div class="center">
     <form id="questionForm">
-      <label for="question">Enter your question about Fedimint:</label>
-      <input type="text" id="question" name="question" maxlength="100" required>
-      <button type="submit">Submit</button>
+      <div class="form">
+        <label for="satoshiAmount">Select the satoshi amount:</label>
+        <select id="satoshiAmount" name="satoshiAmount">
+          <option value="42">42</option>
+          <option value="168">168</option>
+          <option value="1031">1031</option>
+          <option value="6102">6102</option>
+          <option value="10101">10101</option>
+        </select>
+      </div>
+      
+      <div class="form">
+        <label for="question">Enter your question about Fedimint:</label>
+        <input type="text" id="question" name="question" maxlength="100" required>
+      </div>
+      
+      <div class="form">
+        <button type="submit">Submit</button>
+      </div>
     </form>
   </div>
 
@@ -43,12 +58,14 @@
     }
       // Show the loading spinner while waiting for the response
       loadingSpinner.style.display = 'block';
+      
+      const selectedAmount = document.getElementById('satoshiAmount').value;
 
       const ln = new albyTools.LightningAddress("ethntuttle@getalby.com");
       await ln.fetch();
 
       try {
-        const invoice = await ln.requestInvoice({ satoshi: 350 });
+        const invoice = await ln.requestInvoice({ satoshi: selectedAmount });
         console.log(invoice.paymentRequest); // print the payment request
         console.log(invoice.paymentHash); // print the payment hash
         await webln.enable();

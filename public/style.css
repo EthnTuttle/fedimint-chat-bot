@@ -67,3 +67,10 @@
   align-self: center;
   width: 20vw;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  align-self: center; 
+}
