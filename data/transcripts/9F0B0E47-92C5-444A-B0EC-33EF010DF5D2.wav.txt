@@ -59,22 +59,22 @@
  Links to all these in the show notes.
  Check them out.
  With that let's get into today's read.
- And it's titled "Scaling Bitcoin Custody with Fediment"
+ And it's titled "Scaling Bitcoin Custody with Fedimint"
  Written by Namcios.
- Fedi raised $4 million to accelerate the development of the Fediment protocol and its
+ Fedi raised $4 million to accelerate the development of the Fedimint protocol and its
  companion app Fedi, tools that can improve and scale Bitcoin custody.
  Fedi Inc. on Tuesday announced that it had raised $4.2 million in a seed round as the
  company seeks to onboard more users into Bitcoin with the Fedi app, per a statement sent to
  Bitcoin Magazine.
  The application, which the company expects to begin rolling out in Q1 2023, will provide
- a user interface for Fediment, an open-source protocol that leverages federated Chalmion
+ a user interface for Fedimint, an open-source protocol that leverages federated Chalmion
  eCash mints to decentralize Bitcoin custody and enhance the scaling capabilities of the
  currency.
- "Fedi and Fediment will help put monetary power back into the hands of everyone, everywhere,"
+ "Fedi and Fedimint will help put monetary power back into the hands of everyone, everywhere,"
  said Fedi Inc. co-founder and CEO Obi Nwosu in a statement.
  This creates brighter futures for billions and especially for those struggling under
  oppressive regimes, which ultimately makes the world a better place.
- How Fediment Works Fediment is based on the concept of second-party
+ How Fedimint Works Fedimint is based on the concept of second-party
  custody, which improves upon third-party custody solutions and even some self-custody, first-party
  custody setups.
  Second-party custody involves trusting family members or friends with the custody of one's
@@ -92,7 +92,7 @@
  Second-party custody seeks to improve upon this model by having users rely on parties
  they already trust in real life, for example close friends or family members, to secure
  their funds instead of completely outsourcing this task to an institutional stranger.
- With Fediment, users can create a community whose technical leaders will be those tech-savvy
+ With Fedimint, users can create a community whose technical leaders will be those tech-savvy
  and trusted enough to ensure a proper functioning of the system.
  Though the concept of trust is alien to most Bitcoin proponents, the reality is some might
  incorporate an aspect of trust in their self-custody setup today without realizing it.
@@ -382,7 +382,7 @@
  institution is telling me the truth they have to rely on their local communities
  they're already doing it with cell phones and their local networks this
  sort of model a federated custody model for these these groups for these
- communities this is where it is going to serve the greatest good. Fediment is
+ communities this is where it is going to serve the greatest good. Fedimint is
  something that you compare to custody solutions not something that you compare
  to cold storage multi-sig run your own node it doesn't compare to that what it
  does is it creates a way to have small community led custody solutions where
@@ -510,21 +510,21 @@
  and it's also one of the beautiful things about lightning, you know, people read a bunch of comments
  and like a bunch of crypto people talking about how lightning adoption isn't as big as everybody thought it was going to be.
  Well, it's one of those things that lightning is so powerful explicitly because it's a branch between,
- it's chain agnostic, it's like you can run it, you can connect it to Fediment, you can connect it to Liquid,
+ it's chain agnostic, it's like you can run it, you can connect it to Fedimint, you can connect it to Liquid,
  you can connect it to these alternative systems to the shadow chains and the state chains of the setup.
  So as soon as if any of these things catch on, lightning becomes the bridge back to Bitcoin.
  Lightning becomes the communicator, becomes the translator from one to the other.
- And then when, with the fact that with Fediment, with a system like this, you can actually, it's pretty much
+ And then when, with the fact that with Fedimint, with a system like this, you can actually, it's pretty much
  agnostic to the code that you run on it.
  So I think there was another one that was mentioned here, or was this in another piece that, this was in another piece that I read.
- But the idea that you can run simplicity on this, they actually did a hackathon and put simplicity on a Fediment chain,
+ But the idea that you can run simplicity on this, they actually did a hackathon and put simplicity on a Fedimint chain,
  which is a completely different scripting system that's not on Bitcoin and would require a massive amount of work
- and would be a huge thing to actually have this available on Bitcoin, but you can just run it on something like Fediment.
- So you have the optionality to have both this ability to privately transact off-chain in the Fediment
+ and would be a huge thing to actually have this available on Bitcoin, but you can just run it on something like Fedimint.
+ So you have the optionality to have both this ability to privately transact off-chain in the Fedimint
  that you can interact by having a lightning connection and you can interact with any lightning invoice
  and send Bitcoin or lightning to anybody, anywhere.
- So the Fediment isn't locked, it's not isolated.
- But at the exact same time within the Fediment, within this little "sidechain", you can have smart contracts,
+ So the Fedimint isn't locked, it's not isolated.
+ But at the exact same time within the Fedimint, within this little "sidechain", you can have smart contracts,
  you can have simplicity, you can have a completely different scripting language.
  It's basically agnostic. You can essentially do whatever the hell you want in it.
  And ultimately at the end of the day, you're leaning on the fact that you have a federated fault tolerance to keep the thing from failing,

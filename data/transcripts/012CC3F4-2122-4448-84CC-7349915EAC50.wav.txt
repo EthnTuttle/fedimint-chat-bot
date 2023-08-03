@@ -771,7 +771,7 @@
  why I wanted to leave the exchange space
  and find a way of getting people off exchanges as quickly
  as possible.
- All right, well, that leads us into Fediment, right?
+ All right, well, that leads us into Fedimint, right?
  So can you talk a little bit about--
  you've been stressing for a long time
  the importance of self-custody.
@@ -781,7 +781,7 @@
  don't want to have the responsibility
  or can't have the responsibility of just becoming their own bank.
  And they do want to introduce a little bit of trust.
- So can you talk a little bit about the origins of Fediment,
+ So can you talk a little bit about the origins of Fedimint,
  what it is, and help people understand
  the idea of these federations?
  Yeah, so most people--

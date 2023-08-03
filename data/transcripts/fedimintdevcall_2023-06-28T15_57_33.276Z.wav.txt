@@ -92,7 +92,7 @@
  So I think it is good to remove that.
  You know, while we're looking at this modal, a couple of questions I have is if lightning payments will be possible for MVP for initial deposit or any deposit and any withdrawal.
  So what do you mean by that?
- Just like the gate, like will lightning payments be supported by like FettyMint MVP?
+ Just like the gate, like will lightning payments be supported by like fedimint MVP?
  Yes. Yep. For this, you know, could we show a lightning address here in addition to the Andrian address?
  Oh, like LNURL?
  Okay, sorry. Sorry.
@@ -160,7 +160,7 @@
  And I guess one one brief note here that might be useful is like, I guess, in traditional Bitcoin, like I saw you had six on there.
  I think in infetiment, I would recommend that number to be higher.
  I think by default we have it to be 10 blocks.
- And the reasoning here is that like FettyMint absolutely cannot handle reorgs.
+ And the reasoning here is that like fedimint absolutely cannot handle reorgs.
  If you have a peg in that gets reorged out and e-cash was issued,
  then essentially the federation is now running as fractional reserve.
  So that number should be sufficiently high, probably higher than six.

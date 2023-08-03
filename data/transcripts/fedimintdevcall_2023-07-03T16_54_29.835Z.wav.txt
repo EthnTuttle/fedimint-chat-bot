@@ -756,7 +756,7 @@
  like start setting up federations and gateways.
  Like I think the system's kind of a little more ready
  to use now and like I said,
- Feddy have done a couple of federation deployments,
+ Fedi have done a couple of federation deployments,
  but I think it's past time to get everyone else in the game.
  So I think it'd be great if we could just try
  to do some experiments, maybe use MutinyNet or Signet
@@ -769,21 +769,21 @@
  it's a different thing once you actually go run it,
  you have a different perspective,
  you notice all kinds of problems you didn't notice before.
- So I'd like to have the whole kind of Feddymint dev community
+ So I'd like to have the whole kind of Fedimint dev community
  try to move in that direction in the next week or two.
  And part of that is we have doc containers that work
  and have been publishing for a long time now.
  And we could use a little documentation
- for just like how to set up a Feddymint
+ for just like how to set up a Fedimint
  using just a couple of Docker commands,
- like maybe a system D service for Feddymint
+ like maybe a system D service for Fedimint
  and probably just use like the,
  for this initial one, probably just use like an Explorer API
  for the Bitcoin node or something,
  especially with front MutinyNet.
  There is an Explorer API for that.
  So this would be a great thing to try to get more people
- involved in running Feddymints.
+ involved in running Fedimints.
  And so we need a little documentation for that first.
  And so, yep, that's one thing I think Nasser
  and a few others might help me there.
@@ -795,7 +795,7 @@
  but there's a few other ones like fly.io,
  a couple of these other ones that should have
  close to one-click Docker deployments.
- So that'd be really nice for FeddymintD in particular.
+ So that'd be really nice for FedimintD in particular.
  So you could go through a federation setup
  without having to do a bunch of editing
  and system D files and stuff.
@@ -813,7 +813,7 @@
  Like it seemed like this was a little more optimized
  for like a web service.
  So what seemed to actually happen
- is you'd have two instances of FeddymintD
+ is you'd have two instances of FedimintD
  'cause like with a web server,
  you want multiple instances of it running
  so you can handle more requests.
@@ -843,7 +843,7 @@
  Okay, cool.
  So lastly, is once we, like as part of this process,
  we'll want to actually make like a first release
- of Feddymint.
+ of Fedimint.
  And so a week or two before I went on vacation,
  I started this, but decided it's better
  a post vacation project.

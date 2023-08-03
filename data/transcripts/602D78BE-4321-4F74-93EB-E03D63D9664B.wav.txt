@@ -63,7 +63,7 @@
  taught it was like, okay, buy Bitcoin, but you got to pull off the exchange immediately.
  I did it. Many people did that. But a lot of people didn't do that. What did you see
  with your customers? And was this a battle for you? I know that you are a fan of self
- custody. We can talk about how that relates to Fediment, but just strictly with the exchange
+ custody. We can talk about how that relates to Fedimint, but just strictly with the exchange
  story. What was your experience?
  Yeah, with the exchange. It was very interesting. So I always say there was different phases
  of Bitcoin. It's the Gandhi, ignore, laugh that, then fought and then it wins. And for
@@ -422,7 +422,7 @@
  and they should already exist. But then they might want to work together to do certain things. If
  they want to, for example, save communally, right now, they're probably just doing some sort of very
  manual process where they're giving one person the money and so on. We can instead replace that
- with a fediment where they can share collaboratively, or they have certain costs, which
+ with a Fedimint where they can share collaboratively, or they have certain costs, which
  they may be incurring individually, like for example, the cost to support a lightning node.
  Those costs could be amortized across the community.
  Also, if they lose information or so on,

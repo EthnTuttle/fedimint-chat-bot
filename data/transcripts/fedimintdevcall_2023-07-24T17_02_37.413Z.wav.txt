@@ -297,7 +297,7 @@
  one process ID.
  So, in a perfect world, we wouldn't need to do this.
  But I think we kind of still do.
- I guess I just moved it to pkillfettiment.
+ I guess I just moved it to pkillfedimint.
  - Yeah, I don't know.
  There's...
  Yeah, it would be nice to get rid of that file, but I don't know.
@@ -306,7 +306,7 @@
  - Okay.
  I was going to say, I don't know the use case for why someone would do this,
  but if you were running, like, two instances of debument, it'd be a shame
- that shutting one down would kill your Fettiment processes everywhere.
+ that shutting one down would kill your fedimint processes everywhere.
  - You can't run two instances, no.
  Like, because the ports conflict, right?
  The ports are hardcoded.
@@ -628,7 +628,7 @@
  but sometimes it seems like deviment
  will leave some things running.
  Like so you can use just grep processes
- to see if like fedimentd is still running,
+ to see if like Fedimintd is still running,
  see if lnd is still running.
  Sometimes for me, it is.
  So like I have, it's horrible,
@@ -1073,7 +1073,7 @@
  - Yeah, I think we should add like a discussion about that
  because there are some considerations
  like if we just have like one URL prefix
- which might be fediment colon slash slash
+ which might be Fedimint colon slash slash
  and then we just encode using for example,
  bash 32 which already has a human readable part
  where you can code the type of information you're supplying.
@@ -1160,7 +1160,7 @@
  - Okay, hey, yeah, so I just wanted to add this.
  So I've been kind of out of pocket Fetimid side
  focusing on this like hackathon
- that we've been running through Fetty.
+ that we've been running through fedi.
  And I've been looking for ways
  to get more like Fetimid side involved,
  but I didn't really see one until,

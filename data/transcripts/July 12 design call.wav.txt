@@ -215,7 +215,7 @@
  try to contribute some plug-in concept to an existing
  Lightning dashboard.
  Yeah, I was just going to say that.
- I'd imagine that's useful beyond FettyMint as well, right?
+ I'd imagine that's useful beyond fedimint as well, right?
  There's probably other Lightning features
  that they might not want directly in,
  let's say, for RTL, directly in their product right now.
@@ -638,11 +638,11 @@
  Like the thing is like, that could always happen in the future.
  Yeah.
  Yeah, because like, I think this makes as a separate app, it makes a lot of sense, a
- lot more sense if you're managing like a bunch of fediments, maybe.
+ lot more sense if you're managing like a bunch of Fedimints, maybe.
  Yeah, it seems pretty feasible to just like, yeah, I'm not sure.
  Yeah, I mean, I don't see a reason why, like, it would be necessarily bad if we had both
  because I think having a standalone thing might be useful for somebody who already has
- all that set up and they just want one thing to add on for FettyMint.
+ all that set up and they just want one thing to add on for fedimint.
  I also think like there's anything that we do to integrate with one of these other ones
  has the risk of like not being maintained.
  You know, if we have to go the fork method, since neither of them seem to have any kind
@@ -1001,7 +1001,7 @@
  So that's kind of what I try to do here.
  This is what we have that we could render today.
  And then we can try to add more, like,
- pull out more information from FettyMint.
+ pull out more information from fedimint.
  But currently, this is basically what we have.
  Well, cool, I mean, that's the hour.
  There is nothing else we could wrap it up here.

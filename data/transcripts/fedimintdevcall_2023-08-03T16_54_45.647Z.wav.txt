@@ -806,7 +806,7 @@
  and hope for the best that it actually stops in time.
  Yeah, we're not waiting for it.
  - So one question, we have,
- pretty sure we have a FettyMint core block in place,
+ pretty sure we have a fedimint core block in place,
  if I remember correctly.
  What is that doing that's different than this?
  And like, should this functionality

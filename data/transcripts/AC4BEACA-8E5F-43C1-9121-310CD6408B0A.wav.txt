@@ -3,7 +3,7 @@
  Hey, everyone.
  Welcome to this week's episode of the Bitcoin Fundamentals Podcast.
  On today's show, I have a titan in the Bitcoin space with Obi Nwosu.
- Obi is one of the leading experts and builders on the custody protocol called Fediment.
+ Obi is one of the leading experts and builders on the custody protocol called Fedimint.
  During our discussion, we cover what the protocol is, why it's so exciting and important for
  future growth and building, how Obi became a nonprofit board member on BTrust with Jay-Z
  and Jack Dorsey, the lessons he learned from founding, owning, operating, and selling a
@@ -480,10 +480,10 @@
  happened. So one life ended and then new life began. Insane. Everybody listening to this right
  now is doing a fist pump in the air like that is awesome. That is so cool. I'm really blessed
  the people I'm working with are incredible and amazing. Wow. So you had mentioned Lightning and
- Core, obviously. So do you see Fediment in that mix of protocols potentially moving forward?
- How does the board view Fediment? Is it something that's been brought up?
+ Core, obviously. So do you see Fedimint in that mix of protocols potentially moving forward?
+ How does the board view Fedimint? Is it something that's been brought up?
  Yeah. I mean, we have a number of principles that we put on our site. And one is I'm very careful
- not to bring up Fediment in B-Trust meetings. Other people have and sometimes candidates that
+ not to bring up Fedimint in B-Trust meetings. Other people have and sometimes candidates that
  we talk to have brought it up, which is really good because there's so much just natural excitement for
  it. So that's actually... But what I don't want to do is be seen to be promoting something that
  I'm working on. And that's one of our policies as board members to not try to promote our own bags,
@@ -1111,20 +1111,20 @@
  If people have questions coming out of this interview, I'm sure you're going to get a
  lot of questions.
  Give us a handoff to websites.
- I know there's the Fediment.org website.
+ I know there's the Fedimint.org website.
  Is there any other websites that you want to highlight or timelines for various things
  that you guys are going to be rolling out?
  Thank you very much for that.
  So first of all, if you want to find out about the base protocol that this is this sort of
- third pillar of the Bitcoin open source ecosystem, go to Fediment.org and that's F-E-D-I-M-I-N-T.org,
- Fediment.org.
+ third pillar of the Bitcoin open source ecosystem, go to Fedimint.org and that's F-E-D-I-M-I-N-T.org,
+ Fedimint.org.
  If you want to find out about the new mobile app that we're producing, we've got a site
  and that's Fedi.XYZ.
  So F-E-D-I-.XYZ.
  It's as simple as that.
  And then if you want to find out about my...
- We have Fediment on Twitter.
- If you want to follow Fediment on Twitter, there's a Telegram group called Fediment as
+ We have Fedimint on Twitter.
+ If you want to follow Fedimint on Twitter, there's a Telegram group called Fedimint as
  well, which is very active and that's really interesting conversations.
  And then finally, if you want to hear my musings on Twitter, my occasional musings, you can
  find me @Obi on Twitter.

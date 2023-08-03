@@ -511,7 +511,7 @@
  want to connect more than one Lightning gateway
  to the same federation?
  - Yeah, that's definitely so.
- Like at Feddy, we just ran this like alpha federation
+ Like at Fedi, we just ran this like alpha federation
  of the conference and we did that.
  We connected two gateways.
  And the reason we did that is just in case
@@ -552,7 +552,7 @@
  might wanna just have like a white list
  of gateways that they approve of, you know,
  like basically invite them.
- So like, that's what at this Fetty Alpha Federation
+ So like, that's what at this fedi Alpha Federation
  that we did at a conference last week,
  we did that, right?
  We just checked, we basically checked
@@ -908,7 +908,7 @@
  That would be really interesting
  It would also be interesting to have some information about how long it takes for a payment to succeed
  That's always one thing. I'm you know
- With Feddy Mintz is a little slower because there's consensus involved
+ With fedimints is a little slower because there's consensus involved
  so I want you know, it's always nice to have like an a sense of how long a payment is taking to go through and
  See those are things that are that are would be useful it's like
  Just to get a sense of how quickly payments are going through and how much they're succeeding

@@ -191,7 +191,7 @@
  [Music]
  Three days ago here at the Parallel Nepalese,
  there was the first ever transaction with a purchase
- using FediMent and it was Eric who made it.
+ using Fedimint and it was Eric who made it.
  I saw that on Twitter and I felt super proud
  that I would come here and meet him in person.
  So how did that go?
@@ -581,8 +581,8 @@
  For any developer that's listening,
  it's a very interesting project.
  We have many open questions still.
- And please just check out Fediment on GitHub,
- github.com/fediment/fediment.
+ And please just check out Fedimint on GitHub,
+ github.com/Fedimint/Fedimint.
  And we will be welcoming you with open arms
  and always need more help there.
  Obi, I've heard you describe this backup scenario where
@@ -677,11 +677,11 @@
  And otherwise, it would never have been that big.
  So this is the first conference that Fedi has sponsored.
  We've just been busy talking about it
- and getting the word about FediMent out.
+ and getting the word about Fedimint out.
  But when Eric suggested that we sponsor Hackers Congress,
  I was like, absolutely.
  Because this is where we can-- if it wasn't for Hackers
- Congress, FediMent-- well, FediMent would still exist.
+ Congress, Fedimint-- well, Fedimint would still exist.
  But I wouldn't have found this solution
  to a problem I've been looking for, which I think could help.
  And it can help billions around the world.
@@ -693,7 +693,7 @@
  And it would have all started because of events.
  So we had to come back and show our gratitude for everybody
  here.
- If somebody wants to use a FediMent wallet today
+ If somebody wants to use a Fedimint wallet today
  to make their first payment, what is a good option?
  What's the best one that they can find right now?
  Right now, we only have really one mobile wallet

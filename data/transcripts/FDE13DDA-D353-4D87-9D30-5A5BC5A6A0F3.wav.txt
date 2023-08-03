@@ -107,24 +107,24 @@
  you just need Bitcoin. And so over time, like a long enough time, everything
  collapses into Bitcoin, right. And what's cool about Bitcoin is that they're
  just getting the tools available now in order to be able to do some of this
- more out there development, right. So for example, within Fediment, so just
- to kind of bracket this, because we haven't covered what Fediment is
- before. So Fediment is something I'm a contributor to, that's an open source
+ more out there development, right. So for example, within Fedimint, so just
+ to kind of bracket this, because we haven't covered what Fedimint is
+ before. So Fedimint is something I'm a contributor to, that's an open source
  protocol, building federated Charmin eCash on Bitcoin, and we'll go through
  each one of those. Also the head of developer support for Fedi, which is a
- company building a federated operating system on top of Fediment and the
+ company building a federated operating system on top of Fedimint and the
  Bitcoin protocol, right. We'll go into all of those in time. But so for
- example, one of the things that Fediment does is that because you're using this,
+ example, one of the things that Fedimint does is that because you're using this,
  like very small deployable federations, is that it's got this very sensible
  module system, is that you can add modules or you can add some of the
  complex cryptography and the smart contracting and all those kinds of
  stuff, and deploy them at these kind of smaller levels in order to play with
- these things, right. So like Fediment, the reference implementation that,
- like if you're a developer and you'd love to contribute to Fediment, we do
+ these things, right. So like Fedimint, the reference implementation that,
+ like if you're a developer and you'd love to contribute to Fedimint, we do
  all sorts of really good onboarding, that sort of thing, right. And like
  everyone's always welcome there, we'll always find work for you, we'll always
  find stuff to like help you upscale so that you can be a better contributor
- in the Bitcoin ecosystem, is that Fediment is written in Rust, but
+ in the Bitcoin ecosystem, is that Fedimint is written in Rust, but
  there's like all sorts of fancy cryptography and stuff that we can do
  that we can't do because if you were going to try to do this on Bitcoin,
  because you have to change the global consensus of everything, the Bitcoin
@@ -132,9 +132,9 @@
  large size federations or small federations even, where you can have a
  distributed consensus and you can add and remove modular components to it,
  right. So for example, one of the things of the differences between like
- Fediment transactions versus Bitcoin transactions is Bitcoin, there's inputs
+ Fedimint transactions versus Bitcoin transactions is Bitcoin, there's inputs
  and outputs. And then that's kind of the whole structure for it. The
- fundamental structure within Fediment's distributed consensus system is inputs,
+ fundamental structure within Fedimint's distributed consensus system is inputs,
  outputs and a single snore signature. And the reason why is because we're
  doing something called cross input signature aggregation, which is some
  fancy cryptography, which we'd love to get into Bitcoin, requires some
@@ -152,7 +152,7 @@
  passed, and all of the tooling is there and all of it's available. And so like,
  you know, come to the bright orange side of things. So like come build on
  Bitcoin, right.
- What? 100% That's super interesting. Okay, before we dive into Fediment, I'm
+ What? 100% That's super interesting. Okay, before we dive into Fedimint, I'm
  one more question on the developer side, which is, if you are new, because
  you've only been there a couple years, so like, that's, you know, big
  transition, would never have guessed that you weren't a developer for a long
@@ -577,7 +577,7 @@
  And so currently there's no real good option for this.
  And what they do is they just give it to a third party, right.
  Either through like Binance or Coinbase or whatever it is, right.
- Is that so Fediment is a model where basically you can use second party custody.
+ Is that so Fedimint is a model where basically you can use second party custody.
  Right.
  The problem with Ledger of extracting the shares and giving them to these third
  party people or whatever is not that you shouldn't be doing some sort of
@@ -964,7 +964,7 @@
  you basically need two-thirds to be honest.
  But if they compromise two-thirds,
  then they can take the funds.
- The way that we built Fediment
+ The way that we built Fedimint
  is using this asynchronous distributed system,
  distributed consensus system, right?
  Where if one-third is compromised
@@ -989,8 +989,8 @@
  And if you're in the middle,
  maybe get to know them,
  by yourself in the community."
- That's kind of the way people should think about Fediment
- and entering Fediment Federation.
+ That's kind of the way people should think about Fedimint
+ and entering Fedimint Federation.
  Totally, totally.
  Is that there's going to be tens of thousands
  of these different federations.
@@ -1047,7 +1047,7 @@
  for him personally, easier to think about.
  But this kind of evolved
  into this really robust module system, right?
- And so the default modules that ship with Fediment
+ And so the default modules that ship with Fedimint
  just out of the box are Bitcoin, Lightning and eCash, right?
  And the reason why is because like unplug all of the modules,
  what is happening is there's just a distributed
@@ -1055,7 +1055,7 @@
  And the distributed consensus system in that,
  you have to define the items
  that they can perform consensus over.
- And the model in Fediment is that there's just transactions,
+ And the model in Fedimint is that there's just transactions,
  is that there's inputs, there's outputs
  and there's a Schnorr signature,
  which is the cross input signature aggregation
@@ -1074,13 +1074,13 @@
  you can do whatever you want, right?
  And so just as an example,
  there's like a very primitive contract system
- that comes out of the box with Fediment or whatever,
+ that comes out of the box with Fedimint or whatever,
  something that we'd be really excited to see
  and that probably people in the audience
  would be able to implement, right?
  Is like implementing something like Clarity
  or a more complex contracting system
- as a Fediment module, right?
+ as a Fedimint module, right?
  And so you basically like hot swap
  the contracting system out
  and then put this new one in,
@@ -1098,7 +1098,7 @@
  all great modules end with Ement, right?
  And so Simpiment is implementing
  the simplicity smart contracting system
- within Fediment.
+ within Fedimint.
  So you unplug the...
  So what we basically did was,
  well, we didn't unplug the existing
@@ -1837,7 +1837,7 @@
  to post online, yeah, thank you so much
  for coming on to drop knowledge
  about Bitcoin development,
- and Fedumit and everything else, appreciate you.
+ and fedimint and everything else, appreciate you.
  - Yeah, totally, absolutely, this has been great, thanks.
  - Thank you for listening this far into the episode,
  if you found it enjoyable,

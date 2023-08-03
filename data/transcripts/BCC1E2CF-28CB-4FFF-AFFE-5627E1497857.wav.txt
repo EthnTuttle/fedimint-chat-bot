@@ -465,10 +465,10 @@
  and we'll work on it until we make it happen.
  - Yeah, and I think this is a good point
  for anybody who might be new to the show, new to Bitcoin,
- who may not understand the concept of a Fediment,
+ who may not understand the concept of a Fedimint,
  how it fits into Bitcoin and the stacks,
  the layers above it,
- how the Fediment as the open source protocol works
+ how the Fedimint as the open source protocol works
  and then what you guys are trying to do at Fedi.
  - Okay, that's a good question.
  And it's been something that a few people
@@ -494,7 +494,7 @@
  but people went off and did that.
  I'm sure that will happen, but it's focused with builders.
  But let's start with Fedi
- and then how Fediment relates to that
+ and then how Fedimint relates to that
  and Bitcoin and Lightning and so on.
  'Cause the narrative before has been Bitcoin and Lightning
  and working this way,
@@ -966,7 +966,7 @@
  all this other stuff goes in automatically as part of it.
  So we win by helping the entire Bitcoin ecosystem win.
  There is no way else.
- You can't just say use Fediment,
+ You can't just say use Fedimint,
  but have no machine to run it on,
  have no node, have no access to the light network
  and do nothing with it.
@@ -1419,7 +1419,7 @@
  10, 1,000, 10,000 people,
  which has another level again of scaling as well.
  So there is no, when you combine all of these elements
- with Bitcoin, with lightning, with Fediment and with Nostra,
+ with Bitcoin, with lightning, with Fedimint and with Nostra,
  I now think you've got this complete,
  obviously with all of those apps and services
  around it as well.
@@ -1430,7 +1430,7 @@
  no single point of control.
  So we're ready to go.
  - Yeah, you're distributing the scaling
- 'cause like within a Fediment,
+ 'cause like within a Fedimint,
  you can transact back and forth with other members
  that stays encapsulated in that Mint.
  And then if you need to interact with Bitcoin,
@@ -1558,7 +1558,7 @@
  can now be replicated with those elements.
  - Yeah, it's-- - Everything.
  - Just when you think about like opening up,
- like the ability for people to build on Fediments too.
+ like the ability for people to build on Fedimints too.
  - Yeah.
  - And like looking at what just happened on Nostr,
  like if that's replicated there,

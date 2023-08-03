@@ -107,7 +107,7 @@
  Yeah.
  And I was very impressed by that.
  So to what extent did your experience with Coinfloor actually influence your thinking
- around around Fediment?
+ around around Fedimint?
  I guess let's start there.
  So first of all, it did have a great impact.
  So if we're talking about Coinfloor specifically, when I started the first page, the first notebook
@@ -630,7 +630,7 @@
  store the backup on.
  You mentioned earlier that you'd spent a lot of your time
  talking to regulators. From a regulatory perspective, how do
- you what do you expect the reaction to be to Fediment? Is
+ you what do you expect the reaction to be to Fedimint? Is
  this something that they should be embracing? What do you I
  mean, maybe it'll be case by case, but what do you expect
  there? Hi, it comes to mind, but, but I won't go into but my,

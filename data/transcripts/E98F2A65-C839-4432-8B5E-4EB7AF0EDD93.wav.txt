@@ -278,7 +278,7 @@
  I know you've raised funds, but it still feels more like you're trying to build what is the
  end solution for-- well, as you said, people use it-- the Zed.
  Yeah, when we started-- so when I met Eric, it was and remains and will always remain
- a fediment that is the core protocol, this protocol for what I like to call the third
+ a Fedimint that is the core protocol, this protocol for what I like to call the third
  pillar of the Bitcoin open source ecosystem.
  Yeah, explain the three.
  So the first pillar is decentralized, censorship-resistant money, the store of value.
@@ -291,7 +291,7 @@
  And what was missing is this decentralized, censorship-resistant custody system so that
  people everywhere can custody Bitcoin without having to rely on a presumably regulated third
  party.
- And that was Fediment.
+ And that was Fedimint.
  I know we're going to have to get into the details of how it's going to work.
  But the thing I was starting to think about is that there's obviously issues with buying
  from exchange, the big one, something that Matt O'Dell will smash me on the head and
@@ -843,7 +843,7 @@
  Well, so you said it could be base chain or lightning. Yes. Yeah, so
  Are we saying that?
  like is it like moon wallet where mine won't know the difference or will I actually have like a base chain and
- Lightning wallet within the Feddie wallet. So the final UX to be decided but but for the purpose, so there's three different
+ Lightning wallet within the Fedi wallet. So the final UX to be decided but but for the purpose, so there's three different
  Because you asked an interesting
  Question in terms of the nuance but there's three different types of transactions
  effectively, okay, one is

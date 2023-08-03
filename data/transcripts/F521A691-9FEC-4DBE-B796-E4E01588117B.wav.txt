@@ -29,7 +29,7 @@
  Hey guys.
  Thanks for having me.
  What's the name of the project you're working on?
- Yeah, I'm working on Fediment, which is a federated e-cash protocol on top of Bitcoin with connectivity via Lightning.
+ Yeah, I'm working on Fedimint, which is a federated e-cash protocol on top of Bitcoin with connectivity via Lightning.
  Nice.
  Rindell, thanks for coming back, sir.
  Hey, good morning.
@@ -884,10 +884,10 @@
  competing pools. So, you know, I found that like when, you know, you guys launched the project,
  I'm like, okay, well, this is great. They're already starting it right. At least that part,
  right? So, sorry guys, one second here.
- I think that's also a central point of Fediment that we don't aim to have like this one federation
+ I think that's also a central point of Fedimint that we don't aim to have like this one federation
  to rule them all, but rather deploy a lot of these small federations in their local communities.
  So that like there's no systemic risk to Bitcoin essentially.
- And to take that thought a step further, like this, the Fediment project, and I would say maybe
+ And to take that thought a step further, like this, the Fedimint project, and I would say maybe
  Charming Mints in general, like rides or dies on how easy it is to roll up these servers,
  whether that's a single SIG server, or if that's a federation server,
  like that needs to be as easy as possible. Otherwise there will not be competition.
@@ -941,7 +941,7 @@
  Yeah. It also,
  I think it's really important for the customers or the users of a particular
  mint to have a credible, easy exit path, right?
- Like if I set up a cashew mint or a feta mint with like my
+ Like if I set up a cashew mint or a fedimint with like my
  local community or like my local bit devs community,
  and then I start, you know,
  abusing the members of my mint by withholding, you know, withdrawals,
@@ -963,7 +963,7 @@
  Like, can you just use your general purpose, like everyday computer,
  or like, do you need the proper HSM for this?
  Like what's the security threshold here?
- For feta mint, you don't really need any special hardware.
+ For fedimint, you don't really need any special hardware.
  Like you can just use a normal.
  Can I run it on my computer? What happens if I get hacked?
  That's why we have this threshold. Like if only you get hacked,
@@ -1001,21 +1001,21 @@
  Eric's company, right?
  Which is going to be but there'll be many different front ends.
  But what's kind of cool about how they're looking at it is this idea of easily
- connecting to multiple different Fediments from one front end.
+ connecting to multiple different Fedimints from one front end.
  And then as a result of that, you kind of can imagine a drop down menu where you
- have all these different Fediments that you're connected to in the same front end.
+ have all these different Fedimints that you're connected to in the same front end.
  And then you can easily switch between them, ideally like one or two button
- presses like exit this Fediment to this Fediment.
+ presses like exit this Fedimint to this Fedimint.
  And you can just move between and you can constantly rebalance if one is for like
  spending cash or one is for larger savings or something like that.
  Would you say that would be similar to like how Cashew does with LNBits?
  You just kind of go there, you just add an IP, click and boom.
  Just to clarify, I co-founded Fedi with Obi and Justin Moon.
- But day to day, I'm mostly staying on the Fediment side as a lead maintainer
+ But day to day, I'm mostly staying on the Fedimint side as a lead maintainer
  there and try to stay out of the commercial side to be as impartial as
  possible, because we want to see multiple implementations, multiple front ends for
- the Fediment and to see it grow as an ecosystem.
- Because I mentioned it a few times, like Fediment isn't just federated e-cash, it's
+ the Fedimint and to see it grow as an ecosystem.
+ Because I mentioned it a few times, like Fedimint isn't just federated e-cash, it's
  like a federated application building platform.
  That's normally how a lot of these protocols die is because you have a company
  that's a little too closed, even though it's open source.
@@ -1514,7 +1514,7 @@
  So guys, there's just one more thing that I wanted to get it in.
  I mean, maybe we get into some other things, but like this one, I definitely wanted to
  get in before the two hour mark, which is something that kind of caught my attention
- like extra to Fediment, which was Fedipools.
+ like extra to Fedimint, which was Fedipools.
  Do you guys want to like touch a little bit on that?
  It's like, it's a super interesting idea.
  And that kind of like got my brain spinning a little bit for like, oh, holy shit.
@@ -1524,7 +1524,7 @@
  can start solving like some real problems that we have, like how do pools pay small,
  tiny amounts of Bitcoin to their miners in a more private way.
  So anyway, so like who wants to sort of like explain what Fedipool is and why that's even
- possible to do with Fediment?
+ possible to do with Fedimint?
  Yeah, so maybe I should start and then Odell can correct me if I'm misrepresenting anything
  anywhere.
  But like to my understanding, Fedipool as a concept solves like a different dimension
@@ -1595,11 +1595,11 @@
  And I just want to add, we shouldn't stop at Fedipools.
  There are so many other applications that we could federate.
  And as Matt mentioned, everything essentially that takes custody of your Bitcoin and then
- allows you to do something smarter with it, that can be implemented as the Fediment module.
+ allows you to do something smarter with it, that can be implemented as the Fedimint module.
  And if there are hackers out there that are listening, please come and build modules.
  It would be awesome.
  And we just finished a big materialization effort.
- And now it's much, much easier to just implement your own applications on Fediment.
+ And now it's much, much easier to just implement your own applications on Fedimint.
  Very cool, guys.
  Now I have to drop.
  This conversation was great.
@@ -1627,7 +1627,7 @@
  I think Kalle, he's doing like hand raising there like there's no tomorrow.
  So Kalle, go for it.
  I think what's also an interesting point is to talk about scriptable e-cash, because I
- think that it also goes into direction of what I tried to say before, why I think Fediment
+ think that it also goes into direction of what I tried to say before, why I think Fedimint
  is a killer of liquid.
  It's not a killer.
  I love liquid.
@@ -1640,7 +1640,7 @@
  So how do you achieve something similar with e-cash?
  It turns out that in the very beginning when I tried to explain how it works, I said that
  at least that's how it works in Cashew.
- I imagine it's similar in Fediment, but please correct me there as well, is in the beginning
+ I imagine it's similar in Fedimint, but please correct me there as well, is in the beginning
  I said you generate the secret, and then you blind the secret, and you send it to the mint,
  and then the mint signs the secret.
  Now what if that secret is not just a random number, but it's actually a, for example,

@@ -210,12 +210,12 @@
  it may not end well.
  And so we had these different interests
  and through this fortuitous connecting,
- we realized that this Fediment protocol,
+ we realized that this Fedimint protocol,
  which Eric invented,
  and it used this idea of federations,
  which was popularized by Blockstream.
  And Blockstream were one of the first
- to see the potential of Fediment, in fact,
+ to see the potential of Fedimint, in fact,
  and they were the first to sort of sponsor
  the open-source protocol,
  I think well over a year before I became aware of it
@@ -1115,7 +1115,7 @@
  identifying communities, supporting communities.
  They're like a decentralized genius bar,
  app store genius bar for the Bitcoin community.
- Because federations and fediment are like an operating system,
+ Because federations and Fedimint are like an operating system,
  and just like an operating system,
  they can't do anything without the machine it runs on,
  without the internet it connects to,

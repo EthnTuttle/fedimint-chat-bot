@@ -71,25 +71,25 @@
  Yeah, mprox has started.
  After you do this, I'll overview of what it takes to use this. You can actually use this
  from an external library or from external repo. So I'll show that one because it's kind of...
- Yeah. So there are a bunch of fediments here and CLN gateway, LND gateway, CLN sales,
+ Yeah. So there are a bunch of Fedimints here and CLN gateway, LND gateway, CLN sales,
  LND Bitcoin DED event. This is faucet. This will just stay empty I think.
  And this waits like this error that we're waiting to log. And now we have everything set up. So
- we can see Fediment CLI. And now there are completions for this too.
- Like Fediment CLI info, we can see all the balances. And one of the things we have is FM
+ we can see Fedimint CLI. And now there are completions for this too.
+ Like Fedimint CLI info, we can see all the balances. And one of the things we have is FM
  logs. There are all the logs for every one of these.
  Everything's inside are just tailing those logs. That's all that's happening.
  Yeah. These are all just deals. Like we can deal one manually.
  Yeah. So anything else we should cover?
- So Zach asks, so the different Fediments are essentially running different nodes that would
+ So Zach asks, so the different Fedimints are essentially running different nodes that would
  run on different machines. Are they running consensus? Yes, they are running consensus.
  So like, oh, did you kill it? Yeah, I can restart.
- Okay. Yeah. So each one of those, if you look at each one of these Fediment servers on the side,
+ Okay. Yeah. So each one of those, if you look at each one of these Fedimint servers on the side,
  you'll see that they mostly log the same thing. So when it says like consensus,
  epoch and a number, like you can see some of those where there's a dash, yeah, right there, epoch six,
  you'll see that on every one of those because they just got consensus that was just around
  a consensus. So yeah, they are running a federation. So it's like a local federation,
  which in the real world would be on different machines.
- Yeah. It's just a shared multisig. So each Fediment server is one key in a multisig.
+ Yeah. It's just a shared multisig. So each Fedimint server is one key in a multisig.
  So in this case, there's a three or four multisig.
  Do you want to just do the LOS on the FM binder, I think, or FM data, just like the whole thing?
  What happened? I don't know what crashed. I think mprox itself crashed.
@@ -305,7 +305,7 @@
  Yeah, so I'll just show you what,
  so I mean, that's like UI repo and yarn,
  make sure, okay, so for some reason it is running.
- I have like this FettyMint,
+ I have like this fedimint,
  just have like a kill script
  that just kills all the daemons that we have.
  So now it's not running.
@@ -322,7 +322,7 @@
  So I think we like send the kill command, the kill signal,
  but we don't like wait for the child processes to die.
  Right, so like I'm gonna exit
- and then you'll see like FettyMint is still running,
+ and then you'll see like fedimint is still running,
  but in a couple of seconds here, they'll start going away.
  Hopefully.
  Maybe not.
@@ -783,7 +783,7 @@
  that runs everything.
  And yeah, so I think this,
  like I think kind of ideas like there's,
- like the FettyMint project is not gonna just maintain
+ like the fedimint project is not gonna just maintain
  a deployment setup for every imaginable use case,
  but I think it would be nice if we had like,
  if we just kind of maintained one Docker pose

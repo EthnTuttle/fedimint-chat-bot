@@ -111,7 +111,7 @@
  All these are fennyman.org, but just more and more granular
  sections of that site.
  And then Discord, Twitter Telegram.
- The Telegram for Feddy is not dev-oriented at all.
+ The Telegram for Fedi is not dev-oriented at all.
  I might say don't include that because it's just
  a lot of banter, really.
  Yeah.

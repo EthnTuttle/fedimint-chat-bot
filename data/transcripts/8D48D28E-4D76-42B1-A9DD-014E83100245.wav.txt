@@ -603,7 +603,7 @@
  or just simply withdrawing out Bitcoin
  and not redeeming any e-cash tokens,
  leaving the extra,
- leaving the Fediment with a fraction reserve,
+ leaving the Fedimint with a fraction reserve,
  i.e. less Bitcoin than the amount.
  And the only thing stopping that
  is the decision on the two things.

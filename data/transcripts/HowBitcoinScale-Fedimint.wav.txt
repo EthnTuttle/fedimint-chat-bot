@@ -1,7 +1,7 @@
  This is Matthew Krader from Bitcoin University,
  and today I wanted to talk about how
  Bitcoin scales, in this case using a new protocol called
- Fediment.
+ Fedimint.
  So as we all know, the Bitcoin base layer
  can only handle about seven transactions per second,
  seven TPS.
@@ -93,7 +93,7 @@
  I just ask you to hit that subscribe button.
  That would really help out the channel and its reach.
  So let's say that you join your local village federation
- by simply, you download the Fetty app on your phone,
+ by simply, you download the fedi app on your phone,
  you scan a QR code invitation from your community,
  and then you are part of the federation.
  You may also choose to send in, let's say, 100,000 sats.
@@ -105,7 +105,7 @@
  So now you can use that e-cash to pay the local butcher, the local farmer, the artist,
  or a family member who are also part of the federation.
  And these e-cash payments within the federation are basically free and instant.
- At some point, Feddy may charge a couple of basis points, as I understand it, per transaction,
+ At some point, Fedi may charge a couple of basis points, as I understand it, per transaction,
  but it'll still be very, very low transaction fees, much lower than we have certainly with
  credit cards these days.
  And here's another amazing thing.
@@ -130,7 +130,7 @@
  people rather than trusting big banks or bankers or big tech.
  I think this is exactly how we increase Bitcoin adoption globally.
  Here's another plus, the guardians of the federation cannot see how much Bitcoin you
- hold inside the fediment or what transactions you are making with people inside of the federation.
+ hold inside the Fedimint or what transactions you are making with people inside of the federation.
  So this is what we mean when we say by making Bitcoin usage more private, add higher layers.
  Now federations can also compete globally for members obviously.
  Let a million federations bloom.
@@ -207,8 +207,8 @@
  where all the farmers are, where all the artists are, the musicians, et cetera. And in this way,
  I think this is a way of bringing Bitcoin adoption to many, many more people in the world and really
  helping it to spread and to be used in a decentralized, localized manner. So I'm
- very excited about Fetiment and I'm excited to see what the guys at Fetty continue to roll out.
+ very excited about Fetiment and I'm excited to see what the guys at fedi continue to roll out.
  If you enjoyed this video, be sure to hit that subscribe and like button. Hit the notification
  bell if you want to be notified when I publish my next video and let me know your questions and
- comments in the comment section below, especially what you think about Fetty,
+ comments in the comment section below, especially what you think about fedi,
  federations and Fetiment. Thanks a lot for watching and I'll see you in the next video.

@@ -64,10 +64,10 @@
  Yeah. So it wouldn't be in the invite code, but it would be in basically what the invite code,
  basically all the invite code is, is a way to download a configuration file. And in the
  configuration file, there's a section that is sort of like a freestyle, you know, it's called meta.
- You can put whatever the hell you want in there. So in the past, like at Feddy, we've used that to
+ You can put whatever the hell you want in there. So in the past, like at Fedi, we've used that to
  say like, you know, our app has a chat feature in there. So there's like a link for their stuff
  about the chat in there, whether to enable that. There's just a bunch of like metadata we can put
- in there. And so one thing I think FeddyMint want to do is just sort of have like some sort of like
+ in there. And so one thing I think Fedimint want to do is just sort of have like some sort of like
  a standard, like kind of like dip style, a little process just to say like, Hey, if you want to
  stick a description in there, put it in this meta field. So that will, I think that that's a good
  way to enable these sorts of like use cases without, yeah, I think that's kind of how we'll
@@ -505,16 +505,16 @@
  We say like they run for a month right and then after that we don't support them anymore
  Just to try to get a few little baby step iterations, and then after we do a couple of those successfully
  You know then then we'll probably try to run some longer term ones
- Like like we'll try to have like a version of fediment that we can like give to umbrella
+ Like like we'll try to have like a version of Fedimint that we can like give to umbrella
  And they can you know?
  Users can expect to run that indefinitely. I think that'll probably be the way to go
  So
  Ethan is saying currently the UI repo does not support gateway connecting to L&D. It has both containers. Yeah, so that's one thing
  I'm gonna
  Start looking at there. Yeah start 9 uses dock containers. So does voltage and a couple these cloud providers
- So yeah, well once we get like a developer like so something where the people in the discord like can set up a fediment
+ So yeah, well once we get like a developer like so something where the people in the discord like can set up a Fedimint
  Like what once once me Ethan mr.
- Cool guy and Jotam can set up a fediment in a gateway
+ Cool guy and Jotam can set up a Fedimint in a gateway
  Then we could we have something we could probably give to we could do make a simpler
  Deployment that other people will find more accessible. You just have to click buttons and like digitalocean.com or something
  Or voltage.com maybe something like that voltage.cloud
@@ -525,7 +525,7 @@
  digital ocean stuff while back
  We could get that repo such that you can point it at that repo and it and it auto deploys
  Like on you there's like a one-click button to auto deploy to digital ocean
- I think on the UI repo that'd be a lot easier than on the the fediment repo
+ I think on the UI repo that'd be a lot easier than on the the Fedimint repo
  Yeah
  Well, yeah, there it could a potentially also just be a completely separate repo. Maybe I don't know
  We I don't have any other comments

@@ -840,7 +840,7 @@
  That's it's a translation right and Bitcoin just translates time to time to energy
  Yeah, so maybe let's talk about so this is kind of another perspective on like this AI stuff all right that
  I think it's been useful that I'm not sure entirely where I first heard it
- I think it might have been ob right um. Oh, you know I mean OSU CEO fed a bit Feddie. I'm sorry um
+ I think it might have been ob right um. Oh, you know I mean OSU CEO fed a bit Fedi. I'm sorry um
  so
  You can kind of think about like when you have a problem of
  That you run the model locally on your phone or whatever it is right
@@ -852,12 +852,12 @@
  Less and less and less about you
  But it's using the more powerful model in order to solve the aspects of it that it can't solve itself right yeah
  And so as we kind of talk about this right there's like first party custody
- And then there's third party custody right is that within Feddie
- And why I was saying like hey Feddie is like doing a lot on AI and why Feddie is like the organizer and like we're doing
+ And then there's third party custody right is that within Fedi
+ And why I was saying like hey Fedi is like doing a lot on AI and why Fedi is like the organizer and like we're doing
  This big hackathon for the next month
  I'll focus on Bitcoin and AI is
  because in the same way that there's the second party design space between first party custody and
- third party custody when it comes to Bitcoin that Feddie is exploring in terms of federations of different sizes and
+ third party custody when it comes to Bitcoin that Fedi is exploring in terms of federations of different sizes and
  a federate look what we call in the federated operating system to orchestrate the
  Applications data and your digital life across those different ones right in the same way models
  There's this second party design space for it right of that you can't solve it locally

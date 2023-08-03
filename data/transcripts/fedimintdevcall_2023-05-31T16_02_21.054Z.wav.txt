@@ -205,7 +205,7 @@
  But the way that you do it is the moment that you think that your federation doesn't have
  any cards, then you just withdraw your money into self custody or to a different federation
  or whatever it is.
- And depending on the app that you use, so like on the Feddy side, we've made it so that
+ And depending on the app that you use, so like on the Fedi side, we've made it so that
  you basically, they kind of look like Slack channels when you're connected to different
  federations.
  And it's like two button clicks to move funds between one federation or another by a lightning
@@ -370,7 +370,7 @@
  And so that's maybe it's like, they try to input 20 or
  they try to input 21 or whatever.
  And then it just like does a little prompt for them like,
- this is how FeddyMint works, we recommend you set up two separate federations.
+ this is how Fedimint works, we recommend you set up two separate federations.
  [BLANK_AUDIO]
  >> Okay, yes, this could be helpful just as a little bit of extra context, but
  yeah, not enforcing any hard rule.
@@ -912,7 +912,7 @@
  but directly relevant to this call
  is we're gonna dockerize everything.
  So that way it's a minimal lift for any designer
- or anybody else that wants to play around with FettyMint
+ or anybody else that wants to play around with fedimint
  that they can hone the repo down.
  All they have to do is install Docker
  and then run a single command and they will have
@@ -974,4 +974,4 @@
  that Jose created or should I just reach out to him?
  - I have the link.
  I could send it right now.
- - Yeah, I think we also have one on the Feddy side.
+ - Yeah, I think we also have one on the Fedi side.

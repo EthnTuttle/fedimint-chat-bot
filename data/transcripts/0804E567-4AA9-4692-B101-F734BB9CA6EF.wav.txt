@@ -984,7 +984,7 @@
  Well, it's like, well, now anybody who recovers that key,
  they own your Bitcoin just as much as you do, right?
  But having like a formalized backup mechanism
- through Fediment of the on-chain deposits
+ through Fedimint of the on-chain deposits
  when you deposit into the federation,
  those are like the on-chain claims right there
  that require the multi-sig, right?

@@ -307,9 +307,9 @@
  It will be able to be set up to work and act in the way that they need it for their service
  without any extraneous elements because each community is set up correctly for that community.
  They'll be paying near zero fees for transferring.
- And they, by the use of the Fediment, it's effectively a multi-sig wallet.
+ And they, by the use of the Fedimint, it's effectively a multi-sig wallet.
  So when it comes to first party custody, the best way to back up is first party with multi-sig.
- That's complex to do, but if you have a Fediment, you automatically get that for your community.
+ That's complex to do, but if you have a Fedimint, you automatically get that for your community.
  So you're getting this multi-sig backup of the data without you having to do anything.
  You have this incredibly simple experience, but a best practice way of backing up as well.
  What was that?
@@ -495,11 +495,11 @@
  - They don't have to accept the e-cash.
  - So they can receive payment in Bitcoin from our-
  - Yeah, that's it.
- So when, think about a fediment
+ So when, think about a Fedimint
  as a community owned lightning wallet.
  So from the outside world, it's a lightning wallet
  and it can make payments over the lightning network.
- It's just that the fediment protocol
+ It's just that the Fedimint protocol
  and the e-cash protocol handles how the Bitcoin
  that's been sent to that wallet
  is apportioned amongst the members of that wallet.
@@ -525,12 +525,12 @@
  but from your point of view,
  experientially it just looks like a lightning payment.
  Whether you're sending it to someone else
- within the fediment
+ within the Fedimint
  or whether you're sending it to someone else
  on the other side of the world,
  who's got a moon wallet or a wallet of Satoshi
  or a blue wallet or what have you,
- or to someone else who's also in another fediment
+ or to someone else who's also in another Fedimint
  somewhere else, do you lightning invoice pay?
  - So if we were transacting within the federation--
  - It would still be a lightning invoice.

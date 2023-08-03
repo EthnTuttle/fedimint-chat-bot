@@ -553,10 +553,10 @@
  So now we just have Rust code.
  We don't have a bunch of TypeScript in here as well.
  Yeah, so this one is--
- like at Feddy, we found it useful to stick some stuff
+ like at Fedi, we found it useful to stick some stuff
  in the meta section of the config.
  For example, the federation name is one
- that Feddy Mintz has been having in there.
+ that fedimints has been having in there.
  But another one that's really useful
  is just having an expiration date for the federation.
  Like if you're intending a federation

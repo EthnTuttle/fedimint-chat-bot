@@ -533,7 +533,7 @@
  Well, it sounds like you can just do these very interesting things in terms of building
  some safety nets that aren't possible with other custody solutions when you use the power
  of community.
- And that's really what Fediment I'm learning is.
+ And that's really what Fedimint I'm learning is.
  It's really, like you said, it's like community embedded in a technology.
  And that's what you guys are taking advantage of at Fedi.
  And it's really more than like some wallet.

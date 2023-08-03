@@ -1,4 +1,4 @@
- Yeah, so this is just pretty much a call to put together some admin personas for Fetty.
+ Yeah, so this is just pretty much a call to put together some admin personas for fedi.
  So, yeah, I have a couple of questions.
  Jose wanted to join, but he couldn't make it, so he sent over some questions.
  I created a bit of a -- I don't know if you guys prefer to work together in a Google document
@@ -51,7 +51,7 @@
  above, at least.
  My personal -- I suspect that these will be popular at meetups, which would be kind of
  like the ban here.
- And then also, with Fetty's initiative, sort of targeting smaller communities and the global
+ And then also, with fedi's initiative, sort of targeting smaller communities and the global
  south and everything, like, yeah, the activism part, Global Activists would be another one.
  But if we wanted to move on to the Lightning Gateway and talk through some of those, I
  think those -- so, I think those people are actually going to be a little different.
@@ -99,7 +99,7 @@
  So because of that trust relationship, I think it kind of, I mean, I'm kind of brainstorming
  right here.
  It never remains to be seen how many Federations a gateway will actually connect to.
- I think in the beginning, like Fetty is going to be running one of these, and most people
+ I think in the beginning, like fedi is going to be running one of these, and most people
  will probably just connect to that one.
  But in the ideal world, we'd have like sort of a marketplace for Federations where there's
  a lot of, or sorry, for gateways, where a lot of people are running gateways, and you
@@ -419,7 +419,7 @@
  I'd say that's kind of a requirement for running one of these things.
  Another thing to keep in mind is like, because you're not limited to just one gateway, you
  might have a gateway run out of liquidity.
- But if you have multiple gateways, that's only a benefit to the clients of the Fetterment
+ But if you have multiple gateways, that's only a benefit to the clients of the fedimint
  because now there's multiple options for that outbound set.
  Yeah, you're just speaking from like an end user perspective, right?
  Right, right.
@@ -455,7 +455,7 @@
  could they just decide to just close or just remove the federation without providing those
  funds back to the gateway provider?
  Yeah, I mean, there'd be a few different ways to do that, to run off with the money.
- So today, in FettyMint, the federations can't, if there is a rug pull, then they need to
+ So today, in fedimint, the federations can't, if there is a rug pull, then they need to
  change the code, essentially.
  You can't do that by default, which is good.
  But they could essentially, like, there's like an on-chain wallet, essentially, and

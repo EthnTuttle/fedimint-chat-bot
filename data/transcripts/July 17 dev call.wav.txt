@@ -438,7 +438,7 @@
  And so last Friday, I was able to get this to, off of Current Master,
  to set up a federation on Mutiny.net and get, be able to send and, you know,
  send and receive payments to like the Mutiny.net has a little faucet.
- Fetty also has a faucet on Mutiny.net.
+ fedi also has a faucet on Mutiny.net.
  I was able to send and receive back and forth between these two
  and using Vetiment CLI.
  So we kind of have like a full, a little, a full thing to get people to be able to run
@@ -462,7 +462,7 @@
  - Yeah, we'll like, this week, I'll write up a little dot, like a little tutorial
  where it's like, this is what you need to run, this is how you can play with it.
  - Okay.
- If you have, I'm planning on setting up a Fediment with some of the local DC
+ If you have, I'm planning on setting up a Fedimint with some of the local DC
  BitDevs people, but I will try to document what commands we do when we run it as well.
  And if you have anything before then, I'd be happy to like test it out and work
  through the kinks with people.
@@ -525,7 +525,7 @@
  like things we can improve on there.
  - Yeah, we made some progress there showing the lightning gateways.
  That was nice.
- So we're just trying to get like a Fediment dashboard now.
+ So we're just trying to get like a Fedimint dashboard now.
  Like once you've set up a federation, you know, surface whatever information
  we can get.
  So, yeah, we made some good progress there last week.

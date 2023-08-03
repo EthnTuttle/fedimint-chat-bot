@@ -335,11 +335,11 @@
  Then also at the application layer having all sorts of different interactions.
  But the rail between all of those, the kind of inter-networking part of it is Lightning.
  Right.
- And that's one of the really cool things about Fediment, where Fediment, like the thing that
+ And that's one of the really cool things about Fedimint, where Fedimint, like the thing that
  you're holding at rest are these e-cash notes, but we don't expose a lot of that to the user.
  Right.
  And so that's a little different than Cashi, right, where you see the e-cash notes up front.
- The experience that you have using Fediment is you're just paying Lightning invoices.
+ The experience that you have using Fedimint is you're just paying Lightning invoices.
  And on the back, you're like, basically, like the thing that's happening is that you're
  using the e-cash and you can get into a little bit more of like the e-cash and the privacy
  benefits, the scaling benefits, that sort of thing.
@@ -653,7 +653,7 @@
  But I'm not under the impression that that's where we're going with this.
  I do think everybody should have access to Bitcoin and the value it provides.
  And we do have to weigh those tradeoffs and sort of find out where that happy medium is.
- And I think the Fediment and Fedi solution is a very creative way to solve the scaling
+ And I think the Fedimint and Fedi solution is a very creative way to solve the scaling
  problem because, again, we want to get as many people as possible access to the best
  money on earth.
  There are going to be some tradeoffs made along the way.
@@ -1027,7 +1027,7 @@
  Once I sort of realize I'm getting a bunch of money, well, okay, well, now I'm trusting
  the lightning service provider who's running the lightning address server, so maybe I want
  to move to doing my own node and I can kind of move that way.
- And it's the same sort of thing with Fediment, right, where maybe you start with a very close
+ And it's the same sort of thing with Fedimint, right, where maybe you start with a very close
  to you federation, maybe you just like join some like further away federations, the money
  and data that you have associated with that larger federation is like, okay, this is getting
  a little bit too far away from me, maybe I'm like not as close with those guardians anymore,
@@ -1063,16 +1063,16 @@
  that, like maybe you can make an opt-in module like this is something that's a couple of
  people have been working on is like making an accounts module, for example.
  So you want to do something like if you want to run like the EVM as part of the contracting
- system for Fediment, then like you need some like account model for it.
+ system for Fedimint, then like you need some like account model for it.
  And so in accounts of persistent identity, you don't have as good privacy associated
  with it.
- But the default out of the box options for Fediment are that you achieve very, very good
+ But the default out of the box options for Fedimint are that you achieve very, very good
  privacy, right?
  And that's because you're like running in these local communities.
  So you want to be able to opt into it.
  It's kind of like the cypherpunk ethos, right, of that like privacy is not secrecy, privacy
  is the ability to selectively reveal yourself as part of a transaction.
- That's sort of like the design decisions associated with Fediment of that like out of the box.
+ That's sort of like the design decisions associated with Fedimint of that like out of the box.
  It's that, hey, we're using the e-cash system, we're using Lightning, we're using Bitcoin,
  right?
  But then you can add additional modules and configurations for, say you want to have like
@@ -1084,7 +1084,7 @@
  Because it's, you know, I'm marty@getalby.com or something, right?
  That is my Lightning address if you guys want to send me some stats.
  That's one of my Lightning addresses.
- What do you think the first killer, modular killer app or use case of Fediments or within
+ What do you think the first killer, modular killer app or use case of Fedimints or within
  Fedi particularly is going to be?
  I've been extremely bullish on synthetic dollar trading strategies.
  And so this was actually back when I was at OKX.
@@ -1139,7 +1139,7 @@
  But in order to do that, you need sufficient liquidity because like in order to get like
  good order book depth, you need sort of like larger than like in order to not get like
  killed while you're doing these trades in order to like hedge out the position properly.
- And so what's cool about Fediment is that we've got this stability pools module that
+ And so what's cool about Fedimint is that we've got this stability pools module that
  like Federations, it's not that one of the default modules, but it's something that Federations
  might be able to run is that now because you have additional liquidity and you have additional
  depth, you can basically create an API for locking this in, locking in the price of it
@@ -1188,7 +1188,7 @@
  you can exchange stable value using the Bitcoin rails.
  It just took some time to get things set up, the protocol layer to enable lightning and
  get lightning mature and then have Eric and a bunch of others come up with this idea or
- really Eric come up with this idea of Fediments, leveraging lightning and then bam, we can
+ really Eric come up with this idea of Fedimints, leveraging lightning and then bam, we can
  do it.
  StabilityPool has won that hackathon in the fall, correct?
  Yeah, that was before I came out of Fedi.
