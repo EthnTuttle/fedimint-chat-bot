@@ -1,0 +1,1015 @@
+ Might be good.
+ I'd be good segue into the task
+ group stuff later. OK, well,
+ let's do that then we'll switch over
+ to the task group after in second
+ then eat our vegetables last, sure.
+ I can share screens to have something to.
+ Point to.
+ It's gonna be really small.
+ Alright.
+ So this. So this is an LBK PR.
+ That yeah, yeah, let me let me
+ explain for a second.
+ So essentially we have like a set of tests.
+ We have like for the for the gateway.
+ We have. Sort of two sets of test suites,
+ one that uses like our mock will call our
+ mock services and the other one that uses
+ the real services and we just talk
+ between them using a environment variable.
+ So the mock one is really simple and it's.
+ It's more.
+ That's more just for testing like the.
+ Uh, logic with the Federation and it's
+ not supposed to like all the lightning
+ services are sort of mocked out so
+ there's no cause of like there's no
+ channels used or anything like that.
+ Like anything that hits the lightning node,
+ we kind of just like do some mock stuff
+ in the background and then return OK.
+ But the real the real tests
+ actually use the lightning nodes,
+ so we use debument spawn like one LND
+ node one CLN node and then we actually
+ do payments over them and right now
+ a bunch of the gateway tests we test
+ both LND and CLN is the gateway
+ and then we swap so like there's
+ kind of the other node where it's
+ the one that's not the gateway and
+ there's one that is the gateway
+ and we do our tests that way.
+ Uhm, so I guess what got me thinking
+ about this was, uh. For Justin,
+ your your change on testing the route hint.
+ Like limiting the number of routines,
+ uh, I wanted to have like more,
+ uh, channels so that I could test like
+ the filtering the liquidity as well.
+ And right now it's kind of hard to do
+ that because we only have two nodes
+ in our in our test suite, so.
+ I remember back at tab conf Tony was
+ showing some demo of his Ellen's Floyd
+ project and he he had some functionality
+ for like spawning a lighting node.
+ Really lightweight,
+ which is really cool.
+ So I was looking at that and yeah,
+ he basically had this is cool.
+ He had this like thing like that was
+ the time around time the LND Barracks,
+ one of Barack's LND bugs and he's like
+ he just made like a little command line
+ tool where you could like actually
+ replicate it like steal money from
+ the LND just locally on reg test.
+ And it was, yeah,
+ it's just everything was all decay underneath.
+ Or the the exploiter side of it was LDK,
+ right? And he he spawned like 50 nodes,
+ you know, during the demo,
+ which was pretty cool.
+ Uhm, so I was looking at that code and
+ you know he actually wrote like a using
+ LDK wrote like a lightning node which
+ is a bit more involved since you had
+ to sort of fill in all these.
+ Functions, but it's definitely doable,
+ so there's this new practical LDK node
+ which kind of like essentially from
+ the spiral guys saw like OK,
+ like there's probably some use case for.
+ Still still using as a library,
+ but having a lot of these like
+ sort of pre filled so you don't need
+ to worry about like how to save
+ the on chain state,
+ how to what to do there.
+ It just comes with like a bunch
+ of pre filled defaults.
+ So that's what LDK node is,
+ and it's pretty simple.
+ Like you can just sort of spawn
+ uses builder struct and you can kind
+ of spawn like a.
+ A lady note that way.
+ So what I wanted to do eventually
+ was to spawn like 4 lightning nodes,
+ connect them into the gateway and then
+ see if I can filter the route
+ hints based on the liquidity.
+ That's kind of where I'm going with this,
+ but.
+ Uhm, yeah, so.
+ I did like a sort of proof of concept
+ earlier last week or earlier in this week,
+ and then I have a more fleshed out PR
+ right now that's not quite done yet.
+ But yeah, I'm showing a little
+ bit of code right here.
+ You can see like you kind of just set up
+ a bunch of this builder stuff.
+ One one thing to note is that it
+ only uses a spore right now,
+ so you can't use.
+ Bitcoin D or anything like that,
+ so I had a little bit of debugging
+ setting up the Explorer part.
+ So the port and then.
+ Yeah, you just pretty much started.
+ And go from there so I wanted to
+ mention about the lifetime stuff.
+ So one the main issue that I had to
+ deal with was like a pretty much all
+ all of the LDK node stuff sort of
+ uses like the blocking context,
+ so not not like the Tokyo async runtime.
+ So even when you like start the node.
+ You have to.
+ It can't be.
+ It can't be dropped in the async runtime,
+ so.
+ Uh, at least what I'm doing here is like
+ I spawn this like event loop essentially.
+ That uh.
+ Moves it into the spawn blocking.
+ Blocking thread that just waits
+ for requests over a channel.
+ And then returns returns responses
+ over a different channel.
+ And, uh.
+ Yeah, so like I kind of build the
+ functionality for like sending like
+ requests for opening channels and
+ responses back same thing with like
+ paying invoices and that's how I used
+ to stop the stop this thread to like
+ essentially when.
+ With this dropped drops,
+ I'd send a message to stop it,
+ stop the node and it calls stop.
+ So yeah, this this is working one
+ and then look at the test.
+ I just have one test right now.
+ And the test is actually pretty simple.
+ It just does the same gateway test spawns,
+ spawns and LDK node opens the channel and.
+ Right now I'm just opening one channel and I
+ do a do a balanced channel so the channel
+ has. And it's just reg test that so we
+ just push push half the stats over to
+ the other side so that both sides can pay.
+ And then yeah, I pay an invoice.
+ I generate invoice for LDK and
+ then pay it using using Fetiment.
+ So that's pretty much it right now.
+ I ran into a few issues.
+ The main issue is like the runtime stuff.
+ In the blocking context.
+ And then while doing the PR,
+ I ran into an issue with.
+ The audits on our.
+ CI that was flagging a crate that LDK node
+ used so I actually opened a PR to fix
+ that on the LDK node side.
+ And then that was also caught like LDK
+ node uses.
+ Use a SQLite for the on chain PDK stuff
+ and the library they're using for SQLite
+ was conflicting with the or is trying
+ to use the same library as we're using
+ for our SQLite,
+ but a different version and was causing problems.
+ So I opened a different PR open to.
+ To remove SQLite from our repo so that
+ we could we can use LDK node 'cause
+ we're not really using that right
+ now on the Fetiment side so.
+ Yeah, that's kind of it was mainly
+ just debugging and following
+ documentation stuff.
+ I guess any.
+ Any questions on that?
+ Out of curiosity about SQLite thing,
+ was it a linking failure or was it
+ just like version resolution failure?
+ Yeah, it was. It was version resolution.
+ I think it was it was trying to use like
+ I think LDK node was pinned to a
+ different version or something than what.
+ And what we were using and it was
+ like is actually a crate that.
+ 'cause LDK node uses the rescue
+ light crate and we used we're
+ using the SQL X one so it was like
+ nested inside of that so it wasn't
+ like super clear to me how to.
+ How to fix that?
+ And normally it's not a problem to
+ have multiple versions of the same
+ rust crate, but where it becomes
+ problematic is if it binds to different
+ versions of an external C dependency.
+ Yeah, then typically at the
+ function names and stuff like that,
+ the identifiers aren't versioned.
+ It's actually something that
+ libscp does right like.
+ In libscp all the function names in C
+ are prefixed when it's bound to rust
+ and every function is prefixed with
+ the current version so you can actually
+ have different versions there.
+ You probably did escalate.
+ People didn't do that.
+ Yeah, that's that's exactly what's
+ happening 'cause the library that was
+ causing problems is a lib.
+ It's like lib SQL,
+ SQLite 3 or something and that's a C library so.
+ So it's really cool.
+ This is. We're paying out to an LDK node.
+ But as I understand it right now,
+ so this is this is like the only
+ place where we're using LDK.
+ In. In Fetiment or.
+ Yeah, so far, so I guess a few
+ future looking things like I did
+ write a test to do the other way
+ where LDK node pays Fetiment.
+ I was running into some problems there
+ and given sort of the scope of
+ the changes I was doing,
+ I wasn't get rid of that
+ and come back to it later.
+ So in you know, in theory,
+ so I want to.
+ Yeah, I want to use this for a lot
+ more in our test suites right now.
+ At least like you know we could
+ create a test that like does like
+ a payment over a few different hops.
+ Like for you know you could do
+ four or five hops or something and
+ we don't we never had coverage like
+ that before. I mean it shouldn't
+ really change anything,
+ but it'd be good to do a test like that.
+ You might actually be able to simulate
+ a much bigger network than you
+ have like all the external routing.
+ It's just simulated by LDK.
+ That's really cool.
+ Yeah, and so I guess a few things
+ to take in mind is like it.
+ It does take a little bit of
+ time to open the channel,
+ so these tests aren't like as fast
+ as the other ones.
+ The other tests that we have.
+ That's I think that's mainly 'cause
+ you have to actually mine the
+ reg test blocks.
+ Hum, that's what I was experiencing.
+ I was debugging it.
+ And then another,
+ you know,
+ kind of more future looking thing is
+ like in theory we could actually
+ support LDK node as like a lightning
+ node completely inside gateway D.
+ Uh, that we I think the main
+ blocker right now to that is I don't
+ think LDK node supports HTLC interception,
+ so it's not.
+ It's not.
+ It's not fully supported yet.
+ I don't think so.
+ We can't.
+ I don't think we can do that now,
+ but if we had that I think we could
+ support it and 'cause essentially
+ if you go look through the PR,
+ a lot of what I was doing is similar
+ to what we had to do for like adding
+ LND support, you know, it's just a little.
+ Like spawning it is is easier than
+ I think LND or CLN 'cause it's just
+ like in in the same process.
+ So baby steps, but we're we're getting
+ that was sort of the where my question
+ is going is like so right now we
+ support LND and CLN as the gateway.
+ Nodes, but from what you just said,
+ it sounds like we're missing that
+ one thing and then LDK could be part
+ of that right as an option for it.
+ What other are the other implementations
+ available or like just kind of curious what?
+ Well, so if we were to add LDK as a
+ lightning node it would be a little
+ bit different than than how we do it
+ for CLN or LND 'cause with with those
+ two you can sort of attach gateway
+ D onto an existing lightning node.
+ So if you're running your own
+ lightning node and you have good
+ liquidity already set up,
+ you can kind of re leverage that for
+ for freezing of the lightning gateway.
+ For LDK you wouldn't be able to do
+ that because it would actually be a
+ totally different like a new node
+ like inside gateway D.
+ So the plus side would be like,
+ oh, you can.
+ You can write.
+ You can run a lightning gateway without
+ standing up lighting infrastructure as well.
+ The bad side of that is that it
+ has to be a new nodes like you'd
+ have to, you know.
+ Go off and reopen channels to
+ other peers and and whatnot.
+ So might might fit some people,
+ but might not be great for.
+ For everyone.
+ Then we'd also need to implement a
+ rather extensive set of APIs to
+ manage that lightning node.
+ Yes, the current gateway is relatively
+ limited and what you need to be able to do.
+ But with an entire lightning node
+ in there that would.
+ Be a much bigger,
+ so maybe the right approach would
+ rather be we using the existing
+ interface from core lightning like
+ we currently have this extension
+ lightning extension.
+ Oh idea.
+ Where you can run an external process
+ that acts as like your connection to
+ lightning node and you just talk to it
+ via gRPC maybe putting the.
+ A leak a note.
+ Into a separate binary and then just
+ communicating with using that interface.
+ Make it a little bit more sense
+ because then it could also be developed
+ more independently from the gateway
+ if you wouldn't be baking too much into it.
+ Yeah, I would say just based on my
+ experience the last week or whatever that.
+ Like I don't think we should do that,
+ to be honest,
+ because I mean LDK node is like really
+ simple like if you go through and look at
+ the API there's like not.
+ There's not many functions so.
+ Uhm, you know, yeah,
+ it doesn't even support it.
+ It's just the interception right now,
+ so I don't think it's even something that
+ we'd be able to add.
+ LDK does so.
+ Yeah, so we're pretty sure that you could
+ drill into it and just use LDK.
+ Yeah, but that again,
+ LDK node isn't that complicated.
+ OK, that would be a few years ago in the
+ workshop.
+ Yep, yep, like if you want to learn more.
+ I was just adding it be a separate project
+ and like I would agree you probably want
+ to do that as a different binary,
+ but this like this is supposed.
+ What I'm doing here is sort of way
+ more slimmed down to that.
+ It's a lot simpler than testing basically.
+ Yeah, yeah.
+ I mean, it's no problem because we are
+ depending on most of LDK anyway, I think.
+ Like all the lightning types that we're
+ using this taken out of rust lightning,
+ which is a core part of LDK.
+ Yeah, so we're not really paying a
+ huge price for adding like the
+ simple lightning note here.
+ What is the difference between is LDK
+ and rust lightning? Are they the same thing?
+ What's the distinction there actually?
+ I think rust lightning morphed into LDK
+ and now LDK also contains some binding.
+ to other languages.
+ - Okay, so LDK is like--
+ - The core part is Rust Lighting.
+ - Yeah, it's like a family of things built on Rust Lighting.
+ - Yeah, good point.
+ - But about the LDK node,
+ it's just,
+ it's using LDK in a very simple way,
+ you have very, it's attaching to a database.
+ So it's just an example of using LDK, in fact.
+ - Yep.
+ - You can use LDK in many different ways.
+ - Yep, and I think it's a pretty simple way to use it.
+ Like all those future things that we talked about,
+ I think would require a fair amount of refactoring
+ on top of this, but this,
+ I think this unlocks a lot of cool testing scenarios.
+ We should be able to get much,
+ some better coverage here.
+ So that's kind of the short-term goal with this.
+ - Mr. Kool, do you see this becoming
+ part of dev maintain anyway?
+ - It doesn't need to, because it's just a lot,
+ because you can spawn LDK node in a library.
+ Like this is literally, the node is spawning
+ inside the, you know, whatever binary
+ that the test is running in.
+ So we don't need to add it to dev event.
+ The main hurdle there is just finding,
+ 'cause it has to listen on an available port.
+ So it has to find an open port.
+ So I know we've had problems with that in the past.
+ I added some code that sort of tries to find an unused port.
+ I don't know if anyone has review comments on that,
+ it would be appreciated, but hopefully we don't have
+ any port conflicts by adding this.
+ - Mostly dependency at some point, I think.
+ Is it port finder, which we just do this?
+ - Yeah, yeah, I didn't add that dependency back,
+ but I think this works.
+ - When you open a channel,
+ can you say what like fee settings it has?
+ 'Cause that's also, like that's one of the other
+ interesting ones is if, you know, you can just make sure
+ that the logic for, you know, routing, fee routing,
+ you know, maximum fee routing in the gateway is correct.
+ Right, so like have a couple hops
+ and then a really, really expensive channel at the end.
+ - Yes. - Make sure you can't.
+ - Okay, cool. - So I'm not doing that
+ right now, but I'm pretty sure,
+ so this parameter is a channel config.
+ - Okay, cool. - I don't know if she
+ can set the fees in there, yeah.
+ - Yeah, 'cause that's another kind of sort of test
+ that seems like it would be pretty useful.
+ And I imagine it'd be a lot, like writing tests like this
+ where we vary fees would probably be,
+ it would just be kind of annoying doing it with like LND
+ from inside a Rust, you know, like it might just be
+ a little weird, you know?
+ I can see how this would be a lot more ergonomic
+ and probably faster too, 'cause you don't need
+ to like spawn other daemons maybe.
+ - Yep, right now I only support opening channels via LDK.
+ Like I don't have code for opening a channel
+ from like LND to LDK.
+ - Yeah, it makes, it seems fine.
+ - Which I actually, I spent a little bit of time
+ trying to add that, but it's kind of going down
+ a rabbit hole of debugging that I didn't want to get into.
+ So, and given that we can just open the balance channel,
+ it doesn't really matter.
+ Like we can get liquidity on both sides
+ and test payments that way.
+ So that's kind of what really matters.
+ - When can we review it?
+ Like what's the status there?
+ - So I want to get the two dependency PRs that I mentioned,
+ the removal SQLite and the change to LDK node in.
+ If you look at my cargo, and I want to sort of clean up
+ some of the commits too.
+ If you look at the cargo toml, I had to fork it essentially
+ to get it to pass our audit check.
+ So I would like to not fork it if possible.
+ But it should be, if you want to look at the structure
+ of the code and stuff, that should all be good.
+ It's just sort of like these cruft things
+ of cleaning up the commits and rebasing and whatnot.
+ So everything else should be pretty much good to go.
+ - Cool, do we want to, I mean I don't have any other
+ questions about this.
+ If not, we can maybe talk about task groups
+ for a little bit.
+ DPC, do you think you'd be able to,
+ if you're not busy vacuuming,
+ do you think you could give us just kind of like
+ a little overview, maybe share your screen about like
+ what a task group is, when to use it,
+ and just current thinking there?
+ - Sure.
+ Let me try sharing--
+ - And also when not to use it.
+ Like yeah, when not to use it.
+ - When not to use it.
+ I don't know, it seems always a good idea to use it.
+ (laughing)
+ - Built in display.
+ This thing here, can you see it?
+ - Beautiful, yeah.
+ - This is a task group.
+ It lives in this file.
+ So we can look at the kind of,
+ data structure, get some notion.
+ So a task group on the outside is just a clonable handle.
+ To, where is it?
+ LSP is still in here.
+ There we go.
+ So a task group is basically a flag
+ that is saying, are we shutting down
+ a task, task spawned in task groups
+ can register kind of a callbacks
+ that will be called when the task group is being shut down.
+ And a bunch of handles
+ to the task that were spawned in a task group.
+ And in kind of first approximation, that's kind of it.
+ I think it's basically a way to
+ cleanly shut down a lot of tasks
+ that we might need in a given piece of software.
+ - So I think from the user's perspective,
+ the most interesting part is that,
+ like instead of spawning a lot of independent tasks
+ that you all have to manage them on their own.
+ And like, it's really hard to, if you don't take care,
+ then it's easier to have a lot of panics
+ and crashes on shutdown,
+ because like it's not happening in an orderly way.
+ But rather when you spawn all your tasks in a task group,
+ then you can call a shutdown command.
+ And if you implemented your tasks correctly,
+ so they're listening for the shutdown signal,
+ then all of them should shut down orderly.
+ You get a warning if any of them didn't do so
+ and you can fix that.
+ And you even have the ability to create subgroups,
+ which then can be shut down on their own
+ or they're also shut down if their parent group is shut down.
+ So that's the rough idea from a user's perspective.
+ I also touched on when not to use task groups.
+ And I think that's an important limitation to name,
+ which is if you would be spawning tasks repeatedly,
+ like in a loop, and we have a long running system here,
+ then you shouldn't use a task group
+ because until the entire task group is shut down,
+ like all these joint handles don't really get cleaned up.
+ Like if you were spawning one task each second,
+ then that would be a bad idea to do with a task group
+ because eventually it would be running out of memory.
+ So these tasks and task group are more meant
+ for like long running tasks that get started once
+ and need to be shut down once the application finishes.
+ - I wonder if you could add something
+ that would go through all the handles
+ and kind of wipe the ones that are already shut down
+ or something like that.
+ So it could be one,
+ - I could also call it. - Automatically.
+ I can manually once in a while just.
+ But then we'd also need to kind of clean
+ the on shut down things and we need to associate them
+ with their respective tasks.
+ - Yeah, that's true.
+ That might be hard.
+ - This seems like it would be good standalone crate.
+ Like this is not Fetiment specific, right?
+ Like this is just a need that Fetiment had.
+ - Yeah. - Yeah.
+ - Did we ever look at the existing crate
+ like that already?
+ - Manmeet posted something from Tokyo
+ that accomplishes roughly the same thing
+ and actually maybe.
+ - Yeah, I've been looking for that
+ for the last couple of minutes.
+ I can't find, I thought he posted in Discord.
+ - That might be a good idea to use
+ whatever Tokyo provides because
+ that probably has fewer foot guns
+ and access less maintenance burden.
+ - The task group was kind of started
+ because in Fetiment D we weren't getting clean shut downs.
+ So it was quickly kind of hacked together
+ to get things roughly in order
+ but it was never properly kind of designed.
+ And then we added subgroups
+ and it returns values from the finished task.
+ And so it's also, yeah, there are some use cases here
+ that are not properly handled.
+ - And also one thing I noticed actually
+ while trying to fix the client shutdown
+ is that in WebAssembly,
+ apparently we don't get a join handle at all.
+ - Yeah, you just reminded me that I think we fake it
+ and we actually don't have any join handles.
+ - Yeah.
+ - Because yeah, wasn't come to that.
+ I mean, on the client, it's probably less of a.
+ - Yeah, I'm actually thinking about
+ not using task groups on the client at all
+ because the client is just a different
+ kind of software in a way.
+ It's not this long running.
+ It feels like it might have some more dynamic tasks.
+ I mean, it doesn't really have them right now
+ but currently the only thing on the payment open source site
+ that is running as a task is the state machine executor.
+ And that I just opened the draft PR today.
+ We can kind of manage that without a task group.
+ And in a simpler way, I'd say,
+ like we're just keeping the same logic pretty much
+ as in task group, just a little bit more specific
+ to the use case.
+ So not as abstract inside the state machine executor.
+ And then we just have a stop command
+ that can stop this task.
+ - Where are we using these in FedEvent?
+ Like, we're looking at this now,
+ but where's like a, I guess a concrete example
+ of us using the task group?
+ - For example, the DKG runs in a separate thread.
+ I think the API is run in separate tasks.
+ - Consensus.
+ - Yeah, everything that calls spawn pretty much.
+ - Yeah.
+ - HLC interception in the gateway, I think.
+ - Yeah.
+ - Because if you call just the kind of Tokyo tasks on
+ then you starting kind of ad hoc thread
+ and like it's trying to do something,
+ you're shutting down the rest of the system
+ and inevitably will hit something.
+ Yeah, that they didn't expect
+ and it will blow up in some panic message or something.
+ It's at the shutdown.
+ So then it doesn't really matter that much
+ because you're spinning down your process anyway,
+ but it kind of gets in a way of testing
+ and it looks weird when you're trying
+ to gracefully shut down your system daemon
+ and it starts panicking all over.
+ - I found the Tokyo thing.
+ I just posted it in the chat.
+ - Consolation token, was that the one?
+ - I got a question about the client side.
+ Is that I was noticing the client,
+ yeah, the client like not shutting down cleanly.
+ Eric, could you talk, what was exactly the issue there?
+ It's not, is it not waiting for some tasks to finish
+ or what's exactly, and what's different,
+ like what's different the client versus the server
+ that caused these problems?
+ - I mean, the client already used the task group
+ to spawn the background, like a state machine executor task,
+ but before my fix,
+ it didn't really do anything about shutting down.
+ Like just didn't shut down the task
+ and yeah, so it kept running
+ and the Tokyo runtime got shut down
+ and this background task was still running,
+ trying to do Tokyo things and it doesn't work.
+ So on current master, we are calling shutdown,
+ but in a way that can potentially lead to deadlocks.
+ So there's currently one PR open by DPC to fix that,
+ which unfortunately turns out not to be compatible
+ with WebAssembly and there's one PR
+ that I created today, which gets rid of the task groups
+ on the client side and instead does a little bit more,
+ has a little bit more custom logic
+ that isn't as versatile as the task groups,
+ but gets the job done in a way
+ that is compatible with Wasm.
+ - Okay, so the main, one of the main hurdles there
+ is the Wasm compatibility since.
+ - Yeah, like the problem I encountered
+ was that the on shutdown here,
+ like you have a function or a closure
+ that returns a future.
+ So the shutdown function is also async due to that,
+ but in most cases, the only thing we really want to do
+ in this future is send a message via a one-shot channel,
+ but sending a message over a one-shot channel
+ is actually not blocking and it's also a sync function.
+ So it's not async.
+ - Yeah, we should probably get rid of this on shutdown
+ and this cancellation token that Justin posted,
+ I think that's the way to go
+ because we basically want to decouple
+ the data structure here from handing,
+ like holding onto anything from the,
+ from the other task.
+ And I think because of using this cancellation token,
+ you basically introduce a level of indirection through,
+ I guess under the hood,
+ it must be something like a one-shot channel or something.
+ And that might, yeah,
+ and that's gonna make it non-blocking,
+ Ba ba bun daaahhh.
+ maybe get rid of some of the problems.
+ So yeah, maybe I'll look into that.
+ I think just making those on shutdown
+ kind of callbacks was a mistake,
+ you know, like a design mistake, yeah.
+ - Cool, anything else?
+ - Do we do anything interesting
+ in any of these callbacks?
+ And I guess if we do, we can probably
+ also just do it inside the task.
+ - You can pretty much always refactor it
+ to be some kind of a select over receiver and yeah.
+ It will be a little bit of refactoring
+ in places that might do something,
+ but it seems worth it to make the whole easier to use.
+ - Cool.
+ - The cancellation token looks a little kind of ad hoc,
+ but yeah, but we can possibly incorporate it
+ in the task group to make things easier for the task group.
+ - Yeah, one thing we might also want to touch on
+ is the debug we discovered yesterday
+ about block on, maybe I'm sharing my screen here.
+ Which Firefox is it?
+ This one.
+ Does it work for you?
+ - Yep.
+ - Perfect.
+ So yesterday we were debugging a really weird problem
+ while trying to integrate the Fetiment client,
+ which was that on shutdown, everything just got stuck.
+ And we could narrow it down in the end
+ to the drop function that I recently implemented
+ for the client struct.
+ Because as I said, there's this background task running
+ that executes the state machines.
+ And unless we terminate that,
+ it will just crash in a weird way
+ when the whole process has been shut down.
+ So what I did is I created the drop implementation
+ for client that checks if the client is the last reference
+ to the inner client struct.
+ And if that's the case,
+ then I wanted to execute some async code here
+ to just stop the task group and also join all the tasks,
+ like shut down and join all.
+ That's the command I want to do.
+ And to do that in the drop implementation,
+ which is not async, I used futures executor block on,
+ which essentially just takes the future
+ and executes it on the current thread
+ and just blocks until the future terminates.
+ The problem with that now was that client drop itself
+ was running inside an async executor.
+ And probably in a way,
+ actually, let's say it in a different way.
+ Like these async executors assume that eventually
+ you will yield and you will give execution
+ back to the executor.
+ Like you're not running forever.
+ Like you're not consuming a lot of CPU time.
+ So with that assumption,
+ apparently the executor didn't try to schedule
+ any other tasks or other threads,
+ but rather waited for this one to finish.
+ While at the same time,
+ we were waiting for other tasks to finish.
+ And so we got into a deadlock.
+ And the one interesting thing about this is
+ you can avoid that if you have to run any async code
+ in like an async context,
+ you can do that using Tokyo task block in place,
+ which tells the Tokyo executor
+ that you're running like some blocking long running code.
+ And if any other tasks want to run,
+ then they should run on a different thread.
+ Like they should be scheduled independently
+ of whatever's happening on this thread.
+ Unfortunately, like DPC used this to fix
+ my broken implementation in his PR.
+ The problem is in WebAssembly,
+ we do not have access to this function
+ because in WebAssembly, there's only one thread.
+ So it doesn't really make sense to tell the executor,
+ okay, if this one thread is blocked,
+ then please schedule on a different one.
+ So that doesn't really work.
+ And we cannot use this in WebAssembly.
+ So in my PR, what I'm doing instead is
+ the joining, the actual joining
+ is happening on a best effort basis.
+ Like if we are in WebAssembly, then we just don't join.
+ We just tell the executor to stop this task
+ and hope for the best that it actually stops in time.
+ Yeah, we're not waiting for it.
+ - So one question, we have,
+ pretty sure we have a FettyMint core block in place,
+ if I remember correctly.
+ What is that doing that's different than this?
+ And like, should this functionality
+ kind of maybe be rolled in there?
+ - There are quite a few functions
+ with very similar names like that.
+ Let's, let me check.
+ I will search for block in place.
+ You can probably--
+ - Yeah, does Tokyo task block in place normally?
+ - Yeah, but we have a wrapper
+ that just calls the function anyway.
+ - No such hint on Wasm, is the comment.
+ And it just calls the function directly.
+ - Yeah.
+ Yeah, so that might also be a good--
+ - I was probably going to fix this PR
+ kind of using something like this.
+ Like, yeah.
+ - I mean, we can still do your PR.
+ Like, I just tried to-- - Ah, but that's not
+ actually gonna work.
+ All right, because it's still prevents scheduling.
+ So-- - I mean, what we could
+ probably do is just call the stop function
+ instead of shut, the shut on function
+ instead of shut on join all.
+ And we can do this in the block on, I assume,
+ because like, at least I hope that none of the futures
+ that will be run on shutdown will do anything weird
+ that would be waiting for any other tasks.
+ So they probably also just send stuff on like one shot
+ sender and we can do that.
+ Then we could optionally, if we are not in a VASM,
+ then we could do the same as here, call join all.
+ I think that might be a viable fix
+ while keeping the task groups.
+ Yeah, but the more I worked with the task groups,
+ the leakier they appeared to me
+ and I was kind of fed up today, this morning
+ and just try to build something without them.
+ But either way works for me.
+ - I think we should probably remove this block in place
+ in the task as the way it is,
+ because it seems like a foot gun.
+ - Yeah.
+ I mean, it's there for a reason in Tokyo.
+ So we shouldn't just make it a no up.
+ - Yeah.
+ You might get a hang, like just calling it.
+ Seems to me.
+ On the VASM.
+ - Yeah.
+ I'm gonna make an issue about that.
+ All right, well, the last thing
+ if there's no more task group stuff was just
+ kind of see if we can strategize about the CI,
+ intermittent CI failures.
+ Like our CI has gotten kind of,
+ it's difficult to get pull requests through.
+ You got to rerun multiple times.
+ So yeah, how should we,
+ we could go kind of look through this,
+ the little tracking issue we have.
+ There's a couple of them that fail much more
+ than everything else,
+ but there are, there's just kind of like a wide range
+ of failures too.
+ Any thoughts?
+ - There's no golden rule really.
+ You just,
+ if there's anything that looks like,
+ you know something about it,
+ like a test in an area that you worked on,
+ maybe take a look and maybe it will be easy for you
+ to spot an issue.
+ If you have any idea where something might be going wrong,
+ what I find useful is introducing sleeps at points
+ where I think it could be a timing issue.
+ And then like, if you had to sleep at a certain point,
+ that might take a little bit longer from time to time.
+ And you can suddenly reproduce the error all the time.
+ Then you probably found the issue
+ or you can narrow it down at least.
+ But generally like debugging,
+ a distributed system is just kind of annoying.
+ So you can add lock statements.
+ Sometimes if it's just local tests,
+ you can attach a debugger.
+ But like debugging a running federation is not nice.
+ So we should maybe also try to get better
+ writing tracing locks.
+ Like if you think something isn't clear,
+ what is happening,
+ then just add some trace and debug statements.
+ And we can always turn them off later when running.
+ It doesn't really hurt as much.
+ - I was considering like we enabled merge queue.
+ So you get kind of additional check before merging stuff.
+ And it is possible to detect in the CI workflow
+ and do something slightly different.
+ So I was considering if we could maybe run tests
+ four times, let's say.
+ Because at that point, you're not as time sensitive
+ because you already got your brain on the PR itself.
+ - And let's first get our CI in order again.
+ And then we can do that.
+ Like otherwise we wouldn't be merging anything
+ for the next week at least.
+ - Yeah.
+ - Like if we turn this off.
+ - Is it still kind of flaky
+ because I was feeling like it was much better
+ in the last day or two.
+ - It's still flaky.
+ - I restarted like a handful of them this morning
+ and a few of them didn't.
+ - I think there is a bit coin D
+ that's happening very frequently.
+ - I thought we landed Eric's fix for that.
+ - No, but that's failed many, many times
+ because of that test.
+ Like I don't think it's--
+ - There are so many different flaky tests right now.
+ Like you fix one, there are still 10 left.
+ - There's a lot of, I went on the kind of a crusade
+ to change the block height to block count everywhere.
+ And that made me one thing,
+ it made me realize that in quite a few places
+ we depend on some kind of a check for is the height right.
+ And if you mess up this check,
+ oftentimes it will usually work.
+ So that explains in--
+ - Off by one.
+ - Yeah, either off by ones or some miscalculations.
+ There is a contract kind of timeout for lightning
+ and quite a few places
+ where we calculate something based on that.
+ - Yeah, actually the one test I fixed
+ where the fake Bitcoin D had the wrong block height.
+ This test passed all the time previously
+ because just out of abundance of caution,
+ I added the off by one to like the safe side
+ and then Kitman removed it because he noticed,
+ yeah, it's kind of useless waiting one block more.
+ And then suddenly this test began failing
+ from time to time.
+ And at first I thought, okay, I was right all along,
+ but then I noticed, okay, it's just our fixture
+ that's actually broken.
+ So yeah, these off by ones are tricky.
+ (mouse clicking)
+ - Yeah, but really, if you have any overview
+ of the project, then when you see such a fake test,
+ please try to look into it.
+ Like I don't think if you're only working
+ in parts of the code base or like only from time to time,
+ then it's not really worth spending too much time
+ 'cause it will just be too hard trying to figure out
+ what's going on.
+ Yeah, you need some intuition what's happening.
+ - My biggest issue, I tried to debug many of these tests,
+ but on my machine, they not happen often.
+ Like it's most of the time they work.
+ This is the main issue.
+ - Oh yeah, sometimes I actually,
+ I compile some other project in parallel
+ just to trigger CPU contention and stuff like that.
+ - Yeah, that makes sense.
+ - Yeah, I mean, I wonder if we could have
+ just like some little script that would do that,
+ or at least like try to run the same test
+ like 10, 20 times or something,
+ just run one, I don't know.
+ - Yeah, sometimes I also introduced loops inside the tests
+ around the place where it fails.
+ Like I'm currently debugging the test connect test,
+ and like it happens quite rarely that it fails,
+ but I just added a loop that repeats the test 100 times
+ and then it's quite reproducible.
+ - Yeah, the filters to pass to every scripts
+ are very useful to just run one failing test
+ over and over and over.
+ Instead of a whole test suite.
+ - Yeah, say that again.
+ - The script, like we have a slash script,
+ some name of a test script.
+ - Yeah.
+ - They should carry forward the arguments
+ to the cargo test.
+ So it's possible to just write the test script something
+ and the name of the test is failing
+ and run only this test on every run.
+ And then you put that in some kind of a loop.
+ I usually use while, what is it?
+ While something like a test,
+ and run it in a loop when it fails
+ and then you leave it for an hour or something.
+ - Okay, otherwise if there are no further topics,
+ I'd say we had a productive Thursday meeting here.
+ - Cool, yeah, I might just stick around a little afterwards.
+ I haven't done my share of debugging,
+ so I might just try to stay on the call here
+ and do a little bit of debugging for like a half hour,
+ hour, if anybody wants to stick around.
+ [BLANK_AUDIO]
