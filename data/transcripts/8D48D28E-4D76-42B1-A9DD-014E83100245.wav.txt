@@ -58,7 +58,7 @@
  And as I have here in my notes,
  Fedimint is a privacy-preserving custody system,
  which is a federated system of guardians.
- And I have MultiSig plus ShowMeInE-Cash
+ And I have MultiSig plus Chaumian E-Cash
  plus Lightning Network.
  Can you help us understand exactly what Fedimint is
  and what it is comprised of?
