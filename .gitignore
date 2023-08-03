@@ -1,6 +1,7 @@
 audio/**/*mp3
 audio/**/*wav
 audio/**/*webm
+audio/**/*mp4
 .env
 node_modules
 ecosystem.config.json

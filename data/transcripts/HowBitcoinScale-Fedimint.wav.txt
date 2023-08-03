@@ -1,0 +1,214 @@
+ This is Matthew Krader from Bitcoin University,
+ and today I wanted to talk about how
+ Bitcoin scales, in this case using a new protocol called
+ Fediment.
+ So as we all know, the Bitcoin base layer
+ can only handle about seven transactions per second,
+ seven TPS.
+ This isn't too bad, especially since that's
+ comparable to Fedwire, which is about nine transactions
+ per second.
+ And this is one of the trade-offs
+ that Satoshi made in order to ensure that Bitcoin could
+ be a decentralized, secure, and neutral base
+ layer for global money.
+ If you make your money highly centralized, like PayPal,
+ you can also make it really, really fast.
+ But then you have to deal with the censorship and control that
+ comes from centralization and control
+ and capture by a few insiders.
+ So with such slow TPS, transactions per second,
+ how exactly does Bitcoin expect to scale to billions
+ of people using it?
+ Well, one way that Bitcoin scales
+ is by having each transaction on the base layer
+ secure more value.
+ So back in 2012, an average single transaction
+ on the Bitcoin blockchain might secure $5, in other words,
+ one Bitcoin worth of value.
+ In 2032, an average single transaction
+ might secure $5 million, one Bitcoin of value.
+ Bitcoin also scales through faster, cheaper, more private
+ layer 2 solutions, like the Lightning Network.
+ And I'll link to this video in the description notes
+ below if you want to learn more about Lightning.
+ But today, we're going to talk about another scaling
+ solution called Fetiment.
+ Fetiment is an open source protocol
+ that allows people to create federated Chami and Mints
+ on Bitcoin, and more on that in a minute.
+ Feti itself is a private company building a software product
+ using this open protocol called Fetiment.
+ So we have Fetiment and Feti, the private company.
+ I think this is actually a really, really big deal.
+ And I haven't been as excited about a new protocol
+ in a really long time.
+ So here's how it works.
+ If you use the company Feti software,
+ this allows you to set up a quote unquote "federation,"
+ which is controlled by trusted members of your own community,
+ which are called guardians.
+ Or you can use the open source Fetiment protocol for free
+ and write your own software that does this.
+ So this is the option.
+ And this will create a lot of competition,
+ which is good for the consumer.
+ So you set up a federation controlled by trusted members
+ of your community.
+ The community in question might be a large extended family,
+ a village, a tribe, a club, a neighborhood,
+ an online community, a Bitcoin conference, for example,
+ as we're going to see.
+ And the guardians of this federation that you set up
+ will be people from the community that you already
+ know and that you are probably already trusting
+ with growing your food, babysitting your kids,
+ watching your house when you travel.
+ If any of you are holding Bitcoin
+ for less tech savvy members of your family,
+ for the very young or the very old,
+ you can understand how this might work.
+ So these guardians of the federation
+ are also signers of an M of N multi-sig setup.
+ So for example, you need 7 out of 10 village elders,
+ if they're the guardians of your federation,
+ to sign a Bitcoin transaction to move the money.
+ One way of thinking of federations
+ is as an online space where members
+ can use their smartphones to message each other,
+ to send each other money, store sensitive individual
+ or community data in an encrypted manner.
+ But rather than trusting Brian Armstrong of Coinbase
+ or Sam Bankman-Fried of FTX to hold your Bitcoin,
+ you're trusting people that you already know
+ and trust in real life.
+ And if they steal from you or do something wrong,
+ they will be ostracized from the community
+ and lose access and lose social capital.
+ So that's a strong incentive against bad behavior,
+ along with the multi-sig setup,
+ which means that multiple guardians
+ would need to collude to hurt you.
+ If you're finding this video helpful so far,
+ I just ask you to hit that subscribe button.
+ That would really help out the channel and its reach.
+ So let's say that you join your local village federation
+ by simply, you download the Fetty app on your phone,
+ you scan a QR code invitation from your community,
+ and then you are part of the federation.
+ You may also choose to send in, let's say, 100,000 sats.
+ One Bitcoin is comprised of 100 million sats,
+ so 100,000 sats is about $30 today.
+ and then what happens to those SATs or Satoshis is they immediately get secured by the emulsion.
+ to six set up on chain, and then the federation issues you e-cash, which is also denominated
+ in Sats or Satoshis that you can use to pay people inside of the federation.
+ So now you can use that e-cash to pay the local butcher, the local farmer, the artist,
+ or a family member who are also part of the federation.
+ And these e-cash payments within the federation are basically free and instant.
+ At some point, Feddy may charge a couple of basis points, as I understand it, per transaction,
+ but it'll still be very, very low transaction fees, much lower than we have certainly with
+ credit cards these days.
+ And here's another amazing thing.
+ If your phone happens to be offline, you can still pay people successfully using this e-cash
+ since Chami and e-cash is a bearer asset, and you can just hold it on your phone and
+ use it without needing an internet connection.
+ So that's one answer to people who wonder how Bitcoin might work if the local internet
+ is down.
+ Now it's important to note that this e-cash within the federation is not an altcoin.
+ It is a version of Bitcoin, and it can at all times be cryptographically proven to be
+ fully backed by real Bitcoin that is being held in that multi-sig address by the federation.
+ And anytime you want, you can ask the guardians to convert your unspent e-cash back into Sats
+ and then withdraw it to self-custody, either through an on-chain payment using the base
+ layer of Bitcoin or using the Lightning network.
+ Now try to imagine a world of thousands of federations, maybe even millions of federations,
+ different communities, each linked to each other using the Lightning network.
+ Each of these federations you can visualize as being like an island, a community, and
+ then all the communities and islands are linked by the Lightning network.
+ You can also think of a federation as something like a cross between a community bank that
+ holds your money and a Facebook group where you have your social activity, but obviously
+ infinitely better because your local community's money and online data is secured by local
+ people rather than trusting big banks or bankers or big tech.
+ I think this is exactly how we increase Bitcoin adoption globally.
+ Here's another plus, the guardians of the federation cannot see how much Bitcoin you
+ hold inside the fediment or what transactions you are making with people inside of the federation.
+ So this is what we mean when we say by making Bitcoin usage more private, add higher layers.
+ Now federations can also compete globally for members obviously.
+ Let a million federations bloom.
+ This is healthy free market competition.
+ So unlike having just a few large global exchanges like Coinbase and Binance where non-tech savvy
+ people store their Bitcoin or even worse, BlockFi and Celsius, instead you're going
+ to use a federation that you trust or federations that you trust and that treat you well and
+ that compete for your business.
+ And thanks to the Lightning Network and the Bitcoin Network, each federation as we said
+ is interoperable with every other federation.
+ It's very easy to move between them using the Lightning Network.
+ Another nice thing about having lots of federations, it makes it really difficult for any government
+ to go after them.
+ So governments and regulators may not even know who the members and guardians of each
+ federation are.
+ And if they shut down one federation in a certain locale through force or regulatory
+ action, 10 more new federations can spring up in its place.
+ And a federation can be in a different country or jurisdiction with more friendly regulations.
+ You can have the guardians of the federation be in different jurisdictions as well.
+ A federation can obviously contain members from every region, any region of the world.
+ If you extend this, you can begin to imagine a world in which the majority of Bitcoin is
+ stored on 100,000 different federations scattered around the world rather than being concentrated
+ on large exchanges like Binance or Coinbase.
+ Now if you're a serious Bitcoiner, you'll probably still have most of your Bitcoin in
+ self-custody, either single SIG or multi-SIG on a hardware wallet in cold storage.
+ But you may also choose to send some of your Bitcoin to a local federation, your local
+ village, your local neighborhoods federation for example, for everyday purchases.
+ Or you may choose to earn e-cash, which is of course convertible as we said to on-chain
+ BTC or lightning BTC at any time.
+ You may choose to earn e-cash by providing goods and services to federation members.
+ And when you have enough e-cash built up inside the federation, you can always withdraw to
+ and your hardware wallet. One cool thing is, as I understand it, you can run any kind of software
+ inside of a federation like this, which is even more exciting and makes this project even more
+ extensible. If you want to read more about the protocol itself, you can go to Fetimint.org,
+ which I'll link to in the description notes below. This word Fetimint comes from sort of a word
+ smash of federated Chamian mint, and it's called a Chamian mint. It's called Chamian e-cash,
+ which was conceived of by David Chom in the 1980s. And his version of DigiCash or e-cash
+ was actually almost included in an early version of the Windows operating system. We can imagine
+ how different history would have been if that had happened. But as I understand it, David Chom
+ wanted a little too much money from Bill Gates and it never happened. But this is an idea whose
+ time has come. It did not work when you had to back it with US dollars, but it will work if you
+ can back it with Bitcoin. If you want to learn more about the company that is building on this
+ protocol, it's Feti.xyz and I'll link to that in the description notes below. Feti, the company
+ was founded by three people, by Eric Sirian, by Obi Nwasu, and by Justin Moon. And so it'd be very
+ exciting to see what they do with this. They launched a version of this to demonstrate to
+ people at the Prague Bitcoin conference, where people used it to chat with each other, to send
+ and receive sats and buy stuff when they're at the Bitcoin Prague conference. I'll link to that in
+ the description notes below. I know there are going to be a lot of questions about Bitcoin
+ custody and the trade-offs involved. Why in the world would you want to give your Bitcoin to a
+ federation? And I think we have to think about it in these terms. So you first have your centralized
+ third-party custody done by people you don't know personally. And this has been the model
+ for most people where Sam Bankman-Fried holds your Bitcoin or Celsius or BlockFi or Coinbase.
+ And this is always a bad idea. This is where most Bitcoin, how most Bitcoin I believe is still being
+ held in third-party custodians who don't have to give you your Bitcoin back if they choose not to,
+ or if the government tells them not to. So this is always a bad idea, this sort of centralized
+ third-party custody where you don't really know the people who are holding your Bitcoin and you're
+ forced to trust them. That's always a bad idea. Then at the other end of the spectrum, we have
+ self-custody. You hold your own Bitcoin on a hardware wallet. This is always a good idea,
+ but not everyone will do it as we said at the beginning of this video. Very young people,
+ very old people, very non-tech savvy people. And so Fetiment is a sort of in the middle of this.
+ It's a compromise where the guardians are people that you already trust both individually and you
+ trust not to collude against you and steal your Bitcoin. Now you may turn out to have been wrong,
+ to trust them. They may end up stealing your Bitcoin, but they do have social capital to lose.
+ Whereas Sam Bankman-Fried is on the other side of a computer terminal. He doesn't really care
+ about you and you don't really know him. So this is the difference when you have people,
+ trusted people from your community running a federation. And again, as we said, when you
+ reach a certain amount of Bitcoin or Sats within the federation in the form of e-cash, it's probably
+ wise to ask to withdraw it and hold it on a hardware wallet in self custody if you're able
+ to do this. So one way of visualizing this is your hardware wallet again is your long-term savings.
+ That's like your savings account. And then the federation or Fetiment could be like your checking
+ account where you spend money within the community. And again, you could be part of a number of
+ different federations. You could have the federation where you do your grocery shop,
+ shopping at organic grocery stores. You can have the federation where all the ranchers are,
+ where all the farmers are, where all the artists are, the musicians, et cetera. And in this way,
+ I think this is a way of bringing Bitcoin adoption to many, many more people in the world and really
+ helping it to spread and to be used in a decentralized, localized manner. So I'm
+ very excited about Fetiment and I'm excited to see what the guys at Fetty continue to roll out.
+ If you enjoyed this video, be sure to hit that subscribe and like button. Hit the notification
+ bell if you want to be notified when I publish my next video and let me know your questions and
+ comments in the comment section below, especially what you think about Fetty,
+ federations and Fetiment. Thanks a lot for watching and I'll see you in the next video.
