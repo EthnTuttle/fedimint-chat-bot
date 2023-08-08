@@ -1,0 +1,19 @@
+Q: Is it possible to send E-Cash directly to a user of another federation, and if not, why not?
+
+A: Fedimint payments surface as LN payments already. You can transact directly ecash but with a LN gateway provider, all payments are LN by default. 
+
+User A wants to revive eCash and hits a gateway of Mint A and receives an invoice to provide to User B of Mint B. Mint B’s gateway takes the invoice and does all the normal LN stuff. When the transaction settles, Mint B issues the eCash to User B. 
+
+Behind the scenes, both Mint gateways have contracts to swap eCash for LN sats or vice versa, depending on directionality. 
+
+In short, if both federations have LN gateways, it is possible to send between them. Just not using the offline ecash system. HOWEVER, if the ecash is sent offline from A to B. B could go to Mint A and claim the ecash then route out to their own Mint or LN wallet.
+
+Q: Can somebody explain how do offline payments work with Fedimint? How does know the receiver a payment has been done by the sender if at the time of the payment an Internet connection is down?
+
+A: Offline works because eCash is a string of data that can be validated by an offline client. It's signed by the federation so a client of said federation can validate the signature using the federations public key (generalized term).
+
+So i present you eCash string(s), most likely multiple strings since the Mint will break down the amounts into pieces (like quarters, dimes, nickels), your client checks the signature for validitiy.
+
+Once you're online, you take those ecash notes to the Mint and redeem them for new ones. This is where an attack could occur. If I were malicious, I could get online first and redeem the same eCash that I sent you, prohbiting you from claiming them. 
+
+So while it's possible to transact offline, it presents a race condition. This can be generally avoided with establishing trust within the Mint. Especially in client software. ie. You know I'm using a fedimint client that burns the ecash sent so I cannot redeem it.
