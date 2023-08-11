@@ -1,8 +1,8 @@
 {
   "names": {
-    "ethanTuttle": "b0635d6a9851d3aed0cd6c495b282167acf761729078d975fc341b22650b07b9"
+    "ethanTuttle": "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1"
   },
   "relays": {
-    "b0635d6a9851d3aed0cd6c495b282167acf761729078d975fc341b22650b07b9": [ "wss://relay.damus.io" ]
+    "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1": [ "wss://relay.damus.io" ]
   }
 }
