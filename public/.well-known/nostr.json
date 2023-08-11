@@ -1,8 +1,8 @@
 {
   "names": {
-    "ethanTuttle": "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1"
+    "EthanTuttle": "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1"
   },
   "relays": {
-    "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1": [ "wss://relay.damus.io" ]
+    "5ec98673feecaa935c81450169221259a2f132634e7891a0c537dcb63ef3cfb1": [ "wss://relay.damus.io", "wss://nos.lol", "wss://relay.current.fyi", "wss://nostr.bitcoiner.social", "wss://relay.plebstr.com"]
   }
 }
