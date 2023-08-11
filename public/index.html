@@ -1,114 +1,144 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mint Mind - A Fedimint Q&A Bot</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/alby-tools@3.2.1/dist/index.browser.js"></script>
-</head>
+  <head>
+    <title>Mint Mind - A Fedimint Q&A Bot</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/alby-tools@3.2.1/dist/index.browser.js"></script>
+  </head>
 
-<body>
-  <h1 class="topofpage">Mintmind</h1>
-  <div class="topofpage">
-    <img src="./mintmind.png" class="mintmindlogo" />
-  </div>
-  <h3 class="topofpage">A Fedimint Q&A Bot</h3>
-  <div class="header">Made by Ethan Tuttle (NIP05: ethanTuttle@learnfedimint.com) and @jordanwilk90</div>
-  <div class="header">This bot might have typos and errors as this is a basic Proof of Concept. Sats fund ongoing development and API/server costs.</div>
-  <div class="header">Code for Mint Mind can be found at https://github.com/ethnTuttle/fedimint-chat-bot</div>
-  <div class="header"><a href="https://fedimint.org/docs/intro">RTFM instead?</a></div>
-  <div class="center">
-    <form id="questionForm">
-      <div class="form">
-        <label for="satoshiAmount">Select the satoshi amount:</label>
-        <select id="satoshiAmount" name="satoshiAmount">
-          <option value="42">42</option>
-          <option value="168">168</option>
-          <option value="1031">1031</option>
-          <option value="6102">6102</option>
-          <option value="10101">10101</option>
-        </select>
-      </div>
-      
-      <div class="form">
-        <label for="question">Enter your question about Fedimint:</label>
-        <input type="text" id="question" name="question" maxlength="100" required>
-      </div>
-      
-      <div class="form">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
+  <body>
+    <h1 class="topofpage">Mintmind</h1>
+    <div class="topofpage">
+      <img src="./mintmind.png" class="mintmindlogo" />
+    </div>
+    <h3 class="topofpage">A Fedimint Q&A Bot</h3>
+    <div class="header">
+      Made by Ethan Tuttle (NIP05: ethanTuttle@learnfedimint.com) and
+      @jordanwilk90
+    </div>
+    <div class="header">
+      This bot might have typos and errors as this is a basic Proof of Concept.
+      Sats fund ongoing development and API/server costs.
+    </div>
+    <div class="header">
+      Code for Mint Mind can be found at
+      https://github.com/ethnTuttle/fedimint-chat-bot
+    </div>
+    <div class="header">
+      <p>
+        <a href="https://fedimint.org/docs/intro">RTFM instead?</a> or
+        <a
+          href="https://satellite.earth/n/Fedimint/npub1tmycvul7aj4fxhypg5qkjgsjtx30zvnrfeufrgx9xlwtv0hne7cs67el78"
+          target="_blank"
+          >join the nostr community</a
+        >
+      </p>
+    </div>
+    <div class="center">
+      <form id="questionForm">
+        <div class="form">
+          <label for="satoshiAmount">Select the satoshi amount:</label>
+          <select id="satoshiAmount" name="satoshiAmount">
+            <option value="42">42</option>
+            <option value="168">168</option>
+            <option value="1031">1031</option>
+            <option value="6102">6102</option>
+            <option value="10101">10101</option>
+          </select>
+        </div>
 
-  <div class="loading-spinner-container">
+        <div class="form">
+          <label for="question">Enter your question about Fedimint:</label>
+          <input
+            type="text"
+            id="question"
+            name="question"
+            maxlength="100"
+            required
+          />
+        </div>
+
+        <div class="form">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="loading-spinner-container">
       <div class="loading-spinner"></div>
       <p id="resultParagraph" class="result-paragraph"></p>
-  </div>
+    </div>
 
-  <script>
-    const questionForm = document.getElementById('questionForm');
-    const resultParagraph = document.getElementById('resultParagraph');
-    const loadingSpinner = document.querySelector('.loading-spinner');
-    
-    document.getElementById('questionForm').addEventListener('submit', async function (event) {
-      event.preventDefault(); // Prevent form submission
-      if (!window.webln) {
-        alert("Please install the Alby Browser Extension to pay the required amount: getalby.com");
-      return;
-    }
-      // Show the loading spinner while waiting for the response
-      loadingSpinner.style.display = 'block';
-      
-      const selectedAmount = document.getElementById('satoshiAmount').value;
+    <script>
+      const questionForm = document.getElementById("questionForm");
+      const resultParagraph = document.getElementById("resultParagraph");
+      const loadingSpinner = document.querySelector(".loading-spinner");
 
-      const ln = new albyTools.LightningAddress("ethntuttle@getalby.com");
-      await ln.fetch();
-
-      try {
-        const invoice = await ln.requestInvoice({ satoshi: selectedAmount });
-        console.log(invoice.paymentRequest); // print the payment request
-        console.log(invoice.paymentHash); // print the payment hash
-        await webln.enable();
-        await webln.sendPayment(invoice.paymentRequest);
-        if (await invoice.isPaid()) {
-          const questionInput = document.getElementById('question').value;
-          fetch('https://learnfedimint.com/', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({"question": questionInput})
-          })
-            .then(response => {
-              console.log(response);
-              return response.json();
-            })
-            .then(response => {
-              console.log(response);
-              document.getElementById('resultParagraph').textContent = response.answer;
-            })
-            .catch(() => {
-              console.log('error');
-            })
-            .finally(() => {
-              loadingSpinner.style.display = 'none';
-            });
-          } else {
-            loadingSpinner.style.display = 'none';
+      document
+        .getElementById("questionForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent form submission
+          if (!window.webln) {
+            alert(
+              "Please install the Alby Browser Extension to pay the required amount: getalby.com"
+            );
             return;
           }
-        } catch (e) {
-        document.getElementById('resultParagraph').textContent = "My brain is powered by sats. Payment failed. Cannot compute. 🚫🧠"
-        loadingSpinner.style.display = 'none';
-        console.error(e);
-        return;
-      }
+          // Show the loading spinner while waiting for the response
+          loadingSpinner.style.display = "block";
 
-    });
-  </script>
-</body>
+          const selectedAmount = document.getElementById("satoshiAmount").value;
 
+          const ln = new albyTools.LightningAddress("ethntuttle@getalby.com");
+          await ln.fetch();
+
+          try {
+            const invoice = await ln.requestInvoice({
+              satoshi: selectedAmount,
+            });
+            console.log(invoice.paymentRequest); // print the payment request
+            console.log(invoice.paymentHash); // print the payment hash
+            await webln.enable();
+            await webln.sendPayment(invoice.paymentRequest);
+            if (await invoice.isPaid()) {
+              const questionInput = document.getElementById("question").value;
+              fetch("https://learnfedimint.com/", {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ question: questionInput }),
+              })
+                .then((response) => {
+                  console.log(response);
+                  return response.json();
+                })
+                .then((response) => {
+                  console.log(response);
+                  document.getElementById("resultParagraph").textContent =
+                    response.answer;
+                })
+                .catch(() => {
+                  console.log("error");
+                })
+                .finally(() => {
+                  loadingSpinner.style.display = "none";
+                });
+            } else {
+              loadingSpinner.style.display = "none";
+              return;
+            }
+          } catch (e) {
+            document.getElementById("resultParagraph").textContent =
+              "My brain is powered by sats. Payment failed. Cannot compute. 🚫🧠";
+            loadingSpinner.style.display = "none";
+            console.error(e);
+            return;
+          }
+        });
+    </script>
+  </body>
 </html>
