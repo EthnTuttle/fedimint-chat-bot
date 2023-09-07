@@ -1,0 +1,678 @@
+ Thank you.
+ Ethan's are, those of you who don't know, Ethan's our trustee recording and uploading
+ to BitcoinTV.com guy.
+ I was just sharing this with a new contributor.
+ It's really useful having that big library of little videos.
+ So thanks for doing that, Ethan.
+ Okay.
+ So we got some topics here prepared with the help of Cody.
+ So got some Lightning stuff, consensus stuff, CI client, I guess two client sections.
+ These should probably be, let me just edit those.
+ Those are kind of all the same.
+ So, well, I already opened everything, so we'll just, we'll just deal with it.
+ Cool.
+ So let's get going.
+ Okay.
+ So don't allow same pre-image for sale twice.
+ Sounds like an important fix.
+ Yeah.
+ So that's a fix to like a potential security bug.
+ While fixing it, I actually figured that there might already be a coincidental check that
+ would prevent it from being a security issue.
+ But the basic idea is like when you are receiving money from the Lightning network on pediment,
+ then what you're actually doing is you tell the federation to sell a pre-image or an encrypted
+ pre-image to anyone who will pay a certain amount of money.
+ And so what you do is you create this one consensus item called the offer, which contains
+ the encrypted pre-image and the amount of money the buyer will have to pay.
+ But there is a potential attack where like if the Lightning gateway wants to buy the
+ pre-image, but doesn't want to pay the amount of money that is being sold for, they just
+ take the same encrypted pre-image and like put it up for sale for a lesser amount of
+ money.
+ So they could essentially steal it by doing that.
+ I think currently it's only a problem if they are able to cooperate with the guardians.
+ But yeah, it's definitely a problem because we don't trust any particular of the guardians,
+ and only that a certain amount of them will be honest.
+ And like what I'm implementing here is essentially preventing the most simple version of this
+ attack that you're actually just uploading the same encrypted pre-image again, that there
+ might still be some other more intricate problems.
+ And Joshy-san has a much more comprehensive idea for a fix.
+ We can talk about this at maybe a deep dive in two weeks or something like that when you
+ figured out all the details, but we have something better in the works.
+ But this is a stopgap solution for them.
+ The issue has been open for an embarrassing amount of time.
+ So I thought I might at least implement this version of the fix.
+ Cool.
+ What was the thing behind deleting these?
+ The migration?
+ I had to add a database key.
+ So one thing I could do is create a database migration, or I could just regenerate the
+ database, the base database that we would use to check if migration is needed.
+ And since we don't have any releases and we aren't optimizing for backwards compatibility
+ here, it's easier to just regenerate the database.
+ If ever, for anyone, ever the migration test is failing, you can actually regenerate the
+ base database from which the migration test is run instead of writing an actual migration.
+ Unless you want to patch an already released version, then you'd have to write a migration.
+ Cool.
+ So another Lightning-related thing.
+ So this was blocked on the client being able to join the federation, but that was merged.
+ So I think Jotam is off this week, but it looks like he made some changes afterwards
+ and marked it ready for review.
+ So this might be ready.
+ Maybe Mr. Cool Guy and Eric could take a look at this.
+ Yeah, just haven't gotten to it yet.
+ Yep, we'll do.
+ Cool.
+ Yeah, so this one has been sitting around for a little while.
+ How's the testing coming, Mr. Cool Guy?
+ I just haven't gotten to it yet.
+ I think it actually should be pretty straightforward.
+ I don't know.
+ I was looking at the backup restore stuff first, which might actually be a bit more
+ involved than I thought.
+ So this actually might be a quicker fix than that.
+ So I could probably get to this this week.
+ Cool.
+ No, I mean, yeah, no worries.
+ Just want to update it.
+ Because this is one, like once we have a release, we really need this in there just because
+ like anybody who tries to plug in the gateway with a real node will have problems just because
+ we'll be, you know, our invoice will be too big.
+ I think Eric might have mentioned he already had a little issue with that.
+ Yeah, I was connecting the gateway to Lightning Node with like 20 channels and it just exceeded
+ some invoice limit.
+ And it actually panicked.
+ So maybe we should check that we don't exceed any of these limits and at least have a useful
+ error message.
+ I think this will actually fix it.
+ Shouldn't be possible to exceed these limits if we limit it to two.
+ Cool.
+ One interesting part, I think I commented on this issue.
+ Like if we made it flexible to what we limit the number of routing hints or extra routing
+ hints, then we could also fix another issue at the same time.
+ Because like maybe in some cases you don't even want any of the second stage routing
+ hints.
+ Because when we are talking about the gateway giving routing hints to like the client, then
+ that's in the invoice it turns up as a second stage of routing hints.
+ Every invoice that's generated by FeddyMint already needs at least a one-hop routing hint
+ that tells the payer to pay us via the gateway.
+ But if the gateway is hard to reach, then we also add some routing hints that say, okay,
+ you can now reach that gateway via this other node.
+ And that's the kind of routing hint that we are trying to limit here.
+ So if it was dynamic or like if you could just set a configuration variable in the config
+ file, then we could also just implement making these routing hints optional.
+ Okay.
+ So what we're doing is I think we put in always one routing hint that's one hop, and
+ then we add some more routing hints that are two hops.
+ They're actually quite redundant because the last hop of these two hop routing hints is
+ always the same, which is like the gateway node.
+ Unfortunately, there doesn't seem to be any more efficient way of encoding that.
+ It would actually be interesting to look into Bolt 12 if there's a more efficient way in
+ there or if we can get one in there.
+ Cool.
+ Here's a test for the failed peg outs, failed peg out refunds.
+ Eric?
+ Yeah.
+ So essentially, I had it on the client to do list.
+ I don't even know why.
+ But we didn't test that we are actually getting refunds when a peg out is failing.
+ And now we do have a test for that.
+ And I think it works now.
+ I just had to play with some timeouts and stuff.
+ Okay, cool.
+ Well, yeah, ready for review.
+ Looks like it's passing CI.
+ CI, I guess we'll talk about it now.
+ Like CI seems like it's gotten quite a bit better the last week or so.
+ Not far out of the woods yet.
+ If we come across PDRs that are related to that, we can point them out.
+ Yeah.
+ DPC, what is this one?
+ I don't even see the difference.
+ I'm trying something.
+ Ah, okay.
+ Well, let us know if it works.
+ Ignoring environment makes it faster?
+ There are some other changes I tried, but I need to verify it again.
+ Cool.
+ Yeah, still a tracking issue.
+ We can skip that one.
+ We're caching the cargo directory.
+ This prevents downloads in CI?
+ Yeah, in the lint.
+ Because we run the lint outside of Nix build environment, so we can actually cache cargo
+ here.
+ Oh, okay.
+ We're just running it inside the Nix develop shell, but it's not a Nix build itself, so
+ we can actually cache it.
+ Why aren't we running it with the Nix build?
+ Because it's simulating what's happening when you run git commit in a dev shell, which is
+ not really building Nix derivation.
+ Okay.
+ Makes sense.
+ So we had an issue to log the client version when it starts up in order to help debugging,
+ just to make sure you got the version of the client you think you do.
+ Looks like Brad made a little progress here, and it has a PR.
+ Yeah, it's been improved.
+ Oh, sorry, go ahead, Erik.
+ I don't fully understand it, but it seems to work, so I'm quite happy about it.
+ Yeah, I could do a quick summary of why I think it works.
+ That would be awesome.
+ Yeah.
+ So it's kind of captured in the issue.
+ It's a little, a word puke, so not the easiest thing to follow.
+ But from my understanding, so there's a build script that cargo will run, and there's a
+ way to print to, yeah, specifically that.
+ That runs a script that will print to a special file that exists.
+ So at compile time, first it will compile and execute the build script, and that will
+ be this intermediate step that subsequent compilation will read from.
+ So if you have these magic strings, you can actually define environment variables that
+ are available only at compile time for the rest of the crate.
+ So when it does that, you can use the env macro, which will read the compile time variables
+ and assign that to a static string, and that's why that exists.
+ So it's not actually something that exists on the user's machine later.
+ It's just there at compilation.
+ Well, that's a good explanation if you get one of those.
+ Any other questions about this?
+ It's pretty cool.
+ We should just merge it.
+ I just kind of held off because it was still not ready for review or something like that.
+ Yeah, I went ahead and updated that, so we should be good.
+ Okay, cool.
+ Thanks a lot.
+ Thank you.
+ Yeah, thanks for the review.
+ That will help a lot with debugging, I think.
+ Sweet.
+ And I did test that with your test repo.
+ The laptop test, yes.
+ Exactly.
+ Yeah, and as you assumed, it was just cherry-picked on top of your most recent commit hash.
+ Yeah.
+ Awesome.
+ Very useful.
+ Okay.
+ So it looks like Ethan was having some trouble with FedEvent CLI.
+ Yeah, he sent me the database from the client, but I haven't gotten around to actually looking into it yet.
+ Oh.
+ Yeah, I just need to debug at some point.
+ For what it's worth, I turned it off and turned it back on again, and it worked.
+ So it was sort of a one-time thing.
+ Yeah.
+ I mean, still, it's kind of scary.
+ I'd rather look into it and figure out what the problem is.
+ Maybe it's just the timeout that I hit in CI.
+ That would be ideal.
+ Sometimes we are setting the timeout a little bit too tight for the pack-in to actually work.
+ I'm also one of those lovely M1 MacBook users, so it could just be weirdness with that as well.
+ Yeah, maybe something took too long when running one time.
+ Yeah.
+ Interesting.
+ Okay, so here's just a high-level description of a problem.
+ So we have these invite codes, right?
+ That's how you join a federation.
+ So currently -- we can probably find it.
+ It encodes a couple things -- URL to one of the guardians, a download token, and a federation ID.
+ So what is a download token?
+ We had this previous issue where we wanted a mechanism to basically limit how many times somebody could join a federation.
+ And so that's what the download token is.
+ The federation will put a download token in, and then they can count how many times that's been used.
+ So one problem with that is that previously we would encode enough URLs.
+ So this would be a VEC, basically, the URLs, right?
+ So there would be one or more URLs.
+ So as long as the federation was in consensus, you could still join it.
+ So, for example, in a three or four, I think there would be two API URLs.
+ So even if one of the two was offline and the federation was still in consensus, you could join it.
+ And after that, because the download tokens aren't under consensus at all, it only includes one.
+ One, so you can get in a scenario where, let's say,
+ there's three guardians, A, B, and C, and B is down,
+ and you got an invite code from B, who is down.
+ Now you can't join, even though the federation is in consensus.
+ So it would be nice if you could always join if the federation
+ was still in consensus.
+ Now, how to preserve the ability to do download,
+ to limit the client downloads while preserving that,
+ I'm not really sure how to do that,
+ but just made an issue to just explain this problem.
+ So it's more of a little bit of a research topic,
+ to just think of how it could work here.
+ I mean, one thing I could imagine is just having two
+ sorts of download links.
+ One of them that's like the old one, one of them
+ that's the new one.
+ You could-- I guess you could put the download tokens
+ under consensus, but that's complicated, so I don't know.
+ Any thoughts here would be welcome.
+ Does anybody know anybody at Discord?
+ Because they do a really good job at the expiration links
+ and long-lasting links and stuff.
+ Is that what you're imagining here?
+ Like one link or code for always can join,
+ and then one link or code that's good for just one time or--
+ Yeah.
+ I mean, I think in the future, we'd
+ like to support more of these use cases.
+ The one thing you don't want is you've
+ set up a federation for you and your fantasy football
+ team or something.
+ And then a bunch of people that you don't know
+ end up joining it.
+ And now you're-- we'd like to have some option to limit
+ who joins optionally.
+ I know you said that having it be part of consensus
+ would be complicated, but is that
+ a complexity that's worth biting off for certain value
+ that we get?
+ I mean, it kind of makes a little sense to me
+ that at some point, you might want the federation to agree
+ who and how can people join.
+ It's not really a hard limit anyway.
+ That's the problem.
+ It's just a nice hint to the client
+ to please don't circumvent this measure
+ and let the user join anyway.
+ Because if you-- once you have a config from the federation,
+ in theory, you can share it with other people.
+ The limitation with the join code
+ is just like a garden fence.
+ You can still hop over it if you want to.
+ I see.
+ I see.
+ Yeah, that makes sense.
+ So it's probably not worth the complexity
+ of adding consensus items for it,
+ because it doesn't really work anyway.
+ Yeah, so someone could download the config
+ and just stick it in Dropbox or something,
+ and that could be shared instead of the invite link.
+ Yeah.
+ I mean, the positive thing would be
+ that most clients would probably not support directly
+ importing config.
+ But if someone builds such a client,
+ and our CLI client is such a client,
+ then nobody can keep you from using it.
+ And we don't want to attach these to every request,
+ because that could reduce your anonymity, right?
+ Yeah, that's the problem.
+ You don't really know if the access token you have
+ is unique to you and thus leaks your identity.
+ One could come up with a vastly more complex scheme for that.
+ But yeah, it's not really worth it, I think.
+ So is there a concrete way that we
+ could improve this in the near term?
+ I mean, I think it would be easier
+ to go away from the concept of having
+ a certain amount of downloads, and rather
+ the concept of saving which tokens were already used.
+ And then, yeah, just not allowing
+ to download with the same token twice.
+ I don't know.
+ I have to think about it a little bit more.
+ There are different trade-offs with disk space
+ and complexity of coordinating between the guardians,
+ stuff like that.
+ Is this possibly something that can be
+ solved with an optional module?
+ Possibly, yeah.
+ If you want to make it a consensus thing,
+ then it should probably become an optional module.
+ OK, yeah, my initial thought is just Nostra and pubs,
+ but that's because it's always on my mind.
+ Cool, I'll try to make a couple notes on here
+ based on that discussion.
+ So we have an issue here making all the tools
+ compatible with unknown modules.
+ It looks like DPC made some progress there making
+ dbtool handle unknown modules.
+ So I guess there's maybe the load test tool, the recovery
+ tool, maybe some others that can't currently.
+ But some progress there?
+ Yes.
+ OK, Eric, what is this one?
+ Notified state machine that's being added.
+ Oh, yeah.
+ That's a kind of embarrassing one.
+ So originally, the notifications in the client
+ are purely internal thing.
+ You don't really interact with them
+ as the user of the client library.
+ But what they're used for internally foremost
+ is to, for example, recognize when a transaction is accepted.
+ For example, some of the state machines,
+ for example, Lightning state machine
+ is waiting for a contract being funded.
+ And for that, it has to wait for the transaction being
+ successfully submitted and accepted
+ by the federation, which is managed by a different state
+ machine.
+ So these state machines have to be
+ able to subscribe to outcomes of each other.
+ And that's what the notifications did originally.
+ For that, we only need notifications
+ whenever a state transition from old state to new state happens.
+ And that worked perfectly fine.
+ Later on, they added the functionality
+ that you can subscribe to balance changes of the client.
+ The client manages a bunch of money.
+ And whenever the balance of money that it holds changes,
+ we want to update user interface, for example.
+ And there, I didn't think about that now we are not only
+ interested in state transitions, but also
+ about new state machines being added to the executor.
+ Because a state machine being added
+ might actually be the triggering event
+ for a balance being reduced.
+ And that led to the balance update stream
+ not showing all the balance updates.
+ In particular, whenever your balance was going down,
+ it wouldn't show.
+ It would only show it going up, which might sound nice.
+ But that's a bug.
+ And this PR fixes it.
+ Cool.
+ It's kind of involved.
+ I had to add a bunch of more notification
+ system to the database, which is slightly annoying.
+ Because we can only fire these notifications
+ when the database transaction actually gets submitted--
+ committed and accepted.
+ If anyone wants to know more about that,
+ feel free to reach out.
+ We could do a deep dive.
+ Cool.
+ Update streams being static.
+ Another one of these.
+ That's the second thing I noticed while working
+ on my FedEventLaptos test.
+ Currently, whenever you request updates, for example,
+ on the balance held by the client
+ or on the progress of certain operations,
+ you get a stream object.
+ But that stream object has this lifetime
+ of the client, which means you cannot really use it
+ across a thread or task boundaries.
+ You cannot really send it to another thread,
+ because then you'd need to make assumptions about lifetime.
+ And that leads to a bunch of problems,
+ especially if you're interacting with UI
+ and you want to give the stream to the UI
+ to automatically update whenever something happens.
+ But you cannot guarantee that the client will live long
+ enough or will live longer than the UI itself.
+ So currently, the hack is to make Rust forget about
+ the client and give it a static lifetime
+ to essentially leak some memory, which is really annoying.
+ And there should be a way of not keeping a reference
+ to the client inside the stream.
+ Cool, makes sense to me.
+ Any other comments here?
+ Just interrupt.
+ So we had an issue to improve the tutorial in our docs.
+ We have this little devrunning.md
+ that was written like a year ago.
+ And things have kind of changed.
+ And for example, it doesn't have on-chain deposits/withdrawals,
+ which are interesting to do.
+ And it looks like Ethan made a little progress there.
+ Yeah, I started working on it.
+ Then I noticed that Cody was doing similar efforts linked up
+ with him.
+ And he said just to sign it over to him,
+ since he's got a lot more bandwidth to close on this.
+ Yeah, I can show you guys where the most recent one is.
+ So we actually just did a setup today
+ with me, Pete, Skylar, and Alan.
+ Ran into a couple more issues.
+ But I've just been going through.
+ We've got good setup docs.
+ While we're pushing these up, we keep
+ finding a couple edge cases around these things.
+ And yeah, so this is set up on a bunch
+ of different cloud providers.
+ And then it's how you do the setup.
+ I have to fix these links real fast.
+ But then it's forming the federation,
+ does all that stuff, and then sets up the Lightning Gateway,
+ funds it, and then you do your first payments.
+ And I used Fetty for it, but I can use Eric's CLI tool.
+ Sorry, his Leptos tool.
+ Awesome.
+ Well, I would say that's very welcome.
+ We have these scripts to set up a federation,
+ a meet-net federation.
+ So I'd say these are two separate things.
+ We need-- I guess I should clarify,
+ these are more like the developer--
+ dev running is more for the developer docs,
+ just like you set up the dev environment,
+ and then what do you do?
+ How do you play with it?
+ So I think--
+ Yeah, that's the other one I've been working on.
+ So your old-- not TabConf, the BTC++,
+ the running a Fetty module one, and all the DevEment stuff,
+ that's the other one that I'm working on.
+ Cool, yeah, that would be great.
+ I've done a workshop a couple of days, times where we just--
+ I get people running DevEment and just
+ run through all the commands, and people
+ tend to enjoy that.
+ Exactly.
+ Run over people.
+ So that's just doing a written version of that.
+ And then for each one of these, I'm
+ also going to do just the quicker videos for it.
+ I mean, the fastest meet-net federation setup I've done now
+ is six minutes.
+ That's with a three and four.
+ Nice.
+ Yeah.
+ Wow, cool.
+ Look forward to seeing those.
+ So now to some more low-level stuff.
+ We have serialization changes.
+ Anything to cover here?
+ Looks pretty small.
+ I've noticed when working on dbtool
+ with a flag that removes all the modules
+ that a lot of stuff was serialized
+ as just arrays of numbers.
+ Like a lot, some stuff was.
+ So I changed that to be hex strings instead
+ to look nicer, be more compact.
+ Awesome.
+ Tests that double spends are not possible for the e-cache module.
+ Yeah, I mean, it's kind of useful
+ if we cannot double spend in a federation.
+ And so Joshi-san found a bug with that some time ago.
+ And we just deferred creating a test for it
+ that's not possible anymore.
+ And now we created a test.
+ So we tested both double spends in different inputs
+ as well as double spends in the same input are impossible.
+ Awesome.
+ Test passes, so awesome.
+ Awesome, yeah.
+ No changes outside of the test besides the debug or whatever.
+ That's good.
+ OK, so now a couple--
+ Josh has had a couple of changes in the API networking.
+ So we got three of them here.
+ And I just want to walk us through these.
+ It sounds like these will have some impacts on our CI
+ flakiness.
+ Sure, so how it came to this was a previous PR
+ I did which tightened the validation of transactions
+ before submitting them to the broadcast.
+ And this uncovered then this race condition
+ in the query strategies.
+ Pretty much we had two issues here.
+ The first issue was that we only, in the query strategy
+ current consensus, we requested the same value
+ for like from all guardians and then checked
+ if we can get a threshold of guardians with the same value.
+ And then this value would be returned.
+ And this value was before it was set to F plus 1.
+ So importantly, less than half.
+ So if a value was just about to change,
+ if you were, you could get two different answers depending
+ on which subset of guardians you ask because you
+ ask less than half so you can get two distinct subset of guardians.
+ still reach a threshold. So we increase that threshold to 2f + 1, so like two
+ thirds, so there's always overlap and you cannot have this issue. And also
+ we added retry logic for the case where you get different values. So if
+ the value is currently changing and we have received 2f + 1
+ responses from our peers, but they have different values, we retry all of them
+ and give every peer the ability to update its vote in a sense and see if we
+ do this on the current round. And this is just repeated and repeated and repeated.
+ And so yeah, this is done in the first PR. In the second PR, which
+ follows up on this, this is just something I uncovered in the
+ first PR. We had redundant error paths and we almost never used the
+ second one. And when it's used, it gives us really nonsensical error.
+ It's just empty, which I discovered when working on the first PR. So I removed
+ that as well. And then in the third PR, I just did a refactor and
+ tried to pull out some of the common logic. So it's just more clear
+ what is happening. And so the previous race condition,
+ it pretty much occurred every time a client asked for any changing value from the
+ Federation. So we know this was a race condition in at least one of our tests, but
+ it may have been race conditions in many more. As I said, every value
+ that is requested and is changing induces a race condition or has induced
+ a race condition in the test previously.
+ Awesome. Well, great work fixing that. We'll see how CI does. When was this one merged?
+ Two days ago. So yeah, hopefully CI, hopefully you put CI in its place. Okay,
+ now a couple of database ones, unify dbops under one trait, dbc.
+ There was a bunch of methods on various parts of db code that were repeated,
+ so I moved them to common.
+ Sounds good to me. And then the blocking operations in async runtime.
+ Dbc?
+ Eric, maybe?
+ Yeah, I think we are just calling next in there in like an async block. What was it?
+ Yeah, now we do it in, like now we tell the thread of the executor of the async
+ runtime that we're actually blocking here. And so they can schedule other
+ tasks on other threads if it's multi-threaded.
+ Yeah, cool. So this is just a small, I think we noticed this one while we were just
+ doing a bunch of mutiny net sort of throwaway federations. There's no way to,
+ like the gateway UI, for example, just in the gateway itself has no way to just
+ leave a federation. You'd have to actually go in and delete the
+ database, which is kind of manually, like by hand, which is kind of error prone. So
+ it'd be nice to just have a command that would do that itself, just like, just, you
+ know, check the balance is zero, check that you can be safely left. This will be
+ a little hard to achieve now because like our wallet client doesn't have a
+ optionality, like a sweep functionality, like ability to just withdraw everything.
+ So it's hard to get to a zero balance or a dust balance, but this would be
+ convenient to have. I guess one other one that I don't think they have an issue
+ for but would be good to have is like our little guardian UI. There's basically
+ one thing that would be really nice to have which we don't have, which is just
+ like a balance, like how much Bitcoin is locked in the federation and
+ it's currently just hard-coded to zero. But it would be nice to have an RPC
+ command to just, like an authenticated guardian RPC command to just,
+ all right, Eric mentioned we could probably just expose the audit, maybe the
+ most recent audit, something like that would work. Yeah, yeah, I think that would be
+ the ideal way to go about it. Then you could even tell which modules have which
+ assets and liabilities. Yeah, well that would be really nice.
+ Well, I'll make an issue for that after the call. Remove transaction rejection.
+ Okay, so there's just something, like why isn't this needed anymore? I think it has
+ to do with a factor that Joshy-san did. We are not telling the client anymore
+ about rejected transactions because we don't want them to affect our database.
+ If a transaction was rejected, we just ignore it completely. But rather,
+ typically a transaction, if it's rejected before it's given to consensus, you get
+ a rejection as an API response when submitting it. If it's rejected after we
+ achieve consensus on it, so it means it was valid at some point and it became
+ invalid and then we rejected it. That's the only reason why we needed a
+ database entry that saved, okay, we rejected this transaction so the client
+ would see it when querying the transaction status. But typically, when
+ you just resubmit the transaction, you should just get the same error again.
+ We will keep resubmitting transactions until we get some definite answer.
+ But the old client still kind of relies on this enum being there. I don't
+ know, it doesn't do anything anymore. So I'm not sure if we could just refactor
+ it out. But nobody wants to touch the old client. I guess we'll just remove the
+ old client first and then remove this redundant enum variant. Okay, I'll cover
+ that one at the end. Okay, so a list operations command with the new CLI.
+ It's just an ancient PR that we discovered. We have operations log, you
+ should be able to view the operations log. Pretty simple. Here's a nice one.
+ Deterministically driving the lightning keys. Did anything change there? No, nothing
+ changed here yet. I'm actually working on this today. I think it's essentially
+ blocked on backup and restore. That's right. So that's what you're doing.
+ Gotcha. Yeah, and I guess one interesting thing I am looking at here is
+ like on the lightning side, it's not like the
+ mid side where there's notes and stuff in the database. There's really not much
+ local state that needs to be backed up and restored. I guess the interesting
+ part is like how to scan for contracts that are in the federation that match
+ this client. So I'm trying to figure that out right now. Yeah, I think the scanning
+ is the easy part. Then the problem will be what do you do once you found a
+ contract. I think it won't be a super complicated but a little bit more
+ involved than the e-cash because finding the contract is just like matching if
+ any of the public keys in there matches one of our public keys. Sure. Any of the
+ information we can derive. You just need a pool of the different keys that can be
+ in there and then check if like any particular contract has any key out of
+ the pool. Yeah, I guess I was thinking like if we don't say the whole database
+ is gone, we don't have this index that we're using to sort of increment on like
+ the next index key. So we might need something similar like a gap limit or
+ something of how many keys we scan. We have this concept of backup
+ files or backup saved at the federation. So that would typically tell you from
+ which epoch on you need to scan and what your last index was. And then you just
+ begin scanning from that epoch and that index. But if you don't have such a safe
+ backup, then you just have to begin scanning from epoch zero and from index
+ zero and then you just build up the whole history over time. Which is rather
+ annoying. So I think we typically just save a backup every day or so. At most
+ have to scan one day of history. Yep, I'm looking at this right now. I don't know
+ this looks to be like a bigger change. I'm not sure if we want to
+ merge what I have right now or put it all in one PR. I think it would be better
+ to put it in one PR. Like I actually thought about rolling back my wallet
+ change because it potentially could burn money in the worst case. I don't think
+ it's the case for the wallet module but for Lightning, for receiving especially, I
+ think it would be. Yep, okay, sounds good. Just reach out to DPC. I think he has the
+ most experience of us all about the backup and recovery. Yeah, sure, sounds
+ good. I'm looking at it right now. Maybe there are even the common elements
+ between the the E-cash backup and recovery and Lightning that we can reuse
+ or like make more generic. Cool, so that's the end of the issues and pull requests.
+ Wait, sorry, real fast. Isn't there a set way of doing that for Lightning key? Isn't
+ there a set way of doing that within the Bolt specs for how you're
+ supposed to be driving keys on the Lightning side?
+ What we are doing is quite custom because we aren't really
+ implementing Bolt when we're communicating with the game. Yeah, I get
+ you but isn't that like there's already a set way of doing it where it's like
+ the the keys that you I think it's like you're basically using length extension
+ for the keys, right? It's like every time you're adding a new, it's like every time
+ you're deriving a new one, it's just you're just putting it through another
+ round of shot to just like a little bit more stuff in the end. I mean we have our
+ own derivation scheme that we already used for Cache. Deriving the keys isn't a
+ problem. The problem is finding out which contracts for example belong to us.
+ For that, you have to have a pool of keys that are like for example 100 keys in
+ the future that we could have used and so that we notice we have a gap limit
+ essentially and then we just check each contract that doesn't contain a key that
+ belongs to us. Yeah and then just something else that kind of just
+ reminded me of is that I think that this would be something to go a good like now
+ that I'm back with time stuff I could do something on this or we could do it on a
+ deep dive. Just in terms of there's a lot of stuff that we're doing where we're
+ deriving keys and or when we have to like derive a bunch of nonces that kind
+ of stuff like I remember when you were talking with Floyd Fournier about like
+ doing the MPC stuff for Taproot or when those ideas that we had about how to do
+ lightning addresses by like pre-generating a bunch of nonces and
+ stuff. I think that would be something cool to cover because I think that's
+ something where like I'm not as familiar with like the best ways to do all those
+ things but that seems to be something that's happening more and more and
+ occurring more and more in terms of like just UX stuff that we need of like you
+ know if we wanted to pre-generate a bunch of nonces and all that kind of
+ stuff for clients that sort of thing.
+ It would be interesting to just cover a derivable secret quickly on a deep dive. That would be a good topic we've never gone over.
+ Yeah. Cool. Well that's the whole LN address or bolt 12 thing that still
+ needs to be specced out actually. Like how we would be deriving nonces there.
+ But yeah well that's just always topic yeah it's just something that I don't
+ think we've covered in depth before but seems to be happening in more places in
+ the code base. You know what I mean? Yep. Well that's the end of the topics. I just wanted to
+ shout out our good first issues list here. I saw Eric went through and added a
+ couple. So if you're newer a couple people have showed up recently looking
+ to contribute. So check these out. Just so people know they're there. And then the
+ last one just talking about this you know talk about this one we need to
+ remove the legacy client first. This is one where we really got to finish this
+ off. Like we modulize our test framework. Like the test framework is the only
+ thing that's using the old client still. And we still have some tests that
+ haven't been migrated from the old framework to the new framework. And so
+ once we finish that I'm pretty sure we can yeah like more or less those two
+ then we can remove the legacy client and the old test framework which would
+ be just nice to reduce our maintenance burden. So I mentioned this to I think
+ talk to Douglas a little bit. Yeah I will try to take a look at this this week.
+ Cool. All right well that's that's it for me. Anybody else have anything to point out?
+ If not let us know if you have any good. I wrote down a couple deep dive ideas.
+ Let me know if you have any other thoughts for Thursday.

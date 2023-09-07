@@ -1,0 +1,889 @@
+ [BLANK_AUDIO]
+ >> Yeah, so I'm trying to pull up the UI as we have it.
+ [BLANK_AUDIO]
+ >> I know I'm having issues.
+ [BLANK_AUDIO]
+ >> Justin, do you have this running?
+ >> I don't, too many open files, my gosh.
+ [BLANK_AUDIO]
+ >> Yeah.
+ [BLANK_AUDIO]
+ >> Yeah, I don't have it running and I'm not feeling the best this morning.
+ So let me, I can try.
+ >> Okay.
+ [BLANK_AUDIO]
+ >> Where would it be?
+ [BLANK_AUDIO]
+ >> I will.
+ [BLANK_AUDIO]
+ >> Okay.
+ [BLANK_AUDIO]
+ >> Actually, look, and I'm running low on battery.
+ [BLANK_AUDIO]
+ >> So.
+ [BLANK_AUDIO]
+ >> I wonder what that too many open files thing was.
+ >> I've got it pulling up.
+ [BLANK_AUDIO]
+ >> Okay, if you can share that, that'd be good.
+ I'm having to set up the whole thing again.
+ [BLANK_AUDIO]
+ >> What browser is that?
+ [BLANK_AUDIO]
+ >> Well, R, I've heard of it.
+ [BLANK_AUDIO]
+ >> That's the screen there that I think could still use a little work.
+ [BLANK_AUDIO]
+ >> Right, like the, basically the one thing that would be really, so there's a lot of like dummy data here.
+ The epox and the community custody things are just, it's all fake.
+ I don't think we'll be able to display like a list of epox.
+ Very, like that'll take some time.
+ It's just like, they're just making an API for that.
+ It'll take some time.
+ But it'd be really good to just show how much Bitcoin is in there, right?
+ And I think we could do that.
+ Like how much is the mint tab?
+ And so, yeah, like the Bitcoin and e-cash are the same thing.
+ So that's just like not, you don't need two things.
+ They're the same thing basically.
+ They should, well, I mean, I guess it wouldn't, they wouldn't like totally equal each other.
+ Like if some money is in like a lightning contract.
+ But that's not very interesting.
+ Yeah, we just need to expose the amount of Bitcoin that's in the federation.
+ And yeah, so that's like the one thing that's really missing, I think, to make this like more usable.
+ Or that, yeah, just like this, a lot of this content in this page.
+ I guess people set this up that we confused.
+ Like why is all this fake, you know?
+ Yeah, okay. So is we get rid of the epochs section and was that changing anyway with the work to move away from HBBFT?
+ Yeah, yeah. I mean, that's the thing is now.
+ Yeah, I mean, the reason we call them epochs is just because that's what our consensus algorithm calls them.
+ Right. So we just use their terminology.
+ But now, Joshy-san, who's like, sort of making a lot of improvements there.
+ He's just going to start calling them blocks just for simplicity's sake.
+ So, you know, that's probably better.
+ It's just, I mean, I don't know. I don't really have an opinion there.
+ And it's also it's like kind of a little bit of an implementation detail.
+ Like I don't think a person really needs to know about that, you know, to be a user.
+ I'm just thinking out loud as well in terms of the... Sorry, is my volume, is my audio okay?
+ It's good.
+ Yeah, if the looking at the option for Bitcoin and then local currency, US dollar, like just...
+ I think a lot of like Bitcoin wallet users, they're like used to toggling on and off the local currency.
+ Like they're kind of used to being able to click on Bitcoin and then see it in their local currency.
+ I'm just wondering if it's necessary to separate those two as two different things.
+ I mean, it works either way.
+ But I know like in most Bitcoin wallets, there's pretty much just one option to see the balance.
+ And then you can toggle in different currencies.
+ I don't know. Just kind of thinking out loud.
+ And also with the option of toggling the currencies is maybe to offer more options.
+ Because like, I don't know if a federation, like if there would be more currencies involved than just the standard currency.
+ And maybe they want to send money to someone in Europe and then they want to see the Europe conversion.
+ I don't know, maybe for a later version.
+ But yeah, I don't know. I'm just thinking out loud.
+ Yeah, no, it makes sense.
+ I think we're still kind of at the like primitive concern of just like, let's just show how much money is in there.
+ You know, it's not how much Bitcoin and then being able to do the currency conversion.
+ I think whatever we decide to do, I'd be happy with.
+ Yeah, just give them something maybe that they're a bit familiar with in the wallet UI.
+ But then again, maybe this becomes familiar in the community wallet UI that they see it separately.
+ Yeah, because I mean, this is what the guardians see.
+ So they'll never be like sending, they're seeing other people's money here, right?
+ Yeah.
+ They're not seeing their own, so they won't be sending from other people's money.
+ So there's not like a send and receive screen.
+ It's just like, just kind of know how much is in there, you know?
+ Yeah, I think, yeah, the Bitcoin and the local currency together and then remove the e-cash is what you guys said.
+ Yeah, so the one other thing, I guess one thing that would be kind of interesting here on the screen is if we have like a partial ability to just create like a single use invite code, right?
+ Like the problem with the one that's displayed there is that like, if it was posted to Twitter, a million people could join with that.
+ Yeah.
+ And we haven't like, once these are going, guardians will want the ability to selectively invite single people.
+ So the ability to have like a single use invite code will be really useful.
+ And like we can support that, but it's kind of like, it's like a, it's kind of half baked.
+ Like it's, a little more thinking needs to be done there.
+ And yeah, we need to get it into the UI.
+ Justin, aren't the invite codes, aren't they effectively like API keys?
+ Don't you kind of encumber every request with them?
+ Like how would a single use one work?
+ Would you use that one to then fetch the long-term one?
+ So that would be a better, like a better, like the way we kind of eventually want to get to it is where you have some sort of like almost like a reputation token or like some, some little like credential that you carry with your requests.
+ And like, if you're obviously, you know, like you could rate limit based on that or something.
+ But what this does is like this invite code basically just allows you to download a config that you can use to talk to the Federation.
+ And once you have that config, you can do anything you want.
+ So, so this, the current system, that's why it's kind of half baked, like the current system only can prevent people from downloading that config.
+ But for example, if you just like attach that to Dropbox and shared it out, you know, multiple people could join that way.
+ Is it just Bec32 encoded?
+ Yep.
+ And yeah, it's, it'll be slightly interesting to see what's in there.
+ Like one of them is like, it's not going to work.
+ I think it actually does in fact 32 decode through any tools because it's kind of a custom format.
+ Yeah.
+ Okay.
+ Well, there's like the first eight bytes are something different.
+ And then it's a bunch of text.
+ I've got it written somewhere.
+ Yeah, so it's, it has like the URL to communicate with one of the guardians to download the config.
+ And then it also has a, a, a, a, like a download token, like that could be like single use.
+ So it is like kind of a credential that is used.
+ It could be used once or you can, you can say how many times the guardian could say how many times it's being used.
+ So that's something that needs to be a little more fleshed out.
+ I know that, I think this one was mentioned before one of the other calls, but like, would a guardian be able to want to like, I don't know if print is the right word, but like print out or share like some information about the federation to someone who they're inviting.
+ So like somewhere in the UI, they would be the option to click somewhere and then they could create this, I don't know, print out if that's the word or like a business card thing saying like, this is how many members there are.
+ These are where the members are located.
+ This is the uptime of our server, that kind of thing.
+ Yeah, there's no ability to do that.
+ That's an interesting idea.
+ Yeah.
+ Like a marketing pamphlet.
+ Yeah.
+ Like a, like a business card.
+ I don't know if business card is the right word, like, because it's like, you know, you want the goal of the guardian is to get like high quality members in their foundation and like the high quality members would expect, like you're not going to join a community if you think that they're not like, you know, like they're not legit.
+ I don't know.
+ You know what I mean?
+ So it's just like, hey, by the way, this is who we are.
+ And that could be part of like the invite code.
+ Like it could be like this business card thing with like all of the details, just like basic details.
+ I don't know, whatever you guys think is important for an invited member to see.
+ You could like ideate on that.
+ And then at the bottom of that, it would be like, oh, by the way, here's your invitation.
+ And your link expires in, I don't know, 48 hours or something.
+ Something like a cute, quirky, very welcoming that they could share, like, I don't know, WhatsApp, Signal, Telegram, Twitter, Nostra, wherever.
+ Yeah, this is very real.
+ Like, so I think one thing that would make something like that tricky today is we just don't have like a lot of good information to put on something like that.
+ You have the number of guardians and what they've self-identified as.
+ But one thing I've been thinking kind of on the onboarding side, working on the Fetty app, is it would be really cool if, as a part of the guardian setup,
+ if guardians could provide a little bit more information about themselves, because we're not particularly worried about the privacy side for them.
+ In terms of like, you know, they have fixed identities in the system, and they should kind of be known quantities.
+ So that when you do join, when you join a federation, that we can actually show you like, hey, here are who your guardians are.
+ And then that would pair really well with something like that, some kind of formalized invitation.
+ Yeah, that's a cool idea.
+ I mean, I mean, things like that would, sorry, go ahead, Mo.
+ Yeah, no, I'm just making notes as you guys are talking.
+ It seems like a list of the modules that the Fetty Mint's running as well, right?
+ So like we, I'm assuming there's an anticipation that not every Fetty Mint's just going to have the three base modules.
+ Each one's going to have its own.
+ So like that, it's almost like a slick sheet.
+ Like, have you ever seen like a slick sheet for like hardware or something like that?
+ It's like a one pager of like, here are all the deep, critical details of this thing.
+ Yeah, I mean, on the other hand, like once you get one of these invite codes, like there's no, if you claim it, there's no obligation or anything.
+ Like then you have like access to see what's in there.
+ So that whatever client they're using, you could kind of print, you know, print something like, or display something like a business card after that step.
+ You know, because you'd have a kind of as much information as is available, you could display a lot more.
+ Yeah, yeah.
+ I mean, that's why I was thinking about it from the onboarding side on the wallet is, is, I think that's kind of where I would expect to get all that information is at the point where you are, you know, you're in an application and you're ready to join.
+ I mean, just if we have the information to show there, it doesn't mean that you couldn't show it outside of the wallet before somebody scans the code, but just getting to a point where we have enough of that information that we could even show it within a wallet would be great.
+ What were your ideas on like the information that the guardian could could provide about themselves?
+ So like this guardian who's inviting so like maybe like the list of the modules that the federation has or anything else.
+ I mean, I think the guardians should identify themselves by something that will resonate with people like who are joining that would be recognizable like, you know, whether it's your real name and a real photo of yourself, or if it's just like a handle, like a social media handle that you use.
+ And like a, you know, an avatar.
+ Yeah, something that would help people identify. I mean, I, you know, this is totally me just spitballing here. Yeah, yeah, no, go ahead.
+ But like, it could be cool also to have some kind of social proof mechanism. Right. That's like, this person provably has this like not you know they sign this with an Oster pub key or something like they're running this federation.
+ And maybe that is part of the metadata that's communicated.
+ You know, when you're setting up a federation is you're committing to some kind of, you know, public attestation that's like, yeah, I am this guardian.
+ Yeah, yeah.
+ Yeah, like putting a proper human behind, behind the Federation who is the guardian. I know it's tricky not a lot of people in this industry like sharing their faces but yeah maybe an avatar would work and then social media, I guess a nostril profile showing that they're active or something like that.
+ Yeah, I think it's fine if you're a nym. The, the thing like that we haven't, we haven't gotten to a level of readiness and popularity yet but you're going to see people in the same way that they post in Twitter threads like, you know, they make a fake account and say like, Oh, you know, send me one Bitcoin I'll send you 10 Bitcoin.
+ Like, you're going to see people saying, Hey, I'm starting this federation. Yeah, come join me. And then, you know, they're gonna, they're gonna rug pull it.
+ And it could be like this like business card image thing with the person's avatar, nostril link, I don't know some other like that would look cool on social media as well you know like something that looks really, I don't know. It's like really inviting you know as opposed to like, Oh, here's the link by the way, you know, click this big long link and then you're in the Federation. Feels a bit more human if there's like a bit of a face behind the guardian.
+ as well, yeah.
+ - Well, it's all trade-offs, right?
+ Like the whole thing is based on a trade-off.
+ - Yeah.
+ - So whether you want your guardians to be human,
+ recognizable faces, names, real things,
+ versus whether you want, you know,
+ an underground fediment run by super shadowy coders
+ with nims, like, I think that's like,
+ that's a trade-off we offer.
+ - 100%, yeah.
+ You choose what fits best with your, yeah, 100%.
+ - Yeah, the other consideration is
+ if you want all that information before joining,
+ as a user, would you want to see that before joining,
+ or is it like you join to some degree
+ and then you audit the federation?
+ - Good question, good question.
+ - I think what might be immediately is like,
+ what is the base level of information
+ that you would want to provide a user or what have you,
+ or provide to a guardian on this page
+ that they would share with other people?
+ And so I think like the modules that are there,
+ some sort of like connection information,
+ and then maybe a list of guardians,
+ but I don't, you know, I don't know if that's whatever,
+ sharing the list of guardians seems very, very relevant,
+ but I don't know if that's what's gonna be required
+ for everything, right?
+ - Mm-hmm.
+ - I don't know if anybody might care.
+ - Yeah, I mean, so just as context for what it is today,
+ all we have is just a list of the names, basically.
+ Like every guardian will give themselves a name,
+ and that was something that was added like,
+ you know, probably 10 months ago,
+ and we haven't gone any further than that.
+ Like that's, yeah, it's kind of underexplored.
+ - Yeah.
+ - Just on the base level, I mean,
+ that might just be all you,
+ like the name could be anything, right?
+ Like maybe the name is just an MPub string.
+ - Yeah.
+ - They could also be some fun,
+ I don't know if any of you play,
+ I don't know, I'm going a bit off on a tangent.
+ If any of you play like these online video games,
+ any of you are gamers and you game,
+ and then you have your crew,
+ and then there's this,
+ I know on some of these gaming dashboards,
+ you have like the profile that's already there,
+ like this is us, you know, I don't know,
+ it's like the, what do you call it?
+ Like the Vikings or something, I don't know.
+ Just creating a bit of that theme as well
+ is also a little bit cool.
+ I know this is going off on a tangent,
+ but it kind of, it would create a bit of personality as well
+ to every different fediment, you know?
+ I don't know, I'm just, I'm thinking along this,
+ this like business card design thing,
+ but maybe that's a little bit step too far, you know?
+ That's for iteration number five or whatever,
+ but like on the main dashboard, like, you know,
+ this is the, I don't know, the Viking game group,
+ the Viking Guardian Federation, you know, I don't know.
+ And then there's like a picture
+ of a Viking there or something, I don't know.
+ You know, I'm just like some sort of gamification
+ makes it feel a bit fun, social, like, I don't know.
+ I don't know.
+ - I mean, I think the nice thing about this is it's all,
+ it's all just APIs, right?
+ So for, I think something,
+ something more bespoke or gamified in that way,
+ like it's pretty easy for people to build tools
+ where like you could just paste in a federation code
+ to a website and it could like generate
+ something highly personalized like that.
+ I think just for the interest of keeping
+ like this project tightly scoped,
+ I think it's probably gonna be good
+ if we keep the dashboard like very meat and potatoes
+ in its design, just because like,
+ it's already a fairly complex code base
+ and we wanna make it very approachable
+ for people to contribute.
+ And I think if they have to consider like,
+ oh, what does this layout look like with,
+ you know, a bunch of different themes,
+ I could see that being a little bit more daunting.
+ - Yeah, yeah, yeah, yeah.
+ Keep it simple for now.
+ And if they, could that be a module
+ or is that, does that not make any sense as a module?
+ - No, so it really comes down to,
+ I think this being like the default experience
+ of what it is to run a FedEmit, right?
+ Like it's a setup, the default setup,
+ 'cause you don't have, like people could create
+ their own setup experience
+ and their own dashboard experience.
+ So I think instead of being proscriptive,
+ like you're saying with like the design
+ and this, that, or the other
+ and all these things to consider,
+ I agree that it should be more descriptive.
+ So like, what is the core information
+ that we need to present to guardians
+ that make it easier to run or more efficient
+ or whatever to run a federation or a payment, so.
+ - Yeah, that is a very good point.
+ Like part of the reason why we,
+ we made this new setup UI,
+ like previously we had one,
+ but it would have been very hard.
+ You'd basically have to fork the whole project
+ to build an alternative one.
+ And now we have one where it's served by an API.
+ So you could build your own, right?
+ So yeah, it should be,
+ people should be able to customize this much easier.
+ This is kind of just like a reference that we're making.
+ - This is like a reference design.
+ Okay, got you.
+ Just keep it as simple as possible for now.
+ And yeah, let people play with it later
+ if they want to build on top of it, yeah.
+ - But I do like your idea, Mo,
+ of having like customizable things.
+ And I think that's where the,
+ when the builders hit this,
+ like when release one comes out and the alpha hits
+ and the devs start getting their hands on this,
+ they know it's going to be a steady, stable release.
+ That's when, you know,
+ maybe we'll see some cool stuff.
+ - I mean, working on,
+ sorry, working on the Bitcoin core clock, you know,
+ I hear the devs so excited about the clock
+ and being able to widget it and be able to customize it.
+ So I see that as possibly later being a thing
+ with the Federmat UI as well.
+ People being so happy and excited about it
+ that they want to make it their own.
+ But yeah, yeah.
+ - Yeah, I mean, we've already started to play a little bit
+ with various customizations
+ that you can set up with a federation by modifying.
+ There's like this sort of meta config file
+ that lets you just put in arbitrary configuration.
+ And so we've experimented a little bit
+ with like having a federation icon
+ and, you know, being able to adjust some of the messaging
+ that people see during various states
+ of using the federation.
+ So like, I think that there's going to be a lot of room
+ to build that customization in
+ so that, you know, wallets that are compatible
+ that will check the field of like,
+ oh, do we want a background image?
+ Do we want like a color scheme?
+ I think that stuff is going to come along
+ as we kind of get further along in like the ability
+ to kind of modify those fields
+ and get consensus from other guardians.
+ And from there, it's just a matter of like standardizing,
+ you know, what field should people expect?
+ What kind of metadata are they gonna see from a federation?
+ So I think we'll definitely get there.
+ - Yeah, a bit further along down the road.
+ Yeah, yeah, yeah.
+ (keyboard clacking)
+ Well, it's nice fun to know
+ that you guys have already been playing around
+ with customizing it.
+ Yeah.
+ - Yeah, Ethan, I haven't gotten my screenshot back.
+ So maybe we just switch to,
+ if you could switch us to the gateway for a second.
+ - Sure.
+ Just a second.
+ Oh, it's been a while.
+ What port is it under?
+ I haven't actually accessed it.
+ - I think if that was them,
+ yeah, and in prox, that's B3002.
+ Guys, I gotta run, but I'll see you guys next time.
+ - Yeah. - Okay.
+ - Cheers, Justin.
+ - Oh, hold on.
+ It's 'cause I shut everything down.
+ Give me a second, sorry.
+ That's my mistake.
+ Yeah, I have this running
+ and then I was looking at something on CLN.
+ Now I can't rebuild it.
+ - Yeah, I almost wanna keep like two directories
+ at any given time, 'cause I feel like
+ whenever you start messing with like Nix build stuff
+ or hopping around branches,
+ you end up with like a five gigabyte download.
+ - Yeah.
+ Empty response.
+ Oh, maybe I just had to wait longer.
+ Yep, okay.
+ - The single use invite link that,
+ sorry, that Justin mentioned,
+ is that like development-wise,
+ is that able to be created or?
+ - Yeah, so it's already in the spec of those invite codes.
+ So it's kind of known that sometimes they will include
+ an extra bit of data that kind of is like a password
+ basically, and that password can be expired.
+ But none of the tooling is really built out around it.
+ So they can be in there,
+ but like the ability to manage them, expire them,
+ stuff like that isn't built out.
+ So it's kind of a known thing that will come,
+ but none of the functionality is fully there yet.
+ - So not in, for sure not in V1, not in this version,
+ because--
+ - I wouldn't be surprised if it,
+ I mean, V1 is a very unclear thing.
+ - Yeah.
+ - So I wouldn't be surprised if,
+ depending on when we end up cutting a release,
+ if something like that makes it in,
+ but it definitely doesn't exist today.
+ And I don't know that anyone's kind of
+ actively working on it right now.
+ But I could imagine in a couple months,
+ somebody picking that up,
+ 'cause it is gonna be a problem, right?
+ Where, especially because these connection codes
+ are totally static.
+ - Yeah.
+ - So if one of these leaks out
+ and now your federation has way more people
+ than you wanted to be servicing,
+ you're gonna have to tear down your federation,
+ start a new one.
+ There's no way to revoke or boot people out
+ or anything like that.
+ So it's gonna be a problem for people.
+ So I think it'll get developed pretty quick.
+ - Will be developed, yeah, yeah.
+ 'Cause you can imagine like if a guardian shares
+ that invite code on Nostra
+ and just people randomly start joining.
+ Yeah, that is a thing.
+ Yeah, yeah, all right.
+ - I mean, I don't know, like as a potential guardian,
+ if random people wanna just give me Bitcoin
+ that don't know me or don't trust me.
+ - Would be.
+ - Like that's, I don't like.
+ - Well, one thing Ethan that I'm considering
+ is that we haven't built out a fee mechanism yet
+ for Lightning Gateways.
+ So if you're willing to do your Uncle Jim node
+ for your friends and eat the fees, that's fine.
+ But now if you have 10,000 people
+ who are using your Lightning Gateway for free,
+ that's gonna be bad.
+ Now, I mean, we just need to fix that
+ by improving the incentives for being a Lightning Gateway.
+ But until we get that, I would be like a little worried.
+ Also, like if you're hosting some chat infrastructure,
+ like right now we have XMPP servers
+ that you're running for people in the Feddy app,
+ like you might be overloading those.
+ I mean, we've actually seen a huge increase
+ 'cause some people are sharing around Feddy alpha stuff
+ in like an airdrop telegram.
+ - Oh, wow.
+ - Because people thought like, oh.
+ - You cut out there, sorry,
+ but I think I get the gist of it.
+ - I was also thinking with regards to sharing
+ that invite link, I'm doubting guardians
+ are gonna post it on Nostra and be like,
+ hey, come everyone, like join.
+ Like if it was mine, I would be very particular
+ about who I would share the invite with.
+ So I'm guessing it would be most likely shared
+ in personal telegram groups or private message,
+ that kind of thing.
+ Or how would you guys see it?
+ - I mean, you could have a variety of them.
+ One of them would be anyone
+ who doesn't want to self-custody some subs,
+ here's a link, right? - Yeah.
+ - So just open to anyone,
+ at their own risk, of course.
+ But I think it would be,
+ I mean, I think it would be a good idea
+ to have a link to the chat infrastructure
+ at their own risk, of course.
+ But I suppose people will have federations,
+ they are running that they really, really value
+ and they would not want anyone in it.
+ - That link as well, that link to join,
+ I don't know how it is on the development side,
+ but I know it's very normal now
+ with us being used to super long lightning addresses
+ and that kind of thing.
+ A link that they would have to join,
+ is it possible that it would be,
+ have some sort of personalization in the future,
+ like the name of the federment or something like that?
+ Instead of--
+ - So I think that you might have a way to,
+ I think about like NIP5 and Nostr
+ where there's essentially a web server somewhere
+ that will serve that up to you,
+ which I think is very similar to like,
+ what is it, LNURL?
+ - Yeah.
+ - You hit some server somewhere that's always listening
+ that can return it to you
+ and then you can provide like human readable format.
+ I see that as a possibility.
+ - Yeah, that would be cool to have the name or something.
+ - Also layering something like a domain name
+ on top of the invite link.
+ - Yeah, like some sort of like,
+ instead of maybe like a string of numbers,
+ like just the name, the name of the federation
+ and then maybe two numbers or something.
+ Yeah, something like that.
+ Yeah, what Ethan said.
+ - So this code, and that's what I was trying to figure out
+ and I almost want to make a tool now that will decode this,
+ but this is just an encoded string,
+ meaning that if you run this through a specific algorithm
+ to decode it, you'll get out like human readable text
+ and it's gonna be configuration information
+ about the federment, right?
+ I'm not misunderstanding that, correct?
+ - That's correct.
+ And clients can build that.
+ - Yeah, so like it's, this string currently is a way
+ to share configuration for joining a federment,
+ but it is not the exclusive way.
+ You could just, with a really technical user,
+ you could decode the string and parse out
+ all the information inside
+ and present that in a different manner.
+ So I guess that's a long way of saying,
+ like it doesn't always have to be this long string.
+ And I foresee it not necessarily being,
+ but it also begs the question of the access, right?
+ Like how does that change when you have like
+ one-time access codes and stuff, so.
+ - Is there a benefit to just using this long string
+ for like, like it's standard F1 specific encoding?
+ And you know what it is when you look at it?
+ I mean, if you don't care about the long random numbers.
+ - Yeah, I mean, I think the BEC 32 standardization
+ of the prefix is always advantageous.
+ Like anytime you see an NPUB, you know what it is.
+ So yeah, I think you're right there.
+ [BLANK_AUDIO]
+ Yeah, I mean--
+ [AUDIO OUT]
+ You cut out.
+ I'm not--
+ [AUDIO OUT]
+ OK.
+ All right.
+ Can you hear me now?
+ Yeah.
+ Yeah, sorry about that.
+ Your point about NIF 5 or lightning addresses, I think,
+ there's no reason that you couldn't type a domain name in.
+ And then we can have a spec for putting
+ some kind of configuration in a well-known folder
+ and serving that up so that people can connect to
+ FettyMint.org.
+ They type that in, and then it goes and fetches
+ the same config information.
+ So I think there's a lot of room to improve that.
+ [AUDIO OUT]
+ But with all things, you guys are still
+ working on just pushing this first version out.
+ So I totally get that that's a later priority.
+ I mean, we still use lightning addresses, which are long.
+ So people are used to it who are in the industry.
+ But it would be cool to see it later on for sure,
+ something a bit shorter.
+ It would look nicer on the UI as well,
+ I guess, on the dashboard, just some super short link
+ that they could share.
+ All right.
+ So there were just some UI improvements on the gateway
+ side to match the design.
+ So like changing from the last design call,
+ changing, flattening the UI, but it's simpler
+ to match what Seth had in the figmas.
+ So I'll just show that.
+ Are you going to share a screen, you said?
+ So I've not got it in the gateway to run.
+ I'll fix my box later, but unless you have it.
+ You want me to pull figma up, right?
+ I have figma up, but if you have the gateway,
+ it would be better to see the gateway UI than figma.
+ Oh, are you guys not seeing--
+ oh, I'm sorry.
+ My screen sharing ended.
+ Yeah, give me just a second.
+ I can share the gateway UI.
+ There it is.
+ Yeah, nice.
+ Yeah, so this one is--
+ so Ibo did a lot of work to just restructure the UI,
+ flatten what did they look and feel of it.
+ And we have this.
+ So I don't know if there's maybe more--
+ well, like design, if we're thinking of evolving
+ some things design-wise from here.
+ Cool.
+ It's the first time I've seen this.
+ Sorry that I'm-- I'll also apologize
+ that I've been away from so many of the calls.
+ But this is the gateway UI.
+ Yeah.
+ So you have the e-cash balance.
+ You got it in sets.
+ And then node ID, deposit Bitcoin, withdraw Bitcoin.
+ This is the gateway one.
+ Yeah, I think the deposit Bitcoin card is not--
+ is actually broken right now.
+ Yeah.
+ I should have a QR code and an address.
+ It feels a bit intuitively like deposit and withdraw
+ could be a bit connected to each other some way.
+ Because there's always that--
+ also in a traditional Bitcoin wallet, there's somehow--
+ I don't know.
+ I feel like they should be somehow maybe a little bit
+ connected in the UI.
+ I don't know.
+ I'm just thinking out loud.
+ It's the first time I've seen the--
+ it's busy.
+ You refreshed it or what?
+ Yeah, I just hit refresh.
+ OK, gotcha, gotcha.
+ Yeah.
+ I guess I would ask myself, would be like--
+ or you guys could think about, what
+ would be the most important information
+ that the user would want to see when
+ they would be on the screen?
+ Would that be the balance?
+ Like right off the bat.
+ Yeah.
+ Yeah, I think the balance they have in the gateway.
+ The one thing that maybe I'm misunderstanding
+ where we're at with it, but I thought
+ that gateways could be connected to multiple federations.
+ This kind of seems to be structured in a way
+ that the top level item is a single federation.
+ Oh, no, we did cut down to get to MVP.
+ So when you join this the first time, if you're not--
+ when you load this, if it's not connected to any federation,
+ it will just show you the join federation box.
+ You do that, and then it's not allowing you to do that anymore
+ because we have to do more work to support multiple federations.
+ And then we can-- yeah.
+ So do you guys feel like the balance would
+ be the most important thing that they
+ would need to see at the top?
+ It feels a bit like this UI could also slightly match
+ the guardian UI.
+ The guardian UI kind of has the balance taking up less screen.
+ It's a bit smaller.
+ It feels like that--
+ I don't know.
+ I'm just thinking out loud.
+ It feels a bit like the box for the balance is a bit too big.
+ It's like it could--
+ it could take up a bit less space on the screen, you know?
+ And then maybe offer different options
+ to check it in different--
+ I don't know, fiat currency, currency of your own.
+ It could even match the same way that it's
+ shown on the guardian UI.
+ So just very intuitively, it feels
+ like that e-cash balance could take up
+ less space on the screen.
+ Yeah.
+ So thinking about running a gateway,
+ though, and servicing the minimum descriptive values
+ that you need, the e-cash balance
+ is really important for inbound, right?
+ Because you're keeping the stats that come inbound,
+ and then you're giving away the e-cash.
+ But if you don't have e-cash to give away, then you can't--
+ you have no liquidity.
+ You can receive e-cash to then send stats outbound.
+ So it's sort of like this is the liquidity of your Lightning
+ node on the Federation side, on the Fetimid side.
+ So you have your channel management and liquidity.
+ But then this is like, how liquid inbound and outbound am
+ I?
+ And it's all hinging on sort of like the e-cash balance,
+ primarily for inbound.
+ So there's a lot of information missing about your node itself.
+ I guess it's minimized just node ID,
+ and you go inspect it somewhere else or on some other dashboard.
+ But there's that discussion a few weeks back
+ of whether we want to have this UI be standalone or maybe part
+ of some other advanced node management UI.
+ That's one.
+ And then, Will, to your point of this
+ will probably, if we keep it the way it is,
+ it probably needs to show the same information
+ for multiple federations.
+ So maybe that's another thing we'll consider in design.
+ Your balance is also very much determined.
+ Like, your e-cash balance determines
+ whether you can withdraw Bitcoin.
+ So this could even be super simplified,
+ and you could have withdraw even inside that e-cash balance
+ real estate part of the screen.
+ It could be even more--
+ even in your traditional banking app, you see your balance,
+ and then you're like, OK, this is my balance.
+ OK, now I know how much I can withdraw.
+ Because here you have-- also in the withdraw screen,
+ you have total Bitcoin as well.
+ So it feels like the withdraw and the balance
+ kind of need to be a bit closer to each other,
+ because you're looking at your balance
+ to decide also how much you withdraw, if that makes sense.
+ Or not.
+ I don't know.
+ I'm just-- yeah, I'm just thinking out loud.
+ Yeah, no, I get it.
+ It is e-cash balance management, and that
+ encompasses both deposit and withdrawal,
+ and then the total amount of e-cash.
+ Like, those are all very tightly coupled.
+ Those are a group.
+ Like, that's a bucket together.
+ Those are three things.
+ And then node ID could even be all the way underneath.
+ I don't know.
+ In terms of hierarchy of information,
+ I think that's a good idea.
+ In terms of hierarchy of information,
+ e-cash balance, deposit Bitcoin, withdrawal,
+ they could just all be one together,
+ like in one real estate area.
+ And then node ID could be all the way at the bottom.
+ One thing that feels like it's missing to me
+ is any information about the status of the federation,
+ because you're not going to be able to interact with it.
+ I mean, maybe the UI doesn't load at all.
+ Maybe it's the federation's offline,
+ and maybe that's why it's not there.
+ But yeah, just making sure that the federation's
+ in a good status.
+ Just remind me again, because it's been a while.
+ The gateway is providing the--
+ what do you call it?
+ Their routing, if I remember correctly.
+ That's the Lightning gateway provider.
+ Yeah, so it bridges the federation
+ with the Lightning network.
+ Yeah, yeah.
+ And then there were two of the node--
+ OK, they would have to have capacity.
+ Yeah, all right.
+ Yeah.
+ Something also is that they earn money as well by routing,
+ if I understood correctly.
+ They earn money, earn stats by routing.
+ Would they maybe also want to know how much of fees
+ they've earned by routing?
+ Would that also be something that they
+ might want to see on the UI?
+ Like, this is, I don't know, this
+ is the fees you earned in the month of June or something,
+ and you routed 10 transactions or something.
+ So I think trying to not recreate some other Lightning
+ tools, because I believe, unless I'm mistaken--
+ I'm not a Lightning node operator, unfortunately--
+ but I feel like that information is surfaced elsewhere.
+ And so while it would be useful on this,
+ I'm not sure how required it is for it,
+ like just being very descriptive about what
+ it is, your interaction with the FedeMint.
+ But perhaps the fees that you're charging to the federation
+ is a more appropriate thing for either editing that or seeing
+ what your current fee rate is, because that
+ seems directly relevant to what's being displayed here.
+ Yeah, I think we don't have it built out.
+ And I do agree, Ethan, we don't want
+ to build channel management or anything into this.
+ But the one information that the gateway
+ is going to have that a typical Lightning dashboard's not
+ going to have is which of your payments
+ were fulfilled via contracts from the federation.
+ So knowing-- you'll know how many
+ that you've run via federation contracts, which
+ a Lightning dashboard isn't going
+ to distinguish between Lightning payments, just regular ones,
+ and then ones routed to and from the federation.
+ But yeah, I mean, the short answer
+ is right now we don't have that reporting capability built
+ into the gateway.
+ I don't know that it's tracking to that level of granularity.
+ Probably something we're going to have to build in.
+ So maybe just keep this as the MVP right now
+ with the balance deposit withdrawal, node ID.
+ And then Ethan mentioned something about fees,
+ so them knowing their fee rates.
+ Because that would be some information
+ that they would need to share with someone who'd want them
+ to route, if I understand.
+ Correct me if I'm wrong, Ethan.
+ I don't think we have anything built out about fees.
+ I mean, that was what I was talking about earlier,
+ with not wanting to share your federation.
+ I'm pretty sure you run this basically in the hopes
+ that your inbound and your outbound line up.
+ But realistically, you can get abused.
+ We do have some very rough sketch of fees on the gateway.
+ And it's a global thing.
+ We have two sites.
+ So the fee you charge for inbound
+ might eventually be different from the fee
+ you charge for outbound.
+ But right now, you set a fee.
+ And it could be--
+ you can set it as a fixed number,
+ the way you set channel fees.
+ So you set a fixed number, say x sets or milliseconds.
+ And then you set a fractional part of it as well.
+ A gateway can do that today.
+ This is still a pretty good, nice, simple design
+ for a first iteration.
+ So I think it looks great to start with.
+ So this was-- did Seth--
+ Seth-- this is Seth's design?
+ Yeah.
+ Yeah, it's great as a first design.
+ But yeah, just initial impressions
+ is that also when you're in your traditional banking app,
+ also in your Bitcoin wallet, the balance and withdraw
+ and deposit and withdraw, it's a little bit
+ different than withdraw and deposit.
+ They're very closely connected.
+ So it feels like those three should
+ be a little bit closer to each other
+ or kind of live in the same real estate area or something.
+ So that's kind of just initial thoughts.
+ But yeah, you could also run with this as a first iteration
+ and see how people respond to it.
+ But yeah, that's just thinking out loud.
+ [THUD]
+ All right.
+ Yes.
+ OK.
+ There's a bunch of bugs we filed--
+ if any-- filed from the other week.
+ So we've just made progress towards these MVP designs.
+ Then there are a few issues and bugs to check off to just
+ improve this.
+ But yeah, that's where we are.
+ Cool.
+ Good job, guys.
+ Yeah.
+ Yeah, this is very cool.
+ Very cool.
+ I'm going to stop sharing now.
+ Yeah.
+ Awesome.
+ Thank you all for coming.
+ And thank you, Ethan, for sharing.
+ Yeah, thank you all.
+ Catch you later.
+ Thanks, everyone.
+ Catch you later.
+ Bye.
+ And Mo, don't forget to stop recording.
+ And also, can you send me a link to the recording
+ so I can upload it?
+ You'll have that in five minutes,
+ provided my upload speed is fast enough.
+ OK?
+ I can't wait.
+ Thank you.
+ Cheers.
+ See you in a bit.
+ Bye-bye.
+ Bye.
+ [BLANK_AUDIO]
